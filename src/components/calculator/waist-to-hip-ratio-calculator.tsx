@@ -1,0 +1,78 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { cn } from "@/lib/utils";
+
+const getWhrCategory = (whr: number, gender: 'male' | 'female') => {
+  if (gender === 'male') {
+    if (whr < 0.9) return { category: "Low Risk", color: "text-green-500" };
+    if (whr <= 1.0) return { category: "Moderate Risk", color: "text-yellow-500" };
+    return { category: "High Risk", color: "text-red-500" };
+  } else { // female
+    if (whr < 0.8) return { category: "Low Risk", color: "text-green-500" };
+    if (whr <= 0.85) return { category: "Moderate Risk", color: "text-yellow-500" };
+    return { category: "High Risk", color: "text-red-500" };
+  }
+};
+
+export default function WaistToHipRatioCalculator() {
+  const [gender, setGender] = usePersistentState<'male' | 'female'>("whr-gender", "male");
+  const [waist, setWaist] = usePersistentState("whr-waist", 90);
+  const [hip, setHip] = usePersistentState("whr-hip", 100);
+
+  const whr = useMemo(() => {
+    if (waist > 0 && hip > 0) {
+      return waist / hip;
+    }
+    return 0;
+  }, [waist, hip]);
+  
+  const { category, color } = getWhrCategory(whr, gender);
+
+  return (
+    <>
+      <div className="lg:col-span-2 space-y-6">
+        <Card>
+          <CardHeader><CardTitle>Enter Your Measurements (cm)</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label>Gender</Label>
+              <RadioGroup value={gender} onValueChange={(v) => setGender(v as 'male' | 'female')} className="flex items-center space-x-4 pt-2">
+                <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
+                <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
+              </RadioGroup>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="waist">Waist Circumference</Label>
+                <Input id="waist" type="number" value={waist} onChange={e => setWaist(Number(e.target.value))} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="hip">Hip Circumference</Label>
+                <Input id="hip" type="number" value={hip} onChange={e => setHip(Number(e.target.value))} />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+      <div className="lg:col-span-1">
+        <Card className="sticky top-24">
+          <CardHeader><CardTitle>Your Result</CardTitle></CardHeader>
+          <CardContent className="text-center space-y-2">
+            <p className="text-sm text-muted-foreground">Waist-to-Hip Ratio</p>
+            <p className="text-5xl font-bold font-headline text-primary">
+              {whr.toFixed(2)}
+            </p>
+            <p className={cn("text-lg font-semibold", color)}>{category}</p>
+            <p className="text-xs text-muted-foreground pt-4">This is an indicator of health risk associated with fat distribution.</p>
+          </CardContent>
+        </Card>
+      </div>
+    </>
+  );
+}

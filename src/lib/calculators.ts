@@ -94,6 +94,11 @@ import PetAgeCalculator from '@/components/calculator/pet-age-calculator';
 import LoanAffordabilityCalculator from '@/components/calculator/loan-affordability-calculator';
 import CarbonFootprintCalculator from '@/components/calculator/carbon-footprint-calculator';
 import TypingSpeedCalculator from '@/components/calculator/typing-speed-calculator';
+import RatioCalculator from '@/components/calculator/ratio-calculator';
+import PermutationCombinationCalculator from '@/components/calculator/permutation-combination-calculator';
+import StockProfitLossCalculator from '@/components/calculator/stock-profit-loss-calculator';
+import WaistToHipRatioCalculator from '@/components/calculator/waist-to-hip-ratio-calculator';
+import TimeZoneConverter from '@/components/calculator/time-zone-converter';
 
 
 export const categories: Category[] = [
@@ -196,7 +201,7 @@ export const calculators: Calculator[] = [
     description: 'Simplify and work with ratios.',
     category: 'Math',
     Icon: Scale,
-    component: PlaceholderCalculator,
+    component: RatioCalculator,
   },
   {
     slug: 'proportion-calculator',
@@ -236,7 +241,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     Icon: Sigma,
-    component: PlaceholderCalculator,
+    component: PermutationCombinationCalculator,
   },
   {
     slug: 'factorial-calculator',
@@ -393,7 +398,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate profits or losses from stock trades.',
     category: 'Finance',
     Icon: AreaChart,
-    component: PlaceholderCalculator,
+    component: StockProfitLossCalculator,
   },
   {
     slug: 'currency-converter',
@@ -536,7 +541,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your waist-to-hip ratio.',
     category: 'Health',
     Icon: Ruler,
-    component: PlaceholderCalculator,
+    component: WaistToHipRatioCalculator,
   },
   {
     slug: 'pregnancy-due-date-calculator',
@@ -751,7 +756,7 @@ export const calculators: Calculator[] = [
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
     Icon: Globe2,
-    component: PlaceholderCalculator,
+    component: TimeZoneConverter,
   },
   {
     slug: 'world-clock-time-difference-calculator',
