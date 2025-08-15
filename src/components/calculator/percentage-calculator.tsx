@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 
@@ -49,26 +49,45 @@ export default function PercentageCalculator() {
     switch (mode) {
       case "percentOf":
         return (
-          <div className="flex items-center gap-4">
-            <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="%" />
-            <span className="text-muted-foreground">% of</span>
-            <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="number" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div className="space-y-2">
+              <Label>What is</Label>
+              <div className="flex items-center">
+                <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 10" className="rounded-r-none" />
+                <span className="bg-muted text-muted-foreground h-10 flex items-center px-3 border border-input border-l-0 rounded-r-md">%</span>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label>of</Label>
+              <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 50" />
+            </div>
           </div>
         );
       case "isWhatPercent":
         return (
-          <div className="flex items-center gap-4">
-            <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="number" />
-            <span className="text-muted-foreground">is what % of</span>
-            <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="number" />
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>This value</Label>
+              <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 5" />
+            </div>
+            <div className="space-y-2">
+              <Label>is what percent of</Label>
+              <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 50" />
+            </div>
           </div>
         );
       case "percentageChange":
         return (
           <div className="flex items-center gap-4">
-            <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="from" />
-            <ArrowRight className="text-muted-foreground" />
-            <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="to" />
+            <div className="flex-1 space-y-2">
+                <Label>From</Label>
+                <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 100" />
+            </div>
+            <ArrowRight className="text-muted-foreground mt-7" />
+            <div className="flex-1 space-y-2">
+                <Label>To</Label>
+                <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 120" />
+            </div>
           </div>
         );
       default:
@@ -90,7 +109,7 @@ export default function PercentageCalculator() {
   };
   
   return (
-    <>
+    <div className="lg:col-span-2 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Percentage Calculator</CardTitle>
@@ -109,15 +128,13 @@ export default function PercentageCalculator() {
               </SelectContent>
             </Select>
           </div>
-          <div className="space-y-2">
-            <Label>Values</Label>
+          <div className="space-y-2 pt-4">
             {renderInputs()}
           </div>
         </CardContent>
       </Card>
       
-      <div className="sticky top-24">
-        <Card>
+      <Card>
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
@@ -135,7 +152,6 @@ export default function PercentageCalculator() {
             )}
           </CardContent>
         </Card>
-      </div>
-    </>
+    </div>
   );
 }

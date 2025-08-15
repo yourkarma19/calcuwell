@@ -35,69 +35,62 @@ export default function LoanEMICalculator() {
 
   return (
     <>
-      <Card>
-        <CardHeader>
-          <CardTitle>Enter Loan Details</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="principal">Loan Amount (₹)</Label>
-            <Input
-              id="principal"
-              type="number"
-              value={principal}
-              onChange={(e) => setPrincipal(Number(e.target.value))}
-              className="text-lg"
-            />
-            <Slider
-              value={[principal]}
-              onValueChange={(value) => setPrincipal(value[0])}
-              min={10000}
-              max={10000000}
-              step={10000}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
-            <Input
-              id="rate"
-              type="number"
-              value={rate}
-              onChange={(e) => setRate(Number(e.target.value))}
-              className="text-lg"
-            />
-            <Slider
-              value={[rate]}
-              onValueChange={(value) => setRate(value[0])}
-              min={1}
-              max={20}
-              step={0.1}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="tenure">Loan Tenure (Years)</Label>
-            <Input
-              id="tenure"
-              type="number"
-              value={tenure}
-              onChange={(e) => setTenure(Number(e.target.value))}
-              className="text-lg"
-            />
-            <Slider
-              value={[tenure]}
-              onValueChange={(value) => setTenure(value[0])}
-              min={1}
-              max={30}
-              step={1}
-            />
-          </div>
-        </CardContent>
-      </Card>
-
-      <div className="sticky top-24">
+      <div className="lg:col-span-2 space-y-6">
         <Card>
+          <CardHeader>
+            <CardTitle>Enter Loan Details</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <Label htmlFor="principal">Loan Amount</Label>
+                <span className="text-lg font-semibold">₹ {principal.toLocaleString("en-IN")}</span>
+              </div>
+              <Slider
+                id="principal"
+                value={[principal]}
+                onValueChange={(value) => setPrincipal(value[0])}
+                min={10000}
+                max={10000000}
+                step={10000}
+              />
+            </div>
+
+            <div className="space-y-2">
+               <div className="flex justify-between items-center">
+                <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
+                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              </div>
+              <Slider
+                id="rate"
+                value={[rate]}
+                onValueChange={(value) => setRate(value[0])}
+                min={1}
+                max={20}
+                step={0.05}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <Label htmlFor="tenure">Loan Tenure (Years)</Label>
+                <span className="text-lg font-semibold">{tenure} Years</span>
+              </div>
+              <Slider
+                id="tenure"
+                value={[tenure]}
+                onValueChange={(value) => setTenure(value[0])}
+                min={1}
+                max={30}
+                step={1}
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="lg:col-span-1">
+        <Card className="sticky top-24">
           <CardHeader>
             <CardTitle>Your Loan EMI</CardTitle>
           </CardHeader>

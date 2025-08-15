@@ -32,7 +32,7 @@ export default function BMICalculator() {
     if (unitSystem === "metric") {
       return height / 100;
     }
-    const totalInches = (height * 12) + Number(heightInches);
+    const totalInches = (Number(height) * 12) + Number(heightInches);
     return totalInches * 0.0254;
   }, [unitSystem, height, heightInches]);
 
@@ -64,71 +64,73 @@ export default function BMICalculator() {
 
   return (
     <>
-      <Card>
-        <CardHeader>
-          <CardTitle>Enter Your Details</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label>Unit System</Label>
-            <Select value={unitSystem} onValueChange={(value) => setUnitSystem(value as UnitSystem)}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select unit system" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="metric">Metric (kg, cm)</SelectItem>
-                <SelectItem value="imperial">Imperial (lbs, ft, in)</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-2">
-            <Label>Weight ({unitSystem === "metric" ? "kg" : "lbs"})</Label>
-            <Input
-              type="number"
-              value={weight}
-              onChange={(e) => setWeight(Number(e.target.value))}
-              placeholder={unitSystem === "metric" ? "e.g., 70" : "e.g., 154"}
-            />
-          </div>
-
-          {unitSystem === "metric" ? (
+      <div className="lg:col-span-2 space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Enter Your Details</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label>Height (cm)</Label>
+              <Label>Unit System</Label>
+              <Select value={unitSystem} onValueChange={(value) => setUnitSystem(value as UnitSystem)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select unit system" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="metric">Metric (kg, cm)</SelectItem>
+                  <SelectItem value="imperial">Imperial (lbs, ft, in)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label>Weight ({unitSystem === "metric" ? "kg" : "lbs"})</Label>
               <Input
                 type="number"
-                value={height}
-                onChange={(e) => setHeight(Number(e.target.value))}
-                placeholder="e.g., 175"
+                value={weight}
+                onChange={(e) => setWeight(Number(e.target.value))}
+                placeholder={unitSystem === "metric" ? "e.g., 70" : "e.g., 154"}
               />
             </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-4">
+
+            {unitSystem === "metric" ? (
               <div className="space-y-2">
-                <Label>Height (ft)</Label>
+                <Label>Height (cm)</Label>
                 <Input
                   type="number"
                   value={height}
                   onChange={(e) => setHeight(Number(e.target.value))}
-                  placeholder="e.g., 5"
+                  placeholder="e.g., 175"
                 />
               </div>
-              <div className="space-y-2">
-                <Label>(in)</Label>
-                <Input
-                  type="number"
-                  value={heightInches}
-                  onChange={(e) => setHeightInches(Number(e.target.value))}
-                  placeholder="e.g., 9"
-                />
+            ) : (
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Height (ft)</Label>
+                  <Input
+                    type="number"
+                    value={height}
+                    onChange={(e) => setHeight(Number(e.target.value))}
+                    placeholder="e.g., 5"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>(in)</Label>
+                  <Input
+                    type="number"
+                    value={heightInches}
+                    onChange={(e) => setHeightInches(Number(e.target.value))}
+                    placeholder="e.g., 9"
+                  />
+                </div>
               </div>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+            )}
+          </CardContent>
+        </Card>
+      </div>
 
-      <div className="sticky top-24">
-        <Card>
+      <div className="lg:col-span-1">
+        <Card className="sticky top-24">
           <CardHeader>
             <CardTitle>Your Result</CardTitle>
           </CardHeader>

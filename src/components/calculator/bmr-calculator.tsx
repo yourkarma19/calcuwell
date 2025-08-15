@@ -25,67 +25,69 @@ export default function BmrCalculator() {
 
   return (
     <>
-      <Card>
-        <CardHeader>
-          <CardTitle>Enter Your Details</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="age">Age (years)</Label>
-              <Input
-                id="age"
-                type="number"
-                value={age}
-                onChange={(e) => setAge(Number(e.target.value))}
-                placeholder="e.g., 25"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label>Gender</Label>
-              <RadioGroup
-                defaultValue={gender}
-                onValueChange={(val) => setGender(val as "male" | "female")}
-                className="flex items-center space-x-4 pt-2"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="male" id="male" />
-                  <Label htmlFor="male">Male</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="female" id="female" />
-                  <Label htmlFor="female">Female</Label>
-                </div>
-              </RadioGroup>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="height">Height (cm)</Label>
-              <Input
-                id="height"
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(Number(e.target.value))}
-                placeholder="e.g., 175"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="weight">Weight (kg)</Label>
-              <Input
-                id="weight"
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(Number(e.target.value))}
-                placeholder="e.g., 70"
-              />
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <div className="sticky top-24">
+      <div className="lg:col-span-2 space-y-6">
         <Card>
+          <CardHeader>
+            <CardTitle>Enter Your Details</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="age">Age (years)</Label>
+                <Input
+                  id="age"
+                  type="number"
+                  value={age}
+                  onChange={(e) => setAge(Number(e.target.value))}
+                  placeholder="e.g., 25"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label>Gender</Label>
+                <RadioGroup
+                  value={gender}
+                  onValueChange={(val) => setGender(val as "male" | "female")}
+                  className="flex items-center space-x-4 pt-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="male" id="male" />
+                    <Label htmlFor="male">Male</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="female" id="female" />
+                    <Label htmlFor="female">Female</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="height">Height (cm)</Label>
+                <Input
+                  id="height"
+                  type="number"
+                  value={height}
+                  onChange={(e) => setHeight(Number(e.target.value))}
+                  placeholder="e.g., 175"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="weight">Weight (kg)</Label>
+                <Input
+                  id="weight"
+                  type="number"
+                  value={weight}
+                  onChange={(e) => setWeight(Number(e.target.value))}
+                  placeholder="e.g., 70"
+                />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="lg:col-span-1">
+        <Card className="sticky top-24">
           <CardHeader>
             <CardTitle>Your BMR Result</CardTitle>
           </CardHeader>
