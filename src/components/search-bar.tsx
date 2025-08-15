@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -23,14 +22,7 @@ export function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const fuseRef = useRef<Fuse<SearchResult> | null>(null);
-
-  const performSearch = (searchQuery: string) => {
-    if (fuseRef.current) {
-      const searchResults = fuseRef.current.search(searchQuery);
-      setResults(searchResults.slice(0, 10)); // Limit to top 10 results
-      setIsOpen(true);
-    }
-  };
+  const [fuseLoaded, setFuseLoaded] = useState(false);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -40,28 +32,48 @@ export function SearchBar() {
         input?.focus();
       }
     };
-
-    if (query.length > 1 && !fuseRef.current) {
-      import('fuse.js').then((FuseModule) => {
-        fuseRef.current = new FuseModule.default(calculators, {
-          keys: ["name", "tags", "category"],
-          threshold: 0.3,
-          includeScore: true,
-        });
-        performSearch(query);
-      });
-    } else if (query.length > 1 && fuseRef.current) {
-      performSearch(query);
-    } else {
-      setResults([]);
-      setIsOpen(false);
-    }
     
     if (typeof window !== 'undefined') {
       document.addEventListener("keydown", down);
       return () => document.removeEventListener("keydown", down);
     }
-  }, [query]);
+  }, []);
+
+  const loadFuse = async () => {
+    if (!fuseRef.current) {
+      const FuseModule = await import('fuse.js');
+      fuseRef.current = new FuseModule.default(calculators, {
+        keys: ["name", "tags", "category"],
+        threshold: 0.3,
+        includeScore: true,
+      });
+    }
+    setFuseLoaded(true);
+  };
+  
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuery = e.target.value;
+    setQuery(newQuery);
+
+    if (newQuery.length > 1 && !fuseRef.current && !fuseLoaded) {
+      loadFuse();
+    } else if (newQuery.length > 1 && fuseRef.current) {
+        const searchResults = fuseRef.current.search(newQuery);
+        setResults(searchResults.slice(0, 10)); // Limit to top 10 results
+        setIsOpen(true);
+    } else {
+        setResults([]);
+        setIsOpen(false);
+    }
+  }
+  
+  useEffect(() => {
+      if(fuseLoaded && query.length > 1 && fuseRef.current) {
+        const searchResults = fuseRef.current.search(query);
+        setResults(searchResults.slice(0, 10));
+        setIsOpen(true);
+      }
+  }, [fuseLoaded, query]);
 
 
   const handleSelect = useCallback((slug: string) => {
@@ -78,7 +90,7 @@ export function SearchBar() {
             id="search-input"
             placeholder="Search calculators..."
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleInputChange}
             className="w-full pr-10"
             aria-label="Search calculators"
           />
