@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -12,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 
@@ -51,15 +52,15 @@ export default function PercentageCalculator() {
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
              <div className="space-y-2">
-              <Label>What is</Label>
+              <Label htmlFor="input-a">What is</Label>
               <div className="flex items-center">
-                <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 10" className="rounded-r-none" />
+                <Input data-testid="input-a" id="input-a" type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 10" className="rounded-r-none" />
                 <span className="bg-muted text-muted-foreground h-10 flex items-center px-3 border border-input border-l-0 rounded-r-md">%</span>
               </div>
             </div>
             <div className="space-y-2">
-              <Label>of</Label>
-              <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 50" />
+              <Label htmlFor="input-b">of</Label>
+              <Input data-testid="input-b" id="input-b" type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 50" />
             </div>
           </div>
         );
@@ -67,12 +68,12 @@ export default function PercentageCalculator() {
         return (
            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>This value</Label>
-              <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 5" />
+              <Label htmlFor="input-a">This value</Label>
+              <Input data-testid="input-a" id="input-a" type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 5" />
             </div>
             <div className="space-y-2">
-              <Label>is what percent of</Label>
-              <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 50" />
+              <Label htmlFor="input-b">is what percent of</Label>
+              <Input data-testid="input-b" id="input-b" type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 50" />
             </div>
           </div>
         );
@@ -80,13 +81,13 @@ export default function PercentageCalculator() {
         return (
           <div className="flex items-center gap-4">
             <div className="flex-1 space-y-2">
-                <Label>From</Label>
-                <Input type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 100" />
+                <Label htmlFor="input-a">From</Label>
+                <Input data-testid="input-a" id="input-a" type="number" value={valA} onChange={(e) => setValA(Number(e.target.value))} placeholder="e.g. 100" />
             </div>
             <ArrowRight className="text-muted-foreground mt-7" />
             <div className="flex-1 space-y-2">
-                <Label>To</Label>
-                <Input type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 120" />
+                <Label htmlFor="input-b">To</Label>
+                <Input data-testid="input-b" id="input-b" type="number" value={valB} onChange={(e) => setValB(Number(e.target.value))} placeholder="e.g. 120" />
             </div>
           </div>
         );
@@ -118,7 +119,7 @@ export default function PercentageCalculator() {
           <div className="space-y-2">
             <Label>Calculation Mode</Label>
             <Select value={mode} onValueChange={(v) => setMode(v as CalculationMode)}>
-              <SelectTrigger>
+              <SelectTrigger data-testid="mode-select-trigger">
                 <SelectValue placeholder="Select calculation mode" />
               </SelectTrigger>
               <SelectContent>
@@ -138,11 +139,11 @@ export default function PercentageCalculator() {
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" data-testid="result-container">
             {result !== null ? (
               <>
-                <p className="text-sm text-muted-foreground">{getResultLabel()}</p>
-                <p className="text-6xl font-bold font-headline text-primary my-2">
+                <p data-testid="result-label" className="text-sm text-muted-foreground">{getResultLabel()}</p>
+                <p data-testid="result-value" className="text-6xl font-bold font-headline text-primary my-2">
                   {Math.abs(result).toLocaleString(undefined, { maximumFractionDigits: 2 })}
                   {(mode === "isWhatPercent" || mode === "percentageChange") && <span className="text-4xl">%</span>}
                 </p>
