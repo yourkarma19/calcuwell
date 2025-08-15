@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
+import { cookies } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,14 +28,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = cookies().get("vite-ui-theme")?.value || "system";
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={theme} style={{colorScheme: theme}} suppressHydrationWarning>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme={theme}
           enableSystem
           disableTransitionOnChange
         >
