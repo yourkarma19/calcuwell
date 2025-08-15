@@ -60,7 +60,7 @@ export default function AgeCalculator() {
           <CardHeader>
             <CardTitle>Your Age</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" aria-live="polite">
             <div>
               <div className="flex justify-center items-baseline gap-2">
                   <p className="text-6xl font-bold font-headline text-primary">{age.years}</p>

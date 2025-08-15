@@ -93,6 +93,7 @@ export default function RomanNumeralConverter() {
                                 value={result.toString()} 
                                 readOnly 
                                 className="font-bold font-mono text-primary bg-primary/10 border-primary/20"
+                                aria-live="polite"
                             />
                         </div>
                     </div>

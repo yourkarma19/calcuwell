@@ -39,15 +39,19 @@ export default function ScientificCalculator() {
 
   const handleInput = (input: string) => {
     if (displayValue === "Error") {
-        setDisplayValue(isOperator(input) ? "0" : input);
-        setJustEvaluated(false);
+        resetCalculator();
+        if(!isOperator(input)) setDisplayValue(input);
         return;
     }
 
-    if (justEvaluated && !isOperator(input)) {
+    if (justEvaluated && !isOperator(input) && input !== '.') {
         setDisplayValue(input);
         setJustEvaluated(false);
         return;
+    }
+    
+    if (justEvaluated && (isOperator(input) || input === '.')) {
+      setJustEvaluated(false);
     }
 
     if (isOperator(input)) {
@@ -72,7 +76,6 @@ export default function ScientificCalculator() {
   
   const handleOperator = (op: string) => {
     if (displayValue !== "Error") {
-      // Prevent multiple operators in a row
       const lastChar = displayValue.slice(-1);
       if(isOperator(lastChar)) {
         setDisplayValue(prev => prev.slice(0, -1) + op);
@@ -89,44 +92,46 @@ export default function ScientificCalculator() {
   };
   
   const handleScientificInput = (func: string) => {
-      if (displayValue === "Error") {
+      if (displayValue === "Error" && func !== 'AC') {
         resetCalculator();
+        return;
       }
       let currentDisplay = (displayValue === "0" || displayValue === "Error" || justEvaluated) ? "" : displayValue;
       setJustEvaluated(false);
 
       const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
+      const value = parseFloat(displayValue);
 
       try {
         switch(func) {
             case '(': currentDisplay += '('; break;
             case ')': currentDisplay += ')'; break;
             case 'mc': setMemory(0); return;
-            case 'm+': setMemory(prev => prev + parseFloat(displayValue)); return;
-            case 'm-': setMemory(prev => prev - parseFloat(displayValue)); return;
+            case 'm+': setMemory(prev => prev + value); return;
+            case 'm-': setMemory(prev => prev - value); return;
             case 'mr': setDisplayValue(memory.toString()); return;
-            case 'x²': setDisplayValue(prev => Math.pow(parseFloat(prev), 2).toString()); setJustEvaluated(true); return;
-            case 'x³': setDisplayValue(prev => Math.pow(parseFloat(prev), 3).toString()); setJustEvaluated(true); return;
+            case 'x²': setDisplayValue(Math.pow(value, 2).toString()); setJustEvaluated(true); return;
+            case 'x³': setDisplayValue(Math.pow(value, 3).toString()); setJustEvaluated(true); return;
             case 'xʸ': currentDisplay += '**'; break;
-            case 'eˣ': setDisplayValue(prev => Math.exp(parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case '10ˣ': setDisplayValue(prev => Math.pow(10, parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case 'x!': setDisplayValue(prev => factorial(parseInt(prev, 10)).toString()); setJustEvaluated(true); return;
-            case '¹/x': setDisplayValue(prev => (1 / parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case '²√x': setDisplayValue(prev => Math.sqrt(parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case '³√x': setDisplayValue(prev => Math.cbrt(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'eˣ': setDisplayValue(Math.exp(value).toString()); setJustEvaluated(true); return;
+            case '10ˣ': setDisplayValue(Math.pow(10, value).toString()); setJustEvaluated(true); return;
+            case 'x!': setDisplayValue(factorial(value).toString()); setJustEvaluated(true); return;
+            case '¹/x': setDisplayValue((1 / value).toString()); setJustEvaluated(true); return;
+            case '²√x': if(value < 0) throw new Error(); setDisplayValue(Math.sqrt(value).toString()); setJustEvaluated(true); return;
+            case '³√x': setDisplayValue(Math.cbrt(value).toString()); setJustEvaluated(true); return;
             case 'ʸ√x': currentDisplay += '**(1/'; break;
-            case 'ln': setDisplayValue(prev => Math.log(parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case 'log₁₀': setDisplayValue(prev => Math.log10(parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case 'sin': setDisplayValue(prev => Math.sin(angleToRad(parseFloat(prev))).toString()); setJustEvaluated(true); return;
-            case 'cos': setDisplayValue(prev => Math.cos(angleToRad(parseFloat(prev))).toString()); setJustEvaluated(true); return;
-            case 'tan': setDisplayValue(prev => Math.tan(angleToRad(parseFloat(prev))).toString()); setJustEvaluated(true); return;
+            case 'ln': if(value <= 0) throw new Error(); setDisplayValue(Math.log(value).toString()); setJustEvaluated(true); return;
+            case 'log₁₀': if(value <= 0) throw new Error(); setDisplayValue(Math.log10(value).toString()); setJustEvaluated(true); return;
+            case 'sin': setDisplayValue(Math.sin(angleToRad(value)).toString()); setJustEvaluated(true); return;
+            case 'cos': setDisplayValue(Math.cos(angleToRad(value)).toString()); setJustEvaluated(true); return;
+            case 'tan': if(isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error(); setDisplayValue(Math.tan(angleToRad(value)).toString()); setJustEvaluated(true); return;
             case 'e': currentDisplay += Math.E.toString(); break;
             case 'EE': currentDisplay += 'e'; break;
             case 'Rad': setIsRadians(true); return;
             case 'deg': setIsRadians(false); return;
-            case 'sinh': setDisplayValue(prev => Math.sinh(parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case 'cosh': setDisplayValue(prev => Math.cosh(parseFloat(prev)).toString()); setJustEvaluated(true); return;
-            case 'tanh': setDisplayValue(prev => Math.tanh(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'sinh': setDisplayValue(Math.sinh(value).toString()); setJustEvaluated(true); return;
+            case 'cosh': setDisplayValue(Math.cosh(value).toString()); setJustEvaluated(true); return;
+            case 'tanh': setDisplayValue(Math.tanh(value).toString()); setJustEvaluated(true); return;
             case 'π': currentDisplay += Math.PI.toString(); break;
             case 'Rand':
                 if (isClient) {

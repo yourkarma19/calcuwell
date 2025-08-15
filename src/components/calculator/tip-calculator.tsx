@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -67,7 +68,7 @@ export default function TipCalculator() {
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
           <CardHeader><CardTitle>Your Split</CardTitle></CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
              <div>
                 <p className="text-sm text-muted-foreground">Amount per Person</p>
                 <p className="text-4xl font-bold font-headline text-primary">

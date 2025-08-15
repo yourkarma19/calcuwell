@@ -72,6 +72,11 @@ export default function BasicCalculator() {
   
   const handleOperator = (nextOperator: string) => {
     const inputValue = parseFloat(displayValue);
+
+    if (displayValue === "Error") {
+        resetCalculator();
+        return;
+    }
     
     if(operator && waitingForSecondOperand) {
         setOperator(nextOperator);
@@ -82,6 +87,11 @@ export default function BasicCalculator() {
       setFirstOperand(inputValue);
     } else if (operator) {
       const result = performCalculation();
+      if (typeof result === "string") {
+        setDisplayValue(result);
+        setJustEvaluated(true);
+        return;
+      }
       setDisplayValue(String(result));
       setFirstOperand(result);
     }
@@ -96,7 +106,10 @@ export default function BasicCalculator() {
 
       const currentValue = parseFloat(displayValue);
       const calculations: {[key: string]: (a: number, b: number) => number} = {
-        "/": (a, b) => a / b,
+        "/": (a, b) => {
+            if (b === 0) return Infinity;
+            return a / b;
+        },
         "*": (a, b) => a * b,
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
@@ -107,7 +120,7 @@ export default function BasicCalculator() {
   }
 
   const handleEquals = () => {
-    if(!operator || firstOperand === null) return;
+    if(!operator || firstOperand === null || justEvaluated) return;
     const result = performCalculation();
     setDisplayValue(String(result));
     setFirstOperand(null);
@@ -117,12 +130,14 @@ export default function BasicCalculator() {
   };
   
   const toggleSign = () => {
-    setDisplayValue(String(parseFloat(displayValue) * -1));
+    if(displayValue !== "Error") setDisplayValue(String(parseFloat(displayValue) * -1));
   };
   
   const inputPercent = () => {
-      const currentValue = parseFloat(displayValue);
-      setDisplayValue(String(currentValue / 100));
+       if(displayValue !== "Error") {
+            const currentValue = parseFloat(displayValue);
+            setDisplayValue(String(currentValue / 100));
+       }
   }
 
   const resetCalculator = () => {

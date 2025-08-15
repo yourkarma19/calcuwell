@@ -47,6 +47,9 @@ export default function TimeZoneConverter() {
 
     try {
       const [hours, minutes] = time.split(':').map(Number);
+      if(isNaN(hours) || isNaN(minutes) || hours > 23 || minutes > 59){
+        throw new Error("Invalid time format");
+      }
       
       const sourceDate = new Date(date);
       // Ensure we use the local date but set the time according to user input
@@ -119,7 +122,7 @@ export default function TimeZoneConverter() {
                    {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg"/>
+              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg" aria-live="polite"/>
             </div>
           </div>
         </CardContent>

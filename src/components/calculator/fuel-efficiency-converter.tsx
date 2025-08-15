@@ -65,6 +65,7 @@ export default function FuelEfficiencyConverter() {
                                 value={result} 
                                 readOnly 
                                 className="font-bold text-primary bg-primary/10 border-primary/20"
+                                aria-live="polite"
                             />
                         </div>
                     </div>

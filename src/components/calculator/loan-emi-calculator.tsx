@@ -25,7 +25,16 @@ export default function LoanEMICalculator() {
     const r = Number(rate);
     const t = Number(tenure);
 
-    if (p > 0 && r > 0 && t > 0) {
+    if (p > 0 && r >= 0 && t > 0) {
+      if (r === 0) {
+        const emiValue = p / (t * 12);
+        return {
+          emi: emiValue,
+          totalPayable: p,
+          totalInterest: 0,
+        };
+      }
+      
       const monthlyRate = r / 12 / 100;
       const numberOfMonths = t * 12;
       const emiValue =
@@ -93,7 +102,7 @@ export default function LoanEMICalculator() {
                 id="rate"
                 value={[rate]}
                 onValueChange={(value) => setRate(value[0])}
-                min={1}
+                min={0}
                 max={20}
                 step={0.05}
               />
@@ -118,7 +127,7 @@ export default function LoanEMICalculator() {
         
         <Card>
             <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-            <CardContent className="h-96">
+            <CardContent className="h-[24rem]">
                 <ChartContainer config={chartConfig} className="w-full h-full">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
@@ -147,7 +156,7 @@ export default function LoanEMICalculator() {
           <CardHeader>
             <CardTitle>Your Loan EMI</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
              <div>
                 <p className="text-sm text-muted-foreground">Monthly EMI</p>
                 <p className="text-4xl font-bold font-headline text-primary">
