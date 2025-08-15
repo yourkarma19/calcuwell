@@ -48,18 +48,12 @@ export function SearchBar() {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setIsOpen((open) => {
-            const newState = !open;
-            if (newState) {
-                initFuse();
-            }
-            return newState;
-        });
+        setIsOpen((open) => !open);
       }
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, [initFuse]);
+  }, []);
 
   const handleInputChange = (newQuery: string) => {
     setQuery(newQuery);
@@ -77,6 +71,12 @@ export function SearchBar() {
     setQuery("");
     setIsOpen(false);
   }, [router]);
+  
+  useEffect(() => {
+    if (isOpen && !fuseRef.current) {
+      initFuse();
+    }
+  }, [isOpen, initFuse]);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -84,10 +84,6 @@ export function SearchBar() {
         <Button
           variant="outline"
           className="w-full justify-between text-muted-foreground md:w-64"
-          onClick={() => {
-              setIsOpen(true);
-              initFuse();
-          }}
          >
           <span>Search calculators...</span>
           <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">
