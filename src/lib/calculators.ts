@@ -74,6 +74,11 @@ import FractionCalculator from '@/components/calculator/fraction-calculator';
 import CircleCalculator from '@/components/calculator/circle-calculator';
 import CurrencyConverter from '@/components/calculator/currency-converter';
 import TipCalculator from '@/components/calculator/tip-calculator';
+import CompoundInterestCalculator from '@/components/calculator/compound-interest-calculator';
+import DiscountCalculator from '@/components/calculator/discount-calculator';
+import PregnancyDueDateCalculator from '@/components/calculator/pregnancy-due-date-calculator';
+import RectangleAreaCalculator from '@/components/calculator/rectangle-area-calculator';
+import TimeConverter from '@/components/calculator/time-converter';
 
 
 export const categories: Category[] = [
@@ -340,7 +345,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate compound interest over time.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: PlaceholderCalculator,
+    component: CompoundInterestCalculator,
+    formula: 'A = P(1 + r/n)^(nt)'
   },
   {
     slug: 'savings-calculator',
@@ -412,7 +418,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the final price after a discount.',
     category: 'Finance',
     Icon: Tag,
-    component: PlaceholderCalculator,
+    component: DiscountCalculator,
   },
   {
     slug: 'salary-calculator',
@@ -499,6 +505,7 @@ export const calculators: Calculator[] = [
     category: 'Health',
     Icon: Percent,
     component: BodyFatPercentageCalculator,
+    formula: "U.S. Navy Method"
   },
   {
     slug: 'lean-body-mass-calculator',
@@ -522,7 +529,8 @@ export const calculators: Calculator[] = [
     description: 'Estimate your pregnancy due date.',
     category: 'Health',
     Icon: Baby,
-    component: PlaceholderCalculator,
+    component: PregnancyDueDateCalculator,
+    formula: "Naegele's rule"
   },
   {
     slug: 'ovulation-calculator',
@@ -636,7 +644,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between seconds, minutes, hours, and days.',
     category: 'Conversions',
     Icon: Clock,
-    component: PlaceholderCalculator,
+    component: TimeConverter,
   },
   {
     slug: 'energy-converter',
@@ -861,7 +869,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate the area of a rectangle or square.',
     category: 'Geometry & Engineering',
     Icon: Ruler,
-    component: PlaceholderCalculator,
+    component: RectangleAreaCalculator,
+    formula: "Area = Length * Width"
   },
   {
     slug: 'cylinder-volume-calculator',
