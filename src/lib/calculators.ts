@@ -102,6 +102,9 @@ import TimeZoneConverter from '@/components/calculator/time-zone-converter';
 import BasicCalculator from '@/components/calculator/basic-calculator';
 import PythagoreanTheoremCalculator from '@/components/calculator/pythagorean-theorem-calculator';
 import FactorialCalculator from '@/components/calculator/factorial-calculator';
+import ScientificCalculator from '@/components/calculator/scientific-calculator';
+import RetirementCalculator from '@/components/calculator/retirement-calculator';
+import DataStorageConverter from '@/components/calculator/data-storage-converter';
 
 
 export const categories: Category[] = [
@@ -171,7 +174,7 @@ export const calculators: Calculator[] = [
     description: 'Perform advanced scientific calculations.',
     category: 'Math',
     Icon: FlaskConical,
-    component: PlaceholderCalculator,
+    component: ScientificCalculator,
   },
   {
     slug: 'percentage-calculator',
@@ -386,7 +389,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: PlaceholderCalculator,
+    component: RetirementCalculator,
   },
   {
     slug: 'investment-return-calculator',
@@ -700,7 +703,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between KB, MB, GB, TB, and more.',
     category: 'Conversions',
     Icon: Database,
-    component: PlaceholderCalculator,
+    component: DataStorageConverter,
   },
   {
     slug: 'data-transfer-rate-converter',
