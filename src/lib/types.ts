@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import type { ComponentType, FC } from 'react';
+import type { ComponentType, FC, LazyExoticComponent } from 'react';
 
 export type CalculatorCategory = "Math" | "Finance" | "Health" | "Conversions" | "Date & Time" | "Programming" | "Geometry & Engineering" | "Miscellaneous";
 
@@ -11,7 +11,7 @@ export interface Calculator {
   Icon: LucideIcon;
   tags?: string[];
   formula?: string;
-  component: ComponentType;
+  component: LazyExoticComponent<ComponentType<any>>;
 }
 
 export interface Category {
