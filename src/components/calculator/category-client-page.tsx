@@ -3,16 +3,18 @@
 
 import { useState, useMemo } from "react";
 import { Calculator } from "@/lib/types";
-import { categories } from "@/lib/calculators";
+import { categories, calculators as allCalculators } from "@/lib/calculators";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+type StrippedCalculator = Omit<Calculator, 'component' | 'Icon'>;
 
 interface CategoryClientPageProps {
   name: string;
   slug: string;
   description: string;
-  calculators: Omit<Calculator, 'component'>[];
+  calculators: StrippedCalculator[];
 }
 
 export default function CategoryClientPage({ name, slug, description, calculators }: CategoryClientPageProps) {
@@ -22,16 +24,26 @@ export default function CategoryClientPage({ name, slug, description, calculator
     return categories.find(c => c.slug === slug)?.Icon;
   }, [slug]);
 
+  const calculatorsWithIcons = useMemo(() => {
+    return calculators.map(calc => {
+        const fullCalc = allCalculators.find(c => c.slug === calc.slug);
+        return {
+            ...calc,
+            Icon: fullCalc!.Icon,
+        }
+    })
+  }, [calculators]);
+
   const filteredCalculators = useMemo(() => {
     if (!filter) {
-        return calculators;
+        return calculatorsWithIcons;
     }
     
-    return calculators.filter((calculator) => 
+    return calculatorsWithIcons.filter((calculator) => 
         calculator.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-  }, [calculators, filter]);
+  }, [calculatorsWithIcons, filter]);
 
   if (!Icon) {
     return null; // Or some fallback UI

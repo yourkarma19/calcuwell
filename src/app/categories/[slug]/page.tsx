@@ -31,7 +31,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  const categoryCalculators = getCalculatorsByCategory(slug);
+  const categoryCalculators = getCalculatorsByCategory(slug).map(({ Icon, ...rest }) => rest);
 
   return (
     <CategoryClientPage 
