@@ -2,14 +2,22 @@
 
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
-function usePersistentState<T>(key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>] {
+function usePersistentState<T>(
+    key: string, 
+    defaultValue: T,
+    reviver?: (value: any) => T
+): [T, Dispatch<SetStateAction<T>>] {
     const [state, setState] = useState(() => {
         if (typeof window === 'undefined') {
             return defaultValue;
         }
         try {
             const storedValue = window.localStorage.getItem(key);
-            return storedValue ? JSON.parse(storedValue) : defaultValue;
+            if (!storedValue) return defaultValue;
+
+            const parsedValue = JSON.parse(storedValue);
+            return reviver ? reviver(parsedValue) : parsedValue;
+
         } catch (error) {
             console.error(`Error reading localStorage key “${key}”:`, error);
             return defaultValue;

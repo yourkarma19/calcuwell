@@ -27,7 +27,9 @@ export default function AngleConverter() {
     }, [value, isDegreesToRadians]);
 
     const handleSwap = () => {
-        setValue(result);
+        if(result) {
+            setValue(result);
+        }
         setIsDegreesToRadians(!isDegreesToRadians);
     };
 

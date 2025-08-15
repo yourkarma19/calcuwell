@@ -31,7 +31,9 @@ export default function FuelEfficiencyConverter() {
     }, [value, isMpgToL]);
 
     const handleSwap = () => {
-        setValue(result);
+        if(result) {
+            setValue(result);
+        }
         setIsMpgToL(!isMpgToL);
     };
 

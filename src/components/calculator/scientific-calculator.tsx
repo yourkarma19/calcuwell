@@ -29,13 +29,26 @@ export default function ScientificCalculator() {
   const [memory, setMemory] = useState(0);
   const [isRadians, setIsRadians] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [justEvaluated, setJustEvaluated] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   const handleInput = (input: string) => {
-    if (input === "=") {
+    if (displayValue === "Error") {
+        setDisplayValue(input);
+        return;
+    }
+    if (justEvaluated && !isOperator(input)) {
+        setDisplayValue(input);
+        setJustEvaluated(false);
+        return;
+    }
+
+    if (["/", "*", "-", "+"].includes(input)) {
+        handleOperator(input);
+    } else if (input === "=") {
       handleEquals();
     } else if (input === "AC") {
       resetCalculator();
@@ -52,17 +65,25 @@ export default function ScientificCalculator() {
         setDisplayValue(prev => prev + input);
       }
     }
+    setJustEvaluated(false);
   };
+  
+  const handleOperator = (op: string) => {
+    if (displayValue !== "Error") {
+      setDisplayValue(prev => prev + op);
+      setJustEvaluated(false);
+    }
+  }
 
   const handleBackspace = () => {
     setDisplayValue(prev => prev.length > 1 ? prev.slice(0, -1) : "0");
   };
   
   const handleScientificInput = (func: string) => {
-      let currentDisplay = displayValue === "0" || displayValue === "Error" ? "" : displayValue;
+      let currentDisplay = (displayValue === "0" || displayValue === "Error" || justEvaluated) ? "" : displayValue;
+      setJustEvaluated(false);
 
       const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
-      const radToAngle = (rad: number) => isRadians ? rad : rad * (180 / Math.PI);
 
       try {
         switch(func) {
@@ -72,32 +93,33 @@ export default function ScientificCalculator() {
             case 'm+': setMemory(prev => prev + parseFloat(displayValue)); return;
             case 'm-': setMemory(prev => prev - parseFloat(displayValue)); return;
             case 'mr': setDisplayValue(memory.toString()); return;
-            case 'x²': setDisplayValue(prev => Math.pow(parseFloat(prev), 2).toString()); return;
-            case 'x³': setDisplayValue(prev => Math.pow(parseFloat(prev), 3).toString()); return;
+            case 'x²': setDisplayValue(prev => Math.pow(parseFloat(prev), 2).toString()); setJustEvaluated(true); return;
+            case 'x³': setDisplayValue(prev => Math.pow(parseFloat(prev), 3).toString()); setJustEvaluated(true); return;
             case 'xʸ': currentDisplay += '**'; break;
-            case 'eˣ': setDisplayValue(prev => Math.exp(parseFloat(prev)).toString()); return;
-            case '10ˣ': setDisplayValue(prev => Math.pow(10, parseFloat(prev)).toString()); return;
-            case 'x!': setDisplayValue(prev => factorial(parseInt(prev)).toString()); return;
-            case '¹/x': setDisplayValue(prev => (1 / parseFloat(prev)).toString()); return;
-            case '²√x': setDisplayValue(prev => Math.sqrt(parseFloat(prev)).toString()); return;
-            case '³√x': setDisplayValue(prev => Math.cbrt(parseFloat(prev)).toString()); return;
+            case 'eˣ': setDisplayValue(prev => Math.exp(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case '10ˣ': setDisplayValue(prev => Math.pow(10, parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'x!': setDisplayValue(prev => factorial(parseInt(prev, 10)).toString()); setJustEvaluated(true); return;
+            case '¹/x': setDisplayValue(prev => (1 / parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case '²√x': setDisplayValue(prev => Math.sqrt(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case '³√x': setDisplayValue(prev => Math.cbrt(parseFloat(prev)).toString()); setJustEvaluated(true); return;
             case 'ʸ√x': currentDisplay += '**(1/'; break;
-            case 'ln': setDisplayValue(prev => Math.log(parseFloat(prev)).toString()); return;
-            case 'log₁₀': setDisplayValue(prev => Math.log10(parseFloat(prev)).toString()); return;
-            case 'sin': setDisplayValue(prev => Math.sin(angleToRad(parseFloat(prev))).toString()); return;
-            case 'cos': setDisplayValue(prev => Math.cos(angleToRad(parseFloat(prev))).toString()); return;
-            case 'tan': setDisplayValue(prev => Math.tan(angleToRad(parseFloat(prev))).toString()); return;
+            case 'ln': setDisplayValue(prev => Math.log(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'log₁₀': setDisplayValue(prev => Math.log10(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'sin': setDisplayValue(prev => Math.sin(angleToRad(parseFloat(prev))).toString()); setJustEvaluated(true); return;
+            case 'cos': setDisplayValue(prev => Math.cos(angleToRad(parseFloat(prev))).toString()); setJustEvaluated(true); return;
+            case 'tan': setDisplayValue(prev => Math.tan(angleToRad(parseFloat(prev))).toString()); setJustEvaluated(true); return;
             case 'e': currentDisplay += Math.E.toString(); break;
             case 'EE': currentDisplay += 'e'; break;
             case 'Rad': setIsRadians(true); return;
             case 'deg': setIsRadians(false); return;
-            case 'sinh': setDisplayValue(prev => Math.sinh(parseFloat(prev)).toString()); return;
-            case 'cosh': setDisplayValue(prev => Math.cosh(parseFloat(prev)).toString()); return;
-            case 'tanh': setDisplayValue(prev => Math.tanh(parseFloat(prev)).toString()); return;
+            case 'sinh': setDisplayValue(prev => Math.sinh(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'cosh': setDisplayValue(prev => Math.cosh(parseFloat(prev)).toString()); setJustEvaluated(true); return;
+            case 'tanh': setDisplayValue(prev => Math.tanh(parseFloat(prev)).toString()); setJustEvaluated(true); return;
             case 'π': currentDisplay += Math.PI.toString(); break;
             case 'Rand':
                 if (isClient) {
                     setDisplayValue(Math.random().toString());
+                    setJustEvaluated(true);
                 }
                 return;
             default: break;
@@ -109,8 +131,9 @@ export default function ScientificCalculator() {
   }
 
     const factorial = (n: number): number => {
-        if (n < 0) return NaN;
+        if (n < 0 || !Number.isInteger(n)) return NaN;
         if (n === 0 || n === 1) return 1;
+        if (n > 170) return Infinity;
         let result = 1;
         for (let i = 2; i <= n; i++) {
             result *= i;
@@ -122,7 +145,12 @@ export default function ScientificCalculator() {
   const handleEquals = () => {
     try {
         const result = new Function('return ' + displayValue)();
-        setDisplayValue(result.toString());
+        if (isNaN(result) || !isFinite(result)) {
+          setDisplayValue("Error");
+        } else {
+          setDisplayValue(result.toString());
+        }
+        setJustEvaluated(true);
     } catch (error) {
         setDisplayValue("Error");
     }
@@ -130,6 +158,7 @@ export default function ScientificCalculator() {
 
   const resetCalculator = () => {
     setDisplayValue("0");
+    setJustEvaluated(false);
   };
 
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
@@ -153,7 +182,7 @@ export default function ScientificCalculator() {
             handleEquals();
         } else if (key === 'Backspace') {
             handleBackspace();
-        } else if (key === 'Escape') {
+        } else if (key === 'Escape' || key.toLowerCase() === 'c') {
             resetCalculator();
         } else if (key === '(' || key === ')') {
             handleScientificInput(key);
@@ -164,7 +193,7 @@ export default function ScientificCalculator() {
     return () => {
         window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [displayValue]); // Re-add listener if displayValue changes, to use its latest state
+  }, [displayValue, isRadians]); // Re-add listener if state changes
 
   return (
     <div className="lg:col-span-3 max-w-md mx-auto">

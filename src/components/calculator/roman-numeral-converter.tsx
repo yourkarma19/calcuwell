@@ -39,6 +39,9 @@ const fromRoman = (str: string): number | string => {
       result += currentVal;
     }
   }
+  // Check if converting back gives the same string
+  if (toRoman(result) !== str) return "Invalid Roman Numeral";
+  
   return result;
 };
 
@@ -58,7 +61,9 @@ export default function RomanNumeralConverter() {
     }, [inputValue, isRomanToNumber]);
 
     const handleSwap = () => {
-        setInputValue(result.toString());
+        if (typeof result === 'number' || (typeof result === 'string' && !result.toLowerCase().includes('invalid'))) {
+            setInputValue(result.toString());
+        }
         setIsRomanToNumber(!isRomanToNumber);
     };
 

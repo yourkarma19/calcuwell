@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { differenceInYears, differenceInMonths, differenceInDays, subYears, subMonths } from "date-fns";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 
 export default function AgeCalculator() {
-  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', undefined);
+  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', undefined, (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<{ years: number; months: number; days: number } | null>(null);
 
   const handleCalculateAge = () => {
