@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import { type Calculator } from "@/lib/types";
-import { Button } from "./ui/button";
 
 type SearchResult = Omit<Calculator, 'component'>;
 
@@ -22,57 +21,41 @@ export function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const fuseRef = useRef<Fuse<SearchResult> | null>(null);
-  const [fuseLoaded, setFuseLoaded] = useState(false);
+
+  const loadFuse = useCallback(async () => {
+    if (fuseRef.current) return;
+    const FuseModule = await import('fuse.js');
+    fuseRef.current = new FuseModule.default(calculators, {
+      keys: ["name", "tags", "category"],
+      threshold: 0.3,
+      includeScore: true,
+    });
+  }, []);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        const input = document.querySelector("#search-input") as HTMLInputElement;
-        input?.focus();
+        document.getElementById("search-input")?.focus();
       }
     };
-    
-    if (typeof window !== 'undefined') {
-      document.addEventListener("keydown", down);
-      return () => document.removeEventListener("keydown", down);
-    }
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
   }, []);
 
-  const loadFuse = useCallback(async () => {
-    if (!fuseRef.current && !fuseLoaded) {
-      const FuseModule = await import('fuse.js');
-      fuseRef.current = new FuseModule.default(calculators, {
-        keys: ["name", "tags", "category"],
-        threshold: 0.3,
-        includeScore: true,
-      });
-      setFuseLoaded(true);
-    }
-  }, [fuseLoaded]);
-  
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
 
     if (newQuery.length > 1 && fuseRef.current) {
         const searchResults = fuseRef.current.search(newQuery);
-        setResults(searchResults.slice(0, 10)); // Limit to top 10 results
+        setResults(searchResults.slice(0, 10));
         setIsOpen(true);
     } else {
         setResults([]);
         setIsOpen(false);
     }
-  }
-  
-  useEffect(() => {
-      if(fuseLoaded && query.length > 1 && fuseRef.current) {
-        const searchResults = fuseRef.current.search(query);
-        setResults(searchResults.slice(0, 10));
-        setIsOpen(true);
-      }
-  }, [fuseLoaded, query]);
-
+  };
 
   const handleSelect = useCallback((slug: string) => {
     router.push(`/calculators/${slug}`);
@@ -105,7 +88,9 @@ export function SearchBar() {
               <li
                 key={item.slug}
                 onClick={() => handleSelect(item.slug)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSelect(item.slug)}
                 className="flex items-center gap-3 px-3 py-2 text-sm cursor-pointer hover:bg-accent rounded-md"
+                tabIndex={0}
               >
                 <item.Icon className="w-4 h-4 text-muted-foreground" />
                 <span>{item.name}</span>
