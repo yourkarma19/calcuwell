@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { categories, calculators } from "@/lib/calculators";
 import {
   Card,
@@ -9,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
+import ScientificCalculator from "@/components/calculator/scientific-calculator";
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);
@@ -23,15 +23,10 @@ export default function Home() {
           Your one-stop destination for every calculation you might need. Fast,
           accurate, and easy to use.
         </p>
-        <div className="mt-8">
-           <Image 
-            src="https://source.unsplash.com/random/1200x600/?scientific,calculator"
-            alt="An illustration of a scientific calculator"
-            width={1200}
-            height={600}
-            className="rounded-lg shadow-xl mx-auto"
-            data-ai-hint="scientific calculator"
-          />
+        <div className="mt-8 flex justify-center">
+          <div className="w-full max-w-md">
+            <ScientificCalculator />
+          </div>
         </div>
       </section>
 
