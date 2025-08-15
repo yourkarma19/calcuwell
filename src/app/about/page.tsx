@@ -31,6 +31,11 @@ export default function AboutPage() {
                  <p>
                     More than 90% of the calculators are based on well-known formulas or equations from textbooks, such as the mortgage calculator, BMI calculator, etc. If formulas are controversial, we aim to provide the results of all popular formulas. Calculators meant for amusement are based on internal formulas. The results of financial and health calculators were reviewed by professionals for accuracy.
                 </p>
+
+                <h2>Contact Us</h2>
+                <p>
+                    For any questions, feedback, or support, please don't hesitate to reach out to us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>. We appreciate your input!
+                </p>
             </div>
         </main>
     );
