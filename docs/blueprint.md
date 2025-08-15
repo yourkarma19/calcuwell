@@ -1,4 +1,4 @@
-# **App Name**: CalcuWell
+# **App Name**: CalcPro
 
 ## Core Features:
 

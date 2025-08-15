@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | CalcuWell",
-    description: "The privacy policy for CalcuWell, your ultimate calculator hub.",
+    title: "Privacy Policy | CalcPro",
+    description: "The privacy policy for CalcPro, your ultimate calculator hub.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcuWell ("us", "we", or "our") operates the CalcuWell.net website (the "Service"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
+                    CalcPro ("us", "we", or "our") operates the CalcPro.net website (the "Service"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
                 </p>
 
                 <p>

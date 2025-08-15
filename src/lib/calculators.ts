@@ -61,7 +61,7 @@ import {
 import type { Calculator, Category } from '@/lib/types';
 
 export const categories: Category[] = [
-  {
+ {
     name: "Math",
     slug: "math",
     description: "Solve mathematical problems, from basic to complex.",

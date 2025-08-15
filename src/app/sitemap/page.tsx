@@ -4,8 +4,8 @@ import { calculators, categories, getCalculatorsByCategory } from "@/lib/calcula
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Sitemap | CalcuWell",
-    description: "A complete list of all calculators available on CalcuWell, your ultimate calculator hub.",
+ title: "Sitemap | CalcPro",
+ description: "A complete list of all calculators available on CalcPro, your ultimate calculator hub.",
 };
 
 export default function SitemapPage() {

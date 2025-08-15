@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { slug } }: CalculatorPageProps
   }
 
   return {
-    title: `${calculator.name} | CalcuWell`,
+    title: `${calculator.name} | CalcPro`,
     description: calculator.description,
   };
 }

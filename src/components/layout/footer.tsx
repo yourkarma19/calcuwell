@@ -23,7 +23,7 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </div>
-        <p>&copy; 2024 - {currentYear} CalcuWell.net. All Rights Reserved.</p>
+        <p>&copy; 2024 - {currentYear} CalcPro.net. All Rights Reserved.</p>
       </div>
     </footer>
   );

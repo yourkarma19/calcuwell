@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "CalcuWell - Your Ultimate Calculator Hub",
+ title: "CalcPro - Your Ultimate Calculator Hub",
   description: "A fast, mobile-friendly web app with a wide range of calculators for finance, health, math, and more.",
 };
 

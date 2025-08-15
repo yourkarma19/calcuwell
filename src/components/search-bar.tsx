@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/popover";
 import { type Calculator } from "@/lib/types";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
+ import { Button } from "@/components/ui/button";
 
 type SearchResult = Omit<Calculator, 'component'>;
 

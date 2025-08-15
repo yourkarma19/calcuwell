@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   }
 
   return {
-    title: `${category.name} Calculators | CalcuWell`,
+    title: `${category.name} Calculators | CalcPro`,
     description: category.description,
   };
 }

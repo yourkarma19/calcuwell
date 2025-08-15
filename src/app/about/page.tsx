@@ -2,8 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | CalcuWell",
-    description: "Learn more about CalcuWell's mission to provide fast, free, and comprehensive online calculators.",
+    title: "About Us | CalcPro",
+    description: "Learn more about CalcPro's mission to provide fast, free, and comprehensive online calculators.",
 };
 
 export default function AboutPage() {
@@ -11,13 +11,13 @@ export default function AboutPage() {
         <main className="container mx-auto px-4 py-12 max-w-4xl">
             <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
-                    About CalcuWell
+                    About CalcPro
                 </h1>
             </div>
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcuWell's sole focus is to provide fast, comprehensive, convenient, and free online calculators in a plethora of areas. We are a group of IT professionals enthusiastic about creating quality free tools and content on the Internet.
+                    CalcPro's sole focus is to provide fast, comprehensive, convenient, and free online calculators in a plethora of areas. We are a group of IT professionals enthusiastic about creating quality free tools and content on the Internet.
                 </p>
 
                 <p>
@@ -25,7 +25,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                    We have coded and developed each calculator individually and put each one through strict, comprehensive testing. However, please inform us if you notice even the slightest error – your input is extremely valuable to us. While most calculators on CalcuWell are designed to be universally applicable for worldwide usage, some might be for specific regions.
+                    We have coded and developed each calculator individually and put each one through strict, comprehensive testing. However, please inform us if you notice even the slightest error – your input is extremely valuable to us. While most calculators on CalcPro are designed to be universally applicable for worldwide usage, some might be for specific regions.
                 </p>
                 
                  <p>

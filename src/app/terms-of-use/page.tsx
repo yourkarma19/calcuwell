@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { FileText } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Terms of Use | CalcuWell",
-    description: "The terms of use for CalcuWell, your ultimate calculator hub.",
+    title: "Terms of Use | CalcPro",
+    description: "The terms of use for CalcPro, your ultimate calculator hub.",
 };
 
 export default function TermsOfUsePage() {
@@ -19,7 +19,7 @@ export default function TermsOfUsePage() {
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <h2>Acceptance of Terms</h2>
                 <p>
-                    Welcome to CalcuWell.net (the "Website"). By using the Website in any way, you are agreeing to comply with these Terms of Use. Should you object to any term or condition of the Terms of Use or any guideline of the Website, your only recourse is to immediately discontinue use of the Website.
+                    Welcome to CalcPro.net (the "Website"). By using the Website in any way, you are agreeing to comply with these Terms of Use. Should you object to any term or condition of the Terms of Use or any guideline of the Website, your only recourse is to immediately discontinue use of the Website.
                 </p>
 
                 <h2>Changes to the Terms of Use</h2>
@@ -39,12 +39,12 @@ export default function TermsOfUsePage() {
 
                 <h2>Limitations of Liability</h2>
                 <p>
-                    UNDER NO CIRCUMSTANCES SHALL CALCUWELL BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, RESULTING FROM ANY ASPECT OF YOUR USE OF THE WEBSITE.
+                    UNDER NO CIRCUMSTANCES SHALL CALCPRO BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, RESULTING FROM ANY ASPECT OF YOUR USE OF THE WEBSITE.
                 </p>
 
                 <h2>General</h2>
                 <p>
-                    The Terms of Use constitute the entire agreement between you and CalcuWell and govern your use of the Website, superseding any prior agreements between you and CalcuWell.
+                    The Terms of Use constitute the entire agreement between you and CalcPro and govern your use of the Website, superseding any prior agreements between you and CalcPro.
                 </p>
             </div>
         </main>

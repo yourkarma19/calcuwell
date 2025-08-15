@@ -16,7 +16,7 @@ export default function Home() {
     <main className="container mx-auto px-4 py-8">
       <section className="text-center py-12">
         <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
-          CalcuWell
+          CalcPro
         </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
           Your one-stop destination for every calculation you might need. Fast,
