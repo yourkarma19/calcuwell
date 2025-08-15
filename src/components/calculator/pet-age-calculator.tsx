@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -34,6 +34,7 @@ export default function PetAgeCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Enter Your Pet's Details</CardTitle>
+            <CardDescription>Curious how old your furry friend is in human years? Select your pet type and enter their age to find out.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -63,6 +64,7 @@ export default function PetAgeCalculator() {
                 placeholder="e.g., 5"
               />
             </div>
+            <p className="text-xs text-muted-foreground pt-2">Note: This is a popular simplified method for estimating pet age. Actual aging can vary by breed and size.</p>
           </CardContent>
         </Card>
       </div>

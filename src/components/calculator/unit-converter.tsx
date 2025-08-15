@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -38,6 +38,7 @@ export default function UnitConverter() {
     const unitKeys = Object.keys(units[conversionType]);
     setFromUnit(unitKeys[0]);
     setToUnit(unitKeys[1]);
+    setValue("1");
   }, [conversionType]);
 
   const handleSwap = () => {
@@ -76,7 +77,8 @@ export default function UnitConverter() {
     <div className="lg:col-span-3">
       <Card>
         <CardHeader>
-          <CardTitle>Unit Converter</CardTitle>
+          <CardTitle>Universal Unit Converter</CardTitle>
+          <CardDescription>A versatile tool to convert between various units of measurement. Select a conversion type to get started.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">

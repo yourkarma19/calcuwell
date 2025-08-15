@@ -2,11 +2,11 @@
 
 import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowRightLeft } from "lucide-react";
+import { ArrowRightLeft, Info } from "lucide-react";
 import { Button } from "../ui/button";
 
 const currencies = {
@@ -41,12 +41,18 @@ export default function CurrencyConverter() {
       // Add other mocks as needed
     };
 
-    if (fromCurrency in mockRates) {
+    if (mockRates[fromCurrency]) {
         setRates(mockRates[fromCurrency]);
         setError(null);
     } else {
-        setError(`Could not fetch rates for ${fromCurrency}. Using mock data for USD.`);
-        setRates(mockRates.USD);
+        const fallbackRates = { ...mockRates.USD, [fromCurrency]: 1 };
+        Object.keys(fallbackRates).forEach(key => {
+            if (key !== fromCurrency) {
+                fallbackRates[key] = Math.random() * 100; // Randomizing for demo
+            }
+        });
+        setRates(fallbackRates);
+        setError(`Could not fetch rates for ${fromCurrency}. Using mock data.`);
     }
   }, [fromCurrency]);
   
@@ -64,13 +70,13 @@ export default function CurrencyConverter() {
   }, [amount, toCurrency, rates]);
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-4">
       <Card>
         <CardHeader>
           <CardTitle>Currency Converter</CardTitle>
+          <CardDescription>Convert amounts between different currencies. Enter an amount, select your currencies, and see the result.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {error && <p className="text-red-500 text-sm">{error}</p>}
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="w-full space-y-2">
               <Label htmlFor="from-amount">Amount</Label>
@@ -100,6 +106,14 @@ export default function CurrencyConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+            <Info className="w-5 h-5 mt-1 shrink-0" />
+            <div>
+                <p>Disclaimer: The exchange rates used in this calculator are for informational purposes only and are based on mock data. They do not reflect real-time market values. For actual transactions, please consult a financial institution.</p>
+            </div>
         </CardContent>
       </Card>
     </div>

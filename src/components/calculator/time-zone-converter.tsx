@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { ArrowRightLeft } from "lucide-react";
@@ -86,6 +86,7 @@ export default function TimeZoneConverter() {
       <Card>
         <CardHeader>
           <CardTitle>Time Zone Converter</CardTitle>
+          <CardDescription>Instantly convert the time from one timezone to another. Select the source and target timezones, and set a date and time to see the conversion.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col md:flex-row items-end gap-4">

@@ -2,9 +2,10 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Info } from "lucide-react";
 
 // Note: In a real-world application, this data would come from an API.
 const MOCK_INFLATION_RATES: { [year: number]: number } = {
@@ -58,6 +59,7 @@ export default function InflationCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Inflation Calculator</CardTitle>
+            <CardDescription>Calculate the change in purchasing power of a certain amount of money between two years.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -84,6 +86,14 @@ export default function InflationCalculator() {
               </div>
             </div>
           </CardContent>
+        </Card>
+         <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p>This calculator uses historical mock inflation data for demonstration. In a real-world scenario, this data would be fetched from a reliable economic data source.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

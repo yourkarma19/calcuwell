@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,7 @@ import { ArrowRightLeft } from "lucide-react";
 
 // Conversion logic
 const toRoman = (num: number): string => {
-  if (num < 1 || num > 3999) return "Invalid";
+  if (num < 1 || num > 3999 || !Number.isInteger(num)) return "Invalid Input";
   const val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   const rom = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
   let result = "";
@@ -22,16 +22,19 @@ const toRoman = (num: number): string => {
   return result;
 };
 
-const fromRoman = (str: string): number => {
+const fromRoman = (str: string): number | string => {
   const romanMap: { [key: string]: number } = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1};
   let result = 0;
   for (let i = 0; i < str.length; i++) {
-    const current = romanMap[str[i]];
-    const next = romanMap[str[i + 1]];
-    if (next && current < next) {
-      result -= current;
+    const currentVal = romanMap[str[i]];
+    const nextVal = romanMap[str[i + 1]];
+
+    if(!currentVal) return "Invalid Roman Numeral";
+
+    if (nextVal && currentVal < nextVal) {
+      result -= currentVal;
     } else {
-      result += current;
+      result += currentVal;
     }
   }
   return result;
@@ -60,7 +63,10 @@ export default function RomanNumeralConverter() {
     return (
         <div className="lg:col-span-3">
             <Card>
-                <CardHeader><CardTitle>Roman Numeral Converter</CardTitle></CardHeader>
+                <CardHeader>
+                    <CardTitle>Roman Numeral Converter</CardTitle>
+                    <CardDescription>Convert numbers (1-3999) to Roman numerals and back. Use the swap button to change the conversion direction.</CardDescription>
+                </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         <div className="w-full space-y-2">

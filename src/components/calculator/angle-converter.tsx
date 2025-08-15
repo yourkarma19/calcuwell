@@ -1,8 +1,7 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -36,7 +35,10 @@ export default function AngleConverter() {
     return (
         <div className="lg:col-span-3">
             <Card>
-                <CardHeader><CardTitle>Angle Converter</CardTitle></CardHeader>
+                <CardHeader>
+                    <CardTitle>Angle Converter</CardTitle>
+                    <CardDescription>Quickly convert angle values between degrees and radians. Use the swap button to change the conversion direction.</CardDescription>
+                </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         <div className="w-full space-y-2">

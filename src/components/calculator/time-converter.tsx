@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -53,6 +53,7 @@ export default function TimeConverter() {
       <Card>
         <CardHeader>
           <CardTitle>Time Converter</CardTitle>
+          <CardDescription>Convert between various units of time, from seconds to years. Note that 'month' and 'year' are average approximations.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col md:flex-row items-center gap-4">

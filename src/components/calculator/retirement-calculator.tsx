@@ -2,9 +2,10 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Info } from "lucide-react";
 
 export default function RetirementCalculator() {
   const [currentAge, setCurrentAge] = usePersistentState("ret-current-age", 30);
@@ -50,7 +51,10 @@ export default function RetirementCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Retirement Planning Details</CardTitle></CardHeader>
+          <CardHeader>
+              <CardTitle>Retirement Planning Details</CardTitle>
+              <CardDescription>Adjust the sliders to see how different factors can impact your retirement savings projection.</CardDescription>
+            </CardHeader>
           <CardContent className="space-y-6 pt-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -90,6 +94,14 @@ export default function RetirementCalculator() {
               <span className="text-sm font-medium">{lifeExpectancy} years</span>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p>This calculator uses the <span className="font-semibold text-foreground">4% Rule</span> as a simple model to estimate your required savings goal (25x your desired annual income). This is a common guideline, but your actual needs may vary.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

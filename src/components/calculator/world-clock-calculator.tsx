@@ -57,7 +57,7 @@ export default function WorldClock() {
       <Card>
         <CardHeader>
           <CardTitle>World Clock</CardTitle>
-          <CardDescription>Compare times across major cities.</CardDescription>
+          <CardDescription>View the current time and date in major cities around the world. The times update automatically every second.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

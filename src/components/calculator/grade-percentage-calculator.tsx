@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -33,7 +33,8 @@ export default function GradePercentageCalculator() {
       <div className="lg:col-span-2 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Enter Your Scores</CardTitle>
+            <CardTitle>Calculate Your Grade</CardTitle>
+            <CardDescription>Enter the points you earned and the total possible points to find your percentage and letter grade.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -77,6 +78,7 @@ export default function GradePercentageCalculator() {
             <div>
               <p className="text-sm text-muted-foreground">Letter Grade</p>
               <p className="text-3xl font-semibold">{letterGrade}</p>
+              <p className="text-xs text-muted-foreground">(Based on a standard scale)</p>
             </div>
           </CardContent>
         </Card>

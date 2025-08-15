@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -46,6 +46,7 @@ export default function PythagoreanTheoremCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Pythagorean Theorem Calculator</CardTitle>
+            <CardDescription>For a right-angled triangle, find the length of a missing side (a, b, or c) using the formula a² + b² = c².</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -75,9 +76,12 @@ export default function PythagoreanTheoremCalculator() {
       </div>
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
-          <CardHeader><CardTitle>Equation</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Result</CardTitle></CardHeader>
           <CardContent className="text-center">
-            <p className="text-3xl font-mono text-primary">a² + b² = c²</p>
+            <p className="text-sm text-muted-foreground">The length of the missing side is:</p>
+            <p className="text-5xl font-bold font-headline text-primary my-2">
+                {result !== null ? result.toFixed(4) : "Invalid"}
+            </p>
           </CardContent>
         </Card>
       </div>

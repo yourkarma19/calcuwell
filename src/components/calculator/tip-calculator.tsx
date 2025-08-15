@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -31,12 +31,17 @@ export default function TipCalculator() {
     };
 
   }, [bill, tipPercentage, people]);
+  
+  const formatCurrency = (value: number) => `₹${value.toFixed(2)}`;
 
   return (
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Enter Bill Details</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Tip Calculator</CardTitle>
+            <CardDescription>Calculate the tip and split the bill between any number of people.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
                 <Label htmlFor="bill">Bill Amount</Label>
@@ -66,17 +71,17 @@ export default function TipCalculator() {
              <div>
                 <p className="text-sm text-muted-foreground">Amount per Person</p>
                 <p className="text-4xl font-bold font-headline text-primary">
-                    ${perPersonAmount.toFixed(2)}
+                    {formatCurrency(perPersonAmount)}
                 </p>
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-muted-foreground">Tip Amount</p>
-                  <p className="font-semibold">${tipAmount.toFixed(2)}</p>
+                  <p className="font-semibold">{formatCurrency(tipAmount)}</p>
                 </div>
                 <div>
                   <p className="text-muted-foreground">Total Bill</p>
-                  <p className="font-semibold">${totalAmount.toFixed(2)}</p>
+                  <p className="font-semibold">{formatCurrency(totalAmount)}</p>
                 </div>
             </div>
           </CardContent>

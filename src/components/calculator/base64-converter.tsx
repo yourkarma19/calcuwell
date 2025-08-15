@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -25,21 +24,24 @@ export default function Base64Converter() {
     
     const encode = () => {
         try {
-            const encoded = btoa(textInput);
+            // btoa can fail on non-latin characters.
+            // A more robust solution would handle unicode properly.
+            const encoded = btoa(unescape(encodeURIComponent(textInput)));
             setBase64Input(encoded);
             setError(null);
         } catch (e) {
-            setError("Invalid text for Base64 encoding.");
+            setError("Invalid text for Base64 encoding. Ensure it's valid UTF-8.");
         }
     };
     
     const decode = () => {
         try {
-            const decoded = atob(base64Input);
+            // atob can fail on invalid base64 strings
+            const decoded = decodeURIComponent(escape(atob(base64Input)));
             setTextInput(decoded);
             setError(null);
         } catch (e) {
-            setError("Invalid Base64 string.");
+            setError("Invalid Base64 string. Check for correct padding and characters.");
         }
     }
 
@@ -48,11 +50,11 @@ export default function Base64Converter() {
             <Card>
                 <CardHeader>
                     <CardTitle>Base64 Encoder / Decoder</CardTitle>
-                    <CardDescription>Convert text to Base64 and back.</CardDescription>
+                    <CardDescription>Convert text to its Base64 representation and back. This tool supports UTF-8 characters for robust encoding and decoding.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="text-input">Text</Label>
+                        <Label htmlFor="text-input">Text (UTF-8)</Label>
                         <Textarea
                             id="text-input"
                             value={textInput}

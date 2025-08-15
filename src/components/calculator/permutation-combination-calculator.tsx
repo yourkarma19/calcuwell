@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 // Helper function to calculate factorial
 const factorial = (n: number): number => {
-  if (n < 0) return NaN;
+  if (n < 0 || n > 170) return Infinity; // Prevent overflow
   if (n === 0) return 1;
   let result = 1;
   for (let i = 2; i <= n; i++) {
@@ -34,16 +34,16 @@ export default function PermutationCombinationCalculator() {
     const rFact = factorial(r);
     const nMinusRFact = factorial(n - r);
     
-    if (isNaN(nFact) || isNaN(rFact) || isNaN(nMinusRFact)) {
-      return { permutations: "Calculation overflow", combinations: "Calculation overflow" };
+    if (!isFinite(nFact) || !isFinite(rFact) || !isFinite(nMinusRFact)) {
+      return { permutations: "Overflow", combinations: "Overflow" };
     }
 
     const p = nFact / nMinusRFact;
     const c = p / rFact;
 
     return {
-      permutations: p.toLocaleString(),
-      combinations: c.toLocaleString(),
+      permutations: isFinite(p) ? p.toLocaleString() : "Overflow",
+      combinations: isFinite(c) ? c.toLocaleString() : "Overflow",
     };
   }, [totalItems, chosenItems]);
 
@@ -53,6 +53,11 @@ export default function PermutationCombinationCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Permutations & Combinations</CardTitle>
+            <CardDescription>
+                Calculate the number of ways to choose 'r' items from a set of 'n' items. <br />
+                - <span className="font-semibold">Permutation (nPr):</span> Order matters. <br />
+                - <span className="font-semibold">Combination (nCr):</span> Order does not matter.
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">

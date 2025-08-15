@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -38,11 +38,11 @@ export default function RatioCalculator() {
   return (
     <div className="lg:col-span-3 space-y-6">
       <Card>
-        <CardHeader><CardTitle>Ratio Calculator</CardTitle></CardHeader>
+        <CardHeader>
+            <CardTitle>Ratio Calculator</CardTitle>
+            <CardDescription>Enter three values in the proportion A : B = C : D to solve for the missing value. Also simplifies the A : B ratio.</CardDescription>
+        </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Enter three values to solve for the fourth in the proportion A : B = C : D.
-          </p>
           <div className="flex items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
               <Label htmlFor="valA">A</Label>
@@ -60,15 +60,15 @@ export default function RatioCalculator() {
             </div>
             <span className="text-2xl mt-6">:</span>
              <div className="flex flex-col items-center gap-1">
-               <Label htmlFor="valD">D</Label>
-              <Input id="valD" value={resultD} readOnly className="w-24 text-center bg-primary/10 border-primary/20" />
+               <Label htmlFor="valD">D (Result)</Label>
+              <Input id="valD" value={resultD} readOnly className="w-24 text-center bg-primary/10 border-primary/20 font-bold" />
             </div>
           </div>
         </CardContent>
       </Card>
       
       <Card>
-        <CardHeader><CardTitle>Simplified Ratio</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Simplified Ratio (A : B)</CardTitle></CardHeader>
         <CardContent className="text-center">
             <p className="text-4xl font-bold font-headline text-primary">
                 {simplifiedA} : {simplifiedB}

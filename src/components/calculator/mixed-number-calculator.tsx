@@ -26,15 +26,18 @@ export default function MixedNumberCalculator() {
 
     const improperFraction = useMemo(() => {
         if (denominator === 0) return { num: "Invalid", den: "Denominator" };
-        return toImproper(whole, numerator, denominator);
+        const w = Number(whole) || 0;
+        const n = Number(numerator) || 0;
+        const d = Number(denominator) || 1;
+        return toImproper(w, n, d);
     }, [whole, numerator, denominator]);
 
     return (
         <div className="lg:col-span-3">
             <Card>
                 <CardHeader>
-                    <CardTitle>Mixed Number Calculator</CardTitle>
-                    <CardDescription>Convert mixed numbers to improper fractions. More operations coming soon.</CardDescription>
+                    <CardTitle>Mixed Number to Improper Fraction</CardTitle>
+                    <CardDescription>Convert a mixed number (a whole number and a fraction) into an improper fraction. More operations coming soon.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <Label>Enter Mixed Number</Label>
@@ -65,7 +68,7 @@ export default function MixedNumberCalculator() {
                         </div>
                     </div>
                     <div className="pt-4">
-                        <h3 className="text-muted-foreground">Improper Fraction Equivalent</h3>
+                        <h3 className="text-muted-foreground font-semibold">Improper Fraction Equivalent</h3>
                         <div className="flex items-center gap-4 text-3xl font-bold">
                             <p className="text-primary font-headline">
                                 {improperFraction.num} / {improperFraction.den}

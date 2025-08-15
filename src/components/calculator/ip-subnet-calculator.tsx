@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { AlertCircle } from "lucide-react";
 
 const ipToLong = (ip: string): number => {
   return ip.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;
@@ -21,7 +23,7 @@ export default function IpSubnetCalculator() {
 
   const subnetInfo = useMemo(() => {
     try {
-      if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ipAddress)) throw new Error("Invalid IP");
+      if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ipAddress)) throw new Error("Invalid IP Address Format");
 
       const ipLong = ipToLong(ipAddress);
       const mask = -1 << (32 - cidr);
@@ -44,8 +46,8 @@ export default function IpSubnetCalculator() {
         wildcardMask: longToIp(~mask),
         error: null
       };
-    } catch (e) {
-      return { error: "Invalid IP Address or CIDR" };
+    } catch (e: any) {
+      return { error: e.message || "Invalid IP Address or CIDR" };
     }
   }, [ipAddress, cidr]);
 
@@ -54,7 +56,7 @@ export default function IpSubnetCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>IP Subnet Calculator</CardTitle>
-          <CardDescription>Calculate subnet details from an IP address and CIDR mask.</CardDescription>
+          <CardDescription>Calculate subnet details from an IP address and CIDR mask. This tool helps in network planning and understanding IP address allocation.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -74,7 +76,11 @@ export default function IpSubnetCalculator() {
       </Card>
       
       {subnetInfo.error ? (
-        <p className="text-destructive text-center">{subnetInfo.error}</p>
+        <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>{subnetInfo.error}</AlertDescription>
+        </Alert>
       ) : (
         <Card>
           <CardHeader><CardTitle>Subnet Details</CardTitle></CardHeader>

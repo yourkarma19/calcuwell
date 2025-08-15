@@ -2,10 +2,11 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Info } from "lucide-react";
 
 // Emission factors (kg CO2e). Simplified for demonstration.
 const emissionFactors = {
@@ -44,7 +45,10 @@ export default function CarbonFootprintCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Estimate Your Monthly Footprint</CardTitle></CardHeader>
+          <CardHeader>
+              <CardTitle>Estimate Your Monthly Footprint</CardTitle>
+              <CardDescription>Get a rough estimate of your monthly carbon footprint based on your daily commute, energy use, and diet.</CardDescription>
+            </CardHeader>
           <CardContent className="space-y-4">
             <h3 className="font-semibold">Daily Commute</h3>
             <div className="grid grid-cols-2 gap-4">
@@ -85,6 +89,14 @@ export default function CarbonFootprintCalculator() {
               </Select>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p>Disclaimer: This is a simplified educational tool. Carbon footprint calculations are complex and depend on many factors not included here, such as the specific energy grid mix and supply chain emissions.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

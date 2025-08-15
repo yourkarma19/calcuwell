@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Info } from "lucide-react";
 
 type FormulaType = "base-height" | "sss" | "sas"; // SSS: 3 sides, SAS: 2 sides and angle between them
 
@@ -21,17 +22,22 @@ export default function TriangleAreaCalculator() {
 
   const [angleC, setAngleC] = usePersistentState("triangle-angleC", 60);
 
-  const { area, perimeter } = useMemo(() => {
-    let a=0, p=0;
+  const { area, perimeter, error } = useMemo(() => {
+    let a=0, p=0, err=null;
 
     if (formula === "base-height") {
       a = (base * height) / 2;
       p = NaN; // Perimeter cannot be determined from base and height alone
     } else if (formula === "sss") {
-      const s = (sideA + sideB + sideC) / 2;
-      if (s <= sideA || s <= sideB || s <= sideC) a = NaN; // Not a valid triangle
-      else a = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
-      p = sideA + sideB + sideC;
+      // Triangle inequality theorem
+      if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA) {
+        err = "The given sides do not form a valid triangle.";
+        a = NaN; p = NaN;
+      } else {
+        const s = (sideA + sideB + sideC) / 2; // semi-perimeter
+        a = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)); // Heron's formula
+        p = sideA + sideB + sideC;
+      }
     } else if (formula === "sas") {
       const angleRad = (angleC * Math.PI) / 180;
       a = 0.5 * sideA * sideB * Math.sin(angleRad);
@@ -40,23 +46,26 @@ export default function TriangleAreaCalculator() {
       p = sideA + sideB + c;
     }
 
-    return { area: a, perimeter: p };
+    return { area: a, perimeter: p, error: err };
   }, [formula, base, height, sideA, sideB, sideC, angleC]);
 
   return (
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Enter Triangle Dimensions</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Triangle Area & Perimeter Calculator</CardTitle>
+            <CardDescription>Calculate triangle properties using different formulas. Choose the method based on the values you know.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label>Formula Type</Label>
               <Select value={formula} onValueChange={v => setFormula(v as FormulaType)}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="base-height">Base & Height</SelectItem>
-                  <SelectItem value="sss">3 Sides (SSS)</SelectItem>
-                  <SelectItem value="sas">2 Sides & Angle (SAS)</SelectItem>
+                  <SelectItem value="base-height">Base & Height (Area = 0.5 * b * h)</SelectItem>
+                  <SelectItem value="sss">3 Sides (Heron's Formula)</SelectItem>
+                  <SelectItem value="sas">2 Sides & Included Angle (Area = 0.5 * a * b * sin(C))</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -82,6 +91,12 @@ export default function TriangleAreaCalculator() {
                 <div className="space-y-2"><Label>Side B</Label><Input type="number" value={sideB} onChange={e => setSideB(Number(e.target.value))} /></div>
                 <div className="space-y-2"><Label>Angle (deg)</Label><Input type="number" value={angleC} onChange={e => setAngleC(Number(e.target.value))} /></div>
               </div>
+            )}
+             {error && (
+                <div className="pt-2 flex items-start gap-2 text-sm text-destructive">
+                    <Info className="w-5 h-5 shrink-0" />
+                    <span>{error}</span>
+                </div>
             )}
           </CardContent>
         </Card>

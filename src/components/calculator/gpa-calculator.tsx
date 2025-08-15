@@ -20,9 +20,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { Info } from "lucide-react";
 
 const gradePoints: { [key: string]: number } = {
-  A: 4.0, "A-": 3.7, B: 3.3, "B+": 3.0, "B-": 2.7, C: 2.3, "C+": 2.0, "C-": 1.7, D: 1.3, "D+": 1.0, F: 0.0,
+  A: 4.0, "A-": 3.7, "B+": 3.3, B: 3.0, "B-": 2.7, "C+": 2.3, C: 2.0, "C-": 1.7, "D+": 1.3, D: 1.0, F: 0.0,
 };
 
 type FormValues = {
@@ -37,7 +38,7 @@ export default function GpaCalculator() {
   const [gpa, setGpa] = useState<number | null>(null);
   const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
-      courses: [{ name: "", grade: "A", credits: 3 }],
+      courses: [{ name: "Example Course", grade: "A", credits: 3 }],
     },
   });
 
@@ -73,7 +74,7 @@ export default function GpaCalculator() {
             <CardTitle>GPA Calculator</CardTitle>
             <CardDescription>
               Enter your courses, grades, and credit hours to calculate your
-              GPA.
+              Grade Point Average.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -133,6 +134,14 @@ export default function GpaCalculator() {
               </div>
             </form>
           </CardContent>
+        </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p><span className="font-semibold text-foreground">How it's calculated:</span> GPA is the sum of (Grade Points × Credit Hours) for all courses, divided by the total number of Credit Hours.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
 

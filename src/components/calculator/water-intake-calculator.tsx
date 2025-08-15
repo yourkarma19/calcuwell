@@ -1,13 +1,13 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Info } from "lucide-react";
 
 const activityLevels = {
   sedentary: 1.0,
@@ -50,7 +50,10 @@ export default function WaterIntakeCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Enter Your Details</CardTitle></CardHeader>
+          <CardHeader>
+              <CardTitle>Daily Water Intake Calculator</CardTitle>
+              <CardDescription>Estimate your recommended daily water intake based on your age, weight, and activity level.</CardDescription>
+            </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -83,6 +86,14 @@ export default function WaterIntakeCalculator() {
               </Select>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p>This is a general guideline. Individual needs can vary based on climate, health conditions, and diet. Always consult a healthcare professional for personalized advice.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
 

@@ -1,9 +1,8 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -11,19 +10,23 @@ export default function CylinderVolumeCalculator() {
   const [radius, setRadius] = usePersistentState("cylinder-radius", 5);
   const [height, setHeight] = usePersistentState("cylinder-height", 10);
 
-  const { volume, surfaceArea } = useMemo(() => {
+  const { volume, lateralArea, baseArea, surfaceArea } = useMemo(() => {
     const r = Number(radius);
     const h = Number(height);
 
     if (r > 0 && h > 0) {
       const vol = Math.PI * r * r * h;
-      const sa = (2 * Math.PI * r * h) + (2 * Math.PI * r * r);
+      const lArea = 2 * Math.PI * r * h;
+      const bArea = Math.PI * r * r;
+      const sArea = lArea + (2 * bArea);
       return {
         volume: vol,
-        surfaceArea: sa,
+        lateralArea: lArea,
+        baseArea: bArea,
+        surfaceArea: sArea,
       };
     }
-    return { volume: 0, surfaceArea: 0 };
+    return { volume: 0, lateralArea: 0, baseArea: 0, surfaceArea: 0 };
   }, [radius, height]);
 
   return (
@@ -32,6 +35,7 @@ export default function CylinderVolumeCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Enter Cylinder Dimensions</CardTitle>
+            <CardDescription>Calculate the volume and surface area of a cylinder by providing its radius and height.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -53,14 +57,22 @@ export default function CylinderVolumeCalculator() {
           <CardHeader>
             <CardTitle>Results</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Volume</p>
-              <p className="text-4xl font-bold font-headline text-primary">{volume.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+          <CardContent className="space-y-4">
+            <div className="flex justify-between items-baseline">
+              <p className="text-muted-foreground">Volume</p>
+              <p className="font-bold text-2xl text-primary">{volume.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
             </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Total Surface Area</p>
-              <p className="text-2xl font-semibold">{surfaceArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+            <div className="flex justify-between items-baseline">
+              <p className="text-muted-foreground">Total Surface Area</p>
+              <p className="font-semibold">{surfaceArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+            </div>
+             <div className="flex justify-between items-baseline text-sm">
+              <p className="text-muted-foreground">Lateral Area</p>
+              <p className="font-semibold">{lateralArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+            </div>
+            <div className="flex justify-between items-baseline text-sm">
+              <p className="text-muted-foreground">Base Area</p>
+              <p className="font-semibold">{baseArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
             </div>
           </CardContent>
         </Card>

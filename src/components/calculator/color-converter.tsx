@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -100,6 +100,7 @@ export default function ColorConverter() {
       <Card>
         <CardHeader>
           <CardTitle>Color Code Converter</CardTitle>
+          <CardDescription>Convert between HEX, RGB, and HSL color formats. Edit any value to see the others update in real-time.</CardDescription>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col items-center gap-4">
@@ -112,7 +113,7 @@ export default function ColorConverter() {
                     <Input id="hex-input" value={hex} onChange={handleHexChange} className="font-mono"/>
                 </div>
                 <div className="space-y-2">
-                    <Label>RGB</Label>
+                    <Label>RGB (Red, Green, Blue)</Label>
                     <div className="grid grid-cols-3 gap-2">
                         <Input type="number" value={rgb.r} onChange={e => handleRgbChange('r', e.target.value)} className="font-mono"/>
                         <Input type="number" value={rgb.g} onChange={e => handleRgbChange('g', e.target.value)} className="font-mono"/>
@@ -120,7 +121,7 @@ export default function ColorConverter() {
                     </div>
                 </div>
                 <div className="space-y-2">
-                    <Label>HSL</Label>
+                    <Label>HSL (Hue, Saturation, Lightness)</Label>
                     <div className="grid grid-cols-3 gap-2">
                         <Input type="number" value={hsl.h} onChange={e => handleHslChange('h', e.target.value)} className="font-mono"/>
                         <Input type="number" value={hsl.s} onChange={e => handleHslChange('s', e.target.value)} className="font-mono"/>

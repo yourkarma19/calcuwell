@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,7 +21,7 @@ const formatTime = (minutes: number) => {
 };
 
 export default function ReadingTimeCalculator() {
-  const [text, setText] = usePersistentState("reading-time-text", "The quick brown fox jumps over the lazy dog. This is some sample text to estimate the reading time.");
+  const [text, setText] = usePersistentState("reading-time-text", "The quick brown fox jumps over the lazy dog. This is some sample text to estimate the reading time. The average adult reading speed is around 200 to 250 words per minute. You can adjust the slider below to match your personal reading speed for a more accurate estimate.");
   const [wpm, setWpm] = usePersistentState("reading-time-wpm", 200);
 
   const { wordCount, readingTime } = useMemo(() => {
@@ -40,6 +40,7 @@ export default function ReadingTimeCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Reading Time Estimator</CardTitle>
+            <CardDescription>Paste your text and set your reading speed to estimate how long it will take to read.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">

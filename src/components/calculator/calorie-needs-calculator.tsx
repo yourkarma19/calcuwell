@@ -2,11 +2,12 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Info } from "lucide-react";
 
 const activityLevels = {
   sedentary: 1.2,
@@ -39,7 +40,10 @@ export default function CalorieNeedsCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Enter Your Details</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Daily Calorie Needs</CardTitle>
+            <CardDescription>Estimate the number of calories you need to consume daily to maintain your current weight, based on the Mifflin-St Jeor equation.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -78,6 +82,14 @@ export default function CalorieNeedsCalculator() {
               </Select>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p>This result is an estimate for weight maintenance. To lose weight, you would need to consume fewer calories (a caloric deficit). To gain weight, you would need to consume more (a caloric surplus). For personalized advice, consult a healthcare or nutrition professional.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
 

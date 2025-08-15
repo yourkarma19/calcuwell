@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { RefreshCw } from "lucide-react";
 
 const sampleTexts = [
   "The quick brown fox jumps over the lazy dog. This sentence contains all the letters of the alphabet.",
@@ -29,27 +30,33 @@ export default function TypingSpeedCalculator() {
     if (!startTime || !endTime) return 0;
     const durationInMinutes = (endTime - startTime) / 60000;
     const wordsTyped = text.split(" ").length;
-    return Math.round(wordsTyped / durationInMinutes - 2 * errors);
-  }, [startTime, endTime, text, errors]);
+    const grossWpm = Math.round(wordsTyped / durationInMinutes);
+    return Math.max(0, grossWpm);
+  }, [startTime, endTime, text]);
   
   const accuracy = useMemo(() => {
-      if(!isTestFinished) return 100;
+      if(!isTestFinished && !isTestActive) return 100;
       const totalChars = text.length;
-      return Math.max(0, ((totalChars - errors) / totalChars) * 100);
-  }, [isTestFinished, text, errors])
+      if(totalChars === 0) return 100;
+      return Math.max(0, ((userInput.length - errors) / userInput.length) * 100);
+  }, [isTestActive, isTestFinished, userInput, errors])
 
   const startTest = () => {
     const newText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
     setText(newText);
     setUserInput("");
-    setStartTime(Date.now());
+    setStartTime(null);
     setEndTime(null);
     setErrors(0);
     inputRef.current?.focus();
   };
 
   useEffect(() => {
-    if (isTestActive && userInput === text) {
+      startTest();
+  }, [])
+
+  useEffect(() => {
+    if (isTestActive && userInput.length >= text.length) {
       setEndTime(Date.now());
     }
   }, [isTestActive, userInput, text]);
@@ -74,9 +81,13 @@ export default function TypingSpeedCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Typing Speed (WPM) Calculator</CardTitle>
+          <CardDescription>Test your typing speed in words per minute (WPM). Type the sample text in the box below to start the test.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Card className="p-4 bg-muted font-mono text-lg">
+          <Card className="p-4 bg-muted font-mono text-lg relative">
+            <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={startTest}>
+                <RefreshCw className="w-4 h-4"/>
+            </Button>
             {text.split("").map((char, index) => {
               let color = "text-muted-foreground";
               if (index < userInput.length) {
@@ -91,17 +102,17 @@ export default function TypingSpeedCalculator() {
             onChange={handleUserInputChange}
             placeholder="Start typing the text above..."
             rows={5}
-            disabled={!isTestActive && text !== ""}
+            disabled={isTestFinished}
             className="font-mono text-lg"
           />
           <div className="flex justify-center">
             <Button onClick={startTest} size="lg">
-              {isTestActive ? "Restart Test" : "Start Typing Test"}
+              Restart Test
             </Button>
           </div>
         </CardContent>
       </Card>
-      {isTestFinished && (
+      {(isTestActive || isTestFinished) && (
         <Card>
           <CardHeader>
             <CardTitle>Your Results</CardTitle>

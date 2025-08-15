@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -28,7 +27,7 @@ export default function LogarithmCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Logarithm Calculator</CardTitle>
-            <CardDescription>Calculate the logarithm of a number to any base.</CardDescription>
+            <CardDescription>Calculate the logarithm of a number to a specified base. The number and base must be positive, and the base cannot be 1.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

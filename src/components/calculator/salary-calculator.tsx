@@ -2,11 +2,12 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import { Info } from "lucide-react";
 
 export default function SalaryCalculator() {
   const [grossSalary, setGrossSalary] = usePersistentState("salary-gross", 50000);
@@ -14,17 +15,17 @@ export default function SalaryCalculator() {
   const [taxRate, setTaxRate] = usePersistentState("salary-tax", 20);
   const [otherDeductions, setOtherDeductions] = usePersistentState("salary-deductions", 0);
 
-  const { netSalary, totalTax, annualSalary } = useMemo(() => {
+  const { netSalary, totalTax, annualSalary, annualDeductions } = useMemo(() => {
     const gross = Number(grossSalary);
     const tax = Number(taxRate);
     const deductions = Number(otherDeductions);
 
-    if (gross <= 0) return { netSalary: 0, totalTax: 0, annualSalary: 0 };
+    if (gross <= 0) return { netSalary: 0, totalTax: 0, annualSalary: 0, annualDeductions: 0 };
     
     const annualGross = payPeriod === 'annually' ? gross : gross * 12;
     const taxAmount = annualGross * (tax / 100);
-    const annualDeductions = payPeriod === 'annually' ? deductions : deductions * 12;
-    const totalAnnualDeductions = taxAmount + annualDeductions;
+    const annualDed = payPeriod === 'annually' ? deductions : deductions * 12;
+    const totalAnnualDeductions = taxAmount + annualDed;
     
     const netAnnualSalary = annualGross - totalAnnualDeductions;
     const netPayPeriodSalary = payPeriod === 'annually' ? netAnnualSalary : netAnnualSalary / 12;
@@ -32,7 +33,8 @@ export default function SalaryCalculator() {
     return {
       netSalary: netPayPeriodSalary,
       totalTax: taxAmount,
-      annualSalary: annualGross
+      annualSalary: annualGross,
+      annualDeductions: annualDed
     };
 
   }, [grossSalary, payPeriod, taxRate, otherDeductions]);
@@ -47,6 +49,7 @@ export default function SalaryCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Salary & Deductions</CardTitle>
+            <CardDescription>Calculate your take-home pay by providing your gross salary and any applicable deductions.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -67,7 +70,7 @@ export default function SalaryCalculator() {
             </div>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <Label htmlFor="tax-rate">Income Tax Rate (%)</Label>
+                <Label htmlFor="tax-rate">Estimated Income Tax Rate (%)</Label>
                 <span className="text-lg font-semibold">{taxRate}%</span>
               </div>
               <Slider id="tax-rate" value={[taxRate]} onValueChange={v => setTaxRate(v[0])} min={0} max={50} step={0.5} />
@@ -77,6 +80,14 @@ export default function SalaryCalculator() {
                 <Input id="other-deductions" type="number" value={otherDeductions} onChange={e => setOtherDeductions(Number(e.target.value))} />
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p>This calculator provides an estimate. Tax calculations can be complex and vary by location and personal circumstances. This does not account for pre-tax deductions like retirement contributions.</p>
+                </div>
+            </CardContent>
         </Card>
       </div>
 
@@ -92,14 +103,18 @@ export default function SalaryCalculator() {
                 {formatCurrency(netSalary)}
               </p>
             </div>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm text-left border-t pt-4">
                 <div className="flex justify-between">
-                    <span>Annual Gross:</span>
+                    <span>Annual Gross Salary:</span>
                     <span className="font-semibold">{formatCurrency(annualSalary)}</span>
                 </div>
                  <div className="flex justify-between">
                     <span>Annual Tax:</span>
                     <span className="font-semibold">{formatCurrency(totalTax)}</span>
+                </div>
+                 <div className="flex justify-between">
+                    <span>Annual Other Deductions:</span>
+                    <span className="font-semibold">{formatCurrency(annualDeductions)}</span>
                 </div>
             </div>
           </CardContent>

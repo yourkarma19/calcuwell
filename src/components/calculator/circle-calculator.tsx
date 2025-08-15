@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -37,7 +37,10 @@ export default function CircleCalculator() {
         <>
             <div className="lg:col-span-2 space-y-6">
                 <Card>
-                    <CardHeader><CardTitle>Enter Circle Measurement</CardTitle></CardHeader>
+                    <CardHeader>
+                        <CardTitle>Circle Properties Calculator</CardTitle>
+                        <CardDescription>Calculate various properties of a circle (radius, diameter, circumference, area) from a single known value.</CardDescription>
+                    </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-2">
@@ -64,19 +67,19 @@ export default function CircleCalculator() {
                 <Card className="sticky top-24">
                     <CardHeader><CardTitle>Circle Properties</CardTitle></CardHeader>
                     <CardContent className="space-y-4">
-                        <div className="flex justify-between">
+                        <div className="flex justify-between items-baseline">
                             <p className="text-muted-foreground">Radius</p>
                             <p className="font-semibold">{radius.toFixed(4)}</p>
                         </div>
-                         <div className="flex justify-between">
+                         <div className="flex justify-between items-baseline">
                             <p className="text-muted-foreground">Diameter</p>
                             <p className="font-semibold">{diameter.toFixed(4)}</p>
                         </div>
-                         <div className="flex justify-between">
+                         <div className="flex justify-between items-baseline">
                             <p className="text-muted-foreground">Circumference</p>
                             <p className="font-semibold">{circumference.toFixed(4)}</p>
                         </div>
-                         <div className="flex justify-between">
+                         <div className="flex justify-between items-baseline">
                             <p className="text-muted-foreground">Area</p>
                             <p className="font-semibold">{area.toFixed(4)}</p>
                         </div>

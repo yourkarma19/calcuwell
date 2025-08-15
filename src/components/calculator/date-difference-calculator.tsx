@@ -6,9 +6,11 @@ import {
   differenceInMonths,
   differenceInYears,
   differenceInWeeks,
+  differenceInHours,
+  differenceInMinutes,
 } from "date-fns";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
 
@@ -17,6 +19,8 @@ type Difference = {
   months: number;
   weeks: number;
   days: number;
+  hours: number;
+  minutes: number;
 };
 
 export default function DateDifferenceCalculator() {
@@ -39,6 +43,8 @@ export default function DateDifferenceCalculator() {
         months: differenceInMonths(endDate, startDate),
         weeks: differenceInWeeks(endDate, startDate),
         days: differenceInDays(endDate, startDate),
+        hours: differenceInHours(endDate, startDate),
+        minutes: differenceInMinutes(endDate, startDate),
       });
     }
   };
@@ -49,6 +55,7 @@ export default function DateDifferenceCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Calculate Date Difference</CardTitle>
+            <CardDescription>Find the total duration between two dates in various units like years, months, weeks, days, and more.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -70,11 +77,11 @@ export default function DateDifferenceCalculator() {
           <Card>
             <CardHeader>
               <CardTitle>Result</CardTitle>
+              <CardDescription>The total difference between the selected dates is:</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                <p className="font-semibold">Difference in units:</p>
-                <ul className="list-disc list-inside space-y-1">
+                <ul className="list-disc list-inside space-y-2 text-lg">
                   <li>
                     <span className="font-bold">{difference.years}</span> years
                   </li>
@@ -86,6 +93,12 @@ export default function DateDifferenceCalculator() {
                   </li>
                   <li>
                     <span className="font-bold">{difference.days}</span> days
+                  </li>
+                   <li>
+                    <span className="font-bold">{difference.hours.toLocaleString()}</span> hours
+                  </li>
+                   <li>
+                    <span className="font-bold">{difference.minutes.toLocaleString()}</span> minutes
                   </li>
                 </ul>
               </div>
