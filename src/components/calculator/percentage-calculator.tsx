@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ArrowRight } from "lucide-react";
+import { percentageOf, isWhatPercentageOf, percentageChange } from "@/lib/math/percentage";
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 
@@ -31,18 +32,19 @@ export default function PercentageCalculator() {
 
     if (isNaN(a) || isNaN(b)) return null;
 
-    switch (mode) {
-      case "percentOf":
-        if (b === 0) return 0;
-        return (a / 100) * b;
-      case "isWhatPercent":
-        if (b === 0) return null;
-        return (a / b) * 100;
-      case "percentageChange":
-        if (a === 0) return null;
-        return ((b - a) / a) * 100;
-      default:
-        return null;
+    try {
+      switch (mode) {
+        case "percentOf":
+          return percentageOf(a, b);
+        case "isWhatPercent":
+          return isWhatPercentageOf(a, b);
+        case "percentageChange":
+          return percentageChange(a, b);
+        default:
+          return null;
+      }
+    } catch (error) {
+      return null;
     }
   }, [mode, valA, valB]);
 
@@ -139,7 +141,7 @@ export default function PercentageCalculator() {
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="text-center" data-testid="result-container">
+          <CardContent className="text-center" data-testid="result-container" aria-live="polite">
             {result !== null ? (
               <>
                 <p data-testid="result-label" className="text-sm text-muted-foreground">{getResultLabel()}</p>
@@ -149,7 +151,7 @@ export default function PercentageCalculator() {
                 </p>
               </>
             ) : (
-              <p className="text-2xl text-muted-foreground">Enter values to calculate</p>
+              <p className="text-2xl text-muted-foreground">Enter valid values to calculate</p>
             )}
           </CardContent>
         </Card>

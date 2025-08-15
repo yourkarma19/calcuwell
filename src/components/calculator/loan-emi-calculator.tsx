@@ -14,6 +14,7 @@ import {
   ChartLegend,
   ChartLegendContent,
 } from "@/components/ui/chart";
+import { calculateEMI } from "@/lib/math/loan-emi";
 
 export default function LoanEMICalculator() {
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
@@ -21,37 +22,7 @@ export default function LoanEMICalculator() {
   const [tenure, setTenure] = usePersistentState("loan-tenure", 5);
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {
-    const p = Number(principal);
-    const r = Number(rate);
-    const t = Number(tenure);
-
-    if (p > 0 && r >= 0 && t > 0) {
-      if (r === 0) {
-        const emiValue = p / (t * 12);
-        return {
-          emi: emiValue,
-          totalPayable: p,
-          totalInterest: 0,
-        };
-      }
-      
-      const monthlyRate = r / 12 / 100;
-      const numberOfMonths = t * 12;
-      const emiValue =
-        (p * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) /
-        (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
-      
-      if (isFinite(emiValue)) {
-        const totalPayableValue = emiValue * numberOfMonths;
-        const totalInterestValue = totalPayableValue - p;
-        return {
-          emi: emiValue,
-          totalPayable: totalPayableValue,
-          totalInterest: totalInterestValue,
-        };
-      }
-    }
-    return { emi: 0, totalPayable: principal, totalInterest: 0 };
+    return calculateEMI(principal, rate, tenure);
   }, [principal, rate, tenure]);
   
   const chartData = useMemo(() => ([
@@ -127,7 +98,7 @@ export default function LoanEMICalculator() {
         
         <Card>
             <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-            <CardContent className="h-[24rem]">
+            <CardContent className="h-[25rem]">
                 <ChartContainer config={chartConfig} className="w-full h-full">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>

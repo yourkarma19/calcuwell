@@ -1,0 +1,40 @@
+{
+    "calculator": "loan-emi",
+    "cases": [
+        {
+            "id": "emi-001",
+            "description": "should calculate a standard home loan",
+            "inputs": { "principal": 3500000, "annualRate": 6.9, "tenureInYears": 20 },
+            "expected": { "emi": 26830.40, "totalInterest": 2939295.14, "totalPayable": 6439295.14 },
+            "precision": 2
+        },
+        {
+            "id": "emi-002",
+            "description": "should calculate a standard car loan",
+            "inputs": { "principal": 500000, "annualRate": 8.5, "tenureInYears": 5 },
+            "expected": { "emi": 10256.23, "totalInterest": 115373.81, "totalPayable": 615373.81 },
+            "precision": 2
+        },
+        {
+            "id": "emi-boundary-001",
+            "description": "should handle the minimum tenure of 1 year",
+            "inputs": { "principal": 100000, "annualRate": 5, "tenureInYears": 1 },
+            "expected": { "emi": 8560.75, "totalInterest": 2728.98, "totalPayable": 102728.98 },
+            "precision": 2
+        },
+        {
+            "id": "emi-edge-001",
+            "description": "should handle a zero interest rate",
+            "inputs": { "principal": 120000, "annualRate": 0, "tenureInYears": 1 },
+            "expected": { "emi": 10000, "totalInterest": 0, "totalPayable": 120000 },
+            "precision": 2
+        },
+        {
+            "id": "emi-edge-002",
+            "description": "should handle zero principal",
+            "inputs": { "principal": 0, "annualRate": 8, "tenureInYears": 5 },
+            "expected": { "emi": 0, "totalInterest": 0, "totalPayable": 0 },
+            "precision": 2
+        }
+    ]
+}

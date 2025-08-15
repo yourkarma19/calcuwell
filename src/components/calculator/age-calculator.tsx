@@ -2,34 +2,23 @@
 "use client";
 
 import { useState } from "react";
-import { differenceInYears, differenceInMonths, differenceInDays, subYears, subMonths } from "date-fns";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { calculateAge, Age } from "@/lib/math/date";
 
 
 export default function AgeCalculator() {
   const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date(), (value) => value ? new Date(value) : undefined);
-  const [age, setAge] = useState<{ years: number; months: number; days: number } | null>(null);
+  const [age, setAge] = useState<Age | null>(null);
 
   const handleCalculateAge = () => {
     if (dateOfBirth) {
       const now = new Date();
-      if (dateOfBirth > now) {
-        setAge(null); // Or show an error
-        return;
-      }
-      
-      const years = differenceInYears(now, dateOfBirth);
-      const pastDateWithoutYears = subYears(now, years);
-      const months = differenceInMonths(pastDateWithoutYears, dateOfBirth);
-      const pastDateWithoutMonths = subMonths(pastDateWithoutYears, months);
-      const days = differenceInDays(pastDateWithoutMonths, dateOfBirth);
-
-      setAge({ years, months, days });
+      setAge(calculateAge(now, dateOfBirth));
     }
   };
 

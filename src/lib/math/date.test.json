@@ -1,0 +1,59 @@
+{
+    "calculator": "age",
+    "cases": [
+        {
+            "id": "age-001",
+            "description": "should calculate a standard age correctly",
+            "inputs": {
+                "startDate": "2000-01-15T12:00:00.000Z",
+                "endDate": "2024-08-15T12:00:00.000Z"
+            },
+            "expected": { "years": 24, "months": 7, "days": 0 }
+        },
+        {
+            "id": "age-002",
+            "description": "should handle a birthday that has not occurred yet this year",
+            "inputs": {
+                "startDate": "1995-10-20T12:00:00.000Z",
+                "endDate": "2024-08-15T12:00:00.000Z"
+            },
+            "expected": { "years": 28, "months": 9, "days": 26 }
+        },
+        {
+            "id": "age-003",
+            "description": "should handle leap year birthdays correctly (born on Feb 29)",
+            "inputs": {
+                "startDate": "2020-02-29T12:00:00.000Z",
+                "endDate": "2024-03-01T12:00:00.000Z"
+            },
+            "expected": { "years": 4, "months": 0, "days": 1 }
+        },
+        {
+            "id": "age-boundary-001",
+            "description": "should return 0 for same-day calculation",
+            "inputs": {
+                "startDate": "2024-08-15T12:00:00.000Z",
+                "endDate": "2024-08-15T12:00:00.000Z"
+            },
+            "expected": { "years": 0, "months": 0, "days": 0 }
+        },
+        {
+            "id": "age-boundary-002",
+            "description": "should handle a one-day difference",
+            "inputs": {
+                "startDate": "2024-08-14T12:00:00.000Z",
+                "endDate": "2024-08-15T12:00:00.000Z"
+            },
+            "expected": { "years": 0, "months": 0, "days": 1 }
+        },
+        {
+            "id": "age-edge-001",
+            "description": "should return 0 if end date is before start date",
+            "inputs": {
+                "startDate": "2025-01-01T12:00:00.000Z",
+                "endDate": "2024-08-15T12:00:00.000Z"
+            },
+            "expected": { "years": 0, "months": 0, "days": 0 }
+        }
+    ]
+}
