@@ -126,13 +126,11 @@ export default function ScientificCalculator() {
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
   const getButtonClass = (btn: string) => {
-    if (isOperator(btn) || btn === "=") return "bg-primary/80 hover:bg-primary text-primary-foreground";
-    if (["AC", "+/-", "%"].includes(btn)) return "bg-muted hover:bg-muted/80";
-    if (btn === "0") return "col-span-2";
-    return ""; // Use default button styles
+    if (isOperator(btn) || btn === "=") return { variant: "default", className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline", className: "bg-muted hover:bg-muted/80"};
+    if (btn === "0") return { variant: "outline", className: "col-span-2"};
+    return { variant: "outline", className: ""};
   };
-  
-  const getScientificButtonClass = () => "bg-muted hover:bg-muted/80";
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -185,7 +183,7 @@ export default function ScientificCalculator() {
                             <TooltipTrigger asChild>
                                 <Button
                                     onClick={() => handleScientificInput(func)}
-                                    className={`h-12 text-sm ${getScientificButtonClass()}`}
+                                    className="h-12 text-sm"
                                     variant="outline"
                                 >
                                     {func}
@@ -200,16 +198,19 @@ export default function ScientificCalculator() {
               </TabsContent>
                <TabsContent value="basic" className="mt-4">
                    <div className="grid grid-cols-4 gap-2">
-                        {buttonLayout.map((btn) => (
-                        <Button
-                            key={btn}
-                            onClick={() => handleInput(btn)}
-                            className={`h-16 text-2xl ${getButtonClass(btn)}`}
-                            variant={getButtonClass(btn) ? 'default' : 'outline'}
-                        >
-                            {btn}
-                        </Button>
-                        ))}
+                        {buttonLayout.map((btn) => {
+                            const { variant, className } = getButtonClass(btn);
+                            return (
+                                <Button
+                                    key={btn}
+                                    onClick={() => handleInput(btn)}
+                                    className={`h-16 text-2xl ${className}`}
+                                    variant={variant as any}
+                                >
+                                    {btn}
+                                </Button>
+                            );
+                        })}
                     </div>
                </TabsContent>
           </Tabs>
