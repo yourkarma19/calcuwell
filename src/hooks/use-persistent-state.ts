@@ -1,35 +1,34 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function usePersistentState<T>(key: string, defaultValue: T): [T, (value: T | ((val: T) => T)) => void] {
-  const [state, setState] = useState<T>(() => {
-    const initialValue = typeof defaultValue === 'function' ? (defaultValue as () => T)() : defaultValue;
-    if (typeof window === "undefined") {
-      return initialValue;
-    }
+  const [state, setState] = useState<T>(defaultValue);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
     try {
       const storedValue = window.localStorage.getItem(key);
-      return storedValue ? JSON.parse(storedValue) : initialValue;
+      if (storedValue) {
+        setState(JSON.parse(storedValue));
+      }
     } catch (error) {
       console.error(`Error reading localStorage key “${key}”:`, error);
-      return initialValue;
     }
-  });
+    setIsInitialized(true);
+  }, [key]);
 
   const setPersistentState = useCallback((newValue: T | ((val: T) => T)) => {
-    setState(prevState => {
-      const valueToStore = newValue instanceof Function ? newValue(prevState) : newValue;
-      try {
-        if (typeof window !== "undefined") {
+      const valueToStore = newValue instanceof Function ? newValue(state) : newValue;
+      setState(valueToStore);
+      if (isInitialized) {
+        try {
           window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        } catch (error) {
+          console.error(`Error setting localStorage key “${key}”:`, error);
         }
-      } catch (error) {
-        console.error(`Error setting localStorage key “${key}”:`, error);
       }
-      return valueToStore;
-    });
-  }, [key]);
+    }, [key, isInitialized, state]);
 
   return [state, setPersistentState];
 }

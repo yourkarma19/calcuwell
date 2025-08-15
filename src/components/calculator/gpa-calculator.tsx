@@ -103,7 +103,7 @@ export default function GpaCalculator() {
                       name={`courses.${index}.grade`}
                       render={({ field }) => (
                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <SelectTrigger className="w-full md:w-32" aria-label="Course grade">
+                          <SelectTrigger className="w-full md:w-32" aria-label="Course grade" id={`course-grade-header-${index}`}>
                             <SelectValue placeholder="Grade" />
                           </SelectTrigger>
                           <SelectContent>
@@ -123,6 +123,7 @@ export default function GpaCalculator() {
                       className="w-full md:w-24"
                       step="0.1"
                       aria-label="Course credits"
+                       id={`course-credits-header-${index}`}
                     />
                     <Button
                       type="button"
