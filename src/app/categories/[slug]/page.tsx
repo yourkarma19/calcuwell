@@ -2,29 +2,25 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { calculators, categories } from "@/lib/calculators";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-type CategoryPageProps = {
-  params: {
-    slug: string;
-  };
-};
 
 // Note: generateMetadata is not supported in client components.
 // If you need dynamic metadata, you would typically handle it in a parent server component
 // or move this page back to a server component and fetch data accordingly.
 // For this example, we will keep the component as a client component for the filter functionality.
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default function CategoryPage() {
   const [filter, setFilter] = useState("");
+  const params = useParams();
+  const slug = params.slug as string;
   
   const category = useMemo(() => {
-    return categories.find((c) => c.slug === params.slug);
-  }, [params.slug]);
+    return categories.find((c) => c.slug === slug);
+  }, [slug]);
 
   const filteredCalculators = useMemo(() => {
     if (!category) return [];
