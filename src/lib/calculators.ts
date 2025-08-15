@@ -79,6 +79,11 @@ import DiscountCalculator from '@/components/calculator/discount-calculator';
 import PregnancyDueDateCalculator from '@/components/calculator/pregnancy-due-date-calculator';
 import RectangleAreaCalculator from '@/components/calculator/rectangle-area-calculator';
 import TimeConverter from '@/components/calculator/time-converter';
+import RomanNumeralConverter from '@/components/calculator/roman-numeral-converter';
+import SavingsCalculator from '@/components/calculator/savings-calculator';
+import CalorieNeedsCalculator from '@/components/calculator/calorie-needs-calculator';
+import TriangleAreaCalculator from '@/components/calculator/triangle-area-calculator';
+import IpSubnetCalculator from '@/components/calculator/ip-subnet-calculator';
 
 
 export const categories: Category[] = [
@@ -293,7 +298,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between Roman numerals and numbers.',
     category: 'Math',
     Icon: ArrowRightLeft,
-    component: PlaceholderCalculator,
+    component: RomanNumeralConverter,
   },
 
   // Finance & Money
@@ -354,7 +359,7 @@ export const calculators: Calculator[] = [
     description: 'Plan your savings goals and growth.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: PlaceholderCalculator,
+    component: SavingsCalculator,
   },
   {
     slug: 'retirement-calculator',
@@ -487,7 +492,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your daily calorie needs.',
     category: 'Health',
     Icon: HeartPulse,
-    component: PlaceholderCalculator,
+    component: CalorieNeedsCalculator,
   },
   {
     slug: 'ideal-weight-calculator',
@@ -819,7 +824,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate IP subnets and networks.',
     category: 'Programming',
     Icon: Network,
-    component: PlaceholderCalculator,
+    component: IpSubnetCalculator,
   },
   {
     slug: 'crc-hash-generator',
@@ -861,7 +866,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the area and perimeter of a triangle.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: PlaceholderCalculator,
+    component: TriangleAreaCalculator,
   },
   {
     slug: 'rectangle-square-area-calculator',

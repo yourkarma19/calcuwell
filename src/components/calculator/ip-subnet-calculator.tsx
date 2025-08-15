@@ -1,0 +1,99 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+
+const ipToLong = (ip: string): number => {
+  return ip.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;
+};
+
+const longToIp = (long: number): string => {
+  return [ (long >>> 24), (long >> 16) & 255, (long >> 8) & 255, long & 255 ].join('.');
+};
+
+export default function IpSubnetCalculator() {
+  const [ipAddress, setIpAddress] = useState("192.168.1.1");
+  const [cidr, setCidr] = useState(24);
+
+  const subnetInfo = useMemo(() => {
+    try {
+      if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ipAddress)) throw new Error("Invalid IP");
+
+      const ipLong = ipToLong(ipAddress);
+      const mask = -1 << (32 - cidr);
+      
+      const networkAddress = ipLong & mask;
+      const broadcastAddress = networkAddress | (~mask >>> 0);
+      const firstHost = networkAddress + 1;
+      const lastHost = broadcastAddress - 1;
+      const totalHosts = Math.pow(2, 32 - cidr);
+      const usableHosts = totalHosts > 2 ? totalHosts - 2 : 0;
+
+      return {
+        networkAddress: longToIp(networkAddress),
+        broadcastAddress: longToIp(broadcastAddress),
+        subnetMask: longToIp(mask),
+        firstHost: usableHosts > 0 ? longToIp(firstHost) : "N/A",
+        lastHost: usableHosts > 0 ? longToIp(lastHost) : "N/A",
+        totalHosts: totalHosts.toLocaleString(),
+        usableHosts: usableHosts.toLocaleString(),
+        wildcardMask: longToIp(~mask),
+        error: null
+      };
+    } catch (e) {
+      return { error: "Invalid IP Address or CIDR" };
+    }
+  }, [ipAddress, cidr]);
+
+  return (
+    <div className="lg:col-span-3 space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>IP Subnet Calculator</CardTitle>
+          <CardDescription>Calculate subnet details from an IP address and CIDR mask.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="ip-address">IP Address</Label>
+              <Input id="ip-address" value={ipAddress} onChange={e => setIpAddress(e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <Label htmlFor="cidr">CIDR</Label>
+                <span className="font-semibold text-lg">/{cidr}</span>
+              </div>
+              <Slider id="cidr" value={[cidr]} onValueChange={v => setCidr(v[0])} min={0} max={32} step={1} />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      
+      {subnetInfo.error ? (
+        <p className="text-destructive text-center">{subnetInfo.error}</p>
+      ) : (
+        <Card>
+          <CardHeader><CardTitle>Subnet Details</CardTitle></CardHeader>
+          <CardContent>
+            <Table>
+              <TableBody>
+                <TableRow><TableCell>Network Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.networkAddress}</TableCell></TableRow>
+                <TableRow><TableCell>Broadcast Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.broadcastAddress}</TableCell></TableRow>
+                <TableRow><TableCell>Subnet Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.subnetMask}</TableCell></TableRow>
+                <TableRow><TableCell>Wildcard Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.wildcardMask}</TableCell></TableRow>
+                <TableRow><TableCell>First Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.firstHost}</TableCell></TableRow>
+                <TableRow><TableCell>Last Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.lastHost}</TableCell></TableRow>
+                <TableRow><TableCell>Total Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.totalHosts}</TableCell></TableRow>
+                <TableRow><TableCell>Usable Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.usableHosts}</TableCell></TableRow>
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
