@@ -1,11 +1,47 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { cn } from "@/lib/utils";
+
+const bodyFatCategories = {
+    women: [
+      { range: "10-13%", category: "Essential fat" },
+      { range: "14-20%", category: "Athletes" },
+      { range: "21-24%", category: "Fitness" },
+      { range: "25-31%", category: "Average" },
+      { range: "32%+", category: "Obese" },
+    ],
+    men: [
+      { range: "2-5%", category: "Essential fat" },
+      { range: "6-13%", category: "Athletes" },
+      { range: "14-17%", category: "Fitness" },
+      { range: "18-24%", category: "Average" },
+      { range: "25%+", category: "Obese" },
+    ],
+};
+
+const getBfpCategory = (bfp: number, gender: "male" | "female") => {
+    if (gender === 'female') {
+        if (bfp < 14) return { category: "Essential fat", color: "text-blue-500" };
+        if (bfp < 21) return { category: "Athletes", color: "text-green-500" };
+        if (bfp < 25) return { category: "Fitness", color: "text-green-500" };
+        if (bfp < 32) return { category: "Average", color: "text-yellow-500" };
+        return { category: "Obese", color: "text-red-500" };
+    } else { // male
+        if (bfp < 6) return { category: "Essential fat", color: "text-blue-500" };
+        if (bfp < 14) return { category: "Athletes", color: "text-green-500" };
+        if (bfp < 18) return { category: "Fitness", color: "text-green-500" };
+        if (bfp < 25) return { category: "Average", color: "text-yellow-500" };
+        return { category: "Obese", color: "text-red-500" };
+    }
+};
 
 export default function BodyFatPercentageCalculator() {
     const [gender, setGender] = usePersistentState<'male' | 'female'>("bfp-gender", "male");
@@ -20,6 +56,7 @@ export default function BodyFatPercentageCalculator() {
             return null;
         }
 
+        // US Navy Method
         if (gender === 'male') {
             const bfp = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(height) + 36.76;
             return bfp > 0 ? bfp : null;
@@ -28,6 +65,8 @@ export default function BodyFatPercentageCalculator() {
             return bfp > 0 ? bfp : null;
         }
     }, [gender, height, weight, neck, waist, hip]);
+
+    const { category, color } = bodyFatPercentage !== null ? getBfpCategory(bodyFatPercentage, gender) : { category: '-', color: 'text-muted-foreground' };
 
     return (
         <>
@@ -68,8 +107,56 @@ export default function BodyFatPercentageCalculator() {
                                 <Input id="hip" type="number" value={hip} onChange={(e) => setHip(Number(e.target.value))} />
                             </div>
                         )}
+                        <p className="text-xs text-muted-foreground pt-2">This calculator uses the U.S. Navy method, which requires gender, height, neck, and waist measurements. For women, hip measurement is also required.</p>
                     </CardContent>
                 </Card>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Body Fat Percentage Categories</CardTitle>
+                    </CardHeader>
+                    <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 className="font-semibold mb-2">Women</h3>
+                             <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead>Category</TableHead>
+                                        <TableHead>Percentage</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {bodyFatCategories.women.map((item) => (
+                                        <TableRow key={item.category}>
+                                            <TableCell>{item.category}</TableCell>
+                                            <TableCell>{item.range}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold mb-2">Men</h3>
+                             <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead>Category</TableHead>
+                                        <TableHead>Percentage</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {bodyFatCategories.men.map((item) => (
+                                        <TableRow key={item.category}>
+                                            <TableCell>{item.category}</TableCell>
+                                            <TableCell>{item.range}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </div>
+                    </CardContent>
+                </Card>
+
             </div>
             <div className="lg:col-span-1">
                 <Card className="sticky top-24">
@@ -79,6 +166,7 @@ export default function BodyFatPercentageCalculator() {
                         <p className="text-6xl font-bold font-headline text-primary my-2">
                             {bodyFatPercentage !== null ? bodyFatPercentage.toFixed(1) : '-'}%
                         </p>
+                        <p className={cn("text-xl font-semibold", color)}>{category}</p>
                     </CardContent>
                 </Card>
             </div>
