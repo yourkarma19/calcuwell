@@ -39,11 +39,11 @@ export default function MatrixCalculator() {
   const MatrixInput = ({ matrix, name }: { matrix: number[][], name: "A" | "B" }) => (
     <div className="space-y-2">
         <Label>Matrix {name}</Label>
-        <div className="space-y-1">
+        <div className="space-y-1" role="grid" aria-label={`Matrix ${name}`}>
             {matrix.map((row, rIndex) => (
-                <div key={rIndex} className="flex gap-1">
+                <div key={rIndex} className="flex gap-1" role="row">
                     {row.map((val, cIndex) => (
-                        <Input key={cIndex} type="number" value={val} onChange={e => handleMatrixChange(name, rIndex, cIndex, e.target.value)} aria-label={`Matrix ${name} Row ${rIndex + 1} Column ${cIndex + 1}`} />
+                        <Input key={cIndex} type="number" value={val} onChange={e => handleMatrixChange(name, rIndex, cIndex, e.target.value)} aria-label={`Matrix ${name} Row ${rIndex + 1} Column ${cIndex + 1}`} role="gridcell" />
                     ))}
                 </div>
             ))}
@@ -72,7 +72,7 @@ export default function MatrixCalculator() {
                 </div>
                 <div>
                     <Label>Result</Label>
-                    <div className="p-4 bg-muted rounded-md text-center text-xl font-bold">
+                    <div className="p-4 bg-muted rounded-md text-center text-xl font-bold" aria-live="polite">
                         {resultMatrix.map((row, rIndex) => (
                             <div key={rIndex} className="flex justify-center gap-4">
                                 {row.map((val, cIndex) => <span key={cIndex}>{val}</span>)}

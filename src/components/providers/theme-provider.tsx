@@ -28,16 +28,19 @@ export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "vite-ui-theme",
-  enableSystem = true,
-  disableTransitionOnChange = false,
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = React.useState<Theme>(
-    () => {
-      if (typeof window === 'undefined') return defaultTheme;
-      return (localStorage.getItem(storageKey) as Theme) || defaultTheme
+  const [theme, setTheme] = React.useState<Theme>(() => {
+    if (typeof window === 'undefined') {
+      return defaultTheme;
     }
-  )
+    try {
+      return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+    } catch (e) {
+      console.error("Failed to access localStorage. Defaulting to system theme.", e);
+      return defaultTheme;
+    }
+  });
 
   React.useEffect(() => {
     const root = window.document.documentElement
@@ -61,7 +64,11 @@ export function ThemeProvider({
     theme,
     setTheme: (theme: Theme) => {
       if (typeof window !== 'undefined') {
-        localStorage.setItem(storageKey, theme)
+        try {
+          localStorage.setItem(storageKey, theme);
+        } catch (e) {
+          console.error("Failed to set theme in localStorage.", e);
+        }
       }
       setTheme(theme)
     },

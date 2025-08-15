@@ -46,22 +46,22 @@ export default function RatioCalculator() {
           <div className="flex items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
               <Label htmlFor="valA">A</Label>
-              <Input id="valA" type="number" value={valA} onChange={e => setValA(Number(e.target.value))} className="w-24 text-center" />
+              <Input id="valA" aria-label="Value A" type="number" value={valA} onChange={e => setValA(Number(e.target.value))} className="w-24 text-center" />
             </div>
             <span className="text-2xl mt-6">:</span>
             <div className="flex flex-col items-center gap-1">
                <Label htmlFor="valB">B</Label>
-              <Input id="valB" type="number" value={valB} onChange={e => setValB(Number(e.target.value))} className="w-24 text-center" />
+              <Input id="valB" aria-label="Value B" type="number" value={valB} onChange={e => setValB(Number(e.target.value))} className="w-24 text-center" />
             </div>
             <span className="text-2xl mt-6">=</span>
              <div className="flex flex-col items-center gap-1">
                <Label htmlFor="valC">C</Label>
-              <Input id="valC" type="number" value={valC} onChange={e => setValC(Number(e.target.value))} className="w-24 text-center" />
+              <Input id="valC" aria-label="Value C" type="number" value={valC} onChange={e => setValC(Number(e.target.value))} className="w-24 text-center" />
             </div>
             <span className="text-2xl mt-6">:</span>
              <div className="flex flex-col items-center gap-1">
                <Label htmlFor="valD">D (Result)</Label>
-              <Input id="valD" value={resultD} readOnly className="w-24 text-center bg-primary/10 border-primary/20 font-bold" />
+              <Input id="valD" aria-label="Value D (Result)" value={resultD} readOnly className="w-24 text-center bg-primary/10 border-primary/20 font-bold" />
             </div>
           </div>
         </CardContent>

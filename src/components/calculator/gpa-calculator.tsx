@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm, Controller } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -36,7 +36,7 @@ type FormValues = {
 
 export default function GpaCalculator() {
   const [gpa, setGpa] = useState<number | null>(null);
-  const { register, control, handleSubmit, watch } = useForm<FormValues>({
+  const { register, control, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       courses: [{ name: "Example Course", grade: "A", credits: 3 }],
     },
@@ -88,31 +88,33 @@ export default function GpaCalculator() {
                     {...register(`courses.${index}.name`)}
                     placeholder="Course Name (Optional)"
                     className="flex-grow"
+                    aria-label={`Course ${index + 1} name`}
                   />
-                  <Select
-                    onValueChange={(value) => {
-                        const courses = watch("courses");
-                        courses[index].grade = value;
-                    }}
-                    defaultValue={field.grade}
-                  >
-                    <SelectTrigger className="w-full md:w-32">
-                      <SelectValue placeholder="Grade" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {Object.keys(gradePoints).map((grade) => (
-                        <SelectItem key={grade} value={grade}>
-                          {grade}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <Controller
+                    control={control}
+                    name={`courses.${index}.grade`}
+                    render={({ field }) => (
+                       <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <SelectTrigger className="w-full md:w-32" aria-label={`Course ${index + 1} grade`}>
+                          <SelectValue placeholder="Grade" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Object.keys(gradePoints).map((grade) => (
+                            <SelectItem key={grade} value={grade}>
+                              {grade}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
+                  />
                   <Input
                     {...register(`courses.${index}.credits`)}
                     type="number"
                     placeholder="Credits"
                     className="w-full md:w-24"
                     step="0.1"
+                    aria-label={`Course ${index + 1} credits`}
                   />
                   <Button
                     type="button"
@@ -120,6 +122,7 @@ export default function GpaCalculator() {
                     size="icon"
                     onClick={() => remove(index)}
                     className="text-red-500 hover:text-red-700"
+                    aria-label={`Remove course ${index + 1}`}
                   >
                     <X className="h-4 w-4" />
                   </Button>

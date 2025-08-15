@@ -65,15 +65,19 @@ export default function ProportionCalculator() {
         <CardContent className="space-y-4">
           <div className="flex items-center justify-center gap-4 text-2xl">
             <div className="flex flex-col items-center gap-1">
-              <Input type="number" {...getInputProps('a')} className="w-24 text-center" />
+              <Label htmlFor="valA">A</Label>
+              <Input type="number" {...getInputProps('a')} id="valA" className="w-24 text-center" />
               <div className="h-[2px] w-full bg-foreground" />
-              <Input type="number" {...getInputProps('b')} className="w-24 text-center" />
+              <Label htmlFor="valB" className="sr-only">B</Label>
+              <Input type="number" {...getInputProps('b')} id="valB" className="w-24 text-center" />
             </div>
             <span className="font-bold text-primary">=</span>
             <div className="flex flex-col items-center gap-1">
-              <Input type="number" {...getInputProps('c')} className="w-24 text-center" />
+              <Label htmlFor="valC">C</Label>
+              <Input type="number" {...getInputProps('c')} id="valC" className="w-24 text-center" />
               <div className="h-[2px] w-full bg-foreground" />
-              <Input type="number" {...getInputProps('d')} className="w-24 text-center" />
+              <Label htmlFor="valD" className="sr-only">D</Label>
+              <Input type="number" {...getInputProps('d')} id="valD" className="w-24 text-center" />
             </div>
           </div>
         </CardContent>

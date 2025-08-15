@@ -42,8 +42,8 @@ export default function MixedNumberCalculator() {
                     <CardDescription>Convert a mixed number (a whole number and a fraction) into an improper fraction. More operations coming soon.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <Label>Enter Mixed Number</Label>
-                    <div className="flex items-center gap-2">
+                    <Label id="mixed-number-label">Enter Mixed Number</Label>
+                    <div role="group" aria-labelledby="mixed-number-label" className="flex items-center gap-2">
                         <Input
                             type="number"
                             value={whole}

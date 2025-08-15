@@ -6,12 +6,10 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FlaskConical } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Suspense, lazy } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-
-const ScientificCalculator = lazy(() => import("@/components/calculator/scientific-calculator"));
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);
@@ -27,11 +25,25 @@ export default function Home() {
           accurate, and easy to use.
         </p>
         <div className="mt-8 flex justify-center">
-          <div className="w-full max-w-md">
-            <Suspense fallback={<Skeleton className="h-[550px] w-full" />}>
-              <ScientificCalculator />
-            </Suspense>
-          </div>
+          <Link href="/calculators/scientific-calculator">
+            <Card className="hover:shadow-lg hover:border-primary/50 transition-shadow duration-300 group w-full max-w-md">
+              <CardHeader>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="bg-primary/10 p-4 rounded-lg">
+                    <FlaskConical className="w-10 h-10 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle className="font-headline group-hover:text-primary transition-colors text-2xl">
+                      Scientific Calculator
+                    </CardTitle>
+                    <CardDescription>
+                      Perform advanced mathematical calculations
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          </Link>
         </div>
       </section>
 
