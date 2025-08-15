@@ -117,10 +117,10 @@ export default function BasicCalculator() {
   };
   
   const getButtonClass = (btn: string) => {
-    if (["/", "*", "-", "+", "="].includes(btn)) return "bg-primary/80 hover:bg-primary text-primary-foreground";
-    if (["AC", "+/-", "%"].includes(btn)) return "bg-muted hover:bg-muted/80";
-    if (btn === "0") return "col-span-2";
-    return "bg-secondary hover:bg-secondary/80";
+    if (["/", "*", "-", "+", "="].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-muted hover:bg-muted/80"};
+    if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
+    return { variant: "outline" as const, className: ""};
   };
 
   return (
@@ -136,15 +136,19 @@ export default function BasicCalculator() {
             className="h-20 text-5xl text-right font-mono pr-4 bg-background"
           />
           <div className="grid grid-cols-4 gap-2">
-            {buttonLayout.map((btn) => (
-              <Button
-                key={btn}
-                onClick={() => handleInput(btn)}
-                className={`h-16 text-2xl ${getButtonClass(btn)}`}
-              >
-                {btn}
-              </Button>
-            ))}
+            {buttonLayout.map((btn) => {
+              const { variant, className } = getButtonClass(btn);
+              return (
+                <Button
+                  key={btn}
+                  onClick={() => handleInput(btn)}
+                  variant={variant}
+                  className={`h-16 text-2xl ${className}`}
+                >
+                  {btn}
+                </Button>
+              )
+            })}
           </div>
         </CardContent>
       </Card>
