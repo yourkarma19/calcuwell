@@ -84,6 +84,11 @@ import SavingsCalculator from '@/components/calculator/savings-calculator';
 import CalorieNeedsCalculator from '@/components/calculator/calorie-needs-calculator';
 import TriangleAreaCalculator from '@/components/calculator/triangle-area-calculator';
 import IpSubnetCalculator from '@/components/calculator/ip-subnet-calculator';
+import SalaryCalculator from '@/components/calculator/salary-calculator';
+import InflationCalculator from '@/components/calculator/inflation-calculator';
+import VatGstCalculator from '@/components/calculator/vat-gst-calculator';
+import LeanBodyMassCalculator from '@/components/calculator/lean-body-mass-calculator';
+import ReadingTimeCalculator from '@/components/calculator/reading-time-calculator';
 
 
 export const categories: Category[] = [
@@ -399,7 +404,7 @@ export const calculators: Calculator[] = [
     description: 'See how inflation affects purchasing power.',
     category: 'Finance',
     Icon: Banknote,
-    component: PlaceholderCalculator,
+    component: InflationCalculator,
   },
   {
     slug: 'vat-gst-calculator',
@@ -407,7 +412,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate Value-Added Tax or Goods and Services Tax.',
     category: 'Finance',
     Icon: Tag,
-    component: PlaceholderCalculator,
+    component: VatGstCalculator,
   },
   {
     slug: 'tip-calculator',
@@ -431,7 +436,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your take-home salary.',
     category: 'Finance',
     Icon: Briefcase,
-    component: PlaceholderCalculator,
+    component: SalaryCalculator,
   },
   {
     slug: 'overtime-pay-calculator',
@@ -518,7 +523,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your lean body mass.',
     category: 'Health',
     Icon: Bone,
-    component: PlaceholderCalculator,
+    component: LeanBodyMassCalculator,
   },
   {
     slug: 'waist-to-hip-ratio-calculator',
@@ -990,7 +995,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate the time it takes to read a text.',
     category: 'Miscellaneous',
     Icon: Book,
-    component: PlaceholderCalculator,
+    component: ReadingTimeCalculator,
   },
   {
     slug: 'typing-speed-wpm-calculator',
