@@ -25,7 +25,7 @@ export default function Home() {
         </p>
         <div className="mt-8">
            <Image 
-            src="https://placehold.co/1200x600.png"
+            src="https://source.unsplash.com/random/1200x600/?scientific,calculator"
             alt="An illustration of a scientific calculator"
             width={1200}
             height={600}
