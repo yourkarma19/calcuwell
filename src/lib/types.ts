@@ -1,0 +1,22 @@
+import type { LucideIcon } from 'lucide-react';
+import type { ComponentType, FC } from 'react';
+
+export type CalculatorCategory = "Math" | "Finance" | "Health" | "Programming" | "Conversions" | "Date & Time";
+
+export interface Calculator {
+  slug: string;
+  name: string;
+  description: string;
+  category: CalculatorCategory;
+  Icon: LucideIcon;
+  tags?: string[];
+  formula?: string;
+  component: ComponentType;
+}
+
+export interface Category {
+    name: CalculatorCategory;
+    slug: string;
+    description: string;
+    Icon: LucideIcon;
+}
