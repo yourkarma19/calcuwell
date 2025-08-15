@@ -1,18 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { format, differenceInYears, differenceInMonths, differenceInDays } from "date-fns";
-import { Calendar as CalendarIcon, ArrowDown } from "lucide-react";
+import { differenceInYears, differenceInMonths, differenceInDays } from "date-fns";
+import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
+import { DatePicker } from "@/components/ui/date-picker";
+
 
 export default function AgeCalculator() {
   const [dateOfBirth, setDateOfBirth] = useState<Date | undefined>();
@@ -55,33 +50,7 @@ export default function AgeCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="dob">Date of Birth</Label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  id="dob"
-                  variant={"outline"}
-                  className={cn(
-                    "w-full justify-start text-left font-normal",
-                    !dateOfBirth && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {dateOfBirth ? format(dateOfBirth, "PPP") : <span>Pick a date</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0">
-                <Calendar
-                  mode="single"
-                  selected={dateOfBirth}
-                  onSelect={setDateOfBirth}
-                  initialFocus
-                  captionLayout="dropdown-buttons"
-                  fromYear={1900}
-                  toYear={new Date().getFullYear()}
-                  disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-                />
-              </PopoverContent>
-            </Popover>
+            <DatePicker date={dateOfBirth} setDate={setDateOfBirth} />
           </div>
           <Button onClick={handleCalculateAge} disabled={!dateOfBirth} className="w-full">
             <ArrowDown className="mr-2"/>
