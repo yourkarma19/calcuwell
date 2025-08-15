@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
@@ -11,6 +12,7 @@ import {
 } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import { type Calculator } from "@/lib/types";
+import { Button } from "./ui/button";
 
 export function SearchBar() {
   const [query, setQuery] = useState("");
@@ -57,14 +59,17 @@ export function SearchBar() {
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <div className="relative">
+        <div className="relative w-full md:w-64">
           <Input
             id="search-input"
-            placeholder="Search calculators... (Ctrl+K)"
+            placeholder="Search calculators..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full md:w-64"
+            className="w-full"
           />
+          <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">
+            <span className="text-xs">⌘</span>K
+          </kbd>
         </div>
       </PopoverTrigger>
       <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">

@@ -126,10 +126,10 @@ export default function ScientificCalculator() {
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
   const getButtonClass = (btn: string) => {
-    if (isOperator(btn) || btn === "=") return { variant: "default", className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
-    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline", className: "bg-muted hover:bg-muted/80"};
-    if (btn === "0") return { variant: "outline", className: "col-span-2"};
-    return { variant: "outline", className: ""};
+    if (isOperator(btn) || btn === "=") return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
+    if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
+    return { variant: "outline" as const, className: ""};
   };
 
   useEffect(() => {
@@ -169,6 +169,7 @@ export default function ScientificCalculator() {
           <Input 
             value={displayValue} 
             readOnly 
+            aria-label="Calculator display"
             className="h-20 text-4xl text-right font-mono pr-4 bg-background"
           />
           <Tabs defaultValue="scientific">
@@ -205,7 +206,7 @@ export default function ScientificCalculator() {
                                     key={btn}
                                     onClick={() => handleInput(btn)}
                                     className={`h-16 text-2xl ${className}`}
-                                    variant={variant as any}
+                                    variant={variant}
                                 >
                                     {btn}
                                 </Button>
