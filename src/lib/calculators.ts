@@ -131,6 +131,16 @@ import DataTransferRateConverter from '@/components/calculator/data-transfer-rat
 import CountdownTimer from '@/components/calculator/countdown-timer';
 import WorkingDaysCalculator from '@/components/calculator/working-days-calculator';
 import SphereVolumeSurfaceAreaCalculator from '@/components/calculator/sphere-volume-surface-area-calculator';
+import MixedNumberCalculator from '@/components/calculator/mixed-number-calculator';
+import ProportionCalculator from '@/components/calculator/proportion-calculator';
+import SquareRootCubeRootCalculator from '@/components/calculator/square-root-cube-root-calculator';
+import ExponentPowerCalculator from '@/components/calculator/exponent-power-calculator';
+import TrigonometryCalculator from '@/components/calculator/trigonometry-calculator';
+import ConeVolumeCalculator from '@/components/calculator/cone-volume-calculator';
+import ResistorColorCodeCalculator from '@/components/calculator/resistor-color-code-calculator';
+import BusinessProfitMarginCalculator from '@/components/calculator/business-profit-margin-calculator';
+import OvulationCalculator from '@/components/calculator/ovulation-calculator';
+import WeekNumberCalculator from '@/components/calculator/week-number-calculator';
 
 
 export const categories: Category[] = [
@@ -225,7 +235,7 @@ export const calculators: Calculator[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     Icon: Pi,
-    component: PlaceholderCalculator,
+    component: MixedNumberCalculator,
   },
   {
     slug: 'ratio-calculator',
@@ -241,7 +251,7 @@ export const calculators: Calculator[] = [
     description: 'Solve proportions and find missing values.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: ProportionCalculator,
   },
   {
     slug: 'mean-median-mode-calculator',
@@ -298,7 +308,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate square roots and cube roots.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: SquareRootCubeRootCalculator,
   },
   {
     slug: 'exponent-power-calculator',
@@ -306,7 +316,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate powers and exponents.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: ExponentPowerCalculator,
   },
   {
     slug: 'logarithm-calculator',
@@ -503,7 +513,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the profit margin for your business.',
     category: 'Finance',
     Icon: Briefcase,
-    component: PlaceholderCalculator,
+    component: BusinessProfitMarginCalculator,
   },
   {
     slug: 'credit-card-payoff-calculator',
@@ -591,7 +601,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your most fertile days.',
     category: 'Health',
     Icon: CalendarClock,
-    component: PlaceholderCalculator,
+    component: OvulationCalculator,
   },
   {
     slug: 'water-intake-calculator',
@@ -813,7 +823,7 @@ export const calculators: Calculator[] = [
     description: 'Find the week number for a given date.',
     category: 'Date & Time',
     Icon: CalendarDays,
-    component: PlaceholderCalculator,
+    component: WeekNumberCalculator,
   },
   {
     slug: 'add-subtract-days-calculator',
@@ -947,7 +957,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the volume of a cone.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: PlaceholderCalculator,
+    component: ConeVolumeCalculator,
   },
   {
     slug: 'pythagorean-theorem-calculator',
@@ -964,7 +974,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate sin, cos, tan, and more.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: PlaceholderCalculator,
+    component: TrigonometryCalculator,
   },
   {
     slug: 'beam-deflection-calculator',
@@ -996,7 +1006,7 @@ export const calculators: Calculator[] = [
     description: 'Determine resistor values from color codes.',
     category: 'Geometry & Engineering',
     Icon: Palette,
-    component: PlaceholderCalculator,
+    component: ResistorColorCodeCalculator,
   },
   {
     slug: 'capacitor-charge-discharge-calculator',
@@ -1079,3 +1089,4 @@ export const calculators: Calculator[] = [
 export const getCalculatorBySlug = (slug: string): Calculator | undefined => {
   return calculators.find((calculator) => calculator.slug === slug);
 };
+
