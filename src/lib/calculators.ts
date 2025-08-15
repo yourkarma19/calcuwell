@@ -18,6 +18,7 @@ import LoanEMICalculator from '@/components/calculator/loan-emi-calculator';
 import PercentageCalculator from '@/components/calculator/percentage-calculator';
 import UnitConverter from '@/components/calculator/unit-converter';
 import BmrCalculator from '@/components/calculator/bmr-calculator';
+import BinaryConverter from '@/components/calculator/binary-converter';
 
 export const categories: Category[] = [
   {
@@ -127,7 +128,8 @@ export const calculators: Calculator[] = [
         description: 'Convert between binary, decimal, and hex.',
         category: 'Programming',
         Icon: Binary,
-        component: PlaceholderCalculator,
+        formula: 'Conversion between number bases (2, 8, 10, 16)',
+        component: BinaryConverter,
     },
     {
         slug: 'unit-converter',
