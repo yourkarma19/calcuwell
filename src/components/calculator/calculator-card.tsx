@@ -6,6 +6,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import type { Calculator } from "@/lib/types";
+import { Icon } from "@/components/ui/icon";
 
 interface CalculatorCardProps {
   calculator: Omit<Calculator, 'component'>;
@@ -18,7 +19,7 @@ export default function CalculatorCard({ calculator }: CalculatorCardProps) {
         <CardHeader>
           <div className="flex items-center gap-4">
             <div className="bg-primary/10 p-3 rounded-lg">
-              <calculator.Icon className="w-6 h-6 text-primary" />
+              <Icon name={calculator.iconName} className="w-6 h-6 text-primary" />
             </div>
             <div className="flex-1">
               <CardTitle className="font-headline group-hover:text-primary transition-colors">

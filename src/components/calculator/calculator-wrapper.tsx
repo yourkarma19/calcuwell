@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Calculator } from "@/lib/types";
 import FormulaExplainer from "./formula-explainer";
+import { Icon } from "@/components/ui/icon";
 
 interface CalculatorWrapperProps {
   children: ReactNode;
@@ -15,7 +16,7 @@ export default function CalculatorWrapper({
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <div className="inline-block bg-primary/10 p-4 rounded-lg mb-4">
-          <calculator.Icon className="w-10 h-10 text-primary" />
+          <Icon name={calculator.iconName} className="w-10 h-10 text-primary" />
         </div>
         <h1 className="text-4xl font-bold font-headline text-primary">
           {calculator.name}

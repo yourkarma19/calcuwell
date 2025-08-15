@@ -6,8 +6,9 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { ArrowRight, FlaskConical } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
+import { Icon } from "@/components/ui/icon";
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);
@@ -28,7 +29,7 @@ export default function Home() {
               <CardHeader>
                 <div className="flex flex-col items-center gap-4">
                   <div className="bg-primary/10 p-4 rounded-lg">
-                    <FlaskConical className="w-10 h-10 text-primary" />
+                    <Icon name="FlaskConical" className="w-10 h-10 text-primary" />
                   </div>
                   <div>
                     <CardTitle className="font-headline group-hover:text-primary transition-colors text-2xl">
@@ -55,7 +56,7 @@ export default function Home() {
               <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-shadow duration-300 group">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
-                    <category.Icon className="w-6 h-6 text-primary" />
+                    <Icon name={category.iconName} className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <CardTitle className="font-headline group-hover:text-primary transition-colors">

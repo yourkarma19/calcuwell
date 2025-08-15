@@ -3,56 +3,42 @@
 
 import { useState, useMemo } from "react";
 import { Calculator } from "@/lib/types";
-import { categories, calculators as allCalculators } from "@/lib/calculators";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Icon } from "@/components/ui/icon";
 
-type StrippedCalculator = Omit<Calculator, 'component' | 'Icon'>;
+type StrippedCalculator = Omit<Calculator, 'component'>;
 
 interface CategoryClientPageProps {
   name: string;
-  slug: string;
+  iconName: string;
   description: string;
   calculators: StrippedCalculator[];
 }
 
-export default function CategoryClientPage({ name, slug, description, calculators }: CategoryClientPageProps) {
+export default function CategoryClientPage({ name, iconName, description, calculators }: CategoryClientPageProps) {
   const [filter, setFilter] = useState("");
   
-  const Icon = useMemo(() => {
-    return categories.find(c => c.slug === slug)?.Icon;
-  }, [slug]);
-
-  const calculatorsWithIcons = useMemo(() => {
-    return calculators.map(calc => {
-        const fullCalc = allCalculators.find(c => c.slug === calc.slug);
-        return {
-            ...calc,
-            Icon: fullCalc!.Icon,
-        }
-    })
-  }, [calculators]);
-
   const filteredCalculators = useMemo(() => {
     if (!filter) {
-        return calculatorsWithIcons;
+        return calculators;
     }
     
-    return calculatorsWithIcons.filter((calculator) => 
+    return calculators.filter((calculator) => 
         calculator.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-  }, [calculatorsWithIcons, filter]);
+  }, [calculators, filter]);
 
-  if (!Icon) {
+  if (!iconName) {
     return null; // Or some fallback UI
   }
 
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
-        <Icon className="w-16 h-16 text-primary mx-auto mb-4" />
+        <Icon name={iconName} className="w-16 h-16 text-primary mx-auto mb-4" />
         <h1 className="text-4xl font-bold font-headline text-primary">
           {name} Calculators
         </h1>

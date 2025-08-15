@@ -13,6 +13,7 @@ import {
 import { type Calculator } from "@/lib/types";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
  import { Button } from "@/components/ui/button";
+import { Icon } from "./ui/icon";
 
 type SearchResult = Omit<Calculator, 'component'>;
 
@@ -113,7 +114,7 @@ export function SearchBar() {
                         onSelect={() => handleSelect(item.slug)}
                         className="flex items-center gap-3"
                       >
-                        <item.Icon className="w-4 h-4 text-muted-foreground" />
+                        <Icon name={item.iconName} className="w-4 h-4 text-muted-foreground" />
                         <span>{item.name}</span>
                       </CommandItem>
                     ))}

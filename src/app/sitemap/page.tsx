@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { List } from "lucide-react";
 import { calculators, categories, getCalculatorsByCategory } from "@/lib/calculators";
 import Link from "next/link";
+import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = {
  title: "Sitemap | CalcPro",
@@ -25,7 +26,7 @@ export default function SitemapPage() {
                 {categories.map((category) => (
                     <section key={category.slug}>
                         <h2 className="text-3xl font-bold font-headline text-primary mb-6 flex items-center gap-3">
-                           <category.Icon className="w-8 h-8"/> 
+                           <Icon name={category.iconName} className="w-8 h-8"/> 
                            {category.name} Calculators
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

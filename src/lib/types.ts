@@ -1,5 +1,4 @@
 import type { LucideIcon } from 'lucide-react';
-import type { ComponentType, FC, LazyExoticComponent } from 'react';
 
 export type CalculatorCategory = "Math" | "Finance" | "Health" | "Conversions" | "Date & Time" | "Programming" | "Geometry & Engineering" | "Miscellaneous";
 
@@ -8,7 +7,7 @@ export interface Calculator {
   name: string;
   description: string;
   category: CalculatorCategory;
-  Icon: LucideIcon;
+  iconName: string; // Changed from Icon: LucideIcon
   tags?: string[];
   formula?: string;
 }
@@ -17,5 +16,5 @@ export interface Category {
     name: CalculatorCategory;
     slug: string;
     description: string;
-    Icon: LucideIcon;
+    iconName: string; // Changed from Icon: LucideIcon
 }

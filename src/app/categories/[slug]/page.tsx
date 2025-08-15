@@ -31,12 +31,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  const categoryCalculators = getCalculatorsByCategory(slug).map(({ Icon, ...rest }) => rest);
+  const categoryCalculators = getCalculatorsByCategory(slug);
 
   return (
     <CategoryClientPage 
       name={category.name}
-      slug={category.slug}
+      iconName={category.iconName}
       description={category.description}
       calculators={categoryCalculators}
     />
