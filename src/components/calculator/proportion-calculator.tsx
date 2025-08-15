@@ -1,16 +1,18 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function ProportionCalculator() {
-  const [valA, setValA] = useState(1);
-  const [valB, setValB] = useState(2);
-  const [valC, setValC] = useState(5);
-  const [valD, setValD] = useState(10);
-  const [solveFor, setSolveFor] = useState<'a' | 'b' | 'c' | 'd'>('d');
+  const [valA, setValA] = usePersistentState("proportion-a", 1);
+  const [valB, setValB] = usePersistentState("proportion-b", 2);
+  const [valC, setValC] = usePersistentState("proportion-c", 5);
+  const [valD, setValD] = usePersistentState("proportion-d", 10);
+  const [solveFor, setSolveFor] = usePersistentState<'a' | 'b' | 'c' | 'd'>('proportion-solve', 'd');
 
   const result = useMemo(() => {
     const a = Number(valA);

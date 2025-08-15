@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -30,7 +32,7 @@ const crc32 = (str: string) => {
 
 
 export default function CrcHashGenerator() {
-    const [input, setInput] = useState("Hello World");
+    const [input, setInput] = usePersistentState("crc-input", "Hello World");
     
     const hashResult = useMemo(() => {
         if (!input) return "";

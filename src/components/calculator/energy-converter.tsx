@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -22,9 +24,9 @@ const units = {
 type Unit = keyof typeof units;
 
 export default function EnergyConverter() {
-  const [fromUnit, setFromUnit] = useState<Unit>("Kilowatt hour (kWh)");
-  const [toUnit, setToUnit] = useState<Unit>("Joule");
-  const [value, setValue] = useState("1");
+  const [fromUnit, setFromUnit] = usePersistentState<Unit>("energy-from", "Kilowatt hour (kWh)");
+  const [toUnit, setToUnit] = usePersistentState<Unit>("energy-to", "Joule");
+  const [value, setValue] = usePersistentState("energy-value", "1");
 
   const handleSwap = () => {
     setFromUnit(toUnit);

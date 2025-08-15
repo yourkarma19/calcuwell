@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,8 +44,8 @@ const fromRoman = (str: string): number | string => {
 
 
 export default function RomanNumeralConverter() {
-    const [isRomanToNumber, setIsRomanToNumber] = useState(false);
-    const [inputValue, setInputValue] = useState(isRomanToNumber ? "X" : "10");
+    const [isRomanToNumber, setIsRomanToNumber] = usePersistentState("roman-isRomanToNumber", false);
+    const [inputValue, setInputValue] = usePersistentState("roman-inputValue", "10");
 
     const result = useMemo(() => {
         if (isRomanToNumber) {

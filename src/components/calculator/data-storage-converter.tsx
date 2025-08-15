@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,9 +23,9 @@ const units = {
 type Unit = keyof typeof units;
 
 export default function DataStorageConverter() {
-  const [fromUnit, setFromUnit] = useState<Unit>("megabyte");
-  const [toUnit, setToUnit] = useState<Unit>("gigabyte");
-  const [value, setValue] = useState("1024");
+  const [fromUnit, setFromUnit] = usePersistentState<Unit>("data-storage-from", "megabyte");
+  const [toUnit, setToUnit] = usePersistentState<Unit>("data-storage-to", "gigabyte");
+  const [value, setValue] = usePersistentState("data-storage-value", "1024");
 
   const handleSwap = () => {
     setFromUnit(toUnit);

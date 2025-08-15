@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -34,7 +35,7 @@ const validationPatterns: Record<NumberSystem, RegExp> = {
 export default function BinaryConverter() {
   const [fromSystem, setFromSystem] = usePersistentState<NumberSystem>("binary-from", "decimal");
   const [toSystem, setToSystem] = usePersistentState<NumberSystem>("binary-to", "binary");
-  const [value, setValue] = useState("10");
+  const [value, setValue] = usePersistentState("binary-value", "10");
 
   const handleSwap = () => {
     setFromSystem(toSystem);

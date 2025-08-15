@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,8 +14,8 @@ import { ArrowRightLeft } from "lucide-react";
 // 1 L/100km = 235.215 / 1 MPG
 
 export default function FuelEfficiencyConverter() {
-    const [isMpgToL, setIsMpgToL] = useState(true);
-    const [value, setValue] = useState("25");
+    const [isMpgToL, setIsMpgToL] = usePersistentState("fuel-eff-isMpgToL", true);
+    const [value, setValue] = usePersistentState("fuel-eff-value", "25");
 
     const result = useMemo(() => {
         const numValue = parseFloat(value);

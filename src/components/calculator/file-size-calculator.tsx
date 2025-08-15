@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -24,10 +26,10 @@ const timeUnits = {
 type TimeUnit = keyof typeof timeUnits;
 
 export default function FileSizeCalculator() {
-  const [duration, setDuration] = useState(60);
-  const [durationUnit, setDurationUnit] = useState<TimeUnit>('minute');
-  const [bitrate, setBitrate] = useState(128);
-  const [bitrateUnit, setBitrateUnit] = useState('kilobit');
+  const [duration, setDuration] = usePersistentState("file-size-duration", 60);
+  const [durationUnit, setDurationUnit] = usePersistentState<TimeUnit>('file-size-duration-unit', 'minute');
+  const [bitrate, setBitrate] = usePersistentState("file-size-bitrate", 128);
+  const [bitrateUnit, setBitrateUnit] = usePersistentState('file-size-bitrate-unit', 'kilobit');
 
   const fileSize = useMemo(() => {
     const totalSeconds = duration * timeUnits[durationUnit];

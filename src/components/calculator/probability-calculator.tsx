@@ -1,15 +1,17 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function ProbabilityCalculator() {
-  const [mode, setMode] = useState<'single' | 'independent'>('single');
-  const [probA, setProbA] = useState(0.5);
-  const [probB, setProbB] = useState(0.5);
+  const [mode, setMode] = usePersistentState<'single' | 'independent'>('prob-mode', 'single');
+  const [probA, setProbA] = usePersistentState('prob-a', 0.5);
+  const [probB, setProbB] = usePersistentState('prob-b', 0.5);
 
   const result = useMemo(() => {
     if (mode === 'single') {

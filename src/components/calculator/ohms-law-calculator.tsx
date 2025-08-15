@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,12 +11,12 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 type SolveFor = "voltage" | "current" | "resistance" | "power";
 
 export default function OhmsLawCalculator() {
-  const [solveFor, setSolveFor] = useState<SolveFor>("voltage");
+  const [solveFor, setSolveFor] = usePersistentState<SolveFor>("ohms-solveFor", "voltage");
   
-  const [voltage, setVoltage] = useState(12); // V (Volts)
-  const [current, setCurrent] = useState(0.5); // I (Amps)
-  const [resistance, setResistance] = useState(24); // R (Ohms)
-  const [power, setPower] = useState(6); // P (Watts)
+  const [voltage, setVoltage] = usePersistentState("ohms-voltage", 12); // V (Volts)
+  const [current, setCurrent] = usePersistentState("ohms-current", 0.5); // I (Amps)
+  const [resistance, setResistance] = usePersistentState("ohms-resistance", 24); // R (Ohms)
+  const [power, setPower] = usePersistentState("ohms-power", 6); // P (Watts)
 
   const result = useMemo(() => {
     const V = Number(voltage);

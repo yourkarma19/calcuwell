@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -8,8 +10,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
 export default function Base64Converter() {
-    const [textInput, setTextInput] = useState("Hello World!");
-    const [base64Input, setBase64Input] = useState("SGVsbG8gV29ybGQh");
+    const [textInput, setTextInput] = usePersistentState("base64-text", "Hello World!");
+    const [base64Input, setBase64Input] = usePersistentState("base64-b64", "SGVsbG8gV29ybGQh");
     const [error, setError] = useState<string | null>(null);
 
     const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

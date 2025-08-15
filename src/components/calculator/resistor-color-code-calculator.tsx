@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
@@ -24,10 +26,10 @@ const colors = {
 type Color = keyof typeof colors;
 
 export default function ResistorColorCodeCalculator() {
-  const [band1, setBand1] = useState<Color>("brown");
-  const [band2, setBand2] = useState<Color>("black");
-  const [band3, setBand3] = useState<Color>("orange");
-  const [band4, setBand4] = useState<Color>("gold");
+  const [band1, setBand1] = usePersistentState<Color>("resistor-band1", "brown");
+  const [band2, setBand2] = usePersistentState<Color>("resistor-band2", "black");
+  const [band3, setBand3] = usePersistentState<Color>("resistor-band3", "orange");
+  const [band4, setBand4] = usePersistentState<Color>("resistor-band4", "gold");
 
   const resistance = () => {
     const val1 = colors[band1]?.value;

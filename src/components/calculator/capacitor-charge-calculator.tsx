@@ -1,15 +1,17 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function CapacitorChargeCalculator() {
-  const [voltage, setVoltage] = useState(12); // Volts
-  const [capacitance, setCapacitance] = useState(100); // microFarads
-  const [resistance, setResistance] = useState(10); // kOhms
-  const [time, setTime] = useState(1); // seconds
+  const [voltage, setVoltage] = usePersistentState("cap-voltage", 12); // Volts
+  const [capacitance, setCapacitance] = usePersistentState("cap-capacitance", 100); // microFarads
+  const [resistance, setResistance] = usePersistentState("cap-resistance", 10); // kOhms
+  const [time, setTime] = usePersistentState("cap-time", 1); // seconds
 
   const { charge, current, timeConstant } = useMemo(() => {
     const V = voltage;

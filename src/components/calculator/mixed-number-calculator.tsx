@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,9 +22,9 @@ const toMixed = (num: number, den: number) => {
 // Placeholder for future operations like addition, subtraction etc.
 
 export default function MixedNumberCalculator() {
-    const [whole, setWhole] = useState(1);
-    const [numerator, setNumerator] = useState(1);
-    const [denominator, setDenominator] = useState(2);
+    const [whole, setWhole] = usePersistentState("mixed-whole", 1);
+    const [numerator, setNumerator] = usePersistentState("mixed-num", 1);
+    const [denominator, setDenominator] = usePersistentState("mixed-den", 2);
 
     const improperFraction = useMemo(() => {
         if (denominator === 0) return { num: "Invalid", den: "Denominator" };

@@ -1,13 +1,15 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function LogarithmCalculator() {
-  const [number, setNumber] = useState(100);
-  const [base, setBase] = useState(10);
+  const [number, setNumber] = usePersistentState("log-number", 100);
+  const [base, setBase] = usePersistentState("log-base", 10);
 
   const result = useMemo(() => {
     const num = Number(number);

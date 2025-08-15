@@ -1,16 +1,18 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 // Simple cantilever beam with a point load at the end
 export default function BeamDeflectionCalculator() {
-  const [load, setLoad] = useState(1000); // in Newtons
-  const [length, setLength] = useState(2); // in meters
-  const [modulus, setModulus] = useState(200); // in GPa
-  const [inertia, setInertia] = useState(5e-6); // in m^4
+  const [load, setLoad] = usePersistentState("beam-load", 1000); // in Newtons
+  const [length, setLength] = usePersistentState("beam-length", 2); // in meters
+  const [modulus, setModulus] = usePersistentState("beam-modulus", 200); // in GPa
+  const [inertia, setInertia] = usePersistentState("beam-inertia", 5e-6); // in m^4
 
   const deflection = useMemo(() => {
     const P = load;

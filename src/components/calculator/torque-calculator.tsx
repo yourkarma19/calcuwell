@@ -1,13 +1,15 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function TorqueCalculator() {
-  const [force, setForce] = useState(100); // in Newtons
-  const [distance, setDistance] = useState(0.5); // in meters
+  const [force, setForce] = usePersistentState("torque-force", 100); // in Newtons
+  const [distance, setDistance] = usePersistentState("torque-distance", 0.5); // in meters
 
   const torque = useMemo(() => {
     return force * distance;

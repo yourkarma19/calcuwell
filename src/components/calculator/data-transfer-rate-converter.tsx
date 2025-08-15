@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,9 +30,9 @@ const units = {
 type Unit = keyof typeof units;
 
 export default function DataTransferRateConverter() {
-  const [fromUnit, setFromUnit] = useState<Unit>("megabit/s (Mbps)");
-  const [toUnit, setToUnit] = useState<Unit>("megabyte/s (MB/s)");
-  const [value, setValue] = useState("100");
+  const [fromUnit, setFromUnit] = usePersistentState<Unit>("data-transfer-from", "megabit/s (Mbps)");
+  const [toUnit, setToUnit] = usePersistentState<Unit>("data-transfer-to", "megabyte/s (MB/s)");
+  const [value, setValue] = usePersistentState("data-transfer-value", "100");
 
   const handleSwap = () => {
     setFromUnit(toUnit);

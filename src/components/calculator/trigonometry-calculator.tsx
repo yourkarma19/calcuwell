@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,9 +35,9 @@ const calculateTrig = (func: TrigFunction, value: number, unit: AngleUnit): numb
 };
 
 export default function TrigonometryCalculator() {
-  const [trigFunction, setTrigFunction] = useState<TrigFunction>("sin");
-  const [angleUnit, setAngleUnit] = useState<AngleUnit>("degrees");
-  const [inputValue, setInputValue] = useState("30");
+  const [trigFunction, setTrigFunction] = usePersistentState<TrigFunction>("trig-function", "sin");
+  const [angleUnit, setAngleUnit] = usePersistentState<AngleUnit>("trig-unit", "degrees");
+  const [inputValue, setInputValue] = usePersistentState("trig-input", "30");
 
   const result = useMemo(() => {
     const value = parseFloat(inputValue);

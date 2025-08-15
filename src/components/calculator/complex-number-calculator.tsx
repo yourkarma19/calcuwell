@@ -1,17 +1,19 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function ComplexNumberCalculator() {
-  const [real1, setReal1] = useState(3);
-  const [imag1, setImag1] = useState(2);
-  const [real2, setReal2] = useState(1);
-  const [imag2, setImag2] = useState(7);
-  const [operation, setOperation] = useState<"add" | "subtract" | "multiply" | "divide">("add");
+  const [real1, setReal1] = usePersistentState("complex-real1", 3);
+  const [imag1, setImag1] = usePersistentState("complex-imag1", 2);
+  const [real2, setReal2] = usePersistentState("complex-real2", 1);
+  const [imag2, setImag2] = usePersistentState("complex-imag2", 7);
+  const [operation, setOperation] = usePersistentState<"add" | "subtract" | "multiply" | "divide">("complex-op", "add");
 
   const result = useMemo(() => {
     let resReal, resImag;

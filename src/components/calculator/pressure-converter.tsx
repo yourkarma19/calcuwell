@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,9 +23,9 @@ const units = {
 type Unit = keyof typeof units;
 
 export default function PressureConverter() {
-  const [fromUnit, setFromUnit] = useState<Unit>("Kilopascal (kPa)");
-  const [toUnit, setToUnit] = useState<Unit>("Pound/square inch (psi)");
-  const [value, setValue] = useState("100");
+  const [fromUnit, setFromUnit] = usePersistentState<Unit>("pressure-from", "Kilopascal (kPa)");
+  const [toUnit, setToUnit] = usePersistentState<Unit>("pressure-to", "Pound/square inch (psi)");
+  const [value, setValue] = usePersistentState("pressure-value", "100");
 
   const handleSwap = () => {
     setFromUnit(toUnit);

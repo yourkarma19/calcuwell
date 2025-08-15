@@ -1,23 +1,25 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function EquationSolver() {
-  const [mode, setMode] = useState<'linear' | 'quadratic'>('linear');
+  const [mode, setMode] = usePersistentState<'linear' | 'quadratic'>('equation-mode', 'linear');
   
   // Linear: ax + b = c
-  const [la, setLa] = useState(2);
-  const [lb, setLb] = useState(5);
-  const [lc, setLc] = useState(10);
+  const [la, setLa] = usePersistentState('equation-la', 2);
+  const [lb, setLb] = usePersistentState('equation-lb', 5);
+  const [lc, setLc] = usePersistentState('equation-lc', 10);
   
   // Quadratic: ax^2 + bx + c = 0
-  const [qa, setQa] = useState(1);
-  const [qb, setQb] = useState(-3);
-  const [qc, setQc] = useState(2);
+  const [qa, setQa] = usePersistentState('equation-qa', 1);
+  const [qb, setQb] = usePersistentState('equation-qb', -3);
+  const [qc, setQc] = usePersistentState('equation-qc', 2);
 
   const result = useMemo(() => {
     if (mode === 'linear') {

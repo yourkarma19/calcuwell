@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -63,7 +65,7 @@ function hslToRgb(h: number, s: number, l: number) {
 }
 
 export default function ColorConverter() {
-  const [hex, setHex] = useState("#8B5CF6");
+  const [hex, setHex] = usePersistentState("color-hex", "#8B5CF6");
   
   const { rgb, hsl } = useMemo(() => {
     const validHex = /^#([0-9A-F]{3}){1,2}$/i.test(hex);

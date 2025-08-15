@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -28,9 +29,9 @@ const timeUnits = {
 type TimeUnit = keyof typeof timeUnits;
 
 export default function TimeConverter() {
-  const [fromUnit, setFromUnit] = useState<TimeUnit>("hours");
-  const [toUnit, setToUnit] = useState<TimeUnit>("minutes");
-  const [value, setValue] = useState("1");
+  const [fromUnit, setFromUnit] = usePersistentState<TimeUnit>("time-from", "hours");
+  const [toUnit, setToUnit] = usePersistentState<TimeUnit>("time-to", "minutes");
+  const [value, setValue] = usePersistentState("time-value", "1");
 
   const handleSwap = () => {
     setFromUnit(toUnit);

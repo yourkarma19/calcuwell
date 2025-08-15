@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,9 +12,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 const MATRIX_SIZE = 2;
 
 export default function MatrixCalculator() {
-  const [matrixA, setMatrixA] = useState([[1, 2], [3, 4]]);
-  const [matrixB, setMatrixB] = useState([[5, 6], [7, 8]]);
-  const [operation, setOperation] = useState<"add" | "subtract">("add");
+  const [matrixA, setMatrixA] = usePersistentState("matrix-a", [[1, 2], [3, 4]]);
+  const [matrixB, setMatrixB] = usePersistentState("matrix-b", [[5, 6], [7, 8]]);
+  const [operation, setOperation] = usePersistentState<"add" | "subtract">("matrix-op", "add");
 
   const handleMatrixChange = (matrix: "A" | "B", row: number, col: number, value: string) => {
     const setter = matrix === "A" ? setMatrixA : setMatrixB;
