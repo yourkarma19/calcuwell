@@ -1,43 +1,34 @@
 "use client";
 
 import { useState } from "react";
-import { differenceInYears, differenceInMonths, differenceInDays } from "date-fns";
+import { differenceInYears, differenceInMonths, differenceInDays, subYears, subMonths } from "date-fns";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 
 export default function AgeCalculator() {
-  const [dateOfBirth, setDateOfBirth] = useState<Date | undefined>();
+  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', undefined);
   const [age, setAge] = useState<{ years: number; months: number; days: number } | null>(null);
 
   const handleCalculateAge = () => {
     if (dateOfBirth) {
       const now = new Date();
       if (dateOfBirth > now) {
-        setAge(null);
+        setAge(null); // Or show an error
         return;
       }
       
       const years = differenceInYears(now, dateOfBirth);
-      
-      let months = differenceInMonths(now, dateOfBirth);
-      months = months % 12;
+      const pastDateWithoutYears = subYears(now, years);
+      const months = differenceInMonths(pastDateWithoutYears, dateOfBirth);
+      const pastDateWithoutMonths = subMonths(pastDateWithoutYears, months);
+      const days = differenceInDays(pastDateWithoutMonths, dateOfBirth);
 
-      // To get the accurate month, we need to adjust if the current month's day is less than dob's day
-      if (now.getDate() < dateOfBirth.getDate()) {
-        months = months === 0 ? 11 : months -1;
-      }
-
-      // To get the accurate day
-      const lastMonth = new Date(now);
-      lastMonth.setMonth(now.getMonth() -1);
-      const days = differenceInDays(now, lastMonth);
-
-
-      setAge({ years, months, days: now.getDate() < dateOfBirth.getDate() ? days - dateOfBirth.getDate() + now.getDate() : now.getDate() - dateOfBirth.getDate()});
+      setAge({ years, months, days });
     }
   };
 
