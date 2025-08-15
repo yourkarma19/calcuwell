@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -107,7 +108,7 @@ export default function RetirementCalculator() {
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
           <CardHeader><CardTitle>Retirement Projection</CardTitle></CardHeader>
-          <CardContent className="space-y-4 text-center">
+          <CardContent className="space-y-4 text-center" aria-live="polite">
             <div>
               <p className="text-sm text-muted-foreground">Estimated Savings at Retirement</p>
               <p className="text-2xl font-bold font-headline text-primary">{formatCurrency(futureValue)}</p>

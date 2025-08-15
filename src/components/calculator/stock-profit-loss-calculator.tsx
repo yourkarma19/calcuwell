@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -18,7 +19,7 @@ export default function StockProfitLossCalculator() {
     const cost = (buyPrice * quantity) + buyCommission;
     const proceeds = (sellPrice * quantity) - sellCommission;
     const profit = proceeds - cost;
-    const roi = (profit / cost) * 100;
+    const roi = cost > 0 ? (profit / cost) * 100 : 0;
 
     return {
       totalCost: cost,
@@ -71,7 +72,7 @@ export default function StockProfitLossCalculator() {
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
           <CardHeader><CardTitle>Trade Result</CardTitle></CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" aria-live="polite">
             <div className="text-center">
               <p className="text-sm text-muted-foreground">Total {isProfit ? "Profit" : "Loss"}</p>
               <p className={cn("text-4xl font-bold font-headline", resultColor)}>

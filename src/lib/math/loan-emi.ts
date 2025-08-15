@@ -1,3 +1,4 @@
+
 /**
  * Calculates the Equated Monthly Installment (EMI) for a loan.
  *
@@ -29,7 +30,7 @@ export function calculateEMI(principal: number, annualRate: number, tenureInYear
         (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
 
     if (!isFinite(emi)) {
-        return { emi: 0, totalInterest: 0, totalPayable: 0 };
+        return { emi: 0, totalInterest: 0, totalPayable: principal };
     }
     
     const totalPayable = emi * numberOfMonths;

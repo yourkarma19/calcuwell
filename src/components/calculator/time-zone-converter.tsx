@@ -104,7 +104,7 @@ export default function TimeZoneConverter() {
                 </SelectContent>
               </Select>
               <div className="flex gap-2">
-                <DatePicker date={date} setDate={setDate} disabled={() => false}/>
+                <DatePicker date={date} setDate={setDate} disabled={(date) => false}/>
                 <Input type="time" value={time} onChange={e => setTime(e.target.value)} />
               </div>
             </div>

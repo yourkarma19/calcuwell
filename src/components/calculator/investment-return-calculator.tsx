@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -16,7 +17,7 @@ export default function InvestmentReturnCalculator() {
     const final = Number(finalValue);
 
     if (initial === 0) {
-      return { roi: 0, netProfit: 0 };
+      return { roi: 0, netProfit: final };
     }
     
     const profit = final - initial;
@@ -65,7 +66,7 @@ export default function InvestmentReturnCalculator() {
           <CardHeader>
             <CardTitle>Return on Investment</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
             <div>
               <p className="text-sm text-muted-foreground">Return on Investment (ROI)</p>
               <p className={cn("text-4xl font-bold font-headline", resultColor)}>

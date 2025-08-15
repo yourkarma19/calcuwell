@@ -44,7 +44,7 @@ export default function MatrixCalculator() {
             {matrix.map((row, rIndex) => (
                 <div key={rIndex} className="flex gap-1" role="row">
                     {row.map((val, cIndex) => (
-                        <Input key={cIndex} type="number" value={val} onChange={e => handleMatrixChange(name, rIndex, cIndex, e.target.value)} aria-label={`Matrix ${name} Row ${rIndex + 1} Column ${cIndex + 1}`} role="gridcell" />
+                        <Input key={cIndex} type="number" value={val} onChange={e => handleMatrixChange(name, rIndex, cIndex, e.target.value)} aria-label={`Matrix ${name} Row ${rIndex + 1} Column ${cIndex + 1}`} role="gridcell" step="1" />
                     ))}
                 </div>
             ))}

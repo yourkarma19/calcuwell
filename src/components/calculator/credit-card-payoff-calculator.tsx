@@ -17,13 +17,19 @@ export default function CreditCardPayoffCalculator() {
     const r = Number(apr) / 100 / 12; // Monthly interest rate
     const p = Number(monthlyPayment);
 
-    if (b <= 0 || r <= 0 || p <= 0) {
+    if (b <= 0 || r < 0 || p <= 0) {
       return { monthsToPayoff: 0, totalInterest: 0, totalPaid: 0 };
     }
     
     // Check if the payment is high enough to ever pay off the loan
-    if (p <= b * r) {
+    if (r > 0 && p <= b * r) {
       return { monthsToPayoff: Infinity, totalInterest: Infinity, totalPaid: Infinity };
+    }
+
+    // Handle 0% APR case
+    if (r === 0) {
+      const months = Math.ceil(b / p);
+      return { monthsToPayoff: months, totalInterest: 0, totalPaid: b };
     }
 
     // Formula for number of payments (N)
@@ -72,7 +78,7 @@ export default function CreditCardPayoffCalculator() {
           <CardHeader>
             <CardTitle>Payoff Summary</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
             {isFinite(monthsToPayoff) ? (
               <>
                 <div>

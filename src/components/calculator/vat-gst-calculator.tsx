@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -94,7 +95,7 @@ export default function VatGstCalculator() {
           <CardHeader>
             <CardTitle>Final Calculation</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" aria-live="polite">
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Net Price</span>
               <span className="font-semibold">₹{netPrice.toLocaleString('en-IN', {maximumFractionDigits: 2})}</span>

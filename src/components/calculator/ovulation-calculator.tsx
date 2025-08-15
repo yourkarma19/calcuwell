@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function OvulationCalculator() {
-  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', new Date(), (value) => value ? new Date(value) : new Date());
+  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', new Date(), (value) => value ? new Date(value) : undefined);
   const [cycleLength, setCycleLength] = usePersistentState("ovulation-cycle-length", 28);
 
   const { ovulationDate, fertileWindowStart, fertileWindowEnd } = useMemo(() => {
@@ -63,7 +63,7 @@ export default function OvulationCalculator() {
           <CardHeader>
             <CardTitle>Estimated Fertile Window</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center" aria-live="polite">
             {ovulationDate ? (
               <>
                 <div>

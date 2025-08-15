@@ -92,7 +92,7 @@ export default function LcmGcdCalculator() {
       </Card>
       <Card>
         <CardHeader><CardTitle>Results</CardTitle></CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center" aria-live="polite">
           <div>
             <p className="text-sm text-muted-foreground">Greatest Common Divisor (GCD)</p>
             <p className="text-4xl font-bold font-headline text-primary">{finalGcd}</p>

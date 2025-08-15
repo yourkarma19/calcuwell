@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -76,7 +77,7 @@ export default function LoanAffordabilityCalculator() {
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
           <CardHeader><CardTitle>Loan Affordability</CardTitle></CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
             <div>
               <p className="text-sm text-muted-foreground">You Can Afford a Loan Of</p>
               <p className="text-4xl font-bold font-headline text-primary">₹{affordableLoan.toLocaleString('en-IN', { maximumFractionDigits: 0 })}</p>

@@ -90,6 +90,9 @@ export default function BasicCalculator() {
       if (typeof result === "string") {
         setDisplayValue(result);
         setJustEvaluated(true);
+        setFirstOperand(null);
+        setOperator(null);
+        setWaitingForSecondOperand(false);
         return;
       }
       setDisplayValue(String(result));

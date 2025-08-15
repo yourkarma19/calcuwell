@@ -188,7 +188,7 @@ export default function GpaCalculator() {
           <CardHeader>
             <CardTitle>Your GPA</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" aria-live="polite">
             <p className="text-6xl font-bold font-headline text-primary my-2">
               {gpa !== null ? gpa.toFixed(2) : "-"}
             </p>
