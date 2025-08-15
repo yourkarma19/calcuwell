@@ -114,6 +114,7 @@ import FuelEfficiencyConverter from '@/components/calculator/fuel-efficiency-con
 import AsciiTextConverter from '@/components/calculator/ascii-text-converter';
 import OhmsLawCalculator from '@/components/calculator/ohms-law-calculator';
 import CarLoanCalculator from '@/components/calculator/car-loan-calculator';
+import InvestmentReturnCalculator from '@/components/calculator/investment-return-calculator';
 
 
 export const categories: Category[] = [
@@ -406,7 +407,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the return on your investments.',
     category: 'Finance',
     Icon: AreaChart,
-    component: PlaceholderCalculator,
+    component: InvestmentReturnCalculator,
   },
   {
     slug: 'stock-profit-loss-calculator',
