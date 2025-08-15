@@ -10,7 +10,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Input } from "@/components/ui/input";
 import { type Calculator } from "@/lib/types";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
@@ -43,12 +42,6 @@ export function SearchBar() {
         setIsLoading(false);
     }
   }, [isLoading]);
-
-  useEffect(() => {
-    if (isOpen && !fuseRef.current) {
-      initFuse();
-    }
-  }, [isOpen, initFuse]);
   
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -85,6 +78,7 @@ export function SearchBar() {
           variant="outline"
           className="w-full justify-between text-muted-foreground md:w-64"
           onClick={() => setIsOpen(true)}
+          onFocus={initFuse}
          >
           <span>Search calculators...</span>
           <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">
@@ -99,6 +93,7 @@ export function SearchBar() {
                 placeholder="Search calculators..."
                 value={query}
                 onValueChange={handleInputChange}
+                onFocus={initFuse}
             />
             <CommandList>
                 {isLoading && <CommandEmpty>Loading search...</CommandEmpty>}
