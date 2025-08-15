@@ -26,11 +26,11 @@ export default function Home() {
         <div className="mt-8">
            <Image 
             src="https://placehold.co/1200x600.png"
-            alt="An illustration of various calculators"
+            alt="An illustration of a scientific calculator"
             width={1200}
             height={600}
             className="rounded-lg shadow-xl mx-auto"
-            data-ai-hint="calculator illustration"
+            data-ai-hint="scientific calculator"
           />
         </div>
       </section>
