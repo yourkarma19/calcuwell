@@ -115,6 +115,11 @@ import AsciiTextConverter from '@/components/calculator/ascii-text-converter';
 import OhmsLawCalculator from '@/components/calculator/ohms-law-calculator';
 import CarLoanCalculator from '@/components/calculator/car-loan-calculator';
 import InvestmentReturnCalculator from '@/components/calculator/investment-return-calculator';
+import OvertimePayCalculator from '@/components/calculator/overtime-pay-calculator';
+import AngleConverter from '@/components/calculator/angle-converter';
+import LogarithmCalculator from '@/components/calculator/logarithm-calculator';
+import Base64Converter from '@/components/calculator/base64-converter';
+import CylinderVolumeCalculator from '@/components/calculator/cylinder-volume-calculator';
 
 
 export const categories: Category[] = [
@@ -298,7 +303,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate logarithms with different bases.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: LogarithmCalculator,
   },
   {
     slug: 'equation-solver',
@@ -471,7 +476,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your overtime pay.',
     category: 'Finance',
     Icon: Clock,
-    component: PlaceholderCalculator,
+    component: OvertimePayCalculator,
   },
   {
     slug: 'break-even-point-calculator',
@@ -729,7 +734,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between degrees and radians.',
     category: 'Conversions',
     Icon: Ruler,
-    component: PlaceholderCalculator,
+    component: AngleConverter,
   },
   {
     slug: 'fuel-efficiency-converter',
@@ -848,7 +853,7 @@ export const calculators: Calculator[] = [
     description: 'Encode and decode Base64 strings.',
     category: 'Programming',
     Icon: Binary,
-    component: PlaceholderCalculator,
+    component: Base64Converter,
   },
   {
     slug: 'ip-subnet-calculator',
@@ -915,7 +920,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the volume of a cylinder.',
     category: 'Geometry & Engineering',
     Icon: Beaker,
-    component: PlaceholderCalculator,
+    component: CylinderVolumeCalculator,
   },
   {
     slug: 'sphere-volume-surface-area-calculator',
