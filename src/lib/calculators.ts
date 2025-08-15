@@ -68,6 +68,13 @@ import DateDifferenceCalculator from '@/components/calculator/date-difference-ca
 import ColorConverter from '@/components/calculator/color-converter';
 import IdealWeightCalculator from '@/components/calculator/ideal-weight-calculator';
 import SimpleInterestCalculator from '@/components/calculator/simple-interest-calculator';
+import MortgageCalculator from '@/components/calculator/mortgage-calculator';
+import BodyFatPercentageCalculator from '@/components/calculator/body-fat-percentage-calculator';
+import FractionCalculator from '@/components/calculator/fraction-calculator';
+import CircleCalculator from '@/components/calculator/circle-calculator';
+import CurrencyConverter from '@/components/calculator/currency-converter';
+import TipCalculator from '@/components/calculator/tip-calculator';
+
 
 export const categories: Category[] = [
   {
@@ -153,7 +160,7 @@ export const calculators: Calculator[] = [
     description: 'Add, subtract, multiply, and divide fractions.',
     category: 'Math',
     Icon: Pi,
-    component: PlaceholderCalculator,
+    component: FractionCalculator,
   },
   {
     slug: 'mixed-number-calculator',
@@ -300,7 +307,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your monthly mortgage payments.',
     category: 'Finance',
     Icon: Home,
-    component: PlaceholderCalculator,
+    component: MortgageCalculator,
   },
   {
     slug: 'car-loan-calculator',
@@ -373,7 +380,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between different currencies with live rates.',
     category: 'Finance',
     Icon: Globe,
-    component: PlaceholderCalculator,
+    component: CurrencyConverter,
   },
   {
     slug: 'inflation-calculator',
@@ -397,7 +404,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate tips for services.',
     category: 'Finance',
     Icon: Wallet,
-    component: PlaceholderCalculator,
+    component: TipCalculator,
   },
   {
     slug: 'discount-calculator',
@@ -491,7 +498,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your body fat percentage.',
     category: 'Health',
     Icon: Percent,
-    component: PlaceholderCalculator,
+    component: BodyFatPercentageCalculator,
   },
   {
     slug: 'lean-body-mass-calculator',
@@ -838,7 +845,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     Icon: Circle,
-    component: PlaceholderCalculator,
+    component: CircleCalculator,
   },
   {
     slug: 'triangle-area-perimeter-calculator',
