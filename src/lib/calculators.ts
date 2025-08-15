@@ -105,6 +105,11 @@ import FactorialCalculator from '@/components/calculator/factorial-calculator';
 import ScientificCalculator from '@/components/calculator/scientific-calculator';
 import RetirementCalculator from '@/components/calculator/retirement-calculator';
 import DataStorageConverter from '@/components/calculator/data-storage-converter';
+import WaterIntakeCalculator from '@/components/calculator/water-intake-calculator';
+import BacCalculator from '@/components/calculator/bac-calculator';
+import FuelEfficiencyConverter from '@/components/calculator/fuel-efficiency-converter';
+import AsciiTextConverter from '@/components/calculator/ascii-text-converter';
+import OhmsLawCalculator from '@/components/calculator/ohms-law-calculator';
 
 
 export const categories: Category[] = [
@@ -573,7 +578,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your daily water intake needs.',
     category: 'Health',
     Icon: Droplets,
-    component: PlaceholderCalculator,
+    component: WaterIntakeCalculator,
   },
   {
     slug: 'heart-rate-zone-calculator',
@@ -597,7 +602,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your blood alcohol content.',
     category: 'Health',
     Icon: TestTube,
-    component: PlaceholderCalculator,
+    component: BacCalculator,
   },
   {
     slug: 'child-growth-percentile-calculator',
@@ -727,7 +732,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between mpg and L/100km.',
     category: 'Conversions',
     Icon: Car,
-    component: PlaceholderCalculator,
+    component: FuelEfficiencyConverter,
   },
 
   // Date & Time
@@ -830,7 +835,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between ASCII codes and text.',
     category: 'Programming',
     Icon: ArrowRightLeft,
-    component: PlaceholderCalculator,
+    component: AsciiTextConverter,
   },
   {
     slug: 'base64-encode-decode',
@@ -962,7 +967,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate voltage, current, and resistance.',
     category: 'Geometry & Engineering',
     Icon: Atom,
-    component: PlaceholderCalculator,
+    component: OhmsLawCalculator,
   },
   {
     slug: 'resistor-color-code-calculator',
