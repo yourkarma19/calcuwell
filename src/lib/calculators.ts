@@ -63,6 +63,11 @@ import PercentageCalculator from '@/components/calculator/percentage-calculator'
 import UnitConverter from '@/components/calculator/unit-converter';
 import BmrCalculator from '@/components/calculator/bmr-calculator';
 import BinaryConverter from '@/components/calculator/binary-converter';
+import GpaCalculator from '@/components/calculator/gpa-calculator';
+import DateDifferenceCalculator from '@/components/calculator/date-difference-calculator';
+import ColorConverter from '@/components/calculator/color-converter';
+import IdealWeightCalculator from '@/components/calculator/ideal-weight-calculator';
+import SimpleInterestCalculator from '@/components/calculator/simple-interest-calculator';
 
 export const categories: Category[] = [
   {
@@ -319,7 +324,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate simple interest on a principal amount.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: PlaceholderCalculator,
+    component: SimpleInterestCalculator,
+    formula: 'P * R * T / 100'
   },
   {
     slug: 'compound-interest-calculator',
@@ -476,7 +482,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate your ideal body weight.',
     category: 'Health',
     Icon: Scale,
-    component: PlaceholderCalculator,
+    component: IdealWeightCalculator,
+    formula: "Robinson Formula (1983)"
   },
   {
     slug: 'body-fat-percentage-calculator',
@@ -574,7 +581,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between meters, feet, inches, and more.',
     category: 'Conversions',
     Icon: Ruler,
-    component: PlaceholderCalculator,
+    component: UnitConverter,
   },
   {
     slug: 'weight-mass-converter',
@@ -582,7 +589,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between kg, lb, g, and more.',
     category: 'Conversions',
     Icon: Scale,
-    component: PlaceholderCalculator,
+    component: UnitConverter,
   },
   {
     slug: 'temperature-converter',
@@ -590,7 +597,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between Celsius, Fahrenheit, and Kelvin.',
     category: 'Conversions',
     Icon: Thermometer,
-    component: PlaceholderCalculator,
+    component: UnitConverter,
   },
   {
     slug: 'area-converter',
@@ -598,7 +605,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between sq m, sq ft, acres, and more.',
     category: 'Conversions',
     Icon: Ruler,
-    component: PlaceholderCalculator,
+    component: UnitConverter,
   },
   {
     slug: 'volume-converter',
@@ -606,7 +613,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between liters, gallons, cups, and more.',
     category: 'Conversions',
     Icon: Beaker,
-    component: PlaceholderCalculator,
+    component: UnitConverter,
   },
   {
     slug: 'speed-converter',
@@ -614,7 +621,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between mph, km/h, m/s, and more.',
     category: 'Conversions',
     Icon: Gauge,
-    component: PlaceholderCalculator,
+    component: UnitConverter,
   },
   {
     slug: 'time-converter',
@@ -697,7 +704,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate the difference between two dates.',
     category: 'Date & Time',
     Icon: CalendarDays,
-    component: PlaceholderCalculator,
+    component: DateDifferenceCalculator,
+    formula: "endDate - startDate"
   },
   {
     slug: 'countdown-timer-calculator',
@@ -764,6 +772,7 @@ export const calculators: Calculator[] = [
     category: 'Programming',
     Icon: Binary,
     component: BinaryConverter,
+    formula: 'parseInt(num, fromBase).toString(toBase)'
   },
   {
     slug: 'decimal-hexadecimal-converter',
@@ -771,7 +780,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between decimal and hexadecimal numbers.',
     category: 'Programming',
     Icon: Hash,
-    component: PlaceholderCalculator,
+    component: BinaryConverter,
   },
   {
     slug: 'ascii-text-converter',
@@ -819,7 +828,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between HEX, RGB, and HSL color codes.',
     category: 'Programming',
     Icon: Palette,
-    component: PlaceholderCalculator,
+    component: ColorConverter,
   },
 
   // Geometry & Engineering
@@ -943,7 +952,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate your Grade Point Average.',
     category: 'Miscellaneous',
     Icon: GraduationCap,
-    component: PlaceholderCalculator,
+    component: GpaCalculator,
+    formula: 'Σ(Grade Points * Credits) / Σ(Credits)'
   },
   {
     slug: 'grade-percentage-calculator',

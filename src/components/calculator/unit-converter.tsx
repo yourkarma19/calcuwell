@@ -15,88 +15,62 @@ import {
 import { ArrowRightLeft } from "lucide-react";
 import { Button } from "../ui/button";
 
-type ConversionType = "length" | "weight" | "temperature";
-
 const units = {
-  length: {
-    meter: 1,
-    kilometer: 1000,
-    centimeter: 0.01,
-    millimeter: 0.001,
-    mile: 1609.34,
-    yard: 0.9144,
-    foot: 0.3048,
-    inch: 0.0254,
-  },
-  weight: {
-    kilogram: 1,
-    gram: 0.001,
-    milligram: 0.000001,
-    pound: 0.453592,
-    ounce: 0.0283495,
-  },
-  temperature: {
-    celsius: "celsius",
-    fahrenheit: "fahrenheit",
-    kelvin: "kelvin",
-  },
+  length: { meter: 1, kilometer: 1000, centimeter: 0.01, millimeter: 0.001, mile: 1609.34, yard: 0.9144, foot: 0.3048, inch: 0.0254 },
+  weight: { kilogram: 1, gram: 0.001, milligram: 1e-6, pound: 0.453592, ounce: 0.0283495, ton: 1000 },
+  temperature: { celsius: "c", fahrenheit: "f", kelvin: "k" },
+  area: { "square-meter": 1, "square-kilometer": 1e6, "square-foot": 0.092903, "square-yard": 0.836127, acre: 4046.86, hectare: 10000 },
+  volume: { liter: 1, milliliter: 0.001, "cubic-meter": 1000, "cubic-foot": 28.3168, gallon: 3.78541, quart: 0.946353, pint: 0.473176, cup: 0.24, "fluid-ounce": 0.0295735 },
+  speed: { "m/s": 1, "km/h": 0.277778, mph: 0.44704, knot: 0.514444 },
 };
+
+type ConversionType = keyof typeof units;
 
 export default function UnitConverter() {
   const [conversionType, setConversionType] = usePersistentState<ConversionType>("unit-type", "length");
-  const [fromUnit, setFromUnit] = usePersistentState("unit-from", Object.keys(units[conversionType])[0]);
-  const [toUnit, setToUnit] = usePersistentState("unit-to", Object.keys(units[conversionType])[1]);
+  
+  const [fromUnit, setFromUnit] = useState(Object.keys(units[conversionType])[0]);
+  const [toUnit, setToUnit] = useState(Object.keys(units[conversionType])[1]);
+  
   const [value, setValue] = useState("1");
-  const [swapped, setSwapped] = useState(false);
 
   useEffect(() => {
-    setFromUnit(Object.keys(units[conversionType])[0]);
-    setToUnit(Object.keys(units[conversionType])[1]);
-  }, [conversionType, setFromUnit, setToUnit]);
+    const unitKeys = Object.keys(units[conversionType]);
+    setFromUnit(unitKeys[0]);
+    setToUnit(unitKeys[1]);
+  }, [conversionType]);
 
   const handleSwap = () => {
+    const currentFrom = fromUnit;
     setFromUnit(toUnit);
-    setToUnit(fromUnit);
-    setSwapped(!swapped);
+    setToUnit(currentFrom);
   };
 
   const convertedValue = useMemo(() => {
     const numValue = parseFloat(value);
     if (isNaN(numValue)) return "";
 
-    const from = swapped ? toUnit : fromUnit;
-    const to = swapped ? fromUnit : toUnit;
-
     if (conversionType === "temperature") {
-        if (from === to) return value;
-        if (from === "celsius") {
-            if (to === "fahrenheit") return (numValue * 9/5 + 32).toFixed(2);
-            if (to === "kelvin") return (numValue + 273.15).toFixed(2);
-        }
-        if (from === "fahrenheit") {
-            if (to === "celsius") return ((numValue - 32) * 5/9).toFixed(2);
-            if (to === "kelvin") return ((numValue - 32) * 5/9 + 273.15).toFixed(2);
-        }
-        if (from === "kelvin") {
-            if (to === "celsius") return (numValue - 273.15).toFixed(2);
-            if (to === "fahrenheit") return ((numValue - 273.15) * 9/5 + 32).toFixed(2);
-        }
-        return ""
+        let celsiusValue;
+        if (fromUnit === 'celsius') celsiusValue = numValue;
+        if (fromUnit === 'fahrenheit') celsiusValue = (numValue - 32) * 5/9;
+        if (fromUnit === 'kelvin') celsiusValue = numValue - 273.15;
+        if (celsiusValue === undefined) return "";
+
+        if (toUnit === 'celsius') return celsiusValue.toFixed(2);
+        if (toUnit === 'fahrenheit') return (celsiusValue * 9/5 + 32).toFixed(2);
+        if (toUnit === 'kelvin') return (celsiusValue + 273.15).toFixed(2);
+
     } else {
-        const fromFactor = units[conversionType][from as keyof typeof units.length | keyof typeof units.weight];
-        const toFactor = units[conversionType][to as keyof typeof units.length | keyof typeof units.weight];
-        if(typeof fromFactor === 'number' && typeof toFactor === 'number') {
-            const result = (numValue * fromFactor) / toFactor;
-            return result.toLocaleString(undefined, { maximumFractionDigits: result > 1 ? 4 : 8});
-        }
+        const fromFactor = (units[conversionType] as any)[fromUnit];
+        const toFactor = (units[conversionType] as any)[toUnit];
+        const result = (numValue * fromFactor) / toFactor;
+        return result.toLocaleString(undefined, { maximumFractionDigits: result > 1 ? 4 : 8});
     }
     return "";
-  }, [value, fromUnit, toUnit, conversionType, swapped]);
+  }, [value, fromUnit, toUnit, conversionType]);
   
   const currentUnits = units[conversionType];
-
-  const DisplayFromUnit = swapped ? toUnit : fromUnit;
-  const DisplayToUnit = swapped ? fromUnit : toUnit;
 
   return (
     <div className="lg:col-span-3">
@@ -112,9 +86,9 @@ export default function UnitConverter() {
                 <SelectValue placeholder="Select conversion type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="length">Length</SelectItem>
-                <SelectItem value="weight">Weight</SelectItem>
-                <SelectItem value="temperature">Temperature</SelectItem>
+                {Object.keys(units).map(type => (
+                    <SelectItem key={type} value={type} className="capitalize">{type}</SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -122,11 +96,11 @@ export default function UnitConverter() {
             <div className="w-full space-y-2">
               <Label htmlFor="from-value">From</Label>
               <Input id="from-value" type="number" value={value} onChange={(e) => setValue(e.target.value)} />
-              <Select value={DisplayFromUnit} onValueChange={swapped ? setToUnit : setFromUnit}>
+              <Select value={fromUnit} onValueChange={setFromUnit}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {Object.keys(currentUnits).map(unit => (
-                    <SelectItem key={unit} value={unit}>{unit}</SelectItem>
+                    <SelectItem key={unit} value={unit} className="capitalize">{unit.replace("-", " ")}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -139,11 +113,11 @@ export default function UnitConverter() {
             <div className="w-full space-y-2">
               <Label htmlFor="to-value">To</Label>
               <Input id="to-value" value={convertedValue} readOnly className="font-bold text-primary bg-primary/10 border-primary/20" />
-               <Select value={DisplayToUnit} onValueChange={swapped ? setFromUnit : setToUnit}>
+               <Select value={toUnit} onValueChange={setToUnit}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {Object.keys(currentUnits).map(unit => (
-                    <SelectItem key={unit} value={unit}>{unit}</SelectItem>
+                    <SelectItem key={unit} value={unit} className="capitalize">{unit.replace("-", " ")}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
