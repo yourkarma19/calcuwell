@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -32,11 +33,11 @@ const gradePoints: { [key: string]: number } = {
 const courseSchema = z.object({
   name: z.string().optional(),
   grade: z.string().refine(val => Object.keys(gradePoints).includes(val), { message: "Required" }),
-  credits: z.coerce.number().min(0.1, { message: "Must be > 0" }),
+  credits: z.coerce.number().min(0.1, { message: "Must be > 0" }).max(10, {message: "< 10"}),
 });
 
 const formSchema = z.object({
-  courses: z.array(courseSchema),
+  courses: z.array(courseSchema).min(1, { message: "At least one course is required." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -49,6 +50,7 @@ export default function GpaCalculator() {
     defaultValues: {
       courses: [{ name: "Example Course", grade: "A", credits: 3 }],
     },
+     mode: "onChange",
   });
 
   const { fields, append, remove } = useFieldArray({

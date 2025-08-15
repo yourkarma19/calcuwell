@@ -21,16 +21,20 @@ export default function LoanEMICalculator() {
   const [tenure, setTenure] = usePersistentState("loan-tenure", 5);
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {
-    if (principal > 0 && rate > 0 && tenure > 0) {
-      const monthlyRate = rate / 12 / 100;
-      const numberOfMonths = tenure * 12;
+    const p = Number(principal);
+    const r = Number(rate);
+    const t = Number(tenure);
+
+    if (p > 0 && r > 0 && t > 0) {
+      const monthlyRate = r / 12 / 100;
+      const numberOfMonths = t * 12;
       const emiValue =
-        (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) /
+        (p * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) /
         (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
       
       if (isFinite(emiValue)) {
         const totalPayableValue = emiValue * numberOfMonths;
-        const totalInterestValue = totalPayableValue - principal;
+        const totalInterestValue = totalPayableValue - p;
         return {
           emi: emiValue,
           totalPayable: totalPayableValue,
@@ -38,7 +42,7 @@ export default function LoanEMICalculator() {
         };
       }
     }
-    return { emi: 0, totalPayable: 0, totalInterest: 0 };
+    return { emi: 0, totalPayable: principal, totalInterest: 0 };
   }, [principal, rate, tenure]);
   
   const chartData = useMemo(() => ([
@@ -114,22 +118,24 @@ export default function LoanEMICalculator() {
         
         <Card>
             <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-            <CardContent className="h-80">
+            <CardContent className="h-96">
                 <ChartContainer config={chartConfig} className="w-full h-full">
-                    <PieChart>
-                         <Tooltip
-                          cursor={false}
-                          content={<ChartTooltipContent 
-                            formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
-                            />}
-                        />
-                        <Pie data={chartData} dataKey="value" nameKey="name" innerRadius={60} strokeWidth={5} labelLine={false} label>
-                             {chartData.map((entry) => (
-                                <Cell key={entry.name} fill={entry.fill} />
-                            ))}
-                        </Pie>
-                        <ChartLegend content={<ChartLegendContent />} />
-                    </PieChart>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Tooltip
+                            cursor={false}
+                            content={<ChartTooltipContent 
+                                formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
+                                />}
+                            />
+                            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="30%" outerRadius="80%" strokeWidth={5} labelLine={false} label>
+                                {chartData.map((entry) => (
+                                    <Cell key={entry.name} fill={entry.fill} />
+                                ))}
+                            </Pie>
+                            <ChartLegend content={<ChartLegendContent />} />
+                        </PieChart>
+                    </ResponsiveContainer>
                 </ChartContainer>
             </CardContent>
         </Card>
@@ -148,20 +154,20 @@ export default function LoanEMICalculator() {
                   ₹ {emi.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <p className="text-sm text-muted-foreground">Total Interest</p>
-                  <p className="text-xl font-semibold">
-                    ₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
-                  </p>
+              <div className="grid grid-cols-1 gap-2 text-sm text-left border-t pt-2">
+                 <div className="flex justify-between">
+                    <span className="text-muted-foreground">Principal Amount:</span>
+                    <span className="font-semibold">₹ {principal.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Total Payable</p>
-                  <p className="text-xl font-semibold">
-                    ₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
-                  </p>
+                 <div className="flex justify-between">
+                    <span className="text-muted-foreground">Total Interest:</span>
+                    <span className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                 </div>
-              </div>
+                 <div className="flex justify-between font-bold">
+                    <span className="text-muted-foreground">Total Payable:</span>
+                    <span className="font-semibold">₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+                </div>
+            </div>
           </CardContent>
         </Card>
       </div>
