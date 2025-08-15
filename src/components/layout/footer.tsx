@@ -4,26 +4,23 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted text-muted-foreground mt-auto">
-      <div className="container mx-auto py-6 text-center text-sm">
-        <div className="flex justify-center gap-4 mb-2">
-          <Link href="/about" className="hover:text-primary transition-colors">
-            About Us
+    <footer className="bg-muted/50 text-muted-foreground">
+      <div className="container mx-auto py-8 text-center">
+        <div className="flex justify-center gap-4 sm:gap-6 mb-4">
+          <Link href="/about" className="text-sm hover:text-primary transition-colors">
+            About
           </Link>
-          <span>|</span>
-          <Link href="/sitemap" className="hover:text-primary transition-colors">
+          <Link href="/sitemap" className="text-sm hover:text-primary transition-colors">
             Sitemap
           </Link>
-          <span>|</span>
-          <Link href="/terms-of-use" className="hover:text-primary transition-colors">
+          <Link href="/terms-of-use" className="text-sm hover:text-primary transition-colors">
             Terms of Use
           </Link>
-          <span>|</span>
-          <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+          <Link href="/privacy-policy" className="text-sm hover:text-primary transition-colors">
             Privacy Policy
           </Link>
         </div>
-        <p>&copy; 2024 - {currentYear} CalcPro.online. All Rights Reserved.</p>
+        <p className="text-xs">&copy; 2024 - {currentYear} CalcPro.online. All Rights Reserved.</p>
       </div>
     </footer>
   );

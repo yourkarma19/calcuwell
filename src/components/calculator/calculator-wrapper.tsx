@@ -14,11 +14,11 @@ export default function CalculatorWrapper({
 }: CalculatorWrapperProps) {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <div className="inline-block bg-primary/10 p-4 rounded-lg mb-4">
-          <Icon name={calculator.iconName} className="w-10 h-10 text-primary" />
+      <div className="text-center mb-12">
+        <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
+          <Icon name={calculator.iconName} className="w-12 h-12 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold font-headline text-primary">
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           {calculator.name}
         </h1>
         <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
