@@ -2,18 +2,25 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { Calculator, Category } from "@/lib/types";
+import { Calculator } from "@/lib/types";
+import { categories } from "@/lib/calculators";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 interface CategoryClientPageProps {
-  category: Category;
+  name: string;
+  slug: string;
+  description: string;
   calculators: Omit<Calculator, 'component'>[];
 }
 
-export default function CategoryClientPage({ category, calculators }: CategoryClientPageProps) {
+export default function CategoryClientPage({ name, slug, description, calculators }: CategoryClientPageProps) {
   const [filter, setFilter] = useState("");
+  
+  const Icon = useMemo(() => {
+    return categories.find(c => c.slug === slug)?.Icon;
+  }, [slug]);
 
   const filteredCalculators = useMemo(() => {
     if (!filter) {
@@ -26,15 +33,19 @@ export default function CategoryClientPage({ category, calculators }: CategoryCl
 
   }, [calculators, filter]);
 
+  if (!Icon) {
+    return null; // Or some fallback UI
+  }
+
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
-        <category.Icon className="w-16 h-16 text-primary mx-auto mb-4" />
+        <Icon className="w-16 h-16 text-primary mx-auto mb-4" />
         <h1 className="text-4xl font-bold font-headline text-primary">
-          {category.name} Calculators
+          {name} Calculators
         </h1>
         <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
-          {category.description}
+          {description}
         </p>
       </div>
 
@@ -43,7 +54,7 @@ export default function CategoryClientPage({ category, calculators }: CategoryCl
         <Input 
             id="filter-input"
             type="text"
-            placeholder={`Search in ${category.name}...`}
+            placeholder={`Search in ${name}...`}
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
         />

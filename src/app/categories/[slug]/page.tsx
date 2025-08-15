@@ -35,7 +35,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <CategoryClientPage 
-      category={category}
+      name={category.name}
+      slug={category.slug}
+      description={category.description}
       calculators={categoryCalculators}
     />
   );
