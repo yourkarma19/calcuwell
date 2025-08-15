@@ -40,9 +40,9 @@ export function DatePicker({ date, setDate, className }: DatePickerProps) {
           onSelect={setDate}
           initialFocus
           captionLayout="dropdown-buttons"
-          fromYear={1900}
+          fromYear={1920}
           toYear={new Date().getFullYear()}
-          disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
+          disabled={(date) => date > new Date() || date < new Date("1920-01-01")}
         />
       </PopoverContent>
     </Popover>

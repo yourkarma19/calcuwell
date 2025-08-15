@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import {
   ChartContainer,
   ChartTooltipContent,
@@ -41,16 +41,18 @@ export default function LoanEMICalculator() {
   }, [principal, rate, tenure]);
   
   const chartData = useMemo(() => ([
-      { name: "Total Principal", value: principal, fill: "hsl(var(--chart-1))" },
-      { name: "Total Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
+      { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
+      { name: "Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
   ]), [principal, totalInterest]);
 
   const chartConfig = {
       principal: {
         label: "Principal",
+        color: "hsl(var(--chart-1))",
       },
       interest: {
         label: "Interest",
+        color: "hsl(var(--chart-2))",
       },
   }
 
@@ -111,19 +113,21 @@ export default function LoanEMICalculator() {
         
         <Card>
             <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-            <CardContent>
-                <ChartContainer config={chartConfig} className="mx-auto aspect-square h-64">
+            <CardContent className="h-64">
+                <ChartContainer config={chartConfig} className="w-full h-full">
                     <PieChart>
                          <Tooltip
                           cursor={false}
-                          content={<ChartTooltipContent hideLabel />}
+                          content={<ChartTooltipContent 
+                            formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
+                            />}
                         />
-                        <Pie data={chartData} dataKey="value" nameKey="name" innerRadius={60} strokeWidth={5}>
-                             {chartData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.fill} />
+                        <Pie data={chartData} dataKey="value" nameKey="name" innerRadius={60} strokeWidth={5} labelLine={false} label>
+                             {chartData.map((entry) => (
+                                <Cell key={entry.name} fill={entry.fill} />
                             ))}
                         </Pie>
-                        <ChartLegend content={<ChartLegendContent nameKey="name" />} />
+                        <ChartLegend content={<ChartLegendContent />} />
                     </PieChart>
                 </ChartContainer>
             </CardContent>
