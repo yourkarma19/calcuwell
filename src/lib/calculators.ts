@@ -111,8 +111,6 @@ export const categories: Category[] = [
   },
 ];
 
-// This file now only contains the definitions, not the components themselves.
-// The components are dynamically imported in calculator-components.ts.
 export const calculators: Omit<Calculator, 'component'>[] = [
   // Math & Logic
   {
@@ -280,13 +278,6 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your car loan payments.',
     category: 'Finance',
     Icon: Car,
-  },
-  {
-    slug: 'home-loan-calculator',
-    name: 'Home Loan Calculator',
-    description: 'Estimate your home loan payments and amortization.',
-    category: 'Finance',
-    Icon: Home,
   },
   {
     slug: 'simple-interest-calculator',
@@ -685,19 +676,12 @@ export const calculators: Omit<Calculator, 'component'>[] = [
 
   // Programming & Tech
   {
-    slug: 'binary-decimal-converter',
-    name: 'Binary ↔ Decimal Converter',
-    description: 'Convert between binary and decimal numbers.',
+    slug: 'binary-converter',
+    name: 'Binary & Number System Converter',
+    description: 'Convert between binary, decimal, hex, and octal.',
     category: 'Programming',
     Icon: Binary,
     formula: 'parseInt(num, fromBase).toString(toBase)'
-  },
-  {
-    slug: 'decimal-hexadecimal-converter',
-    name: 'Decimal ↔ Hexadecimal Converter',
-    description: 'Convert between decimal and hexadecimal numbers.',
-    category: 'Programming',
-    Icon: Hash,
   },
   {
     slug: 'ascii-text-converter',
@@ -707,8 +691,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     Icon: ArrowRightLeft,
   },
   {
-    slug: 'base64-encode-decode',
-    name: 'Base64 Encode/Decode',
+    slug: 'base64-converter',
+    name: 'Base64 Encoder/Decoder',
     description: 'Encode and decode Base64 strings.',
     category: 'Programming',
     Icon: Binary,
@@ -722,8 +706,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
   },
   {
     slug: 'crc-hash-generator',
-    name: 'CRC/Hash Generator',
-    description: 'Generate MD5, SHA-256 and other hashes.',
+    name: 'CRC-32 Hash Generator',
+    description: 'Generate a CRC-32 checksum for your text input.',
     category: 'Programming',
     Icon: Hash,
   },
@@ -735,7 +719,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     Icon: FileBox,
   },
   {
-    slug: 'color-code-converter',
+    slug: 'color-converter',
     name: 'Color Code Converter',
     description: 'Convert between HEX, RGB, and HSL color codes.',
     category: 'Programming',
@@ -744,22 +728,22 @@ export const calculators: Omit<Calculator, 'component'>[] = [
 
   // Geometry & Engineering
   {
-    slug: 'circle-area-circumference-calculator',
-    name: 'Circle Area & Circumference',
+    slug: 'circle-calculator',
+    name: 'Circle Calculator',
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     Icon: Circle,
   },
   {
-    slug: 'triangle-area-perimeter-calculator',
+    slug: 'triangle-area-calculator',
     name: 'Triangle Area & Perimeter',
     description: 'Calculate the area and perimeter of a triangle.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
   },
   {
-    slug: 'rectangle-square-area-calculator',
-    name: 'Rectangle/Square Area',
+    slug: 'rectangle-area-calculator',
+    name: 'Rectangle Area & Perimeter',
     description: 'Calculate the area of a rectangle or square.',
     category: 'Geometry & Engineering',
     Icon: Ruler,
@@ -830,8 +814,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     Icon: Palette,
   },
   {
-    slug: 'capacitor-charge-discharge-calculator',
-    name: 'Capacitor Charge/Discharge',
+    slug: 'capacitor-charge-calculator',
+    name: 'Capacitor Charge Calculator',
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     Icon: Atom,
@@ -868,7 +852,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     Icon: Book,
   },
   {
-    slug: 'typing-speed-wpm-calculator',
+    slug: 'typing-speed-calculator',
     name: 'Typing Speed (WPM) Calculator',
     description: 'Measure your words per minute typing speed.',
     category: 'Miscellaneous',

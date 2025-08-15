@@ -11,7 +11,6 @@ export interface Calculator {
   Icon: LucideIcon;
   tags?: string[];
   formula?: string;
-  component: LazyExoticComponent<ComponentType<any>>;
 }
 
 export interface Category {
