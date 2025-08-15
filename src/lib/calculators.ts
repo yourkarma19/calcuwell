@@ -141,6 +141,22 @@ import ResistorColorCodeCalculator from '@/components/calculator/resistor-color-
 import BusinessProfitMarginCalculator from '@/components/calculator/business-profit-margin-calculator';
 import OvulationCalculator from '@/components/calculator/ovulation-calculator';
 import WeekNumberCalculator from '@/components/calculator/week-number-calculator';
+import ProbabilityCalculator from '@/components/calculator/probability-calculator';
+import AddSubtractDaysCalculator from '@/components/calculator/add-subtract-days-calculator';
+import BusinessDayCalculator from '@/components/calculator/business-day-calculator';
+import WorldClock from '@/components/calculator/world-clock-calculator';
+import EnergyConverter from '@/components/calculator/energy-converter';
+import PowerConverter from '@/components/calculator/power-converter';
+import PressureConverter from '@/components/calculator/pressure-converter';
+import FileSizeCalculator from '@/components/calculator/file-size-calculator';
+import Vo2MaxCalculator from '@/components/calculator/vo2-max-calculator';
+import CrcHashGenerator from '@/components/calculator/crc-hash-generator';
+import MatrixCalculator from '@/components/calculator/matrix-calculator';
+import ComplexNumberCalculator from '@/components/calculator/complex-number-calculator';
+import EquationSolver from '@/components/calculator/equation-solver';
+import BeamDeflectionCalculator from '@/components/calculator/beam-deflection-calculator';
+import TorqueCalculator from '@/components/calculator/torque-calculator';
+import CapacitorChargeCalculator from '@/components/calculator/capacitor-charge-calculator';
 
 
 export const categories: Category[] = [
@@ -275,7 +291,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the probability of events.',
     category: 'Math',
     Icon: Beaker,
-    component: PlaceholderCalculator,
+    component: ProbabilityCalculator,
   },
   {
     slug: 'permutation-combination-calculator',
@@ -332,7 +348,7 @@ export const calculators: Calculator[] = [
     description: 'Solve linear and quadratic equations.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: EquationSolver,
   },
   {
     slug: 'matrix-calculator',
@@ -340,7 +356,7 @@ export const calculators: Calculator[] = [
     description: 'Perform matrix operations.',
     category: 'Math',
     Icon: Pi,
-    component: PlaceholderCalculator,
+    component: MatrixCalculator,
   },
   {
     slug: 'complex-number-calculator',
@@ -348,7 +364,7 @@ export const calculators: Calculator[] = [
     description: 'Perform calculations with complex numbers.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: ComplexNumberCalculator,
   },
   {
     slug: 'roman-numeral-converter',
@@ -625,7 +641,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your maximum oxygen uptake.',
     category: 'Health',
     Icon: Wind,
-    component: PlaceholderCalculator,
+    component: Vo2MaxCalculator,
   },
   {
     slug: 'blood-alcohol-content-calculator',
@@ -715,7 +731,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between joules, calories, kWh, and more.',
     category: 'Conversions',
     Icon: Atom,
-    component: PlaceholderCalculator,
+    component: EnergyConverter,
   },
   {
     slug: 'pressure-converter',
@@ -723,7 +739,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between Pa, bar, psi, and more.',
     category: 'Conversions',
     Icon: Cloud,
-    component: PlaceholderCalculator,
+    component: PressureConverter,
   },
   {
     slug: 'power-converter',
@@ -731,7 +747,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between watts, hp, kW, and more.',
     category: 'Conversions',
     Icon: Wind,
-    component: PlaceholderCalculator,
+    component: PowerConverter,
   },
   {
     slug: 'data-storage-converter',
@@ -807,7 +823,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate time differences between cities.',
     category: 'Date & Time',
     Icon: Globe,
-    component: PlaceholderCalculator,
+    component: WorldClock,
   },
   {
     slug: 'working-days-calculator',
@@ -831,7 +847,7 @@ export const calculators: Calculator[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     Icon: CalendarClock,
-    component: PlaceholderCalculator,
+    component: AddSubtractDaysCalculator,
   },
   {
     slug: 'business-day-calculator',
@@ -839,7 +855,7 @@ export const calculators: Calculator[] = [
     description: 'Find the next business day.',
     category: 'Date & Time',
     Icon: Briefcase,
-    component: PlaceholderCalculator,
+    component: BusinessDayCalculator,
   },
 
   // Programming & Tech
@@ -890,7 +906,7 @@ export const calculators: Calculator[] = [
     description: 'Generate MD5, SHA-256 and other hashes.',
     category: 'Programming',
     Icon: Hash,
-    component: PlaceholderCalculator,
+    component: CrcHashGenerator,
   },
   {
     slug: 'file-size-calculator',
@@ -898,7 +914,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate file size from bitrate and duration.',
     category: 'Programming',
     Icon: FileBox,
-    component: PlaceholderCalculator,
+    component: FileSizeCalculator,
   },
   {
     slug: 'color-code-converter',
@@ -982,7 +998,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the deflection of beams.',
     category: 'Geometry & Engineering',
     Icon: Ruler,
-    component: PlaceholderCalculator,
+    component: BeamDeflectionCalculator,
   },
   {
     slug: 'torque-calculator',
@@ -990,7 +1006,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate torque from force and distance.',
     category: 'Geometry & Engineering',
     Icon: Wind,
-    component: PlaceholderCalculator,
+    component: TorqueCalculator,
   },
   {
     slug: 'ohms-law-calculator',
@@ -1014,7 +1030,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     Icon: Atom,
-    component: PlaceholderCalculator,
+    component: CapacitorChargeCalculator,
   },
   {
     slug: 'inductor-energy-calculator',
@@ -1089,4 +1105,5 @@ export const calculators: Calculator[] = [
 export const getCalculatorBySlug = (slug: string): Calculator | undefined => {
   return calculators.find((calculator) => calculator.slug === slug);
 };
+
 
