@@ -6,6 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import {
+  ChartContainer,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+} from "@/components/ui/chart";
 
 export default function LoanEMICalculator() {
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
@@ -32,6 +39,20 @@ export default function LoanEMICalculator() {
     }
     return { emi: 0, totalPayable: 0, totalInterest: 0 };
   }, [principal, rate, tenure]);
+  
+  const chartData = useMemo(() => ([
+      { name: "Total Principal", value: principal, fill: "hsl(var(--chart-1))" },
+      { name: "Total Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
+  ]), [principal, totalInterest]);
+
+  const chartConfig = {
+      principal: {
+        label: "Principal",
+      },
+      interest: {
+        label: "Interest",
+      },
+  }
 
   return (
     <>
@@ -87,6 +108,27 @@ export default function LoanEMICalculator() {
             </div>
           </CardContent>
         </Card>
+        
+        <Card>
+            <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
+            <CardContent>
+                <ChartContainer config={chartConfig} className="mx-auto aspect-square h-64">
+                    <PieChart>
+                         <Tooltip
+                          cursor={false}
+                          content={<ChartTooltipContent hideLabel />}
+                        />
+                        <Pie data={chartData} dataKey="value" nameKey="name" innerRadius={60} strokeWidth={5}>
+                             {chartData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={entry.fill} />
+                            ))}
+                        </Pie>
+                        <ChartLegend content={<ChartLegendContent nameKey="name" />} />
+                    </PieChart>
+                </ChartContainer>
+            </CardContent>
+        </Card>
+        
       </div>
 
       <div className="lg:col-span-1">
