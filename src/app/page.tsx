@@ -8,7 +8,10 @@ import {
 } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import ScientificCalculator from "@/components/calculator/scientific-calculator";
+import { Suspense, lazy } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const ScientificCalculator = lazy(() => import("@/components/calculator/scientific-calculator"));
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);
@@ -25,7 +28,9 @@ export default function Home() {
         </p>
         <div className="mt-8 flex justify-center">
           <div className="w-full max-w-md">
-            <ScientificCalculator />
+            <Suspense fallback={<Skeleton className="h-[550px] w-full" />}>
+              <ScientificCalculator />
+            </Suspense>
           </div>
         </div>
       </section>

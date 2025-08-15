@@ -46,11 +46,12 @@ export default function ProportionCalculator() {
             value: !isNaN(result) ? result.toFixed(4) : "Error",
             readOnly: true, 
             className: "font-bold text-primary bg-primary/10 border-primary/20",
-            onClick: () => setSolveFor(field)
+            onClick: () => setSolveFor(field),
+            'aria-label': `Value ${field.toUpperCase()} (Result)`
         };
     }
     
-    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(Number(e.target.value)), onClick: () => setSolveFor(field) };
+    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(Number(e.target.value)), onClick: () => setSolveFor(field), 'aria-label': `Value ${field.toUpperCase()}` };
   };
 
 
