@@ -99,6 +99,9 @@ import PermutationCombinationCalculator from '@/components/calculator/permutatio
 import StockProfitLossCalculator from '@/components/calculator/stock-profit-loss-calculator';
 import WaistToHipRatioCalculator from '@/components/calculator/waist-to-hip-ratio-calculator';
 import TimeZoneConverter from '@/components/calculator/time-zone-converter';
+import BasicCalculator from '@/components/calculator/basic-calculator';
+import PythagoreanTheoremCalculator from '@/components/calculator/pythagorean-theorem-calculator';
+import FactorialCalculator from '@/components/calculator/factorial-calculator';
 
 
 export const categories: Category[] = [
@@ -160,7 +163,7 @@ export const calculators: Calculator[] = [
     description: 'Perform basic arithmetic operations.',
     category: 'Math',
     Icon: CalculatorIcon,
-    component: PlaceholderCalculator,
+    component: BasicCalculator,
   },
   {
     slug: 'scientific-calculator',
@@ -249,7 +252,8 @@ export const calculators: Calculator[] = [
     description: 'Calculate the factorial of a number.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: FactorialCalculator,
+    formula: 'n!'
   },
   {
     slug: 'lcm-gcd-calculator',
@@ -922,7 +926,8 @@ export const calculators: Calculator[] = [
     description: 'Solve for sides of a right triangle.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: PlaceholderCalculator,
+    component: PythagoreanTheoremCalculator,
+    formula: 'a² + b² = c²'
   },
   {
     slug: 'trigonometry-calculator',
