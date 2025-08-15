@@ -8,8 +8,6 @@ import {
 } from "@/components/ui/card";
 import { ArrowRight, FlaskConical } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import { Suspense, lazy } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);

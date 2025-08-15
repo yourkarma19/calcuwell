@@ -79,57 +79,66 @@ export default function GpaCalculator() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              {fields.map((field, index) => (
-                <div
-                  key={field.id}
-                  className="flex flex-col md:flex-row items-center gap-2 p-2 border rounded-lg"
-                >
-                  <Input
-                    {...register(`courses.${index}.name`)}
-                    placeholder="Course Name (Optional)"
-                    className="flex-grow"
-                    aria-label={`Course ${index + 1} name`}
-                  />
-                  <Controller
-                    control={control}
-                    name={`courses.${index}.grade`}
-                    render={({ field }) => (
-                       <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <SelectTrigger className="w-full md:w-32" aria-label={`Course ${index + 1} grade`}>
-                          <SelectValue placeholder="Grade" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {Object.keys(gradePoints).map((grade) => (
-                            <SelectItem key={grade} value={grade}>
-                              {grade}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    )}
-                  />
-                  <Input
-                    {...register(`courses.${index}.credits`)}
-                    type="number"
-                    placeholder="Credits"
-                    className="w-full md:w-24"
-                    step="0.1"
-                    aria-label={`Course ${index + 1} credits`}
-                  />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => remove(index)}
-                    className="text-red-500 hover:text-red-700"
-                    aria-label={`Remove course ${index + 1}`}
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
+              <div className="grid grid-cols-1 gap-y-2">
+                <div className="hidden md:grid md:grid-cols-[1fr_auto_auto_auto] gap-2 items-center">
+                  <Label htmlFor="course-name-header">Course Name</Label>
+                  <Label htmlFor="course-grade-header">Grade</Label>
+                  <Label htmlFor="course-credits-header">Credits</Label>
+                  <span className="w-8"></span>
                 </div>
-              ))}
+                {fields.map((field, index) => (
+                  <div
+                    key={field.id}
+                    className="flex flex-col md:grid md:grid-cols-[1fr_auto_auto_auto] items-center gap-2 p-2 border rounded-lg"
+                  >
+                    <Input
+                      {...register(`courses.${index}.name`)}
+                      placeholder="Course Name (Optional)"
+                      className="flex-grow"
+                      id={`course-name-header-${index}`}
+                      aria-label="Course name"
+                    />
+                    <Controller
+                      control={control}
+                      name={`courses.${index}.grade`}
+                      render={({ field }) => (
+                         <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <SelectTrigger className="w-full md:w-32" aria-label="Course grade">
+                            <SelectValue placeholder="Grade" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {Object.keys(gradePoints).map((grade) => (
+                              <SelectItem key={grade} value={grade}>
+                                {grade}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      )}
+                    />
+                    <Input
+                      {...register(`courses.${index}.credits`)}
+                      type="number"
+                      placeholder="Credits"
+                      className="w-full md:w-24"
+                      step="0.1"
+                      aria-label="Course credits"
+                    />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => remove(index)}
+                      className="text-red-500 hover:text-red-700"
+                      aria-label={`Remove course ${index + 1}`}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-between mt-4">
                 <Button type="button" variant="outline" onClick={() => append({ name: "", grade: "A", credits: 3 })}>
                   <Plus className="mr-2" /> Add Course
                 </Button>

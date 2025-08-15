@@ -3,26 +3,30 @@
 import { useState, useEffect, useCallback } from "react";
 
 function usePersistentState<T>(key: string, defaultValue: T): [T, (value: T | ((val: T) => T)) => void] {
-  const [state, setState] = useState<T>(defaultValue);
-
-  useEffect(() => {
+  const [state, setState] = useState<T>(() => {
+    // This function is the lazy initializer for useState.
+    // It runs only on the initial render.
+    if (typeof window === "undefined") {
+      return defaultValue;
+    }
     try {
       const storedValue = window.localStorage.getItem(key);
-      if (storedValue) {
-        setState(JSON.parse(storedValue));
-      }
+      return storedValue ? JSON.parse(storedValue) : defaultValue;
     } catch (error) {
-      console.error(`Error reading localStorage key "${key}":`, error);
+      console.error(`Error reading localStorage key “${key}”:`, error);
+      return defaultValue;
     }
-  }, [key]);
+  });
 
   const setPersistentState = useCallback((newValue: T | ((val: T) => T)) => {
     setState(prevState => {
       const valueToStore = newValue instanceof Function ? newValue(prevState) : newValue;
       try {
-        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        if (typeof window !== "undefined") {
+          window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        }
       } catch (error) {
-        console.error(`Error setting localStorage key "${key}":`, error);
+        console.error(`Error setting localStorage key “${key}”:`, error);
       }
       return valueToStore;
     });
