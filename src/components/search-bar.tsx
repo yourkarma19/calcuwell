@@ -2,9 +2,9 @@
 
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import Fuse from "fuse.js";
+import type Fuse from "fuse.js";
 import { calculators } from "@/lib/calculators";
 import {
   Popover,
@@ -21,55 +21,60 @@ export function SearchBar() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Fuse.FuseResult<SearchResult>[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const router = useRouter();
+  const fuseRef = useRef<Fuse<SearchResult> | null>(null);
 
-  const fuse = useMemo(() => new Fuse(calculators, {
-    keys: ["name", "tags", "category"],
-    threshold: 0.3,
-    includeScore: true,
-  }), []);
-  
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (query.length > 1) {
-      const searchResults = fuse.search(query);
+  const performSearch = (searchQuery: string) => {
+    if (fuseRef.current) {
+      const searchResults = fuseRef.current.search(searchQuery);
       setResults(searchResults.slice(0, 10)); // Limit to top 10 results
       setIsOpen(true);
+    }
+  };
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        const input = document.querySelector("#search-input") as HTMLInputElement;
+        input?.focus();
+      }
+    };
+
+    if (query.length > 1 && !fuseRef.current) {
+      import('fuse.js').then((FuseModule) => {
+        fuseRef.current = new FuseModule.default(calculators, {
+          keys: ["name", "tags", "category"],
+          threshold: 0.3,
+          includeScore: true,
+        });
+        performSearch(query);
+      });
+    } else if (query.length > 1 && fuseRef.current) {
+      performSearch(query);
     } else {
       setResults([]);
       setIsOpen(false);
     }
-  }, [query, fuse]);
+    
+    if (typeof window !== 'undefined') {
+      document.addEventListener("keydown", down);
+      return () => document.removeEventListener("keydown", down);
+    }
+  }, [query]);
+
 
   const handleSelect = useCallback((slug: string) => {
     router.push(`/calculators/${slug}`);
     setQuery("");
     setIsOpen(false);
   }, [router]);
-  
-  useEffect(() => {
-    if (!isClient) return;
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        const input = document.querySelector("#search-input") as HTMLInputElement;
-        input?.focus();
-      }
-    }
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [isClient])
-
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <div className="relative w-full md:w-64">
-          <Input
+           <Input
             id="search-input"
             placeholder="Search calculators..."
             value={query}

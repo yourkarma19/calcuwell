@@ -4,6 +4,7 @@ import { getCalculatorBySlug, calculators } from "@/lib/calculators";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import CalculatorLoader from "@/components/calculator/calculator-loader";
 
+
 type CalculatorPageProps = {
   params: {
     slug: string;
