@@ -8,15 +8,16 @@ import {
   Scale,
   Percent,
   FlaskConical,
-  Baseline,
   Ruler,
-  Thermometer,
-  Beaker,
-  AreaChart
 } from 'lucide-react';
 import type { Calculator, Category } from '@/lib/types';
 import BMICalculator from '@/components/calculator/bmi-calculator';
 import PlaceholderCalculator from '@/components/calculator/placeholder-calculator';
+import AgeCalculator from '@/components/calculator/age-calculator';
+import LoanEMICalculator from '@/components/calculator/loan-emi-calculator';
+import PercentageCalculator from '@/components/calculator/percentage-calculator';
+import UnitConverter from '@/components/calculator/unit-converter';
+import BmrCalculator from '@/components/calculator/bmr-calculator';
 
 export const categories: Category[] = [
   {
@@ -74,7 +75,8 @@ export const calculators: Calculator[] = [
         description: 'Estimate your Basal Metabolic Rate.',
         category: 'Health',
         Icon: Scale,
-        component: PlaceholderCalculator,
+        formula: "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
+        component: BmrCalculator,
     },
     {
         slug: 'loan-emi-calculator',
@@ -82,7 +84,8 @@ export const calculators: Calculator[] = [
         description: 'Calculate your Equated Monthly Installment.',
         category: 'Finance',
         Icon: Landmark,
-        component: PlaceholderCalculator,
+        formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
+        component: LoanEMICalculator,
     },
     {
         slug: 'percentage-calculator',
@@ -90,7 +93,8 @@ export const calculators: Calculator[] = [
         description: 'Find percentages of numbers.',
         category: 'Math',
         Icon: Percent,
-        component: PlaceholderCalculator,
+        formula: '(Part / Whole) * 100',
+        component: PercentageCalculator,
     },
     {
         slug: 'scientific-calculator',
@@ -114,7 +118,8 @@ export const calculators: Calculator[] = [
         description: 'Calculate age from date of birth.',
         category: 'Date & Time',
         Icon: CalendarClock,
-        component: PlaceholderCalculator,
+        formula: 'Current Date - Date of Birth',
+        component: AgeCalculator,
     },
     {
         slug: 'binary-converter',
@@ -130,7 +135,7 @@ export const calculators: Calculator[] = [
         description: 'Convert length, weight, temperature, etc.',
         category: 'Conversions',
         Icon: Ruler,
-        component: PlaceholderCalculator,
+        component: UnitConverter,
     },
 ];
 
