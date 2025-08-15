@@ -15,8 +15,8 @@ import {
   AreaChart
 } from 'lucide-react';
 import type { Calculator, Category } from '@/lib/types';
-import BMICalculator from '@/components/calculators/bmi-calculator';
-import PlaceholderCalculator from '@/components/calculators/placeholder-calculator';
+import BMICalculator from '@/components/calculator/bmi-calculator';
+import PlaceholderCalculator from '@/components/calculator/placeholder-calculator';
 
 export const categories: Category[] = [
   {
