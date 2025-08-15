@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
-import { Suspense, lazy } from "react";
 import type { Metadata } from "next";
 import { getCalculatorBySlug, calculators } from "@/lib/calculators";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
-import dynamic from "next/dynamic";
-import PlaceholderCalculator from "@/components/calculator/placeholder-calculator";
+import CalculatorLoader from "@/components/calculator/calculator-loader";
 
 type CalculatorPageProps = {
   params: {
@@ -40,22 +38,11 @@ export default function CalculatorPage({ params }: CalculatorPageProps) {
   if (!calculator) {
     notFound();
   }
-
-  // Dynamically import the calculator component based on the slug
-  const CalculatorComponent = dynamic(
-    () => import(`@/components/calculator/${slug}`).catch(() => PlaceholderCalculator), 
-    {
-      loading: () => <div className="lg:col-span-3 text-center">Loading calculator...</div>,
-      ssr: false, // Most calculators are client-side interactive
-    }
-  );
   
   return (
     <main>
       <CalculatorWrapper calculator={calculator}>
-        <Suspense fallback={<div className="lg:col-span-3 text-center">Loading calculator...</div>}>
-          <CalculatorComponent />
-        </Suspense>
+        <CalculatorLoader slug={slug} />
       </CalculatorWrapper>
     </main>
   );
