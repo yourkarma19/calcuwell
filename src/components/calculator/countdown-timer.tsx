@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -7,19 +6,24 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 export default function CountdownTimer() {
   const [targetDate, setTargetDate] = useState<Date | undefined>(
     new Date(new Date().getFullYear() + 1, 0, 1) // Default to next New Year
   );
   const [targetTime, setTargetTime] = useState("00:00");
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0, hours: 0, minutes: 0, seconds: 0
-  });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
     if (!targetDate) return;
 
-    const interval = setInterval(() => {
+    const calculateTimeLeft = () => {
       const now = new Date();
       const [hours, minutes] = targetTime.split(':').map(Number);
       const targetDateTime = new Date(targetDate);
@@ -29,7 +33,6 @@ export default function CountdownTimer() {
 
       if (totalSeconds <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(interval);
         return;
       }
 
@@ -39,7 +42,12 @@ export default function CountdownTimer() {
         minutes: Math.floor((totalSeconds / 60) % 60),
         seconds: Math.floor(totalSeconds % 60),
       });
-    }, 1000);
+    };
+
+    // Initial calculation
+    calculateTimeLeft();
+
+    const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
   }, [targetDate, targetTime]);
@@ -74,15 +82,18 @@ export default function CountdownTimer() {
           <CardTitle>Time Remaining</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-4 gap-4">
-            <TimeBox value={timeLeft.days} label="Days" />
-            <TimeBox value={timeLeft.hours} label="Hours" />
-            <TimeBox value={timeLeft.minutes} label="Minutes" />
-            <TimeBox value={timeLeft.seconds} label="Seconds" />
-          </div>
+          {timeLeft !== null ? (
+            <div className="grid grid-cols-4 gap-4">
+              <TimeBox value={timeLeft.days} label="Days" />
+              <TimeBox value={timeLeft.hours} label="Hours" />
+              <TimeBox value={timeLeft.minutes} label="Minutes" />
+              <TimeBox value={timeLeft.seconds} label="Seconds" />
+            </div>
+          ) : (
+            <div className="text-center text-muted-foreground">Calculating...</div>
+          )}
         </CardContent>
       </Card>
     </div>
   );
 }
-
