@@ -3,18 +3,18 @@
 import { useState, useEffect, useCallback } from "react";
 
 function usePersistentState<T>(key: string, defaultValue: T): [T, (value: T | ((val: T) => T)) => void] {
-  const [state, setState] = useState<T>(() => {
-    if (typeof window === 'undefined') {
-      return defaultValue;
-    }
+  const [state, setState] = useState<T>(defaultValue);
+
+  useEffect(() => {
     try {
       const storedValue = window.localStorage.getItem(key);
-      return storedValue ? JSON.parse(storedValue) : defaultValue;
+      if (storedValue) {
+        setState(JSON.parse(storedValue));
+      }
     } catch (error) {
       console.error(`Error reading localStorage key "${key}":`, error);
-      return defaultValue;
     }
-  });
+  }, [key]);
 
   const setPersistentState = useCallback((newValue: T | ((val: T) => T)) => {
     setState(prevState => {
