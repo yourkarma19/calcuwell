@@ -89,6 +89,11 @@ import InflationCalculator from '@/components/calculator/inflation-calculator';
 import VatGstCalculator from '@/components/calculator/vat-gst-calculator';
 import LeanBodyMassCalculator from '@/components/calculator/lean-body-mass-calculator';
 import ReadingTimeCalculator from '@/components/calculator/reading-time-calculator';
+import GradePercentageCalculator from '@/components/calculator/grade-percentage-calculator';
+import PetAgeCalculator from '@/components/calculator/pet-age-calculator';
+import LoanAffordabilityCalculator from '@/components/calculator/loan-affordability-calculator';
+import CarbonFootprintCalculator from '@/components/calculator/carbon-footprint-calculator';
+import TypingSpeedCalculator from '@/components/calculator/typing-speed-calculator';
 
 
 export const categories: Category[] = [
@@ -987,7 +992,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your grade percentage.',
     category: 'Miscellaneous',
     Icon: Percent,
-    component: PlaceholderCalculator,
+    component: GradePercentageCalculator,
   },
   {
     slug: 'reading-time-calculator',
@@ -1003,7 +1008,7 @@ export const calculators: Calculator[] = [
     description: 'Measure your words per minute typing speed.',
     category: 'Miscellaneous',
     Icon: Keyboard,
-    component: PlaceholderCalculator,
+    component: TypingSpeedCalculator,
   },
   {
     slug: 'loan-affordability-calculator',
@@ -1011,7 +1016,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     Icon: Landmark,
-    component: PlaceholderCalculator,
+    component: LoanAffordabilityCalculator,
   },
   {
     slug: 'carbon-footprint-calculator',
@@ -1019,7 +1024,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your environmental impact.',
     category: 'Miscellaneous',
     Icon: Footprints,
-    component: PlaceholderCalculator,
+    component: CarbonFootprintCalculator,
   },
   {
     slug: 'pet-age-calculator',
@@ -1027,7 +1032,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your pet\'s age in human years.',
     category: 'Miscellaneous',
     Icon: Dog,
-    component: PlaceholderCalculator,
+    component: PetAgeCalculator,
   },
 ];
 
