@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -37,7 +38,11 @@ export default function OvulationCalculator() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label>First Day of Your Last Menstrual Period</Label>
-              <DatePicker date={lastPeriodDate} setDate={setLastPeriodDate} />
+              <DatePicker 
+                date={lastPeriodDate} 
+                setDate={setLastPeriodDate} 
+                disabled={(date) => date > new Date()}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="cycle-length">Average Cycle Length (days)</Label>

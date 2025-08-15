@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -12,9 +13,10 @@ interface DatePickerProps {
   date: Date | undefined
   setDate: (date: Date | undefined) => void
   className?: string
+  disabled?: (date: Date) => boolean;
 }
 
-export function DatePicker({ date, setDate, className }: DatePickerProps) {
+export function DatePicker({ date, setDate, className, disabled }: DatePickerProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -42,7 +44,7 @@ export function DatePicker({ date, setDate, className }: DatePickerProps) {
           captionLayout="dropdown-buttons"
           fromYear={1920}
           toYear={new Date().getFullYear()}
-          disabled={(date) => date > new Date() || date < new Date("1920-01-01")}
+          disabled={disabled || ((date) => date > new Date() || date < new Date("1920-01-01"))}
         />
       </PopoverContent>
     </Popover>

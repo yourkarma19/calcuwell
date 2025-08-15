@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -16,12 +17,6 @@ export default function WorkingDaysCalculator() {
 
   const handleCalculate = () => {
     if (startDate && endDate) {
-      if (endDate < startDate) {
-        // Swap dates if end date is before start date
-        const temp = startDate;
-        setStartDate(endDate);
-        setEndDate(temp);
-      }
       setWorkingDays(differenceInBusinessDays(endDate, startDate));
     }
   };
@@ -37,11 +32,11 @@ export default function WorkingDaysCalculator() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Start Date</Label>
-                <DatePicker date={startDate} setDate={setStartDate} />
+                <DatePicker date={startDate} setDate={setStartDate} disabled={() => false} />
               </div>
               <div className="space-y-2">
                 <Label>End Date</Label>
-                <DatePicker date={endDate} setDate={setEndDate} />
+                <DatePicker date={endDate} setDate={setEndDate} disabled={() => false}/>
               </div>
             </div>
             <Button onClick={handleCalculate} className="w-full">

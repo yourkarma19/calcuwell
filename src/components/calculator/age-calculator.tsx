@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -41,7 +42,11 @@ export default function AgeCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="dob">Date of Birth</Label>
-            <DatePicker date={dateOfBirth} setDate={setDateOfBirth} />
+            <DatePicker 
+              date={dateOfBirth} 
+              setDate={setDateOfBirth}
+              disabled={(date) => date > new Date()}
+            />
           </div>
           <Button onClick={handleCalculateAge} disabled={!dateOfBirth} className="w-full">
             <ArrowDown className="mr-2"/>

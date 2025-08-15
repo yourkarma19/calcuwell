@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -43,14 +44,22 @@ export default function PregnancyDueDateCalculator() {
             {calculationMethod === 'lmp' && (
               <div className="space-y-2">
                 <Label>First Day of Last Menstrual Period</Label>
-                <DatePicker date={lastPeriodDate} setDate={setLastPeriodDate} />
+                <DatePicker 
+                  date={lastPeriodDate} 
+                  setDate={setLastPeriodDate} 
+                  disabled={(date) => date > new Date()}
+                />
               </div>
             )}
 
             {calculationMethod === 'conception' && (
               <div className="space-y-2">
                 <Label>Date of Conception</Label>
-                <DatePicker date={conceptionDate} setDate={setConceptionDate} />
+                <DatePicker 
+                  date={conceptionDate} 
+                  setDate={setConceptionDate} 
+                  disabled={(date) => date > new Date()}
+                />
               </div>
             )}
           </CardContent>

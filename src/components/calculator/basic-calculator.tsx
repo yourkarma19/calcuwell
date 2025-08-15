@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -18,6 +19,8 @@ export default function BasicCalculator() {
   const [firstOperand, setFirstOperand] = useState<number | null>(null);
   const [operator, setOperator] = useState<string | null>(null);
   const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
+  const [justEvaluated, setJustEvaluated] = useState(false);
+
 
   const handleInput = (input: string) => {
     if (["/", "*", "-", "+"].includes(input)) {
@@ -38,6 +41,11 @@ export default function BasicCalculator() {
   };
 
   const inputDigit = (digit: string) => {
+    if(justEvaluated) {
+      setDisplayValue(digit);
+      setJustEvaluated(false);
+      return;
+    }
     if (waitingForSecondOperand) {
       setDisplayValue(digit);
       setWaitingForSecondOperand(false);
@@ -47,6 +55,11 @@ export default function BasicCalculator() {
   };
 
   const inputDecimal = () => {
+     if (justEvaluated) {
+      setDisplayValue("0.");
+      setJustEvaluated(false);
+      return;
+    }
     if (waitingForSecondOperand) {
       setDisplayValue("0.");
       setWaitingForSecondOperand(false);
@@ -75,6 +88,7 @@ export default function BasicCalculator() {
 
     setWaitingForSecondOperand(true);
     setOperator(nextOperator);
+    setJustEvaluated(false);
   };
   
   const performCalculation = () => {
@@ -88,7 +102,8 @@ export default function BasicCalculator() {
         "+": (a, b) => a + b,
       };
       
-      return calculations[operator](firstOperand, currentValue);
+      const result = calculations[operator](firstOperand, currentValue);
+      return isFinite(result) ? result : "Error";
   }
 
   const handleEquals = () => {
@@ -98,6 +113,7 @@ export default function BasicCalculator() {
     setFirstOperand(null);
     setOperator(null);
     setWaitingForSecondOperand(false);
+    setJustEvaluated(true);
   };
   
   const toggleSign = () => {
@@ -114,6 +130,7 @@ export default function BasicCalculator() {
     setFirstOperand(null);
     setOperator(null);
     setWaitingForSecondOperand(false);
+    setJustEvaluated(false);
   };
   
   const getButtonClass = (btn: string) => {

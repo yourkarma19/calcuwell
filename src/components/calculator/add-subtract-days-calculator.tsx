@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -36,7 +37,7 @@ export default function AddSubtractDaysCalculator() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Start Date</Label>
-                <DatePicker date={startDate} setDate={setStartDate} />
+                <DatePicker date={startDate} setDate={setStartDate} disabled={() => false} />
               </div>
               <div className="space-y-2">
                 <Label>Days to Add/Subtract</Label>

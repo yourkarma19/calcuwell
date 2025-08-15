@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -32,12 +33,7 @@ export default function DateDifferenceCalculator() {
 
   const handleCalculate = () => {
     if (startDate && endDate) {
-      if (endDate < startDate) {
-        // Swap dates if end date is before start date
-        const temp = startDate;
-        setStartDate(endDate);
-        setEndDate(temp);
-      }
+      // Don't swap dates, calculate based on user input
       setDifference({
         years: differenceInYears(endDate, startDate),
         months: differenceInMonths(endDate, startDate),
@@ -61,11 +57,11 @@ export default function DateDifferenceCalculator() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Start Date</Label>
-                <DatePicker date={startDate} setDate={setStartDate} />
+                <DatePicker date={startDate} setDate={setStartDate} disabled={() => false} />
               </div>
               <div className="space-y-2">
                 <Label>End Date</Label>
-                <DatePicker date={endDate} setDate={setEndDate} />
+                <DatePicker date={endDate} setDate={setEndDate} disabled={() => false} />
               </div>
             </div>
             <Button onClick={handleCalculate} className="w-full">

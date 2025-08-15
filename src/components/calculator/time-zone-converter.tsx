@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -100,7 +101,7 @@ export default function TimeZoneConverter() {
                 </SelectContent>
               </Select>
               <div className="flex gap-2">
-                <DatePicker date={date} setDate={setDate} />
+                <DatePicker date={date} setDate={setDate} disabled={() => false}/>
                 <Input type="time" value={time} onChange={e => setTime(e.target.value)} />
               </div>
             </div>

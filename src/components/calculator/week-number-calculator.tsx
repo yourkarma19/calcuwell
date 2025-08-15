@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -35,7 +36,7 @@ export default function WeekNumberCalculator() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label>Select Date</Label>
-              <DatePicker date={selectedDate} setDate={setSelectedDate} />
+              <DatePicker date={selectedDate} setDate={setSelectedDate} disabled={() => false}/>
             </div>
             <div className="space-y-2">
                 <Label>Week Definition</Label>

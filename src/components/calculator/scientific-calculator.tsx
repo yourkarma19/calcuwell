@@ -89,6 +89,9 @@ export default function ScientificCalculator() {
   };
   
   const handleScientificInput = (func: string) => {
+      if (displayValue === "Error") {
+        resetCalculator();
+      }
       let currentDisplay = (displayValue === "0" || displayValue === "Error" || justEvaluated) ? "" : displayValue;
       setJustEvaluated(false);
 
