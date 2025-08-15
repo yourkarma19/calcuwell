@@ -363,7 +363,7 @@ export const calculators: Calculator[] = [
     description: 'Estimate your home loan payments and amortization.',
     category: 'Finance',
     Icon: Home,
-    component: PlaceholderCalculator,
+    component: MortgageCalculator,
   },
   {
     slug: 'simple-interest-calculator',
