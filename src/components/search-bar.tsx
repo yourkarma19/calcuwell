@@ -39,25 +39,23 @@ export function SearchBar() {
     }
   }, []);
 
-  const loadFuse = async () => {
-    if (!fuseRef.current) {
+  const loadFuse = useCallback(async () => {
+    if (!fuseRef.current && !fuseLoaded) {
       const FuseModule = await import('fuse.js');
       fuseRef.current = new FuseModule.default(calculators, {
         keys: ["name", "tags", "category"],
         threshold: 0.3,
         includeScore: true,
       });
+      setFuseLoaded(true);
     }
-    setFuseLoaded(true);
-  };
+  }, [fuseLoaded]);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
 
-    if (newQuery.length > 1 && !fuseRef.current && !fuseLoaded) {
-      loadFuse();
-    } else if (newQuery.length > 1 && fuseRef.current) {
+    if (newQuery.length > 1 && fuseRef.current) {
         const searchResults = fuseRef.current.search(newQuery);
         setResults(searchResults.slice(0, 10)); // Limit to top 10 results
         setIsOpen(true);
@@ -90,6 +88,7 @@ export function SearchBar() {
             id="search-input"
             placeholder="Search calculators..."
             value={query}
+            onFocus={loadFuse}
             onChange={handleInputChange}
             className="w-full pr-10"
             aria-label="Search calculators"
