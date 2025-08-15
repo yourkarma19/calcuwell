@@ -118,7 +118,7 @@ export default function BasicCalculator() {
   
   const getButtonClass = (btn: string) => {
     if (["/", "*", "-", "+", "="].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
-    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-muted hover:bg-muted/80"};
+    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
     if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
     return { variant: "outline" as const, className: ""};
   };
@@ -130,7 +130,8 @@ export default function BasicCalculator() {
           <CardTitle>Basic Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Input 
+          <Input
+            aria-label="Calculator display"
             value={displayValue} 
             readOnly 
             className="h-20 text-5xl text-right font-mono pr-4 bg-background"

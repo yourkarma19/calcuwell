@@ -3,15 +3,10 @@
 
 import { useState, useMemo } from "react";
 import { notFound, useParams } from "next/navigation";
-import { calculators, categories } from "@/lib/calculators";
+import { getCalculatorsByCategory, categories } from "@/lib/calculators";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-// Note: generateMetadata is not supported in client components.
-// If you need dynamic metadata, you would typically handle it in a parent server component
-// or move this page back to a server component and fetch data accordingly.
-// For this example, we will keep the component as a client component for the filter functionality.
 
 export default function CategoryPage() {
   const [filter, setFilter] = useState("");
@@ -22,13 +17,12 @@ export default function CategoryPage() {
     return categories.find((c) => c.slug === slug);
   }, [slug]);
 
-  const filteredCalculators = useMemo(() => {
+  const categoryCalculators = useMemo(() => {
     if (!category) return [];
-    
-    const categoryCalculators = calculators.filter(
-      (calculator) => calculator.category === category.name
-    );
-    
+    return getCalculatorsByCategory(slug);
+  }, [category, slug]);
+
+  const filteredCalculators = useMemo(() => {
     if (!filter) {
         return categoryCalculators;
     }
@@ -37,7 +31,7 @@ export default function CategoryPage() {
         calculator.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-  }, [category, filter]);
+  }, [categoryCalculators, filter]);
 
   if (!category) {
     notFound();

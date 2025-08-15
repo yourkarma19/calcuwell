@@ -59,107 +59,6 @@ import {
   Info,
 } from 'lucide-react';
 import type { Calculator, Category } from '@/lib/types';
-import { lazy } from 'react';
-
-const BMICalculator = lazy(() => import('@/components/calculator/bmi-calculator'));
-const PlaceholderCalculator = lazy(() => import('@/components/calculator/placeholder-calculator'));
-const AgeCalculator = lazy(() => import('@/components/calculator/age-calculator'));
-const LoanEMICalculator = lazy(() => import('@/components/calculator/loan-emi-calculator'));
-const PercentageCalculator = lazy(() => import('@/components/calculator/percentage-calculator'));
-const UnitConverter = lazy(() => import('@/components/calculator/unit-converter'));
-const BmrCalculator = lazy(() => import('@/components/calculator/bmr-calculator'));
-const BinaryConverter = lazy(() => import('@/components/calculator/binary-converter'));
-const GpaCalculator = lazy(() => import('@/components/calculator/gpa-calculator'));
-const DateDifferenceCalculator = lazy(() => import('@/components/calculator/date-difference-calculator'));
-const ColorConverter = lazy(() => import('@/components/calculator/color-converter'));
-const IdealWeightCalculator = lazy(() => import('@/components/calculator/ideal-weight-calculator'));
-const SimpleInterestCalculator = lazy(() => import('@/components/calculator/simple-interest-calculator'));
-const MortgageCalculator = lazy(() => import('@/components/calculator/mortgage-calculator'));
-const BodyFatPercentageCalculator = lazy(() => import('@/components/calculator/body-fat-percentage-calculator'));
-const FractionCalculator = lazy(() => import('@/components/calculator/fraction-calculator'));
-const CircleCalculator = lazy(() => import('@/components/calculator/circle-calculator'));
-const CurrencyConverter = lazy(() => import('@/components/calculator/currency-converter'));
-const TipCalculator = lazy(() => import('@/components/calculator/tip-calculator'));
-const CompoundInterestCalculator = lazy(() => import('@/components/calculator/compound-interest-calculator'));
-const DiscountCalculator = lazy(() => import('@/components/calculator/discount-calculator'));
-const PregnancyDueDateCalculator = lazy(() => import('@/components/calculator/pregnancy-due-date-calculator'));
-const RectangleAreaCalculator = lazy(() => import('@/components/calculator/rectangle-area-calculator'));
-const TimeConverter = lazy(() => import('@/components/calculator/time-converter'));
-const RomanNumeralConverter = lazy(() => import('@/components/calculator/roman-numeral-converter'));
-const SavingsCalculator = lazy(() => import('@/components/calculator/savings-calculator'));
-const CalorieNeedsCalculator = lazy(() => import('@/components/calculator/calorie-needs-calculator'));
-const TriangleAreaCalculator = lazy(() => import('@/components/calculator/triangle-area-calculator'));
-const IpSubnetCalculator = lazy(() => import('@/components/calculator/ip-subnet-calculator'));
-const SalaryCalculator = lazy(() => import('@/components/calculator/salary-calculator'));
-const InflationCalculator = lazy(() => import('@/components/calculator/inflation-calculator'));
-const VatGstCalculator = lazy(() => import('@/components/calculator/vat-gst-calculator'));
-const LeanBodyMassCalculator = lazy(() => import('@/components/calculator/lean-body-mass-calculator'));
-const ReadingTimeCalculator = lazy(() => import('@/components/calculator/reading-time-calculator'));
-const GradePercentageCalculator = lazy(() => import('@/components/calculator/grade-percentage-calculator'));
-const PetAgeCalculator = lazy(() => import('@/components/calculator/pet-age-calculator'));
-const LoanAffordabilityCalculator = lazy(() => import('@/components/calculator/loan-affordability-calculator'));
-const CarbonFootprintCalculator = lazy(() => import('@/components/calculator/carbon-footprint-calculator'));
-const TypingSpeedCalculator = lazy(() => import('@/components/calculator/typing-speed-calculator'));
-const RatioCalculator = lazy(() => import('@/components/calculator/ratio-calculator'));
-const PermutationCombinationCalculator = lazy(() => import('@/components/calculator/permutation-combination-calculator'));
-const StockProfitLossCalculator = lazy(() => import('@/components/calculator/stock-profit-loss-calculator'));
-const WaistToHipRatioCalculator = lazy(() => import('@/components/calculator/waist-to-hip-ratio-calculator'));
-const TimeZoneConverter = lazy(() => import('@/components/calculator/time-zone-converter'));
-const BasicCalculator = lazy(() => import('@/components/calculator/basic-calculator'));
-const PythagoreanTheoremCalculator = lazy(() => import('@/components/calculator/pythagorean-theorem-calculator'));
-const FactorialCalculator = lazy(() => import('@/components/calculator/factorial-calculator'));
-const ScientificCalculator = lazy(() => import('@/components/calculator/scientific-calculator'));
-const RetirementCalculator = lazy(() => import('@/components/calculator/retirement-calculator'));
-const DataStorageConverter = lazy(() => import('@/components/calculator/data-storage-converter'));
-const WaterIntakeCalculator = lazy(() => import('@/components/calculator/water-intake-calculator'));
-const BacCalculator = lazy(() => import('@/components/calculator/bac-calculator'));
-const FuelEfficiencyConverter = lazy(() => import('@/components/calculator/fuel-efficiency-converter'));
-const AsciiTextConverter = lazy(() => import('@/components/calculator/ascii-text-converter'));
-const OhmsLawCalculator = lazy(() => import('@/components/calculator/ohms-law-calculator'));
-const CarLoanCalculator = lazy(() => import('@/components/calculator/car-loan-calculator'));
-const InvestmentReturnCalculator = lazy(() => import('@/components/calculator/investment-return-calculator'));
-const OvertimePayCalculator = lazy(() => import('@/components/calculator/overtime-pay-calculator'));
-const AngleConverter = lazy(() => import('@/components/calculator/angle-converter'));
-const LogarithmCalculator = lazy(() => import('@/components/calculator/logarithm-calculator'));
-const Base64Converter = lazy(() => import('@/components/calculator/base64-converter'));
-const CylinderVolumeCalculator = lazy(() => import('@/components/calculator/cylinder-volume-calculator'));
-const MeanMedianModeCalculator = lazy(() => import('@/components/calculator/mean-median-mode-calculator'));
-const StandardDeviationCalculator = lazy(() => import('@/components/calculator/standard-deviation-calculator'));
-const LcmGcdCalculator = lazy(() => import('@/components/calculator/lcm-gcd-calculator'));
-const BreakEvenPointCalculator = lazy(() => import('@/components/calculator/break-even-point-calculator'));
-const CreditCardPayoffCalculator = lazy(() => import('@/components/calculator/credit-card-payoff-calculator'));
-const HeartRateZoneCalculator = lazy(() => import('@/components/calculator/heart-rate-zone-calculator'));
-const DataTransferRateConverter = lazy(() => import('@/components/calculator/data-transfer-rate-converter'));
-const CountdownTimer = lazy(() => import('@/components/calculator/countdown-timer'));
-const WorkingDaysCalculator = lazy(() => import('@/components/calculator/working-days-calculator'));
-const SphereVolumeSurfaceAreaCalculator = lazy(() => import('@/components/calculator/sphere-volume-surface-area-calculator'));
-const MixedNumberCalculator = lazy(() => import('@/components/calculator/mixed-number-calculator'));
-const ProportionCalculator = lazy(() => import('@/components/calculator/proportion-calculator'));
-const SquareRootCubeRootCalculator = lazy(() => import('@/components/calculator/square-root-cube-root-calculator'));
-const ExponentPowerCalculator = lazy(() => import('@/components/calculator/exponent-power-calculator'));
-const TrigonometryCalculator = lazy(() => import('@/components/calculator/trigonometry-calculator'));
-const ConeVolumeCalculator = lazy(() => import('@/components/calculator/cone-volume-calculator'));
-const ResistorColorCodeCalculator = lazy(() => import('@/components/calculator/resistor-color-code-calculator'));
-const BusinessProfitMarginCalculator = lazy(() => import('@/components/calculator/business-profit-margin-calculator'));
-const OvulationCalculator = lazy(() => import('@/components/calculator/ovulation-calculator'));
-const WeekNumberCalculator = lazy(() => import('@/components/calculator/week-number-calculator'));
-const ProbabilityCalculator = lazy(() => import('@/components/calculator/probability-calculator'));
-const AddSubtractDaysCalculator = lazy(() => import('@/components/calculator/add-subtract-days-calculator'));
-const BusinessDayCalculator = lazy(() => import('@/components/calculator/business-day-calculator'));
-const WorldClock = lazy(() => import('@/components/calculator/world-clock-calculator'));
-const EnergyConverter = lazy(() => import('@/components/calculator/energy-converter'));
-const PowerConverter = lazy(() => import('@/components/calculator/power-converter'));
-const PressureConverter = lazy(() => import('@/components/calculator/pressure-converter'));
-const FileSizeCalculator = lazy(() => import('@/components/calculator/file-size-calculator'));
-const Vo2MaxCalculator = lazy(() => import('@/components/calculator/vo2-max-calculator'));
-const CrcHashGenerator = lazy(() => import('@/components/calculator/crc-hash-generator'));
-const MatrixCalculator = lazy(() => import('@/components/calculator/matrix-calculator'));
-const ComplexNumberCalculator = lazy(() => import('@/components/calculator/complex-number-calculator'));
-const EquationSolver = lazy(() => import('@/components/calculator/equation-solver'));
-const BeamDeflectionCalculator = lazy(() => import('@/components/calculator/beam-deflection-calculator'));
-const TorqueCalculator = lazy(() => import('@/components/calculator/torque-calculator'));
-const CapacitorChargeCalculator = lazy(() => import('@/components/calculator/capacitor-charge-calculator'));
-
 
 export const categories: Category[] = [
   {
@@ -212,7 +111,9 @@ export const categories: Category[] = [
   },
 ];
 
-export const calculators: Calculator[] = [
+// This file now only contains the definitions, not the components themselves.
+// The components are dynamically imported in calculator-components.ts.
+export const calculators: Omit<Calculator, 'component'>[] = [
   // Math & Logic
   {
     slug: 'basic-calculator',
@@ -220,7 +121,6 @@ export const calculators: Calculator[] = [
     description: 'Perform basic arithmetic operations.',
     category: 'Math',
     Icon: CalculatorIcon,
-    component: BasicCalculator,
   },
   {
     slug: 'scientific-calculator',
@@ -228,7 +128,6 @@ export const calculators: Calculator[] = [
     description: 'Perform advanced scientific calculations.',
     category: 'Math',
     Icon: FlaskConical,
-    component: ScientificCalculator,
   },
   {
     slug: 'percentage-calculator',
@@ -237,7 +136,6 @@ export const calculators: Calculator[] = [
     category: 'Math',
     Icon: Percent,
     formula: '(Part / Whole) * 100',
-    component: PercentageCalculator,
   },
   {
     slug: 'fraction-calculator',
@@ -245,7 +143,6 @@ export const calculators: Calculator[] = [
     description: 'Add, subtract, multiply, and divide fractions.',
     category: 'Math',
     Icon: Pi,
-    component: FractionCalculator,
   },
   {
     slug: 'mixed-number-calculator',
@@ -253,7 +150,6 @@ export const calculators: Calculator[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     Icon: Pi,
-    component: MixedNumberCalculator,
   },
   {
     slug: 'ratio-calculator',
@@ -261,7 +157,6 @@ export const calculators: Calculator[] = [
     description: 'Simplify and work with ratios.',
     category: 'Math',
     Icon: Scale,
-    component: RatioCalculator,
   },
   {
     slug: 'proportion-calculator',
@@ -269,7 +164,6 @@ export const calculators: Calculator[] = [
     description: 'Solve proportions and find missing values.',
     category: 'Math',
     Icon: Variable,
-    component: ProportionCalculator,
   },
   {
     slug: 'mean-median-mode-calculator',
@@ -277,7 +171,6 @@ export const calculators: Calculator[] = [
     description: 'Find the average, middle, and most frequent values.',
     category: 'Math',
     Icon: Sigma,
-    component: MeanMedianModeCalculator,
   },
   {
     slug: 'standard-deviation-calculator',
@@ -285,7 +178,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the standard deviation of a data set.',
     category: 'Math',
     Icon: Sigma,
-    component: StandardDeviationCalculator,
   },
   {
     slug: 'probability-calculator',
@@ -293,7 +185,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the probability of events.',
     category: 'Math',
     Icon: Beaker,
-    component: ProbabilityCalculator,
   },
   {
     slug: 'permutation-combination-calculator',
@@ -301,7 +192,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     Icon: Sigma,
-    component: PermutationCombinationCalculator,
   },
   {
     slug: 'factorial-calculator',
@@ -309,7 +199,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the factorial of a number.',
     category: 'Math',
     Icon: Variable,
-    component: FactorialCalculator,
     formula: 'n!'
   },
   {
@@ -318,7 +207,6 @@ export const calculators: Calculator[] = [
     description: 'Find the Least Common Multiple and Greatest Common Divisor.',
     category: 'Math',
     Icon: Variable,
-    component: LcmGcdCalculator,
   },
   {
     slug: 'square-root-cube-root-calculator',
@@ -326,7 +214,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate square roots and cube roots.',
     category: 'Math',
     Icon: Variable,
-    component: SquareRootCubeRootCalculator,
   },
   {
     slug: 'exponent-power-calculator',
@@ -334,7 +221,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate powers and exponents.',
     category: 'Math',
     Icon: Variable,
-    component: ExponentPowerCalculator,
   },
   {
     slug: 'logarithm-calculator',
@@ -342,7 +228,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate logarithms with different bases.',
     category: 'Math',
     Icon: Variable,
-    component: LogarithmCalculator,
   },
   {
     slug: 'equation-solver',
@@ -350,7 +235,6 @@ export const calculators: Calculator[] = [
     description: 'Solve linear and quadratic equations.',
     category: 'Math',
     Icon: Variable,
-    component: EquationSolver,
   },
   {
     slug: 'matrix-calculator',
@@ -358,7 +242,6 @@ export const calculators: Calculator[] = [
     description: 'Perform matrix operations.',
     category: 'Math',
     Icon: Pi,
-    component: MatrixCalculator,
   },
   {
     slug: 'complex-number-calculator',
@@ -366,7 +249,6 @@ export const calculators: Calculator[] = [
     description: 'Perform calculations with complex numbers.',
     category: 'Math',
     Icon: Variable,
-    component: ComplexNumberCalculator,
   },
   {
     slug: 'roman-numeral-converter',
@@ -374,7 +256,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between Roman numerals and numbers.',
     category: 'Math',
     Icon: ArrowRightLeft,
-    component: RomanNumeralConverter,
   },
 
   // Finance & Money
@@ -385,7 +266,6 @@ export const calculators: Calculator[] = [
     category: 'Finance',
     Icon: Landmark,
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    component: LoanEMICalculator,
   },
   {
     slug: 'mortgage-calculator',
@@ -393,7 +273,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your monthly mortgage payments.',
     category: 'Finance',
     Icon: Home,
-    component: MortgageCalculator,
   },
   {
     slug: 'car-loan-calculator',
@@ -401,7 +280,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your car loan payments.',
     category: 'Finance',
     Icon: Car,
-    component: CarLoanCalculator,
   },
   {
     slug: 'home-loan-calculator',
@@ -409,7 +287,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your home loan payments and amortization.',
     category: 'Finance',
     Icon: Home,
-    component: MortgageCalculator,
   },
   {
     slug: 'simple-interest-calculator',
@@ -417,7 +294,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate simple interest on a principal amount.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: SimpleInterestCalculator,
     formula: 'P * R * T / 100'
   },
   {
@@ -426,7 +302,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate compound interest over time.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: CompoundInterestCalculator,
     formula: 'A = P(1 + r/n)^(nt)'
   },
   {
@@ -435,7 +310,6 @@ export const calculators: Calculator[] = [
     description: 'Plan your savings goals and growth.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: SavingsCalculator,
   },
   {
     slug: 'retirement-calculator',
@@ -443,7 +317,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     Icon: PiggyBank,
-    component: RetirementCalculator,
   },
   {
     slug: 'investment-return-calculator',
@@ -451,7 +324,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the return on your investments.',
     category: 'Finance',
     Icon: AreaChart,
-    component: InvestmentReturnCalculator,
   },
   {
     slug: 'stock-profit-loss-calculator',
@@ -459,7 +331,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate profits or losses from stock trades.',
     category: 'Finance',
     Icon: AreaChart,
-    component: StockProfitLossCalculator,
   },
   {
     slug: 'currency-converter',
@@ -467,7 +338,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between different currencies with live rates.',
     category: 'Finance',
     Icon: Globe,
-    component: CurrencyConverter,
   },
   {
     slug: 'inflation-calculator',
@@ -475,7 +345,6 @@ export const calculators: Calculator[] = [
     description: 'See how inflation affects purchasing power.',
     category: 'Finance',
     Icon: Banknote,
-    component: InflationCalculator,
   },
   {
     slug: 'vat-gst-calculator',
@@ -483,7 +352,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate Value-Added Tax or Goods and Services Tax.',
     category: 'Finance',
     Icon: Tag,
-    component: VatGstCalculator,
   },
   {
     slug: 'tip-calculator',
@@ -491,7 +359,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate tips for services.',
     category: 'Finance',
     Icon: Wallet,
-    component: TipCalculator,
   },
   {
     slug: 'discount-calculator',
@@ -499,7 +366,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the final price after a discount.',
     category: 'Finance',
     Icon: Tag,
-    component: DiscountCalculator,
   },
   {
     slug: 'salary-calculator',
@@ -507,7 +373,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your take-home salary.',
     category: 'Finance',
     Icon: Briefcase,
-    component: SalaryCalculator,
   },
   {
     slug: 'overtime-pay-calculator',
@@ -515,7 +380,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your overtime pay.',
     category: 'Finance',
     Icon: Clock,
-    component: OvertimePayCalculator,
   },
   {
     slug: 'break-even-point-calculator',
@@ -523,7 +387,6 @@ export const calculators: Calculator[] = [
     description: 'Find the point where revenue equals costs.',
     category: 'Finance',
     Icon: Briefcase,
-    component: BreakEvenPointCalculator,
   },
   {
     slug: 'business-profit-margin-calculator',
@@ -531,7 +394,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the profit margin for your business.',
     category: 'Finance',
     Icon: Briefcase,
-    component: BusinessProfitMarginCalculator,
   },
   {
     slug: 'credit-card-payoff-calculator',
@@ -539,7 +401,6 @@ export const calculators: Calculator[] = [
     description: 'Plan how to pay off your credit card debt.',
     category: 'Finance',
     Icon: CreditCard,
-    component: CreditCardPayoffCalculator,
   },
 
   // Health & Fitness
@@ -551,7 +412,6 @@ export const calculators: Calculator[] = [
     Icon: HeartPulse,
     formula: 'weight (kg) / (height (m) * height (m))',
     tags: ['health', 'fitness', 'weight', 'body mass index'],
-    component: BMICalculator,
   },
   {
     slug: 'bmr-calculator',
@@ -560,7 +420,6 @@ export const calculators: Calculator[] = [
     category: 'Health',
     Icon: Scale,
     formula: "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
-    component: BmrCalculator,
   },
   {
     slug: 'calorie-needs-calculator',
@@ -568,7 +427,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your daily calorie needs.',
     category: 'Health',
     Icon: HeartPulse,
-    component: CalorieNeedsCalculator,
   },
   {
     slug: 'ideal-weight-calculator',
@@ -576,7 +434,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your ideal body weight.',
     category: 'Health',
     Icon: Scale,
-    component: IdealWeightCalculator,
     formula: "Robinson Formula (1983)"
   },
   {
@@ -585,7 +442,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your body fat percentage.',
     category: 'Health',
     Icon: Percent,
-    component: BodyFatPercentageCalculator,
     formula: "U.S. Navy Method"
   },
   {
@@ -594,7 +450,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your lean body mass.',
     category: 'Health',
     Icon: Bone,
-    component: LeanBodyMassCalculator,
   },
   {
     slug: 'waist-to-hip-ratio-calculator',
@@ -602,7 +457,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your waist-to-hip ratio.',
     category: 'Health',
     Icon: Ruler,
-    component: WaistToHipRatioCalculator,
   },
   {
     slug: 'pregnancy-due-date-calculator',
@@ -610,7 +464,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your pregnancy due date.',
     category: 'Health',
     Icon: Baby,
-    component: PregnancyDueDateCalculator,
     formula: "Naegele's rule"
   },
   {
@@ -619,7 +472,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your most fertile days.',
     category: 'Health',
     Icon: CalendarClock,
-    component: OvulationCalculator,
   },
   {
     slug: 'water-intake-calculator',
@@ -627,7 +479,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your daily water intake needs.',
     category: 'Health',
     Icon: Droplets,
-    component: WaterIntakeCalculator,
   },
   {
     slug: 'heart-rate-zone-calculator',
@@ -635,7 +486,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your target heart rate zones.',
     category: 'Health',
     Icon: HeartPulse,
-    component: HeartRateZoneCalculator,
   },
   {
     slug: 'vo2-max-calculator',
@@ -643,7 +493,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your maximum oxygen uptake.',
     category: 'Health',
     Icon: Wind,
-    component: Vo2MaxCalculator,
   },
   {
     slug: 'blood-alcohol-content-calculator',
@@ -651,7 +500,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your blood alcohol content.',
     category: 'Health',
     Icon: TestTube,
-    component: BacCalculator,
   },
   {
     slug: 'child-growth-percentile-calculator',
@@ -659,7 +507,6 @@ export const calculators: Calculator[] = [
     description: 'Track your child\'s growth percentile.',
     category: 'Health',
     Icon: Baby,
-    component: PlaceholderCalculator,
   },
 
   // Conversions
@@ -669,7 +516,6 @@ export const calculators: Calculator[] = [
     description: 'Convert length, weight, temperature, etc.',
     category: 'Conversions',
     Icon: Ruler,
-    component: UnitConverter,
   },
   {
     slug: 'length-converter',
@@ -677,7 +523,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between meters, feet, inches, and more.',
     category: 'Conversions',
     Icon: Ruler,
-    component: UnitConverter,
   },
   {
     slug: 'weight-mass-converter',
@@ -685,7 +530,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between kg, lb, g, and more.',
     category: 'Conversions',
     Icon: Scale,
-    component: UnitConverter,
   },
   {
     slug: 'temperature-converter',
@@ -693,7 +537,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between Celsius, Fahrenheit, and Kelvin.',
     category: 'Conversions',
     Icon: Thermometer,
-    component: UnitConverter,
   },
   {
     slug: 'area-converter',
@@ -701,7 +544,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between sq m, sq ft, acres, and more.',
     category: 'Conversions',
     Icon: Ruler,
-    component: UnitConverter,
   },
   {
     slug: 'volume-converter',
@@ -709,7 +551,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between liters, gallons, cups, and more.',
     category: 'Conversions',
     Icon: Beaker,
-    component: UnitConverter,
   },
   {
     slug: 'speed-converter',
@@ -717,7 +558,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between mph, km/h, m/s, and more.',
     category: 'Conversions',
     Icon: Gauge,
-    component: UnitConverter,
   },
   {
     slug: 'time-converter',
@@ -725,7 +565,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between seconds, minutes, hours, and days.',
     category: 'Conversions',
     Icon: Clock,
-    component: TimeConverter,
   },
   {
     slug: 'energy-converter',
@@ -733,7 +572,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between joules, calories, kWh, and more.',
     category: 'Conversions',
     Icon: Atom,
-    component: EnergyConverter,
   },
   {
     slug: 'pressure-converter',
@@ -741,7 +579,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between Pa, bar, psi, and more.',
     category: 'Conversions',
     Icon: Cloud,
-    component: PressureConverter,
   },
   {
     slug: 'power-converter',
@@ -749,7 +586,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between watts, hp, kW, and more.',
     category: 'Conversions',
     Icon: Wind,
-    component: PowerConverter,
   },
   {
     slug: 'data-storage-converter',
@@ -757,7 +593,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between KB, MB, GB, TB, and more.',
     category: 'Conversions',
     Icon: Database,
-    component: DataStorageConverter,
   },
   {
     slug: 'data-transfer-rate-converter',
@@ -765,7 +600,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between bps, Kbps, Mbps, and more.',
     category: 'Conversions',
     Icon: Shuffle,
-    component: DataTransferRateConverter,
   },
   {
     slug: 'angle-converter',
@@ -773,7 +607,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between degrees and radians.',
     category: 'Conversions',
     Icon: Ruler,
-    component: AngleConverter,
   },
   {
     slug: 'fuel-efficiency-converter',
@@ -781,7 +614,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between mpg and L/100km.',
     category: 'Conversions',
     Icon: Car,
-    component: FuelEfficiencyConverter,
   },
 
   // Date & Time
@@ -792,7 +624,6 @@ export const calculators: Calculator[] = [
     category: 'Date & Time',
     Icon: CalendarClock,
     formula: 'Current Date - Date of Birth',
-    component: AgeCalculator,
   },
   {
     slug: 'date-difference-calculator',
@@ -800,7 +631,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the difference between two dates.',
     category: 'Date & Time',
     Icon: CalendarDays,
-    component: DateDifferenceCalculator,
     formula: "endDate - startDate"
   },
   {
@@ -809,7 +639,6 @@ export const calculators: Calculator[] = [
     description: 'Count down to a specific date and time.',
     category: 'Date & Time',
     Icon: Timer,
-    component: CountdownTimer,
   },
   {
     slug: 'time-zone-converter',
@@ -817,7 +646,6 @@ export const calculators: Calculator[] = [
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
     Icon: Globe2,
-    component: TimeZoneConverter,
   },
   {
     slug: 'world-clock-time-difference-calculator',
@@ -825,7 +653,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate time differences between cities.',
     category: 'Date & Time',
     Icon: Globe,
-    component: WorldClock,
   },
   {
     slug: 'working-days-calculator',
@@ -833,7 +660,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate working days between two dates.',
     category: 'Date & Time',
     Icon: Briefcase,
-    component: WorkingDaysCalculator,
   },
   {
     slug: 'week-number-calculator',
@@ -841,7 +667,6 @@ export const calculators: Calculator[] = [
     description: 'Find the week number for a given date.',
     category: 'Date & Time',
     Icon: CalendarDays,
-    component: WeekNumberCalculator,
   },
   {
     slug: 'add-subtract-days-calculator',
@@ -849,7 +674,6 @@ export const calculators: Calculator[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     Icon: CalendarClock,
-    component: AddSubtractDaysCalculator,
   },
   {
     slug: 'business-day-calculator',
@@ -857,7 +681,6 @@ export const calculators: Calculator[] = [
     description: 'Find the next business day.',
     category: 'Date & Time',
     Icon: Briefcase,
-    component: BusinessDayCalculator,
   },
 
   // Programming & Tech
@@ -867,7 +690,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between binary and decimal numbers.',
     category: 'Programming',
     Icon: Binary,
-    component: BinaryConverter,
     formula: 'parseInt(num, fromBase).toString(toBase)'
   },
   {
@@ -876,7 +698,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between decimal and hexadecimal numbers.',
     category: 'Programming',
     Icon: Hash,
-    component: BinaryConverter,
   },
   {
     slug: 'ascii-text-converter',
@@ -884,7 +705,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between ASCII codes and text.',
     category: 'Programming',
     Icon: ArrowRightLeft,
-    component: AsciiTextConverter,
   },
   {
     slug: 'base64-encode-decode',
@@ -892,7 +712,6 @@ export const calculators: Calculator[] = [
     description: 'Encode and decode Base64 strings.',
     category: 'Programming',
     Icon: Binary,
-    component: Base64Converter,
   },
   {
     slug: 'ip-subnet-calculator',
@@ -900,7 +719,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate IP subnets and networks.',
     category: 'Programming',
     Icon: Network,
-    component: IpSubnetCalculator,
   },
   {
     slug: 'crc-hash-generator',
@@ -908,7 +726,6 @@ export const calculators: Calculator[] = [
     description: 'Generate MD5, SHA-256 and other hashes.',
     category: 'Programming',
     Icon: Hash,
-    component: CrcHashGenerator,
   },
   {
     slug: 'file-size-calculator',
@@ -916,7 +733,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate file size from bitrate and duration.',
     category: 'Programming',
     Icon: FileBox,
-    component: FileSizeCalculator,
   },
   {
     slug: 'color-code-converter',
@@ -924,7 +740,6 @@ export const calculators: Calculator[] = [
     description: 'Convert between HEX, RGB, and HSL color codes.',
     category: 'Programming',
     Icon: Palette,
-    component: ColorConverter,
   },
 
   // Geometry & Engineering
@@ -934,7 +749,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     Icon: Circle,
-    component: CircleCalculator,
   },
   {
     slug: 'triangle-area-perimeter-calculator',
@@ -942,7 +756,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the area and perimeter of a triangle.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: TriangleAreaCalculator,
   },
   {
     slug: 'rectangle-square-area-calculator',
@@ -950,7 +763,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the area of a rectangle or square.',
     category: 'Geometry & Engineering',
     Icon: Ruler,
-    component: RectangleAreaCalculator,
     formula: "Area = Length * Width"
   },
   {
@@ -959,7 +771,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the volume of a cylinder.',
     category: 'Geometry & Engineering',
     Icon: Beaker,
-    component: CylinderVolumeCalculator,
   },
   {
     slug: 'sphere-volume-surface-area-calculator',
@@ -967,7 +778,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the volume and surface area of a sphere.',
     category: 'Geometry & Engineering',
     Icon: Globe,
-    component: SphereVolumeSurfaceAreaCalculator,
   },
   {
     slug: 'cone-volume-calculator',
@@ -975,7 +785,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the volume of a cone.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: ConeVolumeCalculator,
   },
   {
     slug: 'pythagorean-theorem-calculator',
@@ -983,7 +792,6 @@ export const calculators: Calculator[] = [
     description: 'Solve for sides of a right triangle.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: PythagoreanTheoremCalculator,
     formula: 'a² + b² = c²'
   },
   {
@@ -992,7 +800,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate sin, cos, tan, and more.',
     category: 'Geometry & Engineering',
     Icon: Triangle,
-    component: TrigonometryCalculator,
   },
   {
     slug: 'beam-deflection-calculator',
@@ -1000,7 +807,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the deflection of beams.',
     category: 'Geometry & Engineering',
     Icon: Ruler,
-    component: BeamDeflectionCalculator,
   },
   {
     slug: 'torque-calculator',
@@ -1008,7 +814,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate torque from force and distance.',
     category: 'Geometry & Engineering',
     Icon: Wind,
-    component: TorqueCalculator,
   },
   {
     slug: 'ohms-law-calculator',
@@ -1016,7 +821,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate voltage, current, and resistance.',
     category: 'Geometry & Engineering',
     Icon: Atom,
-    component: OhmsLawCalculator,
   },
   {
     slug: 'resistor-color-code-calculator',
@@ -1024,7 +828,6 @@ export const calculators: Calculator[] = [
     description: 'Determine resistor values from color codes.',
     category: 'Geometry & Engineering',
     Icon: Palette,
-    component: ResistorColorCodeCalculator,
   },
   {
     slug: 'capacitor-charge-discharge-calculator',
@@ -1032,7 +835,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     Icon: Atom,
-    component: CapacitorChargeCalculator,
   },
   {
     slug: 'inductor-energy-calculator',
@@ -1040,7 +842,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate the energy stored in an inductor.',
     category: 'Geometry & Engineering',
     Icon: Atom,
-    component: PlaceholderCalculator,
   },
 
   // Education & Miscellaneous
@@ -1050,7 +851,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your Grade Point Average.',
     category: 'Miscellaneous',
     Icon: GraduationCap,
-    component: GpaCalculator,
     formula: 'Σ(Grade Points * Credits) / Σ(Credits)'
   },
   {
@@ -1059,7 +859,6 @@ export const calculators: Calculator[] = [
     description: 'Calculate your grade percentage.',
     category: 'Miscellaneous',
     Icon: Percent,
-    component: GradePercentageCalculator,
   },
   {
     slug: 'reading-time-calculator',
@@ -1067,7 +866,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate the time it takes to read a text.',
     category: 'Miscellaneous',
     Icon: Book,
-    component: ReadingTimeCalculator,
   },
   {
     slug: 'typing-speed-wpm-calculator',
@@ -1075,7 +873,6 @@ export const calculators: Calculator[] = [
     description: 'Measure your words per minute typing speed.',
     category: 'Miscellaneous',
     Icon: Keyboard,
-    component: TypingSpeedCalculator,
   },
   {
     slug: 'loan-affordability-calculator',
@@ -1083,7 +880,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     Icon: Landmark,
-    component: LoanAffordabilityCalculator,
   },
   {
     slug: 'carbon-footprint-calculator',
@@ -1091,7 +887,6 @@ export const calculators: Calculator[] = [
     description: 'Estimate your environmental impact.',
     category: 'Miscellaneous',
     Icon: Footprints,
-    component: CarbonFootprintCalculator,
   },
   {
     slug: 'pet-age-calculator',
@@ -1099,15 +894,16 @@ export const calculators: Calculator[] = [
     description: 'Calculate your pet\'s age in human years.',
     category: 'Miscellaneous',
     Icon: Dog,
-    component: PetAgeCalculator,
   },
 ];
 
 
-export const getCalculatorBySlug = (slug: string): Calculator | undefined => {
+export const getCalculatorBySlug = (slug: string): Omit<Calculator, 'component'> | undefined => {
   return calculators.find((calculator) => calculator.slug === slug);
 };
 
-
-
-
+export const getCalculatorsByCategory = (categorySlug: string) => {
+  const category = categories.find(c => c.slug === categorySlug);
+  if (!category) return [];
+  return calculators.filter(c => c.category === category.name);
+}

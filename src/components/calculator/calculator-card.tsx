@@ -8,7 +8,7 @@ import {
 import type { Calculator } from "@/lib/types";
 
 interface CalculatorCardProps {
-  calculator: Calculator;
+  calculator: Omit<Calculator, 'component'>;
 }
 
 export default function CalculatorCard({ calculator }: CalculatorCardProps) {

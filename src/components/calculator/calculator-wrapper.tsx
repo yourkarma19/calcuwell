@@ -4,7 +4,7 @@ import FormulaExplainer from "./formula-explainer";
 
 interface CalculatorWrapperProps {
   children: ReactNode;
-  calculator: Calculator;
+  calculator: Omit<Calculator, 'component'>;
 }
 
 export default function CalculatorWrapper({

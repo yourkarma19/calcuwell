@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
@@ -14,9 +15,11 @@ import { Input } from "@/components/ui/input";
 import { type Calculator } from "@/lib/types";
 import { Button } from "./ui/button";
 
+type SearchResult = Omit<Calculator, 'component'>;
+
 export function SearchBar() {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Fuse.FuseResult<Calculator>[]>([]);
+  const [results, setResults] = useState<Fuse.FuseResult<SearchResult>[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 

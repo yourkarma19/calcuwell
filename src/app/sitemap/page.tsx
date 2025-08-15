@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import { List } from "lucide-react";
-import { calculators, categories } from "@/lib/calculators";
+import { calculators, categories, getCalculatorsByCategory } from "@/lib/calculators";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
     title: "Sitemap | CalcuWell",
@@ -30,8 +29,7 @@ export default function SitemapPage() {
                            {category.name} Calculators
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {calculators
-                                .filter((calc) => calc.category === category.name)
+                            {getCalculatorsByCategory(category.slug)
                                 .map((calc) => (
                                     <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline">
                                         {calc.name}

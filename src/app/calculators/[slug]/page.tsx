@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import type { Metadata } from "next";
-import { calculators, getCalculatorBySlug } from "@/lib/calculators";
+import { getCalculatorBySlug } from "@/lib/calculators";
+import { calculatorComponents } from "@/lib/calculator-components";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 
 type CalculatorPageProps = {
@@ -9,12 +10,6 @@ type CalculatorPageProps = {
     slug: string;
   };
 };
-
-export async function generateStaticParams() {
-  return calculators.map((calculator) => ({
-    slug: calculator.slug,
-  }));
-}
 
 export async function generateMetadata({ params }: CalculatorPageProps): Promise<Metadata> {
   const calculator = getCalculatorBySlug(params.slug);
@@ -32,11 +27,11 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
 export default function CalculatorPage({ params }: CalculatorPageProps) {
   const calculator = getCalculatorBySlug(params.slug);
 
-  if (!calculator) {
+  if (!calculator || !(calculator.slug in calculatorComponents)) {
     notFound();
   }
 
-  const CalculatorComponent = calculator.component;
+  const CalculatorComponent = calculatorComponents[calculator.slug as keyof typeof calculatorComponents];
 
   return (
     <main>

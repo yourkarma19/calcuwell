@@ -1,20 +1,19 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 function usePersistentState<T>(key: string, defaultValue: T): [T, (value: T | ((val: T) => T)) => void] {
   const [state, setState] = useState<T>(() => {
-    // This function is the lazy initializer for useState.
-    // It runs only on the initial render.
+    const initialValue = typeof defaultValue === 'function' ? (defaultValue as () => T)() : defaultValue;
     if (typeof window === "undefined") {
-      return defaultValue;
+      return initialValue;
     }
     try {
       const storedValue = window.localStorage.getItem(key);
-      return storedValue ? JSON.parse(storedValue) : defaultValue;
+      return storedValue ? JSON.parse(storedValue) : initialValue;
     } catch (error) {
       console.error(`Error reading localStorage key “${key}”:`, error);
-      return defaultValue;
+      return initialValue;
     }
   });
 
