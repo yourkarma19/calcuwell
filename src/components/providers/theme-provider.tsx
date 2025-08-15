@@ -8,8 +8,6 @@ type ThemeProviderProps = {
   children: React.ReactNode
   defaultTheme?: Theme
   storageKey?: string
-  enableSystem?: boolean,
-  disableTransitionOnChange?: boolean
 }
 
 type ThemeProviderState = {
@@ -31,46 +29,33 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = React.useState<Theme>(() => {
-    if (typeof window === 'undefined') {
-      return defaultTheme;
+    if (typeof window === "undefined") {
+      return defaultTheme
     }
-    try {
-      return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
-    } catch (e) {
-      console.error("Failed to access localStorage. Defaulting to system theme.", e);
-      return defaultTheme;
-    }
-  });
+    return (localStorage.getItem(storageKey) as Theme) || defaultTheme
+  })
 
   React.useEffect(() => {
     const root = window.document.documentElement
-    
     root.classList.remove("light", "dark")
-
+    
+    let effectiveTheme = theme
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light"
-
-      root.classList.add(systemTheme)
-      return
+      effectiveTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
     }
-
-    root.classList.add(theme)
+    
+    root.classList.add(effectiveTheme)
   }, [theme])
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      if (typeof window !== 'undefined') {
-        try {
-          localStorage.setItem(storageKey, theme);
-        } catch (e) {
-          console.error("Failed to set theme in localStorage.", e);
-        }
+    setTheme: (newTheme: Theme) => {
+      try {
+        localStorage.setItem(storageKey, newTheme)
+      } catch (e) {
+        console.error("Failed to set theme in localStorage.", e)
       }
-      setTheme(theme)
+      setTheme(newTheme)
     },
   }
 

@@ -21,6 +21,7 @@ export function SearchBar() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Fuse.FuseResult<SearchResult>[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const router = useRouter();
 
   const fuse = useMemo(() => new Fuse(calculators, {
@@ -28,6 +29,10 @@ export function SearchBar() {
     threshold: 0.3,
     includeScore: true,
   }), []);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     if (query.length > 1) {
@@ -47,6 +52,7 @@ export function SearchBar() {
   }, [router]);
   
   useEffect(() => {
+    if (!isClient) return;
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
@@ -56,7 +62,7 @@ export function SearchBar() {
     }
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
-  }, [])
+  }, [isClient])
 
 
   return (

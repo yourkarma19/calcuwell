@@ -95,7 +95,11 @@ export default function ScientificCalculator() {
             case 'cosh': setDisplayValue(prev => Math.cosh(parseFloat(prev)).toString()); return;
             case 'tanh': setDisplayValue(prev => Math.tanh(parseFloat(prev)).toString()); return;
             case 'π': currentDisplay += Math.PI.toString(); break;
-            case 'Rand': if (isClient) setDisplayValue(Math.random().toString()); return;
+            case 'Rand':
+                if (isClient) {
+                    setDisplayValue(Math.random().toString());
+                }
+                return;
             default: break;
         }
         setDisplayValue(currentDisplay);
