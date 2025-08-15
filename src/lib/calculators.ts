@@ -53,6 +53,8 @@ import {
   CalendarDays,
   Gem,
   Keyboard,
+  Minus,
+  Plus,
 } from 'lucide-react';
 import type { Calculator, Category } from '@/lib/types';
 import BMICalculator from '@/components/calculator/bmi-calculator';
@@ -110,6 +112,7 @@ import BacCalculator from '@/components/calculator/bac-calculator';
 import FuelEfficiencyConverter from '@/components/calculator/fuel-efficiency-converter';
 import AsciiTextConverter from '@/components/calculator/ascii-text-converter';
 import OhmsLawCalculator from '@/components/calculator/ohms-law-calculator';
+import CarLoanCalculator from '@/components/calculator/car-loan-calculator';
 
 
 export const categories: Category[] = [
@@ -352,7 +355,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your car loan payments.',
     category: 'Finance',
     Icon: Car,
-    component: PlaceholderCalculator,
+    component: CarLoanCalculator,
   },
   {
     slug: 'home-loan-calculator',
