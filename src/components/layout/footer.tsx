@@ -11,15 +11,15 @@ export default function Footer() {
             About Us
           </Link>
           <span>|</span>
-          <Link href="#" className="hover:text-primary transition-colors">
+          <Link href="/sitemap" className="hover:text-primary transition-colors">
             Sitemap
           </Link>
           <span>|</span>
-          <Link href="#" className="hover:text-primary transition-colors">
+          <Link href="/terms-of-use" className="hover:text-primary transition-colors">
             Terms of Use
           </Link>
           <span>|</span>
-          <Link href="#" className="hover:text-primary transition-colors">
+          <Link href="/privacy-policy" className="hover:text-primary transition-colors">
             Privacy Policy
           </Link>
         </div>
