@@ -15,7 +15,8 @@ const gcd = (a: number, b: number): number => {
 
 // Helper function to find the least common multiple of two numbers
 const lcm = (a: number, b: number): number => {
-  return (a * b) / gcd(a, b);
+  if (a === 0 || b === 0) return 0;
+  return Math.abs(a * b) / gcd(a, b);
 };
 
 export default function LcmGcdCalculator() {
@@ -23,7 +24,8 @@ export default function LcmGcdCalculator() {
 
   const handleNumberChange = (index: number, value: string) => {
     const newNumbers = [...numbers];
-    newNumbers[index] = Number(value);
+    const num = parseInt(value, 10);
+    newNumbers[index] = isNaN(num) ? 0 : num;
     setNumbers(newNumbers);
   };
 
@@ -35,11 +37,15 @@ export default function LcmGcdCalculator() {
   };
 
   const { finalGcd, finalLcm } = useMemo(() => {
-    if (numbers.some(n => !Number.isInteger(n) || n <= 0)) {
-        return { finalGcd: "Invalid", finalLcm: "Invalid" };
+    const validNumbers = numbers.filter(n => Number.isInteger(n) && n > 0);
+    
+    if (validNumbers.length < 2) {
+      return { finalGcd: "N/A", finalLcm: "N/A" };
     }
-    const gcdResult = numbers.reduce((acc, val) => gcd(acc, val));
-    const lcmResult = numbers.reduce((acc, val) => lcm(acc, val));
+
+    const gcdResult = validNumbers.reduce((acc, val) => gcd(acc, val));
+    const lcmResult = validNumbers.reduce((acc, val) => lcm(acc, val));
+    
     return { finalGcd: gcdResult, finalLcm: lcmResult };
   }, [numbers]);
 
@@ -62,6 +68,7 @@ export default function LcmGcdCalculator() {
                     onChange={(e) => handleNumberChange(index, e.target.value)}
                     min="1"
                     step="1"
+                    placeholder="e.g. 12"
                   />
                   {numbers.length > 2 && (
                     <Button

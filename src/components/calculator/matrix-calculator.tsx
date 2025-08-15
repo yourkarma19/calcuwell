@@ -20,7 +20,8 @@ export default function MatrixCalculator() {
     const setter = matrix === "A" ? setMatrixA : setMatrixB;
     const currentMatrix = matrix === "A" ? matrixA : matrixB;
     const newMatrix = currentMatrix.map(r => [...r]);
-    newMatrix[row][col] = Number(value);
+    const intValue = parseInt(value, 10);
+    newMatrix[row][col] = isNaN(intValue) ? 0 : intValue;
     setter(newMatrix);
   };
 
@@ -28,9 +29,9 @@ export default function MatrixCalculator() {
     return matrixA.map((row, rIndex) => 
         row.map((_, cIndex) => {
             if (operation === 'add') {
-                return matrixA[rIndex][cIndex] + matrixB[rIndex][cIndex];
+                return (matrixA[rIndex][cIndex] || 0) + (matrixB[rIndex][cIndex] || 0);
             } else {
-                return matrixA[rIndex][cIndex] - matrixB[rIndex][cIndex];
+                return (matrixA[rIndex][cIndex] || 0) - (matrixB[rIndex][cIndex] || 0);
             }
         })
     );

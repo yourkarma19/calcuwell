@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -113,7 +114,7 @@ export default function LoanEMICalculator() {
         
         <Card>
             <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-            <CardContent className="h-64">
+            <CardContent className="h-80">
                 <ChartContainer config={chartConfig} className="w-full h-full">
                     <PieChart>
                          <Tooltip
