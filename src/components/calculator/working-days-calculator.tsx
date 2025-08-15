@@ -1,0 +1,72 @@
+"use client";
+
+import { useState } from "react";
+import { format, differenceInBusinessDays } from "date-fns";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { DatePicker } from "@/components/ui/date-picker";
+
+export default function WorkingDaysCalculator() {
+  const [startDate, setStartDate] = useState<Date | undefined>(new Date());
+  const [endDate, setEndDate] = useState<Date | undefined>(
+    new Date(new Date().setDate(new Date().getDate() + 30))
+  );
+  const [workingDays, setWorkingDays] = useState<number | null>(null);
+
+  const handleCalculate = () => {
+    if (startDate && endDate) {
+      if (endDate < startDate) {
+        // Swap dates if end date is before start date
+        const temp = startDate;
+        setStartDate(endDate);
+        setEndDate(temp);
+      }
+      setWorkingDays(differenceInBusinessDays(endDate, startDate));
+    }
+  };
+
+  return (
+    <>
+      <div className="lg:col-span-2 space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Calculate Working Days</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label>Start Date</Label>
+                <DatePicker date={startDate} setDate={setStartDate} />
+              </div>
+              <div className="space-y-2">
+                <Label>End Date</Label>
+                <DatePicker date={endDate} setDate={setEndDate} />
+              </div>
+            </div>
+            <Button onClick={handleCalculate} className="w-full">
+              Calculate Working Days
+            </Button>
+            <p className="text-xs text-muted-foreground">This calculation excludes weekends (Saturdays and Sundays). It does not account for public holidays.</p>
+          </CardContent>
+        </Card>
+      </div>
+
+       {workingDays !== null && (
+          <div className="lg:col-span-1">
+            <Card className="sticky top-24">
+              <CardHeader>
+                <CardTitle>Result</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-sm text-muted-foreground">Total Working Days</p>
+                <p className="text-6xl font-bold font-headline text-primary my-2">
+                  {workingDays}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+    </>
+  );
+}

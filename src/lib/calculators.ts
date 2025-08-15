@@ -1,4 +1,5 @@
 
+
 import {
   Calculator as CalculatorIcon,
   HeartPulse,
@@ -120,6 +121,16 @@ import AngleConverter from '@/components/calculator/angle-converter';
 import LogarithmCalculator from '@/components/calculator/logarithm-calculator';
 import Base64Converter from '@/components/calculator/base64-converter';
 import CylinderVolumeCalculator from '@/components/calculator/cylinder-volume-calculator';
+import MeanMedianModeCalculator from '@/components/calculator/mean-median-mode-calculator';
+import StandardDeviationCalculator from '@/components/calculator/standard-deviation-calculator';
+import LcmGcdCalculator from '@/components/calculator/lcm-gcd-calculator';
+import BreakEvenPointCalculator from '@/components/calculator/break-even-point-calculator';
+import CreditCardPayoffCalculator from '@/components/calculator/credit-card-payoff-calculator';
+import HeartRateZoneCalculator from '@/components/calculator/heart-rate-zone-calculator';
+import DataTransferRateConverter from '@/components/calculator/data-transfer-rate-converter';
+import CountdownTimer from '@/components/calculator/countdown-timer';
+import WorkingDaysCalculator from '@/components/calculator/working-days-calculator';
+import SphereVolumeSurfaceAreaCalculator from '@/components/calculator/sphere-volume-surface-area-calculator';
 
 
 export const categories: Category[] = [
@@ -238,7 +249,7 @@ export const calculators: Calculator[] = [
     description: 'Find the average, middle, and most frequent values.',
     category: 'Math',
     Icon: Sigma,
-    component: PlaceholderCalculator,
+    component: MeanMedianModeCalculator,
   },
   {
     slug: 'standard-deviation-calculator',
@@ -246,7 +257,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the standard deviation of a data set.',
     category: 'Math',
     Icon: Sigma,
-    component: PlaceholderCalculator,
+    component: StandardDeviationCalculator,
   },
   {
     slug: 'probability-calculator',
@@ -279,7 +290,7 @@ export const calculators: Calculator[] = [
     description: 'Find the Least Common Multiple and Greatest Common Divisor.',
     category: 'Math',
     Icon: Variable,
-    component: PlaceholderCalculator,
+    component: LcmGcdCalculator,
   },
   {
     slug: 'square-root-cube-root-calculator',
@@ -484,7 +495,7 @@ export const calculators: Calculator[] = [
     description: 'Find the point where revenue equals costs.',
     category: 'Finance',
     Icon: Briefcase,
-    component: PlaceholderCalculator,
+    component: BreakEvenPointCalculator,
   },
   {
     slug: 'business-profit-margin-calculator',
@@ -500,7 +511,7 @@ export const calculators: Calculator[] = [
     description: 'Plan how to pay off your credit card debt.',
     category: 'Finance',
     Icon: CreditCard,
-    component: PlaceholderCalculator,
+    component: CreditCardPayoffCalculator,
   },
 
   // Health & Fitness
@@ -596,7 +607,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate your target heart rate zones.',
     category: 'Health',
     Icon: HeartPulse,
-    component: PlaceholderCalculator,
+    component: HeartRateZoneCalculator,
   },
   {
     slug: 'vo2-max-calculator',
@@ -726,7 +737,7 @@ export const calculators: Calculator[] = [
     description: 'Convert between bps, Kbps, Mbps, and more.',
     category: 'Conversions',
     Icon: Shuffle,
-    component: PlaceholderCalculator,
+    component: DataTransferRateConverter,
   },
   {
     slug: 'angle-converter',
@@ -770,7 +781,7 @@ export const calculators: Calculator[] = [
     description: 'Count down to a specific date and time.',
     category: 'Date & Time',
     Icon: Timer,
-    component: PlaceholderCalculator,
+    component: CountdownTimer,
   },
   {
     slug: 'time-zone-converter',
@@ -794,7 +805,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate working days between two dates.',
     category: 'Date & Time',
     Icon: Briefcase,
-    component: PlaceholderCalculator,
+    component: WorkingDaysCalculator,
   },
   {
     slug: 'week-number-calculator',
@@ -928,7 +939,7 @@ export const calculators: Calculator[] = [
     description: 'Calculate the volume and surface area of a sphere.',
     category: 'Geometry & Engineering',
     Icon: Globe,
-    component: PlaceholderCalculator,
+    component: SphereVolumeSurfaceAreaCalculator,
   },
   {
     slug: 'cone-volume-calculator',
