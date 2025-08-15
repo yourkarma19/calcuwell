@@ -34,19 +34,23 @@ export default function ScientificCalculator() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+  
+  const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
   const handleInput = (input: string) => {
     if (displayValue === "Error") {
-        setDisplayValue(input);
+        setDisplayValue(isOperator(input) ? "0" : input);
+        setJustEvaluated(false);
         return;
     }
+
     if (justEvaluated && !isOperator(input)) {
         setDisplayValue(input);
         setJustEvaluated(false);
         return;
     }
 
-    if (["/", "*", "-", "+"].includes(input)) {
+    if (isOperator(input)) {
         handleOperator(input);
     } else if (input === "=") {
       handleEquals();
@@ -57,9 +61,7 @@ export default function ScientificCalculator() {
     } else if (input === "%") {
         setDisplayValue(prev => (parseFloat(prev) / 100).toString());
     } else {
-      if(displayValue === "0" && !isOperator(input) && input !== '.'){
-        setDisplayValue(input);
-      } else if (displayValue === "Error") {
+      if(displayValue === "0" && input !== '.'){
         setDisplayValue(input);
       } else {
         setDisplayValue(prev => prev + input);
@@ -70,13 +72,20 @@ export default function ScientificCalculator() {
   
   const handleOperator = (op: string) => {
     if (displayValue !== "Error") {
-      setDisplayValue(prev => prev + op);
+      // Prevent multiple operators in a row
+      const lastChar = displayValue.slice(-1);
+      if(isOperator(lastChar)) {
+        setDisplayValue(prev => prev.slice(0, -1) + op);
+      } else {
+        setDisplayValue(prev => prev + op);
+      }
       setJustEvaluated(false);
     }
   }
 
   const handleBackspace = () => {
-    setDisplayValue(prev => prev.length > 1 ? prev.slice(0, -1) : "0");
+    setDisplayValue(prev => (prev.length > 1 && prev !== "Error") ? prev.slice(0, -1) : "0");
+    setJustEvaluated(false);
   };
   
   const handleScientificInput = (func: string) => {
@@ -144,7 +153,7 @@ export default function ScientificCalculator() {
 
   const handleEquals = () => {
     try {
-        const result = new Function('return ' + displayValue)();
+        const result = new Function('return ' + displayValue.replace(/\^/g, '**'))();
         if (isNaN(result) || !isFinite(result)) {
           setDisplayValue("Error");
         } else {
@@ -160,8 +169,6 @@ export default function ScientificCalculator() {
     setDisplayValue("0");
     setJustEvaluated(false);
   };
-
-  const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
   const getButtonClass = (btn: string) => {
     if (isOperator(btn) || btn === "=") return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};

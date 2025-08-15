@@ -27,10 +27,8 @@ export default function AngleConverter() {
     }, [value, isDegreesToRadians]);
 
     const handleSwap = () => {
-        if(result) {
-            setValue(result);
-        }
-        setIsDegreesToRadians(!isDegreesToRadians);
+        setValue(result || "0");
+        setIsDegreesToRadians(prev => !prev);
     };
 
     const fromLabel = isDegreesToRadians ? "Degrees (°)" : "Radians (rad)";
