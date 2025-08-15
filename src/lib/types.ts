@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react';
 import type { ComponentType, FC } from 'react';
 
-export type CalculatorCategory = "Math" | "Finance" | "Health" | "Programming" | "Conversions" | "Date & Time";
+export type CalculatorCategory = "Math" | "Finance" | "Health" | "Conversions" | "Date & Time" | "Programming" | "Geometry & Engineering" | "Miscellaneous";
 
 export interface Calculator {
   slug: string;
