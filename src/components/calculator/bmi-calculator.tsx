@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -13,8 +14,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 
 type UnitSystem = "metric" | "imperial";
+
+const bmiCategories = [
+    { range: "< 18.5", category: "Underweight" },
+    { range: "18.5 - 24.9", category: "Normal weight" },
+    { range: "25.0 - 29.9", category: "Overweight" },
+    { range: "30.0+", category: "Obesity" },
+];
 
 export default function BMICalculator() {
   const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>(
@@ -127,6 +136,30 @@ export default function BMICalculator() {
             )}
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>BMI Categories (WHO)</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Category</TableHead>
+                  <TableHead>BMI Range</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {bmiCategories.map((item) => (
+                  <TableRow key={item.category}>
+                    <TableCell>{item.category}</TableCell>
+                    <TableCell>{item.range}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <p className="text-xs text-muted-foreground mt-2">Note: BMI is a screening tool and does not diagnose body fatness or health. Consult a healthcare provider for a complete assessment.</p>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="lg:col-span-1">
@@ -146,3 +179,4 @@ export default function BMICalculator() {
     </>
   );
 }
+

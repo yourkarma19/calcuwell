@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -84,6 +85,16 @@ export default function BmrCalculator() {
             </div>
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>About Basal Metabolic Rate (BMR)</CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm text-muted-foreground space-y-2">
+            <p>Your Basal Metabolic Rate (BMR) is the number of calories your body needs to accomplish its most basic (basal) life-sustaining functions, such as breathing, circulation, nutrient processing, and cell production.</p>
+            <p>This calculator uses the Mifflin-St Jeor Equation, which is considered one of the most accurate formulas for estimating BMR.</p>
+            <p>Note: BMR does not account for calories burned during physical activity. For your total daily calorie needs, please use the <a href="/calculators/calorie-needs-calculator" className="text-primary underline">Calorie Needs Calculator</a>.</p>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="lg:col-span-1">
@@ -103,3 +114,4 @@ export default function BmrCalculator() {
     </>
   );
 }
+

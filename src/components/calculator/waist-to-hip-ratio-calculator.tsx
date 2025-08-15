@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,6 +8,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+
+const whrCategories = {
+    male: [
+      { range: "< 0.90", risk: "Low Risk" },
+      { range: "0.90 - 1.0", risk: "Moderate Risk" },
+      { range: "> 1.0", risk: "High Risk" },
+    ],
+    female: [
+      { range: "< 0.80", risk: "Low Risk" },
+      { range: "0.80 - 0.85", risk: "Moderate Risk" },
+      { range: "> 0.85", risk: "High Risk" },
+    ],
+};
 
 const getWhrCategory = (whr: number, gender: 'male' | 'female') => {
   if (gender === 'male') {
@@ -59,6 +74,38 @@ export default function WaistToHipRatioCalculator() {
             </div>
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Health Risk Categories</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>Gender</TableHead>
+                        <TableHead>Low Risk</TableHead>
+                        <TableHead>Moderate Risk</TableHead>
+                        <TableHead>High Risk</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow>
+                        <TableCell className="font-medium">Male</TableCell>
+                        <TableCell>{whrCategories.male[0].range}</TableCell>
+                        <TableCell>{whrCategories.male[1].range}</TableCell>
+                        <TableCell>{whrCategories.male[2].range}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="font-medium">Female</TableCell>
+                        <TableCell>{whrCategories.female[0].range}</TableCell>
+                        <TableCell>{whrCategories.female[1].range}</TableCell>
+                        <TableCell>{whrCategories.female[2].range}</TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+            <p className="text-xs text-muted-foreground mt-2">Waist-to-Hip Ratio (WHR) is an indicator of health risk associated with fat distribution. A higher ratio indicates more abdominal fat, which is linked to a higher risk of cardiovascular disease.</p>
+          </CardContent>
+        </Card>
       </div>
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
@@ -69,10 +116,10 @@ export default function WaistToHipRatioCalculator() {
               {whr.toFixed(2)}
             </p>
             <p className={cn("text-lg font-semibold", color)}>{category}</p>
-            <p className="text-xs text-muted-foreground pt-4">This is an indicator of health risk associated with fat distribution.</p>
           </CardContent>
         </Card>
       </div>
     </>
   );
 }
+

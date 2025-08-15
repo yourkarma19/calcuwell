@@ -55,6 +55,7 @@ import {
   Keyboard,
   Minus,
   Plus,
+  Info,
 } from 'lucide-react';
 import type { Calculator, Category } from '@/lib/types';
 import BMICalculator from '@/components/calculator/bmi-calculator';

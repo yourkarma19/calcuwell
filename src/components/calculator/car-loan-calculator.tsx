@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -6,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Info } from "lucide-react";
 
 export default function CarLoanCalculator() {
   const [carPrice, setCarPrice] = usePersistentState("car-loan-price", 25000);
@@ -34,7 +36,7 @@ export default function CarLoanCalculator() {
         };
       }
     }
-    return { emi: 0, totalPayable: 0, totalInterest: 0, loanAmount: principal };
+    return { emi: 0, totalPayable: 0, totalInterest: 0, loanAmount: Math.max(0, principal) };
   }, [carPrice, downPayment, tradeInValue, rate, tenure]);
 
   return (
@@ -78,6 +80,15 @@ export default function CarLoanCalculator() {
             </div>
           </CardContent>
         </Card>
+        <Card>
+            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
+                <Info className="w-5 h-5 mt-1 shrink-0" />
+                <div>
+                    <p><span className="font-semibold text-foreground">Equated Monthly Installment (EMI)</span> is the fixed payment amount made by a borrower to a lender at a specified date each calendar month.</p>
+                    <p className="mt-2"><span className="font-semibold text-foreground">Total Cost</span> is the full amount you will have paid (Total EMI + Down Payment + Trade-in) once the loan is fully repaid.</p>
+                </div>
+            </CardContent>
+        </Card>
       </div>
 
       <div className="lg:col-span-1">
@@ -102,8 +113,8 @@ export default function CarLoanCalculator() {
                     <span className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                 </div>
                  <div className="flex justify-between font-medium border-t pt-2 mt-2">
-                    <span>Total Cost:</span>
-                    <span>₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+                    <span>Total Cost of Car:</span>
+                    <span>₹ {(totalPayable + downPayment + tradeInValue).toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                 </div>
             </div>
           </CardContent>
