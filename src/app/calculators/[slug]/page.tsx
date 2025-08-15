@@ -1,3 +1,4 @@
+
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCalculatorBySlug, calculators } from "@/lib/calculators";
@@ -11,8 +12,8 @@ type CalculatorPageProps = {
   };
 };
 
-export async function generateMetadata({ params }: CalculatorPageProps): Promise<Metadata> {
-  const calculator = getCalculatorBySlug(params.slug);
+export async function generateMetadata({ params: { slug } }: CalculatorPageProps): Promise<Metadata> {
+  const calculator = getCalculatorBySlug(slug);
 
   if (!calculator) {
     return {};
@@ -32,8 +33,7 @@ export async function generateStaticParams() {
 }
 
 
-export default function CalculatorPage({ params }: CalculatorPageProps) {
-  const { slug } = params;
+export default function CalculatorPage({ params: { slug } }: CalculatorPageProps) {
   const calculator = getCalculatorBySlug(slug);
 
   if (!calculator) {
