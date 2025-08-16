@@ -243,7 +243,7 @@ export default function ScientificCalculator() {
     return () => {
         window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [displayValue, isRadians, justEvaluated]); // Re-add listener if state changes
+  }, []);
 
   const scientificButtons = getScientificButtonLayout(isInverse);
 
