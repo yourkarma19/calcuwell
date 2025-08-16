@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Icon } from "@/components/ui/icon";
-import { Badge } from "@/components/ui/badge";
+import ScientificCalculator from "@/components/calculator/scientific-calculator";
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);
@@ -44,26 +44,8 @@ export default function Home() {
 
       <section className="py-12 md:py-16">
          <div className="flex justify-center -mt-32 md:-mt-36 relative z-20">
-          <div className="animate-[float_4s_ease-in-out_infinite]">
-            <Link href="/calculators/scientific-calculator">
-              <Card className="hover:shadow-xl transition-shadow duration-300 group w-full max-w-sm">
-                <CardHeader>
-                  <div className="flex flex-col items-center text-center gap-4">
-                    <div className="bg-primary/10 p-4 rounded-full">
-                      <Icon name="FlaskConical" className="w-10 h-10 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle className="font-headline text-2xl">
-                        Scientific Calculator
-                      </CardTitle>
-                      <CardDescription className="mt-1">
-                        Perform advanced mathematical calculations with ease.
-                      </CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            </Link>
+          <div className="w-full max-w-md">
+            <ScientificCalculator />
           </div>
         </div>
       </section>
