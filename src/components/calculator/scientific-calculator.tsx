@@ -129,8 +129,8 @@ export default function ScientificCalculator() {
             case '(': currentDisplay += '('; break;
             case ')': currentDisplay += ')'; break;
             case 'mc': setMemory(0); return;
-            case 'm+': setMemory(prev => prev + value); return;
-            case 'm-': setMemory(prev => prev - value); return;
+            case 'm+': setMemory(prev => prev + parseFloat(displayValue)); return;
+            case 'm-': setMemory(prev => prev - parseFloat(displayValue)); return;
             case 'mr': setDisplayValue(memory.toString()); return;
             case 'x²': handleEquals(Math.pow(value, 2).toString()); return;
             case 'x³': handleEquals(Math.pow(value, 3).toString()); return;
@@ -365,3 +365,5 @@ export default function ScientificCalculator() {
     </div>
   );
 }
+
+    
