@@ -131,16 +131,27 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
               <div className="space-y-2">
-                <Label htmlFor="extra-monthly">Extra Monthly Payment</Label>
+                <Label htmlFor="extra-monthly">Extra Monthly Payment (Optional)</Label>
                 <Input type="number" value={extraMonthlyPayment} onChange={e => setExtraMonthlyPayment(Number(e.target.value))} className="w-full" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="extra-yearly">Extra Yearly Payment</Label>
+                <Label htmlFor="extra-yearly">Extra Yearly Payment (Optional)</Label>
                 <Input type="number" value={extraYearlyPayment} onChange={e => setExtraYearlyPayment(Number(e.target.value))} className="w-full" />
               </div>
             </div>
 
           </CardContent>
+        </Card>
+
+        <Card>
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><Info className="w-5 h-5"/> Understanding Your EMI</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground space-y-2">
+                <p><span className="font-semibold text-foreground">What is an EMI?</span> An Equated Monthly Installment (EMI) is a fixed payment you make to a lender every month. It covers both the principal amount and the interest, so you pay off your loan in a set period.</p>
+                <p><span className="font-semibold text-foreground">How do Extra Payments Help?</span> By adding extra payments (monthly or yearly), you reduce the principal amount faster. This significantly lowers the total interest you pay over the loan's lifetime and helps you become debt-free sooner.</p>
+                <p><span className="font-semibold text-foreground">Formula Used:</span> This calculator uses the standard formula: EMI = P * r * (1+r)^n / ((1+r)^n - 1), where P is Principal, r is the monthly interest rate, and n is the tenure in months.</p>
+            </CardContent>
         </Card>
         
         <Card>
