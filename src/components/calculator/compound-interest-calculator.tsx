@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export default function CompoundInterestCalculator() {
+export default function CompoundInterestCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState("ci-principal", 10000);
   const [rate, setRate] = usePersistentState("ci-rate", 7);
   const [tenure, setTenure] = usePersistentState("ci-tenure", 10);

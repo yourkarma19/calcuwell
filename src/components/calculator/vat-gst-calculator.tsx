@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import { useSearchParams } from "next/navigation";
 
-export default function VatGstCalculator() {
+export default function VatGstCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
   const [amount, setAmount] = usePersistentState("vat-amount", 100);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);

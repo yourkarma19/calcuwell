@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 
-export default function SimpleInterestCalculator() {
+export default function SimpleInterestCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState(
     "si-principal",
     100000

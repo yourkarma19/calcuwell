@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -14,7 +15,7 @@ import {
   ChartLegendContent,
 } from "@/components/ui/chart";
 
-export default function MortgageCalculator() {
+export default function MortgageCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
   const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);
   const [tenure, setTenure] = usePersistentState("mortgage-tenure", 30);

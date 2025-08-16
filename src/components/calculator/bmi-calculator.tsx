@@ -26,7 +26,7 @@ const bmiCategories = [
     { range: "30.0+", category: "Obesity" },
 ];
 
-export default function BMICalculator() {
+export default function BMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
   const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>(
     "bmi-unit-system",

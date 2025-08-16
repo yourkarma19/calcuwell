@@ -12,7 +12,7 @@ import { calculateAge, Age } from "@/lib/math/date";
 import { useSearchParams } from "next/navigation";
 
 
-export default function AgeCalculator() {
+export default function AgeCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
   const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date(), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);

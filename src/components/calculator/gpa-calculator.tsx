@@ -25,6 +25,7 @@ import {
 } from "../ui/select";
 import { Info } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 const gradePoints: { [key: string]: number } = {
   A: 4.0, "A-": 3.7, "B+": 3.3, B: 3.0, "B-": 2.7, "C+": 2.3, C: 2.0, "C-": 1.7, "D+": 1.3, D: 1.0, F: 0.0,
@@ -43,20 +44,30 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 
-export default function GpaCalculator() {
+export default function GpaCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [gpa, setGpa] = useState<number | null>(null);
+  
+  const [defaultCourses, setDefaultCourses] = usePersistentState('gpa-courses', [{ name: "Example Course", grade: "A", credits: 3 }]);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      courses: [{ name: "Example Course", grade: "A", credits: 3 }],
+      courses: defaultCourses,
     },
      mode: "onChange",
   });
-
+  
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: "courses",
   });
+  
+  const watchedCourses = form.watch('courses');
+  
+  useState(() => {
+    setDefaultCourses(watchedCourses);
+  }, [watchedCourses, setDefaultCourses]);
+
 
   const onSubmit = (data: FormValues) => {
     let totalPoints = 0;

@@ -17,7 +17,7 @@ import {
 import { calculateEMI } from "@/lib/math/loan-emi";
 import { useSearchParams } from "next/navigation";
 
-export default function LoanEMICalculator() {
+export default function LoanEMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
