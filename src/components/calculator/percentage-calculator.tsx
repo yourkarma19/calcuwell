@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -18,13 +18,27 @@ import { percentageOf, isWhatPercentageOf, percentageChange } from "@/lib/math/p
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 
-export default function PercentageCalculator() {
+const formulas = {
+    percentOf: "(Percentage / 100) * BaseValue",
+    isWhatPercent: "(Part / Whole) * 100",
+    percentageChange: "((Final - Initial) / Initial) * 100"
+}
+
+interface PercentageCalculatorProps {
+  setFormula: (formula: string) => void;
+}
+
+export default function PercentageCalculator({ setFormula }: PercentageCalculatorProps) {
   const [mode, setMode] = usePersistentState<CalculationMode>(
     "percentage-mode",
     "percentOf"
   );
   const [valA, setValA] = usePersistentState("percentage-valA", 10);
   const [valB, setValB] = usePersistentState("percentage-valB", 50);
+  
+  useEffect(() => {
+    setFormula(formulas[mode]);
+  }, [mode, setFormula]);
 
   const result = useMemo(() => {
     const a = Number(valA);

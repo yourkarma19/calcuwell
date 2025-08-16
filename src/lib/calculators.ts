@@ -73,7 +73,6 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate percentages, increases, and decreases.',
     category: 'Math',
     iconName: 'Percent',
-    formula: '(Part / Whole) * 100',
   },
   {
     slug: 'fraction-calculator',

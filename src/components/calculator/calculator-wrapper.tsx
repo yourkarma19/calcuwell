@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 import { categories } from "@/lib/calculators";
 
 interface CalculatorWrapperProps {
-  children: ReactNode;
+  children: (setFormula: (formula: string) => void) => ReactNode;
   calculator: Omit<Calculator, 'component'>;
 }
 
@@ -16,6 +16,7 @@ export default function CalculatorWrapper({
   calculator,
 }: CalculatorWrapperProps) {
   const category = categories.find(c => c.name === calculator.category);
+  const [formula, setFormula] = React.useState(calculator.formula || "No formula available.");
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -40,11 +41,11 @@ export default function CalculatorWrapper({
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-        {children}
+        {children(setFormula)}
         <div className="hidden lg:block lg:col-span-1 lg:sticky top-24 no-print">
            <FormulaExplainer 
             calculatorName={calculator.name}
-            formula={calculator.formula || "No formula available."}
+            formula={formula}
           />
         </div>
       </div>
