@@ -10,7 +10,7 @@ import { categories } from "@/lib/calculators";
 import React from 'react';
 
 interface CalculatorWrapperProps {
-  children: (setFormula: (formula: string) => void) => ReactNode;
+  children: ReactNode;
   calculator: Omit<Calculator, 'component'>;
 }
 
@@ -20,6 +20,15 @@ export default function CalculatorWrapper({
 }: CalculatorWrapperProps) {
   const category = categories.find(c => c.name === calculator.category);
   const [formula, setFormula] = React.useState(calculator.formula || "No formula available.");
+
+  // Clone the child element to pass the setFormula function as a prop
+  const childrenWithProps = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      // @ts-ignore
+      return React.cloneElement(child, { setFormula });
+    }
+    return child;
+  });
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -44,7 +53,7 @@ export default function CalculatorWrapper({
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-        {children(setFormula)}
+        {childrenWithProps}
         <div className="hidden lg:block lg:col-span-1 lg:sticky top-24 no-print">
            <FormulaExplainer 
             calculatorName={calculator.name}

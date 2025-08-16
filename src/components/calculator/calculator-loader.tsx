@@ -6,7 +6,7 @@ import PlaceholderCalculator from './placeholder-calculator';
 
 interface CalculatorLoaderProps {
   slug: string;
-  setFormula: (formula: string) => void;
+  setFormula?: (formula: string) => void;
 }
 
 export default function CalculatorLoader({ slug, setFormula }: CalculatorLoaderProps) {
@@ -22,5 +22,6 @@ export default function CalculatorLoader({ slug, setFormula }: CalculatorLoaderP
     );
   }, [slug]);
 
+  // @ts-ignore
   return <CalculatorComponent setFormula={setFormula} />;
 }

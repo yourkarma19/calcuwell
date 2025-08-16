@@ -43,7 +43,7 @@ export default function CalculatorPage({ params: { slug } }: CalculatorPageProps
   return (
     <main>
       <CalculatorWrapper calculator={calculator}>
-        {(setFormula) => <CalculatorLoader slug={slug} setFormula={setFormula} />}
+        <CalculatorLoader slug={slug} />
       </CalculatorWrapper>
     </main>
   );
