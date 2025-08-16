@@ -60,9 +60,9 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
   
   const chartConfig = {
       principal: { label: "Principal", color: "hsl(var(--chart-1))" },
-      interest: { label: "Total Interest", color: "hsl(var(--chart-2))" },
-      tax: { label: "Property Tax", color: "hsl(var(--chart-3))" },
-      insurance: { label: "Home Insurance", color: "hsl(var(--chart-4))" },
+      "Total Interest": { label: "Total Interest", color: "hsl(var(--chart-2))" },
+      "Property Tax": { label: "Property Tax", color: "hsl(var(--chart-3))" },
+      "Home Insurance": { label: "Home Insurance", color: "hsl(var(--chart-4))" },
   };
 
   return (
@@ -119,22 +119,15 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
                             <Tooltip
                             cursor={false}
                             content={<ChartTooltipContent 
-                                formatter={(value, name) => {
-                                  let label = name;
-                                  if (name === 'interest') label = 'Total Interest';
-                                  if (name === 'tax') label = 'Total Tax';
-                                  if (name === 'insurance') label = 'Total Insurance';
-                                  return `${label}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`
-                                }}
+                                formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
                                 />}
                             />
                             <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="30%" outerRadius="80%" strokeWidth={5}>
-                                <Cell name="Principal" fill="hsl(var(--chart-1))" />
-                                <Cell name="interest" fill="hsl(var(--chart-2))" />
-                                <Cell name="tax" fill="hsl(var(--chart-3))" />
-                                <Cell name="insurance" fill="hsl(var(--chart-4))" />
+                                {chartData.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={entry.fill} name={entry.name} />
+                                ))}
                             </Pie>
-                            <ChartLegend content={<ChartLegendContent />} />
+                            <ChartLegend content={<ChartLegendContent nameKey="name" />} />
                         </PieChart>
                     </ResponsiveContainer>
                 </ChartContainer>

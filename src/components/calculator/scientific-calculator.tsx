@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -220,8 +220,7 @@ export default function ScientificCalculator() {
     return { variant: "outline" as const, className: ""};
   };
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+  const handleKeyDown = useCallback((event: KeyboardEvent) => {
         const key = event.key;
         if ((key >= '0' && key <= '9') || key === '.') {
             handleInput(key);
@@ -237,14 +236,15 @@ export default function ScientificCalculator() {
         } else if (key === '(' || key === ')') {
             handleScientificInput(key);
         }
-    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [displayValue, justEvaluated]);
 
+  useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
         window.removeEventListener('keydown', handleKeyDown);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [handleKeyDown]);
 
   const scientificButtons = getScientificButtonLayout(isInverse);
 

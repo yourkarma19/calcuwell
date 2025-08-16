@@ -22,10 +22,22 @@ export default function ProportionCalculator() {
     const d = Number(valD);
 
     try {
-        if (solveFor === 'd') return (b * c) / a;
-        if (solveFor === 'c') return (a * d) / b;
-        if (solveFor === 'b') return (a * d) / c;
-        if (solveFor === 'a') return (b * c) / d;
+        if (solveFor === 'd') {
+            if (a === 0) return NaN;
+            return (b * c) / a;
+        }
+        if (solveFor === 'c') {
+            if (b === 0) return NaN;
+            return (a * d) / b;
+        }
+        if (solveFor === 'b') {
+            if (c === 0) return NaN;
+            return (a * d) / c;
+        }
+        if (solveFor === 'a') {
+            if (d === 0) return NaN;
+            return (b * c) / d;
+        }
     } catch {
         return NaN;
     }

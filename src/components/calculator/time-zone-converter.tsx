@@ -52,24 +52,11 @@ export default function TimeZoneConverter() {
         throw new Error("Invalid time format");
       }
       
-      const sourceDate = new Date(date);
-      // Ensure we use the local date but set the time according to user input
-      sourceDate.setHours(hours, minutes, 0, 0);
+      const localDate = new Date(date);
+      localDate.setHours(hours, minutes, 0, 0);
 
-      // We need to construct a string that represents the local time in the "from" timezone
-      // for accurate conversion. This is a bit tricky with Intl.
-      // A more robust solution might use a library like date-fns-tz.
-      // For now, let's format the input date and time to ISO-like string.
-      const year = sourceDate.getFullYear();
-      const month = String(sourceDate.getMonth() + 1).padStart(2, '0');
-      const day = String(sourceDate.getDate()).padStart(2, '0');
-      
-      // Creating a string that represents the time in the source timezone
-      const dateStringInFromZone = `${year}-${month}-${day}T${time}:00`;
-      
-      const dateInFromZone = new Date(dateStringInFromZone);
-      
-      // Now, format this date object into the target timezone.
+      const sourceTimeInUTC = new Date(localDate.toLocaleString("en-US", {timeZone: fromZone}));
+
       const options: Intl.DateTimeFormatOptions = {
         timeZone: toZone,
         year: 'numeric', month: 'long', day: 'numeric',
@@ -78,7 +65,7 @@ export default function TimeZoneConverter() {
       };
       
       const formatter = new Intl.DateTimeFormat('en-US', options);
-      setConvertedTime(formatter.format(dateInFromZone));
+      setConvertedTime(formatter.format(localDate));
 
     } catch(e) {
       setConvertedTime("Invalid Date/Time");
