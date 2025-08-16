@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function ProbabilityCalculator() {
   const [mode, setMode] = usePersistentState<'single' | 'independent'>('prob-mode', 'single');
@@ -36,7 +37,7 @@ export default function ProbabilityCalculator() {
 
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
             <CardTitle>Probability Calculator</CardTitle>
@@ -70,6 +71,38 @@ export default function ProbabilityCalculator() {
                 <p className="text-2xl font-bold font-headline text-primary">{result.value}</p>
                 {result.percentage && <p className="text-xl font-semibold text-muted-foreground">{result.percentage}</p>}
             </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader><CardTitle>About Probability</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>The Basic Formula for Probability Explained</AccordionTrigger>
+                    <AccordionContent>
+                        Probability is calculated by dividing the number of desired outcomes by the total number of possible outcomes. For example, the probability of rolling a 4 on a six-sided die is 1 (favorable outcome) divided by 6 (total outcomes), which is 1/6.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>Probability of a Single Event vs. Multiple Events</AccordionTrigger>
+                    <AccordionContent>
+                        The probability of a single event is straightforward (like flipping a coin once and getting heads). For multiple independent events, you multiply their individual probabilities. For example, the probability of getting heads twice in a row is 1/2 * 1/2 = 1/4.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>Understanding Independent and Dependent Events</AccordionTrigger>
+                    <AccordionContent>
+                       An **independent event** is one where the outcome is not affected by previous events (e.g., a coin flip). A **dependent event** is one where the outcome is influenced by a previous event (e.g., drawing a card from a deck without replacement). This calculator deals with independent events.
+                    </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-4">
+                    <AccordionTrigger>What is the probability of an impossible event?</AccordionTrigger>
+                    <AccordionContent>
+                       The probability of an event that can never happen is 0. For example, the probability of rolling a 7 on a standard six-sided die is 0. Conversely, the probability of an event that is certain to happen is 1.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>
