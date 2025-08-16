@@ -551,6 +551,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarDays',
     formula: "endDate - startDate",
+    seoTitle: 'Date Difference Calculator | Find Days Between Dates',
     metaDescription: "Calculate the exact number of years, months, weeks, and days between any two dates. Perfect for finding the duration of projects, events, or time-sensitive tasks.",
   },
   {
@@ -580,6 +581,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate working days between two dates.',
     category: 'Date & Time',
     iconName: 'Briefcase',
+    seoTitle: 'Working Days Calculator | Business Day Counter',
     metaDescription: "Easily calculate the number of working days (business days) between two dates. This tool automatically excludes weekends to give you an accurate count for project planning.",
   },
   {
@@ -588,6 +590,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Find the week number for a given date.',
     category: 'Date & Time',
     iconName: 'CalendarDays',
+    seoTitle: 'Week Number Calculator | ISO Week Date',
     metaDescription: "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for scheduling and planning weekly tasks.",
   },
   {
@@ -596,6 +599,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     iconName: 'CalendarClock',
+    seoTitle: 'Add or Subtract Days from a Date Calculator',
     metaDescription: "Find a future or past date by adding or subtracting any number of days from a given start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
   },
   {
@@ -604,6 +608,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Find the next business day.',
     category: 'Date & Time',
     iconName: 'Briefcase',
+    seoTitle: 'Business Day Calculator | Add & Subtract Workdays',
     metaDescription: "Calculate a future date by adding or subtracting a specific number of business days, automatically skipping weekends to ensure accuracy for business deadlines.",
   },
 
