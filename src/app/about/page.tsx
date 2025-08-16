@@ -27,7 +27,8 @@ export default function AboutPage() {
                 <p>
                     Currently, we have around 100 calculators to help you "do the math" quickly in areas such as finance, fitness & health, math, and others, and we are still developing more. Our goal is to become the one-stop, go-to site for people who need to make quick calculations. Additionally, we believe the internet should be a source of free information. Therefore, all of our tools and services are completely free, with no registration required.
                 </p>
-
+                
+                <h2>Our Calculators & Accuracy</h2>
                 <p>
                     We have coded and developed each calculator individually and put each one through strict, comprehensive testing. However, please inform us if you notice even the slightest error – your input is extremely valuable to us. While most calculators on CalcPro are designed to be universally applicable for worldwide usage, some might be for specific regions.
                 </p>
