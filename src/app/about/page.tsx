@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About Us | CalcPro",
-    description: "Learn more about CalcPro's mission to provide fast, free, and comprehensive online calculators.",
+    description: "Discover the story behind CalcPro. Learn about our mission to provide fast, comprehensive, and completely free online calculators for finance, health, math, and everyday use.",
 };
 
 export default function AboutPage() {

@@ -3,7 +3,7 @@ import { FileText } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Terms of Use | CalcPro",
-    description: "The terms of use for CalcPro, your ultimate calculator hub.",
+    description: "Read the terms of use for CalcPro. By using our website and its free online calculators, you agree to these terms and conditions.",
 };
 
 export default function TermsOfUsePage() {

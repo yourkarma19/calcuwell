@@ -3,7 +3,7 @@ import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Privacy Policy | CalcPro",
-    description: "The privacy policy for CalcPro, your ultimate calculator hub.",
+    description: "Review the official privacy policy for CalcPro. Understand how we collect, use, and protect your data when you use our free online calculator services.",
 };
 
 export default function PrivacyPolicyPage() {
