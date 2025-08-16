@@ -232,7 +232,9 @@ export default function ScientificCalculator() {
               </TabsList>
               <TabsContent value="scientific" className="mt-4">
                   <div className="grid grid-cols-6 gap-2">
-                     {scientificButtonLayout.map(({func, tooltip}) => (
+                     {scientificButtonLayout
+                        .filter(btn => isRadians ? btn.func !== 'Rad' : btn.func !== 'deg')
+                        .map(({func, tooltip}) => (
                         <Tooltip key={func}>
                             <TooltipTrigger asChild>
                                 <Button
