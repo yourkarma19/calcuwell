@@ -21,7 +21,8 @@ const scientificButtonLayout = [
     { func: 'x²', tooltip: 'Square' }, { func: 'x³', tooltip: 'Cube' }, { func: 'xʸ', tooltip: 'Power' }, { func: 'eˣ', tooltip: 'e^x' }, { func: '10ˣ', tooltip: '10^x' }, { func: 'x!', tooltip: 'Factorial' },
     { func: '¹/x', tooltip: 'Reciprocal' }, { func: '²√x', tooltip: 'Square Root' }, { func: '³√x', tooltip: 'Cube Root' }, { func: 'ʸ√x', tooltip: 'y-th Root' }, { func: 'ln', tooltip: 'Natural Log' }, { func: 'log₁₀', tooltip: 'Log base 10' },
     { func: 'sin', tooltip: 'Sine' }, { func: 'cos', tooltip: 'Cosine' }, { func: 'tan', tooltip: 'Tangent' }, { func: 'e', tooltip: `Euler's Number` }, { func: 'EE', tooltip: 'Exponent' }, { func: 'Rad', tooltip: 'Switch to Radians' },
-    { func: 'sinh', tooltip: 'Hyperbolic Sine' }, { func: 'cosh', tooltip: 'Hyperbolic Cosine' }, { func: 'tanh', tooltip: 'Hyperbolic Tangent' }, { func: 'π', tooltip: 'Pi' }, { func: 'Rand', tooltip: 'Random Number' }, { func: 'deg', tooltip: 'Switch to Degrees' }
+    { func: 'sinh', tooltip: 'Hyperbolic Sine' }, { func: 'cosh', tooltip: 'Hyperbolic Cosine' }, { func: 'tanh', tooltip: 'Hyperbolic Tangent' }, { func: 'π', tooltip: 'Pi' }, { func: 'Rand', tooltip: 'Random Number' }, { func: 'deg', tooltip: 'Switch to Degrees' },
+    { func: 'sin⁻¹', tooltip: 'Arcsine' }, { func: 'cos⁻¹', tooltip: 'Arccosine' }, { func: 'tan⁻¹', tooltip: 'Arctangent' }
 ];
 
 export default function ScientificCalculator() {
@@ -100,6 +101,7 @@ export default function ScientificCalculator() {
       setJustEvaluated(false);
 
       const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
+      const radToAngle = (rad: number) => isRadians ? rad : rad * (180 / Math.PI);
       const value = parseFloat(displayValue);
 
       try {
@@ -125,6 +127,9 @@ export default function ScientificCalculator() {
             case 'sin': setDisplayValue(Math.sin(angleToRad(value)).toString()); setJustEvaluated(true); return;
             case 'cos': setDisplayValue(Math.cos(angleToRad(value)).toString()); setJustEvaluated(true); return;
             case 'tan': if(isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error(); setDisplayValue(Math.tan(angleToRad(value)).toString()); setJustEvaluated(true); return;
+            case 'sin⁻¹': if(value < -1 || value > 1) throw new Error(); setDisplayValue(radToAngle(Math.asin(value)).toString()); setJustEvaluated(true); return;
+            case 'cos⁻¹': if(value < -1 || value > 1) throw new Error(); setDisplayValue(radToAngle(Math.acos(value)).toString()); setJustEvaluated(true); return;
+            case 'tan⁻¹': setDisplayValue(radToAngle(Math.atan(value)).toString()); setJustEvaluated(true); return;
             case 'e': currentDisplay += Math.E.toString(); break;
             case 'EE': currentDisplay += 'e'; break;
             case 'Rad': setIsRadians(true); return;
