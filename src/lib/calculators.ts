@@ -150,8 +150,6 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     iconName: 'Sigma',
-    seoTitle: 'Permutation & Combination Calculator | nPr & nCr Formulas',
-    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Our tool helps you understand the key difference: whether the order of selection matters.',
   },
   {
     slug: 'factorial-calculator',
@@ -160,8 +158,6 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     formula: 'n!',
-    seoTitle: 'Factorial Calculator | Find the Factorial of Any Number (n!)',
-    metaDescription: 'An online factorial calculator that quickly finds the factorial (n!) of any non-negative integer. Includes the factorial formula and an explanation of zero factorial.',
   },
   {
     slug: 'lcm-gcd-calculator',
