@@ -8,7 +8,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Icon } from "@/components/ui/icon";
 import ScientificCalculator from "@/components/calculator/scientific-calculator";
@@ -22,11 +22,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
-            CalcPro
+            CalcPro – Free Online Calculators
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Your one-stop destination for every calculation you might need. Fast,
-            accurate, and easy to use.
+            Your one-stop destination for finance, health, and everyday calculations. Fast, accurate, and easy to use.
           </p>
           <div className="mt-8 flex justify-center gap-2">
             <Button asChild variant="outline">
@@ -86,6 +85,49 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section className="py-16 bg-muted/40 rounded-xl mt-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold font-headline text-center mb-6">
+            Why Choose CalcPro?
+          </h2>
+          <p className="max-w-3xl mx-auto text-center text-muted-foreground mb-10">
+            CalcPro is your one-stop destination for everyday calculations – from 
+            finance and health to education and productivity. Our calculators are 
+            fast, accurate, and designed with modern UI/UX for an effortless experience.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="text-center">
+              <CardContent>
+                <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
+                   <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold font-headline">Fast</h3>
+                <p className="text-sm text-muted-foreground">Instant results with a focus on performance and no unnecessary lag.</p>
+              </CardContent>
+            </Card>
+             <Card className="text-center">
+              <CardContent>
+                 <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
+                   <Target className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold font-headline">Accurate</h3>
+                 <p className="text-sm text-muted-foreground">Our tools are built on reliable formulas and rigorous testing to ensure you get the right answer.</p>
+              </CardContent>
+            </Card>
+             <Card className="text-center">
+              <CardContent>
+                 <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
+                   <Smartphone className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold font-headline">Mobile Friendly</h3>
+                 <p className="text-sm text-muted-foreground">A clean, responsive design that works perfectly on any device, any time.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

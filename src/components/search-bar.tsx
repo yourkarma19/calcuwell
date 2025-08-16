@@ -73,8 +73,14 @@ export function SearchBar() {
   }, [router]);
   
   useEffect(() => {
-    if (isOpen && !fuseRef.current) {
-      initFuse();
+    if (isOpen) {
+      if (!fuseRef.current) {
+        initFuse();
+      }
+      // Focus the input when the popover opens
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
     }
   }, [isOpen, initFuse]);
 
