@@ -1,18 +1,19 @@
 import { MetadataRoute } from 'next'
 import { calculators, categories } from '@/lib/calculators'
-
-const a_second_one = "https://calcpro.online"
+import { metadata } from '@/app/layout';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = metadata.metadataBase?.toString() || "https://calcpro.online";
+
   const calculatorEntries: MetadataRoute.Sitemap = calculators.map((calc) => ({
-    url: `${a_second_one}/calculators/${calc.slug}`,
+    url: `${baseUrl}/calculators/${calc.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
 
   const categoryEntries: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${a_second_one}/categories/${cat.slug}`,
+    url: `${baseUrl}/categories/${cat.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.9,
@@ -20,31 +21,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const staticEntries: MetadataRoute.Sitemap = [
     {
-      url: a_second_one,
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${a_second_one}/about`,
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${a_second_one}/sitemap`,
+      url: `${baseUrl}/sitemap`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${a_second_one}/privacy-policy`,
+      url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${a_second_one}/terms-of-use`,
+      url: `${baseUrl}/terms-of-use`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
