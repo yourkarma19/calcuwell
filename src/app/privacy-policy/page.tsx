@@ -4,6 +4,9 @@ import { Shield } from "lucide-react";
 export const metadata: Metadata = {
     title: "Privacy Policy | CalcPro",
     description: "Review the official privacy policy for CalcPro. Understand how we collect, use, and protect your data when you use our free online calculator services.",
+    alternates: {
+        canonical: "/privacy-policy",
+    },
 };
 
 export default function PrivacyPolicyPage() {

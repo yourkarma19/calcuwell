@@ -4,6 +4,9 @@ import { FileText } from "lucide-react";
 export const metadata: Metadata = {
     title: "Terms of Use | CalcPro",
     description: "Read the terms of use for CalcPro. By using our website and its free online calculators, you agree to these terms and conditions.",
+    alternates: {
+        canonical: "/terms-of-use",
+    },
 };
 
 export default function TermsOfUsePage() {

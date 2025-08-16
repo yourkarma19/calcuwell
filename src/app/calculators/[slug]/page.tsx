@@ -22,6 +22,9 @@ export async function generateMetadata({ params: { slug } }: CalculatorPageProps
   return {
     title: `${calculator.name} | CalcPro`,
     description: calculator.description,
+    alternates: {
+        canonical: `/calculators/${slug}`,
+    },
   };
 }
 

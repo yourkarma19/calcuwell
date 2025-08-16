@@ -7,6 +7,9 @@ import { Icon } from "@/components/ui/icon";
 export const metadata: Metadata = {
  title: "Sitemap | CalcPro",
  description: "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, health, and more.",
+ alternates: {
+    canonical: "/sitemap",
+ },
 };
 
 export default function SitemapPage() {
