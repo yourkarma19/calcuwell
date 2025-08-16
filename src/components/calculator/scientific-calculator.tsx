@@ -252,6 +252,14 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   }, [handleKeyDown]);
 
   const scientificButtons = getScientificButtonLayout(isInverse);
+  
+  const displayFontSize = () => {
+    const len = displayValue.length;
+    if (len > 16) return 'text-2xl';
+    if (len > 12) return 'text-3xl';
+    if (len > 8) return 'text-4xl';
+    return 'text-5xl';
+  };
 
   return (
     <div className="lg:col-span-3 max-w-2xl mx-auto space-y-6">
@@ -261,12 +269,15 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
           <CardTitle>Scientific Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
+          <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
             <div data-testid="expression-display" className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression}</div>
             <div 
               data-testid="main-display"
               aria-label="Calculator display"
-              className="text-6xl font-mono h-2/3 w-full text-right"
+              className={cn(
+                "font-mono h-2/3 w-full text-right break-all",
+                displayFontSize()
+              )}
             >
               {displayValue}
             </div>
@@ -372,3 +383,5 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
     </div>
   );
 }
+
+    
