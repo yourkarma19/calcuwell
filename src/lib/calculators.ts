@@ -318,6 +318,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate Value-Added Tax or Goods and Services Tax.',
     category: 'Finance',
     iconName: 'Tag',
+    seoTitle: 'VAT & GST Calculator | Add or Remove Tax from a Price',
+    metaDescription: 'A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate for accurate calculations.',
   },
   {
     slug: 'tip-calculator',
@@ -430,7 +432,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your pregnancy due date.',
     category: 'Health',
     iconName: 'Baby',
-    formula: "Naegele's rule"
+    formula: "Naegele's rule",
+    seoTitle: 'Pregnancy Due Date Calculator | Estimate Your Delivery Date',
+    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.',
   },
   {
     slug: 'ovulation-calculator',
@@ -683,6 +687,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and perimeter of a triangle.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
+    seoTitle: 'Triangle Area & Perimeter Calculator | Heron\'s Formula',
+    metaDescription: 'Calculate the area and perimeter of a triangle using various methods, including Base & Height, Heron\'s formula (3 sides), and Side-Angle-Side (SAS).',
   },
   {
     slug: 'rectangle-area-calculator',
@@ -762,6 +768,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Determine resistor values from color codes.',
     category: 'Geometry & Engineering',
     iconName: 'Palette',
+    seoTitle: '4-Band Resistor Color Code Calculator | Find Resistance Value',
+    metaDescription: 'A simple tool to decode 4-band resistor color codes. Select the colors for each band to instantly find the resistance value and tolerance.',
   },
   {
     slug: 'capacitor-charge-calculator',

@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const colors = {
   black: { value: 0, multiplier: 1, tolerance: 20 },
@@ -67,7 +68,7 @@ export default function ResistorColorCodeCalculator() {
   );
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
             <CardTitle>Resistor Color Code Calculator</CardTitle>
@@ -84,6 +85,31 @@ export default function ResistorColorCodeCalculator() {
                 <h3 className="text-lg font-semibold">Resistance Value</h3>
                 <p className="text-4xl font-bold font-headline text-primary">{resistance()}</p>
             </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Resistor Color Codes</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>How to Read a 4-Band Resistor</AccordionTrigger>
+                    <AccordionContent>
+                       For a 4-band resistor, the first two bands represent the significant digits of the resistance value. The third band is the multiplier (the power of 10 to multiply the digits by), and the fourth band indicates the tolerance (the acceptable range of error).
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>What is Tolerance?</AccordionTrigger>
+                    <AccordionContent>
+                        Tolerance is the percentage of error in the resistor's resistance. For example, a 100 Ω resistor with a 5% tolerance (gold band) could have an actual resistance anywhere between 95 Ω and 105 Ω.
+                    </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-3">
+                    <AccordionTrigger>What if there are 5 or 6 bands?</AccordionTrigger>
+                    <AccordionContent>
+                        5-band resistors provide a third significant digit for higher precision. The first three bands are digits, the fourth is the multiplier, and the fifth is tolerance. A 6-band resistor adds a final band for the temperature coefficient, indicating how the resistance changes with temperature.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>
