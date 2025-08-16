@@ -614,7 +614,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Convert between binary, decimal, hex, and octal.',
     category: 'Programming',
     iconName: 'Binary',
-    formula: 'parseInt(num, fromBase).toString(toBase)'
+    formula: 'parseInt(num, fromBase).toString(toBase)',
+    seoTitle: 'Binary & Number System Converter | Decimal, Hex, Octal',
+    metaDescription: 'A versatile number system converter for binary, decimal, hexadecimal, and octal values. Essential for programmers, developers, and computer science students.',
   },
   {
     slug: 'ascii-text-converter',
@@ -636,6 +638,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate IP subnets and networks.',
     category: 'Programming',
     iconName: 'Network',
+    seoTitle: 'IP Subnet Calculator | CIDR & Network Address Tool',
+    metaDescription: 'An easy-to-use IP subnet calculator for network administrators and IT professionals. Quickly find network addresses, broadcast addresses, subnet masks, and host ranges.',
+    formula: 'Network Address = IP Address & Subnet Mask'
   },
   {
     slug: 'crc-hash-generator',
@@ -710,7 +715,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     formula: 'a² + b² = c²',
-    seoTitle: 'Pythagorean Theorem Calculator',
+    seoTitle: 'Pythagorean Theorem Calculator | Solve for a, b, or c',
     metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Find the hypotenuse or either of the other two sides.',
   },
   {
@@ -719,6 +724,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate sin, cos, tan, and more.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
+    seoTitle: 'Trigonometry Calculator | Sin, Cos, Tan & Inverse',
+    metaDescription: 'A free trigonometry calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians. Perfect for students and engineers.',
   },
   {
     slug: 'beam-deflection-calculator',
@@ -740,6 +747,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate voltage, current, and resistance.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
+    seoTitle: 'Ohm\'s Law Calculator | Voltage, Current, Resistance & Power',
+    metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the other two. Essential tool for electronics.',
+    formula: 'V = I × R'
   },
   {
     slug: 'resistor-color-code-calculator',

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 type SolveFor = "voltage" | "current" | "resistance" | "power";
 
@@ -61,7 +62,7 @@ export default function OhmsLawCalculator() {
   };
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Ohm's Law Calculator</CardTitle>
@@ -103,6 +104,42 @@ export default function OhmsLawCalculator() {
                   </p>
               </div>
           )}
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Ohm's Law</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is Ohm's Law?</AccordionTrigger>
+              <AccordionContent>
+                Ohm's Law is a fundamental principle in electronics that describes the relationship between voltage (V), current (I), and resistance (R). The classic formula is `V = I × R`, which states that the voltage across a resistor is directly proportional to the current flowing through it.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>The Ohm's Law Triangle</AccordionTrigger>
+              <AccordionContent>
+                A common way to remember the formulas is the Ohm's Law Triangle. By covering up the value you want to find, the remaining two values show you how to calculate it:
+                <ul className="list-disc pl-5 mt-2">
+                  <li>To find Voltage (V): Cover V, you are left with I × R.</li>
+                  <li>To find Current (I): Cover I, you are left with V / R.</li>
+                  <li>To find Resistance (R): Cover R, you are left with V / I.</li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>What about Power (P)?</AccordionTrigger>
+              <AccordionContent>
+                Power (measured in Watts) is the rate at which energy is consumed in a circuit. It's related to Ohm's Law through several formulas, including `P = V × I`, `P = I² × R`, and `P = V² / R`. This calculator can also solve for power if you provide any two other values.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Why is Ohm's Law important?</AccordionTrigger>
+              <AccordionContent>
+                Ohm's Law is essential for designing, analyzing, and troubleshooting electronic circuits. It allows engineers and hobbyists to determine the correct components to use, ensure safety by managing current flow, and diagnose problems in circuits.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>
