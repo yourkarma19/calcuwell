@@ -40,7 +40,7 @@ export default function TipCalculator() {
       <div className="lg:col-span-2 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Tip Calculator</CardTitle>
+            <CardTitle>Bill and Tip Details</CardTitle>
             <CardDescription>Calculate the tip and split the bill between any number of people.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">

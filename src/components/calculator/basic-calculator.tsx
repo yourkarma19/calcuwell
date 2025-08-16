@@ -162,7 +162,7 @@ export default function BasicCalculator() {
     <div className="lg:col-span-3 max-w-sm mx-auto">
       <Card>
         <CardHeader>
-          <CardTitle>Basic Calculator</CardTitle>
+          <CardTitle>Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <Input

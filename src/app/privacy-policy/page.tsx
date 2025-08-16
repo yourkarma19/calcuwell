@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcPro ("us", "we", or "our") operates the CalcPro.net website (the "Service"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
+                    CalcPro ("us", "we", or "our") operates the calcpro.online website (the "Service"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
                 </p>
 
                 <p>
@@ -53,6 +53,11 @@ export default function PrivacyPolicyPage() {
                 <h3>Changes to This Privacy Policy</h3>
                 <p>
                     We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+                </p>
+
+                <h2>Contact Us</h2>
+                <p>
+                    For any questions or feedback, please don't hesitate to reach out to us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>.
                 </p>
             </div>
         </main>

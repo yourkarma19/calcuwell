@@ -19,7 +19,7 @@ export default function TermsOfUsePage() {
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <h2>Acceptance of Terms</h2>
                 <p>
-                    Welcome to CalcPro.net (the "Website"). By using the Website in any way, you are agreeing to comply with these Terms of Use. Should you object to any term or condition of the Terms of Use or any guideline of the Website, your only recourse is to immediately discontinue use of the Website.
+                    Welcome to calcpro.online (the "Website"). By using the Website in any way, you are agreeing to comply with these Terms of Use. Should you object to any term or condition of the Terms of Use or any guideline of the Website, your only recourse is to immediately discontinue use of the Website.
                 </p>
 
                 <h2>Changes to the Terms of Use</h2>

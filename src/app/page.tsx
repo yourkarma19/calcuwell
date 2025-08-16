@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Icon } from "@/components/ui/icon";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   const trendingCalculators = calculators.slice(0, 4);
@@ -27,6 +28,17 @@ export default function Home() {
             Your one-stop destination for every calculation you might need. Fast,
             accurate, and easy to use.
           </p>
+          <div className="mt-8 flex justify-center gap-2">
+            <Button asChild variant="outline">
+              <Link href="/calculators/vat-gst-calculator?amount=1000&rate=18">GST</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/calculators/loan-emi-calculator?principal=500000&rate=8.5&tenure=5">EMI</Link>
+            </Button>
+            <Button asChild variant="outline">
+               <Link href="/calculators/age-calculator">Age</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

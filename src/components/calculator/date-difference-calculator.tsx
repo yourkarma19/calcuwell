@@ -33,7 +33,10 @@ export default function DateDifferenceCalculator() {
 
   const handleCalculate = () => {
     if (startDate && endDate) {
-      // Don't swap dates, calculate based on user input
+      if (endDate < startDate) {
+        setDifference({ years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0 });
+        return;
+      }
       setDifference({
         years: differenceInYears(endDate, startDate),
         months: differenceInMonths(endDate, startDate),
@@ -61,7 +64,7 @@ export default function DateDifferenceCalculator() {
               </div>
               <div className="space-y-2">
                 <Label>End Date</Label>
-                <DatePicker date={endDate} setDate={setEndDate} disabled={() => false} />
+                <DatePicker date={endDate} setDate={setEndDate} disabled={(date) => false} />
               </div>
             </div>
             <Button onClick={handleCalculate} className="w-full">
@@ -76,7 +79,7 @@ export default function DateDifferenceCalculator() {
               <CardDescription>The total difference between the selected dates is:</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
+              <div className="space-y-2" aria-live="polite">
                 <ul className="list-disc list-inside space-y-2 text-lg">
                   <li>
                     <span className="font-bold">{difference.years}</span> years

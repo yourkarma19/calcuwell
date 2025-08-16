@@ -68,7 +68,7 @@ export default function GradePercentageCalculator() {
           <CardHeader>
             <CardTitle>Your Grade</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
             <div>
               <p className="text-sm text-muted-foreground">Percentage</p>
               <p className="text-5xl font-bold font-headline text-primary my-2">
