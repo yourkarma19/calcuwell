@@ -31,6 +31,8 @@ export default function ScientificCalculator() {
   const [memory, setMemory] = useState(0);
   const [isRadians, setIsRadians] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [justEvaluated, setJustEvaluated] = useState(false);
+
 
   useEffect(() => {
     setIsClient(true);
@@ -56,8 +58,9 @@ export default function ScientificCalculator() {
     } else if (input === "%") {
         setDisplayValue(prev => (parseFloat(prev) / 100).toString());
     } else {
-      if(displayValue === "0" && input !== '.'){
+      if(justEvaluated || (displayValue === "0" && input !== '.')){
         setDisplayValue(input);
+        setJustEvaluated(false);
       } else {
         setDisplayValue(prev => prev + input);
       }
@@ -65,6 +68,7 @@ export default function ScientificCalculator() {
   };
   
   const handleOperator = (op: string) => {
+    setJustEvaluated(false);
     if (displayValue !== "Error") {
       const lastChar = displayValue.slice(-1);
       if(isOperator(lastChar)) {
@@ -80,6 +84,7 @@ export default function ScientificCalculator() {
   };
   
   const handleScientificInput = (func: string) => {
+      setJustEvaluated(false);
       if (displayValue === "Error" && func !== 'AC') {
         resetCalculator();
         return;
@@ -112,10 +117,10 @@ export default function ScientificCalculator() {
             case 'log₁₀': if(value <= 0) throw new Error(); handleEquals(Math.log10(value).toString()); return;
             case 'sin': handleEquals(Math.sin(angleToRad(value)).toString()); return;
             case 'cos': handleEquals(Math.cos(angleToRad(value)).toString()); return;
-            case 'tan': if(isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error(); handleEquals(Math.tan(angleToRad(value)).toString()); return;
+            case 'tan': if (isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error("Invalid input for tan"); handleEquals(Math.tan(angleToRad(value)).toString()); return;
             case 'sin⁻¹': if(value < -1 || value > 1) throw new Error(); handleEquals(radToAngle(Math.asin(value)).toString()); return;
             case 'cos⁻¹': if(value < -1 || value > 1) throw new Error(); handleEquals(radToAngle(Math.acos(value)).toString()); return;
-            case 'tan⁻¹': handleEquals(radToAngle(Math.atan(value).toString())); return;
+            case 'tan⁻¹': handleEquals(radToAngle(Math.atan(value)).toString()); return;
             case 'e': currentDisplay += Math.E.toString(); break;
             case 'EE': currentDisplay += 'e'; break;
             case 'Rad': setIsRadians(true); return;
@@ -151,7 +156,7 @@ export default function ScientificCalculator() {
 
   const handleEquals = (precomputedResult?: string) => {
     try {
-        const result = precomputedResult !== undefined ? precomputedResult : new Function('return ' + displayValue.replace(/\^/g, '**'))();
+        const result = precomputedResult !== undefined ? parseFloat(precomputedResult) : new Function('return ' + displayValue.replace(/\^/g, '**'))();
         
         if (result === undefined || isNaN(result) || !isFinite(result)) {
             setExpression(displayValue + " =");
@@ -164,11 +169,13 @@ export default function ScientificCalculator() {
         setExpression(displayValue + " =");
         setDisplayValue("Error");
     }
+    setJustEvaluated(true);
   };
 
   const resetCalculator = () => {
     setExpression("");
     setDisplayValue("0");
+    setJustEvaluated(false);
   };
 
   const getButtonClass = (btn: string) => {
@@ -201,7 +208,7 @@ export default function ScientificCalculator() {
     return () => {
         window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [displayValue, isRadians]); // Re-add listener if state changes
+  }, [displayValue, isRadians, justEvaluated]); // Re-add listener if state changes
 
   return (
     <div className="lg:col-span-3 max-w-md mx-auto">
@@ -213,8 +220,9 @@ export default function ScientificCalculator() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="h-20 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
-            <div className="text-xl text-muted-foreground h-1/3 truncate">{expression}</div>
+            <div data-testid="expression-display" className="text-sm text-muted-foreground h-1/3 truncate">{expression}</div>
             <div 
+              data-testid="main-display"
               aria-label="Calculator display"
               className="text-4xl font-mono h-2/3"
             >
