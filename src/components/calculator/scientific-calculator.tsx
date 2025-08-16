@@ -216,15 +216,14 @@ export default function ScientificCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Scientific Calculator</CardTitle>
-          <CardDescription>A versatile calculator for both basic and advanced mathematical functions. Use the tabs to switch between scientific and standard modes. Now with keyboard support!</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="h-20 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
-            <div data-testid="expression-display" className="text-sm text-muted-foreground h-1/3 truncate">{expression}</div>
+          <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
+            <div data-testid="expression-display" className="text-lg text-muted-foreground h-1/3 truncate">{expression}</div>
             <div 
               data-testid="main-display"
               aria-label="Calculator display"
-              className="text-4xl font-mono h-2/3"
+              className="text-5xl font-mono h-2/3"
             >
               {displayValue}
             </div>
