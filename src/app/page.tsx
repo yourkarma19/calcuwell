@@ -19,10 +19,9 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="relative text-center py-16 md:py-24 overflow-hidden rounded-xl bg-gradient-to-br from-primary/5 via-background to-background">
-        <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
-            CalcPro – Free Online Calculators
+            CalcPro – Free Online Calculators for Finance, Health & Everyday Use
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Your one-stop destination for finance, health, and everyday calculations. Fast, accurate, and easy to use.
