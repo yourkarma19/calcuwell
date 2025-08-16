@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -43,7 +44,7 @@ export default function RatioCalculator() {
             <CardDescription>Enter three values in the proportion A : B = C : D to solve for the missing value. Also simplifies the A : B ratio.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
               <Label htmlFor="valA">A</Label>
               <Input id="valA" aria-label="Value A" type="number" value={valA} onChange={e => setValA(Number(e.target.value))} className="w-24 text-center" />

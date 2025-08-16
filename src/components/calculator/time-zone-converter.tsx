@@ -103,7 +103,7 @@ export default function TimeZoneConverter() {
                   {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <DatePicker date={date} setDate={setDate} disabled={(date) => false}/>
                 <Input type="time" value={time} onChange={e => setTime(e.target.value)} />
               </div>
@@ -122,7 +122,7 @@ export default function TimeZoneConverter() {
                    {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg" aria-live="polite"/>
+              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg sm:h-20" aria-live="polite"/>
             </div>
           </div>
         </CardContent>

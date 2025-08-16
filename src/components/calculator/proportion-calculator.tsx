@@ -63,7 +63,7 @@ export default function ProportionCalculator() {
             <CardDescription>Solve for the missing value in the proportion A/B = C/D. Click on an input to solve for it.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-center gap-4 text-2xl">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-2xl">
             <div className="flex flex-col items-center gap-1">
               <Label htmlFor="valA">A</Label>
               <Input type="number" {...getInputProps('a')} id="valA" className="w-24 text-center" />

@@ -91,9 +91,9 @@ export default function GpaCalculator() {
           <CardContent>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <div className="grid grid-cols-1 gap-y-2">
-                  <div className="hidden md:grid md:grid-cols-[1fr_auto_auto_auto] gap-2 items-center">
-                    <Label>Course Name</Label>
+                <div className="space-y-2">
+                  <div className="hidden md:grid md:grid-cols-[1fr_140px_110px_auto] gap-2 items-center mb-2">
+                    <Label>Course Name (Optional)</Label>
                     <Label>Grade</Label>
                     <Label>Credits</Label>
                     <span className="w-8"></span>
@@ -101,27 +101,29 @@ export default function GpaCalculator() {
                   {fields.map((field, index) => (
                     <div
                       key={field.id}
-                      className="grid grid-cols-[1fr,auto,auto,auto] items-start gap-2 p-2 border rounded-lg"
+                      className="grid grid-cols-1 md:grid-cols-[1fr_140px_110px_auto] items-start gap-2 p-2 border rounded-lg"
                     >
                       <FormField
                         control={form.control}
                         name={`courses.${index}.name`}
                         render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <Input {...field} placeholder="Course Name (Optional)" />
-                                </FormControl>
-                            </FormItem>
+                          <FormItem className="md:space-y-0">
+                             <Label className="md:hidden mb-1">Course Name (Optional)</Label>
+                              <FormControl>
+                                  <Input {...field} placeholder="e.g. Intro to Physics" />
+                              </FormControl>
+                          </FormItem>
                         )}
                       />
                        <FormField
                         control={form.control}
                         name={`courses.${index}.grade`}
                         render={({ field }) => (
-                            <FormItem>
+                            <FormItem className="md:space-y-0">
+                                <Label className="md:hidden mb-1">Grade</Label>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
-                                        <SelectTrigger className="w-full md:w-32" aria-label="Course grade">
+                                        <SelectTrigger aria-label="Course grade">
                                             <SelectValue placeholder="Grade" />
                                         </SelectTrigger>
                                     </FormControl>
@@ -141,9 +143,10 @@ export default function GpaCalculator() {
                         control={form.control}
                         name={`courses.${index}.credits`}
                         render={({ field }) => (
-                            <FormItem>
+                            <FormItem className="md:space-y-0">
+                                <Label className="md:hidden mb-1">Credits</Label>
                                 <FormControl>
-                                    <Input {...field} type="number" placeholder="Credits" className="w-full md:w-24" step="0.1"/>
+                                    <Input {...field} type="number" placeholder="Credits" step="0.1"/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
@@ -154,7 +157,7 @@ export default function GpaCalculator() {
                         variant="ghost"
                         size="icon"
                         onClick={() => remove(index)}
-                        className="text-red-500 hover:text-red-700 self-center"
+                        className="text-red-500 hover:text-red-700 self-center justify-self-end md:justify-self-center"
                         aria-label={`Remove course ${index + 1}`}
                       >
                         <X className="h-4 w-4" />
