@@ -18,6 +18,7 @@ import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi
 import { useSearchParams } from "next/navigation";
 import { Info } from "lucide-react";
 import { format } from "path";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function LoanEMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
@@ -144,14 +145,29 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
         </Card>
 
         <Card>
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Info className="w-5 h-5"/> Understanding Your EMI</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground space-y-2">
-                <p><span className="font-semibold text-foreground">What is an EMI?</span> An Equated Monthly Installment (EMI) is a fixed payment you make to a lender every month. It covers both the principal amount and the interest, so you pay off your loan in a set period.</p>
-                <p><span className="font-semibold text-foreground">How do Extra Payments Help?</span> By adding extra payments (monthly or yearly), you reduce the principal amount faster. This significantly lowers the total interest you pay over the loan's lifetime and helps you become debt-free sooner.</p>
-                <p><span className="font-semibold text-foreground">Formula Used:</span> This calculator uses the standard formula: EMI = P * r * (1+r)^n / ((1+r)^n - 1), where P is Principal, r is the monthly interest rate, and n is the tenure in months.</p>
-            </CardContent>
+          <CardHeader><CardTitle>About Loan EMIs</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is an EMI?</AccordionTrigger>
+                <AccordionContent>
+                  An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are used to pay off both interest and principal each month so that over a specified number of years, the loan is paid off in full.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How do extra payments help?</AccordionTrigger>
+                <AccordionContent>
+                  By paying more than your required EMI, the extra amount goes directly towards reducing your outstanding principal balance. This helps you pay off the loan faster and significantly reduces the total amount of interest you'll pay over the life of the loan.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>What is the formula for EMI?</AccordionTrigger>
+                <AccordionContent>
+                  The formula used to calculate EMI is: `EMI = P × r × (1 + r)ⁿ / ((1 + r)ⁿ - 1)` where P is the principal loan amount, r is the monthly interest rate (annual rate / 12), and n is the number of monthly installments (tenure in years × 12).
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
         
         <Card>

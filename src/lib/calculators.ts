@@ -235,6 +235,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your monthly mortgage payments.',
     category: 'Finance',
     iconName: 'Home',
+    formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
   },
   {
     slug: 'car-loan-calculator',
@@ -242,6 +243,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your car loan payments.',
     category: 'Finance',
     iconName: 'Car',
+    formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
   },
   {
     slug: 'simple-interest-calculator',
