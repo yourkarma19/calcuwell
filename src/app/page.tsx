@@ -21,10 +21,10 @@ export default function Home() {
       <section className="relative text-center py-16 md:py-24 overflow-hidden rounded-xl bg-gradient-to-br from-primary/5 via-background to-background">
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
-            CalcPro – Free Online Calculators for Finance, Health & Everyday Use
+            CalcPro
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Your one-stop destination for finance, health, and everyday calculations. Fast, accurate, and easy to use.
+            Your one-stop destination for fast, accurate, and easy-to-use online calculators.
           </p>
           <div className="mt-8 flex justify-center gap-2">
             <Button asChild variant="outline">
@@ -42,7 +42,7 @@ export default function Home() {
 
       <section className="py-12 md:py-16">
          <div className="flex justify-center -mt-32 md:-mt-36 relative z-20">
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-lg">
             <ScientificCalculator />
           </div>
         </div>
