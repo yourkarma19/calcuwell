@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Info } from "lucide-react";
+import { Input } from "../ui/input";
 
 export default function RetirementCalculator() {
   const [currentAge, setCurrentAge] = usePersistentState("ret-current-age", 30);
@@ -60,39 +61,53 @@ export default function RetirementCalculator() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Current Age</Label>
-                <Slider value={[currentAge]} onValueChange={v => setCurrentAge(v[0])} min={18} max={100} step={1} />
-                <span className="text-sm font-medium">{currentAge} years</span>
+                <div className="flex items-center gap-4">
+                  <Slider value={[currentAge]} onValueChange={v => setCurrentAge(v[0])} min={18} max={100} step={1} />
+                  <Input type="number" value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))} className="w-24" />
+                </div>
               </div>
               <div className="space-y-2">
                 <Label>Retirement Age</Label>
-                <Slider value={[retirementAge]} onValueChange={v => setRetirementAge(v[0])} min={currentAge + 1} max={100} step={1} />
-                <span className="text-sm font-medium">{retirementAge} years</span>
+                <div className="flex items-center gap-4">
+                  <Slider value={[retirementAge]} onValueChange={v => setRetirementAge(v[0])} min={currentAge + 1} max={100} step={1} />
+                  <Input type="number" value={retirementAge} onChange={e => setRetirementAge(Number(e.target.value))} className="w-24" />
+                </div>
               </div>
             </div>
             <div className="space-y-2">
               <Label>Current Savings</Label>
-              <Slider value={[currentSavings]} onValueChange={v => setCurrentSavings(v[0])} min={0} max={1000000} step={1000} />
-              <span className="text-sm font-medium">{formatCurrency(currentSavings)}</span>
+              <div className="flex items-center gap-4">
+                <Slider value={[currentSavings]} onValueChange={v => setCurrentSavings(v[0])} min={0} max={1000000} step={1000} />
+                <Input type="number" value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))} className="w-32" step="1000" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Monthly Contribution</Label>
-              <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
-              <span className="text-sm font-medium">{formatCurrency(monthlyContribution)}</span>
+              <div className="flex items-center gap-4">
+                <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
+                 <Input type="number" value={monthlyContribution} onChange={e => setMonthlyContribution(Number(e.target.value))} className="w-32" step="100" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Annual Interest Rate (%)</Label>
-              <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={15} step={0.1} />
-              <span className="text-sm font-medium">{interestRate}%</span>
+               <div className="flex items-center gap-4">
+                <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={15} step={0.1} />
+                 <Input type="number" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="w-24" step="0.1" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Desired Annual Retirement Income</Label>
-              <Slider value={[retirementIncome]} onValueChange={v => setRetirementIncome(v[0])} min={10000} max={200000} step={1000} />
-              <span className="text-sm font-medium">{formatCurrency(retirementIncome)}</span>
+               <div className="flex items-center gap-4">
+                <Slider value={[retirementIncome]} onValueChange={v => setRetirementIncome(v[0])} min={10000} max={200000} step={1000} />
+                 <Input type="number" value={retirementIncome} onChange={e => setRetirementIncome(Number(e.target.value))} className="w-32" step="1000" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Life Expectancy</Label>
-              <Slider value={[lifeExpectancy]} onValueChange={v => setLifeExpectancy(v[0])} min={retirementAge + 1} max={120} step={1} />
-              <span className="text-sm font-medium">{lifeExpectancy} years</span>
+               <div className="flex items-center gap-4">
+                <Slider value={[lifeExpectancy]} onValueChange={v => setLifeExpectancy(v[0])} min={retirementAge + 1} max={120} step={1} />
+                 <Input type="number" value={lifeExpectancy} onChange={e => setLifeExpectancy(Number(e.target.value))} className="w-24" />
+              </div>
             </div>
           </CardContent>
         </Card>

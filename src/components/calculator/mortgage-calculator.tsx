@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -5,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
+import { Input } from "../ui/input";
 
 export default function MortgageCalculator() {
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
@@ -48,39 +50,39 @@ export default function MortgageCalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Home Price</Label>
-                <span className="text-lg font-semibold">₹ {principal.toLocaleString("en-IN")}</span>
+              <Label>Home Price</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={10000} max={2000000} step={10000} />
+                 <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="10000" />
               </div>
-              <Slider value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={10000} max={2000000} step={10000} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              <Label>Interest Rate (% p.a.)</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={20} step={0.05} />
+                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-              <Slider value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={20} step={0.05} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Loan Term (Years)</Label>
-                <span className="text-lg font-semibold">{tenure} Years</span>
+              <Label>Loan Term (Years)</Label>
+               <div className="flex items-center gap-4">
+                <Slider value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={30} step={1} />
+                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={30} step={1} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Annual Property Tax</Label>
-                <span className="text-lg font-semibold">₹ {propertyTax.toLocaleString("en-IN")}</span>
+              <Label>Annual Property Tax</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[propertyTax]} onValueChange={(v) => setPropertyTax(v[0])} min={0} max={20000} step={100} />
+                <Input type="number" value={propertyTax} onChange={e => setPropertyTax(Number(e.target.value))} className="w-32" step="100" />
               </div>
-              <Slider value={[propertyTax]} onValueChange={(v) => setPropertyTax(v[0])} min={0} max={20000} step={100} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Annual Home Insurance</Label>
-                <span className="text-lg font-semibold">₹ {homeInsurance.toLocaleString("en-IN")}</span>
+              <Label>Annual Home Insurance</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[homeInsurance]} onValueChange={(v) => setHomeInsurance(v[0])} min={0} max={10000} step={50} />
+                <Input type="number" value={homeInsurance} onChange={e => setHomeInsurance(Number(e.target.value))} className="w-32" step="50" />
               </div>
-              <Slider value={[homeInsurance]} onValueChange={(v) => setHomeInsurance(v[0])} min={0} max={10000} step={50} />
             </div>
           </CardContent>
         </Card>

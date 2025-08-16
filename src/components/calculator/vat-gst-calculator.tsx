@@ -73,18 +73,18 @@ export default function VatGstCalculator() {
               </RadioGroup>
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tax-rate">Tax Rate (%)</Label>
-                <span className="text-lg font-semibold">{taxRate}%</span>
+              <Label htmlFor="tax-rate">Tax Rate (%)</Label>
+              <div className="flex items-center gap-4">
+                <Slider
+                  id="tax-rate"
+                  value={[taxRate]}
+                  onValueChange={(v) => setTaxRate(v[0])}
+                  min={0}
+                  max={100}
+                  step={0.5}
+                />
+                <Input type="number" value={taxRate} onChange={e => setTaxRate(Number(e.target.value))} className="w-24" step="0.5" />
               </div>
-              <Slider
-                id="tax-rate"
-                value={[taxRate]}
-                onValueChange={(v) => setTaxRate(v[0])}
-                min={0}
-                max={100}
-                step={0.5}
-              />
             </div>
           </CardContent>
         </Card>

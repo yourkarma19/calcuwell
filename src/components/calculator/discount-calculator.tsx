@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -37,11 +38,11 @@ export default function DiscountCalculator() {
               <Input id="original-price" type="number" value={originalPrice} onChange={(e) => setOriginalPrice(Number(e.target.value))} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="discount">Discount Percentage</Label>
-                <span className="text-lg font-semibold">{discount}%</span>
+              <Label htmlFor="discount">Discount Percentage</Label>
+              <div className="flex items-center gap-4">
+                <Slider id="discount" value={[discount]} onValueChange={(v) => setDiscount(v[0])} min={0} max={100} step={1} />
+                 <Input type="number" value={discount} onChange={e => setDiscount(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider id="discount" value={[discount]} onValueChange={(v) => setDiscount(v[0])} min={0} max={100} step={1} />
             </div>
           </CardContent>
         </Card>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -69,11 +70,11 @@ export default function SalaryCalculator() {
               </div>
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tax-rate">Estimated Income Tax Rate (%)</Label>
-                <span className="text-lg font-semibold">{taxRate}%</span>
+              <Label htmlFor="tax-rate">Estimated Income Tax Rate (%)</Label>
+              <div className="flex items-center gap-4">
+                <Slider id="tax-rate" value={[taxRate]} onValueChange={v => setTaxRate(v[0])} min={0} max={50} step={0.5} />
+                <Input type="number" value={taxRate} onChange={e => setTaxRate(Number(e.target.value))} className="w-24" step="0.5" />
               </div>
-              <Slider id="tax-rate" value={[taxRate]} onValueChange={v => setTaxRate(v[0])} min={0} max={50} step={0.5} />
             </div>
              <div className="space-y-2">
                 <Label htmlFor="other-deductions">Other Deductions (per period)</Label>

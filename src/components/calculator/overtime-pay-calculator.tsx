@@ -57,11 +57,11 @@ export default function OvertimePayCalculator() {
                     <Input id="overtime-hours" type="number" value={overtimeHours} onChange={e => setOvertimeHours(Number(e.target.value))} />
                 </div>
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <Label htmlFor="overtime-multiplier">Overtime Multiplier</Label>
-                    <span className="text-lg font-semibold">{overtimeMultiplier}x</span>
+                  <Label htmlFor="overtime-multiplier">Overtime Multiplier</Label>
+                  <div className="flex items-center gap-4">
+                    <Slider id="overtime-multiplier" value={[overtimeMultiplier]} onValueChange={v => setOvertimeMultiplier(v[0])} min={1} max={3} step={0.1} />
+                    <Input type="number" value={overtimeMultiplier} onChange={e => setOvertimeMultiplier(Number(e.target.value))} className="w-24" step="0.1" />
                   </div>
-                  <Slider id="overtime-multiplier" value={[overtimeMultiplier]} onValueChange={v => setOvertimeMultiplier(v[0])} min={1} max={3} step={0.1} />
                 </div>
             </div>
           </CardContent>

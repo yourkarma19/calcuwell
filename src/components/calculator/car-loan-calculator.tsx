@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -63,19 +64,19 @@ export default function CarLoanCalculator() {
             </div>
 
             <div className="space-y-2">
-               <div className="flex justify-between items-center">
-                <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
+              <div className="flex items-center gap-4">
+                <Slider id="rate" value={[rate]} onValueChange={(value) => setRate(value[0])} min={1} max={25} step={0.05} />
+                <Input type="number" value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-              <Slider id="rate" value={[rate]} onValueChange={(value) => setRate(value[0])} min={1} max={25} step={0.05} />
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tenure">Loan Tenure (Years)</Label>
-                <span className="text-lg font-semibold">{tenure} Years</span>
+              <Label htmlFor="tenure">Loan Tenure (Years)</Label>
+               <div className="flex items-center gap-4">
+                <Slider id="tenure" value={[tenure]} onValueChange={(value) => setTenure(value[0])} min={1} max={10} step={1} />
+                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider id="tenure" value={[tenure]} onValueChange={(value) => setTenure(value[0])} min={1} max={10} step={1} />
             </div>
           </CardContent>
         </Card>

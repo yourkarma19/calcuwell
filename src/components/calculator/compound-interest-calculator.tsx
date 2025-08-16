@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -37,28 +38,28 @@ export default function CompoundInterestCalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="principal">Principal Amount</Label>
-                <span className="text-lg font-semibold">₹ {principal.toLocaleString("en-IN")}</span>
+              <Label htmlFor="principal">Principal Amount</Label>
+               <div className="flex items-center gap-4">
+                <Slider id="principal" value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={1000} max={10000000} step={1000} />
+                <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="1000" />
               </div>
-              <Slider id="principal" value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={1000} max={10000000} step={1000} />
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="rate">Annual Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              <Label htmlFor="rate">Annual Interest Rate (% p.a.)</Label>
+               <div className="flex items-center gap-4">
+                <Slider id="rate" value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={30} step={0.05} />
+                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-              <Slider id="rate" value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={30} step={0.05} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <Label htmlFor="tenure">Investment Tenure (Years)</Label>
-                  <span className="text-lg font-semibold">{tenure}</span>
+                <Label htmlFor="tenure">Investment Tenure (Years)</Label>
+                <div className="flex items-center gap-4">
+                  <Slider id="tenure" value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={50} step={1} />
+                   <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
                 </div>
-                <Slider id="tenure" value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={50} step={1} />
               </div>
               <div className="space-y-2">
                 <Label>Compounding Frequency</Label>

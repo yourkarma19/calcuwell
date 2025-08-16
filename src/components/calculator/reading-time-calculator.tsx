@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -6,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
+import { Input } from "../ui/input";
 
 const formatTime = (minutes: number) => {
   if (minutes < 1) {
@@ -54,18 +56,18 @@ export default function ReadingTimeCalculator() {
               />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="wpm">Reading Speed (Words per Minute)</Label>
-                <span className="text-lg font-semibold">{wpm} WPM</span>
+              <Label htmlFor="wpm">Reading Speed (Words per Minute)</Label>
+              <div className="flex items-center gap-4">
+                <Slider
+                  id="wpm"
+                  value={[wpm]}
+                  onValueChange={(v) => setWpm(v[0])}
+                  min={50}
+                  max={500}
+                  step={10}
+                />
+                <Input type="number" value={wpm} onChange={e => setWpm(Number(e.target.value))} className="w-24" step="10" />
               </div>
-              <Slider
-                id="wpm"
-                value={[wpm]}
-                onValueChange={(v) => setWpm(v[0])}
-                min={50}
-                max={500}
-                step={10}
-              />
             </div>
           </CardContent>
         </Card>

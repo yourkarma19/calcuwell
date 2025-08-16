@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Info } from "lucide-react";
+import { Input } from "../ui/input";
 
 export default function SavingsCalculator() {
   const [initialAmount, setInitialAmount] = usePersistentState("savings-initial", 1000);
@@ -52,32 +54,32 @@ export default function SavingsCalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Initial Amount</Label>
-                <span className="text-lg font-semibold">{formatCurrency(initialAmount)}</span>
+              <Label>Initial Amount</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[initialAmount]} onValueChange={v => setInitialAmount(v[0])} min={0} max={100000} step={500} />
+                <Input type="number" value={initialAmount} onChange={e => setInitialAmount(Number(e.target.value))} className="w-32" step="500" />
               </div>
-              <Slider value={[initialAmount]} onValueChange={v => setInitialAmount(v[0])} min={0} max={100000} step={500} />
             </div>
              <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Monthly Contribution</Label>
-                <span className="text-lg font-semibold">{formatCurrency(monthlyContribution)}</span>
+              <Label>Monthly Contribution</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
+                <Input type="number" value={monthlyContribution} onChange={e => setMonthlyContribution(Number(e.target.value))} className="w-32" step="100" />
               </div>
-              <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
             </div>
              <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Annual Interest Rate (%)</Label>
-                <span className="text-lg font-semibold">{interestRate}%</span>
+              <Label>Annual Interest Rate (%)</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={20} step={0.1} />
+                <Input type="number" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="w-24" step="0.1" />
               </div>
-              <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={20} step={0.1} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Investment Duration (Years)</Label>
-                <span className="text-lg font-semibold">{years} years</span>
+              <Label>Investment Duration (Years)</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[years]} onValueChange={v => setYears(v[0])} min={1} max={50} step={1} />
+                <Input type="number" value={years} onChange={e => setYears(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider value={[years]} onValueChange={v => setYears(v[0])} min={1} max={50} step={1} />
             </div>
           </CardContent>
         </Card>

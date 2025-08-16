@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -65,11 +66,11 @@ export default function IpSubnetCalculator() {
               <Input id="ip-address" value={ipAddress} onChange={e => setIpAddress(e.target.value)} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="cidr">CIDR</Label>
-                <span className="font-semibold text-lg">/{cidr}</span>
+              <Label htmlFor="cidr">CIDR</Label>
+              <div className="flex items-center gap-4">
+                <Slider id="cidr" value={[cidr]} onValueChange={v => setCidr(v[0])} min={0} max={32} step={1} />
+                <Input type="number" value={cidr} onChange={e => setCidr(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider id="cidr" value={[cidr]} onValueChange={v => setCidr(v[0])} min={0} max={32} step={1} />
             </div>
           </div>
         </CardContent>

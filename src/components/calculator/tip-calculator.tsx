@@ -49,18 +49,18 @@ export default function TipCalculator() {
                 <Input id="bill" type="number" value={bill} onChange={e => setBill(Number(e.target.value))} />
             </div>
              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                    <Label htmlFor="tip-percentage">Tip Percentage</Label>
-                    <span className="text-lg font-semibold">{tipPercentage}%</span>
+                <Label htmlFor="tip-percentage">Tip Percentage</Label>
+                <div className="flex items-center gap-4">
+                  <Slider id="tip-percentage" value={[tipPercentage]} onValueChange={v => setTipPercentage(v[0])} min={0} max={50} step={1} />
+                  <Input type="number" value={tipPercentage} onChange={e => setTipPercentage(Number(e.target.value))} className="w-24" />
                 </div>
-                <Slider id="tip-percentage" value={[tipPercentage]} onValueChange={v => setTipPercentage(v[0])} min={0} max={50} step={1} />
             </div>
             <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                    <Label htmlFor="people">Number of People</Label>
-                    <span className="text-lg font-semibold">{people}</span>
+                <Label htmlFor="people">Number of People</Label>
+                <div className="flex items-center gap-4">
+                  <Slider id="people" value={[people]} onValueChange={v => setPeople(v[0])} min={1} max={20} step={1} />
+                  <Input type="number" value={people} onChange={e => setPeople(Number(e.target.value))} className="w-24" />
                 </div>
-                <Slider id="people" value={[people]} onValueChange={v => setPeople(v[0])} min={1} max={20} step={1} />
             </div>
           </CardContent>
         </Card>

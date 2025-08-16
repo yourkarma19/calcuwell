@@ -50,48 +50,48 @@ export default function LoanEMICalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="principal">Loan Amount</Label>
-                <span className="text-lg font-semibold">₹ {principal.toLocaleString("en-IN")}</span>
+              <Label htmlFor="principal">Loan Amount</Label>
+              <div className="flex items-center gap-4">
+                <Slider
+                  id="principal"
+                  value={[principal]}
+                  onValueChange={(value) => setPrincipal(value[0])}
+                  min={10000}
+                  max={10000000}
+                  step={10000}
+                />
+                <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="10000" />
               </div>
-              <Slider
-                id="principal"
-                value={[principal]}
-                onValueChange={(value) => setPrincipal(value[0])}
-                min={10000}
-                max={10000000}
-                step={10000}
-              />
             </div>
 
             <div className="space-y-2">
-               <div className="flex justify-between items-center">
-                <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
-              </div>
-              <Slider
-                id="rate"
-                value={[rate]}
-                onValueChange={(value) => setRate(value[0])}
-                min={0}
-                max={20}
-                step={0.05}
-              />
+               <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
+               <div className="flex items-center gap-4">
+                <Slider
+                  id="rate"
+                  value={[rate]}
+                  onValueChange={(value) => setRate(value[0])}
+                  min={0}
+                  max={20}
+                  step={0.05}
+                />
+                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
+               </div>
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tenure">Loan Tenure (Years)</Label>
-                <span className="text-lg font-semibold">{tenure} Years</span>
+              <Label htmlFor="tenure">Loan Tenure (Years)</Label>
+               <div className="flex items-center gap-4">
+                <Slider
+                  id="tenure"
+                  value={[tenure]}
+                  onValueChange={(value) => setTenure(value[0])}
+                  min={1}
+                  max={30}
+                  step={1}
+                />
+                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider
-                id="tenure"
-                value={[tenure]}
-                onValueChange={(value) => setTenure(value[0])}
-                min={1}
-                max={30}
-                step={1}
-              />
             </div>
           </CardContent>
         </Card>
