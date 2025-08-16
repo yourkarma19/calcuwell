@@ -22,46 +22,46 @@ export default function PrivacyPolicyPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcPro ("us", "we", or "our") operates the calcpro.online website (the "Service"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
+                    CalcPro ("us", "we", or "our") runs the calcpro.online website (the "Service"). This page explains how we collect, use, and protect your information when you use our Service.
                 </p>
 
                 <p>
-                    If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+                    By using our Service, you agree to this policy. We use the information we collect to provide and improve our tools. We will not share your information with anyone except as described here.
                 </p>
 
-                <h2>Information Collection and Use</h2>
+                <h2>Information We Collect</h2>
                 <p>
-                    We take and respect your privacy seriously. For a better experience while using our Service, we may require you to provide us with certain personally identifiable information. The information that we collect will be used to contact or identify you.
+                    We respect your privacy. To improve your experience, we may ask for certain information. However, our main calculators do not require you to provide personally identifiable information.
                 </p>
 
                 <h2>Log Data</h2>
                 <p>
-                    Whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.
+                    When you visit our site, we collect "Log Data" that your browser sends us. This may include your computer's IP address, browser type, the pages you visit, and the time and date of your visit. This information helps us understand how our Service is used.
                 </p>
 
                 <h2>Cookies</h2>
                 <p>
-                    Cookies are files with a small amount of data that is commonly used as an anonymous unique identifier. Our website uses these "cookies" to collect information and to improve our Service. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your computer. If you choose to refuse our cookies, you may not be able to use some portions of our Service.
+                    Our website uses "cookies," which are small files stored on your computer, to help improve our Service. You can choose to accept or refuse these cookies. If you refuse them, some parts of our Service may not work as intended.
                 </p>
 
                 <h2>Security</h2>
                 <p>
-                    We value your trust in providing us with your Personal Information. Thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the Internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+                    We work hard to protect your information. However, no method of transmission over the internet or electronic storage is 100% secure. While we use standard methods to protect your data, we cannot guarantee its absolute security.
                 </p>
 
                 <h2>Links to Other Sites</h2>
                 <p>
-                    Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+                    Our Service may link to other websites. If you click on a third-party link, you will be taken to their site. Please note that we do not operate these external sites. We recommend you review their privacy policies, as we have no control over their content or practices.
                 </p>
 
-                <h2>Changes to This Privacy Policy</h2>
+                <h2>Changes to This Policy</h2>
                 <p>
-                    We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+                    We may update our Privacy Policy from time to time. We encourage you to review this page periodically for any changes. Any changes are effective immediately after they are posted here.
                 </p>
 
                 <h2>Contact Us</h2>
                 <p>
-                    For any questions or feedback, please don't hesitate to reach out to us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>.
+                    If you have any questions, feel free to contact us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>.
                 </p>
             </div>
         </main>

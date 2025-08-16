@@ -21,20 +21,20 @@ export default function AboutPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcPro's sole focus is to provide fast, comprehensive, convenient, and free online calculators in a plethora of areas. We are a group of IT professionals enthusiastic about creating quality free tools and content on the Internet.
+                    CalcPro is all about giving you fast, comprehensive, and free online calculators. We are a team of tech enthusiasts who love building quality tools for everyone to use.
                 </p>
 
                 <p>
-                    Currently, we have around 100 calculators to help you "do the math" quickly in areas such as finance, fitness & health, math, and others, and we are still developing more. Our goal is to become the one-stop, go-to site for people who need to make quick calculations. Additionally, we believe the internet should be a source of free information. Therefore, all of our tools and services are completely free, with no registration required.
+                    We have over 100 calculators for finance, health, math, and more, with new ones always on the way. Our goal is to be the only site you need for quick calculations. We believe the internet should be free, so all our tools are available without any cost or sign-up.
                 </p>
                 
                 <h2>Our Calculators & Accuracy</h2>
                 <p>
-                    We have coded and developed each calculator individually and put each one through strict, comprehensive testing. However, please inform us if you notice even the slightest error – your input is extremely valuable to us. While most calculators on CalcPro are designed to be universally applicable for worldwide usage, some might be for specific regions.
+                    We build each calculator carefully and test it thoroughly. If you ever find an error, please let us know. Your feedback is important to us. While most of our calculators work worldwide, some are made for specific regions.
                 </p>
                 
                  <p>
-                    More than 90% of the calculators are based on well-known formulas or equations from textbooks, such as the mortgage calculator, BMI calculator, etc. If formulas are controversial, we aim to provide the results of all popular formulas. Calculators meant for amusement are based on internal formulas. The results of financial and health calculators were reviewed by professionals for accuracy.
+                    Most of our calculators are based on standard formulas you'd find in textbooks, like the BMI or mortgage calculators. For topics where formulas might differ, we try to show results from all popular methods. Calculators just for fun are based on our own formulas. All financial and health tools have been checked by professionals for accuracy.
                 </p>
 
                 <h2>Contact Us</h2>
