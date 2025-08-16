@@ -21,34 +21,29 @@ export default function TermsOfUsePage() {
             </div>
             
             <div className="prose dark:prose-invert max-w-none text-lg">
-                <h2>Acceptance of Terms</h2>
+                <h2>Using Our Website</h2>
                 <p>
-                    Welcome to calcpro.online (the "Website"). By using our Website, you agree to these Terms of Use. If you do not agree with any part of these terms, please do not use the Website.
+                    Welcome to calcpro.online. By using our website, you agree to these simple terms. If you don't agree, please do not use the site.
                 </p>
 
-                <h2>Changes to the Terms</h2>
+                <h2>Changes to Terms</h2>
                 <p>
-                    We may change these terms at any time. When we do, the new terms will be effective immediately. Please review this page regularly to stay updated.
+                    We may update these terms. When we do, the changes are effective right away. Please check this page now and then to stay up to date.
                 </p>
 
-                <h2>User Conduct</h2>
+                <h2>Disclaimer</h2>
                 <p>
-                    You agree to use our Website for lawful purposes only. You agree not to copy, reverse engineer, or attempt to discover the source code of our Website.
-                </p>
-                
-                <h2>Disclaimer of Warranties</h2>
-                <p>
-                    Our Website and all its calculators are provided "as is." We make no guarantee that they are free of defects, errors, or viruses. The information and calculation results may sometimes be outdated or incorrect. Your use of the Website is at your own risk.
+                    Our website and calculators are provided "as is." We do not promise they are free of errors. The results from our calculators are for informational purposes only and should not be used for making important financial or health decisions without consulting a professional. Your use of this website is at your own risk.
                 </p>
 
                 <h2>Limitation of Liability</h2>
                 <p>
-                    Under no circumstances will CalcPro be liable for any direct or indirect damages that result from your use of the Website.
+                    We are not responsible for any damages that may result from your use of this website.
                 </p>
 
                 <h2>General</h2>
                 <p>
-                    These terms make up the entire agreement between you and CalcPro.
+                    These terms make up the whole agreement between you and CalcPro. If you have any questions, please contact us.
                 </p>
             </div>
         </main>

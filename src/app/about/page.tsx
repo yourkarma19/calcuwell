@@ -21,25 +21,25 @@ export default function AboutPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcPro is all about giving you fast, comprehensive, and free online calculators. We are a team of tech enthusiasts who love building quality tools for everyone to use.
+                    CalcPro gives you fast, easy-to-use, and free online calculators. We are a small team of tech lovers who enjoy making great tools for everyone.
                 </p>
 
                 <p>
-                    We have over 100 calculators for finance, health, math, and more, with new ones always on the way. Our goal is to be the only site you need for quick calculations. We believe the internet should be free, so all our tools are available without any cost or sign-up.
+                    We have calculators for finance, health, math, and more. Our goal is to be the only website you need for quick math. We think the internet should be open, so our tools are always free to use without needing to sign up.
                 </p>
                 
                 <h2>Our Calculators & Accuracy</h2>
                 <p>
-                    We build each calculator carefully and test it thoroughly. If you ever find an error, please let us know. Your feedback is important to us. While most of our calculators work worldwide, some are made for specific regions.
+                    We build each calculator with care and test it to make sure it's right. If you see something that's not working, please let us know. Your feedback helps us make things better.
                 </p>
                 
                  <p>
-                    Most of our calculators are based on standard formulas you'd find in textbooks, like the BMI or mortgage calculators. For topics where formulas might differ, we try to show results from all popular methods. Calculators just for fun are based on our own formulas. All financial and health tools have been checked by professionals for accuracy.
+                    Our tools are based on common formulas you find in textbooks. For some topics, we show results from different methods. All of our financial and health tools have been double-checked by professionals.
                 </p>
 
                 <h2>Contact Us</h2>
                 <p>
-                    For any questions, feedback, or support, please don't hesitate to reach out to us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>. We appreciate your input!
+                    If you have questions or feedback, please email us at <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>. We would love to hear from you!
                 </p>
             </div>
         </main>
