@@ -1,9 +1,13 @@
+
 import { Metadata } from "next";
 import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Privacy Policy | CalcPro",
-    description: "The privacy policy for CalcPro, your ultimate calculator hub.",
+    description: "Review the official privacy policy for CalcPro. Understand how we collect, use, and protect your data when you use our free online calculator services.",
+    alternates: {
+        canonical: "/privacy-policy",
+    },
 };
 
 export default function PrivacyPolicyPage() {
@@ -18,41 +22,46 @@ export default function PrivacyPolicyPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcPro ("us", "we", or "our") operates the CalcPro.net website (the "Service"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
+                    This page explains how we handle your information when you use our website, calcpro.online (the "Service").
                 </p>
 
                 <p>
-                    If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+                    By using our Service, you agree to this policy. The information we collect helps us improve our tools. We will not share your data with anyone except as described here.
                 </p>
 
-                <h2>Information Collection and Use</h2>
+                <h2>What We Collect</h2>
                 <p>
-                    We take and respect your privacy seriously. For a better experience while using our Service, we may require you to provide us with certain personally identifiable information. The information that we collect will be used to contact or identify you.
+                    We respect your privacy. Our calculators do not require you to provide any personal information.
                 </p>
 
-                <h3>Log Data</h3>
+                <h2>Log Data</h2>
                 <p>
-                    Whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.
+                    Like most websites, we collect "Log Data" that your browser sends us. This may include your device's IP address, browser type, and which pages you visit. This helps us see how our Service is being used.
                 </p>
 
-                <h3>Cookies</h3>
+                <h2>Cookies</h2>
                 <p>
-                    Cookies are files with a small amount of data that is commonly used as an anonymous unique identifier. Our website uses these "cookies" to collect information and to improve our Service. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your computer. If you choose to refuse our cookies, you may not be able to use some portions of our Service.
+                    We use "cookies" to improve our Service. Cookies are small files stored on your device. You can set your browser to refuse them, but some parts of our site may not work if you do.
                 </p>
 
-                <h3>Security</h3>
+                <h2>Security</h2>
                 <p>
-                    We value your trust in providing us with your Personal Information. Thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the Internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+                    Protecting your information is important to us. However, no method of sharing data over the internet is 100% secure. We use standard security measures, but we cannot guarantee perfect security.
                 </p>
 
-                <h3>Links to Other Sites</h3>
+                <h2>Links to Other Sites</h2>
                 <p>
-                    Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+                    Our website may contain links to other sites. If you click a third-party link, you will be taken to their website. We don't control those sites, so we recommend you review their privacy policies.
                 </p>
 
-                <h3>Changes to This Privacy Policy</h3>
+                <h2>Changes to This Policy</h2>
                 <p>
-                    We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+                    We may update this policy from time to time. Please check this page for the latest version. Changes are effective as soon as they are posted here.
+                </p>
+
+                <h2>Contact Us</h2>
+                <p>
+                    If you have any questions, please contact us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>.
                 </p>
             </div>
         </main>

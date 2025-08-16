@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { RefreshCw } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const sampleTexts = [
   "The quick brown fox jumps over the lazy dog. This sentence contains all the letters of the alphabet.",
@@ -133,6 +135,31 @@ export default function TypingSpeedCalculator() {
           </CardContent>
         </Card>
       )}
+       <Card>
+        <CardHeader><CardTitle>About Typing Speed</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>How is WPM (Words Per Minute) Calculated?</AccordionTrigger>
+                    <AccordionContent>
+                        WPM is calculated by taking the number of words typed correctly and dividing it by the time taken in minutes. For standardization, a "word" is often considered to be five characters long, including spaces.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>What is a good typing speed?</AccordionTrigger>
+                    <AccordionContent>
+                        The average typing speed is around 40 WPM. A speed of 60 WPM or higher is considered good for most professional roles. Professional typists and transcriptionists often type at speeds over 100 WPM.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>How can I improve my typing speed?</AccordionTrigger>
+                    <AccordionContent>
+                       The key to improving typing speed is consistent practice. Focus on accuracy first, then speed. Proper hand positioning (touch typing) is crucial. Avoid looking at the keyboard and use all ten fingers. Regular practice sessions, even short ones, will build muscle memory and increase your speed over time.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
+        </CardContent>
+      </Card>
     </div>
   );
 }

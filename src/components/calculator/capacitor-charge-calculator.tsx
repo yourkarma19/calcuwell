@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function CapacitorChargeCalculator() {
   const [voltage, setVoltage] = usePersistentState("cap-voltage", 12); // Volts
@@ -31,7 +32,7 @@ export default function CapacitorChargeCalculator() {
   }, [voltage, capacitance, resistance, time]);
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Capacitor Charging Calculator</CardTitle>
@@ -73,6 +74,25 @@ export default function CapacitorChargeCalculator() {
                 </div>
             </CardContent>
           </Card>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About RC Circuits</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is an RC circuit?</AccordionTrigger>
+              <AccordionContent>
+                An RC circuit is an electric circuit composed of resistors and capacitors. When connected to a voltage source, the capacitor charges up over time.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is the time constant (τ)?</AccordionTrigger>
+              <AccordionContent>
+                The time constant (tau, τ) is a measure of how quickly the capacitor charges. It is calculated as `τ = R × C`. After one time constant, the capacitor charges to about 63.2% of the full voltage.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

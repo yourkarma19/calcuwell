@@ -1,9 +1,13 @@
+
 import { Metadata } from "next";
 import { FileText } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Terms of Use | CalcPro",
-    description: "The terms of use for CalcPro, your ultimate calculator hub.",
+    description: "Read the terms and conditions for using the CalcPro website. By using our free online calculators, you agree to these terms.",
+    alternates: {
+        canonical: "/terms-of-use",
+    },
 };
 
 export default function TermsOfUsePage() {
@@ -17,34 +21,29 @@ export default function TermsOfUsePage() {
             </div>
             
             <div className="prose dark:prose-invert max-w-none text-lg">
-                <h2>Acceptance of Terms</h2>
+                <h2>Using Our Website</h2>
                 <p>
-                    Welcome to CalcPro.net (the "Website"). By using the Website in any way, you are agreeing to comply with these Terms of Use. Should you object to any term or condition of the Terms of Use or any guideline of the Website, your only recourse is to immediately discontinue use of the Website.
+                    Welcome to calcpro.online. By using our website, you agree to these simple terms. If you don't agree, please do not use the site.
                 </p>
 
-                <h2>Changes to the Terms of Use</h2>
+                <h2>Changes to Terms</h2>
                 <p>
-                    We reserve the right, at our sole discretion, to change, modify, or alter the Terms of Use at any time. Such changes shall become effective immediately upon the posting thereof. You must review the Terms of Use on a regular basis to keep yourself apprised of any changes.
+                    We may update these terms. When we do, the changes are effective right away. Please check this page now and then to stay up to date.
                 </p>
 
-                <h2>Conduct</h2>
+                <h2>Disclaimer</h2>
                 <p>
-                    You agree not to use the Website in any way that is unlawful, harmful, or in violation of these Terms. You agree not to decompile or reverse engineer or otherwise attempt to discover any source code contained in the Website.
-                </p>
-                
-                <h2>Disclaimer of Warranties</h2>
-                <p>
-                    THE WEBSITE AND ANY INCLUDED SERVICES ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, INCLUDING WITHOUT LIMITATION THE WARRANTIES THAT IT IS FREE OF DEFECTS, ERRORS, VIRUSES, MERCHANTABLE AND THAT IT IS FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. YOUR USE OF THE WEBSITE IS AT YOUR OWN RISK. INFORMATION OR CALCULATION RESULTS AT OUR WEBSITE MAY BE OUTDATED OR INCORRECT.
+                    Our website and calculators are provided "as is." We do not promise they are free of errors. The results from our calculators are for informational purposes only and should not be used for making important financial or health decisions without consulting a professional. Your use of this website is at your own risk.
                 </p>
 
-                <h2>Limitations of Liability</h2>
+                <h2>Limitation of Liability</h2>
                 <p>
-                    UNDER NO CIRCUMSTANCES SHALL CALCPRO BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, RESULTING FROM ANY ASPECT OF YOUR USE OF THE WEBSITE.
+                    We are not responsible for any damages that may result from your use of this website.
                 </p>
 
                 <h2>General</h2>
                 <p>
-                    The Terms of Use constitute the entire agreement between you and CalcPro and govern your use of the Website, superseding any prior agreements between you and CalcPro.
+                    These terms make up the whole agreement between you and CalcPro. If you have any questions, please contact us.
                 </p>
             </div>
         </main>

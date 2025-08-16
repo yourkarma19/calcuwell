@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function TipCalculator() {
   const [bill, setBill] = usePersistentState("tip-bill", 50);
@@ -40,7 +41,7 @@ export default function TipCalculator() {
       <div className="lg:col-span-2 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Tip Calculator</CardTitle>
+            <CardTitle>Bill and Tip Details</CardTitle>
             <CardDescription>Calculate the tip and split the bill between any number of people.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -49,19 +50,38 @@ export default function TipCalculator() {
                 <Input id="bill" type="number" value={bill} onChange={e => setBill(Number(e.target.value))} />
             </div>
              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                    <Label htmlFor="tip-percentage">Tip Percentage</Label>
-                    <span className="text-lg font-semibold">{tipPercentage}%</span>
+                <Label htmlFor="tip-percentage">Tip Percentage</Label>
+                <div className="flex items-center gap-4">
+                  <Slider id="tip-percentage" value={[tipPercentage]} onValueChange={v => setTipPercentage(v[0])} min={0} max={50} step={1} />
+                  <Input type="number" value={tipPercentage} onChange={e => setTipPercentage(Number(e.target.value))} className="w-24" />
                 </div>
-                <Slider id="tip-percentage" value={[tipPercentage]} onValueChange={v => setTipPercentage(v[0])} min={0} max={50} step={1} />
             </div>
             <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                    <Label htmlFor="people">Number of People</Label>
-                    <span className="text-lg font-semibold">{people}</span>
+                <Label htmlFor="people">Number of People</Label>
+                <div className="flex items-center gap-4">
+                  <Slider id="people" value={[people]} onValueChange={v => setPeople(v[0])} min={1} max={20} step={1} />
+                  <Input type="number" value={people} onChange={e => setPeople(Number(e.target.value))} className="w-24" />
                 </div>
-                <Slider id="people" value={[people]} onValueChange={v => setPeople(v[0])} min={1} max={20} step={1} />
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Tipping</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is a standard tip percentage?</AccordionTrigger>
+                <AccordionContent>
+                  Tipping customs vary by country and service type. In the United States, a standard tip for restaurant service is typically between 15% and 20% of the pre-tax bill.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How do you calculate a tip quickly?</AccordionTrigger>
+                <AccordionContent>
+                  A quick way to estimate a 20% tip is to find 10% of the bill (by moving the decimal point one place to the left) and then doubling that amount. For example, for a ₹50 bill, 10% is ₹5, so 20% is ₹10.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

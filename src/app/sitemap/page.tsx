@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import { List } from "lucide-react";
 import { calculators, categories, getCalculatorsByCategory } from "@/lib/calculators";
@@ -5,8 +6,11 @@ import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = {
- title: "Sitemap | CalcPro",
- description: "A complete list of all calculators available on CalcPro, your ultimate calculator hub.",
+ title: "Full Calculator List & Sitemap | CalcPro",
+ description: "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, health, and more.",
+ alternates: {
+    canonical: "/sitemap",
+ },
 };
 
 export default function SitemapPage() {
@@ -32,7 +36,8 @@ export default function SitemapPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {getCalculatorsByCategory(category.slug)
                                 .map((calc) => (
-                                    <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline">
+                                    <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors">
+                                        <Icon name={calc.iconName} className="w-4 h-4 text-muted-foreground"/>
                                         {calc.name}
                                     </Link>
                                 ))}

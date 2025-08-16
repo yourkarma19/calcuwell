@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Info } from "lucide-react";
+import { Input } from "../ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function RetirementCalculator() {
   const [currentAge, setCurrentAge] = usePersistentState("ret-current-age", 30);
@@ -60,48 +62,79 @@ export default function RetirementCalculator() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Current Age</Label>
-                <Slider value={[currentAge]} onValueChange={v => setCurrentAge(v[0])} min={18} max={100} step={1} />
-                <span className="text-sm font-medium">{currentAge} years</span>
+                <div className="flex items-center gap-4">
+                  <Slider value={[currentAge]} onValueChange={v => setCurrentAge(v[0])} min={18} max={100} step={1} />
+                  <Input type="number" value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))} className="w-24" />
+                </div>
               </div>
               <div className="space-y-2">
                 <Label>Retirement Age</Label>
-                <Slider value={[retirementAge]} onValueChange={v => setRetirementAge(v[0])} min={currentAge + 1} max={100} step={1} />
-                <span className="text-sm font-medium">{retirementAge} years</span>
+                <div className="flex items-center gap-4">
+                  <Slider value={[retirementAge]} onValueChange={v => setRetirementAge(v[0])} min={currentAge + 1} max={100} step={1} />
+                  <Input type="number" value={retirementAge} onChange={e => setRetirementAge(Number(e.target.value))} className="w-24" />
+                </div>
               </div>
             </div>
             <div className="space-y-2">
               <Label>Current Savings</Label>
-              <Slider value={[currentSavings]} onValueChange={v => setCurrentSavings(v[0])} min={0} max={1000000} step={1000} />
-              <span className="text-sm font-medium">{formatCurrency(currentSavings)}</span>
+              <div className="flex items-center gap-4">
+                <Slider value={[currentSavings]} onValueChange={v => setCurrentSavings(v[0])} min={0} max={1000000} step={1000} />
+                <Input type="number" value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))} className="w-32" step="1000" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Monthly Contribution</Label>
-              <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
-              <span className="text-sm font-medium">{formatCurrency(monthlyContribution)}</span>
+              <div className="flex items-center gap-4">
+                <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
+                 <Input type="number" value={monthlyContribution} onChange={e => setMonthlyContribution(Number(e.target.value))} className="w-32" step="100" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Annual Interest Rate (%)</Label>
-              <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={15} step={0.1} />
-              <span className="text-sm font-medium">{interestRate}%</span>
+               <div className="flex items-center gap-4">
+                <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={15} step={0.1} />
+                 <Input type="number" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="w-24" step="0.1" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Desired Annual Retirement Income</Label>
-              <Slider value={[retirementIncome]} onValueChange={v => setRetirementIncome(v[0])} min={10000} max={200000} step={1000} />
-              <span className="text-sm font-medium">{formatCurrency(retirementIncome)}</span>
+               <div className="flex items-center gap-4">
+                <Slider value={[retirementIncome]} onValueChange={v => setRetirementIncome(v[0])} min={10000} max={200000} step={1000} />
+                 <Input type="number" value={retirementIncome} onChange={e => setRetirementIncome(Number(e.target.value))} className="w-32" step="1000" />
+              </div>
             </div>
              <div className="space-y-2">
               <Label>Life Expectancy</Label>
-              <Slider value={[lifeExpectancy]} onValueChange={v => setLifeExpectancy(v[0])} min={retirementAge + 1} max={120} step={1} />
-              <span className="text-sm font-medium">{lifeExpectancy} years</span>
+               <div className="flex items-center gap-4">
+                <Slider value={[lifeExpectancy]} onValueChange={v => setLifeExpectancy(v[0])} min={retirementAge + 1} max={120} step={1} />
+                 <Input type="number" value={lifeExpectancy} onChange={e => setLifeExpectancy(Number(e.target.value))} className="w-24" />
+              </div>
             </div>
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This calculator uses the <span className="font-semibold text-foreground">4% Rule</span> as a simple model to estimate your required savings goal (25x your desired annual income). This is a common guideline, but your actual needs may vary.</p>
-                </div>
+            <CardHeader><CardTitle>About Retirement Planning</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Why is it important to start saving early?</AccordionTrigger>
+                        <AccordionContent>
+                            Starting early is the most powerful factor in retirement saving because of compound interest. The longer your money is invested, the more time it has to grow, with your earnings generating their own earnings. Even small, regular contributions can grow into a large sum over several decades.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>What is the 4% Rule?</AccordionTrigger>
+                        <AccordionContent>
+                            The 4% rule is a guideline for retirees that suggests you can safely withdraw 4% of your savings in your first year of retirement and then adjust that amount for inflation for every subsequent year without running out of money for 30 years. This calculator uses it to estimate your savings goal by multiplying your desired annual income by 25.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>What is a "shortfall?"</AccordionTrigger>
+                        <AccordionContent>
+                           A shortfall is the gap between your estimated savings at retirement and your required savings goal. If this calculator shows a shortfall, it means your current plan is not projected to be enough to fund your desired retirement income. You may need to increase your monthly contributions, work longer, or adjust your retirement income goal.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
             </CardContent>
         </Card>
       </div>

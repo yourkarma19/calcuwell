@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function WeekNumberCalculator() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
@@ -31,7 +32,7 @@ export default function WeekNumberCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Week Number Calculator</CardTitle>
-            <CardDescription>Find the week number for any given date.</CardDescription>
+            <CardDescription>Find the week number for any given date according to different international standards.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -46,6 +47,25 @@ export default function WeekNumberCalculator() {
                     <div className="flex items-center space-x-2"><RadioGroupItem value="monday" id="monday" /><Label htmlFor="monday">Starts on Monday</Label></div>
               </RadioGroup>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Week Numbers</CardTitle></CardHeader>
+          <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                      <AccordionTrigger>What is the ISO 8601 week definition?</AccordionTrigger>
+                      <AccordionContent>
+                          The ISO 8601 standard is an international system for date and time notation. In this system, weeks start on a Monday, and the first week of the year is the one that contains the first Thursday of the year. This means Week 1 can sometimes start in the previous calendar year.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                      <AccordionTrigger>Why are there different week numbering systems?</AccordionTrigger>
+                      <AccordionContent>
+                          Different regions and industries have historically used different conventions. For example, in the United States and Canada, it is common for weeks to start on Sunday, while in Europe and much of the world, Monday is considered the first day of the week. ISO 8601 provides a globally recognized standard.
+                      </AccordionContent>
+                  </AccordionItem>
+              </Accordion>
           </CardContent>
         </Card>
       </div>

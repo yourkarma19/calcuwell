@@ -1,10 +1,11 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const buttonLayout = [
   "AC", "+/-", "%", "/",
@@ -15,139 +16,81 @@ const buttonLayout = [
 ];
 
 export default function BasicCalculator() {
+  const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
-  const [firstOperand, setFirstOperand] = useState<number | null>(null);
-  const [operator, setOperator] = useState<string | null>(null);
-  const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
   const [justEvaluated, setJustEvaluated] = useState(false);
 
+  const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
   const handleInput = (input: string) => {
-    if (["/", "*", "-", "+"].includes(input)) {
-      handleOperator(input);
+    if (justEvaluated && !isOperator(input) && input !== '.') {
+        setExpression(""); 
+        setDisplayValue(input);
+        setJustEvaluated(false);
+        return;
+    }
+    
+    if (displayValue === "Error") {
+        resetCalculator();
+        if(!isOperator(input)) setDisplayValue(input);
+        return;
+    }
+    
+    setJustEvaluated(false);
+
+    if (isOperator(input)) {
+        handleOperator(input);
     } else if (input === "=") {
       handleEquals();
     } else if (input === "AC") {
       resetCalculator();
-    } else if (input === ".") {
-      inputDecimal();
     } else if (input === "+/-") {
-      toggleSign();
+        setDisplayValue(prev => (parseFloat(prev) * -1).toString());
     } else if (input === "%") {
-      inputPercent();
+        setDisplayValue(prev => (parseFloat(prev) / 100).toString());
     } else {
-      inputDigit(input);
-    }
-  };
-
-  const inputDigit = (digit: string) => {
-    if(justEvaluated) {
-      setDisplayValue(digit);
-      setJustEvaluated(false);
-      return;
-    }
-    if (waitingForSecondOperand) {
-      setDisplayValue(digit);
-      setWaitingForSecondOperand(false);
-    } else {
-      setDisplayValue(displayValue === "0" ? digit : displayValue + digit);
-    }
-  };
-
-  const inputDecimal = () => {
-     if (justEvaluated) {
-      setDisplayValue("0.");
-      setJustEvaluated(false);
-      return;
-    }
-    if (waitingForSecondOperand) {
-      setDisplayValue("0.");
-      setWaitingForSecondOperand(false);
-      return;
-    }
-    if (!displayValue.includes(".")) {
-      setDisplayValue(displayValue + ".");
-    }
-  };
-  
-  const handleOperator = (nextOperator: string) => {
-    const inputValue = parseFloat(displayValue);
-
-    if (displayValue === "Error") {
-        resetCalculator();
-        return;
-    }
-    
-    if(operator && waitingForSecondOperand) {
-        setOperator(nextOperator);
-        return;
-    }
-
-    if (firstOperand === null) {
-      setFirstOperand(inputValue);
-    } else if (operator) {
-      const result = performCalculation();
-      if (typeof result === "string") {
-        setDisplayValue(result);
-        setJustEvaluated(true);
-        setFirstOperand(null);
-        setOperator(null);
-        setWaitingForSecondOperand(false);
-        return;
+      if(displayValue === "0" && input !== '.'){
+        setDisplayValue(input);
+      } else {
+        setDisplayValue(prev => prev + input);
       }
-      setDisplayValue(String(result));
-      setFirstOperand(result);
     }
-
-    setWaitingForSecondOperand(true);
-    setOperator(nextOperator);
-    setJustEvaluated(false);
   };
-  
-  const performCalculation = () => {
-      if(firstOperand === null || operator === null) return parseFloat(displayValue);
 
-      const currentValue = parseFloat(displayValue);
-      const calculations: {[key: string]: (a: number, b: number) => number} = {
-        "/": (a, b) => {
-            if (b === 0) return Infinity;
-            return a / b;
-        },
-        "*": (a, b) => a * b,
-        "-": (a, b) => a - b,
-        "+": (a, b) => a + b,
-      };
-      
-      const result = calculations[operator](firstOperand, currentValue);
-      return isFinite(result) ? result : "Error";
-  }
+  const handleOperator = (op: string) => {
+    if (displayValue !== "Error") {
+        const lastChar = displayValue.slice(-1);
+        if (isOperator(lastChar)) {
+            setDisplayValue(prev => prev.slice(0, -1) + op);
+        } else {
+            setDisplayValue(prev => prev + op);
+        }
+    }
+  };
 
   const handleEquals = () => {
-    if(!operator || firstOperand === null || justEvaluated) return;
-    const result = performCalculation();
-    setDisplayValue(String(result));
-    setFirstOperand(null);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
+    try {
+        const currentExpression = displayValue;
+        // Use Function constructor for safe evaluation
+        const result = new Function('return ' + currentExpression.replace(/[^-()\d/*+.]/g, ''))();
+        
+        if (result === undefined || !isFinite(result)) {
+            setExpression(currentExpression);
+            setDisplayValue("Error");
+        } else {
+            setExpression(currentExpression);
+            setDisplayValue(result.toString());
+        }
+    } catch (error) {
+        setExpression(displayValue);
+        setDisplayValue("Error");
+    }
     setJustEvaluated(true);
   };
   
-  const toggleSign = () => {
-    if(displayValue !== "Error") setDisplayValue(String(parseFloat(displayValue) * -1));
-  };
-  
-  const inputPercent = () => {
-       if(displayValue !== "Error") {
-            const currentValue = parseFloat(displayValue);
-            setDisplayValue(String(currentValue / 100));
-       }
-  }
-
   const resetCalculator = () => {
+    setExpression("");
     setDisplayValue("0");
-    setFirstOperand(null);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
     setJustEvaluated(false);
   };
   
@@ -158,19 +101,33 @@ export default function BasicCalculator() {
     return { variant: "outline" as const, className: ""};
   };
 
+  const displayFontSize = () => {
+    const len = displayValue.length;
+    if (len > 16) return 'text-2xl';
+    if (len > 12) return 'text-3xl';
+    if (len > 8) return 'text-4xl';
+    return 'text-5xl';
+  };
+
   return (
-    <div className="lg:col-span-3 max-w-sm mx-auto">
-      <Card>
+    <div className="lg:col-span-3 space-y-6">
+      <Card className="max-w-sm mx-auto">
         <CardHeader>
-          <CardTitle>Basic Calculator</CardTitle>
+          <CardTitle>Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Input
-            aria-label="Calculator display"
-            value={displayValue} 
-            readOnly 
-            className="h-20 text-5xl text-right font-mono pr-4 bg-background"
-          />
+           <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
+            <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || " "}</div>
+            <div
+              aria-label="Calculator display"
+              className={cn(
+                "h-2/3 text-right font-mono p-0 border-0 bg-transparent w-full",
+                displayFontSize()
+              )}
+            >
+              {displayValue}
+            </div>
+          </div>
           <div className="grid grid-cols-4 gap-2">
             {buttonLayout.map((btn) => {
               const { variant, className } = getButtonClass(btn);
@@ -186,6 +143,34 @@ export default function BasicCalculator() {
               )
             })}
           </div>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Basic Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>When to Use a Basic Calculator</AccordionTrigger>
+              <AccordionContent>
+                A basic calculator is perfect for everyday arithmetic. Use it for tasks like balancing a checkbook, calculating grocery bills, figuring out tips, or any situation where you need quick addition, subtraction, multiplication, or division.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Understanding the Order of Operations (PEMDAS/BODMAS)</AccordionTrigger>
+              <AccordionContent>
+                This calculator evaluates expressions as they are entered, from left to right. It does not follow the standard order of operations (PEMDAS/BODMAS). For complex calculations requiring a specific order, use parentheses or our Scientific Calculator. For example, `2 + 3 * 4` will be calculated as `(2 + 3) * 4 = 20`, not `2 + (3 * 4) = 14`.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>What is the difference between a basic and scientific calculator?</AccordionTrigger>
+              <AccordionContent>
+                A basic calculator handles the four main arithmetic operations: addition, subtraction, multiplication, and division. A scientific calculator adds more advanced functions, such as trigonometry (sin, cos, tan), logarithms (log), exponents, parentheses, and memory functions, which are necessary for more complex math, science, and engineering problems.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

@@ -1,18 +1,30 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
+import { useSearchParams } from "next/navigation";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
-export default function VatGstCalculator() {
+export default function VatGstCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+  const searchParams = useSearchParams();
   const [amount, setAmount] = usePersistentState("vat-amount", 100);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);
   const [priceIncludesTax, setPriceIncludesTax] = usePersistentState<"yes" | "no">("vat-includes", "no");
+
+  useEffect(() => {
+    const a = searchParams.get('amount');
+    const r = searchParams.get('rate');
+    const i = searchParams.get('includes');
+    if (a) setAmount(parseFloat(a));
+    if (r) setTaxRate(parseFloat(r));
+    if (i === 'yes' || i === 'no') setPriceIncludesTax(i);
+  }, [searchParams, setAmount, setTaxRate, setPriceIncludesTax]);
 
   const { taxAmount, netPrice, grossPrice } = useMemo(() => {
     const initialAmount = Number(amount);
@@ -73,20 +85,45 @@ export default function VatGstCalculator() {
               </RadioGroup>
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tax-rate">Tax Rate (%)</Label>
-                <span className="text-lg font-semibold">{taxRate}%</span>
+              <Label htmlFor="tax-rate">Tax Rate (%)</Label>
+              <div className="flex items-center gap-4">
+                <Slider
+                  id="tax-rate"
+                  value={[taxRate]}
+                  onValueChange={(v) => setTaxRate(v[0])}
+                  min={0}
+                  max={100}
+                  step={0.5}
+                />
+                <Input type="number" value={taxRate} onChange={e => setTaxRate(Number(e.target.value))} className="w-24" step="0.5" />
               </div>
-              <Slider
-                id="tax-rate"
-                value={[taxRate]}
-                onValueChange={(v) => setTaxRate(v[0])}
-                min={0}
-                max={100}
-                step={0.5}
-              />
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About VAT & GST</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is VAT/GST?</AccordionTrigger>
+                        <AccordionContent>
+                            Value-Added Tax (VAT) or Goods and Services Tax (GST) is a consumption tax placed on a product whenever value is added at each stage of the supply chain, from production to the point of sale.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How to Calculate Tax</AccordionTrigger>
+                        <AccordionContent>
+                            To add tax to a net price, you multiply the price by the tax rate (as a decimal). For example, to add 18% tax to a ₹100 item, you calculate `100 * 0.18 = ₹18` in tax, for a total price of ₹118.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>How to Remove Tax from a Gross Price</AccordionTrigger>
+                        <AccordionContent>
+                           To find the original price before tax was added, divide the gross price by (1 + tax rate as a decimal). For example, if a product costs ₹118 with 18% tax included, the original price is `118 / (1 + 0.18) = ₹100`.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
 

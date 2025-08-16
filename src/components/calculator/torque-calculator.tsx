@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function TorqueCalculator() {
   const [force, setForce] = usePersistentState("torque-force", 100); // in Newtons
@@ -44,6 +45,25 @@ export default function TorqueCalculator() {
                 />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Torque</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is torque?</AccordionTrigger>
+                <AccordionContent>
+                  Torque, also known as a moment of force, is a measure of the rotational force. Just as a linear force is a push or a pull, torque can be thought of as a twist to an object.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How is it calculated?</AccordionTrigger>
+                <AccordionContent>
+                  The formula for torque is `Torque = Force × Distance`, where the force is applied perpendicular to the lever arm. The distance is the length of the lever arm from the axis of rotation.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

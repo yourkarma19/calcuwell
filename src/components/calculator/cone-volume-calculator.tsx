@@ -1,10 +1,12 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function ConeVolumeCalculator() {
   const [radius, setRadius] = usePersistentState("cone-radius", 5);
@@ -30,48 +32,70 @@ export default function ConeVolumeCalculator() {
   }, [radius, height]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Enter Cone Dimensions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="radius">Radius</Label>
-                <Input id="radius" type="number" value={radius} onChange={(e) => setRadius(Number(e.target.value))} />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="height">Height</Label>
-                <Input id="height" type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
-              </div>
+    <div className="lg:col-span-3 space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Enter Cone Dimensions</CardTitle>
+          <CardDescription>Enter the radius and height of the cone to find its volume and surface area.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="radius">Radius</Label>
+              <Input id="radius" type="number" value={radius} onChange={(e) => setRadius(Number(e.target.value))} />
             </div>
-          </CardContent>
-        </Card>
-      </div>
+            <div className="space-y-2">
+              <Label htmlFor="height">Height</Label>
+              <Input id="height" type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Results</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Volume</p>
-              <p className="text-4xl font-bold font-headline text-primary">{volume.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Slant Height</p>
-              <p className="text-2xl font-semibold">{slantHeight.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
-            </div>
-             <div>
-              <p className="text-sm text-muted-foreground">Total Surface Area</p>
-              <p className="text-2xl font-semibold">{surfaceArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+      <Card>
+        <CardHeader>
+          <CardTitle>Results</CardTitle>
+        </CardHeader>
+        <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-muted p-4 rounded-lg text-center">
+            <p className="text-sm text-muted-foreground">Volume</p>
+            <p className="text-2xl font-bold font-headline text-primary">{volume.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+          </div>
+          <div className="bg-muted p-4 rounded-lg text-center">
+            <p className="text-sm text-muted-foreground">Slant Height</p>
+            <p className="text-2xl font-semibold">{slantHeight.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+          </div>
+           <div className="bg-muted p-4 rounded-lg text-center">
+            <p className="text-sm text-muted-foreground">Total Surface Area</p>
+            <p className="text-2xl font-semibold">{surfaceArea.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Cone Formulas</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>How is the volume of a cone calculated?</AccordionTrigger>
+                    <AccordionContent>
+                        The volume of a cone is one-third of the volume of a cylinder with the same base and height. The formula is `V = (1/3) * π * r² * h`, where 'r' is the radius of the circular base and 'h' is the height.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>What is the slant height?</AccordionTrigger>
+                    <AccordionContent>
+                       The slant height ('l' or 's') is the distance from the apex (the pointy tip) of the cone down the side to a point on the edge of the circular base. It can be found using the Pythagorean theorem: `s = √(r² + h²)`.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>How is the surface area calculated?</AccordionTrigger>
+                    <AccordionContent>
+                       The total surface area of a cone is the sum of the area of its circular base (`π * r²`) and its lateral (side) surface area (`π * r * s`), where 's' is the slant height.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

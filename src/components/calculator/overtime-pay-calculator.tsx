@@ -3,10 +3,11 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function OvertimePayCalculator() {
   const [hourlyRate, setHourlyRate] = usePersistentState("overtime-rate", 20);
@@ -30,7 +31,7 @@ export default function OvertimePayCalculator() {
   }, [hourlyRate, regularHours, overtimeHours, overtimeMultiplier]);
 
   const formatCurrency = (value: number) => {
-    return `$${value.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
+    return `₹${value.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
   };
 
   return (
@@ -39,6 +40,7 @@ export default function OvertimePayCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Enter Work Details</CardTitle>
+            <CardDescription>Calculate your total pay, including regular and overtime hours. Adjust the overtime multiplier as needed.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -57,13 +59,32 @@ export default function OvertimePayCalculator() {
                     <Input id="overtime-hours" type="number" value={overtimeHours} onChange={e => setOvertimeHours(Number(e.target.value))} />
                 </div>
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <Label htmlFor="overtime-multiplier">Overtime Multiplier</Label>
-                    <span className="text-lg font-semibold">{overtimeMultiplier}x</span>
+                  <Label htmlFor="overtime-multiplier">Overtime Multiplier</Label>
+                  <div className="flex items-center gap-4">
+                    <Slider id="overtime-multiplier" value={[overtimeMultiplier]} onValueChange={v => setOvertimeMultiplier(v[0])} min={1} max={3} step={0.1} />
+                    <Input type="number" value={overtimeMultiplier} onChange={e => setOvertimeMultiplier(Number(e.target.value))} className="w-24" step="0.1" />
                   </div>
-                  <Slider id="overtime-multiplier" value={[overtimeMultiplier]} onValueChange={v => setOvertimeMultiplier(v[0])} min={1} max={3} step={0.1} />
                 </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Overtime Pay</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is overtime?</AccordionTrigger>
+                <AccordionContent>
+                  Overtime is any hours worked by an employee that exceed their normally scheduled working hours. In many places, this is typically any work beyond 40 hours in a week.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is a standard overtime multiplier?</AccordionTrigger>
+                <AccordionContent>
+                  The most common overtime multiplier is 1.5, often referred to as "time-and-a-half." This means for every hour of overtime, you get paid 1.5 times your regular hourly rate. Some jobs or holidays might offer double-time (2.0) or even triple-time (3.0).
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

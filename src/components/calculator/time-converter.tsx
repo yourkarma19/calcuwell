@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { ArrowRightLeft } from "lucide-react";
 import { Button } from "../ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const timeUnits = {
   seconds: 1,
@@ -50,7 +51,7 @@ export default function TimeConverter() {
   }, [value, fromUnit, toUnit]);
   
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Time Converter</CardTitle>
@@ -88,6 +89,19 @@ export default function TimeConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Time Units</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Why are month and year values approximate?</AccordionTrigger>
+              <AccordionContent>
+                The number of days in a month varies (from 28 to 31), and a year can be 365 or 366 days (in a leap year). This calculator uses an average month length of 30.417 days and an average year length of 365 days for consistency.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

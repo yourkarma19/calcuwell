@@ -19,8 +19,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
- title: "CalcPro - Your Ultimate Calculator Hub",
-  description: "A fast, mobile-friendly web app with a wide range of calculators for finance, health, math, and more.",
+  metadataBase: new URL("https://calcpro.online"),
+  title: "CalcPro - Your Ultimate Calculator Hub",
+  description: "CalcPro is your free, all-in-one online calculator hub. Quickly solve problems in finance, health, math, and more with our fast, accurate, and easy-to-use tools.",
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

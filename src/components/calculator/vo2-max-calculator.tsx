@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function Vo2MaxCalculator() {
   const [gender, setGender] = usePersistentState<"male" | "female">("vo2max-gender", "male");
@@ -47,6 +48,25 @@ export default function Vo2MaxCalculator() {
                 </div>
             </div>
              <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is a non-exercise estimation and may not be as accurate as a clinical test. It's for informational purposes only.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About VO₂ Max</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is VO₂ max?</AccordionTrigger>
+                <AccordionContent>
+                  VO₂ max, or maximal oxygen uptake, is the maximum amount of oxygen your body can utilize during intense exercise. It's a common indicator of your aerobic fitness level.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How is this estimated?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator uses a non-exercise estimation formula based on your resting heart rate and maximum heart rate (which is estimated from your age). While convenient, it is not as precise as a clinical test performed on a treadmill or stationary bike.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

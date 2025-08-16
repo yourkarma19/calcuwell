@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -8,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Info } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function SalaryCalculator() {
   const [grossSalary, setGrossSalary] = usePersistentState("salary-gross", 50000);
@@ -69,11 +71,11 @@ export default function SalaryCalculator() {
               </div>
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tax-rate">Estimated Income Tax Rate (%)</Label>
-                <span className="text-lg font-semibold">{taxRate}%</span>
+              <Label htmlFor="tax-rate">Estimated Income Tax Rate (%)</Label>
+              <div className="flex items-center gap-4">
+                <Slider id="tax-rate" value={[taxRate]} onValueChange={v => setTaxRate(v[0])} min={0} max={50} step={0.5} />
+                <Input type="number" value={taxRate} onChange={e => setTaxRate(Number(e.target.value))} className="w-24" step="0.5" />
               </div>
-              <Slider id="tax-rate" value={[taxRate]} onValueChange={v => setTaxRate(v[0])} min={0} max={50} step={0.5} />
             </div>
              <div className="space-y-2">
                 <Label htmlFor="other-deductions">Other Deductions (per period)</Label>
@@ -82,12 +84,23 @@ export default function SalaryCalculator() {
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This calculator provides an estimate. Tax calculations can be complex and vary by location and personal circumstances. This does not account for pre-tax deductions like retirement contributions.</p>
-                </div>
-            </CardContent>
+          <CardHeader><CardTitle>About Salary Calculation</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Gross Salary vs. Net Salary</AccordionTrigger>
+                <AccordionContent>
+                  **Gross salary** is the total amount of money an employer agrees to pay an employee before any taxes or deductions are taken out. **Net salary**, or take-home pay, is the amount of money you receive after all deductions have been subtracted.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What are common deductions?</AccordionTrigger>
+                <AccordionContent>
+                  Common deductions include income tax, retirement plan contributions (like a 401(k) or pension), health insurance premiums, and other voluntary deductions. This calculator uses a simple percentage for tax and a single field for all other deductions.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
       </div>
 

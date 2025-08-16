@@ -10,11 +10,13 @@ export interface Calculator {
   iconName: string; // Changed from Icon: LucideIcon
   tags?: string[];
   formula?: string;
+  seoTitle?: string;
+  metaDescription?: string;
 }
 
 export interface Category {
     name: CalculatorCategory;
     slug: string;
     description: string;
-    iconName: string; // Changed from Icon: LucideIcon
+    iconName:string; // Changed from Icon: LucideIcon
 }

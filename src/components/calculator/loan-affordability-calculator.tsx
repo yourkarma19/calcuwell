@@ -3,10 +3,11 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function LoanAffordabilityCalculator() {
   const [annualIncome, setAnnualIncome] = usePersistentState("la-income", 60000);
@@ -44,7 +45,10 @@ export default function LoanAffordabilityCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Financial Details</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Financial Details</CardTitle>
+            <CardDescription>Enter your financial details to estimate the loan amount you might be able to afford.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="annual-income">Annual Income</Label>
@@ -72,6 +76,31 @@ export default function LoanAffordabilityCalculator() {
               <Slider value={[dtiRatio]} onValueChange={v => setDtiRatio(v[0])} min={20} max={50} step={1} />
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About Loan Affordability</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is Debt-to-Income (DTI) Ratio?</AccordionTrigger>
+                        <AccordionContent>
+                            Your debt-to-income (DTI) ratio is the percentage of your gross monthly income that goes to paying your monthly debt payments. Lenders use it to determine your borrowing risk. A lower DTI ratio shows a good balance between debt and income.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>Why is DTI important for getting a loan?</AccordionTrigger>
+                        <AccordionContent>
+                            Lenders use DTI to assess your ability to manage monthly payments and repay debts. A high DTI ratio may signal to lenders that you are overextended financially, making it harder to qualify for a new loan. Generally, lenders prefer a DTI of 43% or less.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>How can I improve my DTI?</AccordionTrigger>
+                        <AccordionContent>
+                           You can improve your DTI by either increasing your income or reducing your monthly debt. Strategies include paying down existing loans or credit card balances, avoiding new debt before applying for a major loan, and seeking opportunities to boost your income.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

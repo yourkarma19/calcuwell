@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Info } from "lucide-react";
+import { Input } from "../ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function SavingsCalculator() {
   const [initialAmount, setInitialAmount] = usePersistentState("savings-initial", 1000);
@@ -52,42 +55,53 @@ export default function SavingsCalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Initial Amount</Label>
-                <span className="text-lg font-semibold">{formatCurrency(initialAmount)}</span>
+              <Label>Initial Amount</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[initialAmount]} onValueChange={v => setInitialAmount(v[0])} min={0} max={100000} step={500} />
+                <Input type="number" value={initialAmount} onChange={e => setInitialAmount(Number(e.target.value))} className="w-32" step="500" />
               </div>
-              <Slider value={[initialAmount]} onValueChange={v => setInitialAmount(v[0])} min={0} max={100000} step={500} />
             </div>
              <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Monthly Contribution</Label>
-                <span className="text-lg font-semibold">{formatCurrency(monthlyContribution)}</span>
+              <Label>Monthly Contribution</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
+                <Input type="number" value={monthlyContribution} onChange={e => setMonthlyContribution(Number(e.target.value))} className="w-32" step="100" />
               </div>
-              <Slider value={[monthlyContribution]} onValueChange={v => setMonthlyContribution(v[0])} min={0} max={10000} step={100} />
             </div>
              <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Annual Interest Rate (%)</Label>
-                <span className="text-lg font-semibold">{interestRate}%</span>
+              <Label>Annual Interest Rate (%)</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={20} step={0.1} />
+                <Input type="number" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="w-24" step="0.1" />
               </div>
-              <Slider value={[interestRate]} onValueChange={v => setInterestRate(v[0])} min={0} max={20} step={0.1} />
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Investment Duration (Years)</Label>
-                <span className="text-lg font-semibold">{years} years</span>
+              <Label>Investment Duration (Years)</Label>
+              <div className="flex items-center gap-4">
+                <Slider value={[years]} onValueChange={v => setYears(v[0])} min={1} max={50} step={1} />
+                <Input type="number" value={years} onChange={e => setYears(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider value={[years]} onValueChange={v => setYears(v[0])} min={1} max={50} step={1} />
             </div>
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This calculator assumes interest is compounded monthly. The projected values are estimates and actual returns may vary.</p>
-                </div>
-            </CardContent>
+          <CardHeader><CardTitle>About Savings Growth</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>How does this calculator work?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator projects the future value of your savings by applying compound interest to your initial deposit and all subsequent monthly contributions. It assumes interest is compounded monthly.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is the power of compound interest?</AccordionTrigger>
+                <AccordionContent>
+                  Compound interest is "interest on interest." It means your money grows faster because you earn returns not only on your initial principal but also on the accumulated interest from previous periods. The earlier you start saving, the more powerful it becomes.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Plus, X } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Helper function to find the greatest common divisor of two numbers
 const gcd = (a: number, b: number): number => {
@@ -101,6 +102,37 @@ export default function LcmGcdCalculator() {
             <p className="text-sm text-muted-foreground">Least Common Multiple (LCM)</p>
             <p className="text-4xl font-bold font-headline text-primary">{finalLcm}</p>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About LCM & GCD</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>What is the Greatest Common Divisor (GCD)?</AccordionTrigger>
+                    <AccordionContent>
+                        The Greatest Common Divisor (also known as the Greatest Common Factor) is the largest positive integer that divides each of the integers in a set without leaving a remainder. For example, the GCD of 12 and 18 is 6.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>What is the Least Common Multiple (LCM)?</AccordionTrigger>
+                    <AccordionContent>
+                        The Least Common Multiple is the smallest positive integer that is a multiple of every integer in a set. For example, the LCM of 12 and 18 is 36.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
+                    <AccordionContent>
+                       For any two positive integers 'a' and 'b', there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a, b)`. This means the product of two numbers is equal to the product of their GCD and LCM.
+                    </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-4">
+                    <AccordionTrigger>Practical Uses</AccordionTrigger>
+                    <AccordionContent>
+                       GCD is used to simplify fractions to their lowest terms. LCM is often used when adding or subtracting fractions with different denominators to find a common denominator. They are both fundamental concepts in number theory.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>

@@ -3,12 +3,13 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRightLeft } from "lucide-react";
 import { Button } from "../ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const units = {
   "bit/s (bps)": 1,
@@ -51,10 +52,11 @@ export default function DataTransferRateConverter() {
   }, [value, fromUnit, toUnit]);
   
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Data Transfer Rate Converter</CardTitle>
+          <CardDescription>Convert between different units of data transfer speed, like Mbps to MB/s.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col md:flex-row items-center gap-4">
@@ -88,6 +90,19 @@ export default function DataTransferRateConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Data Transfer Rates</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Bits vs. Bytes in Internet Speed</AccordionTrigger>
+              <AccordionContent>
+                Internet service providers (ISPs) advertise speeds in **megabits per second (Mbps)**, while file downloads in your browser are often shown in **megabytes per second (MB/s)**. Since 1 byte = 8 bits, a 100 Mbps internet connection has a maximum theoretical download speed of 12.5 MB/s.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

@@ -3,11 +3,12 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { ArrowRightLeft } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Conversions:
 // 1 MPG = 235.215 L/100km
@@ -41,9 +42,12 @@ export default function FuelEfficiencyConverter() {
     const toLabel = isMpgToL ? "Liters per 100km (L/100km)" : "Miles per Gallon (MPG)";
     
     return (
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 space-y-6">
             <Card>
-                <CardHeader><CardTitle>Fuel Efficiency Converter</CardTitle></CardHeader>
+                <CardHeader>
+                    <CardTitle>Fuel Efficiency Converter</CardTitle>
+                    <CardDescription>Convert between Miles per Gallon (MPG) and Liters per 100km (L/100km).</CardDescription>
+                </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         <div className="w-full space-y-2">
@@ -70,6 +74,19 @@ export default function FuelEfficiencyConverter() {
                         </div>
                     </div>
                 </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle>About Fuel Efficiency</CardTitle></CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>MPG vs. L/100km</AccordionTrigger>
+                    <AccordionContent>
+                      **MPG (Miles Per Gallon)** measures how many miles a car can travel on one gallon of fuel. A higher MPG is better. **L/100km (Liters per 100 kilometers)** measures how many liters of fuel a car uses to travel 100 kilometers. A lower L/100km is better.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </CardContent>
             </Card>
         </div>
     )

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -5,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "../ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Helper function to find the greatest common divisor
 const gcd = (a: number, b: number): number => b === 0 ? a : gcd(b, a % b);
@@ -51,7 +53,7 @@ export default function FractionCalculator() {
   )
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
             <CardTitle>Fraction Calculator</CardTitle>
@@ -90,6 +92,39 @@ export default function FractionCalculator() {
               )}
             </div>
           </div>
+        </CardContent>
+      </Card>
+       <Card>
+        <CardHeader>
+            <CardTitle>About Fraction Calculations</CardTitle>
+        </CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>What is a Fraction?</AccordionTrigger>
+                    <AccordionContent>
+                        A fraction represents a part of a whole. It consists of a numerator (the top number), which shows how many parts you have, and a denominator (the bottom number), which shows how many parts the whole is divided into.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>How to Add Fractions With Different Denominators</AccordionTrigger>
+                    <AccordionContent>
+                        To add fractions with different denominators, you must first find a common denominator. This is a number that both denominators can divide into. Once both fractions have the same denominator, you can add the numerators together. For example, to add 1/2 + 1/4, you convert 1/2 to 2/4, then add 2/4 + 1/4 to get 3/4.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>Simplifying Fractions</AccordionTrigger>
+                    <AccordionContent>
+                        To simplify a fraction, you find the largest number that can divide both the numerator and the denominator evenly. This is called the Greatest Common Divisor (GCD). Divide both the top and bottom number by the GCD to get the simplified fraction. For example, the GCD of 12/16 is 4, so it simplifies to 3/4.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                    <AccordionTrigger>What is the difference between a proper and improper fraction?</AccordionTrigger>
+                    <AccordionContent>
+                       A proper fraction is one where the numerator is smaller than the denominator (e.g., 3/4). An improper fraction is one where the numerator is larger than or equal to the denominator (e.g., 5/4). Improper fractions are greater than or equal to 1.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>

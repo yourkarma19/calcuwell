@@ -3,10 +3,11 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function InvestmentReturnCalculator() {
   const [initialInvestment, setInitialInvestment] = usePersistentState("roi-initial", 10000);
@@ -38,6 +39,7 @@ export default function InvestmentReturnCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Investment Details</CardTitle>
+            <CardDescription>Calculate your Return on Investment (ROI) by entering your initial and final investment values.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -58,6 +60,25 @@ export default function InvestmentReturnCalculator() {
                 onChange={(e) => setFinalValue(Number(e.target.value))}
               />
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About ROI</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is Return on Investment (ROI)?</AccordionTrigger>
+                <AccordionContent>
+                  Return on Investment (ROI) is a performance measure used to evaluate the efficiency of an investment. It measures the amount of return on an investment relative to its cost. A high ROI means the investment's gains compare favorably to its cost.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How is ROI calculated?</AccordionTrigger>
+                <AccordionContent>
+                  The formula is `ROI = (Final Value - Initial Investment) / Initial Investment * 100%`. This calculation shows the percentage gain or loss on the investment.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

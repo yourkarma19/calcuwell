@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Conversion functions
 function hexToRgb(hex: string) {
@@ -98,7 +99,7 @@ export default function ColorConverter() {
   }
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Color Code Converter</CardTitle>
@@ -131,6 +132,31 @@ export default function ColorConverter() {
                     </div>
                 </div>
             </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Color Models</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is HEX?</AccordionTrigger>
+              <AccordionContent>
+                HEX (Hexadecimal) is a six-digit, 24-bit color code used in web design. It represents the intensity of Red, Green, and Blue (RGB) in a color.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is RGB?</AccordionTrigger>
+              <AccordionContent>
+                RGB (Red, Green, Blue) is an additive color model where red, green, and blue light are added together in various ways to reproduce a broad array of colors. Each value ranges from 0 to 255.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>What is HSL?</AccordionTrigger>
+              <AccordionContent>
+                HSL (Hue, Saturation, Lightness) is another representation of the RGB color model. It's often considered more intuitive to work with, as you can adjust hue (the type of color), saturation (the intensity), and lightness (the brightness) independently.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

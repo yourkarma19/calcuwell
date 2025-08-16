@@ -19,7 +19,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   return {
     title: `${category.name} Calculators | CalcPro`,
-    description: category.description,
+    description: `Browse a comprehensive collection of free online ${category.name.toLowerCase()} calculators. ${category.description} Instantly solve problems with CalcPro.`,
+    alternates: {
+        canonical: `/categories/${params.slug}`,
+    },
   };
 }
 

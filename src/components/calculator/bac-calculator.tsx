@@ -3,11 +3,12 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Widmark formula: BAC = (Alcohol g / (Body Weight g * Gender Constant)) * 100
 // Gender constant (r): Male: 0.68, Female: 0.55
@@ -50,7 +51,10 @@ export default function BacCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Enter Your Details</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Enter Your Details</CardTitle>
+            <CardDescription>Estimate your Blood Alcohol Content (BAC). This is an educational estimate and should not be used to determine if it is safe to drive.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -76,6 +80,25 @@ export default function BacCalculator() {
                 </div>
             </div>
              <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is an estimate and should not be used to determine if it is safe to drive. Many factors affect BAC, including metabolism, food intake, and health conditions.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About BAC</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is BAC?</AccordionTrigger>
+                <AccordionContent>
+                  Blood Alcohol Content (BAC) is a measure of the amount of alcohol in a person's bloodstream. It is expressed as a percentage.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How does this calculator work?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator uses the Widmark formula, a common method for estimating BAC based on weight, gender, alcohol consumed, and time. It's important to remember this is only an estimate.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

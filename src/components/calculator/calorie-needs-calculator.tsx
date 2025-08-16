@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -8,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Info } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const activityLevels = {
   sedentary: 1.2,
@@ -84,12 +86,29 @@ export default function CalorieNeedsCalculator() {
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This result is an estimate for weight maintenance. To lose weight, you would need to consume fewer calories (a caloric deficit). To gain weight, you would need to consume more (a caloric surplus). For personalized advice, consult a healthcare or nutrition professional.</p>
-                </div>
-            </CardContent>
+          <CardHeader><CardTitle>About Calorie Needs</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What are maintenance calories?</AccordionTrigger>
+                <AccordionContent>
+                  Maintenance calories are the total number of calories you need to consume each day to maintain your current body weight. This calculator estimates that value by first calculating your Basal Metabolic Rate (BMR) and then multiplying it by an activity level factor.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is BMR?</AccordionTrigger>
+                <AccordionContent>
+                  Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic life-sustaining functions, like breathing and circulation, while at rest. You can calculate your BMR with our <a href="/calculators/bmr-calculator" className="text-primary underline">BMR Calculator</a>.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>How do I use this for weight loss or gain?</AccordionTrigger>
+                <AccordionContent>
+                  This result is for weight maintenance. To lose weight, you need to consume fewer calories (a caloric deficit). To gain weight or muscle, you need to consume more (a caloric surplus). For personalized advice, consult a healthcare or nutrition professional.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
       </div>
 

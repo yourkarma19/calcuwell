@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,8 +8,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Info } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
-export default function CarLoanCalculator() {
+export default function CarLoanCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [carPrice, setCarPrice] = usePersistentState("car-loan-price", 25000);
   const [downPayment, setDownPayment] = usePersistentState("car-loan-downpayment", 5000);
   const [tradeInValue, setTradeInValue] = usePersistentState("car-loan-tradein", 2000);
@@ -63,30 +65,40 @@ export default function CarLoanCalculator() {
             </div>
 
             <div className="space-y-2">
-               <div className="flex justify-between items-center">
-                <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
+              <div className="flex items-center gap-4">
+                <Slider id="rate" value={[rate]} onValueChange={(value) => setRate(value[0])} min={1} max={25} step={0.05} />
+                <Input type="number" value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-              <Slider id="rate" value={[rate]} onValueChange={(value) => setRate(value[0])} min={1} max={25} step={0.05} />
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tenure">Loan Tenure (Years)</Label>
-                <span className="text-lg font-semibold">{tenure} Years</span>
+              <Label htmlFor="tenure">Loan Tenure (Years)</Label>
+               <div className="flex items-center gap-4">
+                <Slider id="tenure" value={[tenure]} onValueChange={(value) => setTenure(value[0])} min={1} max={10} step={1} />
+                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider id="tenure" value={[tenure]} onValueChange={(value) => setTenure(value[0])} min={1} max={10} step={1} />
             </div>
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p><span className="font-semibold text-foreground">Equated Monthly Installment (EMI)</span> is the fixed payment amount made by a borrower to a lender at a specified date each calendar month.</p>
-                    <p className="mt-2"><span className="font-semibold text-foreground">Total Cost</span> is the full amount you will have paid (Total EMI + Down Payment + Trade-in) once the loan is fully repaid.</p>
-                </div>
-            </CardContent>
+          <CardHeader><CardTitle>About Car Loans</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is an EMI?</AccordionTrigger>
+                <AccordionContent>
+                  An Equated Monthly Installment (EMI) is the fixed payment amount a borrower makes to a lender each month. It includes both the principal amount and the interest on the loan, ensuring the loan is fully paid off over the specified tenure.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How is the total cost calculated?</AccordionTrigger>
+                <AccordionContent>
+                  The total cost of the car includes the principal loan amount, all the interest paid over the loan's life, and any initial down payment or trade-in value you provided. It's the complete out-of-pocket expense for the vehicle.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
       </div>
 

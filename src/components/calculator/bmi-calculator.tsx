@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import { useSearchParams } from "next/navigation";
 
 type UnitSystem = "metric" | "imperial";
 
@@ -25,7 +26,8 @@ const bmiCategories = [
     { range: "30.0+", category: "Obesity" },
 ];
 
-export default function BMICalculator() {
+export default function BMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+  const searchParams = useSearchParams();
   const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>(
     "bmi-unit-system",
     "metric"
@@ -36,6 +38,17 @@ export default function BMICalculator() {
   const [heightInches, setHeightInches] = usePersistentState("bmi-height-inches", 0);
   
   const [bmi, setBmi] = useState<number | null>(null);
+
+  useEffect(() => {
+    const w = searchParams.get('weight');
+    const h = searchParams.get('height');
+    const u = searchParams.get('units');
+
+    if (w) setWeight(parseFloat(w));
+    if (h) setHeight(parseFloat(h));
+    if (u === 'metric' || u === 'imperial') setUnitSystem(u);
+
+  }, [searchParams, setWeight, setHeight, setUnitSystem]);
 
   const heightInMeters = useMemo(() => {
     if (unitSystem === "metric") {

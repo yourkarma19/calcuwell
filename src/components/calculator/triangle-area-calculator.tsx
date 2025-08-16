@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Info } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 type FormulaType = "base-height" | "sss" | "sas"; // SSS: 3 sides, SAS: 2 sides and angle between them
 
@@ -99,6 +101,37 @@ export default function TriangleAreaCalculator() {
                 </div>
             )}
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About Triangle Formulas</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Base & Height Formula</AccordionTrigger>
+                        <AccordionContent>
+                           The most common formula, `Area = 0.5 * base * height`, works for any triangle as long as you know the length of a side (the base) and the perpendicular height to that side.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>Heron's Formula (3 Sides)</AccordionTrigger>
+                        <AccordionContent>
+                            Heron's formula is used when you know the lengths of all three sides (a, b, c). You first calculate the semi-perimeter, `s = (a + b + c) / 2`. Then, the area is `√[s(s-a)(s-b)(s-c)]`.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>Side-Angle-Side (SAS) Formula</AccordionTrigger>
+                        <AccordionContent>
+                           If you know two sides and the angle between them, you can use the formula `Area = 0.5 * a * b * sin(C)`, where C is the angle between sides a and b.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-4">
+                        <AccordionTrigger>What is the Triangle Inequality Theorem?</AccordionTrigger>
+                        <AccordionContent>
+                           This theorem states that the sum of the lengths of any two sides of a triangle must be greater than the length of the third side. This calculator uses it to validate that the provided side lengths can form a real triangle.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

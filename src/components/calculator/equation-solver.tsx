@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function EquationSolver() {
   const [mode, setMode] = usePersistentState<'linear' | 'quadratic'>('equation-mode', 'linear');
@@ -43,7 +44,7 @@ export default function EquationSolver() {
   }, [mode, la, lb, lc, qa, qb, qc]);
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Equation Solver</CardTitle>
@@ -83,6 +84,25 @@ export default function EquationSolver() {
             <h3 className="text-lg font-semibold">Solution</h3>
             <p className="text-3xl font-bold font-headline text-primary">{result}</p>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Equation Solving</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is a linear equation?</AccordionTrigger>
+              <AccordionContent>
+                A linear equation is an equation for a straight line. This calculator solves for 'x' in the form ax + b = c.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is a quadratic equation?</AccordionTrigger>
+              <AccordionContent>
+                A quadratic equation is a second-order polynomial equation in a single variable x with the form ax² + bx + c = 0. It can have two solutions, one solution, or no real solutions.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

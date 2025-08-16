@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // For simplicity, we'll use a fixed 2x2 matrix
 const MATRIX_SIZE = 2;
@@ -53,7 +54,7 @@ export default function MatrixCalculator() {
   );
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
         <Card>
             <CardHeader>
                 <CardTitle>Matrix Calculator</CardTitle>
@@ -81,6 +82,19 @@ export default function MatrixCalculator() {
                         ))}
                     </div>
                 </div>
+            </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About Matrix Operations</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>How do you add matrices?</AccordionTrigger>
+                        <AccordionContent>
+                            To add two matrices, you add the corresponding elements. For example, the element in the first row and first column of the resulting matrix is the sum of the elements in the first row and first column of the two original matrices. The matrices must have the same dimensions.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
             </CardContent>
         </Card>
     </div>

@@ -5,6 +5,7 @@ import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const calculateStats = (numbers: number[]) => {
   if (numbers.length === 0) {
@@ -100,6 +101,39 @@ export default function MeanMedianModeCalculator() {
             <p className="text-sm text-muted-foreground">Count</p>
             <p className="text-2xl font-bold font-headline text-primary">{stats.count}</p>
           </div>
+        </CardContent>
+      </Card>
+       <Card>
+        <CardHeader><CardTitle>Understanding Mean, Median, and Mode</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>Mean vs. Median vs. Mode: What's the Difference?</AccordionTrigger>
+                    <AccordionContent>
+                        The **mean** is the average of all numbers in a data set. The **median** is the middle value when the data is sorted. The **mode** is the number that appears most frequently. They are all measures of "central tendency," helping to describe the center point of a data set.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>When to Use Mean, Median, or Mode</AccordionTrigger>
+                    <AccordionContent>
+                        Use the **mean** for data that is symmetrically distributed (like test scores). Use the **median** for skewed data, like income or house prices, because it isn't affected by extremely high or low values (outliers). Use the **mode** for categorical data to find the most common category (like the most popular shirt color).
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>How to Calculate Each Manually</AccordionTrigger>
+                    <AccordionContent>
+                       - **Mean:** Add up all the numbers and divide by the count of the numbers.
+                       - **Median:** Sort the numbers from smallest to largest. If there's an odd number of values, the median is the middle one. If it's an even number, the median is the average of the two middle numbers.
+                       - **Mode:** Count how many times each number appears. The one that appears most often is the mode.
+                    </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-4">
+                    <AccordionTrigger>What happens if there is more than one mode?</AccordionTrigger>
+                    <AccordionContent>
+                       A data set can have one mode (unimodal), two modes (bimodal), more than two modes (multimodal), or no mode at all if no number repeats. This calculator will show all modes if they exist.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>

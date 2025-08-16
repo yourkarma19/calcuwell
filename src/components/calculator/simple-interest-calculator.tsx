@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -6,8 +7,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
-export default function SimpleInterestCalculator() {
+export default function SimpleInterestCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState(
     "si-principal",
     100000
@@ -35,51 +37,74 @@ export default function SimpleInterestCalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="principal">Principal Amount</Label>
-                <span className="text-lg font-semibold">
-                  ₹ {principal.toLocaleString("en-IN")}
-                </span>
+              <Label htmlFor="principal">Principal Amount</Label>
+               <div className="flex items-center gap-4">
+                <Slider
+                  id="principal"
+                  value={[principal]}
+                  onValueChange={(value) => setPrincipal(value[0])}
+                  min={1000}
+                  max={10000000}
+                  step={1000}
+                />
+                 <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="1000" />
               </div>
-              <Slider
-                id="principal"
-                value={[principal]}
-                onValueChange={(value) => setPrincipal(value[0])}
-                min={1000}
-                max={10000000}
-                step={1000}
-              />
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
+              <div className="flex items-center gap-4">
+                <Slider
+                  id="rate"
+                  value={[rate]}
+                  onValueChange={(value) => setRate(value[0])}
+                  min={1}
+                  max={20}
+                  step={0.05}
+                />
+                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-              <Slider
-                id="rate"
-                value={[rate]}
-                onValueChange={(value) => setRate(value[0])}
-                min={1}
-                max={20}
-                step={0.05}
-              />
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="tenure">Tenure (Years)</Label>
-                <span className="text-lg font-semibold">{tenure} Years</span>
+              <Label htmlFor="tenure">Tenure (Years)</Label>
+               <div className="flex items-center gap-4">
+                <Slider
+                  id="tenure"
+                  value={[tenure]}
+                  onValueChange={(value) => setTenure(value[0])}
+                  min={1}
+                  max={30}
+                  step={1}
+                />
+                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
-              <Slider
-                id="tenure"
-                value={[tenure]}
-                onValueChange={(value) => setTenure(value[0])}
-                min={1}
-                max={30}
-                step={1}
-              />
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Simple Interest</CardTitle></CardHeader>
+          <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                      <AccordionTrigger>What is Simple Interest?</AccordionTrigger>
+                      <AccordionContent>
+                          Simple interest is a quick and easy method of calculating the interest charge on a loan or principal amount. It is determined by multiplying the daily interest rate by the principal, by the number of days that elapse between payments.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                      <AccordionTrigger>Simple vs. Compound Interest: What's the Difference?</AccordionTrigger>
+                      <AccordionContent>
+                          Simple interest is calculated only on the original principal amount. In contrast, compound interest is calculated on the principal amount and also on the accumulated interest of previous periods, which is why it's often described as "interest on interest." This leads to a much faster growth of money.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                      <AccordionTrigger>The Formula for Simple Interest</AccordionTrigger>
+                      <AccordionContent>
+                         The formula is `I = P * R * T`, where I is the interest, P is the principal amount, R is the annual interest rate as a decimal, and T is the time in years. This calculator simplifies it by taking the rate as a percentage: `(P * R * T) / 100`.
+                      </AccordionContent>
+                  </AccordionItem>
+              </Accordion>
           </CardContent>
         </Card>
       </div>

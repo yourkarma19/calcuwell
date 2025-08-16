@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,8 +8,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
-export default function CompoundInterestCalculator() {
+export default function CompoundInterestCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState("ci-principal", 10000);
   const [rate, setRate] = usePersistentState("ci-rate", 7);
   const [tenure, setTenure] = usePersistentState("ci-tenure", 10);
@@ -37,28 +39,28 @@ export default function CompoundInterestCalculator() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="principal">Principal Amount</Label>
-                <span className="text-lg font-semibold">₹ {principal.toLocaleString("en-IN")}</span>
+              <Label htmlFor="principal">Principal Amount</Label>
+               <div className="flex items-center gap-4">
+                <Slider id="principal" value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={1000} max={10000000} step={1000} />
+                <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="1000" />
               </div>
-              <Slider id="principal" value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={1000} max={10000000} step={1000} />
             </div>
 
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label htmlFor="rate">Annual Interest Rate (% p.a.)</Label>
-                <span className="text-lg font-semibold">{rate.toFixed(2)} %</span>
+              <Label htmlFor="rate">Annual Interest Rate (% p.a.)</Label>
+               <div className="flex items-center gap-4">
+                <Slider id="rate" value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={30} step={0.05} />
+                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-              <Slider id="rate" value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={30} step={0.05} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <Label htmlFor="tenure">Investment Tenure (Years)</Label>
-                  <span className="text-lg font-semibold">{tenure}</span>
+                <Label htmlFor="tenure">Investment Tenure (Years)</Label>
+                <div className="flex items-center gap-4">
+                  <Slider id="tenure" value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={50} step={1} />
+                   <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
                 </div>
-                <Slider id="tenure" value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={50} step={1} />
               </div>
               <div className="space-y-2">
                 <Label>Compounding Frequency</Label>
@@ -74,6 +76,38 @@ export default function CompoundInterestCalculator() {
               </div>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About Compound Interest</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is Compound Interest?</AccordionTrigger>
+                        <AccordionContent>
+                            Compound interest is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. It's often called "interest on interest" and will make a sum grow at a faster rate than simple interest.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How Compounding Frequency Affects Your Savings</AccordionTrigger>
+                        <AccordionContent>
+                            The more frequently interest is compounded, the more you will earn. For example, interest compounded monthly will result in a higher total amount than interest compounded annually, even with the same interest rate. This is because you start earning interest on your interest sooner.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>The Formula for Compound Interest</AccordionTrigger>
+                        <AccordionContent>
+                           The formula is `A = P(1 + r/n)^(nt)`, where:
+                           <ul className="list-disc list-inside mt-2">
+                               <li>A = the future value of the investment/loan, including interest</li>
+                               <li>P = the principal investment amount (the initial deposit or loan amount)</li>
+                               <li>r = the annual interest rate (in decimal)</li>
+                               <li>n = the number of times that interest is compounded per year</li>
+                               <li>t = the number of years the money is invested or borrowed for</li>
+                           </ul>
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
 

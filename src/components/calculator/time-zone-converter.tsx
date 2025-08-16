@@ -9,6 +9,7 @@ import { ArrowRightLeft } from "lucide-react";
 import { DatePicker } from "../ui/date-picker";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const timezones = [
   // Americas
@@ -51,24 +52,11 @@ export default function TimeZoneConverter() {
         throw new Error("Invalid time format");
       }
       
-      const sourceDate = new Date(date);
-      // Ensure we use the local date but set the time according to user input
-      sourceDate.setHours(hours, minutes, 0, 0);
+      const localDate = new Date(date);
+      localDate.setHours(hours, minutes, 0, 0);
 
-      // We need to construct a string that represents the local time in the "from" timezone
-      // for accurate conversion. This is a bit tricky with Intl.
-      // A more robust solution might use a library like date-fns-tz.
-      // For now, let's format the input date and time to ISO-like string.
-      const year = sourceDate.getFullYear();
-      const month = String(sourceDate.getMonth() + 1).padStart(2, '0');
-      const day = String(sourceDate.getDate()).padStart(2, '0');
-      
-      // Creating a string that represents the time in the source timezone
-      const dateStringInFromZone = `${year}-${month}-${day}T${time}:00`;
-      
-      const dateInFromZone = new Date(dateStringInFromZone);
-      
-      // Now, format this date object into the target timezone.
+      const sourceTimeInUTC = new Date(localDate.toLocaleString("en-US", {timeZone: fromZone}));
+
       const options: Intl.DateTimeFormatOptions = {
         timeZone: toZone,
         year: 'numeric', month: 'long', day: 'numeric',
@@ -77,7 +65,7 @@ export default function TimeZoneConverter() {
       };
       
       const formatter = new Intl.DateTimeFormat('en-US', options);
-      setConvertedTime(formatter.format(dateInFromZone));
+      setConvertedTime(formatter.format(localDate));
 
     } catch(e) {
       setConvertedTime("Invalid Date/Time");
@@ -103,7 +91,7 @@ export default function TimeZoneConverter() {
                   {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <DatePicker date={date} setDate={setDate} disabled={(date) => false}/>
                 <Input type="time" value={time} onChange={e => setTime(e.target.value)} />
               </div>
@@ -122,9 +110,22 @@ export default function TimeZoneConverter() {
                    {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg" aria-live="polite"/>
+              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg sm:h-20" aria-live="polite"/>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Time Zones</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is UTC?</AccordionTrigger>
+              <AccordionContent>
+                Coordinated Universal Time (UTC) is the primary time standard by which the world regulates clocks and time. It is not a time zone itself but a time standard that is the basis for civil time and time zones worldwide.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

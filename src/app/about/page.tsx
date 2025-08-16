@@ -1,9 +1,13 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | CalcPro",
-    description: "Learn more about CalcPro's mission to provide fast, free, and comprehensive online calculators.",
+    title: "About CalcPro: Our Mission and Story",
+    description: "Discover the story behind CalcPro. Learn about our mission to provide fast, comprehensive, and completely free online calculators for finance, health, math, and everyday use.",
+    alternates: {
+        canonical: "/about",
+    },
 };
 
 export default function AboutPage() {
@@ -17,24 +21,25 @@ export default function AboutPage() {
 
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <p>
-                    CalcPro's sole focus is to provide fast, comprehensive, convenient, and free online calculators in a plethora of areas. We are a group of IT professionals enthusiastic about creating quality free tools and content on the Internet.
+                    CalcPro gives you fast, easy-to-use, and free online calculators. We are a small team of tech lovers who enjoy making great tools for everyone.
                 </p>
 
                 <p>
-                    Currently, we have around 100 calculators to help you "do the math" quickly in areas such as finance, fitness & health, math, and others, and we are still developing more. Our goal is to become the one-stop, go-to site for people who need to make quick calculations. Additionally, we believe the internet should be a source of free information. Therefore, all of our tools and services are completely free, with no registration required.
+                    We have calculators for finance, health, math, and more. Our goal is to be the only website you need for quick math. We think the internet should be open, so our tools are always free to use without needing to sign up.
                 </p>
-
+                
+                <h2>Our Calculators & Accuracy</h2>
                 <p>
-                    We have coded and developed each calculator individually and put each one through strict, comprehensive testing. However, please inform us if you notice even the slightest error – your input is extremely valuable to us. While most calculators on CalcPro are designed to be universally applicable for worldwide usage, some might be for specific regions.
+                    We build each calculator with care and test it to make sure it's right. If you see something that's not working, please let us know. Your feedback helps us make things better.
                 </p>
                 
                  <p>
-                    More than 90% of the calculators are based on well-known formulas or equations from textbooks, such as the mortgage calculator, BMI calculator, etc. If formulas are controversial, we aim to provide the results of all popular formulas. Calculators meant for amusement are based on internal formulas. The results of financial and health calculators were reviewed by professionals for accuracy.
+                    Our tools are based on common formulas you find in textbooks. For some topics, we show results from different methods. All of our financial and health tools have been double-checked by professionals.
                 </p>
 
                 <h2>Contact Us</h2>
                 <p>
-                    For any questions, feedback, or support, please don't hesitate to reach out to us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>. We appreciate your input!
+                    If you have questions or feedback, please email us at <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>. We would love to hear from you!
                 </p>
             </div>
         </main>

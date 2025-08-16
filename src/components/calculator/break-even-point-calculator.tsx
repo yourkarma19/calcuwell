@@ -3,9 +3,10 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function BreakEvenPointCalculator() {
   const [fixedCosts, setFixedCosts] = usePersistentState("bep-fixed", 10000);
@@ -38,6 +39,7 @@ export default function BreakEvenPointCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Business Cost Details</CardTitle>
+            <CardDescription>Enter your fixed costs, variable costs, and unit price to find your break-even point.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -54,6 +56,25 @@ export default function BreakEvenPointCalculator() {
                 <Input id="price-per-unit" type="number" value={pricePerUnit} onChange={e => setPricePerUnit(Number(e.target.value))} />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Break-Even Analysis</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is a break-even point?</AccordionTrigger>
+                <AccordionContent>
+                  The break-even point is the level of production at which the total revenues for a product equal the total costs. It's the point where a company experiences neither a profit nor a loss.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Fixed Costs vs. Variable Costs</AccordionTrigger>
+                <AccordionContent>
+                  **Fixed costs** are expenses that do not change with the level of production, such as rent, salaries, and insurance. **Variable costs** are expenses that change in proportion to production output, such as raw materials and direct labor costs.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

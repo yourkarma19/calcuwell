@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 type TrigFunction = 'sin' | 'cos' | 'tan' | 'asin' | 'acos' | 'atan';
 type AngleUnit = 'degrees' | 'radians';
@@ -53,7 +54,7 @@ export default function TrigonometryCalculator() {
   }, [trigFunction, inputValue, angleUnit]);
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
             <CardTitle>Trigonometry Calculator</CardTitle>
@@ -93,6 +94,43 @@ export default function TrigonometryCalculator() {
                     {result}
                 </p>
             </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Trigonometry</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What are Sine, Cosine, and Tangent?</AccordionTrigger>
+              <AccordionContent>
+                Sine (sin), Cosine (cos), and Tangent (tan) are the three primary trigonometric functions. They are ratios of the sides of a right-angled triangle.
+                <ul className="list-disc pl-5 mt-2">
+                  <li><strong>Sine (sin):</strong> Opposite / Hypotenuse</li>
+                  <li><strong>Cosine (cos):</strong> Adjacent / Hypotenuse</li>
+                  <li><strong>Tangent (tan):</strong> Opposite / Adjacent</li>
+                </ul>
+                The acronym **SOH-CAH-TOA** is often used to remember these ratios.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What are Inverse Trigonometric Functions?</AccordionTrigger>
+              <AccordionContent>
+                Inverse trigonometric functions (like asin, acos, atan) are used to find the angle when you know the ratio of the sides. For example, if you know that the sine of an angle is 0.5, you can use arcsin (sin⁻¹) to find that the angle is 30 degrees.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Degrees vs. Radians</AccordionTrigger>
+              <AccordionContent>
+                Degrees and Radians are two different units for measuring angles. A full circle is 360 degrees or 2π radians. It's crucial to use the correct unit for your calculations, as using the wrong one will lead to incorrect results. Most mathematical and physics formulas use radians.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Real-World Applications</AccordionTrigger>
+              <AccordionContent>
+                Trigonometry is used in many fields, including astronomy (to measure distances to stars), navigation (GPS systems), engineering (to build structures), physics (to analyze waves), and video game development (to control object movement and camera angles).
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

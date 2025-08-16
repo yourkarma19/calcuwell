@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const bodyFatCategories = {
     women: [
@@ -72,7 +73,10 @@ export default function BodyFatPercentageCalculator() {
         <>
             <div className="lg:col-span-2 space-y-6">
                 <Card>
-                    <CardHeader><CardTitle>Enter Your Measurements</CardTitle></CardHeader>
+                    <CardHeader>
+                        <CardTitle>Enter Your Measurements</CardTitle>
+                        <CardDescription>Estimate your body fat percentage using the U.S. Navy method.</CardDescription>
+                    </CardHeader>
                     <CardContent className="space-y-4">
                          <div className="space-y-2">
                             <Label>Gender</Label>
@@ -156,7 +160,25 @@ export default function BodyFatPercentageCalculator() {
                         </div>
                     </CardContent>
                 </Card>
-
+                <Card>
+                  <CardHeader><CardTitle>About Body Fat Percentage</CardTitle></CardHeader>
+                  <CardContent>
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger>Why is body fat percentage important?</AccordionTrigger>
+                        <AccordionContent>
+                          Body fat percentage can be a better indicator of health than weight or BMI because it distinguishes between fat mass and lean mass. A healthy body fat percentage is associated with a lower risk of various chronic diseases.
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="item-2">
+                        <AccordionTrigger>How does the U.S. Navy method work?</AccordionTrigger>
+                        <AccordionContent>
+                          This method uses body circumference measurements to estimate body density, which is then used to calculate body fat percentage. While it's a convenient estimation, it's not as accurate as clinical methods like DEXA scans.
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </CardContent>
+                </Card>
             </div>
             <div className="lg:col-span-1">
                 <Card className="sticky top-24">

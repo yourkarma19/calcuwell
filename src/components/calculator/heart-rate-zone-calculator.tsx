@@ -3,11 +3,12 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const zones = [
   { name: 'Zone 1: Very Light', percentage: '50-60%', color: 'bg-blue-200' },
@@ -41,6 +42,7 @@ export default function HeartRateZoneCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Enter Your Details</CardTitle>
+            <CardDescription>Calculate your target heart rate zones for effective workouts using the Karvonen formula.</CardDescription>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -81,6 +83,25 @@ export default function HeartRateZoneCalculator() {
               </Table>
             </CardContent>
           </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Heart Rate Zones</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What are heart rate zones?</AccordionTrigger>
+                <AccordionContent>
+                  Heart rate zones are ranges based on a percentage of your maximum heart rate. Training in different zones helps you achieve specific fitness goals, such as burning fat, improving endurance, or increasing your anaerobic threshold.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is the Karvonen formula?</AccordionTrigger>
+                <AccordionContent>
+                  The Karvonen formula is a method for calculating target heart rate zones that takes your resting heart rate into account, making it more personalized than methods that only use your maximum heart rate.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
     </div>
   );
