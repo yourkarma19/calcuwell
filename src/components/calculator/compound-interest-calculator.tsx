@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function CompoundInterestCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState("ci-principal", 10000);
@@ -75,6 +76,38 @@ export default function CompoundInterestCalculator({ setFormula }: { setFormula:
               </div>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About Compound Interest</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is Compound Interest?</AccordionTrigger>
+                        <AccordionContent>
+                            Compound interest is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. It's often called "interest on interest" and will make a sum grow at a faster rate than simple interest.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How Compounding Frequency Affects Your Savings</AccordionTrigger>
+                        <AccordionContent>
+                            The more frequently interest is compounded, the more you will earn. For example, interest compounded monthly will result in a higher total amount than interest compounded annually, even with the same interest rate. This is because you start earning interest on your interest sooner.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>The Formula for Compound Interest</AccordionTrigger>
+                        <AccordionContent>
+                           The formula is `A = P(1 + r/n)^(nt)`, where:
+                           <ul className="list-disc list-inside mt-2">
+                               <li>A = the future value of the investment/loan, including interest</li>
+                               <li>P = the principal investment amount (the initial deposit or loan amount)</li>
+                               <li>r = the annual interest rate (in decimal)</li>
+                               <li>n = the number of times that interest is compounded per year</li>
+                               <li>t = the number of years the money is invested or borrowed for</li>
+                           </ul>
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
 

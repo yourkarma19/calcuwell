@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Info } from "lucide-react";
 import { Input } from "../ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function RetirementCalculator() {
   const [currentAge, setCurrentAge] = usePersistentState("ret-current-age", 30);
@@ -112,11 +113,28 @@ export default function RetirementCalculator() {
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This calculator uses the <span className="font-semibold text-foreground">4% Rule</span> as a simple model to estimate your required savings goal (25x your desired annual income). This is a common guideline, but your actual needs may vary.</p>
-                </div>
+            <CardHeader><CardTitle>About Retirement Planning</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Why is it important to start saving early?</AccordionTrigger>
+                        <AccordionContent>
+                            Starting early is the most powerful factor in retirement saving because of compound interest. The longer your money is invested, the more time it has to grow, with your earnings generating their own earnings. Even small, regular contributions can grow into a large sum over several decades.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>What is the 4% Rule?</AccordionTrigger>
+                        <AccordionContent>
+                            The 4% rule is a guideline for retirees that suggests you can safely withdraw 4% of your savings in your first year of retirement and then adjust that amount for inflation for every subsequent year without running out of money for 30 years. This calculator uses it to estimate your savings goal by multiplying your desired annual income by 25.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>What is a "shortfall?"</AccordionTrigger>
+                        <AccordionContent>
+                           A shortfall is the gap between your estimated savings at retirement and your required savings goal. If this calculator shows a shortfall, it means your current plan is not projected to be enough to fund your desired retirement income. You may need to increase your monthly contributions, work longer, or adjust your retirement income goal.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
             </CardContent>
         </Card>
       </div>

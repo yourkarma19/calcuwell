@@ -170,6 +170,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Find the Least Common Multiple and Greatest Common Divisor.',
     category: 'Math',
     iconName: 'Variable',
+    seoTitle: 'LCM and GCD Calculator | Find Least Common Multiple & Greatest Common Divisor',
+    metaDescription: 'Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. Our tool explains the methods and their applications.',
   },
   {
     slug: 'square-root-cube-root-calculator',
@@ -252,7 +254,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate simple interest on a principal amount.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    formula: 'P * R * T / 100'
+    formula: 'P * R * T / 100',
+    seoTitle: 'Simple Interest Calculator | SI Formula & Calculation',
+    metaDescription: 'Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula (Principal × Rate × Time) and explains how it works.',
   },
   {
     slug: 'compound-interest-calculator',
@@ -260,7 +264,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate compound interest over time.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    formula: 'A = P(1 + r/n)^(nt)'
+    formula: 'A = P(1 + r/n)^(nt)',
+    seoTitle: 'Compound Interest Calculator | Daily, Monthly, Yearly',
+    metaDescription: 'See how your savings can grow with the power of compound interest. Our calculator projects your investment growth over time and explains the compounding formula.',
   },
   {
     slug: 'savings-calculator',
@@ -275,6 +281,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     iconName: 'PiggyBank',
+    seoTitle: 'Retirement Calculator | How Much Do I Need to Retire?',
+    metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to achieve your retirement goals and see if you are on track.',
   },
   {
     slug: 'investment-return-calculator',
@@ -784,6 +792,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     iconName: 'Landmark',
+    seoTitle: 'Loan Affordability Calculator | How Much Can I Borrow?',
+    metaDescription: 'Estimate how much you can afford to borrow for a loan based on your income, monthly debts, and the desired loan terms. Perfect for home or car loan planning.',
   },
   {
     slug: 'carbon-footprint-calculator',

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function PythagoreanTheoremCalculator() {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");
@@ -74,6 +75,37 @@ export default function PythagoreanTheoremCalculator() {
               </div>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About the Pythagorean Theorem</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is the Pythagorean Theorem?</AccordionTrigger>
+                        <AccordionContent>
+                            The Pythagorean theorem is a fundamental principle in geometry that states that for a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle, denoted as 'c') is equal to the sum of the squares of the other two sides (a and b). The formula is a² + b² = c².
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How to Use the Calculator</AccordionTrigger>
+                        <AccordionContent>
+                            Select which side you want to solve for (a, b, or c). Enter the lengths of the two known sides into their respective fields. The calculator will automatically compute the length of the unknown side. The theorem only applies to right-angled triangles.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>What is a Hypotenuse?</AccordionTrigger>
+                        <AccordionContent>
+                           The hypotenuse is the longest side of a right-angled triangle. It is always the side that is opposite the 90-degree angle. In the formula a² + b² = c², 'c' represents the hypotenuse.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-4">
+                        <AccordionTrigger>Real-World Applications</AccordionTrigger>
+                        <AccordionContent>
+                           The Pythagorean theorem is used extensively in architecture, construction, navigation, and physics. For example, it can be used to calculate the diagonal distance across a rectangular room, determine the steepness of a ramp, or find the shortest distance for a boat to travel between two points.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">
