@@ -26,23 +26,12 @@ export default function Home() {
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Your one-stop destination for fast, accurate, and easy-to-use online calculators.
           </p>
-          <div className="mt-8 flex justify-center gap-2">
-            <Button asChild variant="outline">
-              <Link href="/calculators/vat-gst-calculator?amount=1000&rate=18">GST</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/calculators/loan-emi-calculator?principal=500000&rate=8.5&tenure=5">EMI</Link>
-            </Button>
-            <Button asChild variant="outline">
-               <Link href="/calculators/age-calculator">Age</Link>
-            </Button>
-          </div>
         </div>
       </section>
 
       <section className="py-12 md:py-16">
          <div className="flex justify-center -mt-32 md:-mt-36 relative z-20">
-          <div className="w-full max-w-lg">
+          <div className="w-full max-w-md">
             <ScientificCalculator />
           </div>
         </div>

@@ -26,11 +26,11 @@ const scientificButtonLayout = [
 ];
 
 export default function ScientificCalculator() {
+  const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
   const [memory, setMemory] = useState(0);
   const [isRadians, setIsRadians] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [justEvaluated, setJustEvaluated] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -43,16 +43,6 @@ export default function ScientificCalculator() {
         resetCalculator();
         if(!isOperator(input)) setDisplayValue(input);
         return;
-    }
-
-    if (justEvaluated && !isOperator(input) && input !== '.') {
-        setDisplayValue(input);
-        setJustEvaluated(false);
-        return;
-    }
-    
-    if (justEvaluated && (isOperator(input) || input === '.')) {
-      setJustEvaluated(false);
     }
 
     if (isOperator(input)) {
@@ -72,7 +62,6 @@ export default function ScientificCalculator() {
         setDisplayValue(prev => prev + input);
       }
     }
-    setJustEvaluated(false);
   };
   
   const handleOperator = (op: string) => {
@@ -83,13 +72,11 @@ export default function ScientificCalculator() {
       } else {
         setDisplayValue(prev => prev + op);
       }
-      setJustEvaluated(false);
     }
   }
 
   const handleBackspace = () => {
     setDisplayValue(prev => (prev.length > 1 && prev !== "Error") ? prev.slice(0, -1) : "0");
-    setJustEvaluated(false);
   };
   
   const handleScientificInput = (func: string) => {
@@ -97,8 +84,7 @@ export default function ScientificCalculator() {
         resetCalculator();
         return;
       }
-      let currentDisplay = (displayValue === "0" || displayValue === "Error" || justEvaluated) ? "" : displayValue;
-      setJustEvaluated(false);
+      let currentDisplay = (displayValue === "0" || displayValue === "Error") ? "" : displayValue;
 
       const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
       const radToAngle = (rad: number) => isRadians ? rad : rad * (180 / Math.PI);
@@ -112,36 +98,35 @@ export default function ScientificCalculator() {
             case 'm+': setMemory(prev => prev + value); return;
             case 'm-': setMemory(prev => prev - value); return;
             case 'mr': setDisplayValue(memory.toString()); return;
-            case 'x²': setDisplayValue(Math.pow(value, 2).toString()); setJustEvaluated(true); return;
-            case 'x³': setDisplayValue(Math.pow(value, 3).toString()); setJustEvaluated(true); return;
+            case 'x²': handleEquals(Math.pow(value, 2).toString()); return;
+            case 'x³': handleEquals(Math.pow(value, 3).toString()); return;
             case 'xʸ': currentDisplay += '**'; break;
-            case 'eˣ': setDisplayValue(Math.exp(value).toString()); setJustEvaluated(true); return;
-            case '10ˣ': setDisplayValue(Math.pow(10, value).toString()); setJustEvaluated(true); return;
-            case 'x!': setDisplayValue(factorial(value).toString()); setJustEvaluated(true); return;
-            case '¹/x': setDisplayValue((1 / value).toString()); setJustEvaluated(true); return;
-            case '²√x': if(value < 0) throw new Error(); setDisplayValue(Math.sqrt(value).toString()); setJustEvaluated(true); return;
-            case '³√x': setDisplayValue(Math.cbrt(value).toString()); setJustEvaluated(true); return;
+            case 'eˣ': handleEquals(Math.exp(value).toString()); return;
+            case '10ˣ': handleEquals(Math.pow(10, value).toString()); return;
+            case 'x!': handleEquals(factorial(value).toString()); return;
+            case '¹/x': handleEquals((1 / value).toString()); return;
+            case '²√x': if(value < 0) throw new Error(); handleEquals(Math.sqrt(value).toString()); return;
+            case '³√x': handleEquals(Math.cbrt(value).toString()); return;
             case 'ʸ√x': currentDisplay += '**(1/'; break;
-            case 'ln': if(value <= 0) throw new Error(); setDisplayValue(Math.log(value).toString()); setJustEvaluated(true); return;
-            case 'log₁₀': if(value <= 0) throw new Error(); setDisplayValue(Math.log10(value).toString()); setJustEvaluated(true); return;
-            case 'sin': setDisplayValue(Math.sin(angleToRad(value)).toString()); setJustEvaluated(true); return;
-            case 'cos': setDisplayValue(Math.cos(angleToRad(value)).toString()); setJustEvaluated(true); return;
-            case 'tan': if(isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error(); setDisplayValue(Math.tan(angleToRad(value)).toString()); setJustEvaluated(true); return;
-            case 'sin⁻¹': if(value < -1 || value > 1) throw new Error(); setDisplayValue(radToAngle(Math.asin(value)).toString()); setJustEvaluated(true); return;
-            case 'cos⁻¹': if(value < -1 || value > 1) throw new Error(); setDisplayValue(radToAngle(Math.acos(value)).toString()); setJustEvaluated(true); return;
-            case 'tan⁻¹': setDisplayValue(radToAngle(Math.atan(value)).toString()); setJustEvaluated(true); return;
+            case 'ln': if(value <= 0) throw new Error(); handleEquals(Math.log(value).toString()); return;
+            case 'log₁₀': if(value <= 0) throw new Error(); handleEquals(Math.log10(value).toString()); return;
+            case 'sin': handleEquals(Math.sin(angleToRad(value)).toString()); return;
+            case 'cos': handleEquals(Math.cos(angleToRad(value)).toString()); return;
+            case 'tan': if(isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error(); handleEquals(Math.tan(angleToRad(value)).toString()); return;
+            case 'sin⁻¹': if(value < -1 || value > 1) throw new Error(); handleEquals(radToAngle(Math.asin(value)).toString()); return;
+            case 'cos⁻¹': if(value < -1 || value > 1) throw new Error(); handleEquals(radToAngle(Math.acos(value)).toString()); return;
+            case 'tan⁻¹': handleEquals(radToAngle(Math.atan(value).toString())); return;
             case 'e': currentDisplay += Math.E.toString(); break;
             case 'EE': currentDisplay += 'e'; break;
             case 'Rad': setIsRadians(true); return;
             case 'deg': setIsRadians(false); return;
-            case 'sinh': setDisplayValue(Math.sinh(value).toString()); setJustEvaluated(true); return;
-            case 'cosh': setDisplayValue(Math.cosh(value).toString()); setJustEvaluated(true); return;
-            case 'tanh': setDisplayValue(Math.tanh(value).toString()); setJustEvaluated(true); return;
+            case 'sinh': handleEquals(Math.sinh(value).toString()); return;
+            case 'cosh': handleEquals(Math.cosh(value).toString()); return;
+            case 'tanh': handleEquals(Math.tanh(value).toString()); return;
             case 'π': currentDisplay += Math.PI.toString(); break;
             case 'Rand':
                 if (isClient) {
                     setDisplayValue(Math.random().toString());
-                    setJustEvaluated(true);
                 }
                 return;
             default: break;
@@ -164,23 +149,26 @@ export default function ScientificCalculator() {
     };
 
 
-  const handleEquals = () => {
+  const handleEquals = (precomputedResult?: string) => {
     try {
-        const result = new Function('return ' + displayValue.replace(/\^/g, '**'))();
-        if (isNaN(result) || !isFinite(result)) {
-          setDisplayValue("Error");
+        const result = precomputedResult !== undefined ? precomputedResult : new Function('return ' + displayValue.replace(/\^/g, '**'))();
+        
+        if (result === undefined || isNaN(result) || !isFinite(result)) {
+            setExpression(displayValue + " =");
+            setDisplayValue("Error");
         } else {
-          setDisplayValue(result.toString());
+            setExpression(displayValue + " =");
+            setDisplayValue(result.toString());
         }
-        setJustEvaluated(true);
     } catch (error) {
+        setExpression(displayValue + " =");
         setDisplayValue("Error");
     }
   };
 
   const resetCalculator = () => {
+    setExpression("");
     setDisplayValue("0");
-    setJustEvaluated(false);
   };
 
   const getButtonClass = (btn: string) => {
@@ -224,12 +212,15 @@ export default function ScientificCalculator() {
           <CardDescription>A versatile calculator for both basic and advanced mathematical functions. Use the tabs to switch between scientific and standard modes. Now with keyboard support!</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Input 
-            value={displayValue} 
-            readOnly 
-            aria-label="Calculator display"
-            className="h-20 text-4xl text-right font-mono pr-4 bg-background"
-          />
+          <div className="h-20 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
+            <div className="text-xl text-muted-foreground h-1/3 truncate">{expression}</div>
+            <div 
+              aria-label="Calculator display"
+              className="text-4xl font-mono h-2/3"
+            >
+              {displayValue}
+            </div>
+          </div>
           <Tabs defaultValue="scientific">
               <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="scientific">Sci</TabsTrigger>
