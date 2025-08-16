@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { categories, calculators } from "@/lib/calculators";
 import {
@@ -18,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <section className="relative text-center py-16 md:py-24 overflow-hidden rounded-xl bg-gradient-to-br from-primary/5 via-background to-background">
+      <section className="relative text-center py-16 md:py-24 rounded-xl bg-gradient-to-br from-primary/5 via-background to-background">
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
             CalcPro
@@ -30,14 +31,14 @@ export default function Home() {
       </section>
 
       <section className="py-12 md:py-16">
-         <div className="flex justify-center -mt-32 md:-mt-36 relative z-20">
+         <div className="flex justify-center relative z-20 -mt-16 md:-mt-20">
           <div className="w-full max-w-md">
             <ScientificCalculator />
           </div>
         </div>
       </section>
       
-      <section id="categories" className="py-12">
+      <section id="categories" className="pt-12">
         <h2 className="text-3xl font-bold font-headline text-center mb-8">
           Calculator Categories
         </h2>
