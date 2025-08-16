@@ -160,6 +160,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     formula: 'n!',
+    seoTitle: 'Factorial Calculator | Find the Factorial of Any Number (n!)',
+    metaDescription: 'An online factorial calculator that quickly finds the factorial (n!) of any non-negative integer. Includes the factorial formula and an explanation of zero factorial.',
   },
   {
     slug: 'lcm-gcd-calculator',
