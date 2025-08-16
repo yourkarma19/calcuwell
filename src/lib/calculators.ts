@@ -249,6 +249,15 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free and easy-to-use calculator. See how extra payments can reduce your loan tenure and save you interest.',
   },
   {
+    slug: 'loan-comparison-calculator',
+    name: 'Loan Comparison Calculator',
+    description: 'Compare two loans side-by-side.',
+    category: 'Finance',
+    iconName: 'Scale',
+    seoTitle: 'Loan Comparison Calculator | Compare EMI & Interest Rates Side-by-Side',
+    metaDescription: 'Compare two loans instantly. Our Loan Comparison Calculator shows you the EMI, total interest, and total cost side-by-side to help you choose the cheapest option.',
+  },
+  {
     slug: 'mortgage-calculator',
     name: 'Mortgage Calculator',
     description: 'Estimate your monthly mortgage payments.',
