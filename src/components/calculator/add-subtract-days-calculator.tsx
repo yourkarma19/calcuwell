@@ -4,10 +4,11 @@
 import { useState } from "react";
 import { addDays, subDays, format } from "date-fns";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function AddSubtractDaysCalculator() {
   const [startDate, setStartDate] = useState<Date | undefined>(new Date());
@@ -32,6 +33,7 @@ export default function AddSubtractDaysCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Add or Subtract Days from a Date</CardTitle>
+            <CardDescription>Easily find a future or past date by adding or subtracting a specific number of days from a start date.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -48,6 +50,25 @@ export default function AddSubtractDaysCalculator() {
                 <Button onClick={handleAdd} className="w-full">Add Days</Button>
                 <Button onClick={handleSubtract} variant="outline" className="w-full">Subtract Days</Button>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>Using the Date Adder</CardTitle></CardHeader>
+          <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                      <AccordionTrigger>How does this calculator work?</AccordionTrigger>
+                      <AccordionContent>
+                          This tool takes a starting date and adds or subtracts the exact number of days you specify to find the new date. It correctly handles month and year transitions, including leap years.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                      <AccordionTrigger>What is this useful for?</AccordionTrigger>
+                      <AccordionContent>
+                          It's perfect for scheduling appointments, setting deadlines, planning events, or tracking milestones. For example, you can quickly find out the date 90 days from today for a project deadline.
+                      </AccordionContent>
+                  </AccordionItem>
+              </Accordion>
           </CardContent>
         </Card>
       </div>

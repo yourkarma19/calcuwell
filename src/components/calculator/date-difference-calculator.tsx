@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 type Difference = {
   years: number;
@@ -104,6 +105,31 @@ export default function DateDifferenceCalculator() {
             </CardContent>
           </Card>
         )}
+        <Card>
+          <CardHeader><CardTitle>About the Date Difference Calculator</CardTitle></CardHeader>
+          <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                      <AccordionTrigger>How is the duration calculated?</AccordionTrigger>
+                      <AccordionContent>
+                          This calculator determines the total number of full units (like years, months, or days) that have passed between the start and end dates. For example, the "years" value shows only the total completed years.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                      <AccordionTrigger>What are some common uses for this calculator?</AccordionTrigger>
+                      <AccordionContent>
+                          This tool is useful for project management (to find a project's duration), event planning (to see how far away an event is), and for personal use, like calculating the time between significant life events.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                      <AccordionTrigger>Does this calculator account for leap years?</AccordionTrigger>
+                      <AccordionContent>
+                         Yes, the calculation is based on the actual number of days in each month and year, which inherently accounts for leap years, ensuring an accurate result for the total number of days, weeks, etc.
+                      </AccordionContent>
+                  </AccordionItem>
+              </Accordion>
+          </CardContent>
+        </Card>
       </div>
     </>
   );
