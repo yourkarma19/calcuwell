@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,6 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "../ui/input";
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  ChartContainer,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+} from "@/components/ui/chart";
 
 export default function MortgageCalculator() {
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
@@ -15,31 +21,44 @@ export default function MortgageCalculator() {
   const [propertyTax, setPropertyTax] = usePersistentState("mortgage-tax", 2000);
   const [homeInsurance, setHomeInsurance] = usePersistentState("mortgage-insurance", 1000);
 
-  const { monthlyPayment, totalPayable, totalInterest } = useMemo(() => {
+  const { monthlyPayment, totalPayable, totalInterest, principalAndInterest, monthlyTaxes, monthlyInsurance } = useMemo(() => {
     if (principal > 0 && rate > 0 && tenure > 0) {
       const monthlyRate = rate / 12 / 100;
       const numberOfMonths = tenure * 12;
       const P = principal;
 
-      const principalAndInterest = (P * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) / (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
+      const pAndI = (P * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) / (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
       
-      const monthlyTaxes = propertyTax / 12;
-      const monthlyInsurance = homeInsurance / 12;
+      const mTaxes = propertyTax / 12;
+      const mInsurance = homeInsurance / 12;
 
-      const totalMonthlyPayment = principalAndInterest + monthlyTaxes + monthlyInsurance;
+      const totalMonthlyPayment = pAndI + mTaxes + mInsurance;
 
       if (isFinite(totalMonthlyPayment)) {
         const totalPayableValue = totalMonthlyPayment * numberOfMonths;
-        const totalInterestValue = (principalAndInterest * numberOfMonths) - principal;
+        const totalInterestValue = (pAndI * numberOfMonths) - principal;
         return {
           monthlyPayment: totalMonthlyPayment,
           totalPayable: totalPayableValue,
           totalInterest: totalInterestValue,
+          principalAndInterest: pAndI,
+          monthlyTaxes: mTaxes,
+          monthlyInsurance: mInsurance,
         };
       }
     }
-    return { monthlyPayment: 0, totalPayable: 0, totalInterest: 0 };
+    return { monthlyPayment: 0, totalPayable: 0, totalInterest: 0, principalAndInterest: 0, monthlyTaxes: 0, monthlyInsurance: 0 };
   }, [principal, rate, tenure, propertyTax, homeInsurance]);
+  
+  const chartData = useMemo(() => ([
+      { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
+      { name: "Total Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
+  ]), [principal, totalInterest]);
+  
+  const chartConfig = {
+      principal: { label: "Principal", color: "hsl(var(--chart-1))" },
+      interest: { label: "Total Interest", color: "hsl(var(--chart-2))" },
+  };
 
   return (
     <>
@@ -86,6 +105,29 @@ export default function MortgageCalculator() {
             </div>
           </CardContent>
         </Card>
+        <Card>
+            <CardHeader><CardTitle>Loan Amortization</CardTitle></CardHeader>
+            <CardContent className="h-[25rem]">
+                <ChartContainer config={chartConfig} className="w-full h-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Tooltip
+                            cursor={false}
+                            content={<ChartTooltipContent 
+                                formatter={(value) => `₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
+                                />}
+                            />
+                            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="30%" outerRadius="80%" strokeWidth={5}>
+                                {chartData.map((entry) => (
+                                    <Cell key={entry.name} fill={entry.fill} />
+                                ))}
+                            </Pie>
+                            <ChartLegend content={<ChartLegendContent />} />
+                        </PieChart>
+                    </ResponsiveContainer>
+                </ChartContainer>
+            </CardContent>
+        </Card>
       </div>
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
@@ -97,14 +139,28 @@ export default function MortgageCalculator() {
               <p className="text-sm text-muted-foreground">Total Monthly Payment</p>
               <p className="text-4xl font-bold font-headline text-primary">₹ {monthlyPayment.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
             </div>
-            <div className="grid grid-cols-2 gap-4 text-center text-sm">
-                <div>
-                  <p className="text-muted-foreground">Total Interest</p>
-                  <p className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+            <div className="space-y-2 text-sm text-left border-t pt-2">
+                <div className="flex justify-between">
+                  <p className="text-muted-foreground">Principal & Interest</p>
+                  <p className="font-semibold">₹ {principalAndInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
                 </div>
-                <div>
-                  <p className="text-muted-foreground">Total Payment</p>
-                  <p className="font-semibold">₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                <div className="flex justify-between">
+                  <p className="text-muted-foreground">Property Tax</p>
+                  <p className="font-semibold">₹ {monthlyTaxes.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                </div>
+                <div className="flex justify-between">
+                  <p className="text-muted-foreground">Home Insurance</p>
+                  <p className="font-semibold">₹ {monthlyInsurance.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                </div>
+            </div>
+            <div className="space-y-2 text-sm text-left border-t pt-2">
+                 <div className="flex justify-between">
+                    <span className="text-muted-foreground">Total Interest Paid:</span>
+                    <span className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+                </div>
+                 <div className="flex justify-between font-bold">
+                    <span className="text-muted-foreground">Total Payment:</span>
+                    <span className="font-semibold">₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                 </div>
             </div>
           </CardContent>
