@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 const buttonLayout = [
   "AC", "+/-", "%", "/",
@@ -158,6 +159,14 @@ export default function BasicCalculator() {
     return { variant: "outline" as const, className: ""};
   };
 
+  const displayFontSize = () => {
+    const len = displayValue.length;
+    if (len > 16) return 'text-2xl';
+    if (len > 12) return 'text-3xl';
+    if (len > 8) return 'text-4xl';
+    return 'text-5xl';
+  };
+
   return (
     <div className="lg:col-span-3 max-w-sm mx-auto">
       <Card>
@@ -169,7 +178,10 @@ export default function BasicCalculator() {
             aria-label="Calculator display"
             value={displayValue} 
             readOnly 
-            className="h-20 text-5xl text-right font-mono pr-4 bg-background"
+            className={cn(
+              "h-20 text-right font-mono pr-4 bg-background",
+              displayFontSize()
+            )}
           />
           <div className="grid grid-cols-4 gap-2">
             {buttonLayout.map((btn) => {
