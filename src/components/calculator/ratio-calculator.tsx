@@ -5,6 +5,7 @@ import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Helper function to find the greatest common divisor
 const gcd = (a: number, b: number): number => b === 0 ? a : gcd(b, a % b);
@@ -74,6 +75,38 @@ export default function RatioCalculator() {
             <p className="text-4xl font-bold font-headline text-primary">
                 {simplifiedA} : {simplifiedB}
             </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader><CardTitle>About Ratios</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>What is a Ratio? A Simple Explanation with Examples</AccordionTrigger>
+                    <AccordionContent>
+                        A ratio compares two quantities. It shows how much of one thing there is compared to another. For example, if there are 8 girls and 12 boys, the ratio of girls to boys is 8:12, which can be simplified to 2:3.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>How to Simplify a Ratio</AccordionTrigger>
+                    <AccordionContent>
+                        To simplify a ratio, you find the largest number that both parts of the ratio can be divided by without a remainder. This is called the Greatest Common Divisor (GCD). For the ratio 16:9, the GCD is 1, so it's already in its simplest form. For 12:18, the GCD is 6, so it simplifies to 2:3.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>Understanding Aspect Ratios in Screens and Images (e.g., 16:9 vs 4:3)</AccordionTrigger>
+                    <AccordionContent>
+                        Aspect ratio describes the proportional relationship between the width and height of a screen or image. A 16:9 aspect ratio (common for TVs and monitors) means that for every 16 units of width, there are 9 units of height, creating a widescreen look. A 4:3 ratio is more squarish, common in older TVs.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                    <AccordionTrigger>Is a ratio the same as a fraction?</AccordionTrigger>
+                    <AccordionContent>
+                        They are closely related but not exactly the same. A fraction represents a part of a whole (e.g., 1/2 means one part out of two total parts). A ratio compares two different quantities (e.g., a ratio of 1:2 could mean 1 teacher for every 2 students). While the ratio A:B can be written as the fraction A/B, the context is different.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>
