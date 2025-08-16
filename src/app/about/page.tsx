@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | CalcPro",
+    title: "About CalcPro: Our Mission and Story",
     description: "Discover the story behind CalcPro. Learn about our mission to provide fast, comprehensive, and completely free online calculators for finance, health, math, and everyday use.",
     alternates: {
         canonical: "/about",
