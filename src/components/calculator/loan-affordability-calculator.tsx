@@ -3,7 +3,7 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -45,7 +45,10 @@ export default function LoanAffordabilityCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Financial Details</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Financial Details</CardTitle>
+            <CardDescription>Enter your financial details to estimate the loan amount you might be able to afford.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="annual-income">Annual Income</Label>

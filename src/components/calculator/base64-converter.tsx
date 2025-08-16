@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowUp } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function Base64Converter() {
     const [textInput, setTextInput] = usePersistentState("base64-text", "Hello World!");
@@ -48,7 +49,7 @@ export default function Base64Converter() {
     }
 
     return (
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 space-y-6">
             <Card>
                 <CardHeader>
                     <CardTitle>Base64 Encoder / Decoder</CardTitle>
@@ -83,6 +84,31 @@ export default function Base64Converter() {
                         />
                     </div>
                      {error && <p className="text-sm text-destructive">{error}</p>}
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader><CardTitle>About Base64 Encoding</CardTitle></CardHeader>
+                <CardContent>
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger>What is Base64 used for?</AccordionTrigger>
+                            <AccordionContent>
+                                Base64 is a method for encoding binary data (like images or files) into a text-based format. This is useful for transmitting data over media that are designed to handle text. Common uses include embedding images directly into HTML or CSS files (Data URIs) and sending attachments in emails.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger>Is Base64 an encryption method?</AccordionTrigger>
+                            <AccordionContent>
+                                No, Base64 is an encoding method, not an encryption method. It is easily reversible and does not provide any security. Its purpose is to ensure data remains intact without modification during transport, not to conceal it.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger>How does Base64 work?</AccordionTrigger>
+                            <AccordionContent>
+                                Base64 takes binary data, groups it into 6-bit chunks, and maps each chunk to one of 64 characters. The character set typically includes A-Z, a-z, 0-9, and two other symbols like '+' and '/'. The '=' character is used for padding at the end if needed.
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </CardContent>
             </Card>
         </div>

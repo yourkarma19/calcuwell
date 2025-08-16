@@ -26,6 +26,7 @@ import {
 import { Info } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const gradePoints: { [key: string]: number } = {
   A: 4.0, "A-": 3.7, "B+": 3.3, B: 3.0, "B-": 2.7, "C+": 2.3, C: 2.0, "C-": 1.7, "D+": 1.3, D: 1.0, F: 0.0,
@@ -188,11 +189,28 @@ export default function GpaCalculator({ setFormula }: { setFormula: (formula: st
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p><span className="font-semibold text-foreground">How it's calculated:</span> GPA is the sum of (Grade Points × Credit Hours) for all courses, divided by the total number of Credit Hours.</p>
-                </div>
+            <CardHeader><CardTitle>About GPA Calculation</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is GPA?</AccordionTrigger>
+                        <AccordionContent>
+                            GPA, or Grade Point Average, is a standard way of measuring academic achievement. It's a numerical representation of your average grade, weighted by the number of credits for each course.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How is GPA Calculated?</AccordionTrigger>
+                        <AccordionContent>
+                            Each letter grade is assigned a point value (e.g., A=4.0, B=3.0). This value is multiplied by the number of credits for that course to get the total "quality points." The sum of all quality points is then divided by the total number of credits to find the GPA.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>What is a "Weighted" vs. "Unweighted" GPA?</AccordionTrigger>
+                        <AccordionContent>
+                           An **unweighted GPA** is typically on a 4.0 scale, where an 'A' is always a 4.0. A **weighted GPA** gives extra points for more challenging classes, like Honors or AP courses. For example, an 'A' in an AP class might be worth 5.0 points. This calculator computes an unweighted GPA.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
             </CardContent>
         </Card>
       </div>

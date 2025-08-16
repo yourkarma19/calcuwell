@@ -221,6 +221,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Roman numerals and numbers.',
     category: 'Math',
     iconName: 'ArrowRightLeft',
+    seoTitle: 'Roman Numeral Converter | Numbers to Roman Numerals',
+    metaDescription: 'A fast and accurate Roman numeral converter. Easily translate numbers to Roman numerals and back. Includes conversion rules and examples.',
   },
 
   // Finance & Money
@@ -231,6 +233,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
+    seoTitle: 'Loan EMI Calculator | Equated Monthly Installment Tool',
+    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free and easy-to-use calculator. See how extra payments can reduce your loan tenure and save you interest.',
   },
   {
     slug: 'mortgage-calculator',
@@ -633,6 +637,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Convert between ASCII codes and text.',
     category: 'Programming',
     iconName: 'ArrowRightLeft',
+    seoTitle: 'ASCII to Text Converter (and back)',
+    metaDescription: 'Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with character encoding.',
   },
   {
     slug: 'base64-converter',
@@ -640,6 +646,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Encode and decode Base64 strings.',
     category: 'Programming',
     iconName: 'Binary',
+    seoTitle: 'Base64 Encoder and Decoder | Online Base64 Tool',
+    metaDescription: 'A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 for international characters.',
   },
   {
     slug: 'ip-subnet-calculator',
@@ -657,6 +665,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Generate a CRC-32 checksum for your text input.',
     category: 'Programming',
     iconName: 'Hash',
+    seoTitle: 'CRC-32 Hash Generator | Online Checksum Tool',
+    metaDescription: 'Generate a CRC-32 hash (checksum) for any string or text input. Our free online tool helps you verify data integrity quickly and easily.',
   },
   {
     slug: 'file-size-calculator',
@@ -680,6 +690,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     iconName: 'Circle',
+    seoTitle: 'Circle Calculator | Find Area, Circumference, Diameter',
+    metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas and explanations.',
   },
   {
     slug: 'triangle-area-calculator',
@@ -704,6 +716,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume of a cylinder.',
     category: 'Geometry & Engineering',
     iconName: 'Beaker',
+    seoTitle: 'Cylinder Volume & Surface Area Calculator',
+    metaDescription: 'Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Includes the formulas used.',
   },
   {
     slug: 'sphere-volume-surface-area-calculator',
@@ -711,6 +725,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume and surface area of a sphere.',
     category: 'Geometry & Engineering',
     iconName: 'Globe',
+    seoTitle: 'Sphere Volume & Surface Area Calculator',
+    metaDescription: 'Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses the standard geometric formulas for accurate results.',
   },
   {
     slug: 'cone-volume-calculator',
@@ -718,6 +734,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume of a cone.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
+    seoTitle: 'Cone Volume & Surface Area Calculator',
+    metaDescription: 'Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results with formulas.',
   },
   {
     slug: 'pythagorean-theorem-calculator',
@@ -808,6 +826,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Measure your words per minute typing speed.',
     category: 'Miscellaneous',
     iconName: 'Keyboard',
+    seoTitle: 'Typing Speed Test (WPM) | Check Your Words Per Minute',
+    metaDescription: 'Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts and get instant results.',
   },
   {
     slug: 'loan-affordability-calculator',
@@ -830,7 +850,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     name: 'Pet Age Calculator',
     description: 'Calculate your pet\'s age in human years.',
     category: 'Miscellaneous',
-iconName: 'Dog',
+    iconName: 'Dog',
+    seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human Years',
+    metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
 ];
 

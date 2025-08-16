@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { ArrowRightLeft } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Conversion logic
 const toRoman = (num: number): string => {
@@ -68,7 +69,7 @@ export default function RomanNumeralConverter() {
     };
 
     return (
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 space-y-6">
             <Card>
                 <CardHeader>
                     <CardTitle>Roman Numeral Converter</CardTitle>
@@ -97,6 +98,31 @@ export default function RomanNumeralConverter() {
                             />
                         </div>
                     </div>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader><CardTitle>About Roman Numerals</CardTitle></CardHeader>
+                <CardContent>
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger>How do Roman numerals work?</AccordionTrigger>
+                            <AccordionContent>
+                                Roman numerals use letters from the Latin alphabet to represent numbers. The main symbols are I (1), V (5), X (10), L (50), C (100), D (500), and M (1000). The values are combined to form larger numbers.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger>What is the subtractive principle?</AccordionTrigger>
+                            <AccordionContent>
+                                Usually, symbols are placed from left to right in order of value, starting with the largest. However, to avoid repeating a symbol four times (like IIII), a smaller value is placed before a larger one to subtract it. For example, 4 is written as IV (5 - 1), and 90 is written as XC (100 - 10).
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger>Why are Roman numerals still used today?</AccordionTrigger>
+                            <AccordionContent>
+                                Roman numerals are often used for stylistic purposes, such as on clock faces, for chapter numbers in books, in the names of monarchs (like Queen Elizabeth II), and for the Super Bowl. They add a sense of history and formality.
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </CardContent>
             </Card>
         </div>
