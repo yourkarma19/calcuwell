@@ -71,6 +71,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     iconName: 'FlaskConical',
     seoTitle: 'Advanced Online Scientific Calculator | Free & Easy to Use',
     metaDescription: 'Perform advanced calculations with our powerful online scientific calculator. Includes functions for trigonometry (sin, cos, tan), logarithms (log), exponents, and more.',
+    formula: 'Supports standard math functions like sin, cos, tan, log, sqrt, etc.'
   },
   {
     slug: 'percentage-calculator',

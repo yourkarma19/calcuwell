@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import { useSearchParams } from "next/navigation";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function VatGstCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
@@ -98,6 +99,31 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
               </div>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About VAT & GST</CardTitle></CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is VAT/GST?</AccordionTrigger>
+                        <AccordionContent>
+                            Value-Added Tax (VAT) or Goods and Services Tax (GST) is a consumption tax placed on a product whenever value is added at each stage of the supply chain, from production to the point of sale.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How to Calculate Tax</AccordionTrigger>
+                        <AccordionContent>
+                            To add tax to a net price, you multiply the price by the tax rate (as a decimal). For example, to add 18% tax to a ₹100 item, you calculate `100 * 0.18 = ₹18` in tax, for a total price of ₹118.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>How to Remove Tax from a Gross Price</AccordionTrigger>
+                        <AccordionContent>
+                           To find the original price before tax was added, divide the gross price by (1 + tax rate as a decimal). For example, if a product costs ₹118 with 18% tax included, the original price is `118 / (1 + 0.18) = ₹100`.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
 
