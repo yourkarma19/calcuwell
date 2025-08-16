@@ -159,14 +159,14 @@ export default function ScientificCalculator() {
         const result = precomputedResult !== undefined ? parseFloat(precomputedResult) : new Function('return ' + displayValue.replace(/\^/g, '**'))();
         
         if (result === undefined || isNaN(result) || !isFinite(result)) {
-            setExpression(displayValue + " =");
+            setExpression(displayValue);
             setDisplayValue("Error");
         } else {
-            setExpression(displayValue + " =");
+            setExpression(displayValue);
             setDisplayValue(result.toString());
         }
     } catch (error) {
-        setExpression(displayValue + " =");
+        setExpression(displayValue);
         setDisplayValue("Error");
     }
     setJustEvaluated(true);
