@@ -530,6 +530,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarClock',
     formula: 'Current Date - Date of Birth',
+    seoTitle: 'Age Calculator | How Old Am I? | Calculate Your Age',
+    metaDescription: 'Find your exact age in years, months, and days with our easy-to-use online age calculator. Simply enter your date of birth to get your detailed chronological age.',
   },
   {
     slug: 'date-difference-calculator',

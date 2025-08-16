@@ -10,6 +10,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateAge, Age } from "@/lib/math/date";
 import { useSearchParams } from "next/navigation";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 
 export default function AgeCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
@@ -41,6 +42,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
 
 
   return (
+    <>
     <div className="lg:col-span-2 space-y-6">
       <Card>
         <CardHeader>
@@ -87,6 +89,67 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
           </CardContent>
         </Card>
       )}
+
+      <Card>
+        <CardHeader><CardTitle>About the Age Calculator</CardTitle></CardHeader>
+        <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>How is age calculated?</AccordionTrigger>
+                    <AccordionContent>
+                        This calculator determines age by finding the total number of full years that have passed since your birth date. It then calculates the remaining months and, finally, the remaining days for a precise age breakdown.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>What is a chronological age calculator?</AccordionTrigger>
+                    <AccordionContent>
+                        A chronological age calculator is another term for this tool. It measures the time that has elapsed from a person's date of birth to the present date, providing the age in the standard format of years, months, and days.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>Can this calculator determine my age on a future date?</AccordionTrigger>
+                    <AccordionContent>
+                       Currently, this calculator is designed to find your age as of today. The "end date" is always the current date and cannot be changed.
+                    </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-4">
+                    <AccordionTrigger>Does this age calculator account for leap years?</AccordionTrigger>
+                    <AccordionContent>
+                       Yes, the calculation is based on the actual number of days in each month and year, which inherently accounts for leap years, ensuring an accurate result.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
+        </CardContent>
+      </Card>
     </div>
+
+    {age && (
+        <div className="lg:col-span-1">
+            <Card className="sticky top-24">
+            <CardHeader>
+                <CardTitle>Your Age</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center" aria-live="polite">
+                <div>
+                <div className="flex justify-center items-baseline gap-2">
+                    <p className="text-6xl font-bold font-headline text-primary">{age.years}</p>
+                    <p className="text-xl text-muted-foreground">Years</p>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-4 text-lg">
+                    <div className="text-center">
+                        <p className="font-bold font-headline">{age.months}</p>
+                        <p className="text-sm text-muted-foreground">Months</p>
+                    </div>
+                    <div className="text-center">
+                        <p className="font-bold font-headline">{age.days}</p>
+                        <p className="text-sm text-muted-foreground">Days</p>
+                    </div>
+                </div>
+                </div>
+            </CardContent>
+            </Card>
+        </div>
+    )}
+    </>
   );
 }
