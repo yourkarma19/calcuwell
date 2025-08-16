@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,139 +16,81 @@ const buttonLayout = [
 ];
 
 export default function BasicCalculator() {
+  const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
-  const [firstOperand, setFirstOperand] = useState<number | null>(null);
-  const [operator, setOperator] = useState<string | null>(null);
-  const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
   const [justEvaluated, setJustEvaluated] = useState(false);
 
+  const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
   const handleInput = (input: string) => {
-    if (["/", "*", "-", "+"].includes(input)) {
-      handleOperator(input);
+    if (justEvaluated && !isOperator(input) && input !== '.') {
+        setExpression(""); 
+        setDisplayValue(input);
+        setJustEvaluated(false);
+        return;
+    }
+    
+    if (displayValue === "Error") {
+        resetCalculator();
+        if(!isOperator(input)) setDisplayValue(input);
+        return;
+    }
+    
+    setJustEvaluated(false);
+
+    if (isOperator(input)) {
+        handleOperator(input);
     } else if (input === "=") {
       handleEquals();
     } else if (input === "AC") {
       resetCalculator();
-    } else if (input === ".") {
-      inputDecimal();
     } else if (input === "+/-") {
-      toggleSign();
+        setDisplayValue(prev => (parseFloat(prev) * -1).toString());
     } else if (input === "%") {
-      inputPercent();
+        setDisplayValue(prev => (parseFloat(prev) / 100).toString());
     } else {
-      inputDigit(input);
-    }
-  };
-
-  const inputDigit = (digit: string) => {
-    if(justEvaluated) {
-      setDisplayValue(digit);
-      setJustEvaluated(false);
-      return;
-    }
-    if (waitingForSecondOperand) {
-      setDisplayValue(digit);
-      setWaitingForSecondOperand(false);
-    } else {
-      setDisplayValue(displayValue === "0" ? digit : displayValue + digit);
-    }
-  };
-
-  const inputDecimal = () => {
-     if (justEvaluated) {
-      setDisplayValue("0.");
-      setJustEvaluated(false);
-      return;
-    }
-    if (waitingForSecondOperand) {
-      setDisplayValue("0.");
-      setWaitingForSecondOperand(false);
-      return;
-    }
-    if (!displayValue.includes(".")) {
-      setDisplayValue(displayValue + ".");
-    }
-  };
-  
-  const handleOperator = (nextOperator: string) => {
-    const inputValue = parseFloat(displayValue);
-
-    if (displayValue === "Error") {
-        resetCalculator();
-        return;
-    }
-    
-    if(operator && waitingForSecondOperand) {
-        setOperator(nextOperator);
-        return;
-    }
-
-    if (firstOperand === null) {
-      setFirstOperand(inputValue);
-    } else if (operator) {
-      const result = performCalculation();
-      if (typeof result === "string") {
-        setDisplayValue(result);
-        setJustEvaluated(true);
-        setFirstOperand(null);
-        setOperator(null);
-        setWaitingForSecondOperand(false);
-        return;
+      if(displayValue === "0" && input !== '.'){
+        setDisplayValue(input);
+      } else {
+        setDisplayValue(prev => prev + input);
       }
-      setDisplayValue(String(result));
-      setFirstOperand(result);
     }
-
-    setWaitingForSecondOperand(true);
-    setOperator(nextOperator);
-    setJustEvaluated(false);
   };
-  
-  const performCalculation = () => {
-      if(firstOperand === null || operator === null) return parseFloat(displayValue);
 
-      const currentValue = parseFloat(displayValue);
-      const calculations: {[key: string]: (a: number, b: number) => number} = {
-        "/": (a, b) => {
-            if (b === 0) return Infinity;
-            return a / b;
-        },
-        "*": (a, b) => a * b,
-        "-": (a, b) => a - b,
-        "+": (a, b) => a + b,
-      };
-      
-      const result = calculations[operator](firstOperand, currentValue);
-      return isFinite(result) ? result : "Error";
-  }
+  const handleOperator = (op: string) => {
+    if (displayValue !== "Error" && displayValue !== "0") {
+        const lastChar = displayValue.slice(-1);
+        if (isOperator(lastChar)) {
+            setDisplayValue(prev => prev.slice(0, -1) + op);
+        } else {
+            setDisplayValue(prev => prev + op);
+        }
+    }
+  };
 
   const handleEquals = () => {
-    if(!operator || firstOperand === null || justEvaluated) return;
-    const result = performCalculation();
-    setDisplayValue(String(result));
-    setFirstOperand(null);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
+    try {
+        const currentExpression = displayValue;
+        // Use Function constructor for safe evaluation
+        const result = new Function('return ' + currentExpression.replace(/[^-()\d/*+.]/g, ''))();
+        
+        if (result === undefined || !isFinite(result)) {
+            setExpression(currentExpression);
+            setDisplayValue("Error");
+        } else {
+            setExpression(currentExpression);
+            setDisplayValue(result.toString());
+        }
+    } catch (error) {
+        setExpression(displayValue);
+        setDisplayValue("Error");
+    }
     setJustEvaluated(true);
   };
   
-  const toggleSign = () => {
-    if(displayValue !== "Error") setDisplayValue(String(parseFloat(displayValue) * -1));
-  };
-  
-  const inputPercent = () => {
-       if(displayValue !== "Error") {
-            const currentValue = parseFloat(displayValue);
-            setDisplayValue(String(currentValue / 100));
-       }
-  }
-
   const resetCalculator = () => {
+    setExpression("");
     setDisplayValue("0");
-    setFirstOperand(null);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
     setJustEvaluated(false);
   };
   
@@ -174,15 +116,18 @@ export default function BasicCalculator() {
           <CardTitle>Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Input
-            aria-label="Calculator display"
-            value={displayValue} 
-            readOnly 
-            className={cn(
-              "h-20 text-right font-mono pr-4 bg-background",
-              displayFontSize()
-            )}
-          />
+           <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
+            <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || " "}</div>
+            <Input
+              aria-label="Calculator display"
+              value={displayValue} 
+              readOnly 
+              className={cn(
+                "h-2/3 text-right font-mono p-0 border-0 bg-transparent text-6xl",
+                displayFontSize()
+              )}
+            />
+          </div>
           <div className="grid grid-cols-4 gap-2">
             {buttonLayout.map((btn) => {
               const { variant, className } = getButtonClass(btn);
