@@ -98,7 +98,7 @@ export default function CalorieNeedsCalculator() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>What is BMR?</AccordionTrigger>
                 <AccordionContent>
-                  Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic life-sustaining functions, like breathing and circulation, while at rest.
+                  Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic life-sustaining functions, like breathing and circulation, while at rest. You can calculate your BMR with our <a href="/calculators/bmr-calculator" className="text-primary underline">BMR Calculator</a>.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
