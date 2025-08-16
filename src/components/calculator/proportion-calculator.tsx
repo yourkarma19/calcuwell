@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function ProportionCalculator() {
   const [valA, setValA] = usePersistentState("proportion-a", 1);
@@ -56,7 +57,7 @@ export default function ProportionCalculator() {
 
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
             <CardTitle>Proportion Calculator</CardTitle>
@@ -81,6 +82,38 @@ export default function ProportionCalculator() {
             </div>
           </div>
         </CardContent>
+      </Card>
+
+      <Card>
+          <CardHeader><CardTitle>About Proportions</CardTitle></CardHeader>
+          <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                      <AccordionTrigger>What is a Proportion?</AccordionTrigger>
+                      <AccordionContent>
+                          A proportion is an equation stating that two ratios are equal. For example, the ratio 1/2 is equal to the ratio 2/4. This would be written as 1/2 = 2/4. Proportions are used to solve for an unknown value when you have a known ratio.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                      <AccordionTrigger>How to Solve Proportions Using Cross-Multiplication</AccordionTrigger>
+                      <AccordionContent>
+                          Cross-multiplication is the method used to solve a proportion. If you have the proportion A/B = C/D, you multiply the numerator of the first fraction by the denominator of the second (A * D), and the numerator of the second fraction by the denominator of the first (C * B). These two products are equal. So, A * D = C * B. You can then solve for the missing value.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                      <AccordionTrigger>Real-World Examples of Proportions</AccordionTrigger>
+                      <AccordionContent>
+                          Proportions are used everywhere in daily life. Examples include scaling a recipe up or down (if a recipe for 4 people needs 2 cups of flour, how much for 6 people?), reading a map scale (if 1 inch equals 10 miles), or calculating fuel consumption for a trip.
+                      </AccordionContent>
+                  </AccordionItem>
+                   <AccordionItem value="item-4">
+                      <AccordionTrigger>How are ratios and proportions related?</AccordionTrigger>
+                      <AccordionContent>
+                          A ratio is a comparison of two numbers (e.g., A:B or A/B). A proportion is a statement that two ratios are equal (e.g., A/B = C/D). A proportion is essentially an equation made of two equal ratios.
+                      </AccordionContent>
+                  </AccordionItem>
+              </Accordion>
+          </CardContent>
       </Card>
     </div>
   );

@@ -114,6 +114,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Solve proportions and find missing values.',
     category: 'Math',
     iconName: 'Variable',
+    seoTitle: 'Proportion Calculator | Solve Proportions & Find Missing Values',
+    metaDescription: 'An easy-to-use proportion calculator that helps you solve for the missing value (x) in a proportion. Understand cross-multiplication with step-by-step examples.',
   },
   {
     slug: 'mean-median-mode-calculator',
@@ -121,6 +123,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Find the average, middle, and most frequent values.',
     category: 'Math',
     iconName: 'Sigma',
+    seoTitle: 'Mean, Median, & Mode Calculator | Find the Average of a Data Set',
+    metaDescription: 'Quickly find the mean, median, mode, and range of any data set. Our calculator explains each measure of central tendency to help you understand your data.',
   },
   {
     slug: 'standard-deviation-calculator',
@@ -128,6 +132,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the standard deviation of a data set.',
     category: 'Math',
     iconName: 'Sigma',
+    seoTitle: 'Standard Deviation Calculator | Calculate Variance & SD',
+    metaDescription: 'A powerful calculator to find the standard deviation, variance, and mean of a sample or population data set. Includes formulas and step-by-step explanations.',
   },
   {
     slug: 'probability-calculator',
@@ -135,6 +141,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the probability of events.',
     category: 'Math',
     iconName: 'Beaker',
+    seoTitle: 'Probability Calculator | Find the Likelihood of Events',
+    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use probability calculator. Perfect for solving homework problems involving dice, coins, and more.',
   },
   {
     slug: 'permutation-combination-calculator',
@@ -142,6 +150,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     iconName: 'Sigma',
+    seoTitle: 'Permutation & Combination Calculator | nPr & nCr Formulas',
+    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Our tool helps you understand the key difference: whether the order of selection matters.',
   },
   {
     slug: 'factorial-calculator',
@@ -149,7 +159,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the factorial of a number.',
     category: 'Math',
     iconName: 'Variable',
-    formula: 'n!'
+    formula: 'n!',
+    seoTitle: 'Factorial Calculator | Find the Factorial of Any Number (n!)',
+    metaDescription: 'An online factorial calculator that quickly finds the factorial (n!) of any non-negative integer. Includes the factorial formula and an explanation of zero factorial.',
   },
   {
     slug: 'lcm-gcd-calculator',
@@ -773,7 +785,7 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     name: 'Pet Age Calculator',
     description: 'Calculate your pet\'s age in human years.',
     category: 'Miscellaneous',
-    iconName: 'Dog',
+iconName: 'Dog',
   },
 ];
 
