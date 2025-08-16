@@ -81,6 +81,26 @@
   }
 }
 
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.celebrate .heart {
+  position: absolute;
+  bottom: 0;
+  color: hsl(var(--primary));
+  animation: rise 5s ease-in forwards;
+  pointer-events: none;
+}
+
+
 @media print {
   header, footer, .no-print {
     display: none !important;
@@ -111,3 +131,5 @@
     print-color-adjust: exact;
   }
 }
+
+    

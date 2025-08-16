@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Heart } from "lucide-react";
 
 const buttonLayout = [
   "AC", "+/-", "%", "/",
@@ -50,6 +51,8 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   const [isClient, setIsClient] = useState(false);
   const [justEvaluated, setJustEvaluated] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
+  const [isCelebrating, setIsCelebrating] = useState(false);
+
 
   useEffect(() => {
     setIsClient(true);
@@ -129,8 +132,8 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
             case '(': currentDisplay += '('; break;
             case ')': currentDisplay += ')'; break;
             case 'mc': setMemory(0); return;
-            case 'm+': setMemory(prev => prev + parseFloat(displayValue)); return;
-            case 'm-': setMemory(prev => prev - parseFloat(displayValue)); return;
+            case 'm+': setMemory(prev => prev + value); return;
+            case 'm-': setMemory(prev => prev - value); return;
             case 'mr': setDisplayValue(memory.toString()); return;
             case 'x²': handleEquals(Math.pow(value, 2).toString()); return;
             case 'x³': handleEquals(Math.pow(value, 3).toString()); return;
@@ -189,6 +192,16 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
 
 
   const handleEquals = (precomputedResult?: string) => {
+    // Easter Egg
+    if (displayValue.replace(/\s/g, '') === '12082007+19112005') {
+        setExpression(displayValue);
+        setDisplayValue('I ❤️ You');
+        setIsCelebrating(true);
+        setTimeout(() => setIsCelebrating(false), 5000); // Stop celebrating after 5 seconds
+        setJustEvaluated(true);
+        return;
+    }
+    
     try {
         let result;
         if (precomputedResult !== undefined) {
@@ -241,7 +254,6 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
         } else if (key === '(' || key === ')') {
             handleScientificInput(key);
         }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayValue, justEvaluated]);
 
   useEffect(() => {
@@ -255,6 +267,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   
   const displayFontSize = () => {
     const len = displayValue.length;
+    if (displayValue === "I ❤️ You") return 'text-4xl'
     if (len > 16) return 'text-2xl';
     if (len > 12) return 'text-3xl';
     if (len > 8) return 'text-4xl';
@@ -262,9 +275,10 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   };
 
   return (
-    <div className="lg:col-span-3 max-w-2xl mx-auto space-y-6">
+    <div className="lg:col-span-3 max-w-2xl mx-auto space-y-6 relative">
        <TooltipProvider>
-      <Card>
+      <Card className={cn(isCelebrating && "celebrate")}>
+        {isCelebrating && Array.from({length: 10}).map((_, i) => <Heart key={i} className="heart" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }}/>)}
         <CardHeader>
           <CardTitle>Scientific Calculator</CardTitle>
         </CardHeader>
@@ -275,7 +289,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
               data-testid="main-display"
               aria-label="Calculator display"
               className={cn(
-                "font-mono h-2/3 w-full text-right break-all",
+                "font-mono h-2/3 w-full text-right break-all flex items-center justify-end",
                 displayFontSize()
               )}
             >
