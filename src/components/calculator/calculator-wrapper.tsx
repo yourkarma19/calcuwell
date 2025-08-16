@@ -1,3 +1,4 @@
+
 import type { ReactNode } from "react";
 import type { Calculator } from "@/lib/types";
 import FormulaExplainer from "./formula-explainer";
@@ -5,6 +6,7 @@ import { Icon } from "@/components/ui/icon";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { categories } from "@/lib/calculators";
+import React from 'react';
 
 interface CalculatorWrapperProps {
   children: (setFormula: (formula: string) => void) => ReactNode;
