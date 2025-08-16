@@ -150,6 +150,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     iconName: 'Sigma',
+    seoTitle: 'Permutation & Combination Calculator | nPr & nCr Formulas',
+    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Our tool helps you understand the key difference: whether the order of selection matters.',
   },
   {
     slug: 'factorial-calculator',
