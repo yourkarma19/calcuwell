@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -8,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Info } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const activityLevels = {
   sedentary: 1.0,
@@ -88,12 +90,29 @@ export default function WaterIntakeCalculator() {
           </CardContent>
         </Card>
         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This is a general guideline. Individual needs can vary based on climate, health conditions, and diet. Always consult a healthcare professional for personalized advice.</p>
-                </div>
-            </CardContent>
+          <CardHeader><CardTitle>About Water Intake</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Why is staying hydrated important?</AccordionTrigger>
+                <AccordionContent>
+                  Water is essential for nearly every bodily function, including regulating body temperature, lubricating joints, preventing infections, delivering nutrients to cells, and keeping organs functioning properly.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Do other drinks count towards my water intake?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, other beverages like milk, juice, and herbal teas are composed mostly of water and contribute to your daily intake. Even foods with high water content, like fruits and vegetables, help with hydration.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Disclaimer</AccordionTrigger>
+                <AccordionContent>
+                  This is a general guideline. Individual needs can vary based on climate, health conditions, and diet. Always consult a healthcare professional for personalized advice.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
       </div>
 

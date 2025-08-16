@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function ComplexNumberCalculator() {
   const [real1, setReal1] = usePersistentState("complex-real1", 3);
@@ -48,7 +49,7 @@ export default function ComplexNumberCalculator() {
   };
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Complex Number Calculator</CardTitle>
@@ -84,6 +85,19 @@ export default function ComplexNumberCalculator() {
             <h3 className="text-lg font-semibold">Result</h3>
             <p className="text-3xl font-bold font-mono text-primary">{formatResult()}</p>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Complex Numbers</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is a complex number?</AccordionTrigger>
+              <AccordionContent>
+                A complex number is a number that can be expressed in the form `a + bi`, where `a` and `b` are real numbers, and `i` is the imaginary unit, which satisfies the equation `i² = -1`.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

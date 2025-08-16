@@ -1,9 +1,11 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function ExponentPowerCalculator() {
   const [base, setBase] = useState(2);
@@ -53,6 +55,19 @@ export default function ExponentPowerCalculator() {
                 />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Exponents</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is an exponent?</AccordionTrigger>
+                <AccordionContent>
+                  An exponent refers to the number of times a number (the base) is multiplied by itself. For example, in 2⁴, 2 is the base and 4 is the exponent, meaning 2 is multiplied by itself 4 times (2x2x2x2).
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

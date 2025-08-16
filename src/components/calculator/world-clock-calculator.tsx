@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -10,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const majorTimezones = [
   { city: "New York", tz: "America/New_York" },
@@ -73,6 +75,19 @@ export default function WorldClock() {
                     </Card>
                 ))}
             </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About World Clocks</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>How does this work?</AccordionTrigger>
+              <AccordionContent>
+                This world clock uses your device's local time and the standard `Intl.DateTimeFormat` API in JavaScript to calculate and display the current time in various time zones.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 interface TimeLeft {
   days: number;
@@ -94,6 +95,19 @@ export default function CountdownTimer() {
           ) : (
             <div className="text-center text-muted-foreground">Calculating...</div>
           )}
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Countdown Timers</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What can I use a countdown timer for?</AccordionTrigger>
+              <AccordionContent>
+                Countdown timers are great for building anticipation for events like holidays, birthdays, product launches, or vacations. They can also be used as a personal reminder for important deadlines.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

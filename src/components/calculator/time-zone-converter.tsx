@@ -9,6 +9,7 @@ import { ArrowRightLeft } from "lucide-react";
 import { DatePicker } from "../ui/date-picker";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const timezones = [
   // Americas
@@ -125,6 +126,19 @@ export default function TimeZoneConverter() {
               <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg sm:h-20" aria-live="polite"/>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Time Zones</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is UTC?</AccordionTrigger>
+              <AccordionContent>
+                Coordinated Universal Time (UTC) is the primary time standard by which the world regulates clocks and time. It is not a time zone itself but a time standard that is the basis for civil time and time zones worldwide.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

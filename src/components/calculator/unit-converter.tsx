@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { ArrowRightLeft } from "lucide-react";
 import { Button } from "../ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const units = {
   length: { meter: 1, kilometer: 1000, centimeter: 0.01, millimeter: 0.001, mile: 1609.34, yard: 0.9144, foot: 0.3048, inch: 0.0254 },
@@ -74,7 +76,7 @@ export default function UnitConverter() {
   const currentUnits = units[conversionType];
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Universal Unit Converter</CardTitle>
@@ -125,6 +127,25 @@ export default function UnitConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>About Unit Conversion</CardTitle></CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What are base units?</AccordionTrigger>
+              <AccordionContent>
+                In the International System of Units (SI), most units are derived from seven base units. This calculator uses a base unit for each conversion type (e.g., meter for length) to convert between all other units accurately.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Temperature Conversion</AccordionTrigger>
+              <AccordionContent>
+                Temperature conversion between Celsius, Fahrenheit, and Kelvin is not a simple multiplication. It involves different formulas. For example, to convert Celsius to Fahrenheit, the formula is `(°C × 9/5) + 32 = °F`.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

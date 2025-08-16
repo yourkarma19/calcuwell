@@ -1,11 +1,13 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Using Robinson Formula (1983)
 const calculateIdealWeight = (heightCm: number, gender: "male" | "female") => {
@@ -47,6 +49,7 @@ export default function IdealWeightCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Enter Your Details</CardTitle>
+            <CardDescription>Calculate your ideal body weight based on your height and gender using the Robinson formula.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -76,6 +79,25 @@ export default function IdealWeightCalculator() {
                 placeholder="e.g., 175"
               />
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Ideal Weight</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is "ideal weight"?</AccordionTrigger>
+                <AccordionContent>
+                  Ideal body weight is a concept that suggests there is a weight range that is healthiest for a person based on their height and gender. It's important to remember that these formulas provide an estimate, and a healthy weight can vary between individuals.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is the Robinson Formula?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator uses the Robinson formula (1983), which is one of several common methods to estimate ideal body weight. Other formulas include the Devine, Miller, and Hamwi formulas, which may give slightly different results.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

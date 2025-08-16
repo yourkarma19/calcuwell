@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -5,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function BusinessProfitMarginCalculator() {
   const [revenue, setRevenue] = usePersistentState("pm-revenue", 100000);
@@ -39,11 +41,11 @@ export default function BusinessProfitMarginCalculator() {
   const formatCurrency = (value: number) => `₹${value.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
 
   return (
-    <div className="lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Business Financials</CardTitle>
-          <CardDescription>Enter your revenue and expense details.</CardDescription>
+          <CardDescription>Enter your revenue and expense details to calculate gross, operating, and net profit margins.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -88,6 +90,25 @@ export default function BusinessProfitMarginCalculator() {
           </div>
         </CardContent>
       </Card>
+      <Card>
+          <CardHeader><CardTitle>About Profit Margins</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Gross vs. Operating vs. Net Margin</AccordionTrigger>
+                <AccordionContent>
+                  **Gross Margin** shows the profit after accounting for the direct costs of producing goods (COGS). **Operating Margin** shows the profit after COGS and operating expenses (like rent and marketing) are deducted. **Net Margin** is the final profit after all expenses, including interest and taxes, have been paid.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is a good profit margin?</AccordionTrigger>
+                <AccordionContent>
+                  A "good" profit margin varies widely by industry. A 10% net profit margin is often considered average, while a 20% margin is considered high, and a 5% margin is low. It's best to compare your margins to other businesses in your specific industry.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
     </div>
   );
 }

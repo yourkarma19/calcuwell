@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function StockProfitLossCalculator() {
   const [buyPrice, setBuyPrice] = usePersistentState("stock-buy-price", 100);
@@ -66,6 +67,25 @@ export default function StockProfitLossCalculator() {
                 <Input id="sell-commission" type="number" value={sellCommission} onChange={e => setSellCommission(Number(e.target.value))} />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Stock Calculations</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>How is the total profit or loss calculated?</AccordionTrigger>
+                <AccordionContent>
+                  The total profit or loss is calculated by subtracting the total cost from the total proceeds. The total cost includes the price of the shares plus any buying commissions, and the total proceeds are the selling price minus any selling commissions.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What are commissions and how do they affect my return?</AccordionTrigger>
+                <AccordionContent>
+                  Commissions are fees charged by your broker for executing a trade. They are a direct cost of trading and reduce your overall profit. It's important to include them in your calculation for an accurate picture of your return.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

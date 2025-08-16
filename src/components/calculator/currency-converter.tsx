@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -8,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRightLeft, Info } from "lucide-react";
 import { Button } from "../ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const currencies = {
     USD: "United States Dollar",
@@ -109,13 +111,30 @@ export default function CurrencyConverter() {
         </CardContent>
       </Card>
       <Card>
-        <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-            <Info className="w-5 h-5 mt-1 shrink-0" />
-            <div>
-                <p>Disclaimer: The exchange rates used in this calculator are for informational purposes only and are based on mock data. They do not reflect real-time market values. For actual transactions, please consult a financial institution.</p>
-            </div>
-        </CardContent>
-      </Card>
+          <CardHeader><CardTitle>About Currency Conversion</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is an exchange rate?</AccordionTrigger>
+                <AccordionContent>
+                  An exchange rate is the value of one currency for the purpose of conversion to another. For example, if the USD to INR exchange rate is 83, it means 1 US Dollar is worth 83 Indian Rupees.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Why do exchange rates change?</AccordionTrigger>
+                <AccordionContent>
+                  Exchange rates fluctuate constantly due to a variety of economic and political factors, including interest rates, inflation, trade balances, and geopolitical events.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Disclaimer</AccordionTrigger>
+                <AccordionContent>
+                  The exchange rates used in this calculator are for informational purposes only and are based on mock data. They do not reflect real-time market values. For actual transactions, please consult a financial institution.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
     </div>
   );
 }

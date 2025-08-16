@@ -1,9 +1,11 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function SquareRootCubeRootCalculator() {
   const [number, setNumber] = useState(27);
@@ -41,6 +43,25 @@ export default function SquareRootCubeRootCalculator() {
                 onChange={(e) => setNumber(Number(e.target.value))}
               />
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Roots</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is a square root?</AccordionTrigger>
+                <AccordionContent>
+                  A square root of a number is a value that, when multiplied by itself, gives the original number. For example, the square root of 9 is 3.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is a cube root?</AccordionTrigger>
+                <AccordionContent>
+                  A cube root of a number is a value that, when multiplied by itself three times, gives the original number. For example, the cube root of 27 is 3.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

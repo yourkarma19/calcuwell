@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function DiscountCalculator() {
   const [originalPrice, setOriginalPrice] = usePersistentState("discount-price", 100);
@@ -44,6 +45,25 @@ export default function DiscountCalculator() {
                  <Input type="number" value={discount} onChange={e => setDiscount(Number(e.target.value))} className="w-24" />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Discounts</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>How is the final price calculated?</AccordionTrigger>
+                <AccordionContent>
+                  First, the discount amount is calculated by converting the percentage to a decimal and multiplying it by the original price. This amount is then subtracted from the original price to get the final sale price.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How do you calculate a discount in your head?</AccordionTrigger>
+                <AccordionContent>
+                  A quick way is to use the 10% method. Find 10% of the price by moving the decimal one place to the left. For a 20% discount, double that amount. For a 25% discount, find 10%, double it (for 20%), and add half of the 10% amount (for 5%).
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

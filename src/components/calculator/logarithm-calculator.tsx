@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function LogarithmCalculator() {
   const [number, setNumber] = usePersistentState("log-number", 100);
@@ -54,6 +55,25 @@ export default function LogarithmCalculator() {
                 />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Logarithms</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is a logarithm?</AccordionTrigger>
+                <AccordionContent>
+                  A logarithm is the power to which a number (the base) must be raised to get another number. For example, the logarithm of 100 to base 10 is 2, because 10² = 100.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Common Log vs. Natural Log</AccordionTrigger>
+                <AccordionContent>
+                  The **common logarithm (log)** has a base of 10. The **natural logarithm (ln)** has a base of *e* (Euler's number, approximately 2.718).
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

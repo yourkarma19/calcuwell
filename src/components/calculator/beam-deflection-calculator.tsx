@@ -6,6 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Simple cantilever beam with a point load at the end
 export default function BeamDeflectionCalculator() {
@@ -57,6 +58,28 @@ export default function BeamDeflectionCalculator() {
                 <Input id="inertia" type="number" value={inertia} onChange={e => setInertia(Number(e.target.value))} step="1e-7" />
               </div>
             </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Beam Deflection</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is beam deflection?</AccordionTrigger>
+                <AccordionContent>
+                  Beam deflection is the degree to which a structural element is displaced under a load. It is a critical factor in structural engineering for ensuring the safety and functionality of a structure.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What do the variables mean?</AccordionTrigger>
+                <AccordionContent>
+                  - **Load (P):** The force applied to the beam.
+                  - **Length (L):** The total length of the beam.
+                  - **Modulus of Elasticity (E):** A measure of the material's stiffness.
+                  - **Area Moment of Inertia (I):** A property of a beam's cross-sectional shape that determines its resistance to bending.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

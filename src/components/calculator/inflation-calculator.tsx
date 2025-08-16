@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -6,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Info } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 // Note: In a real-world application, this data would come from an API.
 const MOCK_INFLATION_RATES: { [year: number]: number } = {
@@ -87,13 +89,30 @@ export default function InflationCalculator() {
             </div>
           </CardContent>
         </Card>
-         <Card>
-            <CardContent className="pt-6 text-sm text-muted-foreground flex items-start gap-4">
-                <Info className="w-5 h-5 mt-1 shrink-0" />
-                <div>
-                    <p>This calculator uses historical mock inflation data for demonstration. In a real-world scenario, this data would be fetched from a reliable economic data source.</p>
-                </div>
-            </CardContent>
+        <Card>
+          <CardHeader><CardTitle>About Inflation</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is inflation?</AccordionTrigger>
+                <AccordionContent>
+                  Inflation is the rate at which the general level of prices for goods and services is rising, and subsequently, purchasing power is falling. For example, if the inflation rate is 2%, then a ₹100 item will cost ₹102 next year.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How does this calculator work?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator uses historical inflation rate data to adjust the value of money over time. It compounds the inflation rate for each year in the selected range to find the equivalent value.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Disclaimer</AccordionTrigger>
+                <AccordionContent>
+                  This calculator uses historical mock inflation data for demonstration. In a real-world scenario, this data would be fetched from a reliable economic data source.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
         </Card>
       </div>
       <div className="lg:col-span-1">

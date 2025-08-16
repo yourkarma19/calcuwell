@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function OvulationCalculator() {
   const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', new Date(), (value) => value ? new Date(value) : undefined);
@@ -54,6 +55,31 @@ export default function OvulationCalculator() {
               />
             </div>
             <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is an estimate. For accurate predictions, track your cycle and consult a healthcare provider.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About Ovulation & Fertility</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is ovulation?</AccordionTrigger>
+                <AccordionContent>
+                  Ovulation is the release of an egg from one of your ovaries. This typically happens about 14 days before the start of your next period.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is a fertile window?</AccordionTrigger>
+                <AccordionContent>
+                  The fertile window is the time in your menstrual cycle when you are most likely to get pregnant. It includes the five days leading up to ovulation and the day of ovulation itself.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>How accurate is this calculator?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator provides an estimate based on average cycle lengths. However, individual cycles can vary. For more accuracy, consider tracking your basal body temperature and using ovulation predictor kits.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

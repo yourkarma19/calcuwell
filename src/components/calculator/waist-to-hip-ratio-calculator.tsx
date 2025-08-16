@@ -3,12 +3,13 @@
 
 import { useState, useMemo } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const whrCategories = {
     male: [
@@ -53,7 +54,10 @@ export default function WaistToHipRatioCalculator() {
     <>
       <div className="lg:col-span-2 space-y-6">
         <Card>
-          <CardHeader><CardTitle>Enter Your Measurements (cm)</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Enter Your Measurements (cm)</CardTitle>
+            <CardDescription>Calculate your Waist-to-Hip Ratio and understand its health implications.</CardDescription>
+          </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label>Gender</Label>
@@ -104,6 +108,25 @@ export default function WaistToHipRatioCalculator() {
                 </TableBody>
             </Table>
             <p className="text-xs text-muted-foreground mt-2">Waist-to-Hip Ratio (WHR) is an indicator of health risk associated with fat distribution. A higher ratio indicates more abdominal fat, which is linked to a higher risk of cardiovascular disease.</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>About WHR</CardTitle></CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What does WHR indicate?</AccordionTrigger>
+                <AccordionContent>
+                  Waist-to-Hip Ratio is a measurement of fat distribution. A higher WHR suggests more fat is stored around the abdomen (an "apple" body shape), which is linked to a higher risk of conditions like heart disease and type 2 diabetes compared to fat stored on the hips (a "pear" body shape).
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How to measure waist and hip circumference correctly</AccordionTrigger>
+                <AccordionContent>
+                  For an accurate measurement, use a flexible tape measure. Measure your waist at the narrowest point, usually just above the belly button. Measure your hips at the widest part of your buttocks.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>
