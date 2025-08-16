@@ -14,14 +14,18 @@ import {
   ChartLegend,
   ChartLegendContent,
 } from "@/components/ui/chart";
-import { calculateEMI } from "@/lib/math/loan-emi";
+import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 import { useSearchParams } from "next/navigation";
+import { Info } from "lucide-react";
+import { format } from "path";
 
 export default function LoanEMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
   const [tenure, setTenure] = usePersistentState("loan-tenure", 5);
+  const [extraMonthlyPayment, setExtraMonthlyPayment] = usePersistentState("loan-extra-monthly", 0);
+  const [extraYearlyPayment, setExtraYearlyPayment] = usePersistentState("loan-extra-yearly", 0);
 
   useEffect(() => {
     const p = searchParams.get('principal');
@@ -36,7 +40,16 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
   const { emi, totalPayable, totalInterest } = useMemo(() => {
     return calculateEMI(principal, rate, tenure);
   }, [principal, rate, tenure]);
+
+  const { newTotalInterest, newTotalMonths, interestSaved, timeSaved } = useMemo(() => {
+    if (extraMonthlyPayment > 0 || extraYearlyPayment > 0) {
+      return calculateEMIWithExtraPayments(principal, rate, tenure, extraMonthlyPayment, extraYearlyPayment);
+    }
+    return { newTotalInterest: 0, newTotalMonths: 0, interestSaved: 0, timeSaved: { years: 0, months: 0 }};
+  }, [principal, rate, tenure, extraMonthlyPayment, extraYearlyPayment]);
   
+  const originalTotalMonths = tenure * 12;
+
   const chartData = useMemo(() => ([
       { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
       { name: "Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
@@ -51,6 +64,16 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
         label: "Interest",
         color: "hsl(var(--chart-2))",
       },
+  }
+
+  const formatCurrency = (value: number) => {
+    return `₹${value.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
+  };
+  
+  const formatTime = (totalMonths: number) => {
+      const years = Math.floor(totalMonths / 12);
+      const months = totalMonths % 12;
+      return `${years} yr, ${months} mo`;
   }
 
   return (
@@ -105,6 +128,18 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
                 <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
             </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
+              <div className="space-y-2">
+                <Label htmlFor="extra-monthly">Extra Monthly Payment</Label>
+                <Input type="number" value={extraMonthlyPayment} onChange={e => setExtraMonthlyPayment(Number(e.target.value))} className="w-full" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="extra-yearly">Extra Yearly Payment</Label>
+                <Input type="number" value={extraYearlyPayment} onChange={e => setExtraYearlyPayment(Number(e.target.value))} className="w-full" />
+              </div>
+            </div>
+
           </CardContent>
         </Card>
         
@@ -143,23 +178,40 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
              <div>
                 <p className="text-sm text-muted-foreground">Monthly EMI</p>
                 <p className="text-4xl font-bold font-headline text-primary">
-                  ₹ {emi.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
+                  {formatCurrency(emi)}
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-2 text-sm text-left border-t pt-2">
                  <div className="flex justify-between">
                     <span className="text-muted-foreground">Principal Amount:</span>
-                    <span className="font-semibold">₹ {principal.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+                    <span className="font-semibold">{formatCurrency(principal)}</span>
                 </div>
                  <div className="flex justify-between">
                     <span className="text-muted-foreground">Total Interest:</span>
-                    <span className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+                    <span className="font-semibold">{formatCurrency(totalInterest)}</span>
                 </div>
                  <div className="flex justify-between font-bold">
                     <span className="text-muted-foreground">Total Payable:</span>
-                    <span className="font-semibold">₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+                    <span className="font-semibold">{formatCurrency(totalPayable)}</span>
                 </div>
             </div>
+            {(extraMonthlyPayment > 0 || extraYearlyPayment > 0) && interestSaved > 0 && (
+              <div className="space-y-2 text-sm text-left border-t pt-4 mt-4">
+                <p className="font-bold text-center text-primary">With Extra Payments</p>
+                 <div className="flex justify-between">
+                    <span className="text-muted-foreground">New Loan Term:</span>
+                    <span className="font-semibold">{formatTime(newTotalMonths)}</span>
+                </div>
+                <div className="flex justify-between">
+                    <span className="text-muted-foreground">Time Saved:</span>
+                    <span className="font-semibold">{timeSaved.years} yr, {timeSaved.months} mo</span>
+                </div>
+                <div className="flex justify-between font-bold text-green-600">
+                    <span className="text-muted-foreground">Interest Saved:</span>
+                    <span className="font-semibold">{formatCurrency(interestSaved)}</span>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>

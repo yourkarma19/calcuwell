@@ -1,4 +1,5 @@
 
+
 /**
  * Calculates the Equated Monthly Installment (EMI) for a loan.
  *
@@ -41,4 +42,82 @@ export function calculateEMI(principal: number, annualRate: number, tenureInYear
         totalInterest,
         totalPayable,
     };
+}
+
+
+/**
+ * Calculates the impact of extra payments on a loan.
+ *
+ * @param principal The total loan amount.
+ * @param annualRate The annual interest rate.
+ * @param tenureInYears The original loan tenure in years.
+ * @param extraMonthlyPayment The extra amount paid monthly.
+ * @param extraYearlyPayment The extra amount paid yearly.
+ * @returns An object with the new total interest, new tenure in months, interest saved, and time saved.
+ */
+export function calculateEMIWithExtraPayments(
+  principal: number,
+  annualRate: number,
+  tenureInYears: number,
+  extraMonthlyPayment: number,
+  extraYearlyPayment: number
+) {
+  const monthlyRate = annualRate / 12 / 100;
+  const originalMonths = tenureInYears * 12;
+
+  const { emi, totalInterest: originalTotalInterest } = calculateEMI(
+    principal,
+    annualRate,
+    tenureInYears
+  );
+  if (emi === 0) return { newTotalInterest: 0, newTotalMonths: 0, interestSaved: 0, timeSaved: { years: 0, months: 0 } };
+
+  let remainingPrincipal = principal;
+  let newMonths = 0;
+  let totalInterestPaid = 0;
+
+  while (remainingPrincipal > 0) {
+    newMonths++;
+    let interestForMonth = remainingPrincipal * monthlyRate;
+    let principalForMonth = emi - interestForMonth;
+    
+    remainingPrincipal -= principalForMonth;
+    totalInterestPaid += interestForMonth;
+    
+    // Apply extra monthly payment
+    if (extraMonthlyPayment > 0) {
+      if (remainingPrincipal > extraMonthlyPayment) {
+        remainingPrincipal -= extraMonthlyPayment;
+      } else {
+        remainingPrincipal = 0;
+      }
+    }
+    
+    // Apply extra yearly payment
+    if (newMonths % 12 === 0 && extraYearlyPayment > 0) {
+       if (remainingPrincipal > extraYearlyPayment) {
+        remainingPrincipal -= extraYearlyPayment;
+      } else {
+        remainingPrincipal = 0;
+      }
+    }
+
+    if (newMonths > originalMonths * 2) { // Safety break
+        break;
+    }
+  }
+
+  const interestSaved = originalTotalInterest - totalInterestPaid;
+  const monthsSaved = originalMonths - newMonths;
+  const timeSaved = {
+    years: Math.floor(monthsSaved / 12),
+    months: monthsSaved % 12,
+  };
+
+  return {
+    newTotalInterest: totalInterestPaid,
+    newTotalMonths: newMonths,
+    interestSaved,
+    timeSaved,
+  };
 }
