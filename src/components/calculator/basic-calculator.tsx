@@ -4,7 +4,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
@@ -119,15 +118,15 @@ export default function BasicCalculator() {
         <CardContent className="space-y-4">
            <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
             <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || " "}</div>
-            <Input
+            <div
               aria-label="Calculator display"
-              value={displayValue} 
-              readOnly 
               className={cn(
-                "h-2/3 text-right font-mono p-0 border-0 bg-transparent text-6xl",
+                "h-2/3 text-right font-mono p-0 border-0 bg-transparent w-full",
                 displayFontSize()
               )}
-            />
+            >
+              {displayValue}
+            </div>
           </div>
           <div className="grid grid-cols-4 gap-2">
             {buttonLayout.map((btn) => {
