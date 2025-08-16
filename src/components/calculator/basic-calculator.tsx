@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const buttonLayout = [
   "AC", "+/-", "%", "/",
@@ -58,7 +59,7 @@ export default function BasicCalculator() {
   };
 
   const handleOperator = (op: string) => {
-    if (displayValue !== "Error" && displayValue !== "0") {
+    if (displayValue !== "Error") {
         const lastChar = displayValue.slice(-1);
         if (isOperator(lastChar)) {
             setDisplayValue(prev => prev.slice(0, -1) + op);
@@ -110,8 +111,8 @@ export default function BasicCalculator() {
   };
 
   return (
-    <div className="lg:col-span-3 max-w-sm mx-auto">
-      <Card>
+    <div className="lg:col-span-3 space-y-6">
+      <Card className="max-w-sm mx-auto">
         <CardHeader>
           <CardTitle>Calculator</CardTitle>
         </CardHeader>
@@ -143,6 +144,34 @@ export default function BasicCalculator() {
               )
             })}
           </div>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Basic Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>When to Use a Basic Calculator</AccordionTrigger>
+              <AccordionContent>
+                A basic calculator is perfect for everyday arithmetic. Use it for tasks like balancing a checkbook, calculating grocery bills, figuring out tips, or any situation where you need quick addition, subtraction, multiplication, or division.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Understanding the Order of Operations (PEMDAS/BODMAS)</AccordionTrigger>
+              <AccordionContent>
+                This calculator evaluates expressions as they are entered, from left to right. It does not follow the standard order of operations (PEMDAS/BODMAS). For complex calculations requiring a specific order, use parentheses or our Scientific Calculator. For example, `2 + 3 * 4` will be calculated as `(2 + 3) * 4 = 20`, not `2 + (3 * 4) = 14`.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>What is the difference between a basic and scientific calculator?</AccordionTrigger>
+              <AccordionContent>
+                A basic calculator handles the four main arithmetic operations: addition, subtraction, multiplication, and division. A scientific calculator adds more advanced functions, such as trigonometry (sin, cos, tan), logarithms (log), exponents, parentheses, and memory functions, which are necessary for more complex math, science, and engineering problems.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>
