@@ -701,7 +701,9 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Solve for sides of a right triangle.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
-    formula: 'a² + b² = c²'
+    formula: 'a² + b² = c²',
+    seoTitle: 'Pythagorean Theorem Calculator',
+    metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Find the hypotenuse or either of the other two sides.',
   },
   {
     slug: 'trigonometry-calculator',
