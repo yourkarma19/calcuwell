@@ -32,25 +32,27 @@ export default function Home() {
 
       <section className="py-12 md:py-16">
          <div className="flex justify-center -mt-32 md:-mt-36 relative z-20">
-          <Link href="/calculators/scientific-calculator">
-            <Card className="hover:shadow-xl transition-shadow duration-300 group w-full max-w-sm animate-[float_4s_ease-in-out_infinite]">
-              <CardHeader>
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="bg-primary/10 p-4 rounded-full">
-                    <Icon name="FlaskConical" className="w-10 h-10 text-primary" />
+          <div className="animate-[float_4s_ease-in-out_infinite]">
+            <Link href="/calculators/scientific-calculator">
+              <Card className="hover:shadow-xl transition-shadow duration-300 group w-full max-w-sm">
+                <CardHeader>
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <div className="bg-primary/10 p-4 rounded-full">
+                      <Icon name="FlaskConical" className="w-10 h-10 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle className="font-headline text-2xl">
+                        Scientific Calculator
+                      </CardTitle>
+                      <CardDescription className="mt-1">
+                        Perform advanced mathematical calculations with ease.
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="font-headline text-2xl">
-                      Scientific Calculator
-                    </CardTitle>
-                    <CardDescription className="mt-1">
-                      Perform advanced mathematical calculations with ease.
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-          </Link>
+                </CardHeader>
+              </Card>
+            </Link>
+          </div>
         </div>
       </section>
       
