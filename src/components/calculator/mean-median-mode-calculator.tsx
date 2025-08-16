@@ -130,7 +130,7 @@ export default function MeanMedianModeCalculator() {
                     <AccordionTrigger>What happens if there is more than one mode?</AccordionTrigger>
                     <AccordionContent>
                        A data set can have one mode (unimodal), two modes (bimodal), more than two modes (multimodal), or no mode at all if no number repeats. This calculator will show all modes if they exist.
-                    </IconContent>
+                    </AccordionContent>
                 </AccordionItem>
             </Accordion>
         </CardContent>
