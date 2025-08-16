@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { ArrowRight } from "lucide-react";
 import { percentageOf, isWhatPercentageOf, percentageChange } from "@/lib/math/percentage";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 
@@ -168,6 +169,40 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
               <p className="text-2xl text-muted-foreground">Enter valid values to calculate</p>
             )}
           </CardContent>
+        </Card>
+
+        <Card>
+            <CardHeader>
+                <CardTitle>About the Percentage Calculator</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Three Types of Percentage Problems</AccordionTrigger>
+                        <AccordionContent>
+                            This calculator can solve three main types of percentage problems: finding the percentage of a number (e.g., What is 20% of 50?), finding what percentage one number is of another (e.g., 10 is what percent of 50?), and calculating the percentage increase or decrease from one number to another.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How to Calculate Percentage Manually</AccordionTrigger>
+                        <AccordionContent>
+                            To find the percentage of a number, convert the percentage to a decimal (by dividing by 100) and multiply it by the number. For example, to find 25% of 200, you would calculate `0.25 * 200 = 50`.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>Real-World Examples</AccordionTrigger>
+                        <AccordionContent>
+                            Percentages are used everywhere! Use this tool to quickly calculate a 15% tip on a restaurant bill, figure out a 30% discount on a sale item, or determine the sales tax on a purchase.
+                        </AccordionContent>
+                    </AccordionItem>
+                     <AccordionItem value="item-4">
+                        <AccordionTrigger>How do you calculate a reverse percentage?</AccordionTrigger>
+                        <AccordionContent>
+                            To find the original amount before a percentage was added, you can use the formula: `Original Amount = Final Amount / (1 + (Percentage / 100))`. For example, if an item costs ₹110 after a 10% tax, the original price was `110 / (1 + 0.10) = 100`.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
     </div>
   );
