@@ -59,6 +59,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Perform basic arithmetic operations.',
     category: 'Math',
     iconName: 'Calculator',
+    seoTitle: 'Free Online Basic Calculator | Simple 4-Function Math Tool',
+    metaDescription: 'A simple and fast online basic calculator for your everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease on this free four-function calculator.',
   },
   {
     slug: 'scientific-calculator',
@@ -66,6 +68,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Perform advanced scientific calculations.',
     category: 'Math',
     iconName: 'FlaskConical',
+    seoTitle: 'Advanced Online Scientific Calculator | Free & Easy to Use',
+    metaDescription: 'Perform advanced calculations with our powerful online scientific calculator. Includes functions for trigonometry (sin, cos, tan), logarithms (log), exponents, and more.',
   },
   {
     slug: 'percentage-calculator',
@@ -73,6 +77,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Calculate percentages, increases, and decreases.',
     category: 'Math',
     iconName: 'Percent',
+    seoTitle: 'Percentage Calculator | Calculate Percentages, Increases & Decreases',
+    metaDescription: 'Easily calculate percentages with our free online percentage calculator. Find percentage of a number, percentage increase or decrease, and solve other common percentage problems.',
   },
   {
     slug: 'fraction-calculator',
@@ -80,6 +86,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Add, subtract, multiply, and divide fractions.',
     category: 'Math',
     iconName: 'Pi',
+    seoTitle: 'Fraction Calculator | Add, Subtract, Multiply & Divide Fractions',
+    metaDescription: 'Our free fraction calculator makes fraction math easy. Add, subtract, multiply, and divide proper and improper fractions, with step-by-step results.',
   },
   {
     slug: 'mixed-number-calculator',
@@ -87,6 +95,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     iconName: 'Pi',
+    seoTitle: 'Mixed Number Calculator | Solve Mixed Fractions Easily',
+    metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers and mixed fractions. Get accurate answers with steps.',
   },
   {
     slug: 'ratio-calculator',
@@ -94,6 +104,8 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     description: 'Simplify and work with ratios.',
     category: 'Math',
     iconName: 'Scale',
+    seoTitle: 'Ratio Calculator | Simplify Ratios & Solve Proportions',
+    metaDescription: 'Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy to use, and perfect for students and professionals.',
   },
   {
     slug: 'proportion-calculator',

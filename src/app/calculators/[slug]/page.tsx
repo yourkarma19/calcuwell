@@ -20,8 +20,8 @@ export async function generateMetadata({ params: { slug } }: CalculatorPageProps
   }
 
   return {
-    title: `${calculator.name} | CalcPro`,
-    description: `Use the free ${calculator.name} on CalcPro to ${calculator.description.toLowerCase()}. Fast, accurate, and easy to use for all your needs.`,
+    title: calculator.seoTitle || `${calculator.name} | CalcPro`,
+    description: calculator.metaDescription || `Use the free ${calculator.name} on CalcPro to ${calculator.description.toLowerCase()}. Fast, accurate, and easy to use for all your needs.`,
     alternates: {
         canonical: `/calculators/${slug}`,
     },
