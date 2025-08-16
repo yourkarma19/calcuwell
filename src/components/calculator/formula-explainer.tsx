@@ -47,7 +47,7 @@ export default function FormulaExplainer({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>How It Works</CardTitle>
+        <CardTitle>Formula</CardTitle>
         <CardDescription>
           Get a simple explanation of the formula used in this calculator.
         </CardDescription>
@@ -56,7 +56,7 @@ export default function FormulaExplainer({
         <p className="text-sm font-mono bg-muted p-3 rounded-md mb-4 break-words">
           {formula}
         </p>
-        <Button onClick={handleExplain} disabled={isLoading} className="w-full">
+        <Button onClick={handleExplain} disabled={isLoading || formula === "No formula available."} className="w-full">
           {isLoading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : (

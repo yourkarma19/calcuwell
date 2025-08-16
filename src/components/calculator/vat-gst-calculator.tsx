@@ -1,18 +1,29 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
+import { useSearchParams } from "next/navigation";
 
 export default function VatGstCalculator() {
+  const searchParams = useSearchParams();
   const [amount, setAmount] = usePersistentState("vat-amount", 100);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);
   const [priceIncludesTax, setPriceIncludesTax] = usePersistentState<"yes" | "no">("vat-includes", "no");
+
+  useEffect(() => {
+    const a = searchParams.get('amount');
+    const r = searchParams.get('rate');
+    const i = searchParams.get('includes');
+    if (a) setAmount(parseFloat(a));
+    if (r) setTaxRate(parseFloat(r));
+    if (i === 'yes' || i === 'no') setPriceIncludesTax(i);
+  }, [searchParams, setAmount, setTaxRate, setPriceIncludesTax]);
 
   const { taxAmount, netPrice, grossPrice } = useMemo(() => {
     const initialAmount = Number(amount);

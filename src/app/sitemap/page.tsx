@@ -32,7 +32,8 @@ export default function SitemapPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {getCalculatorsByCategory(category.slug)
                                 .map((calc) => (
-                                    <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline">
+                                    <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors">
+                                        <Icon name={calc.iconName} className="w-4 h-4 text-muted-foreground"/>
                                         {calc.name}
                                     </Link>
                                 ))}

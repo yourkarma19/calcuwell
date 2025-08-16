@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -15,11 +15,23 @@ import {
   ChartLegendContent,
 } from "@/components/ui/chart";
 import { calculateEMI } from "@/lib/math/loan-emi";
+import { useSearchParams } from "next/navigation";
 
 export default function LoanEMICalculator() {
+  const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
   const [tenure, setTenure] = usePersistentState("loan-tenure", 5);
+
+  useEffect(() => {
+    const p = searchParams.get('principal');
+    const r = searchParams.get('rate');
+    const t = searchParams.get('tenure');
+    if (p) setPrincipal(parseFloat(p));
+    if (r) setRate(parseFloat(r));
+    if (t) setTenure(parseFloat(t));
+  }, [searchParams, setPrincipal, setRate, setTenure]);
+
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {
     return calculateEMI(principal, rate, tenure);

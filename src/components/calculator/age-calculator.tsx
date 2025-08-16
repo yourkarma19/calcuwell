@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,11 +9,23 @@ import { Label } from "@/components/ui/label";
 import { DatePicker } from "@/components/ui/date-picker";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateAge, Age } from "@/lib/math/date";
+import { useSearchParams } from "next/navigation";
 
 
 export default function AgeCalculator() {
+  const searchParams = useSearchParams();
   const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date(), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
+
+  useEffect(() => {
+    const dobParam = searchParams.get('dob');
+    if (dobParam) {
+      const parsedDate = new Date(dobParam);
+      if (!isNaN(parsedDate.getTime())) {
+        setDateOfBirth(parsedDate);
+      }
+    }
+  }, [searchParams, setDateOfBirth]);
 
   const handleCalculateAge = () => {
     if (dateOfBirth) {
@@ -21,6 +33,12 @@ export default function AgeCalculator() {
       setAge(calculateAge(now, dateOfBirth));
     }
   };
+  
+  useEffect(() => {
+    handleCalculateAge();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dateOfBirth]);
+
 
   return (
     <div className="lg:col-span-2 space-y-6">
