@@ -138,11 +138,11 @@ export default function LoanComparisonCalculator() {
                                     <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                                         <CartesianGrid strokeDasharray="3 3" />
                                         <XAxis dataKey="name" />
-                                        <YAxis tickFormatter={(value) => `₹${(Number(value) / 100000).toFixed(1)}L`} />
+                                        <YAxis tickFormatter={(value) => `₹${(Number(value) / 1000).toFixed(0)}k`} />
                                         <Tooltip content={<ChartTooltipContent formatter={(value) => formatter.format(Number(value))} />} />
-                                        <Legend />
-                                        <Bar dataKey="Loan A" fill="var(--color-Loan A)" />
-                                        <Bar dataKey="Loan B" fill="var(--color-Loan B)" />
+                                        <ChartLegend content={<ChartLegendContent />} />
+                                        <Bar dataKey="Loan A" fill="var(--color-Loan A)" radius={4} />
+                                        <Bar dataKey="Loan B" fill="var(--color-Loan B)" radius={4} />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </ChartContainer>
