@@ -32,7 +32,12 @@ type TimeUnit = keyof typeof timeUnits;
 export default function TimeConverter() {
   const [fromUnit, setFromUnit] = usePersistentState<TimeUnit>("time-from", "hours");
   const [toUnit, setToUnit] = usePersistentState<TimeUnit>("time-to", "minutes");
-  const [value, setValue] = usePersistentState("time-value", "1");
+  const [value, setValue] = usePersistentState("time-value", "0");
+  
+  useEffect(() => {
+    if (value === "0") setValue("1");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   const handleSwap = () => {
     setFromUnit(toUnit);

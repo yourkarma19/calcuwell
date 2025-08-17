@@ -29,13 +29,10 @@ const bmiCategories = [
 
 export default function BMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
-  const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>(
-    "bmi-unit-system",
-    "metric"
-  );
+  const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>("bmi-unit-system", "metric");
   
-  const [height, setHeight] = usePersistentState("bmi-height", 175);
-  const [weight, setWeight] = usePersistentState("bmi-weight", 70);
+  const [height, setHeight] = usePersistentState("bmi-height", 0);
+  const [weight, setWeight] = usePersistentState("bmi-weight", 0);
   const [heightInches, setHeightInches] = usePersistentState("bmi-height-inches", 0);
   
   const [bmi, setBmi] = useState<number | null>(null);
@@ -45,11 +42,16 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
     const h = searchParams.get('height');
     const u = searchParams.get('units');
 
+    if (u === 'metric' || u === 'imperial') setUnitSystem(u);
     if (w) setWeight(parseFloat(w));
     if (h) setHeight(parseFloat(h));
-    if (u === 'metric' || u === 'imperial') setUnitSystem(u);
-
   }, [searchParams, setWeight, setHeight, setUnitSystem]);
+  
+  useEffect(() => {
+    if (height === 0) setHeight(175);
+    if (weight === 0) setWeight(70);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[height, weight]);
 
   const heightInMeters = useMemo(() => {
     if (unitSystem === "metric") {

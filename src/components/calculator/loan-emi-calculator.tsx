@@ -22,9 +22,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 
 export default function LoanEMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
-  const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
-  const [rate, setRate] = usePersistentState("loan-rate", 8.5);
-  const [tenure, setTenure] = usePersistentState("loan-tenure", 5);
+  const [principal, setPrincipal] = usePersistentState("loan-principal", 0);
+  const [rate, setRate] = usePersistentState("loan-rate", 0);
+  const [tenure, setTenure] = usePersistentState("loan-tenure", 0);
   const [extraMonthlyPayment, setExtraMonthlyPayment] = usePersistentState("loan-extra-monthly", 0);
   const [extraYearlyPayment, setExtraYearlyPayment] = usePersistentState("loan-extra-yearly", 0);
 
@@ -36,6 +36,13 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
     if (r) setRate(parseFloat(r));
     if (t) setTenure(parseFloat(t));
   }, [searchParams, setPrincipal, setRate, setTenure]);
+  
+  useEffect(() => {
+    if (principal === 0) setPrincipal(500000);
+    if (rate === 0) setRate(8.5);
+    if (tenure === 0) setTenure(5);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [principal, rate, tenure]);
 
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {

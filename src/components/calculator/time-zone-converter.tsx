@@ -10,6 +10,7 @@ import { DatePicker } from "../ui/date-picker";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 const timezones = [
   // Americas
@@ -31,12 +32,18 @@ const timezones = [
 ];
 
 export default function TimeZoneConverter() {
-  const [fromZone, setFromZone] = useState("Asia/Kolkata");
-  const [toZone, setToZone] = useState("America/New_York");
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  const [time, setTime] = useState(new Date().toTimeString().slice(0,5));
+  const [fromZone, setFromZone] = usePersistentState("tz-from", "Asia/Kolkata");
+  const [toZone, setToZone] = usePersistentState("tz-to", "America/New_York");
+  const [date, setDate] = useState<Date | undefined>(undefined);
+  const [time, setTime] = useState("");
   
   const [convertedTime, setConvertedTime] = useState("");
+  
+  useEffect(() => {
+    if (!date) setDate(new Date());
+    if (!time) setTime(new Date().toTimeString().slice(0,5));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [date, time]);
 
   const handleSwap = () => {
     setFromZone(toZone);

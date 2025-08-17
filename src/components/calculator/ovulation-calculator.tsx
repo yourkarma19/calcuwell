@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { addDays, subDays, format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -11,8 +11,14 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function OvulationCalculator() {
-  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', new Date(), (value) => value ? new Date(value) : undefined);
+  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', undefined, (value) => value ? new Date(value) : undefined);
   const [cycleLength, setCycleLength] = usePersistentState("ovulation-cycle-length", 28);
+  
+  useEffect(() => {
+    if (!lastPeriodDate) {
+      setLastPeriodDate(new Date());
+    }
+  }, [lastPeriodDate, setLastPeriodDate]);
 
   const { ovulationDate, fertileWindowStart, fertileWindowEnd } = useMemo(() => {
     if (!lastPeriodDate || cycleLength <= 0) {
@@ -101,7 +107,7 @@ export default function OvulationCalculator() {
                 <div>
                   <p className="text-sm text-muted-foreground">Most Fertile Period</p>
                   <p className="text-lg font-semibold">
-                    {format(fertileWindowStart!, "MMM d")} - {format(fertileWindowEnd!, "MMM d")}
+                    {fertileWindowStart && fertileWindowEnd ? `${format(fertileWindowStart, "MMM d")} - ${format(fertileWindowEnd, "MMM d")}` : 'Calculating...'}
                   </p>
                 </div>
               </>

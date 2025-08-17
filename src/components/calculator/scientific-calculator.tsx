@@ -52,10 +52,12 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   const [justEvaluated, setJustEvaluated] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
   const [isCelebrating, setIsCelebrating] = useState(false);
+  const [randomNumber, setRandomNumber] = useState<number | null>(null);
 
 
   useEffect(() => {
     setIsClient(true);
+    setRandomNumber(Math.random());
   }, []);
   
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
@@ -166,8 +168,9 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
             case 'tanh⁻¹': if(value <= -1 || value >= 1) throw new Error("Input for arctanh must be between -1 and 1"); handleEquals(Math.atanh(value).toString()); return;
             case 'π': setDisplayValue(Math.PI.toString()); return;
             case 'Rand':
-                if (isClient) {
-                    setDisplayValue(Math.random().toString());
+                if (randomNumber !== null) {
+                    setDisplayValue(randomNumber.toString());
+                    setRandomNumber(Math.random()); // prepare for next click
                 }
                 return;
             default: break;
@@ -254,6 +257,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
         } else if (key === '(' || key === ')') {
             handleScientificInput(key);
         }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayValue, justEvaluated]);
 
   useEffect(() => {

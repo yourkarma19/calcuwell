@@ -13,7 +13,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 
 export default function VatGstCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
-  const [amount, setAmount] = usePersistentState("vat-amount", 100);
+  const [amount, setAmount] = usePersistentState("vat-amount", 0);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);
   const [priceIncludesTax, setPriceIncludesTax] = usePersistentState<"yes" | "no">("vat-includes", "no");
 
@@ -25,6 +25,11 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
     if (r) setTaxRate(parseFloat(r));
     if (i === 'yes' || i === 'no') setPriceIncludesTax(i);
   }, [searchParams, setAmount, setTaxRate, setPriceIncludesTax]);
+  
+  useEffect(() => {
+    if (amount === 0) setAmount(100);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [amount]);
 
   const { taxAmount, netPrice, grossPrice } = useMemo(() => {
     const initialAmount = Number(amount);
