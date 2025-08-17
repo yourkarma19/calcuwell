@@ -3,7 +3,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -88,6 +88,7 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
         <Card>
           <CardHeader>
             <CardTitle>Enter Your Details</CardTitle>
+             <CardDescription>Calculate your Body Mass Index (BMI) using metric or imperial units.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -147,6 +148,46 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
             )}
           </CardContent>
         </Card>
+        
+        <Card>
+            <CardHeader>
+                <CardTitle>About the BMI Calculator</CardTitle>
+            </CardHeader>
+            <CardContent className="prose dark:prose-invert max-w-none">
+                <p>The <strong>Body Mass Index (BMI)</strong> is a widely used measure for assessing whether your weight is healthy in proportion to your height. It's a simple screening tool that can help identify potential weight problems for adults. Our calculator makes it easy to find your BMI instantly using either metric or imperial units.</p>
+
+                <h3>How to Use the BMI Calculator</h3>
+                <ol>
+                    <li>Select your preferred unit system (<strong>Metric</strong> or <strong>Imperial</strong>).</li>
+                    <li>Enter your <strong>Weight</strong>.</li>
+                    <li>Enter your <strong>Height</strong>. If using imperial units, provide both feet and inches.</li>
+                    <li>Your BMI result and corresponding weight category will be displayed automatically.</li>
+                </ol>
+                
+                <h3>Frequently Asked Questions (FAQs)</h3>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger className="font-semibold">What is a healthy BMI?</AccordionTrigger>
+                        <AccordionContent>
+                            <p>According to the World Health Organization (WHO), a healthy BMI for most adults is between <strong>18.5 and 24.9</strong>. A BMI below 18.5 is considered underweight, 25.0 to 29.9 is overweight, and 30.0 or higher is classified as obesity. You can see the full range in the BMI Categories table.</p>
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger className="font-semibold">How is BMI calculated?</AccordionTrigger>
+                        <AccordionContent>
+                            <p>The formula for BMI is your weight in kilograms divided by the square of your height in meters (`kg/m²`). For imperial units, the calculation is `(weight in lbs / (height in inches)²) * 703`. Our calculator handles these conversions for you.</p>
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger className="font-semibold">What are the limitations of BMI?</AccordionTrigger>
+                        <AccordionContent>
+                            <p>While useful, BMI is not a perfect measure of health. It does not distinguish between fat and muscle mass. Therefore, very muscular individuals (like athletes) may have a high BMI but low body fat. It also may not be an accurate indicator for certain ethnic groups, pregnant women, or the elderly. It should be used as a general guide, and you should consult a healthcare provider for a complete health assessment.</p>
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle>BMI Categories (WHO)</CardTitle>
