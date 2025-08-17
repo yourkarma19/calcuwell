@@ -140,7 +140,12 @@ export default function BasicCalculator() {
                   key={btn}
                   onClick={() => handleInput(btn)}
                   variant={variant}
-                  className={cn("h-16 text-2xl", btn === "0" ? "col-span-2" : "", className)}
+                  className={cn(
+                    "h-16 text-2xl", 
+                    btn === "0" ? "col-span-2" : "", 
+                    btn === "=" ? "row-span-2 h-auto" : "", 
+                    className
+                    )}
                 >
                   {btn === 'Backspace' ? <Delete /> : btn}
                 </Button>
