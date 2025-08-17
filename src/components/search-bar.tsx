@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import Fuse, { type FuseResult } from "fuse.js";
 import * as Icons from "lucide-react";
 import {
   Popover,
@@ -24,20 +25,42 @@ type SearchResult = Omit<Calculator, "component">;
 
 export function SearchBar() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [calculators, setCalculators] = React.useState<SearchResult[]>([]);
   const [query, setQuery] = React.useState("");
+  const [results, setResults] = React.useState<FuseResult<SearchResult>[]>([]);
+  const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
+  const fuseRef = React.useRef<Fuse<SearchResult> | null>(null);
 
-  // Load calculator data when the component mounts
-  React.useEffect(() => {
-    const fetchCalculators = async () => {
+  // Load calculator data and initialize Fuse.js
+  const initializeSearch = React.useCallback(async () => {
+    if (fuseRef.current) return;
+    setIsLoading(true);
+    try {
       const allCalculators = await loadFullCalculatorData();
-      setCalculators(allCalculators);
-    };
-    fetchCalculators();
+      const FuseModule = await import("fuse.js");
+      fuseRef.current = new FuseModule.default(allCalculators, {
+        keys: ["name", "tags", "category"],
+        threshold: 0.3,
+        includeScore: true,
+      });
+    } catch (error) {
+      console.error("Failed to initialize search:", error);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
-  // Keyboard shortcut to open the search bar (⌘K or Ctrl+K)
+  // Perform search when query changes
+  React.useEffect(() => {
+    if (!query || !fuseRef.current) {
+      setResults([]);
+      return;
+    }
+    const searchResults = fuseRef.current.search(query).slice(0, 10);
+    setResults(searchResults);
+  }, [query]);
+
+  // Keyboard shortcut to open search
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -49,19 +72,28 @@ export function SearchBar() {
     return () => document.removeEventListener("keydown", down);
   }, []);
   
-  // When the popover opens or closes, reset the query
+  // Initialize search when popover opens
+  React.useEffect(() => {
+      if(isOpen) {
+          initializeSearch();
+      }
+  }, [isOpen, initializeSearch]);
+
   const onOpenChange = (open: boolean) => {
-    if(!open) {
+    if (!open) {
       setQuery("");
+      setResults([]);
     }
     setIsOpen(open);
-  }
+  };
 
-  // Function to run when an item is selected from the list
-  const runCommand = React.useCallback((command: () => unknown) => {
-    onOpenChange(false);
-    command();
-  }, []);
+  const runCommand = React.useCallback(
+    (slug: string) => {
+      router.push(`/calculators/${slug}`);
+      onOpenChange(false);
+    },
+    [router]
+  );
 
   return (
     <Popover open={isOpen} onOpenChange={onOpenChange}>
@@ -76,25 +108,33 @@ export function SearchBar() {
           </kbd>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
-        <Command>
+      <PopoverContent
+        className="w-[var(--radix-popover-trigger-width)] p-0"
+        align="start"
+      >
+        <Command shouldFilter={false}>
           <CommandInput
             value={query}
             onValueChange={setQuery}
             placeholder="Search for a calculator..."
+            disabled={isLoading}
           />
           <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
+            {isLoading ? (
+                <CommandEmpty>Loading search index...</CommandEmpty>
+            ) : (
+                query.length > 0 && results.length === 0 && <CommandEmpty>No results found.</CommandEmpty>
+            )}
             <CommandGroup>
-              {calculators.map((calc) => {
-                const LucideIcon = Icons[calc.iconName as keyof typeof Icons] || Icons.Calculator;
+              {results.map(({ item: calc }) => {
+                const LucideIcon =
+                  Icons[calc.iconName as keyof typeof Icons] ||
+                  Icons.Calculator;
                 return (
                   <CommandItem
                     key={calc.slug}
-                    value={`${calc.name} ${calc.category} ${calc.tags?.join(" ")}`}
-                    onSelect={() => {
-                      runCommand(() => router.push(`/calculators/${calc.slug}`));
-                    }}
+                    value={calc.name}
+                    onSelect={() => runCommand(calc.slug)}
                     className="flex items-center gap-3 cursor-pointer"
                   >
                     <LucideIcon className="w-4 h-4 text-muted-foreground" />
