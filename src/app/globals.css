@@ -34,9 +34,9 @@
 
   .dark {
     --background: 264 20% 5%; /* Near black with a hint of purple */
-    --foreground: 210 40% 98%; /* White text */
+    --foreground: 262 85% 75%; /* Purple text */
     --card: 264 20% 8%; /* Slightly lighter black for cards */
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 210 40% 98%; /* White text for inside cards */
     --popover: 264 20% 5%;
     --popover-foreground: 210 40% 98%;
     --primary: 262 85% 65%; /* Vibrant Purple for interactive elements */
