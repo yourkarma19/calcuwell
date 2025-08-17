@@ -136,10 +136,14 @@ export default function BasicCalculator() {
 
   return (
     <div className="lg:col-span-3 space-y-6">
-      <Card className={cn("max-w-sm mx-auto overflow-hidden relative", isCelebrating && "celebrate")}>
-        {isCelebrating && Array.from({ length: 10 }).map((_, i) => (
-            <Heart key={i} className="heart" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
-        ))}
+      <Card className="max-w-sm mx-auto overflow-hidden relative">
+        {isCelebrating && (
+          <div className="celebrate">
+            {Array.from({ length: 10 }).map((_, i) => (
+              <Heart key={i} className="heart" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
+            ))}
+          </div>
+        )}
         <CardHeader>
           <CardTitle>Calculator</CardTitle>
         </CardHeader>

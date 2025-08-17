@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -12,10 +13,9 @@ import {
   CardFooter
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone, icons, FlaskConical } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import ScientificCalculator from '@/components/calculator/scientific-calculator';
 
 
 export default function Home() {
@@ -33,9 +33,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12">
-         <div className="flex justify-center relative z-20">
-            <ScientificCalculator showFaq={false}/>
+      <section className="py-12">
+        <h2 className="text-3xl font-bold font-headline text-center mb-8">
+          Featured Calculator
+        </h2>
+        <div className="flex justify-center">
+            <Link href="/calculators/scientific-calculator">
+              <Card className="max-w-md hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
+                  <CardContent className="pt-6">
+                      <div className="flex flex-col items-center text-center">
+                           <div className="bg-primary/10 p-4 rounded-full mb-4">
+                                <FlaskConical className="w-10 h-10 text-primary" />
+                           </div>
+                           <CardTitle className="font-headline text-2xl group-hover:text-primary transition-colors">
+                             Scientific Calculator
+                           </CardTitle>
+                           <CardDescription className="mt-2">
+                             Perform advanced calculations with trig functions, logarithms, and more.
+                           </CardDescription>
+                           <Button className="mt-4">
+                             Open Calculator <ArrowRight className="ml-2 h-4 w-4" />
+                           </Button>
+                      </div>
+                  </CardContent>
+              </Card>
+            </Link>
         </div>
       </section>
       
@@ -118,56 +140,6 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
-
-      <section className="py-16">
-        <Card className="max-w-2xl mx-auto">
-            <CardHeader>
-                <CardTitle>About the Scientific Calculator</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger>What Do the Buttons Mean?</AccordionTrigger>
-                        <AccordionContent>
-                            <ul className="list-disc list-inside space-y-1">
-                                <li><strong>sin, cos, tan:</strong> Trigonometric functions for calculating ratios of a right triangle's sides.</li>
-                                <li><strong>sin⁻¹, cos⁻¹, tan⁻¹:</strong> Inverse trigonometric functions (or arc functions).</li>
-                                <li><strong>log, ln:</strong> Logarithm base 10 and natural logarithm.</li>
-                                <li><strong>e:</strong> Euler's number, the base of the natural logarithm.</li>
-                                <li><strong>x!:</strong> Factorial, the product of all positive integers up to x.</li>
-                                <li><strong>√:</strong> Square root.</li>
-                                <li><strong>xʸ:</strong> Power function, raises x to the power of y.</li>
-                            </ul>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger>How to Calculate Trigonometric Functions</AccordionTrigger>
-                        <AccordionContent>
-                            First, select your desired angle mode: Degrees (Deg) or Radians (Rad). Then, enter the angle and press the trigonometric function button (e.g., sin, cos, tan). For example, to find the sine of 30 degrees, ensure you are in 'Deg' mode, type '30', and then press 'sin'.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger>What is the difference between DEG, RAD, and GRAD modes?</AccordionTrigger>
-                        <AccordionContent>
-                            These are three different units for measuring angles.
-                            <ul className="list-disc list-inside mt-2 space-y-1">
-                                <li><strong>Degrees (DEG):</strong> The most common unit, where a full circle is 360°.</li>
-                                <li><strong>Radians (RAD):</strong> The standard mathematical unit, where a full circle is 2π radians. This is used in many areas of mathematics and physics.</li>
-                                <li><strong>Gradians (GRAD):</strong> A less common unit where a full circle is 400 gradians.</li>
-                            </ul>
-                            Ensure you are in the correct mode for your calculation to get the right result.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-4">
-                        <AccordionTrigger>Practical Applications</AccordionTrigger>
-                        <AccordionContent>
-                            Scientific calculators are essential in many fields. Engineers use them for designing structures, physicists for modeling phenomena, and students for solving complex math problems in trigonometry, calculus, and algebra. They are a fundamental tool for anyone working with science, technology, engineering, and mathematics (STEM).
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-            </CardContent>
-        </Card>
       </section>
 
     </div>
