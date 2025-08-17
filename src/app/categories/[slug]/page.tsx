@@ -1,7 +1,7 @@
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCalculatorsByCategory, categories } from "@/lib/calculators";
+import { getCalculatorsByCategory, categories } from "@/lib/server/calculator-data";
 import CategoryClientPage from "@/components/calculator/category-client-page";
 
 type CategoryPageProps = {

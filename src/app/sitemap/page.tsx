@@ -1,7 +1,8 @@
 
 import { Metadata } from "next";
 import { List, icons } from "lucide-react";
-import { categories, getCalculatorsByCategory } from "@/lib/calculators";
+import { categories } from "@/lib/calculators";
+import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
 import Link from "next/link";
 
 

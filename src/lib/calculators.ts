@@ -1,5 +1,4 @@
 
-import 'server-only';
 import type { Calculator, Category } from '@/lib/types';
 import { calculatorsData } from './calculator-data';
 
@@ -54,25 +53,9 @@ export const categories: Category[] = [
   },
 ];
 
-let allCalculators: Omit<Calculator, 'component'>[] | null = null;
+// These functions were moved to a server-only file to prevent them
+// from being included in the client bundle.
+// See src/lib/server/calculator-data.ts
 
-// This function now only runs on the server.
-export const loadFullCalculatorData = async () => {
-  if (allCalculators === null) {
-    allCalculators = calculatorsData;
-  }
-  return allCalculators;
-}
-
-
-export const getCalculatorBySlug = async (slug: string): Promise<Omit<Calculator, 'component'> | undefined> => {
-  const allCalculators = await loadFullCalculatorData();
-  return allCalculators.find((calculator) => calculator.slug === slug);
-};
-
-export const getCalculatorsByCategory = async (categorySlug: string) => {
-  const category = categories.find(c => c.slug === categorySlug);
-  if (!category) return [];
-  const allCalculators = await loadFullCalculatorData();
-  return allCalculators.filter(c => c.category === category.name);
-}
+// A simplified, client-safe function can be provided if needed,
+// but for now, we will rely on server components to pass data.

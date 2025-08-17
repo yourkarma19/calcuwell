@@ -1,7 +1,7 @@
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCalculatorBySlug, loadFullCalculatorData } from "@/lib/calculators";
+import { getCalculatorBySlug, loadFullCalculatorData } from "@/lib/server/calculator-data";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import CalculatorLoader from "@/components/calculator/calculator-loader";
 

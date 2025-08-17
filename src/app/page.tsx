@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { categories, loadFullCalculatorData } from "@/lib/calculators";
+import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import {
   Card,
