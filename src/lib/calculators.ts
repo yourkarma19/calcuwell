@@ -1,6 +1,4 @@
-
 import type { Calculator, Category } from '@/lib/types';
-import { calculatorsData } from './calculator-data';
 
 export const categories: Category[] = [
  {
@@ -20,6 +18,12 @@ export const categories: Category[] = [
     slug: "health",
     description: "Monitor your health and fitness levels.",
     iconName: "HeartPulse",
+  },
+  {
+    name: "Lifestyle",
+    slug: "lifestyle",
+    description: "Calculators for daily life, planning, and personal use.",
+    iconName: "Home",
   },
   {
     name: "Conversions",
@@ -52,10 +56,3 @@ export const categories: Category[] = [
     iconName: "Gem",
   },
 ];
-
-// These functions were moved to a server-only file to prevent them
-// from being included in the client bundle.
-// See src/lib/server/calculator-data.ts
-
-// A simplified, client-safe function can be provided if needed,
-// but for now, we will rely on server components to pass data.

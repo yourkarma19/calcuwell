@@ -5,6 +5,28 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // Lifestyle
+  {
+    slug: 'wedding-budget-calculator',
+    name: 'Wedding Budget Calculator',
+    description: 'Estimate the total cost of your wedding.',
+    category: 'Lifestyle',
+    iconName: 'Heart',
+    seoTitle: 'Wedding Budget Calculator | Estimate Your Total Wedding Cost',
+    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, photography, and more to create a realistic wedding budget.',
+    formula: 'Total = Venue + (Catering × Guests) + Photography + Dress + ...'
+  },
+  {
+    slug: 'pet-care-cost-calculator',
+    name: 'Pet Care Cost Calculator',
+    description: 'Estimate the monthly and yearly cost of owning a pet.',
+    category: 'Lifestyle',
+    iconName: 'Dog',
+    seoTitle: 'Pet Care Cost Calculator | Dog & Cat Yearly Expenses Tool',
+    metaDescription: 'Estimate the annual and monthly cost of owning a pet. Our calculator helps you budget for food, vet visits, grooming, and other expenses for your dog, cat, or other pet.',
+    formula: 'Annual Cost = (Food × 12) + (Vet × Visits) + ...'
+  },
+
   // Math & Logic
   {
     slug: 'basic-calculator',

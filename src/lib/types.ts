@@ -1,5 +1,5 @@
 
-export type CalculatorCategory = "Math" | "Finance" | "Health" | "Conversions" | "Date & Time" | "Programming" | "Geometry & Engineering" | "Miscellaneous" | "Blog";
+export type CalculatorCategory = "Math" | "Finance" | "Health" | "Conversions" | "Date & Time" | "Programming" | "Geometry & Engineering" | "Miscellaneous" | "Lifestyle" | "Blog";
 
 export interface Calculator {
   slug: string;
