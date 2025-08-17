@@ -105,9 +105,8 @@ export function SearchBar() {
             disabled={isLoading}
           />
           <CommandList>
-            {isLoading ? (
-              <CommandEmpty>Loading search index...</CommandEmpty>
-            ) : (
+            {isLoading && <CommandEmpty>Loading search index...</CommandEmpty>}
+            {!isLoading && searchResults.length === 0 && (
               <CommandEmpty>No results found for "{search}".</CommandEmpty>
             )}
             <CommandGroup>
