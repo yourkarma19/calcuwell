@@ -66,19 +66,34 @@ export default function TipCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Tipping</CardTitle></CardHeader>
-          <CardContent>
+          <CardHeader><CardTitle>About the Tip Calculator</CardTitle></CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Tip Calculator** is a simple yet essential tool for dining out. It takes the stress out of calculating tips and splitting the bill, especially when you're with a group. This calculator allows you to quickly determine the appropriate tip amount and find the total cost per person, ensuring a smooth and fair end to your meal.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Enter the total **Bill Amount**.</li>
+                <li>Adjust the **Tip Percentage** slider to your desired amount (e.g., 15%, 18%, 20%).</li>
+                <li>Set the **Number of People** to split the bill with.</li>
+            </ol>
+            <p>The calculator will instantly show you the total tip, the total bill including the tip, and how much each person should pay.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is a standard tip percentage?</AccordionTrigger>
                 <AccordionContent>
-                  Tipping customs vary by country and service type. In the United States, a standard tip for restaurant service is typically between 15% and 20% of the pre-tax bill.
+                  Tipping customs vary by country and service type. In the United States, a standard tip for restaurant service is typically between 15% and 20% of the pre-tax bill. 15% is considered average, 18% is good for good service, and 20% or more is for excellent service.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger>How do you calculate a tip quickly?</AccordionTrigger>
                 <AccordionContent>
-                  A quick way to estimate a 20% tip is to find 10% of the bill (by moving the decimal point one place to the left) and then doubling that amount. For example, for a ₹50 bill, 10% is ₹5, so 20% is ₹10.
+                  A quick way to estimate a 20% tip is to find 10% of the bill (by moving the decimal point one place to the left) and then doubling that amount. For example, for a ₹50 bill, 10% is ₹5, so 20% is ₹10. For a 15% tip, find 10% and add half of that amount back on (e.g., ₹5 + ₹2.50 = ₹7.50).
+                </AccordionContent>
+              </AccordionItem>
+               <AccordionItem value="item-3">
+                <AccordionTrigger>Should you tip on the pre-tax amount or the total bill?</AccordionTrigger>
+                <AccordionContent>
+                  It is customary to calculate the tip based on the subtotal of the bill, before sales tax is added. However, many people find it easier to tip on the total amount for convenience, and the difference is usually small.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

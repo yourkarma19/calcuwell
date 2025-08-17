@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function BmrCalculator() {
   const [age, setAge] = usePersistentState("bmr-age", 25);
@@ -89,10 +90,34 @@ export default function BmrCalculator() {
           <CardHeader>
             <CardTitle>About Basal Metabolic Rate (BMR)</CardTitle>
           </CardHeader>
-          <CardContent className="text-sm text-muted-foreground space-y-2">
-            <p>Your Basal Metabolic Rate (BMR) is the number of calories your body needs to accomplish its most basic (basal) life-sustaining functions, such as breathing, circulation, nutrient processing, and cell production.</p>
-            <p>This calculator uses the Mifflin-St Jeor Equation, which is considered one of the most accurate formulas for estimating BMR.</p>
-            <p>Note: BMR does not account for calories burned during physical activity. For your total daily calorie needs, please use the <a href="/calculators/calorie-needs-calculator" className="text-primary underline">Calorie Needs Calculator</a>.</p>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Basal Metabolic Rate (BMR) Calculator** estimates the number of calories your body burns at rest to perform its most basic, life-sustaining functions. Think of it as the energy your body would need if you were to stay in bed all day. Understanding your BMR is the first step in determining your total daily calorie needs for weight maintenance, loss, or gain.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Enter your **Age**, **Gender**, **Height** (in cm), and **Weight** (in kg).</li>
+            </ol>
+            <p>The calculator will instantly estimate your BMR using the widely accepted Mifflin-St Jeor equation, which is considered more accurate than the older Harris-Benedict equation.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What is the difference between BMR and TDEE?</AccordionTrigger>
+                <AccordionContent>
+                  BMR is the calories you burn at complete rest. **Total Daily Energy Expenditure (TDEE)** is the total number of calories you burn in a day, which includes your BMR plus the calories burned through physical activity and digesting food. To find your TDEE, you can use our <a href="/calculators/calorie-needs-calculator" className="text-primary underline">Calorie Needs Calculator</a>.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How accurate is the BMR calculation?</AccordionTrigger>
+                <AccordionContent>
+                  The Mifflin-St Jeor equation used here is considered a very accurate estimation for most of the population. However, it's still an estimate. Individual factors like body composition (muscle vs. fat), genetics, and specific health conditions can influence your actual BMR.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>How can I use my BMR for weight loss?</AccordionTrigger>
+                <AccordionContent>
+                  Your BMR is the baseline. To lose weight, you need to consume fewer calories than your Total Daily Energy Expenditure (TDEE). Knowing your BMR helps you understand the minimum energy your body requires, ensuring you don't create an unhealthy and unsustainable calorie deficit.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
       </div>
