@@ -1,6 +1,7 @@
 
+import 'server-only';
 import type { Calculator, Category } from '@/lib/types';
-import { trendingCalculators } from './trending-calculators';
+import { calculatorsData } from './calculator-data';
 
 export const categories: Category[] = [
  {
@@ -55,10 +56,9 @@ export const categories: Category[] = [
 
 let allCalculators: Omit<Calculator, 'component'>[] | null = null;
 
-// Lazy-load the full calculator list when needed, and cache it.
+// This function now only runs on the server.
 export const loadFullCalculatorData = async () => {
   if (allCalculators === null) {
-    const { calculatorsData } = await import('@/lib/calculator-data');
     allCalculators = calculatorsData;
   }
   return allCalculators;

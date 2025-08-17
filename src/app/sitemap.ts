@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
-import { loadFullCalculatorData, categories } from '@/lib/calculators'
+import { loadFullCalculatorData } from '@/lib/server/calculator-data'
+import { categories } from '@/lib/calculators';
 import { metadata } from '@/app/layout';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

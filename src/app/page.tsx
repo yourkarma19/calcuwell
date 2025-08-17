@@ -1,6 +1,3 @@
-
-"use client";
-
 import Link from "next/link";
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
@@ -14,8 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, Smartphone, icons, FlaskConical } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import ScientificCalculator from "@/components/calculator/scientific-calculator";
-
 
 export default function Home() {
 
@@ -31,15 +26,20 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      <section className="py-12">
-        <div className="flex justify-center">
-            <ScientificCalculator showFaq={false} />
+      
+      <section id="trending" className="py-12">
+        <h2 className="text-3xl font-bold font-headline text-center mb-8 text-primary">
+          Trending Calculators
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {trendingCalculators.map((calculator) => (
+            <CalculatorCard key={calculator.slug} calculator={calculator} />
+          ))}
         </div>
       </section>
-      
+
       <section id="categories" className="py-8">
-        <h2 className="text-3xl font-bold font-headline text-center mb-8">
+        <h2 className="text-3xl font-bold font-headline text-center mb-8 text-primary">
           Calculator Categories
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -66,20 +66,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="trending" className="py-12">
-        <h2 className="text-3xl font-bold font-headline text-center mb-8">
-          Trending Calculators
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trendingCalculators.map((calculator) => (
-            <CalculatorCard key={calculator.slug} calculator={calculator} />
-          ))}
-        </div>
-      </section>
-
       <section className="py-16 bg-muted/40 rounded-xl mt-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold font-headline text-center mb-6">
+          <h2 className="text-3xl font-bold font-headline text-center mb-6 text-primary">
             Why Choose CalcPro?
           </h2>
           <p className="max-w-3xl mx-auto text-center text-muted-foreground mb-10">
@@ -118,7 +107,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

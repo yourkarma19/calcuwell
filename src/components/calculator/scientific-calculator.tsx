@@ -126,7 +126,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   return (
     <div className="mx-auto space-y-6 relative">
        <TooltipProvider>
-      <Card>
+      <Card className="max-w-2xl">
         <CardHeader>
           <CardTitle>Scientific Calculator</CardTitle>
         </CardHeader>

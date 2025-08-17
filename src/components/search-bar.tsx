@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -19,7 +20,6 @@ import {
 } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
 import { type Calculator } from "@/lib/types";
-import { loadFullCalculatorData } from "@/lib/calculators";
 
 type SearchResult = Omit<Calculator, "component">;
 
@@ -29,6 +29,23 @@ export function SearchBar() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [search, setSearch] = React.useState("");
   const router = useRouter();
+
+  // We are fetching the data on the client side now.
+  // This is a trade-off: the search index is built on demand,
+  // making the initial page load lighter.
+  const fetchCalculators = async () => {
+    if (calculators.length === 0) {
+      setIsLoading(true);
+      try {
+        const { calculatorsData } = await import('@/lib/calculator-data');
+        setCalculators(calculatorsData);
+      } catch (err) {
+        console.error("Failed to load calculators:", err)
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  };
 
   const fuse = React.useMemo(() => {
     if (calculators.length > 0) {
@@ -49,14 +66,10 @@ export function SearchBar() {
 
 
   React.useEffect(() => {
-    if (isOpen && calculators.length === 0) {
-      setIsLoading(true);
-      loadFullCalculatorData()
-        .then(setCalculators)
-        .catch((err) => console.error("Failed to load calculators:", err))
-        .finally(() => setIsLoading(false));
+    if (isOpen) {
+      fetchCalculators();
     }
-  }, [isOpen, calculators.length]);
+  }, [isOpen]);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
