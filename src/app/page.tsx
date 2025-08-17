@@ -10,12 +10,11 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-  CardFooter
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, Smartphone, icons, FlaskConical } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ScientificCalculator from "@/components/calculator/scientific-calculator";
 
 
 export default function Home() {
@@ -34,30 +33,8 @@ export default function Home() {
       </section>
 
       <section className="py-12">
-        <h2 className="text-3xl font-bold font-headline text-center mb-8">
-          Featured Calculator
-        </h2>
         <div className="flex justify-center">
-            <Link href="/calculators/scientific-calculator">
-              <Card className="max-w-md hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
-                  <CardContent className="pt-6">
-                      <div className="flex flex-col items-center text-center">
-                           <div className="bg-primary/10 p-4 rounded-full mb-4">
-                                <FlaskConical className="w-10 h-10 text-primary" />
-                           </div>
-                           <CardTitle className="font-headline text-2xl group-hover:text-primary transition-colors">
-                             Scientific Calculator
-                           </CardTitle>
-                           <CardDescription className="mt-2">
-                             Perform advanced calculations with trig functions, logarithms, and more.
-                           </CardDescription>
-                           <Button className="mt-4">
-                             Open Calculator <ArrowRight className="ml-2 h-4 w-4" />
-                           </Button>
-                      </div>
-                  </CardContent>
-              </Card>
-            </Link>
+            <ScientificCalculator showFaq={false} />
         </div>
       </section>
       
