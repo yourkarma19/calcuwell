@@ -60,8 +60,8 @@ export default function LoanComparisonCalculator() {
     ];
     
     const chartConfig = {
-      "Loan A": { label: "Loan A", color: "hsl(var(--chart-1))" },
-      "Loan B": { label: "Loan B", color: "hsl(var(--chart-2))" },
+      "Loan A": { label: "Loan A", color: "hsl(220 70% 50%)" },
+      "Loan B": { label: "Loan B", color: "hsl(30 80% 55%)" },
     };
 
     return (
