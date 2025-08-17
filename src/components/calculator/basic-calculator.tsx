@@ -104,8 +104,16 @@ export default function BasicCalculator() {
   
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      event.preventDefault();
+      // Do not prevent default if the user is typing in an input field
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+        return;
+      }
+
       const { key } = event;
+      
+      if (/[0-9.]/.test(key) || isOperator(key) || key === 'Enter' || key === '=' || key === 'Backspace' || key === 'Escape') {
+          event.preventDefault();
+      }
       
       if (/[0-9.]/.test(key)) {
         handleInput(key);
