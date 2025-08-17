@@ -12,8 +12,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import ScientificCalculator from "@/components/calculator/scientific-calculator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import dynamic from 'next/dynamic';
+import { Skeleton } from "@/components/ui/skeleton";
+
+const ScientificCalculator = dynamic(() => import('@/components/calculator/scientific-calculator'), {
+  ssr: false,
+  loading: () => <Skeleton className="w-full max-w-md h-[480px]" />,
+});
 
 
 export default function Home() {
