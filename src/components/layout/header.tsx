@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Calculator } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
-import { SearchBar } from "@/components/search-bar";
 
 export default function Header() {
   return (
@@ -16,9 +15,6 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <SearchBar />
-          </div>
           <ThemeToggle />
         </div>
       </div>
