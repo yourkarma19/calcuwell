@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import Link from "next/link";
 
 // Helper function to calculate factorial
 const factorial = (n: number): number => {
@@ -116,6 +117,12 @@ export default function PermutationCombinationCalculator() {
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
+                        <AccordionTrigger>The Role of Factorials</AccordionTrigger>
+                        <AccordionContent>
+                           Factorials are a key part of calculating permutations and combinations. You can learn more about them with our <Link href="/calculators/factorial-calculator" className="text-primary hover:underline">Factorial Calculator</Link>.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-5">
                         <AccordionTrigger>Can permutations and combinations be used together?</AccordionTrigger>
                         <AccordionContent>
                            Yes, in more complex probability problems. For example, you might use a combination to determine how many ways you can choose a group, and then use a permutation to determine how many ways you can arrange the members of that group.
