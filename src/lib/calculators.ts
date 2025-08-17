@@ -59,16 +59,15 @@ export const categories: Category[] = [
   },
 ];
 
-// Initially, only load trending calculators to keep bundles small.
-export let calculators: Omit<Calculator, 'component'>[] = trendingCalculators;
+let allCalculators: Omit<Calculator, 'component'>[] | null = null;
 
-// Lazy-load the full calculator list when needed
+// Lazy-load the full calculator list when needed, and cache it.
 export const loadFullCalculatorData = async () => {
-  if (calculators.length === trendingCalculators.length) {
+  if (allCalculators === null) {
     const { calculatorsData } = await import('@/lib/calculator-data');
-    calculators = calculatorsData;
+    allCalculators = calculatorsData;
   }
-  return calculators;
+  return allCalculators;
 }
 
 

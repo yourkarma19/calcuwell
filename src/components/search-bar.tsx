@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -64,7 +65,7 @@ export function SearchBar() {
 
   // Perform a debounced search when the query changes
   useEffect(() => {
-    if (!fuseRef.current || !query) {
+    if (isLoading || !fuseRef.current || !query) {
       setResults([]);
       return;
     }
@@ -75,7 +76,7 @@ export function SearchBar() {
     }, 150);
 
     return () => clearTimeout(timer);
-  }, [query]);
+  }, [query, isLoading]);
 
   // Navigate to the selected calculator page
   const handleSelect = useCallback(
