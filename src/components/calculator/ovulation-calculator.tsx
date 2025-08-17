@@ -18,7 +18,7 @@ export default function OvulationCalculator() {
     if (!lastPeriodDate) {
       setLastPeriodDate(new Date());
     }
-  }, [lastPeriodDate, setLastPeriodDate]);
+  }, []);
 
   const { ovulationDate, fertileWindowStart, fertileWindowEnd } = useMemo(() => {
     if (!lastPeriodDate || cycleLength <= 0) {

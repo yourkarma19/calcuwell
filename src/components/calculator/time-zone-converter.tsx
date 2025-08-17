@@ -43,7 +43,7 @@ export default function TimeZoneConverter() {
     if (!date) setDate(new Date());
     if (!time) setTime(new Date().toTimeString().slice(0,5));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [date, time]);
+  }, []);
 
   const handleSwap = () => {
     setFromZone(toZone);

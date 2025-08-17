@@ -41,7 +41,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
       setDateOfBirth(new Date());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dateOfBirth]);
+  }, []);
   
   useEffect(() => {
     handleCalculateAge();

@@ -37,7 +37,7 @@ export default function TimeConverter() {
   useEffect(() => {
     if (value === "0") setValue("1");
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
+  }, []);
 
   const handleSwap = () => {
     setFromUnit(toUnit);

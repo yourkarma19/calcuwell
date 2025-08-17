@@ -42,7 +42,7 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
     if (rate === 0) setRate(8.5);
     if (tenure === 0) setTenure(5);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [principal, rate, tenure]);
+  }, []);
 
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {

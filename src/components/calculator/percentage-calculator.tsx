@@ -45,7 +45,7 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
     if (valA === 0) setValA(10);
     if (valB === 0) setValB(50);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [valA, valB]);
+  }, []);
 
   const result = useMemo(() => {
     const a = Number(valA);

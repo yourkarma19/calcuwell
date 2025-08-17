@@ -51,7 +51,7 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
     if (height === 0) setHeight(175);
     if (weight === 0) setWeight(70);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[height, weight]);
+  },[]);
 
   const heightInMeters = useMemo(() => {
     if (unitSystem === "metric") {

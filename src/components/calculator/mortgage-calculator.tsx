@@ -29,7 +29,7 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
     if (propertyTax === 0) setPropertyTax(2000);
     if (homeInsurance === 0) setHomeInsurance(1000);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [principal, rate, tenure, propertyTax, homeInsurance]);
+  }, []);
 
   const { monthlyPayment, totalPayable, totalInterest, principalAndInterest, monthlyTaxes, monthlyInsurance } = useMemo(() => {
     if (principal > 0 && rate > 0 && tenure > 0) {

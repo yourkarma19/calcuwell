@@ -29,7 +29,7 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
   useEffect(() => {
     if (amount === 0) setAmount(100);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [amount]);
+  }, []);
 
   const { taxAmount, netPrice, grossPrice } = useMemo(() => {
     const initialAmount = Number(amount);
