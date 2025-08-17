@@ -1,4 +1,6 @@
 
+"use client";
+
 import Link from "next/link";
 import { categories, calculators } from "@/lib/calculators";
 import {
@@ -10,7 +12,7 @@ import {
   CardFooter
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import dynamic from 'next/dynamic';
@@ -52,7 +54,7 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => {
-            const LucideIcon = icons[category.iconName as keyof typeof icons] || icons.Calculator;
+            const LucideIcon = require('lucide-react')[category.iconName as keyof typeof import('lucide-react')] || require('lucide-react').Calculator;
             return (
             <Link key={category.slug} href={`/categories/${category.slug}`} className="block">
               <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
