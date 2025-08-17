@@ -60,7 +60,7 @@ export default function BasicCalculator() {
         if (isOperator(lastChar)) {
             setExpression(prev => prev.slice(0, -1) + op);
         } else {
-            setExpression(displayValue + op);
+            setExpression(prev => prev + displayValue + op);
         }
         setDisplayValue("0");
     }
@@ -144,29 +144,31 @@ export default function BasicCalculator() {
           <CardTitle>Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-           <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
+          <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
             <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || " "}</div>
-            <div
-              aria-label="Calculator display"
-              className={cn(
-                "h-2/3 w-full text-right font-mono flex items-center justify-end p-0 border-0 bg-transparent",
-                displayFontSize(),
-                displayValue === "I ❤️ You" && "text-primary"
-              )}
-            >
-              {displayValue}
+            <div className="h-2/3 w-full flex items-end justify-end">
+                <div
+                aria-label="Calculator display"
+                className={cn(
+                    "w-full text-right font-mono",
+                    displayFontSize(),
+                    displayValue === "I ❤️ You" && "text-primary"
+                )}
+                >
+                {displayValue}
+                </div>
             </div>
           </div>
           <div className="grid grid-cols-4 grid-rows-5 gap-2">
               <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
-              <Button onClick={() => handleInput("+/-")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">+/-</Button>
+              <Button onClick={() => handleInput("Backspace")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
               <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
-              <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">/</Button>
+              <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">÷</Button>
               
               <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
               <Button onClick={() => handleInput("8")} variant="outline" className="h-16 text-2xl">8</Button>
               <Button onClick={() => handleInput("9")} variant="outline" className="h-16 text-2xl">9</Button>
-              <Button onClick={() => handleOperator("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">*</Button>
+              <Button onClick={() => handleOperator("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">×</Button>
 
               <Button onClick={() => handleInput("4")} variant="outline" className="h-16 text-2xl">4</Button>
               <Button onClick={() => handleInput("5")} variant="outline" className="h-16 text-2xl">5</Button>
