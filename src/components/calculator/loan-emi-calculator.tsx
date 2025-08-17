@@ -35,7 +35,8 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));
     if (t) setTenure(parseFloat(t));
-  }, [searchParams, setPrincipal, setRate, setTenure]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {

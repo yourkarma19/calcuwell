@@ -9,6 +9,7 @@ function usePersistentState<T>(
     reviver?: (value: any) => T
 ): [T, Dispatch<SetStateAction<T>>] {
     const [state, setState] = useState<T>(defaultValue);
+    const [isInitialized, setIsInitialized] = useState(false);
 
     useEffect(() => {
         let storedValue: T;
@@ -25,9 +26,12 @@ function usePersistentState<T>(
             storedValue = defaultValue;
         }
         setState(storedValue);
+        setIsInitialized(true);
     }, [key, defaultValue, reviver]);
 
     const setPersistentState: Dispatch<SetStateAction<T>> = useCallback((newValue) => {
+        if (!isInitialized) return;
+        
         setState(prevState => {
             const resolvedValue = typeof newValue === 'function' ? (newValue as (prevState: T) => T)(prevState) : newValue;
             try {
@@ -37,7 +41,7 @@ function usePersistentState<T>(
             }
             return resolvedValue;
         });
-    }, [key]);
+    }, [key, isInitialized]);
 
     return [state, setPersistentState];
 }

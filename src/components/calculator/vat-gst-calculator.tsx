@@ -24,7 +24,8 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
     if (a) setAmount(parseFloat(a));
     if (r) setTaxRate(parseFloat(r));
     if (i === 'yes' || i === 'no') setPriceIncludesTax(i);
-  }, [searchParams, setAmount, setTaxRate, setPriceIncludesTax]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const { taxAmount, netPrice, grossPrice } = useMemo(() => {
     const initialAmount = Number(amount);

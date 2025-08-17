@@ -45,7 +45,8 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
     if (u === 'metric' || u === 'imperial') setUnitSystem(u);
     if (w) setWeight(parseFloat(w));
     if (h) setHeight(parseFloat(h));
-  }, [searchParams, setWeight, setHeight, setUnitSystem]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const heightInMeters = useMemo(() => {
     if (unitSystem === "metric") {
