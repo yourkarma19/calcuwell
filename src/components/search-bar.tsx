@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -37,8 +38,7 @@ export function SearchBar() {
     setIsLoading(true);
     try {
       const allCalculators = await loadFullCalculatorData();
-      const FuseModule = await import("fuse.js");
-      fuseRef.current = new FuseModule.default(allCalculators, {
+      fuseRef.current = new Fuse(allCalculators, {
         keys: ["name", "tags", "category"],
         threshold: 0.3,
         includeScore: true,
@@ -71,12 +71,12 @@ export function SearchBar() {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
-  
+
   // Initialize search when popover opens
   React.useEffect(() => {
-      if(isOpen) {
-          initializeSearch();
-      }
+    if (isOpen) {
+      initializeSearch();
+    }
   }, [isOpen, initializeSearch]);
 
   const onOpenChange = (open: boolean) => {
@@ -114,16 +114,17 @@ export function SearchBar() {
       >
         <Command shouldFilter={false}>
           <CommandInput
-            value={query}
-            onValueChange={setQuery}
             placeholder="Search for a calculator..."
             disabled={isLoading}
+            value={query}
+            onValueChange={(val) => setQuery(val)}
           />
           <CommandList>
             {isLoading ? (
-                <CommandEmpty>Loading search index...</CommandEmpty>
+              <CommandEmpty>Loading search index...</CommandEmpty>
             ) : (
-                query.length > 0 && results.length === 0 && <CommandEmpty>No results found.</CommandEmpty>
+              query.length > 0 &&
+              results.length === 0 && <CommandEmpty>No results found.</CommandEmpty>
             )}
             <CommandGroup>
               {results.map(({ item: calc }) => {
