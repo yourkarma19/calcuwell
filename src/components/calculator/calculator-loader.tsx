@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from 'react';
@@ -16,7 +17,7 @@ export default function CalculatorLoader({ slug, setFormula }: CalculatorLoaderP
         .then(mod => mod.default)
         .catch(() => () => <PlaceholderCalculator />),
       {
-        loading: () => <div className="lg:col-span-3 text-center p-8">Loading calculator...</div>,
+        loading: () => <PlaceholderCalculator />,
         ssr: false,
       }
     );
