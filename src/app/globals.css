@@ -11,7 +11,7 @@
     --card-foreground: 264 20% 15%;
     --popover: 264 30% 100%;
     --popover-foreground: 264 20% 15%;
-    --primary: 262 80% 55%; /* Vibrant Purple */
+    --primary: 262 70% 45%; /* Darker Purple */
     --primary-foreground: 210 40% 98%;
     --secondary: 264 20% 92%;
     --secondary-foreground: 264 20% 25%;
@@ -23,12 +23,12 @@
     --destructive-foreground: 0 0% 100%;
     --border: 264 15% 85%;
     --input: 264 15% 85%;
-    --ring: 262 80% 55%;
-    --chart-1: 262 80% 55%;
-    --chart-2: 282 70% 65%;
-    --chart-3: 302 70% 65%;
-    --chart-4: 242 70% 65%;
-    --chart-5: 222 70% 65%;
+    --ring: 262 70% 45%;
+    --chart-1: 262 70% 45%;
+    --chart-2: 282 60% 55%;
+    --chart-3: 302 60% 55%;
+    --chart-4: 242 60% 55%;
+    --chart-5: 222 60% 55%;
     --radius: 0.8rem;
   }
 
@@ -39,7 +39,7 @@
     --card-foreground: 210 40% 98%; /* White text for inside cards */
     --popover: 240 10% 4%;
     --popover-foreground: 210 40% 98%;
-    --primary: 262 85% 65%; /* Vibrant Purple for interactive elements */
+    --primary: 262 70% 55%; /* Darker, rich purple */
     --primary-foreground: 210 40% 98%; /* White text on purple buttons */
     --secondary: 240 4% 16%; /* Darker gray for secondary elements */
     --secondary-foreground: 210 40% 98%;
@@ -51,12 +51,12 @@
     --destructive-foreground: 0 0% 100%;
     --border: 240 4% 16%;
     --input: 240 4% 16%;
-    --ring: 262 85% 65%;
-    --chart-1: 262 85% 65%;
-    --chart-2: 282 75% 75%;
-    --chart-3: 302 75% 75%;
-    --chart-4: 242 75% 75%;
-    --chart-5: 222 75% 75%;
+    --ring: 262 70% 55%;
+    --chart-1: 262 70% 55%;
+    --chart-2: 282 65% 65%;
+    --chart-3: 302 65% 65%;
+    --chart-4: 242 65% 65%;
+    --chart-5: 222 65% 65%;
   }
 }
 
