@@ -67,9 +67,10 @@ export default function BasicCalculator() {
   };
 
   const handleEquals = () => {
-    if (displayValue === '12082007+19112005') {
+    const fullExpression = (expression + displayValue);
+    if (fullExpression === '12082007+19112005') {
       setDisplayValue("I ❤️ You");
-      setExpression(displayValue);
+      setExpression("");
       setIsCelebrating(true);
       setTimeout(() => setIsCelebrating(false), 6000);
       setJustEvaluated(true);
@@ -77,15 +78,15 @@ export default function BasicCalculator() {
     }
     
     try {
-        const fullExpression = (expression + displayValue).replace(/[^-()\d/*+.]/g, '');
+        const safeExpression = fullExpression.replace(/[^-()\d/*+.]/g, '');
         // Use Function constructor for safe evaluation
-        const result = new Function('return ' + fullExpression)();
+        const result = new Function('return ' + safeExpression)();
         
         if (result === undefined || !isFinite(result)) {
-            setExpression(fullExpression);
+            setExpression(safeExpression);
             setDisplayValue("Error");
         } else {
-            setExpression(fullExpression);
+            setExpression(safeExpression);
             setDisplayValue(result.toString());
         }
     } catch (error) {
@@ -112,7 +113,7 @@ export default function BasicCalculator() {
       const { key } = event;
       
       if (/[0-9.]/.test(key) || isOperator(key) || key === 'Enter' || key === '=' || key === 'Backspace' || key === 'Escape') {
-          event.preventDefault();
+          // event.preventDefault();
       }
       
       if (/[0-9.]/.test(key)) {
@@ -146,9 +147,9 @@ export default function BasicCalculator() {
     <div className="lg:col-span-3 space-y-6">
       <Card className="max-w-sm mx-auto overflow-hidden relative">
         {isCelebrating && (
-          <div className="celebrate">
+          <div className="celebrate absolute inset-0 pointer-events-none">
             {Array.from({ length: 10 }).map((_, i) => (
-              <Heart key={i} className="heart" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
+              <Heart key={i} className="heart absolute" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
             ))}
           </div>
         )}

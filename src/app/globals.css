@@ -98,7 +98,6 @@
   bottom: 0;
   color: hsl(var(--primary));
   animation: rise 5s ease-in forwards;
-  pointer-events: none;
 }
 
 
