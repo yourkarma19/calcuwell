@@ -38,12 +38,17 @@ export function SearchBar() {
         threshold: 0.3,
         includeScore: true,
       });
+      // Re-run search with the current query now that Fuse is initialized
+      if (query.length > 1) {
+          const searchResults = fuseRef.current.search(query);
+          setResults(searchResults.slice(0, 10));
+      }
     } catch (error) {
         console.error("Failed to load Fuse.js or calculator data", error);
     } finally {
         setIsLoading(false);
     }
-  }, [isLoading]);
+  }, [isLoading, query]);
   
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
