@@ -6,13 +6,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Delete } from "lucide-react";
 
 const buttonLayout = [
   "AC", "+/-", "%", "/",
   "7", "8", "9", "*",
   "4", "5", "6", "-",
   "1", "2", "3", "+",
-  "0", ".", "="
+  "0", ".", "Backspace", "="
 ];
 
 export default function BasicCalculator() {
@@ -48,6 +49,8 @@ export default function BasicCalculator() {
         setDisplayValue(prev => (parseFloat(prev) * -1).toString());
     } else if (input === "%") {
         setDisplayValue(prev => (parseFloat(prev) / 100).toString());
+    } else if (input === 'Backspace') {
+        setDisplayValue(prev => prev.length > 1 ? prev.slice(0, -1) : '0');
     } else {
       if(displayValue === "0" && input !== '.'){
         setDisplayValue(input);
@@ -97,7 +100,8 @@ export default function BasicCalculator() {
   const getButtonClass = (btn: string) => {
     if (["/", "*", "-", "+", "="].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
     if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
-    if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
+    if (btn === "0") return { variant: "outline" as const, className: ""};
+    if (btn === 'Backspace') return { variant: "outline" as const, className: "" };
     return { variant: "outline" as const, className: ""};
   };
 
@@ -136,9 +140,9 @@ export default function BasicCalculator() {
                   key={btn}
                   onClick={() => handleInput(btn)}
                   variant={variant}
-                  className={`h-16 text-2xl ${className}`}
+                  className={cn("h-16 text-2xl", btn === "0" ? "col-span-2" : "", className)}
                 >
-                  {btn}
+                  {btn === 'Backspace' ? <Delete /> : btn}
                 </Button>
               )
             })}
