@@ -10,14 +10,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Heart } from "lucide-react";
-
-const buttonLayout = [
-  "AC", "+/-", "%", "/",
-  "7", "8", "9", "*",
-  "4", "5", "6", "-",
-  "1", "2", "3", "+",
-  "0", ".", "="
-];
+import BasicCalculator from "./basic-calculator";
 
 const getScientificButtonLayout = (isInverse: boolean) => [
     { func: '(', tooltip: 'Open Parenthesis' }, { func: ')', tooltip: 'Close Parenthesis' }, { func: 'mc', tooltip: 'Memory Clear' }, { func: 'm+', tooltip: 'Memory Add' }, { func: 'm-', tooltip: 'Memory Subtract' }, { func: 'mr', tooltip: 'Memory Recall' },
@@ -44,234 +37,86 @@ const getScientificButtonLayout = (isInverse: boolean) => [
 ];
 
 export default function ScientificCalculator({ showFaq = true }: { showFaq?: boolean }) {
-  const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
   const [memory, setMemory] = useState(0);
   const [isRadians, setIsRadians] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const [justEvaluated, setJustEvaluated] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
-  const [isCelebrating, setIsCelebrating] = useState(false);
-  const [randomNumber, setRandomNumber] = useState<number | null>(null);
-
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setRandomNumber(Math.random());
   }, []);
-  
-  const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
-
-  const handleInput = (input: string) => {
-    if (justEvaluated && !isOperator(input) && input !== '.') {
-      setExpression(""); 
-      setDisplayValue(input);
-      setJustEvaluated(false);
-      return;
-    }
-
-    if (displayValue === "Error") {
-        resetCalculator();
-        if(!isOperator(input)) setDisplayValue(input);
-        return;
-    }
-
-    if (isOperator(input)) {
-        handleOperator(input);
-    } else if (input === "=") {
-      handleEquals();
-    } else if (input === "AC") {
-      resetCalculator();
-    } else if (input === "+/-") {
-        setDisplayValue(prev => (parseFloat(prev) * -1).toString());
-    } else if (input === "%") {
-        setDisplayValue(prev => (parseFloat(prev) / 100).toString());
-    } else {
-      if(displayValue === "0" && input !== '.'){
-        setDisplayValue(input);
-      } else {
-        setDisplayValue(prev => prev + input);
-      }
-      setJustEvaluated(false);
-    }
-  };
-  
-  const handleOperator = (op: string) => {
-    setJustEvaluated(false);
-    if (displayValue !== "Error") {
-      const lastChar = displayValue.slice(-1);
-      if(isOperator(lastChar)) {
-        setDisplayValue(prev => prev.slice(0, -1) + op);
-      } else {
-        setDisplayValue(prev => prev + op);
-      }
-    }
-  }
-
-  const handleBackspace = () => {
-    if (justEvaluated) {
-      resetCalculator();
-      return;
-    }
-    setDisplayValue(prev => (prev.length > 1 && prev !== "Error") ? prev.slice(0, -1) : "0");
-  };
-  
-  const handleScientificInput = (func: string) => {
-      setJustEvaluated(false);
-      if (displayValue === "Error" && func !== 'AC') {
-        resetCalculator();
-        return;
-      }
-      let currentDisplay = (displayValue === "0" || displayValue === "Error") ? "" : displayValue;
-
-      const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
-      const radToAngle = (rad: number) => isRadians ? rad : rad * (180 / Math.PI);
-      const value = parseFloat(displayValue);
-
-      try {
-        switch(func) {
-            case '2nd': setIsInverse(prev => !prev); return;
-            case '(': currentDisplay += '('; break;
-            case ')': currentDisplay += ')'; break;
-            case 'mc': setMemory(0); return;
-            case 'm+': setMemory(prev => prev + value); return;
-            case 'm-': setMemory(prev => prev - value); return;
-            case 'mr': setDisplayValue(memory.toString()); return;
-            case 'x²': handleEquals(Math.pow(value, 2).toString()); return;
-            case 'x³': handleEquals(Math.pow(value, 3).toString()); return;
-            case 'xʸ': currentDisplay += '**'; break;
-            case 'eˣ': handleEquals(Math.exp(value).toString()); return;
-            case '10ˣ': handleEquals(Math.pow(10, value).toString()); return;
-            case 'x!': handleEquals(factorial(value).toString()); return;
-            case '¹/x': handleEquals((1 / value).toString()); return;
-            case '²√x': if(value < 0) throw new Error("Invalid input for square root"); handleEquals(Math.sqrt(value).toString()); return;
-            case '³√x': handleEquals(Math.cbrt(value).toString()); return;
-            case 'ʸ√x': currentDisplay += '**(1/'; break;
-            case 'ln': if(value <= 0) throw new Error("Invalid input for natural log"); handleEquals(Math.log(value).toString()); return;
-            case 'log₁₀': if(value <= 0) throw new Error("Invalid input for log base 10"); handleEquals(Math.log10(value).toString()); return;
-            case 'log₂': if(value <= 0) throw new Error("Invalid input for log base 2"); handleEquals(Math.log2(value).toString()); return;
-            case 'sin': handleEquals(Math.sin(angleToRad(value)).toString()); return;
-            case 'cos': handleEquals(Math.cos(angleToRad(value)).toString()); return;
-            case 'tan': if (isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error("Invalid input for tan"); handleEquals(Math.tan(angleToRad(value)).toString()); return;
-            case 'sin⁻¹': if(value < -1 || value > 1) throw new Error("Input for arcsin must be between -1 and 1"); handleEquals(radToAngle(Math.asin(value)).toString()); return;
-            case 'cos⁻¹': if(value < -1 || value > 1) throw new Error("Input for arccos must be between -1 and 1"); handleEquals(radToAngle(Math.acos(value)).toString()); return;
-            case 'tan⁻¹': handleEquals(radToAngle(Math.atan(value)).toString()); return;
-            case 'e': currentDisplay += Math.E.toString(); break;
-            case 'EE': currentDisplay += 'e'; break;
-            case 'Rad': setIsRadians(true); return;
-            case 'deg': setIsRadians(false); return;
-            case 'sinh': handleEquals(Math.sinh(value).toString()); return;
-            case 'cosh': handleEquals(Math.cosh(value).toString()); return;
-            case 'tanh': handleEquals(Math.tanh(value).toString()); return;
-            case 'sinh⁻¹': handleEquals(Math.asinh(value).toString()); return;
-            case 'cosh⁻¹': if(value < 1) throw new Error("Input for arccosh must be >= 1"); handleEquals(Math.acosh(value).toString()); return;
-            case 'tanh⁻¹': if(value <= -1 || value >= 1) throw new Error("Input for arctanh must be between -1 and 1"); handleEquals(Math.atanh(value).toString()); return;
-            case 'π': setDisplayValue(Math.PI.toString()); return;
-            case 'Rand':
-                if (randomNumber !== null) {
-                    setDisplayValue(randomNumber.toString());
-                    setRandomNumber(Math.random()); // prepare for next click
-                }
-                return;
-            default: break;
-        }
-        setDisplayValue(currentDisplay);
-      } catch (e: any) {
-        setDisplayValue("Error");
-        setExpression(e.message || "Invalid operation");
-      }
-  }
-
-    const factorial = (n: number): number => {
-        if (n < 0 || !Number.isInteger(n)) return NaN;
-        if (n === 0 || n === 1) return 1;
-        if (n > 170) return Infinity;
-        let result = 1;
-        for (let i = 2; i <= n; i++) {
-            result *= i;
-        }
-        return result;
-    };
-
-
-  const handleEquals = (precomputedResult?: string) => {
-    // Easter Egg
-    if (displayValue.replace(/\s/g, '') === '12082007+19112005') {
-        setExpression(displayValue);
-        setDisplayValue('I ❤️ You');
-        setIsCelebrating(true);
-        setTimeout(() => setIsCelebrating(false), 5000); // Stop celebrating after 5 seconds
-        setJustEvaluated(true);
-        return;
-    }
-    
-    try {
-        let result;
-        if (precomputedResult !== undefined) {
-            result = parseFloat(precomputedResult);
-        } else {
-            const currentExpression = displayValue.replace(/\^/g, '**');
-            result = new Function('return ' + currentExpression)();
-        }
-        
-        if (result === undefined || isNaN(result) || !isFinite(result)) {
-            setExpression(displayValue);
-            setDisplayValue("Error");
-        } else {
-            setExpression(displayValue);
-            setDisplayValue(result.toString());
-        }
-    } catch (error) {
-        setExpression(displayValue);
-        setDisplayValue("Error");
-    }
-    setJustEvaluated(true);
-  };
-
-  const resetCalculator = () => {
-    setExpression("");
-    setDisplayValue("0");
-    setJustEvaluated(false);
-  };
-
-  const getButtonClass = (btn: string) => {
-    if (isOperator(btn) || btn === "=") return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
-    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
-    if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
-    return { variant: "outline" as const, className: ""};
-  };
-
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-        const key = event.key;
-        if ((key >= '0' && key <= '9') || key === '.') {
-            handleInput(key);
-        } else if (isOperator(key) || key === '^') {
-            handleOperator(key === '^' ? '**' : key);
-        } else if (key === 'Enter' || key === '=') {
-            event.preventDefault(); // prevent form submission
-            handleEquals();
-        } else if (key === 'Backspace') {
-            handleBackspace();
-        } else if (key.toLowerCase() === 'c' || key === 'Escape') {
-            resetCalculator();
-        } else if (key === '(' || key === ')') {
-            handleScientificInput(key);
-        }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayValue, justEvaluated]);
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleKeyDown]);
 
   const scientificButtons = getScientificButtonLayout(isInverse);
-  
+
+  // This is a simplified display for scientific mode
+  const expression = "Scientific Mode";
+
+  const factorial = (n: number): number => {
+    if (n < 0 || !Number.isInteger(n)) return NaN;
+    if (n === 0 || n === 1) return 1;
+    if (n > 170) return Infinity;
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+  };
+
+  const handleScientificInput = (func: string) => {
+    if (displayValue === "Error" && func !== 'AC') return;
+    
+    let currentDisplay = (displayValue === "0" || displayValue === "Error") ? "" : displayValue;
+    const value = parseFloat(displayValue);
+    const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
+    const radToAngle = (rad: number) => isRadians ? rad : rad * (180 / Math.PI);
+
+    try {
+      let result;
+      switch(func) {
+        case '2nd': setIsInverse(!isInverse); return;
+        case 'x²': result = Math.pow(value, 2); break;
+        case 'x³': result = Math.pow(value, 3); break;
+        case 'eˣ': result = Math.exp(value); break;
+        case '10ˣ': result = Math.pow(10, value); break;
+        case 'x!': result = factorial(value); break;
+        case '¹/x': result = 1 / value; break;
+        case '²√x': if (value < 0) throw new Error("Invalid input"); result = Math.sqrt(value); break;
+        case '³√x': result = Math.cbrt(value); break;
+        case 'ln': if (value <= 0) throw new Error("Invalid input"); result = Math.log(value); break;
+        case 'log₁₀': if (value <= 0) throw new Error("Invalid input"); result = Math.log10(value); break;
+        case 'log₂': if (value <= 0) throw new Error("Invalid input"); result = Math.log2(value); break;
+        case 'sin': result = Math.sin(angleToRad(value)); break;
+        case 'cos': result = Math.cos(angleToRad(value)); break;
+        case 'tan': if (isRadians ? (value / Math.PI - 0.5) % 1 === 0 : (value / 90 - 1) % 2 === 0) throw new Error("Invalid input"); result = Math.tan(angleToRad(value)); break;
+        case 'sin⁻¹': if(value < -1 || value > 1) throw new Error("Input must be between -1 and 1"); result = radToAngle(Math.asin(value)); break;
+        case 'cos⁻¹': if(value < -1 || value > 1) throw new Error("Input must be between -1 and 1"); result = radToAngle(Math.acos(value)); break;
+        case 'tan⁻¹': result = radToAngle(Math.atan(value)); break;
+        case 'e': result = Math.E; break;
+        case 'π': result = Math.PI; break;
+        case 'Rand': if (isClient) result = Math.random(); break;
+        case 'mc': setMemory(0); return;
+        case 'm+': setMemory(prev => prev + value); return;
+        case 'm-': setMemory(prev => prev - value); return;
+        case 'mr': setDisplayValue(memory.toString()); return;
+        case 'Rad': setIsRadians(true); return;
+        case 'deg': setIsRadians(false); return;
+        default:
+          setDisplayValue(currentDisplay + func);
+          return;
+      }
+      if (result !== undefined && isFinite(result)) {
+        setDisplayValue(result.toString());
+      } else {
+        setDisplayValue("Error");
+      }
+    } catch(e) {
+      setDisplayValue("Error");
+    }
+  }
+
   const displayFontSize = () => {
     const len = displayValue.length;
-    if (displayValue === "I ❤️ You") return 'text-4xl'
     if (len > 16) return 'text-2xl';
     if (len > 12) return 'text-3xl';
     if (len > 8) return 'text-4xl';
@@ -281,32 +126,34 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   return (
     <div className="lg:col-span-3 max-w-2xl mx-auto space-y-6 relative">
        <TooltipProvider>
-      <Card className={cn(isCelebrating && "celebrate")}>
-        {isCelebrating && Array.from({length: 10}).map((_, i) => <Heart key={i} className="heart" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }}/>)}
+      <Card>
         <CardHeader>
           <CardTitle>Scientific Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
-            <div data-testid="expression-display" className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression}</div>
-            <div 
-              data-testid="main-display"
-              aria-label="Calculator display"
-              className={cn(
-                "font-mono h-2/3 w-full text-right break-all flex items-center justify-end",
-                displayFontSize()
-              )}
-            >
-              {displayValue}
-            </div>
-          </div>
-          <Tabs defaultValue="scientific" className="w-full">
+          <Tabs defaultValue="basic" className="w-full">
               <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="scientific">Sci</TabsTrigger>
                   <TabsTrigger value="basic">Basic</TabsTrigger>
+                  <TabsTrigger value="scientific">Sci</TabsTrigger>
               </TabsList>
+              <TabsContent value="basic" className="mt-4">
+                  <BasicCalculator />
+              </TabsContent>
               <TabsContent value="scientific" className="mt-4">
-                  <div className="grid grid-cols-6 gap-2">
+                  <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
+                    <div data-testid="expression-display" className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression}</div>
+                    <div 
+                      data-testid="main-display"
+                      aria-label="Calculator display"
+                      className={cn(
+                        "font-mono h-2/3 w-full text-right break-all flex items-center justify-end",
+                        displayFontSize()
+                      )}
+                    >
+                      {displayValue}
+                    </div>
+                  </div>
+                   <div className="grid grid-cols-6 gap-2 mt-4">
                      {scientificButtons
                         .concat(isRadians ? {func: 'deg', tooltip: 'Switch to Degrees'} : {func: 'Rad', tooltip: 'Switch to Radians'})
                         .map(({func, tooltip, active}) => (
@@ -327,23 +174,6 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
                      ))}
                   </div>
               </TabsContent>
-               <TabsContent value="basic" className="mt-4">
-                   <div className="grid grid-cols-4 gap-2">
-                        {buttonLayout.map((btn) => {
-                            const { variant, className } = getButtonClass(btn);
-                            return (
-                                <Button
-                                    key={btn}
-                                    onClick={() => handleInput(btn)}
-                                    className={`h-16 text-2xl ${className}`}
-                                    variant={variant}
-                                >
-                                    {btn}
-                                </Button>
-                            );
-                        })}
-                    </div>
-               </TabsContent>
           </Tabs>
         </CardContent>
       </Card>
@@ -377,13 +207,12 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger>What is the difference between DEG, RAD, and GRAD modes?</AccordionTrigger>
+                        <AccordionTrigger>What is the difference between DEG and RAD modes?</AccordionTrigger>
                         <AccordionContent>
-                            These are three different units for measuring angles.
+                            These are two different units for measuring angles.
                             <ul className="list-disc list-inside mt-2 space-y-1">
                                 <li><strong>Degrees (DEG):</strong> The most common unit, where a full circle is 360°.</li>
                                 <li><strong>Radians (RAD):</strong> The standard mathematical unit, where a full circle is 2π radians. This is used in many areas of mathematics and physics.</li>
-                                <li><strong>Gradians (GRAD):</strong> A less common unit where a full circle is 400 gradians.</li>
                             </ul>
                             Ensure you are in the correct mode for your calculation to get the right result.
                         </AccordionContent>

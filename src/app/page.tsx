@@ -21,7 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const ScientificCalculator = dynamic(() => import('@/components/calculator/scientific-calculator'), {
   ssr: false,
-  loading: () => <Skeleton className="w-full max-w-md h-[480px]" />,
+  loading: () => <Skeleton className="w-full max-w-2xl h-[600px]" />,
 });
 
 
@@ -42,9 +42,7 @@ export default function Home() {
 
       <section className="py-8 md:py-12">
          <div className="flex justify-center relative z-20">
-          <div className="w-full max-w-md">
             <ScientificCalculator showFaq={false}/>
-          </div>
         </div>
       </section>
       
