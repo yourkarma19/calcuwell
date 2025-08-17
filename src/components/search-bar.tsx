@@ -4,7 +4,6 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import * as Icons from "lucide-react";
-import Fuse from "fuse.js";
 import {
   Popover,
   PopoverContent,
@@ -20,56 +19,41 @@ import {
 } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
 import { type Calculator } from "@/lib/types";
+import { searchCalculators } from "@/app/actions/search";
 
 type SearchResult = Omit<Calculator, "component">;
 
 export function SearchBar() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [calculators, setCalculators] = React.useState<SearchResult[]>([]);
-  const [isLoading, setIsLoading] = React.useState(false);
   const [search, setSearch] = React.useState("");
+  const [results, setResults] = React.useState<SearchResult[]>([]);
+  const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
-
-  // We are fetching the data on the client side now.
-  // This is a trade-off: the search index is built on demand,
-  // making the initial page load lighter.
-  const fetchCalculators = async () => {
-    if (calculators.length === 0) {
-      setIsLoading(true);
-      try {
-        const { calculatorsData } = await import('@/lib/calculator-data');
-        setCalculators(calculatorsData);
-      } catch (err) {
-        console.error("Failed to load calculators:", err)
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
-  const fuse = React.useMemo(() => {
-    if (calculators.length > 0) {
-      return new Fuse(calculators, {
-        keys: ["name", "category", "tags"],
-        threshold: 0.3,
-      });
-    }
-    return null;
-  }, [calculators]);
-
-  const searchResults = React.useMemo(() => {
-    if (!search || !fuse) {
-      return calculators;
-    }
-    return fuse.search(search).map((result) => result.item);
-  }, [search, fuse, calculators]);
-
-
+  
+  // Debounce search input
   React.useEffect(() => {
-    if (isOpen) {
-      fetchCalculators();
+    setIsLoading(true);
+    const debounceTimeout = setTimeout(async () => {
+      const searchResults = await searchCalculators(search);
+      setResults(searchResults);
+      setIsLoading(false);
+    }, 300); // 300ms debounce delay
+
+    return () => clearTimeout(debounceTimeout);
+  }, [search]);
+  
+  // Pre-fetch initial results when opening
+  React.useEffect(() => {
+    if (isOpen && search === "") {
+        const fetchInitial = async () => {
+            setIsLoading(true);
+            const initialResults = await searchCalculators("");
+            setResults(initialResults);
+            setIsLoading(false);
+        };
+        fetchInitial();
     }
-  }, [isOpen]);
+  }, [isOpen, search]);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -113,15 +97,14 @@ export function SearchBar() {
             value={search}
             onValueChange={setSearch}
             placeholder="Type to search..."
-            disabled={isLoading}
           />
           <CommandList>
-            {isLoading && <CommandEmpty>Loading search index...</CommandEmpty>}
-            {!isLoading && searchResults.length === 0 && (
+            {isLoading && <CommandEmpty>Loading search results...</CommandEmpty>}
+            {!isLoading && results.length === 0 && (
               <CommandEmpty>No results found for "{search}".</CommandEmpty>
             )}
             <CommandGroup>
-              {searchResults.map((calc) => {
+              {results.map((calc) => {
                 const LucideIcon =
                   Icons[calc.iconName as keyof typeof Icons] ||
                   Icons.Calculator;
