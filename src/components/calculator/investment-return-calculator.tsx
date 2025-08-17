@@ -18,7 +18,7 @@ export default function InvestmentReturnCalculator() {
     const final = Number(finalValue);
 
     if (initial === 0) {
-      return { roi: 0, netProfit: final };
+      return { roi: final > 0 ? Infinity : 0, netProfit: final };
     }
     
     const profit = final - initial;
@@ -108,29 +108,19 @@ export default function InvestmentReturnCalculator() {
       </div>
       <div className="lg:col-span-1">
         <Card className="sticky top-24">
-          <CardHeader><CardTitle>Trade Result</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Investment Result</CardTitle></CardHeader>
           <CardContent className="space-y-4" aria-live="polite">
             <div className="text-center">
-              <p className="text-sm text-muted-foreground">Total {isProfit ? "Profit" : "Loss"}</p>
+              <p className="text-sm text-muted-foreground">Net {isProfit ? "Profit" : "Loss"}</p>
               <p className={cn("text-4xl font-bold font-headline", resultColor)}>
-                {formatCurrency(Math.abs(profitOrLoss))}
+                {formatCurrency(Math.abs(netProfit))}
               </p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-muted-foreground">Return on Investment</p>
+              <p className="text-sm text-muted-foreground">Return on Investment (ROI)</p>
               <p className={cn("text-2xl font-semibold", resultColor)}>
-                {returnPercentage.toFixed(2)}%
+                {roi.toFixed(2)}%
               </p>
-            </div>
-            <div className="space-y-2 text-sm pt-4 border-t">
-                 <div className="flex justify-between">
-                    <span>Total Cost:</span>
-                    <span className="font-semibold">{formatCurrency(totalCost)}</span>
-                </div>
-                 <div className="flex justify-between">
-                    <span>Total Proceeds:</span>
-                    <span className="font-semibold">{formatCurrency(totalProceeds)}</span>
-                </div>
             </div>
           </CardContent>
         </Card>

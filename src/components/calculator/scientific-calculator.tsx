@@ -1,14 +1,13 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Heart } from "lucide-react";
 import BasicCalculator from "./basic-calculator";
 
 const getScientificButtonLayout = (isInverse: boolean) => [
@@ -89,7 +88,13 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
         case 'tan⁻¹': result = radToAngle(Math.atan(value)); break;
         case 'e': result = Math.E; break;
         case 'π': result = Math.PI; break;
-        case 'Rand': if (typeof window !== 'undefined') result = Math.random(); break;
+        case 'Rand': 
+          if (typeof window !== 'undefined') {
+            result = Math.random();
+          } else {
+            result = 0.5; // fallback for SSR
+          }
+          break;
         case 'mc': setMemory(0); return;
         case 'm+': setMemory(prev => prev + value); return;
         case 'm-': setMemory(prev => prev - value); return;
