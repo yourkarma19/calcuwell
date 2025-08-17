@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -47,12 +46,20 @@ export function SearchBar() {
 
   const handleInputChange = (newQuery: string) => {
     setQuery(newQuery);
-    if (newQuery.length > 1 && fuseRef.current) {
-        setResults(fuseRef.current.search(newQuery).slice(0, 10));
+  };
+  
+  // This effect handles running the search query whenever the query or loading state changes.
+  useEffect(() => {
+    if (isLoading || !fuseRef.current) {
+        return;
+    }
+    if (query.length > 1) {
+        setResults(fuseRef.current.search(query).slice(0, 10));
     } else {
         setResults([]);
     }
-  };
+  }, [query, isLoading]);
+
 
   const handleSelect = useCallback((slug: string) => {
     router.push(`/calculators/${slug}`);
@@ -81,13 +88,6 @@ export function SearchBar() {
       }, 100);
     }
   }, [isOpen, isLoading, initFuse]);
-
-  useEffect(() => {
-    if (!isLoading && fuseRef.current && query.length > 1) {
-        setResults(fuseRef.current.search(query).slice(0, 10));
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading]);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
