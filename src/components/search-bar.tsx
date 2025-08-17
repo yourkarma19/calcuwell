@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import type Fuse from "fuse.js";
-import type { FuseResult } from "fuse.js";
+import Fuse, { type FuseResult } from "fuse.js";
 import * as Icons from "lucide-react";
 import {
   Popover,
@@ -22,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { loadFullCalculatorData } from "@/lib/calculators";
 
+// Define the type for search results, omitting the component part for performance
 type SearchResult = Omit<Calculator, "component">;
 
 export function SearchBar() {
@@ -29,59 +29,55 @@ export function SearchBar() {
   const [results, setResults] = useState<FuseResult<SearchResult>[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [highlightedIndex, setHighlightedIndex] = useState(0);
 
   const router = useRouter();
   const fuseRef = useRef<Fuse<SearchResult> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Load Fuse.js + calculators
-  const initFuse = useCallback(async () => {
+  // Lazily load calculator data and initialize the Fuse.js search index
+  const initializeSearch = useCallback(async () => {
     if (fuseRef.current || isLoading) return;
 
     setIsLoading(true);
     try {
+      // Dynamically import Fuse.js for better performance
       const FuseModule = await import("fuse.js");
-      let allCalculators = await loadFullCalculatorData();
+      const allCalculators = await loadFullCalculatorData();
 
       if (!allCalculators || allCalculators.length === 0) {
-        allCalculators = [
-          { slug: "test-calc", name: "Test Calculator", iconName: "Calculator", tags: ["math"], category: "Math" },
-        ] as SearchResult[];
+        console.error("❌ No calculator data was loaded.");
+        return;
       }
-
+      
+      // Create the search index
       fuseRef.current = new FuseModule.default(allCalculators, {
         keys: ["name", "tags", "category"],
         threshold: 0.3,
         includeScore: true,
       });
     } catch (error) {
-      console.error("❌ Failed to load Fuse.js or calculator data", error);
+      console.error("❌ Failed to initialize search:", error);
     } finally {
       setIsLoading(false);
     }
   }, [isLoading]);
 
-  // Handle input
-  const handleInputChange = (newQuery: string) => {
-    setQuery(newQuery);
-    setHighlightedIndex(0); // reset highlight
-  };
-
-  // Run search when query changes
+  // Perform a debounced search when the query changes
   useEffect(() => {
-    if (!fuseRef.current || query.length < 1) {
+    if (!fuseRef.current || !query) {
       setResults([]);
       return;
     }
+    // Debounce to prevent searching on every keystroke
     const timer = setTimeout(() => {
-      const found = fuseRef.current!.search(query).slice(0, 10);
-      setResults(found);
+      const searchResults = fuseRef.current!.search(query).slice(0, 10);
+      setResults(searchResults);
     }, 150);
+
     return () => clearTimeout(timer);
   }, [query]);
 
-  // Handle item selection
+  // Navigate to the selected calculator page
   const handleSelect = useCallback(
     (slug: string) => {
       router.push(`/calculators/${slug}`);
@@ -91,7 +87,7 @@ export function SearchBar() {
     [router]
   );
 
-  // Keyboard shortcut ⌘K / Ctrl+K
+  // Add keyboard shortcut (⌘K or Ctrl+K) to open the search bar
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -103,38 +99,18 @@ export function SearchBar() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  // Autofocus input when opening
+  // Initialize search and focus the input when the popover opens
   useEffect(() => {
     if (isOpen) {
-      if (!fuseRef.current && !isLoading) {
-        initFuse();
+      if (!fuseRef.current) {
+        initializeSearch();
       }
+      // Add a small delay to ensure the input is rendered before focusing
       setTimeout(() => {
         inputRef.current?.focus();
       }, 100);
     }
-  }, [isOpen, isLoading, initFuse]);
-
-  // Handle arrow navigation + Enter
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (results.length === 0) return;
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setHighlightedIndex((prev) =>
-        prev < results.length - 1 ? prev + 1 : 0
-      );
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setHighlightedIndex((prev) =>
-        prev > 0 ? prev - 1 : results.length - 1
-      );
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      const selected = results[highlightedIndex];
-      if (selected) handleSelect(selected.item.slug);
-    }
-  };
+  }, [isOpen, initializeSearch]);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -144,7 +120,7 @@ export function SearchBar() {
           className="w-full justify-between text-muted-foreground md:w-64"
         >
           <span>Search calculators...</span>
-          <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">
+          <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
             <span className="text-xs">⌘</span>K
           </kbd>
         </Button>
@@ -154,35 +130,31 @@ export function SearchBar() {
         className="w-[var(--radix-popover-trigger-width)] p-0"
         align="start"
       >
+        {/* The Command component handles its own filtering, keyboard nav, etc. */}
+        {/* We set shouldFilter={false} because Fuse.js is handling the search logic */}
         <Command shouldFilter={false}>
           <CommandInput
             ref={inputRef}
-            placeholder="Search calculators..."
+            placeholder="Search for a calculator..."
             value={query}
-            onValueChange={handleInputChange}
-            onKeyDown={handleKeyDown}
+            onValueChange={setQuery}
             disabled={isLoading}
           />
           <CommandList>
             {isLoading && <CommandEmpty>Loading search...</CommandEmpty>}
-            {!isLoading && results.length === 0 && query.length > 0 && (
+            {!isLoading && results.length === 0 && query.length > 1 && (
               <CommandEmpty>No results found.</CommandEmpty>
             )}
             <CommandGroup>
-              {results.map(({ item }, idx) => {
+              {results.map(({ item }) => {
                 const LucideIcon =
-                  Icons[item.iconName as keyof typeof Icons] ||
-                  Icons.Calculator;
-                const isHighlighted = idx === highlightedIndex;
+                  Icons[item.iconName as keyof typeof Icons] || Icons.Calculator;
                 return (
                   <CommandItem
                     key={item.slug}
                     value={item.name}
                     onSelect={() => handleSelect(item.slug)}
-                    onMouseEnter={() => setHighlightedIndex(idx)}
-                    className={`flex items-center gap-3 cursor-pointer ${
-                      isHighlighted ? "bg-accent text-accent-foreground" : ""
-                    }`}
+                    className="flex items-center gap-3 cursor-pointer"
                   >
                     <LucideIcon className="w-4 h-4 text-muted-foreground" />
                     <span>{item.name}</span>
