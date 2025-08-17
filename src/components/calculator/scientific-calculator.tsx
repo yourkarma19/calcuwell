@@ -163,8 +163,10 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
                               <TooltipTrigger asChild>
                                   <Button
                                       onClick={() => handleScientificInput(func)}
-                                      className={cn("h-12 text-sm", active && "bg-primary/20")}
-                                      variant="outline"
+                                      className={cn(
+                                        "h-12 text-sm bg-muted/20 hover:bg-muted/40 text-foreground",
+                                        active && "bg-primary/80 text-primary-foreground hover:bg-primary"
+                                      )}
                                   >
                                       {func}
                                   </Button>
