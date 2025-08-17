@@ -66,7 +66,7 @@ export default function OhmsLawCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Ohm's Law Calculator</CardTitle>
-          <CardDescription>Calculate Voltage (V), Current (I), Resistance (R), and Power (P).</CardDescription>
+          <CardDescription>Calculate Voltage (V), Current (I), Resistance (R), and Power (P). Enter any two values to solve for the other two.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
@@ -107,8 +107,16 @@ export default function OhmsLawCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Ohm's Law</CardTitle></CardHeader>
-        <CardContent>
+        <CardHeader><CardTitle>About the Ohm's Law Calculator</CardTitle></CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <p>The **Ohm's Law Calculator** is an essential tool for students, hobbyists, and engineers working with electronic circuits. It simplifies the relationship between **Voltage (V)**, **Current (I)**, **Resistance (R)**, and **Power (P)**. By providing any two of these values, you can instantly find the other two, making it invaluable for circuit design, analysis, and troubleshooting.</p>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+              <li>First, select the value you want to calculate (e.g., Voltage).</li>
+              <li>Enter any two of the other known values into their respective fields.</li>
+          </ol>
+          <p>The calculator will automatically compute the result based on the formulas derived from Ohm's Law and the Power Law.</p>
+          <h3>Frequently Asked Questions (FAQs)</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is Ohm's Law?</AccordionTrigger>

@@ -88,8 +88,16 @@ export default function ResistorColorCodeCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Resistor Color Codes</CardTitle></CardHeader>
-        <CardContent>
+        <CardHeader><CardTitle>About the Resistor Color Code Calculator</CardTitle></CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Resistor Color Code Calculator** is a vital tool for anyone working in electronics, from students to seasoned engineers. It demystifies the colored bands on a resistor, allowing you to quickly determine its resistance value and tolerance without needing a multimeter. This calculator focuses on the common 4-band resistor type.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Identify the bands on your resistor. Start with the band closest to an edge. The tolerance band is usually gold or silver and is at the opposite end.</li>
+                <li>For each of the four bands, select the corresponding color from the dropdown menus.</li>
+            </ol>
+            <p>The calculator will instantly display the resistor's value in Ohms (Ω), along with its tolerance percentage.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>How to Read a 4-Band Resistor</AccordionTrigger>
@@ -100,7 +108,7 @@ export default function ResistorColorCodeCalculator() {
                 <AccordionItem value="item-2">
                     <AccordionTrigger>What is Tolerance?</AccordionTrigger>
                     <AccordionContent>
-                        Tolerance is the percentage of error in the resistor's resistance. For example, a 100 Ω resistor with a 5% tolerance (gold band) could have an actual resistance anywhere between 95 Ω and 105 Ω.
+                        Tolerance is the percentage of error in the resistor's resistance. For example, a 100 Ω resistor with a 5% tolerance (gold band) could have an actual resistance anywhere between 95 Ω and 105 Ω. A lower tolerance means a more precise resistor.
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-3">

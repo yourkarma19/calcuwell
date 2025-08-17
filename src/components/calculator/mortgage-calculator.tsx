@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
@@ -14,6 +14,7 @@ import {
   ChartLegend,
   ChartLegendContent,
 } from "@/components/ui/chart";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function MortgageCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
@@ -21,7 +22,7 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
   const [tenure, setTenure] = usePersistentState("mortgage-tenure", 30);
   const [propertyTax, setPropertyTax] = usePersistentState("mortgage-tax", 2000);
   const [homeInsurance, setHomeInsurance] = usePersistentState("mortgage-insurance", 1000);
-
+  
   const { monthlyPayment, totalPayable, totalInterest, principalAndInterest, monthlyTaxes, monthlyInsurance } = useMemo(() => {
     if (principal > 0 && rate > 0 && tenure > 0) {
       const monthlyRate = rate / 12 / 100;
@@ -109,6 +110,40 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
               </div>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+            <CardHeader><CardTitle>About the Mortgage Calculator</CardTitle></CardHeader>
+            <CardContent className="prose dark:prose-invert max-w-none">
+              <p>Our **Mortgage Calculator** is a comprehensive tool designed to help prospective homebuyers understand the full cost of their home loan. It goes beyond a simple EMI calculation by incorporating key expenses like property taxes and home insurance, providing a realistic estimate of your total monthly housing payment. This empowers you to budget accurately and make informed decisions during the home-buying process.</p>
+              <h3>How to Use the Calculator</h3>
+              <ol>
+                  <li>Enter the **Home Price** and your estimated **Interest Rate**.</li>
+                  <li>Select the **Loan Term** in years (e.g., 30 years).</li>
+                  <li>Provide estimates for your **Annual Property Tax** and **Home Insurance** costs.</li>
+              </ol>
+              <p>The calculator will instantly break down your monthly payment into principal, interest, tax, and insurance (PITI) and show you the total cost of the loan over its lifetime.</p>
+              <h3>Frequently Asked Questions (FAQs)</h3>
+              <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                      <AccordionTrigger>What is PITI?</AccordionTrigger>
+                      <AccordionContent>
+                          PITI stands for Principal, Interest, Taxes, and Insurance. These are the four main components of a monthly mortgage payment. Principal is the amount that goes towards paying down your loan balance, while Interest is the cost of borrowing. Taxes and Insurance are often collected by the lender and paid on your behalf from an escrow account.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                      <AccordionTrigger>Why is it important to include taxes and insurance?</AccordionTrigger>
+                      <AccordionContent>
+                         Property taxes and homeowners insurance are significant ongoing costs of homeownership. Forgetting to include them in your budget can lead to a payment that is much higher than you expected. This calculator includes them to give you a more complete picture of your financial commitment.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                      <AccordionTrigger>What is loan amortization?</AccordionTrigger>
+                      <AccordionContent>
+                         Amortization is the process of paying off a loan over time with regular payments. In the early years of a mortgage, a larger portion of your payment goes towards interest. As you continue to make payments, more of your money goes towards paying down the principal balance. The amortization chart visualizes how much of your total payment goes to principal versus interest and other costs over the life of the loan.
+                      </AccordionContent>
+                  </AccordionItem>
+              </Accordion>
+            </CardContent>
         </Card>
         <Card>
             <CardHeader><CardTitle>Loan Amortization</CardTitle></CardHeader>

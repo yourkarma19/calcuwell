@@ -85,19 +85,35 @@ export default function SavingsCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Savings Growth</CardTitle></CardHeader>
-          <CardContent>
+          <CardHeader><CardTitle>About the Savings Calculator</CardTitle></CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Savings Growth Calculator** is a powerful tool to help you visualize your financial future. It demonstrates the impact of compound interest on your savings over time, showing you how consistent contributions can grow into a substantial sum. Whether you are saving for retirement, a down payment on a house, or another long-term goal, this calculator provides the clarity you need to stay motivated.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Enter your **Initial Amount** (what you have saved already).</li>
+                <li>Set your planned **Monthly Contribution**.</li>
+                <li>Input the estimated **Annual Interest Rate** you expect your savings to earn.</li>
+                <li>Choose the **Investment Duration** in years.</li>
+            </ol>
+            <p>The calculator will instantly project the future value of your savings and show you how much of that growth comes from interest versus your own contributions.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>How does this calculator work?</AccordionTrigger>
                 <AccordionContent>
-                  This calculator projects the future value of your savings by applying compound interest to your initial deposit and all subsequent monthly contributions. It assumes interest is compounded monthly.
+                  This calculator projects the future value of your savings by applying compound interest to your initial deposit and all subsequent monthly contributions. It assumes interest is compounded monthly, which is a common scenario for many savings and investment accounts.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger>What is the power of compound interest?</AccordionTrigger>
                 <AccordionContent>
-                  Compound interest is "interest on interest." It means your money grows faster because you earn returns not only on your initial principal but also on the accumulated interest from previous periods. The earlier you start saving, the more powerful it becomes.
+                  Compound interest is "interest on interest." It means your money grows at an accelerating rate because you earn returns not only on your initial principal but also on the accumulated interest from previous periods. The earlier you start saving, the more powerful it becomes.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>What is a realistic interest rate to assume?</AccordionTrigger>
+                <AccordionContent>
+                   A realistic long-term interest rate depends on your investment strategy. A high-yield savings account might offer 1-3%, while a diversified stock market portfolio has historically returned 7-10% annually on average, though this comes with higher risk. It's often wise to use a conservative estimate for planning.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

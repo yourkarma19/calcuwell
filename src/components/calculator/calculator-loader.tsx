@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from 'react';
@@ -12,11 +13,9 @@ interface CalculatorLoaderProps {
 export default function CalculatorLoader({ slug, setFormula }: CalculatorLoaderProps) {
   const CalculatorComponent = useMemo(() => {
     return dynamic(
-      () => import(`@/components/calculator/${slug}`)
-        .then(mod => mod.default)
-        .catch(() => () => <PlaceholderCalculator />),
+      () => import(`@/components/calculator/${slug}`),
       {
-        loading: () => <div className="lg:col-span-3 text-center p-8">Loading calculator...</div>,
+        loading: () => <PlaceholderCalculator />,
         ssr: false,
       }
     );

@@ -6,7 +6,7 @@ import { Calculator } from "@/lib/types";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Icon } from "@/components/ui/icon";
+import { icons } from "lucide-react";
 
 type StrippedCalculator = Omit<Calculator, 'component'>;
 
@@ -19,6 +19,8 @@ interface CategoryClientPageProps {
 
 export default function CategoryClientPage({ name, iconName, description, calculators }: CategoryClientPageProps) {
   const [filter, setFilter] = useState("");
+  
+  const LucideIcon = icons[iconName as keyof typeof icons] || icons.Calculator;
   
   const filteredCalculators = useMemo(() => {
     if (!filter) {
@@ -38,7 +40,7 @@ export default function CategoryClientPage({ name, iconName, description, calcul
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
-        <Icon name={iconName} className="w-16 h-16 text-primary mx-auto mb-4" />
+        <LucideIcon className="w-16 h-16 text-primary mx-auto mb-4" />
         <h1 className="text-4xl font-bold font-headline text-primary">
           {name} Calculators
         </h1>

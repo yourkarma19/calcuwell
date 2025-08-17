@@ -1,7 +1,7 @@
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCalculatorBySlug, calculators } from "@/lib/calculators";
+import { getCalculatorBySlug, loadFullCalculatorData } from "@/lib/calculators";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import CalculatorLoader from "@/components/calculator/calculator-loader";
 
@@ -13,7 +13,7 @@ type CalculatorPageProps = {
 };
 
 export async function generateMetadata({ params }: CalculatorPageProps): Promise<Metadata> {
-  const calculator = getCalculatorBySlug(params.slug);
+  const calculator = await getCalculatorBySlug(params.slug);
 
   if (!calculator) {
     return {};
@@ -30,14 +30,15 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
 
 // Statically generate routes for all calculators
 export async function generateStaticParams() {
+    const calculators = await loadFullCalculatorData();
     return calculators.map((calc) => ({
         slug: calc.slug,
     }));
 }
 
 
-export default function CalculatorPage({ params: { slug } }: CalculatorPageProps) {
-  const calculator = getCalculatorBySlug(slug);
+export default async function CalculatorPage({ params }: CalculatorPageProps) {
+  const calculator = await getCalculatorBySlug(params.slug);
 
   if (!calculator) {
     notFound();
@@ -46,7 +47,7 @@ export default function CalculatorPage({ params: { slug } }: CalculatorPageProps
   return (
     <main>
       <CalculatorWrapper calculator={calculator}>
-        <CalculatorLoader slug={slug} />
+        <CalculatorLoader slug={params.slug} />
       </CalculatorWrapper>
     </main>
   );

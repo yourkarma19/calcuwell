@@ -161,23 +161,41 @@ export default function BodyFatPercentageCalculator() {
                     </CardContent>
                 </Card>
                 <Card>
-                  <CardHeader><CardTitle>About Body Fat Percentage</CardTitle></CardHeader>
-                  <CardContent>
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value="item-1">
-                        <AccordionTrigger>Why is body fat percentage important?</AccordionTrigger>
-                        <AccordionContent>
-                          Body fat percentage can be a better indicator of health than weight or BMI because it distinguishes between fat mass and lean mass. A healthy body fat percentage is associated with a lower risk of various chronic diseases.
-                        </AccordionContent>
-                      </AccordionItem>
-                      <AccordionItem value="item-2">
-                        <AccordionTrigger>How does the U.S. Navy method work?</AccordionTrigger>
-                        <AccordionContent>
-                          This method uses body circumference measurements to estimate body density, which is then used to calculate body fat percentage. While it's a convenient estimation, it's not as accurate as clinical methods like DEXA scans.
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </CardContent>
+                    <CardHeader><CardTitle>About Body Fat Percentage</CardTitle></CardHeader>
+                    <CardContent className="prose dark:prose-invert max-w-none">
+                        <p>The **Body Fat Percentage Calculator** provides a more insightful look at your body composition than weight or BMI alone. By estimating the proportion of your body that is fat, it helps you track progress in fitness and health more accurately. This tool uses the U.S. Navy method, a widely accepted formula based on body circumference measurements.</p>
+
+                        <h3>How to Use the Calculator</h3>
+                        <ol>
+                            <li>Select your **Gender**.</li>
+                            <li>Enter your **Height** and **Weight**.</li>
+                            <li>Measure and enter your **Neck** and **Waist** circumference in centimeters.</li>
+                            <li>If you are female, also enter your **Hip** circumference.</li>
+                        </ol>
+                        <p>The calculator will instantly estimate your body fat percentage and classify it into a health category.</p>
+                        
+                        <h3>Frequently Asked Questions (FAQs)</h3>
+                        <Accordion type="single" collapsible className="w-full">
+                            <AccordionItem value="item-1">
+                                <AccordionTrigger>Why is body fat percentage a better health indicator than BMI?</AccordionTrigger>
+                                <AccordionContent>
+                                    Body fat percentage directly measures fat mass, while BMI is a general measure based on height and weight. BMI can be misleading for very muscular individuals (who may be classified as overweight) or the elderly (who may have low muscle mass but high fat). Body fat percentage provides a clearer picture of your actual body composition.
+                                </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-2">
+                                <AccordionTrigger>How does the U.S. Navy method work?</AccordionTrigger>
+                                <AccordionContent>
+                                    This method uses body circumference measurements (height, neck, waist, and hips for women) to estimate body density. It's a convenient and cost-effective way to estimate body fat without expensive equipment, though it's not as accurate as clinical methods like DEXA scans.
+                                </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-3">
+                                <AccordionTrigger>How do I measure my circumferences accurately?</AccordionTrigger>
+                                <AccordionContent>
+                                   Use a flexible tape measure. For the **neck**, measure just below the larynx (Adam's apple). For the **waist**, measure at the narrowest point, usually just above the navel. For the **hips**, measure at the widest point of your hips and buttocks. Ensure the tape is snug but not compressing the skin.
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    </CardContent>
                 </Card>
             </div>
             <div className="lg:col-span-1">

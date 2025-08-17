@@ -1,19 +1,23 @@
-
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import Link from "next/link";
 
-export default function PythagoreanTheoremCalculator() {
+export default function PythagoreanTheoremCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");
   const [sideA, setSideA] = usePersistentState("pythagorean-sideA", 3);
   const [sideB, setSideB] = usePersistentState("pythagorean-sideB", 4);
   const [sideC, setSideC] = usePersistentState("pythagorean-sideC", 5);
+
+  useEffect(() => {
+    setFormula("a² + b² = c²");
+  }, [setFormula]);
 
   const result = useMemo(() => {
     const a = Number(sideA);
@@ -78,30 +82,41 @@ export default function PythagoreanTheoremCalculator() {
         </Card>
         <Card>
             <CardHeader><CardTitle>About the Pythagorean Theorem</CardTitle></CardHeader>
-            <CardContent>
+            <CardContent className="prose dark:prose-invert max-w-none">
+                <p>The **Pythagorean Theorem Calculator** is an essential tool for students, carpenters, engineers, and anyone working with right-angled triangles. It allows you to instantly find the length of any missing side, whether it's one of the legs (a or b) or the hypotenuse (c), using the famous formula a² + b² = c². This principle is a cornerstone of geometry and has countless practical applications.</p>
+                
+                <h3>How to Use the Calculator</h3>
+                <ol>
+                    <li>Select which side you need to solve for (a, b, or c).</li>
+                    <li>Enter the lengths of the two sides that you know.</li>
+                    <li>The calculator will automatically display the length of the missing side in the results card.</li>
+                </ol>
+                <p>Remember, the hypotenuse 'c' must always be the longest side. The calculator will show an error if the input values are not possible for a right-angled triangle.</p>
+
+                <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
-                        <AccordionTrigger>What is the Pythagorean Theorem?</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">What is the Pythagorean Theorem?</AccordionTrigger>
                         <AccordionContent>
-                            The Pythagorean theorem is a fundamental principle in geometry that states that for a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle, denoted as 'c') is equal to the sum of the squares of the other two sides (a and b). The formula is a² + b² = c².
+                            <p>The Pythagorean theorem is a fundamental principle in geometry that states that for a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle, denoted as 'c') is equal to the sum of the squares of the other two sides (a and b). The formula is a² + b² = c².</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger>How to Use the Calculator</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">What is a Hypotenuse?</AccordionTrigger>
                         <AccordionContent>
-                            Select which side you want to solve for (a, b, or c). Enter the lengths of the two known sides into their respective fields. The calculator will automatically compute the length of the unknown side. The theorem only applies to right-angled triangles.
+                           <p>The hypotenuse is the longest side of a right-angled triangle. It is always the side that is opposite the 90-degree angle. In the formula a² + b² = c², 'c' represents the hypotenuse.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger>What is a Hypotenuse?</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">What are some real-world applications?</AccordionTrigger>
                         <AccordionContent>
-                           The hypotenuse is the longest side of a right-angled triangle. It is always the side that is opposite the 90-degree angle. In the formula a² + b² = c², 'c' represents the hypotenuse.
+                           <p>The Pythagorean theorem is used extensively in architecture, construction, navigation, and physics. For example, it can be used to calculate the diagonal distance across a rectangular room, determine the steepness of a ramp, or find the shortest distance for a boat to travel between two points.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
-                        <AccordionTrigger>Real-World Applications</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">Learn More About The Pythagorean Theorem</AccordionTrigger>
                         <AccordionContent>
-                           The Pythagorean theorem is used extensively in architecture, construction, navigation, and physics. For example, it can be used to calculate the diagonal distance across a rectangular room, determine the steepness of a ramp, or find the shortest distance for a boat to travel between two points.
+                           <p>Read our detailed article on <Link href="/blog/what-is-the-pythagorean-theorem" className="text-primary hover:underline">What is the Pythagorean Theorem?</Link> to understand its history, proof, and real-world applications in depth.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

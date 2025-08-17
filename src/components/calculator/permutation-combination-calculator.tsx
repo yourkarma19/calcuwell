@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import Link from "next/link";
 
 // Helper function to calculate factorial
 const factorial = (n: number): number => {
@@ -92,33 +93,43 @@ export default function PermutationCombinationCalculator() {
 
         <Card>
             <CardHeader><CardTitle>About Permutations & Combinations</CardTitle></CardHeader>
-            <CardContent>
+            <CardContent className="prose dark:prose-invert max-w-none">
+                <p>The **Permutation and Combination Calculator** is a tool used in combinatorics and probability to figure out the number of ways a subset of items can be selected from a larger set. The key difference between the two is whether the order of selection matters. This tool instantly calculates both, helping you solve complex problems quickly.</p>
+
+                <h3>How to Use the Calculator</h3>
+                <ol>
+                    <li>Enter the **Total number of items (n)**, which is the size of the entire set you are choosing from.</li>
+                    <li>Enter the **Number of items to choose (r)**, which is the size of the subset you are selecting.</li>
+                </ol>
+                <p>The calculator will automatically display the results for both permutations (nPr) and combinations (nCr).</p>
+
+                <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
-                        <AccordionTrigger>Permutation vs. Combination: The Easiest Explanation</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">Permutation vs. Combination: What's the Difference?</AccordionTrigger>
                         <AccordionContent>
-                            The key difference is whether order matters. Use a **Permutation** when the order of selection is important (e.g., arranging books on a shelf, choosing winners for 1st, 2nd, and 3rd place). Use a **Combination** when the order does not matter (e.g., picking a team of 3 people from a group of 10, choosing pizza toppings).
+                            <p>The key difference is whether **order matters**. Use a **Permutation** when the order of selection is important (e.g., arranging books on a shelf, 1st/2nd/3rd place winners). Use a **Combination** when the order of selection does not matter (e.g., picking a team, choosing pizza toppings).</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger>Clear Examples</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">Can you give a clear example?</AccordionTrigger>
                         <AccordionContent>
-                            <p className="mb-2"><strong>Permutation Example:</strong> Picking 1st, 2nd, and 3rd place in a race with 10 runners. The order (who gets which medal) is crucial. This would be calculated as P(10, 3).</p>
-                            <p><strong>Combination Example:</strong> Picking a team of 3 people from a group of 10. It doesn't matter who was picked first, second, or third; the final team of 3 is all that matters. This would be calculated as C(10, 3).</p>
+                            <p className="mb-2">**Permutation Example:** Picking a 3-digit lock code from digits 0-9 without repetition. The order `1-2-3` is different from `3-2-1`. This is a permutation.</p>
+                            <p>**Combination Example:** Picking three friends from a group of ten for a committee. Picking Alice, Bob, and Carol is the same as picking Carol, Bob, and Alice. This is a combination.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger>The Formulas for nPr and nCr Explained</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">What are the formulas for nPr and nCr?</AccordionTrigger>
                         <AccordionContent>
-                           <p className="mb-2"><strong>Permutation (nPr):</strong> `n! / (n-r)!`</p>
-                           <p><strong>Combination (nCr):</strong> `n! / (r! * (n-r)!)`</p>
-                           <p className="mt-2">Where 'n' is the total number of items, and 'r' is the number of items to choose.</p>
+                           <p className="mb-2">**Permutation (nPr):** `n! / (n-r)!`</p>
+                           <p>**Combination (nCr):** `n! / (r! * (n-r)!)`</p>
+                           <p className="mt-2">Where 'n' is the total items, and 'r' is the items to choose. Notice the combination formula is the permutation formula divided by `r!`, which removes the different orderings.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
-                        <AccordionTrigger>Can permutations and combinations be used together?</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">What is a factorial (!)?</AccordionTrigger>
                         <AccordionContent>
-                           Yes, in more complex probability problems. For example, you might use a combination to determine how many ways you can choose a group, and then use a permutation to determine how many ways you can arrange the members of that group.
+                           <p>Factorials (like n!) are a key part of these calculations. A factorial is the product of all positive integers up to that number (e.g., 5! = 5×4×3×2×1). They represent the total number of ways to arrange a set of items. You can learn more with our <Link href="/calculators/factorial-calculator" className="text-primary hover:underline">Factorial Calculator</Link>.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

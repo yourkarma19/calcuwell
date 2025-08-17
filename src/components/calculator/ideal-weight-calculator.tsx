@@ -82,23 +82,39 @@ export default function IdealWeightCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Ideal Weight</CardTitle></CardHeader>
-          <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is "ideal weight"?</AccordionTrigger>
-                <AccordionContent>
-                  Ideal body weight is a concept that suggests there is a weight range that is healthiest for a person based on their height and gender. It's important to remember that these formulas provide an estimate, and a healthy weight can vary between individuals.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>What is the Robinson Formula?</AccordionTrigger>
-                <AccordionContent>
-                  This calculator uses the Robinson formula (1983), which is one of several common methods to estimate ideal body weight. Other formulas include the Devine, Miller, and Hamwi formulas, which may give slightly different results.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </CardContent>
+            <CardHeader><CardTitle>About Ideal Weight</CardTitle></CardHeader>
+            <CardContent className="prose dark:prose-invert max-w-none">
+                <p>The **Ideal Weight Calculator** provides a healthy weight estimate based on your height and gender. While "ideal" is subjective and varies for every individual, this tool uses established medical formulas to provide a general guideline. It's a great starting point for setting fitness or weight management goals and understanding where you stand in relation to broad health standards.</p>
+
+                <h3>How to Use the Calculator</h3>
+                <ol>
+                    <li>Select your **Gender**.</li>
+                    <li>Enter your **Height** in centimeters.</li>
+                </ol>
+                <p>The calculator will display your estimated ideal weight and a healthy weight range based on the Robinson formula.</p>
+                
+                <h3>Frequently Asked Questions (FAQs)</h3>
+                <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>What is "ideal weight"?</AccordionTrigger>
+                        <AccordionContent>
+                            Ideal body weight is a concept that suggests there is a weight range that is healthiest for a person based on their height, gender, and frame size. It's important to remember that these formulas provide an estimate, and a healthy weight can vary significantly between individuals based on muscle mass, body composition, and personal health.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>What is the Robinson Formula?</AccordionTrigger>
+                        <AccordionContent>
+                            This calculator uses the Robinson formula (1983), which is one of several common methods to estimate ideal body weight. Other popular formulas include the Devine, Miller, and Hamwi formulas. Each was developed based on different population studies and may give slightly different results. The Robinson formula is widely considered a reliable general-purpose estimator.
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>Is ideal weight the same as a healthy BMI?</AccordionTrigger>
+                        <AccordionContent>
+                           They are related but different concepts. A healthy BMI (Body Mass Index) indicates a healthy weight range for your height, but it doesn't account for body composition (muscle vs. fat). Ideal weight formulas attempt to provide a more specific target number. Both are useful tools but should be considered alongside other health metrics and professional medical advice.
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+            </CardContent>
         </Card>
       </div>
 

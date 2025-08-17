@@ -16,9 +16,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <SearchBar />
-          </div>
+          <SearchBar />
           <ThemeToggle />
         </div>
       </div>

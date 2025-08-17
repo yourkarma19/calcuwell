@@ -28,7 +28,7 @@ export function DatePicker({ date, setDate, className, disabled }: DatePickerPro
             className
           )}
         >
-          <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />
+          <CalendarIcon className="mr-2 h-4 w-4" />
           {date ? format(date, "PPP") : <span>Select date</span>}
         </Button>
       </PopoverTrigger>
@@ -43,7 +43,7 @@ export function DatePicker({ date, setDate, className, disabled }: DatePickerPro
           initialFocus
           captionLayout="dropdown-buttons"
           fromYear={1920}
-          toYear={new Date().getFullYear()}
+          toYear={new Date().getFullYear() + 5}
           disabled={disabled}
         />
       </PopoverContent>

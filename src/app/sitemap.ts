@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next'
-import { calculators, categories } from '@/lib/calculators'
+import { loadFullCalculatorData } from '@/lib/server/calculator-data'
+import { categories } from '@/lib/calculators';
 import { metadata } from '@/app/layout';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = metadata.metadataBase?.toString() || "https://calcpro.online";
+  const allCalculators = await loadFullCalculatorData();
 
-  const calculatorEntries: MetadataRoute.Sitemap = calculators.map((calc) => ({
+  const calculatorEntries: MetadataRoute.Sitemap = allCalculators.map((calc) => ({
     url: `${baseUrl}/calculators/${calc.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',

@@ -1,21 +1,26 @@
+
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Poppins, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
 import Script from "next/script";
+import { headers } from 'next/headers';
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: 'swap',
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500", "700"],
   variable: "--font-space-grotesk",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -32,6 +37,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = headers();
+  const searchParams = new URLSearchParams(headersList.get('x-search-params') || '');
+  const isEmbed = searchParams.get('embed') === 'true';
+
+  if (isEmbed) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={`${poppins.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main>{children}</main>
+            <Toaster />
+          </ThemeProvider>
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -47,7 +77,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
+        className={`${poppins.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
       >
         <ThemeProvider
           attribute="class"

@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -48,7 +48,7 @@ type FormValues = z.infer<typeof formSchema>;
 export default function GpaCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [gpa, setGpa] = useState<number | null>(null);
   
-  const [defaultCourses, setDefaultCourses] = usePersistentState('gpa-courses', [{ name: "Example Course", grade: "A", credits: 3 }]);
+  const [defaultCourses, setDefaultCourses] = usePersistentState<FormValues['courses']>('gpa-courses', [{ name: "Example Course", grade: "A", credits: 3 }]);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -58,6 +58,11 @@ export default function GpaCalculator({ setFormula }: { setFormula: (formula: st
      mode: "onChange",
   });
   
+  useEffect(() => {
+    form.reset({ courses: defaultCourses });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultCourses]);
+  
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: "courses",
@@ -65,8 +70,10 @@ export default function GpaCalculator({ setFormula }: { setFormula: (formula: st
   
   const watchedCourses = form.watch('courses');
   
-  useState(() => {
-    setDefaultCourses(watchedCourses);
+  useEffect(() => {
+    if(watchedCourses.length > 0) {
+        setDefaultCourses(watchedCourses);
+    }
   }, [watchedCourses, setDefaultCourses]);
 
 
