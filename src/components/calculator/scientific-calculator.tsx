@@ -39,7 +39,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   const [memory, setMemory] = useState(0);
   const [isRadians, setIsRadians] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
-  const [activeTab, setActiveTab] = useState("basic");
+  const [activeTab, setActiveTab] = useState("sci");
 
   const scientificButtons = getScientificButtonLayout(isInverse);
 
@@ -124,17 +124,17 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   };
 
   return (
-    <div className="mx-auto space-y-6 relative">
+    <div className="mx-auto space-y-6 relative max-w-sm">
        <TooltipProvider>
       <Card className="mx-auto">
         <CardHeader>
           <CardTitle>Scientific Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Tabs defaultValue="basic" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue="sci" value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="basic">Basic</TabsTrigger>
-                  <TabsTrigger value="scientific">Sci</TabsTrigger>
+                  <TabsTrigger value="sci">Sci</TabsTrigger>
               </TabsList>
               <TabsContent value="basic" className="mt-4">
                   <BasicCalculator />
@@ -164,7 +164,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
                                   <Button
                                       onClick={() => handleScientificInput(func)}
                                       className={cn(
-                                        "h-12 text-sm bg-black hover:bg-zinc-800 text-white",
+                                        "h-12 text-sm bg-zinc-800 hover:bg-zinc-700 text-white",
                                         active && "bg-primary/80 text-primary-foreground hover:bg-primary"
                                       )}
                                   >
@@ -236,3 +236,5 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
     </div>
   );
 }
+
+    
