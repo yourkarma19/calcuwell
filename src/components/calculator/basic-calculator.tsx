@@ -98,9 +98,10 @@ export default function BasicCalculator() {
   };
   
   const getButtonClass = (btn: string) => {
-    if (["/", "*", "-", "+", "="].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (["/", "*", "-", "+"].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (btn === "=") return { variant: "default" as const, className: "bg-primary hover:bg-primary/90 text-primary-foreground row-span-2 h-auto" };
     if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
-    if (btn === "0") return { variant: "outline" as const, className: ""};
+    if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
     if (btn === 'Backspace') return { variant: "outline" as const, className: "" };
     return { variant: "outline" as const, className: ""};
   };
@@ -112,6 +113,14 @@ export default function BasicCalculator() {
     if (len > 8) return 'text-4xl';
     return 'text-5xl';
   };
+
+  const buttons = [
+    ["AC", "+/-", "%", "/"],
+    ["7", "8", "9", "*"],
+    ["4", "5", "6", "-"],
+    ["1", "2", "3", "+"],
+    ["0", ".", "="]
+  ];
 
   return (
     <div className="lg:col-span-3 space-y-6">
@@ -133,24 +142,29 @@ export default function BasicCalculator() {
             </div>
           </div>
           <div className="grid grid-cols-4 gap-2">
-            {buttonLayout.map((btn) => {
-              const { variant, className } = getButtonClass(btn);
-              return (
-                <Button
-                  key={btn}
-                  onClick={() => handleInput(btn)}
-                  variant={variant}
-                  className={cn(
-                    "h-16 text-2xl", 
-                    btn === "0" ? "col-span-2" : "", 
-                    btn === "=" ? "row-span-2 h-auto" : "", 
-                    className
-                    )}
-                >
-                  {btn === 'Backspace' ? <Delete /> : btn}
-                </Button>
-              )
-            })}
+            <div className="grid grid-cols-3 gap-2 col-span-3">
+                <Button onClick={() => handleInput("AC")} variant="outline" className="h-16 text-2xl bg-secondary hover:bg-secondary/80">AC</Button>
+                <Button onClick={() => handleInput("+/-")} variant="outline" className="h-16 text-2xl bg-secondary hover:bg-secondary/80">+/-</Button>
+                <Button onClick={() => handleInput("%")} variant="outline" className="h-16 text-2xl bg-secondary hover:bg-secondary/80">%</Button>
+                <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
+                <Button onClick={() => handleInput("8")} variant="outline" className="h-16 text-2xl">8</Button>
+                <Button onClick={() => handleInput("9")} variant="outline" className="h-16 text-2xl">9</Button>
+                <Button onClick={() => handleInput("4")} variant="outline" className="h-16 text-2xl">4</Button>
+                <Button onClick={() => handleInput("5")} variant="outline" className="h-16 text-2xl">5</Button>
+                <Button onClick={() => handleInput("6")} variant="outline" className="h-16 text-2xl">6</Button>
+                <Button onClick={() => handleInput("1")} variant="outline" className="h-16 text-2xl">1</Button>
+                <Button onClick={() => handleInput("2")} variant="outline" className="h-16 text-2xl">2</Button>
+                <Button onClick={() => handleInput("3")} variant="outline" className="h-16 text-2xl">3</Button>
+                <Button onClick={() => handleInput("0")} variant="outline" className="h-16 text-2xl col-span-2">0</Button>
+                <Button onClick={() => handleInput(".")} variant="outline" className="h-16 text-2xl">.</Button>
+            </div>
+             <div className="grid grid-cols-1 gap-2 col-span-1">
+                 <Button onClick={() => handleInput("/")} variant="default" className="h-16 text-2xl bg-primary/80 hover:bg-primary">/</Button>
+                 <Button onClick={() => handleInput("*")} variant="default" className="h-16 text-2xl bg-primary/80 hover:bg-primary">*</Button>
+                 <Button onClick={() => handleInput("-")} variant="default" className="h-16 text-2xl bg-primary/80 hover:bg-primary">-</Button>
+                 <Button onClick={() => handleInput("+")} variant="default" className="h-16 text-2xl bg-primary/80 hover:bg-primary">+</Button>
+                 <Button onClick={() => handleInput("=")} variant="default" className="h-16 text-2xl bg-primary hover:bg-primary/90">=</Button>
+             </div>
           </div>
         </CardContent>
       </Card>
