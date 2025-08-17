@@ -10,9 +10,8 @@ import {
   CardFooter
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import { Icon } from "@/components/ui/icon";
 import ScientificCalculator from "@/components/calculator/scientific-calculator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -46,12 +45,14 @@ export default function Home() {
           Calculator Categories
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((category) => (
+          {categories.map((category) => {
+            const LucideIcon = icons[category.iconName as keyof typeof icons] || icons.Calculator;
+            return (
             <Link key={category.slug} href={`/categories/${category.slug}`} className="block">
               <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
-                    <Icon name={category.iconName} className="w-6 h-6 text-primary" />
+                    <LucideIcon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <CardTitle className="font-headline group-hover:text-primary transition-colors">
@@ -63,7 +64,7 @@ export default function Home() {
                 </CardHeader>
               </Card>
             </Link>
-          ))}
+          )})}
         </div>
       </section>
 

@@ -5,9 +5,8 @@ import type { ReactNode } from "react";
 import type { Calculator } from "@/lib/types";
 import FormulaExplainer from "./formula-explainer";
 import EmbedCalculator from "./embed-calculator";
-import { Icon } from "@/components/ui/icon";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, icons } from "lucide-react";
 import { categories } from "@/lib/calculators";
 import React from 'react';
 import { useSearchParams } from "next/navigation";
@@ -26,6 +25,8 @@ export default function CalculatorWrapper({
   const [formula, setFormula] = React.useState(calculator.formula || "No formula available.");
   const searchParams = useSearchParams();
   const isEmbed = searchParams.get('embed') === 'true';
+
+  const LucideIcon = icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
 
   // Clone the child element to pass the setFormula function as a prop
   const childrenWithProps = React.Children.map(children, child => {
@@ -59,7 +60,7 @@ export default function CalculatorWrapper({
       )}
       <div className="text-center mb-12">
         <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
-          <Icon name={calculator.iconName} className="w-12 h-12 text-primary" />
+          <LucideIcon className="w-12 h-12 text-primary" />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           {calculator.name}

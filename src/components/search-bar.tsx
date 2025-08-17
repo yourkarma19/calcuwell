@@ -12,7 +12,7 @@ import {
 import { type Calculator } from "@/lib/types";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
  import { Button } from "@/components/ui/button";
-import { Icon } from "./ui/icon";
+ import { icons } from "lucide-react";
 
 type SearchResult = Omit<Calculator, 'component'>;
 
@@ -109,17 +109,19 @@ export function SearchBar() {
                 {isLoading && <CommandEmpty>Loading search...</CommandEmpty>}
                 {!isLoading && results.length === 0 && query.length > 1 && <CommandEmpty>No results found.</CommandEmpty>}
                 <CommandGroup>
-                    {results.map(({ item }) => (
+                    {results.map(({ item }) => {
+                      const LucideIcon = icons[item.iconName as keyof typeof icons] || icons.Calculator;
+                      return (
                       <CommandItem
                         key={item.slug}
                         value={item.name}
                         onSelect={() => handleSelect(item.slug)}
                         className="flex items-center gap-3"
                       >
-                        <Icon name={item.iconName} className="w-4 h-4 text-muted-foreground" />
+                        <LucideIcon className="w-4 h-4 text-muted-foreground" />
                         <span>{item.name}</span>
                       </CommandItem>
-                    ))}
+                    )})}
                 </CommandGroup>
             </CommandList>
         </Command>
