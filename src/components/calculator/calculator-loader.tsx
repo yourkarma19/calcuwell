@@ -13,9 +13,7 @@ interface CalculatorLoaderProps {
 export default function CalculatorLoader({ slug, setFormula }: CalculatorLoaderProps) {
   const CalculatorComponent = useMemo(() => {
     return dynamic(
-      () => import(`@/components/calculator/${slug}`)
-        .then(mod => mod.default)
-        .catch(() => () => <PlaceholderCalculator />),
+      () => import(`@/components/calculator/${slug}`),
       {
         loading: () => <PlaceholderCalculator />,
         ssr: false,
