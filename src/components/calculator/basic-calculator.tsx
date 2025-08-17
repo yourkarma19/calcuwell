@@ -13,7 +13,7 @@ const buttonLayout = [
   "7", "8", "9", "*",
   "4", "5", "6", "-",
   "1", "2", "3", "+",
-  "0", ".", "Backspace", "="
+  "0", ".", "="
 ];
 
 export default function BasicCalculator() {
@@ -98,9 +98,10 @@ export default function BasicCalculator() {
   };
   
   const getButtonClass = (btn: string) => {
-    if (["/", "*", "-", "+", "="].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (["/", "*", "-", "+"].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
     if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
     if (btn === "0") return { variant: "outline" as const, className: "col-span-2"};
+    if (btn === "=") return { variant: "default" as const, className: "bg-primary hover:bg-primary/90 row-span-2" };
     if (btn === 'Backspace') return { variant: "outline" as const, className: "" };
     return { variant: "outline" as const, className: ""};
   };
@@ -132,7 +133,7 @@ export default function BasicCalculator() {
               {displayValue}
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-4 grid-rows-5 gap-2">
             {buttonLayout.map(btn => {
                 const {variant, className} = getButtonClass(btn);
                 return (
