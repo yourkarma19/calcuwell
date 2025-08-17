@@ -46,7 +46,7 @@ export default function Base64Converter() {
         } catch (e) {
             setError("Invalid Base64 string. Check for correct padding and characters.");
         }
-    }
+    };
 
     return (
         <div className="lg:col-span-3 space-y-6">
@@ -128,5 +128,5 @@ export default function Base64Converter() {
                 </CardContent>
             </Card>
         </div>
-    )
+    );
 }
