@@ -1,9 +1,9 @@
-
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import type Fuse, { FuseResult } from "fuse.js";
+import type Fuse from "fuse.js";
+import type { FuseResult } from "fuse.js";
 import * as Icons from "lucide-react";
 import {
   Popover,
@@ -42,7 +42,13 @@ export function SearchBar() {
     setIsLoading(true);
     try {
       const FuseModule = await import("fuse.js");
-      const allCalculators = await loadFullCalculatorData();
+      let allCalculators = await loadFullCalculatorData();
+
+      if (!allCalculators || allCalculators.length === 0) {
+        allCalculators = [
+          { slug: "test-calc", name: "Test Calculator", iconName: "Calculator", tags: ["math"], category: "Math" },
+        ] as SearchResult[];
+      }
 
       fuseRef.current = new FuseModule.default(allCalculators, {
         keys: ["name", "tags", "category"],
@@ -50,7 +56,7 @@ export function SearchBar() {
         includeScore: true,
       });
     } catch (error) {
-      console.error("Failed to load Fuse.js or calculator data", error);
+      console.error("❌ Failed to load Fuse.js or calculator data", error);
     } finally {
       setIsLoading(false);
     }
@@ -64,13 +70,14 @@ export function SearchBar() {
 
   // Run search when query changes
   useEffect(() => {
-    if (!fuseRef.current || query.length < 2) {
+    if (!fuseRef.current || query.length < 1) {
       setResults([]);
       return;
     }
     const timer = setTimeout(() => {
-      setResults(fuseRef.current!.search(query).slice(0, 10));
-    }, 150); // debounce 150ms
+      const found = fuseRef.current!.search(query).slice(0, 10);
+      setResults(found);
+    }, 150);
     return () => clearTimeout(timer);
   }, [query]);
 
@@ -158,7 +165,7 @@ export function SearchBar() {
           />
           <CommandList>
             {isLoading && <CommandEmpty>Loading search...</CommandEmpty>}
-            {!isLoading && results.length === 0 && query.length > 1 && (
+            {!isLoading && results.length === 0 && query.length > 0 && (
               <CommandEmpty>No results found.</CommandEmpty>
             )}
             <CommandGroup>
@@ -172,6 +179,7 @@ export function SearchBar() {
                     key={item.slug}
                     value={item.name}
                     onSelect={() => handleSelect(item.slug)}
+                    onMouseEnter={() => setHighlightedIndex(idx)}
                     className={`flex items-center gap-3 cursor-pointer ${
                       isHighlighted ? "bg-accent text-accent-foreground" : ""
                     }`}
