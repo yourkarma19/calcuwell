@@ -15,7 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 
 export default function AgeCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
-  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', undefined, (value) => value ? new Date(value) : undefined);
+  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date(), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
 
   useEffect(() => {
@@ -35,13 +35,6 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
       setAge(calculateAge(now, dateOfBirth));
     }
   };
-  
-  useEffect(() => {
-    if(!dateOfBirth) {
-      setDateOfBirth(new Date());
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   
   useEffect(() => {
     handleCalculateAge();

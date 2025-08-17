@@ -16,21 +16,12 @@ import {
 } from "@/components/ui/chart";
 
 export default function MortgageCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
-  const [principal, setPrincipal] = usePersistentState("mortgage-principal", 0);
-  const [rate, setRate] = usePersistentState("mortgage-rate", 0);
-  const [tenure, setTenure] = usePersistentState("mortgage-tenure", 0);
-  const [propertyTax, setPropertyTax] = usePersistentState("mortgage-tax", 0);
-  const [homeInsurance, setHomeInsurance] = usePersistentState("mortgage-insurance", 0);
+  const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
+  const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);
+  const [tenure, setTenure] = usePersistentState("mortgage-tenure", 30);
+  const [propertyTax, setPropertyTax] = usePersistentState("mortgage-tax", 2000);
+  const [homeInsurance, setHomeInsurance] = usePersistentState("mortgage-insurance", 1000);
   
-  useEffect(() => {
-    if (principal === 0) setPrincipal(250000);
-    if (rate === 0) setRate(6.5);
-    if (tenure === 0) setTenure(30);
-    if (propertyTax === 0) setPropertyTax(2000);
-    if (homeInsurance === 0) setHomeInsurance(1000);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const { monthlyPayment, totalPayable, totalInterest, principalAndInterest, monthlyTaxes, monthlyInsurance } = useMemo(() => {
     if (principal > 0 && rate > 0 && tenure > 0) {
       const monthlyRate = rate / 12 / 100;

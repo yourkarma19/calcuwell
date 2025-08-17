@@ -11,15 +11,9 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function OvulationCalculator() {
-  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', undefined, (value) => value ? new Date(value) : undefined);
+  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<Date | undefined>('ovulation-last-period', new Date(), (value) => value ? new Date(value) : undefined);
   const [cycleLength, setCycleLength] = usePersistentState("ovulation-cycle-length", 28);
   
-  useEffect(() => {
-    if (!lastPeriodDate) {
-      setLastPeriodDate(new Date());
-    }
-  }, []);
-
   const { ovulationDate, fertileWindowStart, fertileWindowEnd } = useMemo(() => {
     if (!lastPeriodDate || cycleLength <= 0) {
       return { ovulationDate: null, fertileWindowStart: null, fertileWindowEnd: null };

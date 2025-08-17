@@ -34,16 +34,10 @@ const timezones = [
 export default function TimeZoneConverter() {
   const [fromZone, setFromZone] = usePersistentState("tz-from", "Asia/Kolkata");
   const [toZone, setToZone] = usePersistentState("tz-to", "America/New_York");
-  const [date, setDate] = useState<Date | undefined>(undefined);
-  const [time, setTime] = useState("");
+  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [time, setTime] = useState(new Date().toTimeString().slice(0,5));
   
   const [convertedTime, setConvertedTime] = useState("");
-  
-  useEffect(() => {
-    if (!date) setDate(new Date());
-    if (!time) setTime(new Date().toTimeString().slice(0,5));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleSwap = () => {
     setFromZone(toZone);

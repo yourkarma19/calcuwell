@@ -31,8 +31,8 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
   const searchParams = useSearchParams();
   const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>("bmi-unit-system", "metric");
   
-  const [height, setHeight] = usePersistentState("bmi-height", 0);
-  const [weight, setWeight] = usePersistentState("bmi-weight", 0);
+  const [height, setHeight] = usePersistentState("bmi-height", 175);
+  const [weight, setWeight] = usePersistentState("bmi-weight", 70);
   const [heightInches, setHeightInches] = usePersistentState("bmi-height-inches", 0);
   
   const [bmi, setBmi] = useState<number | null>(null);
@@ -46,12 +46,6 @@ export default function BMICalculator({ setFormula }: { setFormula: (formula: st
     if (w) setWeight(parseFloat(w));
     if (h) setHeight(parseFloat(h));
   }, [searchParams, setWeight, setHeight, setUnitSystem]);
-  
-  useEffect(() => {
-    if (height === 0) setHeight(175);
-    if (weight === 0) setWeight(70);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
 
   const heightInMeters = useMemo(() => {
     if (unitSystem === "metric") {

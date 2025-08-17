@@ -34,18 +34,12 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
     "percentage-mode",
     "percentOf"
   );
-  const [valA, setValA] = usePersistentState("percentage-valA", 0);
-  const [valB, setValB] = usePersistentState("percentage-valB", 0);
+  const [valA, setValA] = usePersistentState("percentage-valA", 10);
+  const [valB, setValB] = usePersistentState("percentage-valB", 50);
   
   useEffect(() => {
     setFormula(formulas[mode]);
   }, [mode, setFormula]);
-  
-  useEffect(() => {
-    if (valA === 0) setValA(10);
-    if (valB === 0) setValB(50);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const result = useMemo(() => {
     const a = Number(valA);
