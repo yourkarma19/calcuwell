@@ -25,6 +25,7 @@ type SearchResult = Omit<Calculator, "component">;
 export function SearchBar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [calculators, setCalculators] = React.useState<SearchResult[]>([]);
+  const [query, setQuery] = React.useState("");
   const router = useRouter();
 
   // Load calculator data when the component mounts
@@ -47,15 +48,23 @@ export function SearchBar() {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
+  
+  // When the popover opens or closes, reset the query
+  const onOpenChange = (open: boolean) => {
+    if(!open) {
+      setQuery("");
+    }
+    setIsOpen(open);
+  }
 
   // Function to run when an item is selected from the list
   const runCommand = React.useCallback((command: () => unknown) => {
-    setIsOpen(false);
+    onOpenChange(false);
     command();
   }, []);
 
   return (
-    <Popover open={isOpen} onOpenChange={setIsOpen}>
+    <Popover open={isOpen} onOpenChange={onOpenChange}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
@@ -69,7 +78,11 @@ export function SearchBar() {
       </PopoverTrigger>
       <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
         <Command>
-          <CommandInput placeholder="Search for a calculator..." />
+          <CommandInput
+            value={query}
+            onValueChange={setQuery}
+            placeholder="Search for a calculator..."
+          />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
