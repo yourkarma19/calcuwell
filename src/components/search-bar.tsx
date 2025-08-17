@@ -4,6 +4,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import * as Icons from "lucide-react";
+import Fuse from "fuse.js";
 import {
   Popover,
   PopoverContent,
@@ -30,7 +31,23 @@ export function SearchBar() {
   const [search, setSearch] = React.useState("");
   const router = useRouter();
 
-  // Load calculator data when the popover is opened
+  const fuse = React.useMemo(() => {
+    if (calculators.length > 0) {
+      return new Fuse(calculators, {
+        keys: ["name", "category", "tags"],
+        threshold: 0.3,
+      });
+    }
+  }, [calculators]);
+
+  const searchResults = React.useMemo(() => {
+    if (!search || !fuse) {
+      return calculators;
+    }
+    return fuse.search(search).map((result) => result.item);
+  }, [search, fuse, calculators]);
+
+
   React.useEffect(() => {
     if (isOpen && calculators.length === 0) {
       setIsLoading(true);
@@ -41,7 +58,6 @@ export function SearchBar() {
     }
   }, [isOpen, calculators.length]);
 
-  // Keyboard shortcut (⌘K or Ctrl+K) to open the search
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -53,7 +69,6 @@ export function SearchBar() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  // Function to run when a command is selected
   const runCommand = React.useCallback(
     (slug: string) => {
       router.push(`/calculators/${slug}`);
@@ -80,7 +95,7 @@ export function SearchBar() {
         className="w-[var(--radix-popover-trigger-width)] p-0"
         align="start"
       >
-        <Command>
+        <Command shouldFilter={false}>
           <CommandInput
             value={search}
             onValueChange={setSearch}
@@ -94,14 +109,13 @@ export function SearchBar() {
               <CommandEmpty>No results found for "{search}".</CommandEmpty>
             )}
             <CommandGroup>
-              {calculators.map((calc) => {
+              {searchResults.map((calc) => {
                 const LucideIcon =
                   Icons[calc.iconName as keyof typeof Icons] ||
                   Icons.Calculator;
                 return (
                   <CommandItem
                     key={calc.slug}
-                    value={`${calc.name} ${calc.category} ${calc.tags?.join(" ")}`}
                     onSelect={() => runCommand(calc.slug)}
                     className="flex items-center gap-3 cursor-pointer"
                   >
