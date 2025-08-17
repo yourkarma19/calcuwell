@@ -56,12 +56,13 @@ export default function BasicCalculator() {
 
   const handleOperator = (op: string) => {
     if (displayValue !== "Error") {
-        const lastChar = displayValue.slice(-1);
+        const lastChar = expression.slice(-1);
         if (isOperator(lastChar)) {
-            setDisplayValue(prev => prev.slice(0, -1) + op);
+            setExpression(prev => prev.slice(0, -1) + op);
         } else {
-            setDisplayValue(prev => prev + op);
+            setExpression(displayValue + op);
         }
+        setDisplayValue("0");
     }
   };
 
@@ -76,15 +77,15 @@ export default function BasicCalculator() {
     }
     
     try {
-        const currentExpression = displayValue;
+        const fullExpression = (expression + displayValue).replace(/[^-()\d/*+.]/g, '');
         // Use Function constructor for safe evaluation
-        const result = new Function('return ' + currentExpression.replace(/[^-()\d/*+.]/g, ''))();
+        const result = new Function('return ' + fullExpression)();
         
         if (result === undefined || !isFinite(result)) {
-            setExpression(currentExpression);
+            setExpression(fullExpression);
             setDisplayValue("Error");
         } else {
-            setExpression(currentExpression);
+            setExpression(fullExpression);
             setDisplayValue(result.toString());
         }
     } catch (error) {
@@ -92,6 +93,7 @@ export default function BasicCalculator() {
         setDisplayValue("Error");
     }
     setJustEvaluated(true);
+    setExpression("");
   };
   
   const resetCalculator = () => {
@@ -108,7 +110,7 @@ export default function BasicCalculator() {
       if (/[0-9.]/.test(key)) {
         handleInput(key);
       } else if (isOperator(key)) {
-        handleInput(key);
+        handleOperator(key);
       } else if (key === 'Enter' || key === '=') {
         handleInput('=');
       } else if (key === 'Backspace') {
@@ -147,7 +149,7 @@ export default function BasicCalculator() {
             <div
               aria-label="Calculator display"
               className={cn(
-                "h-2/3 text-right font-mono p-0 border-0 bg-transparent w-full flex items-center justify-end",
+                "h-2/3 w-full text-right font-mono flex items-center justify-end p-0 border-0 bg-transparent",
                 displayFontSize(),
                 displayValue === "I ❤️ You" && "text-primary"
               )}
@@ -159,22 +161,22 @@ export default function BasicCalculator() {
               <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
               <Button onClick={() => handleInput("+/-")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">+/-</Button>
               <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
-              <Button onClick={() => handleInput("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">/</Button>
+              <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">/</Button>
               
               <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
               <Button onClick={() => handleInput("8")} variant="outline" className="h-16 text-2xl">8</Button>
               <Button onClick={() => handleInput("9")} variant="outline" className="h-16 text-2xl">9</Button>
-              <Button onClick={() => handleInput("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">*</Button>
+              <Button onClick={() => handleOperator("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">*</Button>
 
               <Button onClick={() => handleInput("4")} variant="outline" className="h-16 text-2xl">4</Button>
               <Button onClick={() => handleInput("5")} variant="outline" className="h-16 text-2xl">5</Button>
               <Button onClick={() => handleInput("6")} variant="outline" className="h-16 text-2xl">6</Button>
-              <Button onClick={() => handleInput("-")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">-</Button>
+              <Button onClick={() => handleOperator("-")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">-</Button>
 
               <Button onClick={() => handleInput("1")} variant="outline" className="h-16 text-2xl">1</Button>
               <Button onClick={() => handleInput("2")} variant="outline" className="h-16 text-2xl">2</Button>
               <Button onClick={() => handleInput("3")} variant="outline" className="h-16 text-2xl">3</Button>
-              <Button onClick={() => handleInput("+")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">+</Button>
+              <Button onClick={() => handleOperator("+")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">+</Button>
 
               <Button onClick={() => handleInput("0")} variant="outline" className="h-16 text-2xl col-span-2">0</Button>
               <Button onClick={() => handleInput(".")} variant="outline" className="h-16 text-2xl">.</Button>
