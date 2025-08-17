@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import * as Icons from "lucide-react";
-
 import {
   Popover,
   PopoverContent,
@@ -29,24 +28,18 @@ export function SearchBar() {
   const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
 
-  // Load calculator data when search is opened
+  // Load calculator data when the popover is opened
   React.useEffect(() => {
     if (isOpen && calculators.length === 0) {
       setIsLoading(true);
       loadFullCalculatorData()
-        .then((data) => {
-          setCalculators(data);
-        })
-        .catch((err) => {
-          console.error("Failed to load calculator data", err);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+        .then(setCalculators)
+        .catch((err) => console.error("Failed to load calculators:", err))
+        .finally(() => setIsLoading(false));
     }
   }, [isOpen, calculators.length]);
 
-  // Keyboard shortcut (⌘K or Ctrl+K)
+  // Keyboard shortcut (⌘K or Ctrl+K) to open the search
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -86,7 +79,7 @@ export function SearchBar() {
       >
         <Command>
           <CommandInput
-            placeholder="Search for a calculator..."
+            placeholder="Type to search..."
             disabled={isLoading}
           />
           <CommandList>
@@ -103,7 +96,7 @@ export function SearchBar() {
                 return (
                   <CommandItem
                     key={calc.slug}
-                    value={`${calc.name} ${calc.category} ${calc.tags?.join(' ')}`}
+                    value={`${calc.name} ${calc.category} ${calc.tags?.join(" ")}`}
                     onSelect={() => runCommand(calc.slug)}
                     className="flex items-center gap-3 cursor-pointer"
                   >
