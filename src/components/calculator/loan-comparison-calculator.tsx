@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { ChartContainer, ChartTooltipContent, ChartLegend, ChartLegendContent } from "@/components/ui/chart";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
@@ -59,10 +58,7 @@ export default function LoanComparisonCalculator() {
         { name: "Total Amount", "Loan A": resultsA.totalAmount, "Loan B": resultsB.totalAmount },
     ];
     
-    const chartConfig = {
-      "Loan A": { label: "Loan A", color: "hsl(220 70% 50%)" },
-      "Loan B": { label: "Loan B", color: "hsl(30 80% 55%)" },
-    };
+    const currencyFormatter = (value: number) => formatter.format(value);
 
     return (
         <div className="lg:col-span-3 space-y-6">
@@ -79,7 +75,7 @@ export default function LoanComparisonCalculator() {
                 </Card>
                  <Card id="loanB">
                     <CardHeader>
-                        <CardTitle className="flex items-center gap-2"><span className="flex items-center justify-center w-7 h-7 bg-red-500 text-white rounded-full">B</span> Loan Option B</CardTitle>
+                        <CardTitle className="flex items-center gap-2"><span className="flex items-center justify-center w-7 h-7 bg-orange-500 text-white rounded-full">B</span> Loan Option B</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div><Label htmlFor="principalB">Loan Amount (₹)</Label><Input type="number" id="principalB" value={principalB} onChange={e => setPrincipalB(Number(e.target.value))} placeholder="e.g., 500000" /></div>
@@ -133,19 +129,17 @@ export default function LoanComparisonCalculator() {
                             <CardTitle>Visual Comparison</CardTitle>
                         </CardHeader>
                         <CardContent className="h-[25rem]">
-                            <ChartContainer config={chartConfig} className="w-full h-full">
-                                <ResponsiveContainer>
-                                    <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis tickFormatter={(value) => `₹${(Number(value) / 1000).toFixed(0)}k`} />
-                                        <Tooltip content={<ChartTooltipContent formatter={(value) => formatter.format(Number(value))} />} />
-                                        <ChartLegend content={<ChartLegendContent />} />
-                                        <Bar dataKey="Loan A" fill="var(--color-Loan-A)" radius={4} />
-                                        <Bar dataKey="Loan B" fill="var(--color-Loan-B)" radius={4} />
-                                    </BarChart>
-                                </ResponsiveContainer>
-                            </ChartContainer>
+                            <ResponsiveContainer width="100%" height="100%">
+                                <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="name" />
+                                    <YAxis tickFormatter={(value) => `₹${(Number(value) / 1000).toFixed(0)}k`} />
+                                    <Tooltip formatter={currencyFormatter} />
+                                    <Legend />
+                                    <Bar dataKey="Loan A" fill="#3b82f6" radius={4} />
+                                    <Bar dataKey="Loan B" fill="#f97316" radius={4} />
+                                </BarChart>
+                            </ResponsiveContainer>
                         </CardContent>
                     </Card>
                 </div>
