@@ -55,16 +55,16 @@ export function SearchBar() {
             category: "Health",
           },
           {
-            slug: "loan-calculator",
-            name: "Loan Calculator",
-            iconName: "Wallet",
+            slug: "loan-emi-calculator",
+            name: "Loan EMI Calculator",
+            iconName: "Landmark",
             tags: ["finance", "emi", "interest"],
             category: "Finance",
           },
           {
             slug: "age-calculator",
             name: "Age Calculator",
-            iconName: "Calendar",
+            iconName: "CalendarClock",
             tags: ["birthday", "time", "years"],
             category: "Date & Time",
           },
@@ -154,7 +154,7 @@ export function SearchBar() {
   }, [isOpen, isLoading, initFuse]);
 
   // Handle arrow keys + Enter
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (results.length === 0) return;
 
     if (e.key === "ArrowDown") {
@@ -192,13 +192,12 @@ export function SearchBar() {
         className="w-[var(--radix-popover-trigger-width)] p-0"
         align="start"
       >
-        <Command shouldFilter={false}>
+        <Command shouldFilter={false} onKeyDown={handleKeyDown}>
           <CommandInput
             ref={inputRef}
             placeholder="Search calculators..."
             value={query}
             onValueChange={handleInputChange}
-            onKeyDown={handleKeyDown}
             disabled={isLoading}
           />
           <CommandList>
