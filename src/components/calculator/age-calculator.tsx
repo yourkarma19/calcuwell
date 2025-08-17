@@ -15,7 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 
 export default function AgeCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
-  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date(), (value) => value ? new Date(value) : undefined);
+  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
 
   useEffect(() => {
@@ -64,33 +64,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
           </Button>
         </CardContent>
       </Card>
-
-      {age && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Your Age</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center" aria-live="polite">
-            <div>
-              <div className="flex justify-center items-baseline gap-2">
-                  <p className="text-6xl font-bold font-headline text-primary">{age.years}</p>
-                  <p className="text-xl text-muted-foreground">Years</p>
-              </div>
-              <div className="mt-4 grid grid-cols-2 gap-4 text-lg">
-                  <div className="text-center">
-                      <p className="font-bold font-headline">{age.months}</p>
-                      <p className="text-sm text-muted-foreground">Months</p>
-                  </div>
-                  <div className="text-center">
-                      <p className="font-bold font-headline">{age.days}</p>
-                      <p className="text-sm text-muted-foreground">Days</p>
-                  </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
+      
       <Card>
         <CardHeader><CardTitle>About the Age Calculator</CardTitle></CardHeader>
         <CardContent>
