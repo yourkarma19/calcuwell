@@ -86,22 +86,39 @@ export default function DataStorageConverter() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Data Storage Units</CardTitle></CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Bit vs. Byte</AccordionTrigger>
-              <AccordionContent>
-                A **bit** is the smallest unit of data in a computer, representing a 0 or 1. A **byte** is a group of 8 bits and is the standard unit for measuring file sizes.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Kilobyte vs. Kibibyte</AccordionTrigger>
-              <AccordionContent>
-                Historically, a kilobyte was 1024 bytes (2¹⁰). To avoid confusion, new binary prefixes were introduced. A **kilobyte (KB)** is now often considered 1000 bytes, while a **kibibyte (KiB)** is 1024 bytes. This calculator uses the 1024-byte standard for all its conversions (e.g., kilobyte = 1024 bytes).
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <CardHeader>
+            <CardTitle>About the Data Storage Converter</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+            <p>Our **Data Storage Converter** is an essential tool for anyone working with digital files, from software developers and IT professionals to casual computer users. It helps you quickly and accurately convert between different units of digital information, such as bits, bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB), and petabytes (PB). This makes it easy to understand file sizes, disk space, and data limits.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Enter the numeric value of the data size you want to convert in the "From" field.</li>
+                <li>Select the starting unit (e.g., Megabyte).</li>
+                <li>Select the target unit you want to convert to (e.g., Gigabyte).</li>
+            </ol>
+            <p>The equivalent value will be instantly calculated and displayed in the "To" field.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>What's the difference between a Bit and a Byte?</AccordionTrigger>
+                    <AccordionContent>
+                        A **bit** is the most basic unit of data in computing, representing a single binary value of either 0 or 1. A **byte** is a group of 8 bits. Bytes are the standard unit used to measure file sizes and storage capacity because a single byte can represent one character of text (in ASCII).
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>Why is a Kilobyte 1024 Bytes, not 1000?</AccordionTrigger>
+                    <AccordionContent>
+                        Computers operate on a binary (base-2) system. Therefore, data storage units are based on powers of 2. `2^10` is 1024, which is the closest power of 2 to 1000. This became the standard for computer memory and storage, so 1 Kilobyte = 1024 Bytes, 1 Megabyte = 1024 Kilobytes, and so on. This calculator uses the 1024-byte standard.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>What is the difference between KB and KiB?</AccordionTrigger>
+                    <AccordionContent>
+                       To reduce confusion, official standards bodies introduced binary prefixes. A **kilobyte (KB)** is now technically defined as 1000 bytes, while a **kibibyte (KiB)** is 1024 bytes. However, in common usage (and in this calculator), "kilobyte" is still widely understood to mean 1024 bytes. This discrepancy is why a hard drive advertised as 1 TB (1 trillion bytes) appears as about 931 GB in your operating system.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>

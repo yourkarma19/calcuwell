@@ -87,25 +87,41 @@ export default function Base64Converter() {
                 </CardContent>
             </Card>
             <Card>
-                <CardHeader><CardTitle>About Base64 Encoding</CardTitle></CardHeader>
-                <CardContent>
+                <CardHeader>
+                    <CardTitle>About the Base64 Converter</CardTitle>
+                </CardHeader>
+                <CardContent className="prose dark:prose-invert max-w-none">
+                    <p>Our **Base64 Encoder & Decoder** is a vital tool for developers, email technicians, and anyone needing to safely transmit data. It converts binary data (like images or text with special characters) into a simple, text-based format that can be reliably sent over systems designed to handle plain text. This ensures data integrity during transport.</p>
+                    <h3>How to Use the Calculator</h3>
+                    <ol>
+                        <li>**To Encode:** Enter your text in the "Text (UTF-8)" box and click "Encode to Base64". The Base64 string will appear below.</li>
+                        <li>**To Decode:** Enter a Base64 string in the "Base64" box and click "Decode from Base64". The original text will appear above.</li>
+                    </ol>
+                    <p>The tool supports UTF-8, allowing for the encoding of international characters and emojis.</p>
+                    <h3>Frequently Asked Questions (FAQs)</h3>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger>What is Base64 used for?</AccordionTrigger>
                             <AccordionContent>
-                                Base64 is a method for encoding binary data (like images or files) into a text-based format. This is useful for transmitting data over media that are designed to handle text. Common uses include embedding images directly into HTML or CSS files (Data URIs) and sending attachments in emails.
+                                Base64 is commonly used to embed binary data directly within text-based files or messages. Its most frequent applications include sending email attachments and embedding images directly into HTML or CSS files using Data URIs (e.g., `<img src="data:image/png;base64,...">`). This avoids the need for separate file requests.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
                             <AccordionTrigger>Is Base64 an encryption method?</AccordionTrigger>
                             <AccordionContent>
-                                No, Base64 is an encoding method, not an encryption method. It is easily reversible and does not provide any security. Its purpose is to ensure data remains intact without modification during transport, not to conceal it.
+                                No, Base64 is an **encoding** method, not an **encryption** method. It is easily reversible and provides no security or confidentiality. Its purpose is to ensure data remains intact without modification during transport, not to conceal it from being read.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>How does Base64 work?</AccordionTrigger>
                             <AccordionContent>
-                                Base64 takes binary data, groups it into 6-bit chunks, and maps each chunk to one of 64 characters. The character set typically includes A-Z, a-z, 0-9, and two other symbols like '+' and '/'. The '=' character is used for padding at the end if needed.
+                                Base64 takes binary data, groups it into 24-bit chunks (three 8-bit bytes), and then splits those chunks into four 6-bit segments. Each 6-bit segment is mapped to one of 64 characters from a specific set (A-Z, a-z, 0-9, '+', '/'). If the original data isn't a multiple of three bytes, padding (`=`) is added to the end.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-4">
+                            <AccordionTrigger>What does the padding character `=` mean?</AccordionTrigger>
+                            <AccordionContent>
+                                The `=` character is used as padding at the end of a Base64 string to ensure that the encoded output is a multiple of 4 characters. A Base64 string can have zero, one, or two padding characters. This padding is essential for the decoder to correctly reconstruct the original binary data.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

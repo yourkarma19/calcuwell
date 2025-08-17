@@ -130,22 +130,39 @@ export default function UnitConverter() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Unit Conversion</CardTitle></CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What are base units?</AccordionTrigger>
-              <AccordionContent>
-                In the International System of Units (SI), most units are derived from seven base units. This calculator uses a base unit for each conversion type (e.g., meter for length) to convert between all other units accurately.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Temperature Conversion</AccordionTrigger>
-              <AccordionContent>
-                Temperature conversion between Celsius, Fahrenheit, and Kelvin is not a simple multiplication. It involves different formulas. For example, to convert Celsius to Fahrenheit, the formula is `(°C × 9/5) + 32 = °F`.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <CardHeader>
+            <CardTitle>About the Unit Converter</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+            <p>Our **Universal Unit Converter** is a powerful and versatile tool designed to handle a wide range of measurement conversions. From simple length and weight conversions to more complex ones like energy and pressure, this calculator is an essential utility for students, professionals, and anyone who needs to work with different measurement systems.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>First, select the **Conversion Type** (e.g., Length, Weight, Temperature).</li>
+                <li>Enter the value you wish to convert in the "From" field.</li>
+                <li>Select the starting unit and the target unit from the dropdown menus.</li>
+            </ol>
+            <p>The result of the conversion will be displayed instantly. Use the swap button to quickly reverse the units.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>What is the SI system?</AccordionTrigger>
+                    <AccordionContent>
+                        The International System of Units (SI) is the modern form of the metric system and is the most widely used system of measurement. It is built upon seven base units: the meter (length), kilogram (mass), second (time), ampere (electric current), kelvin (thermodynamic temperature), mole (amount of substance), and candela (luminous intensity). This calculator uses SI base units (like the meter for length) to perform conversions accurately.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>How does temperature conversion work?</AccordionTrigger>
+                    <AccordionContent>
+                        Unlike other units, temperature conversion doesn't use a simple multiplication factor. It relies on specific formulas to convert between Celsius, Fahrenheit, and Kelvin because their scales have different starting points and interval sizes. For example, to convert Celsius to Fahrenheit, the formula is `(°C × 9/5) + 32 = °F`.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>What is the difference between Imperial and Metric systems?</AccordionTrigger>
+                    <AccordionContent>
+                       The **Metric system** (part of SI) is a decimal-based system used by most of the world, with units like meters, grams, and liters. The **Imperial system** is primarily used in the United States and includes units like feet, pounds, and gallons. This converter allows for seamless translation between both systems.
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </CardContent>
       </Card>
     </div>
