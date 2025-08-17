@@ -397,5 +397,3 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
     </div>
   );
 }
-
-    
