@@ -29,17 +29,15 @@ export function SearchBar() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [search, setSearch] = React.useState("");
   const router = useRouter();
-  const [fuse, setFuse] = React.useState<Fuse<SearchResult> | null>(null);
 
-  React.useEffect(() => {
+  const fuse = React.useMemo(() => {
     if (calculators.length > 0) {
-      setFuse(
-        new Fuse(calculators, {
-          keys: ["name", "category", "tags"],
-          threshold: 0.3,
-        })
-      );
+      return new Fuse(calculators, {
+        keys: ["name", "category", "tags"],
+        threshold: 0.3,
+      });
     }
+    return null;
   }, [calculators]);
 
   const searchResults = React.useMemo(() => {
