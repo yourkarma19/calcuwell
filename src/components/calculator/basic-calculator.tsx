@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ export default function BasicCalculator() {
 
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
-  const handleInput = (input: string) => {
+  const handleInput = useCallback((input: string) => {
     if (justEvaluated && !isOperator(input) && input !== '.') {
         setExpression(""); 
         setDisplayValue(input);
@@ -32,7 +32,9 @@ export default function BasicCalculator() {
     }
     
     if (displayValue === "Error") {
-        resetCalculator();
+        setExpression("");
+        setDisplayValue("0");
+        setJustEvaluated(false);
         if(!isOperator(input)) setDisplayValue(input);
         return;
     }
@@ -58,7 +60,7 @@ export default function BasicCalculator() {
         setDisplayValue(prev => prev + input);
       }
     }
-  };
+  }, [displayValue, justEvaluated]);
 
   const handleOperator = (op: string) => {
     if (displayValue !== "Error") {
@@ -97,11 +99,36 @@ export default function BasicCalculator() {
     setJustEvaluated(false);
   };
   
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      event.preventDefault();
+      const { key } = event;
+      
+      if (/[0-9.]/.test(key)) {
+        handleInput(key);
+      } else if (isOperator(key)) {
+        handleInput(key);
+      } else if (key === 'Enter' || key === '=') {
+        handleInput('=');
+      } else if (key === 'Backspace') {
+        handleInput('Backspace');
+      } else if (key === 'Escape') {
+        handleInput('AC');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleInput]);
+
   const getButtonClass = (btn: string) => {
-    if (["/", "*", "-", "+", "="].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
+    if (["/", "*", "-", "+"].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
     if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
-    if (btn === "=") return { variant: "default" as const, className: "bg-primary hover:bg-primary/90 col-start-4 row-start-4 row-span-2" };
+    if (btn === "=") return { variant: "default" as const, className: "bg-primary hover:bg-primary/90 col-span-2" };
     if (btn === 'Backspace') return { variant: "outline" as const, className: "" };
+    if(btn === '0') return {variant: "outline" as const, className: "col-span-2"}
     return { variant: "outline" as const, className: ""};
   };
 
@@ -133,19 +160,29 @@ export default function BasicCalculator() {
             </div>
           </div>
           <div className="grid grid-cols-4 grid-rows-5 gap-2">
-            {buttonLayout.map(btn => {
-                const {variant, className} = getButtonClass(btn);
-                return (
-                    <Button 
-                        key={btn}
-                        onClick={() => handleInput(btn)}
-                        variant={variant}
-                        className={cn("h-16 text-2xl", className)}
-                    >
-                        {btn === 'Backspace' ? <Delete /> : btn}
-                    </Button>
-                )
-            })}
+              <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-2xl">AC</Button>
+              <Button onClick={() => handleInput("+/-")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-2xl">+/-</Button>
+              <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-2xl">%</Button>
+              <Button onClick={() => handleInput("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">/</Button>
+              
+              <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
+              <Button onClick={() => handleInput("8")} variant="outline" className="h-16 text-2xl">8</Button>
+              <Button onClick={() => handleInput("9")} variant="outline" className="h-16 text-2xl">9</Button>
+              <Button onClick={() => handleInput("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">*</Button>
+
+              <Button onClick={() => handleInput("4")} variant="outline" className="h-16 text-2xl">4</Button>
+              <Button onClick={() => handleInput("5")} variant="outline" className="h-16 text-2xl">5</Button>
+              <Button onClick={() => handleInput("6")} variant="outline" className="h-16 text-2xl">6</Button>
+              <Button onClick={() => handleInput("-")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">-</Button>
+
+              <Button onClick={() => handleInput("1")} variant="outline" className="h-16 text-2xl">1</Button>
+              <Button onClick={() => handleInput("2")} variant="outline" className="h-16 text-2xl">2</Button>
+              <Button onClick={() => handleInput("3")} variant="outline" className="h-16 text-2xl">3</Button>
+              <Button onClick={() => handleInput("+")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">+</Button>
+
+              <Button onClick={() => handleInput("0")} variant="outline" className="h-16 text-2xl col-span-2">0</Button>
+              <Button onClick={() => handleInput(".")} variant="outline" className="h-16 text-2xl">.</Button>
+              <Button onClick={() => handleInput("=")} variant="default" className="bg-primary hover:bg-primary/90 h-16 text-2xl">=</Button>
           </div>
         </CardContent>
       </Card>
