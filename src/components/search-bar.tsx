@@ -44,17 +44,6 @@ export function SearchBar() {
         setIsLoading(false);
     }
   }, [isLoading]);
-  
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setIsOpen((open) => !open);
-      }
-    };
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
-  }, []);
 
   const handleInputChange = (newQuery: string) => {
     setQuery(newQuery);
@@ -72,15 +61,26 @@ export function SearchBar() {
   }, [router]);
   
   useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setIsOpen((open) => !open);
+      }
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
-      if (!fuseRef.current) {
+      if (!fuseRef.current && !isLoading) {
         initFuse();
       }
       setTimeout(() => {
         inputRef.current?.focus();
       }, 100);
     }
-  }, [isOpen, initFuse]);
+  }, [isOpen, isLoading, initFuse]);
 
   useEffect(() => {
     if (!isLoading && fuseRef.current && query.length > 1) {
@@ -109,6 +109,7 @@ export function SearchBar() {
                 placeholder="Search calculators..."
                 value={query}
                 onValueChange={handleInputChange}
+                disabled={isLoading}
             />
             <CommandList>
                 {isLoading && <CommandEmpty>Loading search...</CommandEmpty>}
