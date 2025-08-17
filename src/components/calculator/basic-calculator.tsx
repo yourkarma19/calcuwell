@@ -274,7 +274,7 @@ export default function BasicCalculator() {
                       className={cn(
                           "w-full text-right font-mono",
                           displayFontSize(),
-                          displayValue === "I ❤️ You" && "text-primary"
+                          displayValue === "I ❤️ You" && "text-pink-500"
                       )}
                       >
                       {displayValue}
@@ -329,9 +329,10 @@ export default function BasicCalculator() {
                         <Tooltip key={func}>
                             <TooltipTrigger asChild>
                                 <Button
+                                    variant="outline"
                                     onClick={() => handleScientificInput(func)}
                                     className={cn(
-                                      "h-12 text-sm bg-zinc-800 hover:bg-zinc-700 text-white",
+                                      "h-12 text-sm",
                                       active && "bg-primary/80 text-primary-foreground hover:bg-primary"
                                     )}
                                 >
