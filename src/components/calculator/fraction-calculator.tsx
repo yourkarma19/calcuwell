@@ -103,25 +103,25 @@ export default function FractionCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is a Fraction?</AccordionTrigger>
                     <AccordionContent>
-                        A fraction represents a part of a whole. It consists of a numerator (the top number), which shows how many parts you have, and a denominator (the bottom number), which shows how many parts the whole is divided into.
+                        A fraction represents a part of a whole. It consists of a numerator (the top number), which shows how many parts you have, and a denominator (the bottom number), which shows how many parts the whole is divided into. For instance, in the fraction 3/4, you have 3 parts of something that is divided into 4 equal parts.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>How to Add Fractions With Different Denominators</AccordionTrigger>
                     <AccordionContent>
-                        To add fractions with different denominators, you must first find a common denominator. This is a number that both denominators can divide into. Once both fractions have the same denominator, you can add the numerators together. For example, to add 1/2 + 1/4, you convert 1/2 to 2/4, then add 2/4 + 1/4 to get 3/4.
+                        To add fractions with different denominators, you must first find a common denominator. This is a number that both denominators can divide into, preferably the smallest one (the Least Common Multiple or LCM). Once both fractions are converted to have the same denominator, you can add their numerators together. For example, to add 1/2 + 1/4, you convert 1/2 to 2/4. Then, you simply add the numerators: 2/4 + 1/4 = 3/4.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                     <AccordionTrigger>Simplifying Fractions</AccordionTrigger>
                     <AccordionContent>
-                        To simplify a fraction, you find the largest number that can divide both the numerator and the denominator evenly. This is called the Greatest Common Divisor (GCD). Divide both the top and bottom number by the GCD to get the simplified fraction. For example, the GCD of 12/16 is 4, so it simplifies to 3/4.
+                        To simplify a fraction, you find the largest number that can divide both the numerator and the denominator evenly. This number is called the Greatest Common Divisor (GCD). You then divide both the top and bottom numbers by the GCD to get the simplified fraction. For example, for the fraction 12/16, the GCD is 4. Dividing both parts by 4 gives you the simplified fraction 3/4.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
                     <AccordionTrigger>What is the difference between a proper and improper fraction?</AccordionTrigger>
                     <AccordionContent>
-                       A proper fraction is one where the numerator is smaller than the denominator (e.g., 3/4). An improper fraction is one where the numerator is larger than or equal to the denominator (e.g., 5/4). Improper fractions are greater than or equal to 1.
+                       A **proper fraction** is one where the numerator is smaller than the denominator (e.g., 3/4), representing a value less than 1. An **improper fraction** is one where the numerator is larger than or equal to the denominator (e.g., 5/4), representing a value greater than or equal to 1. Improper fractions can also be written as mixed numbers (e.g., 5/4 is the same as 1 ¼).
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

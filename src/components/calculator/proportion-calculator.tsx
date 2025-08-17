@@ -103,25 +103,30 @@ export default function ProportionCalculator() {
                   <AccordionItem value="item-1">
                       <AccordionTrigger>What is a Proportion?</AccordionTrigger>
                       <AccordionContent>
-                          A proportion is an equation stating that two ratios are equal. For example, the ratio 1/2 is equal to the ratio 2/4. This would be written as 1/2 = 2/4. Proportions are used to solve for an unknown value when you have a known ratio.
+                          A proportion is a statement that two ratios or fractions are equal. It is an equation that is used to find an unknown value when two ratios are equivalent. For example, the ratio 1/2 is equal to the ratio 2/4. This would be written as the proportion 1/2 = 2/4. Proportions are a powerful tool for solving a wide variety of real-world problems.
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
                       <AccordionTrigger>How to Solve Proportions Using Cross-Multiplication</AccordionTrigger>
                       <AccordionContent>
-                          Cross-multiplication is the method used to solve a proportion. If you have the proportion A/B = C/D, you multiply the numerator of the first fraction by the denominator of the second (A * D), and the numerator of the second fraction by the denominator of the first (C * B). These two products are equal. So, A * D = C * B. You can then solve for the missing value.
+                          Cross-multiplication is the standard method used to solve a proportion. If you have the proportion A/B = C/D, you multiply the numerator of the first fraction by the denominator of the second (A * D), and the numerator of the second fraction by the denominator of the first (C * B). These two products are equal to each other. So, A * D = C * B. You can then use simple algebra to solve for the missing value (e.g., if D is unknown, D = (C * B) / A).
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
                       <AccordionTrigger>Real-World Examples of Proportions</AccordionTrigger>
                       <AccordionContent>
-                          Proportions are used everywhere in daily life. Examples include scaling a recipe up or down (if a recipe for 4 people needs 2 cups of flour, how much for 6 people?), reading a map scale (if 1 inch equals 10 miles), or calculating fuel consumption for a trip.
+                          Proportions are used everywhere in daily life, often without us even realizing it. Common examples include:
+                          <ul className='list-disc pl-5 mt-2'>
+                            <li>**Cooking:** Scaling a recipe up or down. If a recipe for 4 people needs 2 cups of flour, you can use a proportion to find how much flour is needed for 6 people.</li>
+                            <li>**Maps:** Reading a map's scale. If 1 inch on the map equals 10 miles in reality, you can calculate the actual distance between two points.</li>
+                            <li>**Finance:** Calculating fuel consumption for a trip or determining the price of items sold by weight.</li>
+                          </ul>
                       </AccordionContent>
                   </AccordionItem>
                    <AccordionItem value="item-4">
                       <AccordionTrigger>How are ratios and proportions related?</AccordionTrigger>
                       <AccordionContent>
-                          A ratio is a comparison of two numbers (e.g., A:B or A/B). A proportion is a statement that two ratios are equal (e.g., A/B = C/D). A proportion is essentially an equation made of two equal ratios.
+                          A **ratio** is a comparison of two numbers (e.g., A:B or A/B), showing their relative size. A **proportion** is an equation that states that two ratios are equal (e.g., A/B = C/D). In essence, a proportion is an equation built from two equal ratios. You can't have a proportion without ratios.
                       </AccordionContent>
                   </AccordionItem>
               </Accordion>

@@ -151,13 +151,19 @@ export default function LoanComparisonCalculator() {
                         <AccordionItem value="item-1">
                             <AccordionTrigger>Fixed vs. Floating Interest Rates</AccordionTrigger>
                             <AccordionContent>
-                                A fixed interest rate remains the same throughout your loan tenure, offering predictable EMIs. A floating rate can change based on market conditions, meaning your EMIs could increase or decrease. Fixed rates are safer, while floating rates can be cheaper initially but carry more risk.
+                                A fixed interest rate remains the same throughout your loan tenure, offering predictable and stable EMIs. This is a safe option if you prefer budget certainty. A floating rate can change based on market conditions (like central bank rate changes), meaning your EMIs could increase or decrease over time. Floating rates can sometimes be cheaper initially but carry the risk of future increases.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
                             <AccordionTrigger>Does a shorter tenure always save money?</AccordionTrigger>
                             <AccordionContent>
-                                Generally, yes. A shorter loan tenure means you pay less total interest over the life of the loan. However, it also means your monthly EMI will be higher. This calculator helps you see that trade-off clearly.
+                                Generally, yes. A shorter loan tenure means you pay less total interest over the life of the loan because you are paying off the principal balance faster. However, it also means your monthly EMI will be higher. This calculator helps you see that trade-off clearly. You must balance the long-term savings with what you can comfortably afford each month.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger>What other factors should I consider?</AccordionTrigger>
+                            <AccordionContent>
+                                Beyond the interest rate and tenure, consider other loan costs such as processing fees, prepayment penalties, and other hidden charges. Also, check the lender's reputation for customer service and flexibility. Sometimes a slightly higher EMI is worth it for better terms or service.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

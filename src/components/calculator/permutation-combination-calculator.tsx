@@ -98,14 +98,16 @@ export default function PermutationCombinationCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Permutation vs. Combination: The Easiest Explanation</AccordionTrigger>
                         <AccordionContent>
-                            The key difference is whether order matters. Use a **Permutation** when the order of selection is important (e.g., arranging books on a shelf, choosing winners for 1st, 2nd, and 3rd place). Use a **Combination** when the order does not matter (e.g., picking a team of 3 people from a group of 10, choosing pizza toppings).
+                            The key difference is whether **order matters**. <br/><br/>
+                            Use a **Permutation** when the order of selection is important. Think of it as arranging items. For example, arranging books on a shelf, assigning roles to people (like President, VP), or determining the 1st, 2nd, and 3rd place winners in a race. <br/><br/>
+                            Use a **Combination** when the order of selection does not matter. Think of it as choosing a group. For example, picking a team of 3 people from a group of 10, choosing pizza toppings, or selecting lottery numbers.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Clear Examples</AccordionTrigger>
                         <AccordionContent>
-                            <p className="mb-2"><strong>Permutation Example:</strong> Picking 1st, 2nd, and 3rd place in a race with 10 runners. The order (who gets which medal) is crucial. This would be calculated as P(10, 3).</p>
-                            <p><strong>Combination Example:</strong> Picking a team of 3 people from a group of 10. It doesn't matter who was picked first, second, or third; the final team of 3 is all that matters. This would be calculated as C(10, 3).</p>
+                            <p className="mb-2"><strong>Permutation Example:</strong> Imagine you're picking a 3-digit lock code from the digits 0-9 without repetition. The order `1-2-3` is different from `3-2-1`. This is a permutation, and you would calculate it as P(10, 3).</p>
+                            <p><strong>Combination Example:</strong> Imagine you're picking three friends from a group of ten to go to the movies. It doesn't matter if you pick Alice, Bob, and then Carol, or Carol, Bob, and then Alice. The final group of three is all that matters. This is a combination, calculated as C(10, 3).</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
@@ -113,19 +115,19 @@ export default function PermutationCombinationCalculator() {
                         <AccordionContent>
                            <p className="mb-2"><strong>Permutation (nPr):</strong> `n! / (n-r)!`</p>
                            <p><strong>Combination (nCr):</strong> `n! / (r! * (n-r)!)`</p>
-                           <p className="mt-2">Where 'n' is the total number of items, and 'r' is the number of items to choose.</p>
+                           <p className="mt-2">Where 'n' is the total number of items, and 'r' is the number of items to choose. Notice that the combination formula is just the permutation formula divided by r!, which accounts for the removal of the different orderings.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
                         <AccordionTrigger>The Role of Factorials</AccordionTrigger>
                         <AccordionContent>
-                           Factorials are a key part of calculating permutations and combinations. You can learn more about them with our <Link href="/calculators/factorial-calculator" className="text-primary hover:underline">Factorial Calculator</Link>.
+                           Factorials (like n!) are a key part of calculating permutations and combinations. A factorial is the product of all positive integers up to that number (e.g., 5! = 5*4*3*2*1). They represent the total number of ways to arrange a set of items. You can learn more about them with our <Link href="/calculators/factorial-calculator" className="text-primary hover:underline">Factorial Calculator</Link>.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-5">
                         <AccordionTrigger>Can permutations and combinations be used together?</AccordionTrigger>
                         <AccordionContent>
-                           Yes, in more complex probability problems. For example, you might use a combination to determine how many ways you can choose a group, and then use a permutation to determine how many ways you can arrange the members of that group.
+                           Yes, in more complex probability problems. For example, you might use a combination to determine how many ways you can choose a committee, and then use a permutation to determine how many ways you can assign specific roles (like chairperson and secretary) to the members of that committee.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
