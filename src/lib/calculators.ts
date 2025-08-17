@@ -45,12 +45,6 @@ export const categories: Category[] = [
     description: "Calculators for geometric shapes and engineering principles.",
     iconName: "Triangle",
   },
-   {
-    name: "Blog",
-    slug: "blog",
-    description: "Articles and guides to help you understand the concepts behind the calculations.",
-    iconName: "BookOpen",
-  },
   {
     name: "Miscellaneous",
     slug: "miscellaneous",
