@@ -5,21 +5,13 @@ import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Delete } from "lucide-react";
-
-const buttonLayout = [
-  "AC", "+/-", "%", "/",
-  "7", "8", "9", "*",
-  "4", "5", "6", "-",
-  "1", "2", "3", "+",
-  "0", "Backspace", ".", "="
-];
+import { Delete, Heart } from "lucide-react";
 
 export default function BasicCalculator() {
   const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
   const [justEvaluated, setJustEvaluated] = useState(false);
+  const [isCelebrating, setIsCelebrating] = useState(false);
 
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
 
@@ -31,7 +23,7 @@ export default function BasicCalculator() {
         return;
     }
     
-    if (displayValue === "Error") {
+    if (displayValue === "Error" || displayValue === "I ❤️ You") {
         setExpression("");
         setDisplayValue("0");
         setJustEvaluated(false);
@@ -74,6 +66,15 @@ export default function BasicCalculator() {
   };
 
   const handleEquals = () => {
+    if (displayValue === '12082007+19112005') {
+      setDisplayValue("I ❤️ You");
+      setExpression(displayValue);
+      setIsCelebrating(true);
+      setTimeout(() => setIsCelebrating(false), 6000);
+      setJustEvaluated(true);
+      return;
+    }
+    
     try {
         const currentExpression = displayValue;
         // Use Function constructor for safe evaluation
@@ -123,15 +124,6 @@ export default function BasicCalculator() {
     };
   }, [handleInput]);
 
-  const getButtonClass = (btn: string) => {
-    if (["/", "*", "-", "+"].includes(btn)) return { variant: "default" as const, className: "bg-primary/80 hover:bg-primary text-primary-foreground"};
-    if (["AC", "+/-", "%"].includes(btn)) return { variant: "outline" as const, className: "bg-secondary hover:bg-secondary/80"};
-    if (btn === "=") return { variant: "default" as const, className: "bg-primary hover:bg-primary/90 col-span-2" };
-    if (btn === 'Backspace') return { variant: "outline" as const, className: "" };
-    if(btn === '0') return {variant: "outline" as const, className: "col-span-2"}
-    return { variant: "outline" as const, className: ""};
-  };
-
   const displayFontSize = () => {
     const len = displayValue.length;
     if (len > 16) return 'text-2xl';
@@ -142,7 +134,10 @@ export default function BasicCalculator() {
 
   return (
     <div className="lg:col-span-3 space-y-6">
-      <Card className="max-w-sm mx-auto">
+      <Card className={cn("max-w-sm mx-auto overflow-hidden relative", isCelebrating && "celebrate")}>
+        {isCelebrating && Array.from({ length: 10 }).map((_, i) => (
+            <Heart key={i} className="heart" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
+        ))}
         <CardHeader>
           <CardTitle>Calculator</CardTitle>
         </CardHeader>
@@ -153,16 +148,17 @@ export default function BasicCalculator() {
               aria-label="Calculator display"
               className={cn(
                 "h-2/3 text-right font-mono p-0 border-0 bg-transparent w-full",
-                displayFontSize()
+                displayFontSize(),
+                displayValue === "I ❤️ You" && "text-primary"
               )}
             >
               {displayValue}
             </div>
           </div>
           <div className="grid grid-cols-4 grid-rows-5 gap-2">
-              <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-2xl">AC</Button>
-              <Button onClick={() => handleInput("+/-")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-2xl">+/-</Button>
-              <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-2xl">%</Button>
+              <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
+              <Button onClick={() => handleInput("+/-")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">+/-</Button>
+              <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
               <Button onClick={() => handleInput("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">/</Button>
               
               <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
