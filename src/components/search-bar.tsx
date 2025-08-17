@@ -4,7 +4,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import type Fuse from "fuse.js";
-import { calculators } from "@/lib/calculators";
 import {
   Popover,
   PopoverContent,
@@ -32,13 +31,14 @@ export function SearchBar() {
     setIsLoading(true);
     try {
       const FuseModule = await import('fuse.js');
-      fuseRef.current = new FuseModule.default(calculators, {
+      const { calculatorsData } = await import('@/lib/calculator-data');
+      fuseRef.current = new FuseModule.default(calculatorsData, {
         keys: ["name", "tags", "category"],
         threshold: 0.3,
         includeScore: true,
       });
     } catch (error) {
-        console.error("Failed to load Fuse.js", error);
+        console.error("Failed to load Fuse.js or calculator data", error);
     } finally {
         setIsLoading(false);
     }
