@@ -49,6 +49,7 @@ export default function PythagoreanTheoremBlogPage() {
                 height={300}
                 className="rounded-lg shadow-md"
                 data-ai-hint="triangle diagram"
+                priority={false}
             />
         </div>
 
