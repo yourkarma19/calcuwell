@@ -103,24 +103,35 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
         </Card>
         <Card>
             <CardHeader><CardTitle>About VAT & GST</CardTitle></CardHeader>
-            <CardContent>
+            <CardContent className="prose dark:prose-invert max-w-none">
+                <p>Our **VAT / GST Calculator** is an essential tool for both consumers and business owners. It allows you to quickly add or remove a sales tax from a given price, making it easy to see the pre-tax cost or the final gross amount. This is perfect for verifying receipts, creating invoices, or understanding the true cost of a product.</p>
+
+                <h3>How to Use the Calculator</h3>
+                <ol>
+                    <li>Enter the **Initial Amount** of the product or service.</li>
+                    <li>Specify whether this amount **already includes tax** or not. Select "No" to add tax, and "Yes" to remove it.</li>
+                    <li>Adjust the **Tax Rate (%)** slider to match your local VAT or GST rate.</li>
+                </ol>
+                <p>The results will instantly show you the Net Price (pre-tax), the Tax Amount, and the Gross Price (inclusive of tax).</p>
+
+                <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
-                        <AccordionTrigger>What is VAT/GST?</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">What is the difference between VAT and GST?</AccordionTrigger>
                         <AccordionContent>
-                            Value-Added Tax (VAT) or Goods and Services Tax (GST) is a consumption tax placed on a product whenever value is added at each stage of the supply chain, from production to the point of sale.
+                            <p>Functionally, Value-Added Tax (VAT) and Goods and Services Tax (GST) are very similar. Both are consumption taxes. The primary difference is in the terminology used by different countries. For the end consumer, the calculation and effect are the same.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger>How to Calculate Tax</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">How do you manually calculate the tax amount from a net price?</AccordionTrigger>
                         <AccordionContent>
-                            To add tax to a net price, you multiply the price by the tax rate (as a decimal). For example, to add 18% tax to a ₹100 item, you calculate `100 * 0.18 = ₹18` in tax, for a total price of ₹118.
+                            <p>To find the tax amount, you convert the tax percentage to a decimal and multiply it by the net price. The formula is: `Tax Amount = Net Price × (Tax Rate / 100)`.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger>How to Remove Tax from a Gross Price</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">How do you manually extract the tax from a gross price?</AccordionTrigger>
                         <AccordionContent>
-                           To find the original price before tax was added, divide the gross price by (1 + tax rate as a decimal). For example, if a product costs ₹118 with 18% tax included, the original price is `118 / (1 + 0.18) = ₹100`.
+                            <p>To find the original net price and tax amount from a price that already includes tax, you use the reverse formula. The formula is: `Net Price = Gross Price / (1 + (Tax Rate / 100))`. The tax amount is simply the `Gross Price - Net Price`.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
