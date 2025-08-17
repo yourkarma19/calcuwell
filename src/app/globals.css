@@ -34,17 +34,17 @@
 
   .dark {
     --background: 264 20% 5%; /* Near black with a hint of purple */
-    --foreground: 262 85% 75%; /* Purple text */
+    --foreground: 210 40% 98%; /* White text */
     --card: 264 20% 8%; /* Slightly lighter black for cards */
-    --card-foreground: 262 85% 75%;
+    --card-foreground: 210 40% 98%;
     --popover: 264 20% 5%;
-    --popover-foreground: 262 85% 75%;
+    --popover-foreground: 210 40% 98%;
     --primary: 262 85% 65%; /* Vibrant Purple for interactive elements */
     --primary-foreground: 210 40% 98%; /* White text on purple buttons */
-    --secondary: 264 15% 15%;
+    --secondary: 264 15% 15%; /* Darker gray for secondary elements */
     --secondary-foreground: 210 40% 98%;
     --muted: 264 15% 15%;
-    --muted-foreground: 262 85% 55%;
+    --muted-foreground: 262 85% 55%; /* Lighter purple/gray for muted text */
     --accent: 264 15% 15%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 63% 40%;
