@@ -33,24 +33,24 @@
   }
 
   .dark {
-    --background: 264 20% 5%; /* Near black with a hint of purple */
-    --foreground: 262 85% 75%; /* Purple text */
-    --card: 264 20% 8%; /* Slightly lighter black for cards */
+    --background: 240 10% 4%; /* Near black */
+    --foreground: 210 40% 98%; /* White text */
+    --card: 240 10% 9%; /* Slightly lighter black for cards */
     --card-foreground: 210 40% 98%; /* White text for inside cards */
-    --popover: 264 20% 5%;
+    --popover: 240 10% 4%;
     --popover-foreground: 210 40% 98%;
     --primary: 262 85% 65%; /* Vibrant Purple for interactive elements */
     --primary-foreground: 210 40% 98%; /* White text on purple buttons */
-    --secondary: 264 15% 15%; /* Darker gray for secondary elements */
+    --secondary: 240 4% 16%; /* Darker gray for secondary elements */
     --secondary-foreground: 210 40% 98%;
-    --muted: 264 15% 15%;
-    --muted-foreground: 262 85% 55%; /* Lighter purple/gray for muted text */
-    --accent: 264 15% 15%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%; /* Lighter gray for muted text */
+    --accent: 240 4% 16%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 63% 40%;
     --destructive-foreground: 0 0% 100%;
-    --border: 264 15% 15%;
-    --input: 264 15% 15%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
     --ring: 262 85% 65%;
     --chart-1: 262 85% 65%;
     --chart-2: 282 75% 75%;
