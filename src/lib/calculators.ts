@@ -1,6 +1,6 @@
 
 import type { Calculator, Category } from '@/lib/types';
-import { calculatorsData } from './calculator-data';
+import { trendingCalculators } from './trending-calculators';
 
 export const categories: Category[] = [
  {
@@ -59,14 +59,27 @@ export const categories: Category[] = [
   },
 ];
 
-export const calculators: Omit<Calculator, 'component'>[] = calculatorsData;
+// Initially, only load trending calculators to keep bundles small.
+export let calculators: Omit<Calculator, 'component'>[] = trendingCalculators;
 
-export const getCalculatorBySlug = (slug: string): Omit<Calculator, 'component'> | undefined => {
-  return calculators.find((calculator) => calculator.slug === slug);
+// Lazy-load the full calculator list when needed
+export const loadFullCalculatorData = async () => {
+  if (calculators.length === trendingCalculators.length) {
+    const { calculatorsData } = await import('@/lib/calculator-data');
+    calculators = calculatorsData;
+  }
+  return calculators;
+}
+
+
+export const getCalculatorBySlug = async (slug: string): Promise<Omit<Calculator, 'component'> | undefined> => {
+  const allCalculators = await loadFullCalculatorData();
+  return allCalculators.find((calculator) => calculator.slug === slug);
 };
 
-export const getCalculatorsByCategory = (categorySlug: string) => {
+export const getCalculatorsByCategory = async (categorySlug: string) => {
   const category = categories.find(c => c.slug === categorySlug);
   if (!category) return [];
-  return calculators.filter(c => c.category === category.name);
+  const allCalculators = await loadFullCalculatorData();
+  return allCalculators.filter(c => c.category === category.name);
 }

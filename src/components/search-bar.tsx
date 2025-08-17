@@ -13,6 +13,7 @@ import { type Calculator } from "@/lib/types";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
  import { Button } from "@/components/ui/button";
  import { icons } from "lucide-react";
+ import { loadFullCalculatorData } from "@/lib/calculators";
 
 type SearchResult = Omit<Calculator, 'component'>;
 
@@ -31,8 +32,8 @@ export function SearchBar() {
     setIsLoading(true);
     try {
       const FuseModule = await import('fuse.js');
-      const { calculatorsData } = await import('@/lib/calculator-data');
-      fuseRef.current = new FuseModule.default(calculatorsData, {
+      const allCalculators = await loadFullCalculatorData();
+      fuseRef.current = new FuseModule.default(allCalculators, {
         keys: ["name", "tags", "category"],
         threshold: 0.3,
         includeScore: true,

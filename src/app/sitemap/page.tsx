@@ -1,7 +1,7 @@
 
 import { Metadata } from "next";
 import { List, icons } from "lucide-react";
-import { calculators, categories, getCalculatorsByCategory } from "@/lib/calculators";
+import { categories, getCalculatorsByCategory } from "@/lib/calculators";
 import Link from "next/link";
 
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
  },
 };
 
-export default function SitemapPage() {
+export default async function SitemapPage() {
     return (
         <main className="container mx-auto px-4 py-12">
             <div className="text-center mb-12">
@@ -27,8 +27,9 @@ export default function SitemapPage() {
             </div>
 
             <div className="space-y-12">
-                {categories.map((category) => {
+                {await Promise.all(categories.map(async (category) => {
                     const CategoryIcon = icons[category.iconName as keyof typeof icons] || icons.Calculator;
+                    const categoryCalculators = await getCalculatorsByCategory(category.slug);
                     return (
                     <section key={category.slug}>
                         <h2 className="text-3xl font-bold font-headline text-primary mb-6 flex items-center gap-3">
@@ -36,7 +37,7 @@ export default function SitemapPage() {
                            {category.name} Calculators
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {getCalculatorsByCategory(category.slug)
+                            {categoryCalculators
                                 .map((calc) => {
                                     const CalcIcon = icons[calc.iconName as keyof typeof icons] || icons.Calculator;
                                     return (
@@ -47,7 +48,7 @@ export default function SitemapPage() {
                                 )})}
                         </div>
                     </section>
-                )})}
+                )}))}
             </div>
         </main>
     );
