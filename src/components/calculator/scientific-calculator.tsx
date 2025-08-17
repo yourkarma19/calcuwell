@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -41,12 +40,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   const [memory, setMemory] = useState(0);
   const [isRadians, setIsRadians] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState("basic");
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const scientificButtons = getScientificButtonLayout(isInverse);
 
@@ -95,7 +89,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
         case 'tan⁻¹': result = radToAngle(Math.atan(value)); break;
         case 'e': result = Math.E; break;
         case 'π': result = Math.PI; break;
-        case 'Rand': if (isClient) result = Math.random(); break;
+        case 'Rand': if (typeof window !== 'undefined') result = Math.random(); break;
         case 'mc': setMemory(0); return;
         case 'm+': setMemory(prev => prev + value); return;
         case 'm-': setMemory(prev => prev - value); return;
