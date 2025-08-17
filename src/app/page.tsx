@@ -2,7 +2,8 @@
 "use client";
 
 import Link from "next/link";
-import { categories, calculators } from "@/lib/calculators";
+import { categories } from "@/lib/calculators";
+import { trendingCalculators } from "@/lib/trending-calculators";
 import {
   Card,
   CardHeader,
@@ -25,7 +26,6 @@ const ScientificCalculator = dynamic(() => import('@/components/calculator/scien
 
 
 export default function Home() {
-  const trendingCalculators = calculators.slice(0, 4);
 
   return (
     <div className="container mx-auto px-4 py-8">
