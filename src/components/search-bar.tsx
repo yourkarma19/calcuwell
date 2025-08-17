@@ -21,7 +21,6 @@ import { Button } from "@/components/ui/button";
 import { type Calculator } from "@/lib/types";
 import { loadFullCalculatorData } from "@/lib/calculators";
 
-// Define the type for search results, omitting the component part for performance
 type SearchResult = Omit<Calculator, "component">;
 
 export function SearchBar() {
@@ -29,49 +28,17 @@ export function SearchBar() {
   const [results, setResults] = useState<FuseResult<SearchResult>[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [highlightedIndex, setHighlightedIndex] = useState(0);
 
   const router = useRouter();
   const fuseRef = useRef<Fuse<SearchResult> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Initialize Fuse.js with calculator data
   const initFuse = useCallback(async () => {
     if (fuseRef.current || isLoading) return;
     setIsLoading(true);
-
     try {
       const FuseModule = await import("fuse.js");
-      let allCalculators = await loadFullCalculatorData();
-
-      // Fallback demo data in case your dataset is empty
-      if (!allCalculators || allCalculators.length === 0) {
-        allCalculators = [
-          {
-            slug: "bmi-calculator",
-            name: "BMI Calculator",
-            iconName: "Activity",
-            tags: ["health", "fitness", "body mass"],
-            category: "Health",
-          },
-          {
-            slug: "loan-emi-calculator",
-            name: "Loan EMI Calculator",
-            iconName: "Landmark",
-            tags: ["finance", "emi", "interest"],
-            category: "Finance",
-          },
-          {
-            slug: "age-calculator",
-            name: "Age Calculator",
-            iconName: "CalendarClock",
-            tags: ["birthday", "time", "years"],
-            category: "Date & Time",
-          },
-        ] as SearchResult[];
-      }
-
-      // Advanced Fuse.js setup
+      const allCalculators = await loadFullCalculatorData();
       fuseRef.current = new FuseModule.default(allCalculators, {
         keys: [
           { name: "name", weight: 0.6 },
@@ -81,7 +48,6 @@ export function SearchBar() {
         threshold: 0.35,
         includeScore: true,
         ignoreLocation: true,
-        minMatchCharLength: 1,
       });
     } catch (error) {
       console.error("❌ Failed to load Fuse.js or calculator data", error);
@@ -90,36 +56,15 @@ export function SearchBar() {
     }
   }, [isLoading]);
 
-  // Handle input
-  const handleInputChange = (newQuery: string) => {
-    setQuery(newQuery);
-    setHighlightedIndex(0); // reset highlight
-  };
-
-  // Run search when query changes
   useEffect(() => {
-    if (!fuseRef.current || query.length < 1) {
+    if (!fuseRef.current || !query) {
       setResults([]);
       return;
     }
-    const timer = setTimeout(() => {
-      let found = fuseRef.current!.search(query);
-
-      // Advanced: sort exact matches to top
-      found = found.sort((a, b) => {
-        const aExact = a.item.name.toLowerCase() === query.toLowerCase();
-        const bExact = b.item.name.toLowerCase() === query.toLowerCase();
-        if (aExact && !bExact) return -1;
-        if (!aExact && bExact) return 1;
-        return a.score! - b.score!;
-      });
-
-      setResults(found.slice(0, 10));
-    }, 150);
-    return () => clearTimeout(timer);
+    const searchResults = fuseRef.current.search(query);
+    setResults(searchResults.slice(0, 10));
   }, [query]);
 
-  // Handle selection
   const handleSelect = useCallback(
     (slug: string) => {
       router.push(`/calculators/${slug}`);
@@ -129,7 +74,6 @@ export function SearchBar() {
     [router]
   );
 
-  // Keyboard shortcut ⌘K / Ctrl+K
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -141,38 +85,19 @@ export function SearchBar() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  // Autofocus input when opening
   useEffect(() => {
     if (isOpen) {
-      if (!fuseRef.current && !isLoading) {
-        initFuse();
-      }
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100);
+      initFuse();
+      setTimeout(() => inputRef.current?.focus(), 100);
     }
-  }, [isOpen, isLoading, initFuse]);
-
-  // Handle arrow keys + Enter
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (results.length === 0) return;
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setHighlightedIndex((prev) =>
-        prev < results.length - 1 ? prev + 1 : 0
-      );
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setHighlightedIndex((prev) =>
-        prev > 0 ? prev - 1 : results.length - 1
-      );
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      const selected = results[highlightedIndex];
-      if (selected) handleSelect(selected.item.slug);
+  }, [isOpen, initFuse]);
+  
+  const onCommandSelect = (value: string) => {
+    const selected = results.find(r => r.item.name.toLowerCase() === value.toLowerCase());
+    if(selected) {
+      handleSelect(selected.item.slug);
     }
-  };
+  }
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -192,12 +117,10 @@ export function SearchBar() {
         className="w-[var(--radix-popover-trigger-width)] p-0"
         align="start"
       >
-        <Command shouldFilter={false} onKeyDown={handleKeyDown}>
+        <Command onValueChange={setQuery} onSelect={onCommandSelect} shouldFilter={false}>
           <CommandInput
             ref={inputRef}
             placeholder="Search calculators..."
-            value={query}
-            onValueChange={handleInputChange}
             disabled={isLoading}
           />
           <CommandList>
@@ -206,20 +129,13 @@ export function SearchBar() {
               <CommandEmpty>No results found.</CommandEmpty>
             )}
             <CommandGroup>
-              {results.map(({ item }, idx) => {
-                const LucideIcon =
-                  Icons[item.iconName as keyof typeof Icons] ||
-                  Icons.Calculator;
-                const isHighlighted = idx === highlightedIndex;
+              {results.map(({ item }) => {
+                const LucideIcon = Icons[item.iconName as keyof typeof Icons] || Icons.Calculator;
                 return (
                   <CommandItem
                     key={item.slug}
                     value={item.name}
-                    onSelect={() => handleSelect(item.slug)}
-                    onMouseEnter={() => setHighlightedIndex(idx)}
-                    className={`flex items-center gap-3 cursor-pointer ${
-                      isHighlighted ? "bg-accent text-accent-foreground" : ""
-                    }`}
+                    className="flex items-center gap-3 cursor-pointer"
                   >
                     <LucideIcon className="w-4 h-4 text-muted-foreground" />
                     <div className="flex flex-col">
