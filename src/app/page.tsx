@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, Smartphone, icons, FlaskConical } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import ScientificCalculator from "@/components/calculator/scientific-calculator";
+import BasicCalculator from "@/components/calculator/basic-calculator";
 
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
       
       <section id="main-calculator" className="py-12">
-        <ScientificCalculator showFaq={false} />
+        <BasicCalculator />
       </section>
       
       <section id="categories" className="py-8">
