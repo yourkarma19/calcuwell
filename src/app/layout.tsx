@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Poppins, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
@@ -9,9 +9,10 @@ import "./globals.css";
 import Script from "next/script";
 import { headers } from 'next/headers';
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: 'swap',
 });
 
@@ -45,7 +46,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
-          className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
+          className={`${poppins.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
         >
           <ThemeProvider
             attribute="class"
@@ -76,7 +77,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
+        className={`${poppins.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
