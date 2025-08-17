@@ -39,7 +39,8 @@ export async function generateStaticParams() {
 
 
 export default async function CalculatorPage({ params }: CalculatorPageProps) {
-  const calculator = await getCalculatorBySlug(params.slug);
+  const awaitedParams = await params;
+  const calculator = await getCalculatorBySlug(awaitedParams.slug);
 
   if (!calculator) {
     notFound();
@@ -48,8 +49,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   return (
     <main>
       <CalculatorWrapper calculator={calculator}>
-        <CalculatorLoader slug={params.slug} />
+        <CalculatorLoader slug={awaitedParams.slug} />
       </CalculatorWrapper>
     </main>
   );
 }
+
