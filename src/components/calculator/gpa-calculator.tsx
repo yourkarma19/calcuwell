@@ -48,20 +48,18 @@ type FormValues = z.infer<typeof formSchema>;
 export default function GpaCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [gpa, setGpa] = useState<number | null>(null);
   
-  const [defaultCourses, setDefaultCourses] = usePersistentState<FormValues['courses']>('gpa-courses', []);
+  const [defaultCourses, setDefaultCourses] = usePersistentState<FormValues['courses']>('gpa-courses', [{ name: "Example Course", grade: "A", credits: 3 }]);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      courses: [{ name: "Example Course", grade: "A", credits: 3 }],
+      courses: defaultCourses,
     },
      mode: "onChange",
   });
   
   useEffect(() => {
-    if (defaultCourses && defaultCourses.length > 0) {
-      form.reset({ courses: defaultCourses });
-    }
+    form.reset({ courses: defaultCourses });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultCourses]);
   

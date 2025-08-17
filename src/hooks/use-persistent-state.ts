@@ -27,7 +27,8 @@ function usePersistentState<T>(
         }
         setState(storedValue);
         setIsInitialized(true);
-    }, [key, defaultValue, reviver]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [key]);
 
     const setPersistentState: Dispatch<SetStateAction<T>> = useCallback((newValue) => {
         if (!isInitialized) return;
