@@ -80,7 +80,18 @@ export default function RatioCalculator() {
 
       <Card>
         <CardHeader><CardTitle>About Ratios</CardTitle></CardHeader>
-        <CardContent>
+        <CardContent className="prose dark:prose-invert max-w-none">
+            <p>Our **Ratio Calculator** is a versatile tool designed to simplify ratios and solve for missing values in a proportion. Ratios are a fundamental mathematical concept used to compare the relative size of two or more quantities. This calculator is perfect for students learning about ratios, as well as for professionals in fields like design, engineering, and finance who need to work with proportions regularly.</p>
+            
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Enter the values for **A**, **B**, and **C** in the proportion `A : B = C : D`.</li>
+                <li>The calculator will automatically solve for the missing value **D**.</li>
+                <li>It will also display the simplified version of the ratio `A : B`.</li>
+            </ol>
+            <p>This makes it easy to scale quantities, such as when resizing an image while maintaining its aspect ratio.</p>
+
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is a Ratio? A Simple Explanation with Examples</AccordionTrigger>
@@ -103,7 +114,7 @@ export default function RatioCalculator() {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Is a ratio the same as a fraction?</AccordionTrigger>
                     <AccordionContent>
-                        They are closely related but not exactly the same. A fraction represents a part of a whole (e.g., 1/2 means one part out of two total parts). A ratio compares two different quantities (e.g., a ratio of 1:2 could mean 1 teacher for every 2 students, a total of 3 people). While the ratio A:B can be written as the fraction A/B, their conceptual meaning can be different depending on the context.
+                       They are closely related but not exactly the same. A fraction represents a part of a whole (e.g., 1/2 means one part out of two total parts). A ratio compares two different quantities (e.g., a ratio of 1:2 could mean 1 teacher for every 2 students, a total of 3 people). While the ratio A:B can be written as the fraction A/B, their conceptual meaning can be different depending on the context.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
