@@ -44,6 +44,12 @@ export const categories: Category[] = [
     description: "Calculators for geometric shapes and engineering principles.",
     iconName: "Triangle",
   },
+   {
+    name: "Blog",
+    slug: "blog",
+    description: "Articles and guides to help you understand the concepts behind the calculations.",
+    iconName: "BookOpen",
+  },
   {
     name: "Miscellaneous",
     slug: "miscellaneous",
@@ -949,6 +955,13 @@ export const calculators: Omit<Calculator, 'component'>[] = [
     seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human Years',
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
+   {
+    slug: 'what-is-the-pythagorean-theorem',
+    name: 'What is the Pythagorean Theorem?',
+    description: 'An article explaining the Pythagorean theorem.',
+    category: 'Blog',
+    iconName: 'BookOpen',
+  }
 ];
 
 

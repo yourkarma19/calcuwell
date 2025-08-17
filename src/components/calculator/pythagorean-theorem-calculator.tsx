@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import Link from "next/link";
 
 export default function PythagoreanTheoremCalculator() {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");
@@ -80,6 +81,12 @@ export default function PythagoreanTheoremCalculator() {
             <CardHeader><CardTitle>About the Pythagorean Theorem</CardTitle></CardHeader>
             <CardContent>
                 <Accordion type="single" collapsible className="w-full">
+                     <AccordionItem value="item-5">
+                        <AccordionTrigger>Learn More About The Pythagorean Theorem</AccordionTrigger>
+                        <AccordionContent>
+                           Read our detailed article on <Link href="/blog/what-is-the-pythagorean-theorem" className="text-primary hover:underline">What is the Pythagorean Theorem?</Link> to understand its history, proof, and real-world applications in depth.
+                        </AccordionContent>
+                    </AccordionItem>
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is the Pythagorean Theorem?</AccordionTrigger>
                         <AccordionContent>
