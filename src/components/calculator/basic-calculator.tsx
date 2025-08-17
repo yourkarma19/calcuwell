@@ -142,12 +142,12 @@ export default function BasicCalculator() {
           <CardTitle>Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-           <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end">
+           <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
             <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || " "}</div>
             <div
               aria-label="Calculator display"
               className={cn(
-                "h-2/3 text-right font-mono p-0 border-0 bg-transparent w-full",
+                "h-2/3 text-right font-mono p-0 border-0 bg-transparent w-full flex items-center justify-end",
                 displayFontSize(),
                 displayValue === "I ❤️ You" && "text-primary"
               )}
