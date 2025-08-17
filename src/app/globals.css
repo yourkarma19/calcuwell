@@ -5,55 +5,74 @@
 
 @layer base {
   :root {
-    --background: 264 30% 96%;
-    --foreground: 264 20% 15%;
-    --card: 264 30% 100%;
-    --card-foreground: 264 20% 15%;
-    --popover: 264 30% 100%;
-    --popover-foreground: 264 20% 15%;
-    --primary: 262 70% 45%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 264 20% 92%;
-    --secondary-foreground: 264 20% 25%;
-    --muted: 264 20% 92%;
-    --muted-foreground: 264 10% 45%;
-    --accent: 264 20% 88%;
-    --accent-foreground: 264 20% 15%;
-    --destructive: 0 84% 60%;
+    --background: 240 20% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+ 
+    --primary: 249 26% 69%;
+    --primary-foreground: 0 0% 100%;
+ 
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+ 
+    --accent: 278 19% 79%;
+    --accent-foreground: 240 5.9% 10%;
+ 
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 264 15% 85%;
-    --input: 264 15% 85%;
-    --ring: 262 70% 45%;
-    --chart-1: 262 70% 45%;
-    --chart-2: 282 60% 55%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 249 26% 69%;
+ 
+    --radius: 0.8rem;
+
+    --chart-1: 249 26% 69%;
+    --chart-2: 278 19% 79%;
     --chart-3: 302 60% 55%;
     --chart-4: 242 60% 55%;
     --chart-5: 222 60% 55%;
-    --radius: 0.8rem;
   }
-
+ 
   .dark {
-    --background: 240 10% 4%;
-    --foreground: 210 40% 98%; /* Changed to white for better contrast */
-    --card: 240 10% 9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 240 10% 4%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 262 70% 55%; /* Purple for interactive elements */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%; /* Softer gray for muted text */
-    --accent: 240 4% 16%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 40%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 262 70% 55%;
-    --chart-1: 262 70% 55%;
-    --chart-2: 282 65% 65%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 100%;
+ 
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 249 26% 69%;
+    --primary-foreground: 0 0% 100%;
+ 
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --accent: 278 19% 79%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 249 26% 69%;
+
+    --chart-1: 249 26% 69%;
+    --chart-2: 278 19% 79%;
     --chart-3: 302 65% 65%;
     --chart-4: 242 65% 65%;
     --chart-5: 222 65% 65%;

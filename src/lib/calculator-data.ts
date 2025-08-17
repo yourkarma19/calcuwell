@@ -16,16 +16,6 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: 'A simple and fast online basic calculator for your everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease on this free four-function calculator.',
   },
   {
-    slug: 'scientific-calculator',
-    name: 'Scientific Calculator',
-    description: 'Perform advanced scientific calculations.',
-    category: 'Math',
-    iconName: 'FlaskConical',
-    seoTitle: 'Advanced Online Scientific Calculator | Free & Easy to Use',
-    metaDescription: 'Perform advanced calculations with our powerful online scientific calculator. Includes functions for trigonometry (sin, cos, tan), logarithms (log), exponents, and more.',
-    formula: 'Supports standard math functions like sin, cos, tan, log, sqrt, etc.'
-  },
-  {
     slug: 'percentage-calculator',
     name: 'Percentage Calculator',
     description: 'Calculate percentages, increases, and decreases.',
@@ -901,11 +891,4 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human Years',
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
-   {
-    slug: 'what-is-the-pythagorean-theorem',
-    name: 'What is the Pythagorean Theorem?',
-    description: 'An article explaining the Pythagorean theorem.',
-    category: 'Blog',
-    iconName: 'BookOpen',
-  }
 ];

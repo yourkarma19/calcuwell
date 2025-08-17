@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
@@ -9,10 +9,10 @@ import "./globals.css";
 import Script from "next/script";
 import { headers } from 'next/headers';
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
   display: 'swap',
 });
 
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = headers();
+  const headersList = await headers();
   const searchParams = new URLSearchParams(headersList.get('x-search-params') || '');
   const isEmbed = searchParams.get('embed') === 'true';
 
@@ -46,7 +46,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
-          className={`${poppins.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
+          className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
         >
           <ThemeProvider
             attribute="class"
@@ -77,7 +77,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${poppins.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
       >
         <ThemeProvider
           attribute="class"

@@ -11,6 +11,9 @@ export default function Footer() {
           <Link href="/about?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
             About
           </Link>
+          <Link href="/blog?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
+            Blog
+          </Link>
           <Link href="/sitemap?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
             Sitemap
           </Link>
