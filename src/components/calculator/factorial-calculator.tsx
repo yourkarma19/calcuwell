@@ -67,19 +67,29 @@ export default function FactorialCalculator() {
       </Card>
 
       <Card>
-        <CardHeader><CardTitle>About Factorials</CardTitle></CardHeader>
-        <CardContent>
+        <CardHeader><CardTitle>About the Factorial Calculator</CardTitle></CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Factorial Calculator** is a mathematical tool designed to find the factorial of any non-negative integer. A factorial, symbolized by an exclamation mark (!), is a cornerstone of combinatorics and probability theory. This calculator simplifies a potentially tedious manual calculation, providing instant and accurate results for students, mathematicians, and anyone working with permutations and combinations.</p>
+            
+            <h3>How to Use the Calculator</h3>
+            <p>Using the tool is straightforward:</p>
+            <ol>
+                <li>Enter a non-negative integer (0 or greater) into the input box.</li>
+            </ol>
+            <p>The calculator will instantly display the factorial of that number. Note that factorials grow very quickly, so the calculator has a limit to prevent computational overflow (usually around 170!).</p>
+
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What Does the Exclamation Mark (!) Mean in Math?</AccordionTrigger>
                     <AccordionContent>
-                        The exclamation mark denotes a factorial. The factorial of a non-negative integer 'n', written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.
+                        The exclamation mark denotes a factorial operation. The factorial of a non-negative integer 'n', written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>How to Calculate a Factorial Manually</AccordionTrigger>
                     <AccordionContent>
-                        To calculate a factorial, you multiply the number by every positive integer smaller than it. For example, to find the factorial of 4 (4!), you would compute 4 × 3 × 2 × 1, which equals 24.
+                        To calculate a factorial, you multiply the number by every positive integer smaller than it, all the way down to 1. For example, to find the factorial of 4 (4!), you would compute 4 × 3 × 2 × 1, which equals 24.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">

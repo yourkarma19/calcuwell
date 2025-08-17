@@ -137,7 +137,7 @@ export default function TypingSpeedCalculator() {
         </Card>
       )}
        <Card>
-        <CardHeader><CardTitle>About Typing Speed</CardTitle></CardHeader>
+        <CardHeader><CardTitle>About the Typing Speed Test</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
             <p>The **Typing Speed Calculator** is an interactive tool designed to measure your typing proficiency in Words Per Minute (WPM). It's perfect for anyone looking to improve their typing skills, from students and administrative professionals to writers and developers. By practicing regularly, you can increase your speed and accuracy, boosting your productivity in any task that involves typing.</p>
 
@@ -145,7 +145,7 @@ export default function TypingSpeedCalculator() {
             <ol>
                 <li>Click on the text area to begin the test.</li>
                 <li>As soon as you start typing the sample text, the timer will begin.</li>
-                <li>Type the text as quickly and accurately as you can. Any errors will be highlighted.</li>
+                <li>Type the text as quickly and accurately as you can. Any errors will be highlighted in red.</li>
                 <li>Once you finish typing the full text, the test will stop automatically and display your results for WPM, accuracy, and errors.</li>
                 <li>Click **Restart Test** to try again with a new sample text.</li>
             </ol>
@@ -155,13 +155,13 @@ export default function TypingSpeedCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>How is WPM (Words Per Minute) Calculated?</AccordionTrigger>
                     <AccordionContent>
-                        Gross WPM is calculated by taking the number of words typed and dividing it by the time taken in minutes. For standardization, a "word" is often considered to be five characters long, including spaces. Net WPM subtracts a penalty for errors, giving a more accurate reflection of usable typing speed. This calculator measures Gross WPM.
+                        Gross WPM is calculated by taking the number of words typed and dividing it by the time taken in minutes. For standardization, a "word" is often considered to be five characters long, including spaces. This calculator uses the actual word count of the sample text for its calculation.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>What is a good typing speed?</AccordionTrigger>
                     <AccordionContent>
-                        The average typing speed is around 40 WPM. A speed of 60 WPM or higher is considered good for most professional roles that require significant typing. Professional typists and transcriptionists often achieve speeds well over 100 WPM.
+                        An average typing speed is around 40 WPM. A speed of 60 WPM or higher is considered good for most professional roles that require significant typing. Professional typists and transcriptionists often achieve speeds well over 100 WPM, demonstrating exceptional skill.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">

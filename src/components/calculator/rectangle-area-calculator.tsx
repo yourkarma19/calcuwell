@@ -47,25 +47,47 @@ export default function RectangleAreaCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Rectangle Formulas</CardTitle></CardHeader>
-          <CardContent>
+          <CardHeader><CardTitle>About the Rectangle Calculator</CardTitle></CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Rectangle Area & Perimeter Calculator** is a fundamental tool for anyone working with basic geometry. Whether you are a student, a homeowner planning a DIY project, or a professional in construction or design, this calculator provides instant and accurate measurements for any rectangle. It simplifies the process of finding both the area (the space inside) and the perimeter (the distance around) of a rectangle.</p>
+            
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Enter the **Length** of the rectangle.</li>
+                <li>Enter the **Width** of the rectangle.</li>
+            </ol>
+            <p>The results for the area and perimeter will be calculated and displayed automatically.</p>
+
+            <h3>Frequently Asked Questions (FAQs)</h3>
               <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                       <AccordionTrigger>How is the area of a rectangle calculated?</AccordionTrigger>
                       <AccordionContent>
-                          The area of a rectangle is calculated by multiplying its length by its width. The formula is `Area = Length × Width`. The result is in square units (e.g., square meters).
+                          The area of a rectangle is calculated by multiplying its length by its width. The formula is `Area = Length × Width`. The result is always in square units (e.g., square meters, square feet).
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
                       <AccordionTrigger>How is the perimeter of a rectangle calculated?</AccordionTrigger>
                       <AccordionContent>
-                         The perimeter is the total distance around the outside of the rectangle. It is calculated by adding up all four sides, or using the formula `Perimeter = 2 * (Length + Width)`.
+                         The perimeter is the total distance around the outside of the rectangle. It is calculated by adding the lengths of all four sides together, or by using the simplified formula `Perimeter = 2 * (Length + Width)`.
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
                       <AccordionTrigger>What is the difference between a rectangle and a square?</AccordionTrigger>
                       <AccordionContent>
-                         A square is a special type of rectangle where all four sides are equal in length. This calculator can be used for squares by entering the same value for both length and width.
+                         A square is a special type of rectangle where all four sides are equal in length. This calculator can be used for squares by simply entering the same value for both the length and the width.
+                      </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-4">
+                      <AccordionTrigger>What are some practical uses for this calculator?</AccordionTrigger>
+                      <AccordionContent>
+                         This calculator is useful for many real-world tasks, such as:
+                         <ul className="list-disc pl-5 mt-2">
+                            <li>Calculating the amount of carpet or flooring needed for a room (area).</li>
+                            <li>Determining the amount of fencing needed for a yard (perimeter).</li>
+                            <li>Estimating the amount of paint required to cover a wall (area).</li>
+                            <li>Planning the layout of a garden or construction site.</li>
+                         </ul>
                       </AccordionContent>
                   </AccordionItem>
               </Accordion>
