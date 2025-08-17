@@ -7,6 +7,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
 import Script from "next/script";
+import { headers } from 'next/headers';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = headers();
+  const searchParams = new URLSearchParams(headersList.get('x-search-params') || '');
+  const isEmbed = searchParams.get('embed') === 'true';
+
+  if (isEmbed) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main>{children}</main>
+            <Toaster />
+          </ThemeProvider>
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

@@ -1,13 +1,17 @@
+
 "use client";
 
 import type { ReactNode } from "react";
 import type { Calculator } from "@/lib/types";
 import FormulaExplainer from "./formula-explainer";
+import EmbedCalculator from "./embed-calculator";
 import { Icon } from "@/components/ui/icon";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { categories } from "@/lib/calculators";
 import React from 'react';
+import { useSearchParams } from "next/navigation";
+
 
 interface CalculatorWrapperProps {
   children: ReactNode;
@@ -20,6 +24,8 @@ export default function CalculatorWrapper({
 }: CalculatorWrapperProps) {
   const category = categories.find(c => c.name === calculator.category);
   const [formula, setFormula] = React.useState(calculator.formula || "No formula available.");
+  const searchParams = useSearchParams();
+  const isEmbed = searchParams.get('embed') === 'true';
 
   // Clone the child element to pass the setFormula function as a prop
   const childrenWithProps = React.Children.map(children, child => {
@@ -29,6 +35,16 @@ export default function CalculatorWrapper({
     }
     return child;
   });
+
+  if (isEmbed) {
+    return (
+        <div className="p-2">
+             <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
+                {childrenWithProps}
+            </div>
+        </div>
+    )
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -54,11 +70,12 @@ export default function CalculatorWrapper({
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
         {childrenWithProps}
-        <div className="hidden lg:block lg:col-span-1 lg:sticky top-24 no-print">
+        <div className="lg:col-span-1 lg:sticky top-24 no-print space-y-6">
            <FormulaExplainer 
             calculatorName={calculator.name}
             formula={formula}
           />
+          <EmbedCalculator slug={calculator.slug} />
         </div>
       </div>
     </div>
