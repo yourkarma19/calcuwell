@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import { Tooltip, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import BasicCalculator from "./basic-calculator";
@@ -124,7 +124,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   };
 
   return (
-    <div className="lg:col-span-3 max-w-2xl mx-auto space-y-6 relative">
+    <div className="max-w-2xl mx-auto space-y-6 relative">
        <TooltipProvider>
       <Card>
         <CardHeader>
@@ -164,7 +164,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
                                   <Button
                                       onClick={() => handleScientificInput(func)}
                                       className={cn(
-                                        "h-12 text-sm bg-muted/20 hover:bg-muted/40 text-foreground",
+                                        "h-12 text-sm bg-zinc-800 hover:bg-zinc-700 text-white",
                                         active && "bg-primary/80 text-primary-foreground hover:bg-primary"
                                       )}
                                   >
