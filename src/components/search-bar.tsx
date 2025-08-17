@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -26,6 +27,7 @@ export function SearchBar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [calculators, setCalculators] = React.useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [search, setSearch] = React.useState("");
   const router = useRouter();
 
   // Load calculator data when the popover is opened
@@ -56,6 +58,7 @@ export function SearchBar() {
     (slug: string) => {
       router.push(`/calculators/${slug}`);
       setIsOpen(false);
+      setSearch("");
     },
     [router]
   );
@@ -79,6 +82,8 @@ export function SearchBar() {
       >
         <Command>
           <CommandInput
+            value={search}
+            onValueChange={setSearch}
             placeholder="Type to search..."
             disabled={isLoading}
           />
@@ -86,7 +91,7 @@ export function SearchBar() {
             {isLoading ? (
               <CommandEmpty>Loading search index...</CommandEmpty>
             ) : (
-              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandEmpty>No results found for "{search}".</CommandEmpty>
             )}
             <CommandGroup>
               {calculators.map((calc) => {
