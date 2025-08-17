@@ -111,19 +111,38 @@ export default function WaistToHipRatioCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About WHR</CardTitle></CardHeader>
-          <CardContent>
+          <CardHeader><CardTitle>About Waist-to-Hip Ratio (WHR)</CardTitle></CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Waist-to-Hip Ratio (WHR) Calculator** is a simple and effective tool for assessing body fat distribution, which is a key indicator of potential health risks. Unlike BMI, which measures overall weight, WHR focuses on where you store fat. A higher ratio can be a warning sign, helping you take proactive steps towards a healthier lifestyle.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Select your **Gender**.</li>
+                <li>Enter your **Waist Circumference** in centimeters.</li>
+                <li>Enter your **Hip Circumference** in centimeters.</li>
+            </ol>
+            <p>The calculator will instantly provide your WHR and classify it into a health risk category (Low, Moderate, or High) based on World Health Organization (WHO) guidelines.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>What does WHR indicate?</AccordionTrigger>
+                <AccordionTrigger>What does WHR indicate about my health?</AccordionTrigger>
                 <AccordionContent>
-                  Waist-to-Hip Ratio is a measurement of fat distribution. A higher WHR suggests more fat is stored around the abdomen (an "apple" body shape), which is linked to a higher risk of conditions like heart disease and type 2 diabetes compared to fat stored on the hips (a "pear" body shape).
+                  Waist-to-Hip Ratio is a measurement of fat distribution. A higher WHR suggests more fat is stored around the abdomen (an "apple" body shape), which is linked to a higher risk of conditions like heart disease, type 2 diabetes, and high blood pressure compared to fat stored on the hips (a "pear" body shape).
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger>How to measure waist and hip circumference correctly</AccordionTrigger>
+                <AccordionTrigger>How do I measure my waist and hip circumference correctly?</AccordionTrigger>
                 <AccordionContent>
-                  For an accurate measurement, use a flexible tape measure. Measure your waist at the narrowest point, usually just above the belly button. Measure your hips at the widest part of your buttocks.
+                  For an accurate measurement, use a flexible tape measure and ensure it is level.
+                  <ul className="list-disc pl-5 mt-2">
+                    <li>**Waist:** Measure at the narrowest point of your torso, usually just above your belly button. Breathe out normally and don't pull the tape too tight.</li>
+                    <li>**Hips:** Measure at the widest part of your hips and buttocks.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Is WHR better than BMI?</AccordionTrigger>
+                <AccordionContent>
+                  Neither is "better"; they measure different things and are best used together. BMI assesses your overall weight relative to your height, while WHR assesses how that weight is distributed. A person can have a normal BMI but a high WHR, which could still indicate an increased health risk.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

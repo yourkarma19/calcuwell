@@ -53,19 +53,34 @@ export default function AddSubtractDaysCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>Using the Date Adder</CardTitle></CardHeader>
-          <CardContent>
+          <CardHeader><CardTitle>About the Date Adder/Subtractor</CardTitle></CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>Our **Add/Subtract Days Calculator** is a simple and effective tool for anyone who needs to quickly project dates forward or backward. Whether you're setting a deadline, scheduling a follow-up, or calculating a warranty period, this calculator removes the hassle of manually counting days on a calendar.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+                <li>Pick a **Start Date** from the calendar.</li>
+                <li>Enter the number of **Days to Add/Subtract**.</li>
+                <li>Click either the **"Add Days"** or **"Subtract Days"** button.</li>
+            </ol>
+            <p>The resulting date will be instantly displayed in the results card on the right.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
               <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                       <AccordionTrigger>How does this calculator work?</AccordionTrigger>
                       <AccordionContent>
-                          This tool takes a starting date and adds or subtracts the exact number of days you specify to find the new date. It correctly handles month and year transitions, including leap years.
+                          This tool takes a starting date and adds or subtracts the exact number of calendar days you specify to find the new date. It correctly handles all month and year transitions, including leap years, so you get an accurate result every time.
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
                       <AccordionTrigger>What is this useful for?</AccordionTrigger>
                       <AccordionContent>
-                          It's perfect for scheduling appointments, setting deadlines, planning events, or tracking milestones. For example, you can quickly find out the date 90 days from today for a project deadline.
+                          It's perfect for a variety of planning tasks, such as:
+                          <ul className="list-disc pl-5 mt-2">
+                            <li>Scheduling appointments (e.g., a 60-day follow-up).</li>
+                            <li>Setting project deadlines (e.g., finding the date 90 days from today).</li>
+                            <li>Planning events or tracking personal milestones.</li>
+                            <li>Calculating return periods or warranty expiration dates.</li>
+                          </ul>
                       </AccordionContent>
                   </AccordionItem>
               </Accordion>

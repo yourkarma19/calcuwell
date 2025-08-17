@@ -49,7 +49,16 @@ export default function WorkingDaysCalculator() {
         </Card>
         <Card>
           <CardHeader><CardTitle>About Working Days</CardTitle></CardHeader>
-          <CardContent>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>The **Working Days Calculator** is an essential tool for professionals in project management, HR, and logistics. It helps you quickly determine the number of business days between two dates, automatically excluding weekends (Saturdays and Sundays). This allows for accurate planning and realistic deadline setting in a professional context.</p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+              <li>Select a **Start Date** from the calendar.</li>
+              <li>Select an **End Date**.</li>
+              <li>Click the **"Calculate Working Days"** button to see the result.</li>
+            </ol>
+            <p>The tool provides the total count of business days, which is crucial for any task that depends on a standard workweek.</p>
+            <h3>Frequently Asked Questions (FAQs)</h3>
               <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                       <AccordionTrigger>What is a working/business day?</AccordionTrigger>
@@ -60,7 +69,13 @@ export default function WorkingDaysCalculator() {
                   <AccordionItem value="item-2">
                       <AccordionTrigger>Why is calculating working days important?</AccordionTrigger>
                       <AccordionContent>
-                          It is essential for project management, logistics, and financial services to set realistic deadlines. For example, it helps in estimating project completion dates, delivery times, and contract fulfillment periods.
+                          It is essential for project management, logistics, and financial services to set realistic deadlines. For example, it helps in estimating project completion dates, delivery times, and contract fulfillment periods that are based on a 5-day work week.
+                      </AccordionContent>
+                  </AccordionItem>
+                   <AccordionItem value="item-3">
+                      <AccordionTrigger>Does this calculator account for public holidays?</AccordionTrigger>
+                      <AccordionContent>
+                         No, this calculator does not account for public holidays as they vary significantly by country and region. The calculation is based purely on the number of weekdays between the two selected dates. You should manually subtract any holidays that fall within your date range for a more precise count.
                       </AccordionContent>
                   </AccordionItem>
               </Accordion>
