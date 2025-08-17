@@ -42,6 +42,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
   const [isRadians, setIsRadians] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [activeTab, setActiveTab] = useState("basic");
 
   useEffect(() => {
     setIsClient(true);
@@ -131,7 +132,7 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
           <CardTitle>Scientific Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Tabs defaultValue="basic" className="w-full">
+          <Tabs defaultValue="basic" value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="basic">Basic</TabsTrigger>
                   <TabsTrigger value="scientific">Sci</TabsTrigger>
@@ -140,39 +141,43 @@ export default function ScientificCalculator({ showFaq = true }: { showFaq?: boo
                   <BasicCalculator />
               </TabsContent>
               <TabsContent value="scientific" className="mt-4">
-                  <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
-                    <div data-testid="expression-display" className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression}</div>
-                    <div 
-                      data-testid="main-display"
-                      aria-label="Calculator display"
-                      className={cn(
-                        "font-mono h-2/3 w-full text-right break-all flex items-center justify-end",
-                        displayFontSize()
-                      )}
-                    >
-                      {displayValue}
+                {activeTab === 'scientific' && (
+                  <>
+                    <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
+                      <div data-testid="expression-display" className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression}</div>
+                      <div 
+                        data-testid="main-display"
+                        aria-label="Calculator display"
+                        className={cn(
+                          "font-mono h-2/3 w-full text-right break-all flex items-center justify-end",
+                          displayFontSize()
+                        )}
+                      >
+                        {displayValue}
+                      </div>
                     </div>
-                  </div>
-                   <div className="grid grid-cols-6 gap-2 mt-4">
-                     {scientificButtons
-                        .concat(isRadians ? {func: 'deg', tooltip: 'Switch to Degrees'} : {func: 'Rad', tooltip: 'Switch to Radians'})
-                        .map(({func, tooltip, active}) => (
-                        <Tooltip key={func}>
-                            <TooltipTrigger asChild>
-                                <Button
-                                    onClick={() => handleScientificInput(func)}
-                                    className={cn("h-12 text-sm", active && "bg-primary/20")}
-                                    variant="outline"
-                                >
-                                    {func}
-                                </Button>
-                            </TooltipTrigger>
-                             <TooltipContent>
-                                <p>{tooltip}</p>
-                            </TooltipContent>
-                        </Tooltip>
-                     ))}
-                  </div>
+                    <div className="grid grid-cols-6 gap-2 mt-4">
+                      {scientificButtons
+                          .concat(isRadians ? {func: 'deg', tooltip: 'Switch to Degrees'} : {func: 'Rad', tooltip: 'Switch to Radians'})
+                          .map(({func, tooltip, active}) => (
+                          <Tooltip key={func}>
+                              <TooltipTrigger asChild>
+                                  <Button
+                                      onClick={() => handleScientificInput(func)}
+                                      className={cn("h-12 text-sm", active && "bg-primary/20")}
+                                      variant="outline"
+                                  >
+                                      {func}
+                                  </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                  <p>{tooltip}</p>
+                              </TooltipContent>
+                          </Tooltip>
+                      ))}
+                    </div>
+                  </>
+                )}
               </TabsContent>
           </Tabs>
         </CardContent>
