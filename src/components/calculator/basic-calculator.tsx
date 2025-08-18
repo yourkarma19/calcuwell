@@ -71,8 +71,9 @@ export default function BasicCalculator() {
     }
 
     if (displayValue === "Error" || displayValue === "I ❤️ You") {
-        resetCalculator();
-        if(!isOperator(input)) setDisplayValue(input);
+        if(input === "AC") {
+          resetCalculator();
+        }
         return;
     }
     
@@ -119,7 +120,7 @@ export default function BasicCalculator() {
 
   const handleEquals = () => {
     if (justEvaluated) return;
-    const fullExpression = (expression + displayValue);
+    let fullExpression = (expression + displayValue).replace(/‑/g, "-");
     if (fullExpression === '12082007+19112005') {
       setDisplayValue("I ❤️ You");
       setExpression("");

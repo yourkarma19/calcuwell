@@ -10,6 +10,7 @@ import { ChevronRight, icons } from "lucide-react";
 import { categories } from "@/lib/calculators";
 import React from 'react';
 import { useSearchParams } from "next/navigation";
+import CalculatorContent from "./calculator-content";
 
 
 interface CalculatorWrapperProps {
@@ -70,7 +71,11 @@ export default function CalculatorWrapper({
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-        {childrenWithProps}
+        <div className="lg:col-span-2 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+             {childrenWithProps}
+          </div>
+        </div>
         <div className="lg:col-span-1 lg:sticky top-24 no-print space-y-6">
            <FormulaExplainer 
             calculatorName={calculator.name}
@@ -78,6 +83,9 @@ export default function CalculatorWrapper({
           />
           <EmbedCalculator slug={calculator.slug} />
         </div>
+      </div>
+      <div className="max-w-5xl mx-auto mt-12">
+        <CalculatorContent slug={calculator.slug} />
       </div>
     </div>
   );
