@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
