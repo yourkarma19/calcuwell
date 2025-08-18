@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from 'react';
@@ -30,7 +31,6 @@ export default function CalculatorContent({ slug, ...props }: CalculatorContentP
       () => import(`@/components/calculator/about/${slug}`).catch(() => () => null),
       {
         loading: () => <ContentLoader />,
-        ssr: false,
       }
     );
   }, [slug]);

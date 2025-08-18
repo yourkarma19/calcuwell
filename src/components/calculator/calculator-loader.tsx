@@ -16,7 +16,6 @@ export default function CalculatorLoader({ slug, ...props }: CalculatorLoaderPro
       () => import(`@/components/calculator/${slug}`),
       {
         loading: () => <PlaceholderCalculator />,
-        ssr: false,
       }
     );
   }, [slug]);
