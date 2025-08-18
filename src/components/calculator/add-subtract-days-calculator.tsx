@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -26,8 +27,7 @@ export default function AddSubtractDaysCalculator() {
   };
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
         <Card>
           <CardHeader>
             <CardTitle>Add or Subtract Days from a Date</CardTitle>
@@ -50,22 +50,19 @@ export default function AddSubtractDaysCalculator() {
             </div>
           </CardContent>
         </Card>
-      </div>
       
       {resultDate && (
-          <div className="lg:col-span-1">
-            <Card className="sticky top-24">
-              <CardHeader>
-                <CardTitle>Resulting Date</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-3xl font-bold font-headline text-primary my-2">
-                  {format(resultDate, "PPP")}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>Resulting Date</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-3xl font-bold font-headline text-primary my-2">
+                {format(resultDate, "PPP")}
+              </p>
+            </CardContent>
+          </Card>
         )}
-    </>
+    </div>
   );
 }

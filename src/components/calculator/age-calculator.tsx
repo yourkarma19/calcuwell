@@ -41,8 +41,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
 
 
   return (
-    <>
-    <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Enter Your Date of Birth</CardTitle>
@@ -63,35 +62,31 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
         </CardContent>
       </Card>
       
-    </div>
-
     {age && (
-        <div className="lg:col-span-1">
-            <Card className="sticky top-24">
-            <CardHeader>
-                <CardTitle>Your Age</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center" aria-live="polite">
-                <div>
-                <div className="flex justify-center items-baseline gap-2">
-                    <p className="text-6xl font-bold font-headline text-primary">{age.years}</p>
-                    <p className="text-xl text-muted-foreground">Years</p>
+        <Card>
+        <CardHeader>
+            <CardTitle>Your Age</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center" aria-live="polite">
+            <div>
+            <div className="flex justify-center items-baseline gap-2">
+                <p className="text-6xl font-bold font-headline text-primary">{age.years}</p>
+                <p className="text-xl text-muted-foreground">Years</p>
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-4 text-lg">
+                <div className="text-center">
+                    <p className="font-bold font-headline">{age.months}</p>
+                    <p className="text-sm text-muted-foreground">Months</p>
                 </div>
-                <div className="mt-4 grid grid-cols-2 gap-4 text-lg">
-                    <div className="text-center">
-                        <p className="font-bold font-headline">{age.months}</p>
-                        <p className="text-sm text-muted-foreground">Months</p>
-                    </div>
-                    <div className="text-center">
-                        <p className="font-bold font-headline">{age.days}</p>
-                        <p className="text-sm text-muted-foreground">Days</p>
-                    </div>
+                <div className="text-center">
+                    <p className="font-bold font-headline">{age.days}</p>
+                    <p className="text-sm text-muted-foreground">Days</p>
                 </div>
-                </div>
-            </CardContent>
-            </Card>
-        </div>
+            </div>
+            </div>
+        </CardContent>
+        </Card>
     )}
-    </>
+    </div>
   );
 }

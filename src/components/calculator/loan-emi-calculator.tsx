@@ -57,8 +57,7 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
   }
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
         <Card>
           <CardHeader>
             <CardTitle>Enter Loan Details</CardTitle>
@@ -122,10 +121,8 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
 
           </CardContent>
         </Card>
-      </div>
 
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
+        <Card>
           <CardHeader>
             <CardTitle>Your Loan EMI</CardTitle>
           </CardHeader>
@@ -169,7 +166,6 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
             )}
           </CardContent>
         </Card>
-      </div>
-    </>
+    </div>
   );
 }

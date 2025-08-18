@@ -78,22 +78,20 @@ export default function CalculatorWrapper({
           {calculator.description}
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-        <div className="lg:col-span-2 space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-             {EnhancedChildren}
-          </div>
-        </div>
-        <div className="lg:col-span-1 lg:sticky top-24 no-print space-y-6">
-           <FormulaExplainer 
+
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* All content in a single column */}
+        {EnhancedChildren}
+
+        <div className="space-y-8">
+          <CalculatorContent slug={calculator.slug} {...childProps} />
+
+          <FormulaExplainer 
             calculatorName={calculator.name}
             formula={formula}
           />
           <EmbedCalculator slug={calculator.slug} />
         </div>
-      </div>
-      <div className="max-w-5xl mx-auto mt-12">
-        <CalculatorContent slug={calculator.slug} {...childProps} />
       </div>
     </div>
   );

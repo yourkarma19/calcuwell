@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -73,8 +74,7 @@ export default function BMICalculator() {
   const { category, color } = getBmiCategory(bmi);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
         <Card>
           <CardHeader>
             <CardTitle>Enter Your Details</CardTitle>
@@ -138,10 +138,8 @@ export default function BMICalculator() {
             )}
           </CardContent>
         </Card>
-      </div>
 
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
+        <Card>
           <CardHeader>
             <CardTitle>Your Result</CardTitle>
           </CardHeader>
@@ -153,7 +151,6 @@ export default function BMICalculator() {
             <p className={cn("text-xl font-semibold", color)}>{category}</p>
           </CardContent>
         </Card>
-      </div>
-    </>
+    </div>
   );
 }

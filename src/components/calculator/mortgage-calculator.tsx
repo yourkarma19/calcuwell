@@ -45,13 +45,14 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
   }, [principal, rate, tenure, propertyTax, homeInsurance]);
   
   useEffect(() => {
-    setChildProps({ principal, totalInterest, propertyTax, homeInsurance, tenure });
+    if (setChildProps) {
+        setChildProps({ principal, totalInterest, propertyTax, homeInsurance, tenure });
+    }
   }, [principal, totalInterest, propertyTax, homeInsurance, tenure, setChildProps]);
   
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
         <Card>
           <CardHeader>
             <CardTitle>Enter Mortgage Details</CardTitle>
@@ -94,9 +95,8 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
             </div>
           </CardContent>
         </Card>
-      </div>
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
+        
+        <Card>
           <CardHeader>
             <CardTitle>Your Mortgage EMI</CardTitle>
           </CardHeader>
@@ -131,7 +131,6 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
             </div>
           </CardContent>
         </Card>
-      </div>
-    </>
+    </div>
   );
 }

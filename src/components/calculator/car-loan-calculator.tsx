@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -38,8 +39,7 @@ export default function CarLoanCalculator() {
   }, [carPrice, downPayment, tradeInValue, rate, tenure]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
         <Card>
           <CardHeader>
             <CardTitle>Enter Car Loan Details</CardTitle>
@@ -78,10 +78,8 @@ export default function CarLoanCalculator() {
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
+        
+        <Card>
           <CardHeader>
             <CardTitle>Your Loan Details</CardTitle>
           </CardHeader>
@@ -108,7 +106,6 @@ export default function CarLoanCalculator() {
             </div>
           </CardContent>
         </Card>
-      </div>
-    </>
+    </div>
   );
 }
