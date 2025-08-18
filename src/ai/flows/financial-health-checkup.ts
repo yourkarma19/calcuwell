@@ -10,9 +10,9 @@
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+import { z } from 'zod';
 
-export const FinancialHealthInputSchema = z.object({
+const FinancialHealthInputSchema = z.object({
     monthlyIncome: z.number().positive('Monthly income must be positive.'),
     monthlySavings: z.number().min(0, 'Monthly savings cannot be negative.'),
     financialGoal: z.string().describe('The user\'s primary financial goal.'),
@@ -21,7 +21,7 @@ export const FinancialHealthInputSchema = z.object({
 });
 export type FinancialHealthInput = z.infer<typeof FinancialHealthInputSchema>;
 
-export const FinancialHealthOutputSchema = z.object({
+const FinancialHealthOutputSchema = z.object({
   score: z.number().min(0).max(100).describe('The user\'s overall financial health score out of 100.'),
   summary: z.string().describe('A 2-3 sentence AI-generated summary of the user\'s financial health.'),
   strengths: z.array(z.string()).describe('A list of positive aspects of the user\'s finances.'),
