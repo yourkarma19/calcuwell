@@ -9,10 +9,9 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import { useSearchParams } from "next/navigation";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import ExportShareControls from "./export-share-controls";
 
-export default function VatGstCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function VatGstCalculator({ setFormula, calculatorName }: { setFormula: (formula: string) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [amount, setAmount] = usePersistentState("vat-amount", 100);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);
@@ -131,6 +130,7 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
       <ExportShareControls
         elementIds={['vat-gst-inputs', 'vat-gst-results']}
         shareParams={shareParams}
+        calculatorName={calculatorName}
       />
     </div>
   );

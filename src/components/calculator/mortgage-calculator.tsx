@@ -8,13 +8,30 @@ import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "../ui/input";
 import ExportShareControls from "./export-share-controls";
+import { useSearchParams } from "next/navigation";
 
-export default function MortgageCalculator({ setChildProps }: { setChildProps: (props: any) => void }) {
+export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: any) => void, calculatorName: string }) {
+  const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
   const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);
   const [tenure, setTenure] = usePersistentState("mortgage-tenure", 30);
   const [propertyTax, setPropertyTax] = usePersistentState("mortgage-tax", 2000);
   const [homeInsurance, setHomeInsurance] = usePersistentState("mortgage-insurance", 1000);
+
+  useEffect(() => {
+    const p = searchParams.get('principal');
+    const r = searchParams.get('rate');
+    const t = searchParams.get('tenure');
+    const tax = searchParams.get('propertyTax');
+    const ins = searchParams.get('homeInsurance');
+
+    if(p) setPrincipal(parseFloat(p));
+    if(r) setRate(parseFloat(r));
+    if(t) setTenure(parseFloat(t));
+    if(tax) setPropertyTax(parseFloat(tax));
+    if(ins) setHomeInsurance(parseFloat(ins));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
   
   const { monthlyPayment, totalPayable, totalInterest, principalAndInterest, monthlyTaxes, monthlyInsurance } = useMemo(() => {
     if (principal > 0 && rate > 0 && tenure > 0) {
@@ -141,6 +158,7 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
       <ExportShareControls
         elementIds={['mortgage-inputs', 'mortgage-results']}
         shareParams={shareParams}
+        calculatorName={calculatorName}
       />
     </div>
   );

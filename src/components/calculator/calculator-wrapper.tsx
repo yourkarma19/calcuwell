@@ -39,6 +39,7 @@ export default function CalculatorWrapper({
         ...child.props,
         setFormula,
         setChildProps,
+        calculatorName: calculator.name, // Pass down the calculator name
       };
       
       return React.cloneElement(child, newProps);
@@ -79,19 +80,19 @@ export default function CalculatorWrapper({
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto space-y-8">
-        {/* All content in a single column */}
+      <div className="max-w-2xl mx-auto space-y-8">
         {EnhancedChildren}
 
-        <div className="space-y-8">
-          <CalculatorContent slug={calculator.slug} {...childProps} />
-
-          <FormulaExplainer 
-            calculatorName={calculator.name}
-            formula={formula}
-          />
-          <EmbedCalculator slug={calculator.slug} />
-        </div>
+        <CalculatorContent slug={calculator.slug} {...childProps} />
+        
+        {calculator.formula && (
+            <FormulaExplainer 
+                calculatorName={calculator.name}
+                formula={formula}
+            />
+        )}
+        
+        <EmbedCalculator slug={calculator.slug} />
       </div>
     </div>
   );

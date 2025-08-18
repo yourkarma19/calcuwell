@@ -12,9 +12,10 @@ import { usePathname } from "next/navigation";
 interface ExportShareControlsProps {
   elementIds: string[];
   shareParams: Record<string, string>;
+  calculatorName: string;
 }
 
-export default function ExportShareControls({ elementIds, shareParams }: ExportShareControlsProps) {
+export default function ExportShareControls({ elementIds, shareParams, calculatorName }: ExportShareControlsProps) {
   const { toast } = useToast();
   const pathname = usePathname();
   const [isDownloading, setIsDownloading] = useState(false);
@@ -24,44 +25,48 @@ export default function ExportShareControls({ elementIds, shareParams }: ExportS
     try {
       const pdf = new jsPDF('p', 'mm', 'a4');
       let yOffset = 15;
-      const pageHeight = pdf.internal.pageSize.getHeight() - 20; // 10mm margin top/bottom
+      const pageHeight = pdf.internal.pageSize.getHeight();
       const pageWidth = pdf.internal.pageSize.getWidth();
+      const margin = 15;
 
       // Add title
       pdf.setFontSize(20);
-      pdf.text("Calculation Report", pageWidth / 2, yOffset, { align: 'center' });
+      pdf.text(calculatorName, pageWidth / 2, yOffset, { align: 'center' });
       yOffset += 10;
       
       pdf.setFontSize(10);
-      pdf.text(`Generated from calcpro.online${pathname}`, pageWidth / 2, yOffset, { align: 'center' });
+      pdf.text(`Calculation Report`, pageWidth / 2, yOffset, { align: 'center' });
       yOffset += 15;
-
 
       for (const id of elementIds) {
         const element = document.getElementById(id);
         if (element) {
-          const canvas = await html2canvas(element, { scale: 2 });
+          const canvas = await html2canvas(element, { 
+              scale: 2, // Higher scale for better quality
+              useCORS: true,
+              backgroundColor: null 
+            });
           const imgData = canvas.toDataURL('image/png');
-          const imgWidth = pageWidth - 30; // 15mm margin left/right
+          const imgWidth = pageWidth - (2 * margin);
           const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-          if (yOffset + imgHeight > pageHeight) {
+          if (yOffset + imgHeight > pageHeight - margin) {
               pdf.addPage();
-              yOffset = 15;
+              yOffset = margin;
           }
 
-          pdf.addImage(imgData, 'PNG', 15, yOffset, imgWidth, imgHeight);
+          pdf.addImage(imgData, 'PNG', margin, yOffset, imgWidth, imgHeight);
           yOffset += imgHeight + 10;
         }
       }
       
       // Add footer
       pdf.setFontSize(8);
-      pdf.text(`Report generated on ${new Date().toLocaleDateString()}`, 15, pdf.internal.pageSize.getHeight() - 10);
-      pdf.text(`Powered by CalcPro`, pageWidth - 15, pdf.internal.pageSize.getHeight() - 10, { align: 'right' });
+      const footerY = pageHeight - 10;
+      pdf.text(`Report generated on ${new Date().toLocaleDateString()}`, margin, footerY);
+      pdf.text(`Powered by CalcPro (calcpro.online)`, pageWidth - margin, footerY, { align: 'right' });
 
-
-      pdf.save('CalcPro_Report.pdf');
+      pdf.save(`${calculatorName.replace(/\s/g, '_')}_Report.pdf`);
     } catch (error) {
       console.error("Failed to generate PDF:", error);
       toast({

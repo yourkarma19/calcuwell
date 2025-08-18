@@ -1,20 +1,37 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import ExportShareControls from "./export-share-controls";
+import { useSearchParams } from "next/navigation";
 
-export default function LoanAffordabilityCalculator() {
+export default function LoanAffordabilityCalculator({ calculatorName }: { calculatorName: string }) {
+  const searchParams = useSearchParams();
   const [annualIncome, setAnnualIncome] = usePersistentState("la-income", 60000);
   const [monthlyDebt, setMonthlyDebt] = usePersistentState("la-debt", 500);
   const [interestRate, setInterestRate] = usePersistentState("la-rate", 7);
   const [loanTerm, setLoanTerm] = usePersistentState("la-term", 30);
   const [dtiRatio, setDtiRatio] = usePersistentState("la-dti", 43); // Debt-to-income ratio
+
+  useEffect(() => {
+    const income = searchParams.get('income');
+    const debt = searchParams.get('debt');
+    const rate = searchParams.get('rate');
+    const term = searchParams.get('term');
+    const dti = searchParams.get('dti');
+
+    if (income) setAnnualIncome(parseFloat(income));
+    if (debt) setMonthlyDebt(parseFloat(debt));
+    if (rate) setInterestRate(parseFloat(rate));
+    if (term) setLoanTerm(parseFloat(term));
+    if (dti) setDtiRatio(parseFloat(dti));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const { affordableLoan, monthlyPayment } = useMemo(() => {
     const monthlyIncome = annualIncome / 12;
@@ -41,9 +58,17 @@ export default function LoanAffordabilityCalculator() {
     };
   }, [annualIncome, monthlyDebt, interestRate, loanTerm, dtiRatio]);
 
+  const shareParams = {
+    income: annualIncome.toString(),
+    debt: monthlyDebt.toString(),
+    rate: interestRate.toString(),
+    term: loanTerm.toString(),
+    dti: dtiRatio.toString(),
+  };
+
   return (
     <div className="space-y-6">
-      <Card>
+      <Card id="loan-affordability-inputs">
         <CardHeader>
           <CardTitle>Financial Details</CardTitle>
           <CardDescription>Enter your financial details to estimate the loan amount you might be able to afford.</CardDescription>
@@ -77,7 +102,7 @@ export default function LoanAffordabilityCalculator() {
         </CardContent>
       </Card>
       
-      <Card>
+      <Card id="loan-affordability-results">
         <CardHeader><CardTitle>Loan Affordability</CardTitle></CardHeader>
         <CardContent className="text-center space-y-4" aria-live="polite">
           <div>
@@ -90,6 +115,11 @@ export default function LoanAffordabilityCalculator() {
           </div>
         </CardContent>
       </Card>
+      <ExportShareControls
+        elementIds={['loan-affordability-inputs', 'loan-affordability-results']}
+        shareParams={shareParams}
+        calculatorName={calculatorName}
+      />
     </div>
   );
 }

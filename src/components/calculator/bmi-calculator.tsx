@@ -162,6 +162,7 @@ export default function BMICalculator() {
         <ExportShareControls
             elementIds={['bmi-inputs', 'bmi-results']}
             shareParams={shareParams}
+            calculatorName="BMI Calculator"
         />
     </div>
   );

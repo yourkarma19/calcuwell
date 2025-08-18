@@ -96,6 +96,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
      <ExportShareControls
         elementIds={['age-inputs', 'age-results']}
         shareParams={shareParams}
+        calculatorName="Age Calculator"
       />
     </div>
   );

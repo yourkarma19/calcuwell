@@ -11,7 +11,7 @@ import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi
 import { useSearchParams } from "next/navigation";
 import ExportShareControls from "./export-share-controls";
 
-export default function LoanEMICalculator({ setFormula, setChildProps }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void }) {
+export default function LoanEMICalculator({ setFormula, setChildProps, calculatorName }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
@@ -176,6 +176,7 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
       <ExportShareControls 
         elementIds={['loan-emi-inputs', 'loan-emi-results']}
         shareParams={shareParams}
+        calculatorName={calculatorName}
       />
     </div>
   );
