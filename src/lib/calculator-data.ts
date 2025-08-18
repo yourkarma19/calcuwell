@@ -5,6 +5,28 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // Lifestyle
+  {
+    slug: 'wedding-budget-calculator',
+    name: 'Wedding Budget Calculator',
+    description: 'Estimate the total cost of your wedding.',
+    category: 'Lifestyle',
+    iconName: 'Heart',
+    seoTitle: 'Wedding Budget Calculator | Estimate Your Total Wedding Cost',
+    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, photography, and more to create a realistic wedding budget.',
+    formula: 'Total = Venue + (Catering × Guests) + Photography + Dress + ...'
+  },
+  {
+    slug: 'pet-care-cost-calculator',
+    name: 'Pet Care Cost Calculator',
+    description: 'Estimate the monthly and yearly cost of owning a pet.',
+    category: 'Lifestyle',
+    iconName: 'Dog',
+    seoTitle: 'Pet Care Cost Calculator | Dog & Cat Yearly Expenses Tool',
+    metaDescription: 'Estimate the annual and monthly cost of owning a pet. Our calculator helps you budget for food, vet visits, grooming, and other expenses for your dog, cat, or other pet.',
+    formula: 'Annual Cost = (Food × 12) + (Vet × Visits) + ...'
+  },
+
   // Math & Logic
   {
     slug: 'basic-calculator',
@@ -14,16 +36,6 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Calculator',
     seoTitle: 'Free Online Basic Calculator | Simple 4-Function Math Tool',
     metaDescription: 'A simple and fast online basic calculator for your everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease on this free four-function calculator.',
-  },
-  {
-    slug: 'scientific-calculator',
-    name: 'Scientific Calculator',
-    description: 'Perform advanced scientific calculations.',
-    category: 'Math',
-    iconName: 'FlaskConical',
-    seoTitle: 'Advanced Online Scientific Calculator | Free & Easy to Use',
-    metaDescription: 'Perform advanced calculations with our powerful online scientific calculator. Includes functions for trigonometry (sin, cos, tan), logarithms (log), exponents, and more.',
-    formula: 'Supports standard math functions like sin, cos, tan, log, sqrt, etc.'
   },
   {
     slug: 'percentage-calculator',
@@ -901,11 +913,4 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human Years',
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
-   {
-    slug: 'what-is-the-pythagorean-theorem',
-    name: 'What is the Pythagorean Theorem?',
-    description: 'An article explaining the Pythagorean theorem.',
-    category: 'Blog',
-    iconName: 'BookOpen',
-  }
 ];

@@ -1,7 +1,8 @@
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCalculatorsByCategory, categories } from "@/lib/calculators";
+import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
+import { categories } from "@/lib/calculators";
 import CategoryClientPage from "@/components/calculator/category-client-page";
 
 type CategoryPageProps = {
@@ -11,7 +12,8 @@ type CategoryPageProps = {
 };
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  const category = categories.find((c) => c.slug === params.slug);
+  const awaitedParams = await params;
+  const category = categories.find((c) => c.slug === awaitedParams.slug);
 
   if (!category) {
     return {};
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     title: `${category.name} Calculators | CalcPro`,
     description: `Browse a comprehensive collection of free online ${category.name.toLowerCase()} calculators. ${category.description} Instantly solve problems with CalcPro.`,
     alternates: {
-        canonical: `/categories/${params.slug}`,
+        canonical: `/categories/${awaitedParams.slug}`,
     },
   };
 }

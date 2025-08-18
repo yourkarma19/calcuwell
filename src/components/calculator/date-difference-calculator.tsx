@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   differenceInDays,
   differenceInMonths,
@@ -48,6 +48,12 @@ export default function DateDifferenceCalculator() {
       });
     }
   };
+
+  useEffect(() => {
+    handleCalculate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startDate, endDate]);
+
 
   return (
     <>

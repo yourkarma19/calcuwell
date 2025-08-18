@@ -1,7 +1,7 @@
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCalculatorBySlug, loadFullCalculatorData } from "@/lib/calculators";
+import { getCalculatorBySlug, loadFullCalculatorData } from "@/lib/server/calculator-data";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import CalculatorLoader from "@/components/calculator/calculator-loader";
 
@@ -13,7 +13,8 @@ type CalculatorPageProps = {
 };
 
 export async function generateMetadata({ params }: CalculatorPageProps): Promise<Metadata> {
-  const calculator = await getCalculatorBySlug(params.slug);
+  const awaitedParams = await params;
+  const calculator = await getCalculatorBySlug(awaitedParams.slug);
 
   if (!calculator) {
     return {};
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
     title: calculator.seoTitle || `${calculator.name} | CalcPro`,
     description: calculator.metaDescription || `Use the free ${calculator.name} on CalcPro to ${calculator.description.toLowerCase()}. Fast, accurate, and easy to use for all your needs.`,
     alternates: {
-        canonical: `/calculators/${params.slug}`,
+        canonical: `/calculators/${awaitedParams.slug}`,
     },
   };
 }
@@ -38,7 +39,8 @@ export async function generateStaticParams() {
 
 
 export default async function CalculatorPage({ params }: CalculatorPageProps) {
-  const calculator = await getCalculatorBySlug(params.slug);
+  const awaitedParams = await params;
+  const calculator = await getCalculatorBySlug(awaitedParams.slug);
 
   if (!calculator) {
     notFound();
@@ -47,8 +49,9 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   return (
     <main>
       <CalculatorWrapper calculator={calculator}>
-        <CalculatorLoader slug={params.slug} />
+        <CalculatorLoader slug={awaitedParams.slug} />
       </CalculatorWrapper>
     </main>
   );
 }
+

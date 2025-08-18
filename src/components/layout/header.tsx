@@ -10,7 +10,7 @@ export default function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Calculator className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline sm:inline-block">
+            <span className="font-bold font-headline sm:inline-block bg-gradient-to-r from-purple-500 to-purple-600 text-transparent bg-clip-text">
               CalcPro
             </span>
           </Link>

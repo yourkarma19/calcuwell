@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { categories, loadFullCalculatorData } from "@/lib/calculators";
+import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import {
   Card,
@@ -21,7 +21,7 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <section className="relative text-center py-16 md:py-24 rounded-xl bg-gradient-to-br from-primary/5 via-background to-background">
         <div className="relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
+          <h1 className="text-4xl md:text-6xl font-bold font-headline bg-gradient-to-r from-purple-500 to-purple-600 text-transparent bg-clip-text">
             CalcPro
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -35,7 +35,7 @@ export default function Home() {
       </section>
       
       <section id="categories" className="py-8">
-        <h2 className="text-3xl font-bold font-headline text-center mb-8 text-primary">
+        <h2 className="text-3xl font-bold font-headline text-center mb-8">
           Calculator Categories
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       <section id="trending" className="py-12">
-        <h2 className="text-3xl font-bold font-headline text-center mb-8 text-primary">
+        <h2 className="text-3xl font-bold font-headline text-center mb-8">
           Trending Calculators
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -75,7 +75,7 @@ export default function Home() {
 
       <section className="py-16 bg-muted/40 rounded-xl mt-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold font-headline text-center mb-6 text-primary">
+          <h2 className="text-3xl font-bold font-headline text-center mb-6">
             Why Choose CalcPro?
           </h2>
           <p className="max-w-3xl mx-auto text-center text-muted-foreground mb-10">
