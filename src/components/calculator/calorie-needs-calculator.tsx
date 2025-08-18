@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Info } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import Link from "next/link";
 
 const activityLevels = {
   sedentary: 1.2,
@@ -100,7 +101,7 @@ export default function CalorieNeedsCalculator() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>What is BMR?</AccordionTrigger>
                 <AccordionContent>
-                  Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic functions while at rest, like breathing. You can calculate your BMR with our <a href="/calculators/bmr-calculator" className="text-primary underline">BMR Calculator</a>.
+                  Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic functions while at rest, like breathing. You can calculate your BMR with our <Link href="/calculators/bmr-calculator" className="text-primary underline">BMR Calculator</Link>.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
