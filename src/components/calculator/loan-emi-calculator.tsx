@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -24,6 +25,7 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));
     if (t) setTenure(parseFloat(t));
+    setFormula("EMI = [P x R x (1+R)^N] / [(1+R)^N-1]");
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
