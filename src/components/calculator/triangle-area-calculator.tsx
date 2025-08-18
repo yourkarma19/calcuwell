@@ -105,29 +105,37 @@ export default function TriangleAreaCalculator() {
         <Card>
             <CardHeader><CardTitle>About Triangle Formulas</CardTitle></CardHeader>
             <CardContent>
+                <p>This calculator is a flexible tool for finding the area and perimeter of a triangle. You can use different methods depending on what you know about the triangle. It's great for students, teachers, and professionals who need quick and accurate geometry calculations.</p>
+                <h3>How to Use This Tool</h3>
+                <ol>
+                    <li>Choose the formula type based on the information you have.</li>
+                    <li>Enter the known values (sides or angles) into the input fields.</li>
+                    <li>The area and perimeter will be calculated and displayed automatically.</li>
+                </ol>
+                <h3>Frequently Asked Questions</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Base & Height Formula</AccordionTrigger>
                         <AccordionContent>
-                           The most common formula, `Area = 0.5 * base * height`, works for any triangle as long as you know the length of a side (the base) and the perpendicular height to that side.
+                           The most common formula, `Area = 0.5 * base * height`, works for any triangle. You need to know the length of one side (the base) and the perpendicular height from that base to the opposite corner.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Heron's Formula (3 Sides)</AccordionTrigger>
                         <AccordionContent>
-                            Heron's formula is used when you know the lengths of all three sides (a, b, c). You first calculate the semi-perimeter, `s = (a + b + c) / 2`. Then, the area is `√[s(s-a)(s-b)(s-c)]`.
+                            Heron's formula is used when you know the lengths of all three sides (a, b, c). You first calculate the semi-perimeter: `s = (a + b + c) / 2`. Then, the area is `√[s(s-a)(s-b)(s-c)]`.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Side-Angle-Side (SAS) Formula</AccordionTrigger>
                         <AccordionContent>
-                           If you know two sides and the angle between them, you can use the formula `Area = 0.5 * a * b * sin(C)`, where C is the angle between sides a and b.
+                           If you know two sides and the angle between them, you can use the formula `Area = 0.5 * a * b * sin(C)`. Here, C is the angle between sides a and b.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
                         <AccordionTrigger>What is the Triangle Inequality Theorem?</AccordionTrigger>
                         <AccordionContent>
-                           This theorem states that the sum of the lengths of any two sides of a triangle must be greater than the length of the third side. This calculator uses it to validate that the provided side lengths can form a real triangle.
+                           This rule states that the sum of the lengths of any two sides of a triangle must be greater than the length of the third side. This calculator uses the theorem to check if your side lengths can form a real triangle.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

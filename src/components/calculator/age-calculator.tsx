@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -65,42 +66,36 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
       
       <Card>
         <CardHeader>
-          <CardTitle>Understanding Chronological Age</CardTitle>
+          <CardTitle>About the Age Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The Age Calculator helps you determine your precise chronological age based on your date of birth. It breaks down your age into years, months, and days, giving you a detailed view of how old you are. This tool is perfect for anyone curious about their exact age, for filling out applications, or for planning age-related milestones.</p>
+            <p>The Age Calculator determines your exact age from your birth date. It breaks down your age into years, months, and days. This tool is great for anyone curious about their age, for filling out applications, or for planning milestones.</p>
 
-            <h3>How to Use the Age Calculator</h3>
+            <h3>How to Use This Tool</h3>
             <ol>
-                <li>Select your <strong>Date of Birth</strong> using the date picker.</li>
-                <li>Click the <strong>"Calculate Age"</strong> button.</li>
-                <li>Your age will be instantly displayed in the results card, showing the total years, months, and remaining days.</li>
+                <li>Select your date of birth using the date picker.</li>
+                <li>Click the "Calculate Age" button.</li>
+                <li>Your age will be shown in the results card, including total years, months, and days.</li>
             </ol>
             
-            <h3>Frequently Asked Questions (FAQs)</h3>
+            <h3>Frequently Asked Questions</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger className="font-semibold">How is the age calculated?</AccordionTrigger>
+                    <AccordionTrigger className="font-semibold">How is age calculated?</AccordionTrigger>
                     <AccordionContent>
-                        <p>This calculator determines age by finding the total number of full years that have passed since your birth date. It then calculates the remaining months and, finally, the remaining days for a precise age breakdown. It accurately accounts for the varying number of days in each month.</p>
+                        <p>This tool finds the number of full years that have passed since your birth. Then, it calculates the remaining months and days for a precise age. It correctly handles the different number of days in each month.</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                    <AccordionTrigger className="font-semibold">Does this age calculator account for leap years?</AccordionTrigger>
+                    <AccordionTrigger className="font-semibold">Does this tool handle leap years?</AccordionTrigger>
                     <AccordionContent>
-                       <p>Yes, the calculation is based on the actual number of days in each calendar month and year, which inherently accounts for leap years. This ensures that the age is calculated with precision, whether you were born in a leap year or not.</p>
+                       <p>Yes. The calculation is based on the actual number of days in each calendar month and year. This means it correctly includes leap years. This gives you an accurate age, whether you were born in a leap year or not.</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                    <AccordionTrigger className="font-semibold">Can this calculator determine my age on a future date?</AccordionTrigger>
+                    <AccordionTrigger className="font-semibold">What is chronological age?</AccordionTrigger>
                     <AccordionContent>
-                       <p>Currently, this calculator is designed to find your age as of today. The "end date" is always set to the current date and cannot be changed. Its primary purpose is to answer the question, "How old am I right now?"</p>
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-4">
-                    <AccordionTrigger className="font-semibold">What is a chronological age calculator?</AccordionTrigger>
-                    <AccordionContent>
-                       <p>A chronological age calculator is another term for this tool. It measures the exact time that has elapsed from a person's date of birth to the present date, providing the age in the standard format of years, months, and days, as opposed to biological age which relates to health and fitness.</p>
+                       <p>Chronological age is the exact time that has passed from your birth date to today. This is different from biological age, which relates to your health and fitness level.</p>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

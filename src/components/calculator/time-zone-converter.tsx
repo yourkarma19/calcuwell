@@ -119,32 +119,27 @@ export default function TimeZoneConverter() {
       <Card>
         <CardHeader><CardTitle>About Time Zones</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-          <p>The **Time Zone Converter** is an indispensable tool for anyone who works, travels, or communicates across different regions of the world. It eliminates the confusion of calculating time differences by allowing you to instantly find the local time in another city or country based on your own. This is perfect for scheduling international meetings, planning trips, or just staying in touch with friends and family abroad.</p>
+          <p>The Time Zone Converter is a key tool for anyone who works, travels, or communicates across different parts of the world. It ends the confusion of calculating time differences. The tool lets you instantly find the local time in another city or country based on your own. This is perfect for scheduling international meetings, planning trips, or just staying in touch with friends and family abroad.</p>
+          
           <h3>How to Use the Calculator</h3>
           <ol>
-              <li>In the "From" section, select your starting **time zone**, **date**, and **time**.</li>
-              <li>In the "To" section, select the **time zone** you want to convert to.</li>
+              <li>In the "From" section, select your starting time zone, date, and time.</li>
+              <li>In the "To" section, select the time zone you want to convert to.</li>
               <li>The converted date and time will be displayed instantly.</li>
-              <li>Use the **Swap button** to quickly reverse the conversion.</li>
           </ol>
-          <h3>Frequently Asked Questions (FAQs)</h3>
+
+          <h3>Frequently Asked Questions</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is UTC?</AccordionTrigger>
               <AccordionContent>
-                Coordinated Universal Time (UTC) is the primary time standard by which the world regulates clocks and time. It is not a time zone itself but a time standard that is the basis for civil time and time zones worldwide. Time zones are often expressed as an offset from UTC (e.g., UTC-5 for New York).
+                Coordinated Universal Time (UTC) is the main time standard that the world uses to regulate clocks and time. It is not a time zone itself. Instead, it is the basis for civil time and time zones worldwide. Time zones are often shown as an offset from UTC (e.g., UTC-5 for New York).
               </AccordionContent>
             </AccordionItem>
              <AccordionItem value="item-2">
-              <AccordionTrigger>What about Daylight Saving Time (DST)?</AccordionTrigger>
+              <AccordionTrigger>Does this handle Daylight Saving Time (DST)?</AccordionTrigger>
               <AccordionContent>
-                This converter automatically handles Daylight Saving Time. It uses the international IANA Time Zone Database, which contains the historical and future DST rules for each timezone. This ensures that the conversion is accurate, even for dates when DST rules are in effect.
-              </AccordionContent>
-            </AccordionItem>
-             <AccordionItem value="item-3">
-              <AccordionTrigger>How does this calculator work?</AccordionTrigger>
-              <AccordionContent>
-                It uses your browser's built-in `Intl.DateTimeFormat` functionality, which is a powerful part of modern JavaScript. This API has access to a comprehensive database of time zones and their rules, allowing for precise and reliable conversions without needing to manually manage offsets or DST changes.
+                Yes, this converter automatically handles Daylight Saving Time. It uses the international IANA Time Zone Database. This database contains all historical and future DST rules for each timezone. This ensures that the conversion is accurate, even for dates when DST rules are active.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
