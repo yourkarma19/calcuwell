@@ -52,7 +52,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add, subtract, multiply, and divide fractions.',
     category: 'Math',
     iconName: 'Pi',
-    seoTitle: 'Fraction Calculator | Add, Subtract, Multiply Fractions',
+    seoTitle: 'Fraction Calculator | Add, Subtract, Multiply & Divide',
     metaDescription: 'Our free fraction calculator makes fraction math easy. Add, subtract, multiply, and divide proper and improper fractions, with step-by-step results.',
   },
   {
@@ -70,7 +70,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Simplify and work with ratios.',
     category: 'Math',
     iconName: 'Scale',
-    seoTitle: 'Ratio Calculator | Simplify Ratios & Solve Proportions',
+    seoTitle: 'Ratio Calculator | Simplify & Solve Proportions',
     metaDescription: 'Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy to use, and perfect for students and professionals.',
   },
   {
@@ -125,7 +125,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     formula: 'n!',
-    seoTitle: 'Factorial Calculator | Find n!',
+    seoTitle: 'Factorial Calculator | Find n! For Any Integer',
     metaDescription: 'An online factorial calculator that quickly finds the factorial (n!) of any non-negative integer. Includes the factorial formula and an explanation of zero factorial.',
   },
   {
@@ -134,7 +134,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the Least Common Multiple and Greatest Common Divisor.',
     category: 'Math',
     iconName: 'Variable',
-    seoTitle: 'LCM and GCD Calculator | Free & Easy Tool',
+    seoTitle: 'LCM & GCD Calculator | Free & Easy Number Tool',
     metaDescription: 'Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. Our tool explains the methods and their applications.',
   },
   {
@@ -152,7 +152,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate powers and exponents.',
     category: 'Math',
     iconName: 'Variable',
-    seoTitle: 'Exponent & Power Calculator | Calculate x^y',
+    seoTitle: 'Exponent & Power Calculator | Calculate x^y Online',
     metaDescription: 'Quickly calculate the result of any base raised to the power of any exponent. Handles both positive and negative, integer and fractional exponents.',
   },
   {
@@ -161,7 +161,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate logarithms with different bases.',
     category: 'Math',
     iconName: 'Variable',
-    seoTitle: 'Logarithm Calculator | Log & Natural Log (ln)',
+    seoTitle: 'Logarithm Calculator | Log & Natural Log (ln) Tool',
     metaDescription: 'An easy-to-use log calculator. Solve for the logarithm of any number with any base, including natural logs (ln) and common logs (log10).',
   },
   {
@@ -188,7 +188,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Perform calculations with complex numbers.',
     category: 'Math',
     iconName: 'Variable',
-    seoTitle: 'Complex Number Calculator | Add, Subtract, & More',
+    seoTitle: 'Complex Number Calculator | Add, Subtract & More',
     metaDescription: 'Perform arithmetic operations on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.',
   },
   {
@@ -209,7 +209,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    seoTitle: 'Loan EMI Calculator | Free EMI Tool',
+    seoTitle: 'Loan EMI Calculator | Free EMI Calculation Tool',
     metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free and easy-to-use calculator. See how extra payments can reduce your loan tenure and save you interest.',
   },
   {
@@ -218,7 +218,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Compare two loans side-by-side.',
     category: 'Finance',
     iconName: 'Scale',
-    seoTitle: 'Loan Comparison Calculator | Compare Two Loans',
+    seoTitle: 'Loan Comparison Calculator | Compare Two Loans Side-by-Side',
     metaDescription: 'Compare two loans instantly. Our Loan Comparison Calculator shows you the EMI, total interest, and total cost side-by-side to help you choose the cheapest option.',
   },
   {
@@ -228,7 +228,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Home',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    seoTitle: 'Mortgage Calculator | Estimate Monthly Payments',
+    seoTitle: 'Mortgage Calculator | Estimate Monthly Payments (PITI)',
     metaDescription: 'Use our free mortgage calculator to estimate your monthly payment, including principal, interest, taxes, and insurance (PITI). Plan your home purchase budget.'
   },
   {
@@ -248,7 +248,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'PiggyBank',
     formula: 'P * R * T / 100',
-    seoTitle: 'Simple Interest Calculator | SI Formula',
+    seoTitle: 'Simple Interest Calculator | Using SI Formula',
     metaDescription: 'Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula (Principal × Rate × Time) and explains how it works.',
   },
   {
@@ -276,7 +276,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    seoTitle: 'Retirement Calculator | Plan For Your Future',
+    seoTitle: 'Retirement Calculator | Plan For Your Golden Years',
     metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to achieve your retirement goals and see if you are on track.',
   },
   {
@@ -285,7 +285,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the return on your investments.',
     category: 'Finance',
     iconName: 'AreaChart',
-    seoTitle: 'ROI Calculator | Return on Investment Tool',
+    seoTitle: 'ROI Calculator | Calculate Return on Investment',
     metaDescription: 'Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage quickly.',
   },
   {
@@ -303,7 +303,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between different currencies with live rates.',
     category: 'Finance',
     iconName: 'Globe',
-    seoTitle: 'Currency Converter | Live Exchange Rates',
+    seoTitle: 'Currency Converter | Free Online Exchange Rates',
     metaDescription: 'A simple currency converter for real-time exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.',
   },
   {
@@ -321,7 +321,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate Value-Added Tax or Goods and Services Tax.',
     category: 'Finance',
     iconName: 'Tag',
-    seoTitle: 'VAT & GST Calculator | Add or Remove Tax',
+    seoTitle: 'VAT & GST Calculator | Add or Remove Sales Tax',
     metaDescription: 'A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate for accurate calculations.',
   },
   {
@@ -330,7 +330,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate tips for services.',
     category: 'Finance',
     iconName: 'Wallet',
-    seoTitle: 'Tip Calculator | Calculate & Split the Bill',
+    seoTitle: 'Tip Calculator | Calculate & Split The Bill Easily',
     metaDescription: 'A quick and easy tip calculator. Determine the tip amount for any bill, adjust the percentage, and split the total cost among any number of people.',
   },
   {
@@ -339,7 +339,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the final price after a discount.',
     category: 'Finance',
     iconName: 'Tag',
-    seoTitle: 'Discount Calculator | Find The Sale Price',
+    seoTitle: 'Discount Calculator | Find The Final Sale Price',
     metaDescription: 'Easily calculate the final price after a discount. Enter the original price and discount percentage to find out how much you will pay and how much you save.',
   },
   {
@@ -348,7 +348,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your take-home salary.',
     category: 'Finance',
     iconName: 'Briefcase',
-    seoTitle: 'Salary Calculator | Estimate Your Take-Home Pay',
+    seoTitle: 'Salary Calculator | Estimate Your Net Take-Home Pay',
     metaDescription: 'Estimate your take-home pay by entering your gross salary, pay period, and tax/deduction rates. See a breakdown of your net income.',
   },
   {
@@ -357,7 +357,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your overtime pay.',
     category: 'Finance',
     iconName: 'Clock',
-    seoTitle: 'Overtime Pay Calculator | Estimate Overtime Earnings',
+    seoTitle: 'Overtime Pay Calculator | Estimate Your OT Earnings',
     metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, overtime hours, and overtime multiplier to see your complete earnings.',
   },
   {
@@ -366,7 +366,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the point where revenue equals costs.',
     category: 'Finance',
     iconName: 'Briefcase',
-    seoTitle: 'Break-Even Point Calculator | Business Analysis',
+    seoTitle: 'Break-Even Point Calculator | Business Analysis Tool',
     metaDescription: 'Determine the break-even point for your business. Enter your fixed costs, variable costs, and price per unit to find out how many units you need to sell.',
   },
   {
@@ -384,7 +384,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Plan how to pay off your credit card debt.',
     category: 'Finance',
     iconName: 'CreditCard',
-    seoTitle: 'Credit Card Payoff Calculator | Debt Repayment',
+    seoTitle: 'Credit Card Payoff Calculator | Debt Repayment Plan',
     metaDescription: 'Find out how long it will take to pay off your credit card balance. Enter your balance, APR, and monthly payment to see your payoff schedule and total interest.',
   },
 
@@ -397,7 +397,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'HeartPulse',
     formula: 'weight (kg) / (height (m) * height (m))',
     tags: ['health', 'fitness', 'weight', 'body mass index'],
-    seoTitle: 'BMI Calculator | Check Your Body Mass Index',
+    seoTitle: 'BMI Calculator | Check Your Body Mass Index Online',
     metaDescription: 'Calculate your Body Mass Index (BMI) to assess your weight status. Our calculator uses the standard formula and provides WHO categories for adults.'
   },
   {
@@ -407,7 +407,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Scale',
     formula: "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
-    seoTitle: 'BMR Calculator | Basal Metabolic Rate',
+    seoTitle: 'BMR Calculator | Basal Metabolic Rate Estimation',
     metaDescription: 'Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the accurate Mifflin-St Jeor equation.'
   },
   {
@@ -416,7 +416,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your daily calorie needs.',
     category: 'Health',
     iconName: 'HeartPulse',
-    seoTitle: 'Daily Calorie Calculator | How Many Calories?',
+    seoTitle: 'Daily Calorie Calculator | How Many Calories To Eat?',
     metaDescription: 'Estimate the number of calories you need to consume daily to maintain your current weight, based on your age, gender, weight, height, and activity level.',
   },
   {
@@ -445,7 +445,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your lean body mass.',
     category: 'Health',
     iconName: 'Bone',
-    seoTitle: 'Lean Body Mass Calculator | LBM Tool',
+    seoTitle: 'Lean Body Mass Calculator | Free LBM Tool',
     metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle, bone, and organs.',
   },
   {
@@ -454,7 +454,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your waist-to-hip ratio.',
     category: 'Health',
     iconName: 'Ruler',
-    seoTitle: 'Waist-to-Hip Ratio Calculator (WHR)',
+    seoTitle: 'Waist-to-Hip Ratio Calculator | WHR & Health Risk',
     metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means for your health.',
   },
   {
@@ -464,7 +464,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Baby',
     formula: "Naegele's rule",
-    seoTitle: 'Pregnancy Due Date Calculator | Delivery Date',
+    seoTitle: 'Pregnancy Due Date Calculator | Baby Delivery Date',
     metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.',
   },
   {
@@ -473,7 +473,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your most fertile days.',
     category: 'Health',
     iconName: 'CalendarClock',
-    seoTitle: 'Ovulation Calculator | Find Your Fertile Window',
+    seoTitle: 'Ovulation Calculator | Predict Your Fertile Window',
     metaDescription: 'Estimate your fertile window and ovulation date based on your menstrual cycle length. Our ovulation calculator helps you predict your most fertile days to increase your chances of conception.',
   },
   {
@@ -482,7 +482,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your daily water intake needs.',
     category: 'Health',
     iconName: 'Droplets',
-    seoTitle: 'Daily Water Intake Calculator | Hydration Tool',
+    seoTitle: 'Daily Water Intake Calculator | Hydration Needs',
     metaDescription: 'Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated and healthy with our personalized calculation.',
   },
   {
@@ -491,7 +491,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your target heart rate zones.',
     category: 'Health',
     iconName: 'HeartPulse',
-    seoTitle: 'Heart Rate Zone Calculator | Target HR for Exercise',
+    seoTitle: 'Heart Rate Zone Calculator | Target HR for Training',
     metaDescription: 'Determine your target heart rate zones for exercise. Use our calculator to find your optimal training zones for fat burning, cardio, and peak performance.',
   },
   {
@@ -500,7 +500,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your maximum oxygen uptake.',
     category: 'Health',
     iconName: 'Wind',
-    seoTitle: 'VO₂ Max Calculator | Estimate Aerobic Capacity',
+    seoTitle: 'VO₂ Max Calculator | Estimate Your Aerobic Capacity',
     metaDescription: 'Estimate your VO₂ max, a key indicator of your cardiovascular fitness and aerobic endurance. This non-exercise estimation is based on your resting heart rate and age.',
   },
   {
@@ -509,7 +509,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your blood alcohol content.',
     category: 'Health',
     iconName: 'TestTube',
-    seoTitle: 'Blood Alcohol Content (BAC) Calculator',
+    seoTitle: 'Blood Alcohol Content (BAC) Calculator Tool',
     metaDescription: 'Estimate your Blood Alcohol Content (BAC) using the Widmark formula. This calculator provides an educational estimate and is not for legal use.',
   },
 
@@ -520,7 +520,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert length, weight, temperature, etc.',
     category: 'Conversions',
     iconName: 'Ruler',
-    seoTitle: 'Universal Unit Converter | Length, Weight, Temp',
+    seoTitle: 'Universal Unit Converter | Length, Weight, Temp & More',
     metaDescription: 'A versatile online unit converter for a wide range of measurements, including length, weight, temperature, area, volume, and speed. Fast and easy to use.',
   },
   {
@@ -529,7 +529,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between KB, MB, GB, TB, and more.',
     category: 'Conversions',
     iconName: 'Database',
-    seoTitle: 'Data Storage Converter | KB, MB, GB, TB',
+    seoTitle: 'Data Storage Converter | KB, MB, GB, TB, PB',
     metaDescription: 'Convert between various units of digital data storage, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).',
   },
   {
@@ -538,7 +538,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between bps, Kbps, Mbps, and more.',
     category: 'Conversions',
     iconName: 'Shuffle',
-    seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s',
+    seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s Tool',
     metaDescription: 'Convert between different data transfer speed units, such as megabits per second (Mbps) to megabytes per second (MB/s). Essential for internet speed and file download calculations.',
   },
   {
@@ -547,7 +547,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between seconds, minutes, hours, and days.',
     category: 'Conversions',
     iconName: 'Clock',
-    seoTitle: 'Time Converter | Hours, Minutes, Seconds',
+    seoTitle: 'Time Converter | Hours, Minutes, Seconds & More',
     metaDescription: 'A simple and fast time converter for converting between various units of time, including seconds, minutes, hours, days, weeks, and years.',
   },
   {
@@ -556,7 +556,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between joules, calories, kWh, and more.',
     category: 'Conversions',
     iconName: 'Atom',
-    seoTitle: 'Energy Converter | Joules, Calories, kWh',
+    seoTitle: 'Energy Converter | Joules, Calories, kWh & More',
     metaDescription: 'Convert between different units of energy, such as Joules, Kilojoules, calories, Kilocalories (kcal), and Kilowatt-hours (kWh).',
   },
   {
@@ -565,7 +565,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Pa, bar, psi, and more.',
     category: 'Conversions',
     iconName: 'Cloud',
-    seoTitle: 'Pressure Converter | Pa, Bar, PSI, ATM',
+    seoTitle: 'Pressure Converter | Pa, Bar, PSI, ATM & More',
     metaDescription: 'Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and pounds per square inch (psi).',
   },
   {
@@ -574,7 +574,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between watts, hp, kW, and more.',
     category: 'Conversions',
     iconName: 'Wind',
-    seoTitle: 'Power Converter | Watts, kW, Horsepower (hp)',
+    seoTitle: 'Power Converter | Watts, kW, Horsepower (hp) & More',
     metaDescription: 'A tool for converting between different units of power, such as watts (W), kilowatts (kW), and horsepower (hp).',
   },
   {
@@ -583,7 +583,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between degrees and radians.',
     category: 'Conversions',
     iconName: 'Ruler',
-    seoTitle: 'Angle Converter | Degrees to Radians',
+    seoTitle: 'Angle Converter | Degrees to Radians & Back',
     metaDescription: 'Quickly convert angles between degrees and radians. An essential tool for students and professionals in math, physics, and engineering.',
   },
   {
@@ -592,7 +592,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between mpg and L/100km.',
     category: 'Conversions',
     iconName: 'Car',
-    seoTitle: 'Fuel Efficiency Converter | MPG to L/100km',
+    seoTitle: 'Fuel Efficiency Converter | MPG to L/100km & Back',
     metaDescription: 'Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicle fuel economy.',
   },
 
@@ -604,7 +604,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarClock',
     formula: 'Current Date - Date of Birth',
-    seoTitle: 'Age Calculator | How Old Am I?',
+    seoTitle: 'Age Calculator | How Old Am I? | Birthday Calculator',
     metaDescription: 'Find your exact age in years, months, and days with our easy-to-use online age calculator. Simply enter your date of birth to get your detailed chronological age.',
   },
   {
@@ -623,7 +623,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Count down to a specific date and time.',
     category: 'Date & Time',
     iconName: 'Timer',
-    seoTitle: 'Countdown Timer | Online Event Timer',
+    seoTitle: 'Countdown Timer | Online Event & Holiday Timer',
     metaDescription: 'Set a countdown to any date and time. Our online timer will track the days, hours, minutes, and seconds remaining until your event.',
   },
   {
@@ -632,7 +632,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
     iconName: 'Globe2',
-    seoTitle: 'Time Zone Converter | World Time Buddy',
+    seoTitle: 'Time Zone Converter | World Time Zone Tool',
     metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
   },
   {
@@ -641,7 +641,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate time differences between cities.',
     category: 'Date & Time',
     iconName: 'Globe',
-    seoTitle: 'World Clock | Current Time in Major Cities',
+    seoTitle: 'World Clock | Current Time in Major Cities Worldwide',
     metaDescription: 'View the current local time in major cities across the globe. Our world clock provides an easy way to check time differences and plan international calls.',
   },
   {
@@ -650,7 +650,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate working days between two dates.',
     category: 'Date & Time',
     iconName: 'Briefcase',
-    seoTitle: 'Working Days Calculator | Business Day Counter',
+    seoTitle: 'Working Days Calculator | Business Day Counter Tool',
     metaDescription: "Easily calculate the number of working days (business days) between two dates. This tool automatically excludes weekends to give you an accurate count for project planning.",
   },
   {
@@ -659,7 +659,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the week number for a given date.',
     category: 'Date & Time',
     iconName: 'CalendarDays',
-    seoTitle: 'Week Number Calculator | ISO Week Date',
+    seoTitle: 'Week Number Calculator | ISO Week Date Tool',
     metaDescription: "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for scheduling and planning weekly tasks.",
   },
   {
@@ -668,7 +668,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     iconName: 'CalendarClock',
-    seoTitle: 'Add/Subtract Days from a Date Calculator',
+    seoTitle: 'Add/Subtract Days from a Date | Date Calculator',
     metaDescription: "Find a future or past date by adding or subtracting any number of days from a given start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
   },
   {
@@ -677,7 +677,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the next business day.',
     category: 'Date & Time',
     iconName: 'Briefcase',
-    seoTitle: 'Business Day Calculator | Add/Subtract Workdays',
+    seoTitle: 'Business Day Calculator | Add/Subtract Workdays Tool',
     metaDescription: "Calculate a future date by adding or subtracting a specific number of business days, automatically skipping weekends to ensure accuracy for business deadlines.",
   },
 
@@ -698,7 +698,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between ASCII codes and text.',
     category: 'Programming',
     iconName: 'ArrowRightLeft',
-    seoTitle: 'ASCII to Text Converter & Back',
+    seoTitle: 'ASCII to Text Converter & Back | Online Tool',
     metaDescription: 'Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with character encoding.',
   },
   {
@@ -707,7 +707,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Encode and decode Base64 strings.',
     category: 'Programming',
     iconName: 'Binary',
-    seoTitle: 'Base64 Encoder & Decoder | Online Tool',
+    seoTitle: 'Base64 Encoder & Decoder | Online UTF-8 Tool',
     metaDescription: 'A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 for international characters.',
   },
   {
@@ -716,7 +716,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate IP subnets and networks.',
     category: 'Programming',
     iconName: 'Network',
-    seoTitle: 'IP Subnet Calculator | CIDR & Network Tool',
+    seoTitle: 'IP Subnet Calculator | CIDR & Network Mask Tool',
     metaDescription: 'An easy-to-use IP subnet calculator for network administrators and IT professionals. Quickly find network addresses, broadcast addresses, subnet masks, and host ranges.',
     formula: 'Network Address = IP Address & Subnet Mask'
   },
@@ -735,7 +735,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate file size from bitrate and duration.',
     category: 'Programming',
     iconName: 'FileBox',
-    seoTitle: 'File Size Calculator | Estimate Download Size',
+    seoTitle: 'File Size Calculator | Estimate Video & Audio Size',
     metaDescription: 'Estimate the size of a file based on its duration and bitrate. Useful for video, audio, and other media files to plan for storage and bandwidth.',
   },
   {
@@ -744,7 +744,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between HEX, RGB, and HSL color codes.',
     category: 'Programming',
     iconName: 'Palette',
-    seoTitle: 'Color Converter | HEX, RGB, HSL',
+    seoTitle: 'Color Converter | HEX, RGB, HSL Code Conversion',
     metaDescription: 'A simple and intuitive tool for web designers and developers to convert between HEX, RGB, and HSL color formats in real-time.',
   },
 
@@ -755,7 +755,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     iconName: 'Circle',
-    seoTitle: 'Circle Calculator | Area, Circumference, Diameter',
+    seoTitle: 'Circle Calculator | Area, Circumference & Diameter',
     metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas and explanations.',
   },
   {
@@ -764,7 +764,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and perimeter of a triangle.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
-    seoTitle: 'Triangle Area & Perimeter Calculator',
+    seoTitle: 'Triangle Area & Perimeter Calculator | Free Tool',
     metaDescription: 'Calculate the area and perimeter of a triangle using various methods, including Base & Height, Heron\'s formula (3 sides), and Side-Angle-Side (SAS).',
   },
   {
@@ -774,7 +774,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Ruler',
     formula: "Area = Length * Width",
-    seoTitle: 'Rectangle Area & Perimeter Calculator',
+    seoTitle: 'Rectangle Area & Perimeter Calculator | Shape Tool',
     metaDescription: 'A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results. Works for squares too.'
   },
   {
@@ -783,7 +783,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume of a cylinder.',
     category: 'Geometry & Engineering',
     iconName: 'Beaker',
-    seoTitle: 'Cylinder Volume & Surface Area Calculator',
+    seoTitle: 'Cylinder Volume & Surface Area Calculator Tool',
     metaDescription: 'Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Includes the formulas used.',
   },
   {
@@ -792,7 +792,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume and surface area of a sphere.',
     category: 'Geometry & Engineering',
     iconName: 'Globe',
-    seoTitle: 'Sphere Volume & Surface Area Calculator',
+    seoTitle: 'Sphere Volume & Surface Area Calculator Tool',
     metaDescription: 'Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses the standard geometric formulas for accurate results.',
   },
   {
@@ -801,7 +801,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume of a cone.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
-    seoTitle: 'Cone Volume & Surface Area Calculator',
+    seoTitle: 'Cone Volume & Surface Area Calculator Tool',
     metaDescription: 'Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results with formulas.',
   },
   {
@@ -811,7 +811,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     formula: 'a² + b² = c²',
-    seoTitle: 'Pythagorean Theorem Calculator | a²+b²=c²',
+    seoTitle: 'Pythagorean Theorem Calculator | Solve a²+b²=c²',
     metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Find the hypotenuse or either of the other two sides.',
   },
   {
@@ -820,7 +820,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate sin, cos, tan, and more.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
-    seoTitle: 'Trigonometry Calculator | Sin, Cos, Tan',
+    seoTitle: 'Trigonometry Calculator | Sin, Cos, Tan & Inverse',
     metaDescription: 'A free trigonometry calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians. Perfect for students and engineers.',
   },
   {
@@ -838,7 +838,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate torque from force and distance.',
     category: 'Geometry & Engineering',
     iconName: 'Wind',
-    seoTitle: 'Torque Calculator | Force x Distance',
+    seoTitle: 'Torque Calculator | Force x Distance Formula',
     metaDescription: 'Calculate the resulting torque by entering the force and distance (lever arm length). An easy-to-use tool for physics and engineering students.',
   },
   {
@@ -847,7 +847,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate voltage, current, and resistance.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    seoTitle: 'Ohm\'s Law Calculator | V, I, R, P',
+    seoTitle: 'Ohm\'s Law Calculator | Voltage, Current, Resistance',
     metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the other two. Essential tool for electronics.',
     formula: 'V = I × R'
   },
@@ -857,7 +857,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Determine resistor values from color codes.',
     category: 'Geometry & Engineering',
     iconName: 'Palette',
-    seoTitle: '4-Band Resistor Color Code Calculator',
+    seoTitle: '4-Band Resistor Color Code Calculator | Decoder',
     metaDescription: 'A simple tool to decode 4-band resistor color codes. Select the colors for each band to instantly find the resistance value and tolerance.',
   },
   {
@@ -866,7 +866,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    seoTitle: 'Capacitor Charging Calculator | RC Circuit',
+    seoTitle: 'Capacitor Charging Calculator for RC Circuits',
     metaDescription: 'Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. An essential tool for electronics.',
   },
 
@@ -887,7 +887,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your grade percentage.',
     category: 'Miscellaneous',
     iconName: 'Percent',
-    seoTitle: 'Grade Percentage Calculator | Find Your Score',
+    seoTitle: 'Grade Percentage Calculator | Find Your Test Score',
     metaDescription: 'Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.'
   },
   {
@@ -896,7 +896,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the time it takes to read a text.',
     category: 'Miscellaneous',
     iconName: 'Book',
-    seoTitle: 'Reading Time Calculator | Estimate Reading Duration',
+    seoTitle: 'Reading Time Calculator | Estimate Read Duration',
     metaDescription: 'Estimate how long it will take to read any text. Paste your content and adjust the Words Per Minute (WPM) for a personalized reading time estimate.'
   },
   {
@@ -905,7 +905,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Measure your words per minute typing speed.',
     category: 'Miscellaneous',
     iconName: 'Keyboard',
-    seoTitle: 'Typing Speed Test (WPM) | Check Words Per Minute',
+    seoTitle: 'Typing Speed Test (WPM) | Check Your Words Per Minute',
     metaDescription: 'Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts and get instant results.',
   },
   {
@@ -923,7 +923,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your environmental impact.',
     category: 'Miscellaneous',
     iconName: 'Footprints',
-    seoTitle: 'Carbon Footprint Calculator | Estimate Your Impact',
+    seoTitle: 'Carbon Footprint Calculator | Estimate Your CO2 Impact',
     metaDescription: 'Get a rough estimate of your carbon footprint based on your daily commute, energy use, and diet. Understand your environmental impact.'
   },
   {
