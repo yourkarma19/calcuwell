@@ -10,7 +10,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, Smartphone, icons, FlaskConical } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import BasicCalculator from "@/components/calculator/basic-calculator";
 
