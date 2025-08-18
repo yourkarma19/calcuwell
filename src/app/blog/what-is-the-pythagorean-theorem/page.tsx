@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'What is the Pythagorean Theorem? | CalcPro Blog',
-  description: 'An in-depth explanation of the Pythagorean theorem, its history, proof, and real-world applications. Learn how a² + b² = c² works.',
+  title: 'What is the Pythagorean Theorem? | CalcPro',
+  description: 'A simple guide to understanding the a² + b² = c² formula. Learn its history, proof, and see real-world examples of how the theorem is used.',
   alternates: {
     canonical: '/blog/what-is-the-pythagorean-theorem',
   },
@@ -27,7 +27,7 @@ export default function PythagoreanTheoremBlogPage() {
         </div>
 
         <p>
-          The Pythagorean theorem is a fundamental principle in Euclidean geometry that describes the relationship between the three sides of a right-angled triangle. It's a cornerstone of mathematics that has been studied for thousands of years and has countless applications in science, engineering, and everyday life.
+          The Pythagorean theorem is a basic rule in geometry that shows the relationship between the three sides of a right-angled triangle. It is a key part of math that has been studied for thousands of years and is used in science, engineering, and everyday life.
         </p>
 
         <Card className="my-8">
@@ -38,7 +38,7 @@ export default function PythagoreanTheoremBlogPage() {
         
         <h2>The Formula Explained</h2>
         <p>
-          The theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides (legs).
+          The theorem states that for a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides.
         </p>
 
         <div className="my-6 flex justify-center">
@@ -54,11 +54,11 @@ export default function PythagoreanTheoremBlogPage() {
         </div>
 
         <ul>
-          <li><strong>a and b</strong> are the lengths of the two legs of the triangle.</li>
+          <li><strong>a and b</strong> are the lengths of the two shorter sides of the triangle.</li>
           <li><strong>c</strong> is the length of the hypotenuse, which is always the longest side.</li>
         </ul>
         <p>
-          This simple formula allows you to find the length of a missing side if you know the lengths of the other two. For instance, if you know the lengths of `a` and `b`, you can find `c` by calculating `√(a² + b²)`.
+          This simple formula allows you to find a missing side if you know the lengths of the other two. For instance, if you know `a` and `b`, you can find `c` by calculating `√(a² + b²)`.
         </p>
         <p>
             Need to solve a triangle problem quickly? Try our <Link href="/calculators/pythagorean-theorem-calculator" className="text-primary hover:underline">Pythagorean Theorem Calculator</Link>.
@@ -66,25 +66,25 @@ export default function PythagoreanTheoremBlogPage() {
         
         <h2>A Simple Example</h2>
         <p>
-          Imagine a right triangle with legs of length 3 units and 4 units. To find the length of the hypotenuse (c):
+          Imagine a right triangle with one side of 3 units and another of 4 units. To find the length of the longest side (the hypotenuse):
         </p>
         <ol>
-            <li>Square the lengths of the legs: 3² = 9 and 4² = 16.</li>
-            <li>Add the squares together: 9 + 16 = 25.</li>
+            <li>Square the lengths of the sides: 3² = 9 and 4² = 16.</li>
+            <li>Add the results: 9 + 16 = 25.</li>
             <li>Find the square root of the sum: √25 = 5.</li>
         </ol>
         <p>
-            So, the length of the hypotenuse is 5 units. This is a classic example known as a "3-4-5 triangle," which is a Pythagorean triple.
+            The length of the hypotenuse is 5 units. This is a classic "3-4-5 triangle."
         </p>
 
         <h2>Real-World Applications</h2>
         <p>
-          The Pythagorean theorem is not just for math class. It's used in many real-world scenarios:
+          The Pythagorean theorem is not just for math class. It is used in many real-world situations:
         </p>
         <ul>
-          <li><strong>Construction & Architecture:</strong> Ensuring that the corners of buildings are perfectly square.</li>
-          <li><strong>Navigation:</strong> Calculating the shortest distance between two points on a map (as the crow flies).</li>
-          <li><strong>Design:</strong> Determining the diagonal size of a TV screen or monitor.</li>
+          <li><strong>Construction:</strong> Making sure the corners of buildings are perfectly square.</li>
+          <li><strong>Navigation:</strong> Calculating the shortest distance between two points on a map.</li>
+          <li><strong>Design:</strong> Finding the diagonal size of a TV screen or computer monitor.</li>
         </ul>
       </article>
     </main>

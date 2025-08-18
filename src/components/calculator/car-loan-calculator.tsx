@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -82,7 +81,7 @@ export default function CarLoanCalculator({ setFormula }: { setFormula: (formula
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Car Loans</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Car Loan Fundamentals</CardTitle></CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">

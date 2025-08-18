@@ -29,7 +29,7 @@ export default function EmbedCalculator({ slug }: EmbedCalculatorProps) {
   sandbox="allow-scripts allow-same-origin"
 ></iframe>
 <p style="font-size:12px; text-align:center; margin-top:5px;">
-  Powered by <a href="https://calcpro.online?utm_source=embed&utm_medium=widget" target="_blank" rel="noopener noreferrer">CalcPro</a>
+  Powered by <a href="https://calcpro.online" target="_blank" rel="noopener noreferrer">CalcPro</a>
 </p>`;
 
   const handleCopy = () => {

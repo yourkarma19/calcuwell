@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -66,10 +65,10 @@ export default function CrcHashGenerator() {
                     <CardTitle>About the CRC-32 Hash Generator</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
-                    <p>Our **CRC-32 Hash Generator** is a utility for developers and data analysts to compute a Cyclic Redundancy Check (CRC) checksum. This tool is designed to verify data integrity by creating a fixed-size checksum from an input string. It's a fast and efficient way to check if data has been accidentally altered during transmission or storage.</p>
+                    <p>Our CRC-32 Hash Generator is a tool for developers and data analysts. It computes a Cyclic Redundancy Check (CRC) checksum. This tool helps verify data integrity by creating a fixed-size checksum from an input string. It's a fast and simple way to check if data has been accidentally changed during transfer or storage.</p>
                     <h3>How to Use the Calculator</h3>
                     <ol>
-                        <li>Enter any text, string, or data into the **Input Text** field.</li>
+                        <li>Enter any text or string into the **Input Text** field.</li>
                         <li>The 32-bit CRC hash (checksum) will be generated and displayed instantly in the result box below.</li>
                     </ol>
                     <p>The process is automatic and updates in real-time as you type.</p>
@@ -78,23 +77,23 @@ export default function CrcHashGenerator() {
                         <AccordionItem value="item-1">
                             <AccordionTrigger>What is CRC (Cyclic Redundancy Check)?</AccordionTrigger>
                             <AccordionContent>
-                                CRC is an error-detecting code used in digital networks and storage devices to detect accidental changes to raw data. It works by performing a polynomial division on the data and using the remainder as the checksum. When the data is received, the calculation is repeated, and if the checksums don't match, it indicates that the data has been corrupted.
+                                CRC is an error-detecting code used in digital networks and storage devices. It detects accidental changes to data. The process creates a checksum. When the data is received, the calculation is repeated. If the checksums don't match, it means the data has been corrupted.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
-                            <AccordionTrigger>How is CRC different from a cryptographic hash like SHA-256?</AccordionTrigger>
+                            <AccordionTrigger>How is CRC different from SHA-256?</AccordionTrigger>
                             <AccordionContent>
-                                The key difference is their purpose. **CRC** is designed to detect **accidental errors** (like those from network noise or data degradation) and is very fast but not secure. **Cryptographic hashes** (like SHA-256) are designed to be secure against **malicious, intentional modifications**. They are one-way functions, making it computationally infeasible to reverse them or find two different inputs that produce the same hash (a "collision").
+                                The key difference is their purpose. **CRC** detects **accidental errors** (like from network noise) and is very fast but not secure. **Cryptographic hashes** (like SHA-256) are designed to be secure against **intentional changes**. They are one-way functions, making it impossible to reverse them or find two inputs that produce the same hash.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>What is CRC-32 used for?</AccordionTrigger>
                             <AccordionContent>
-                                CRC-32 is a specific and widely used version of CRC that produces a 32-bit checksum. You can find it in many common applications, including:
+                                CRC-32 is a specific and common version of CRC that produces a 32-bit checksum. You can find it in many applications, including:
                                 <ul className="list-disc pl-5 mt-2">
-                                    <li>**File formats:** ZIP and PNG files use CRC-32 to verify that files are not corrupted.</li>
-                                    <li>**Network protocols:** Ethernet and other network protocols use it to ensure the integrity of data packets.</li>
-                                    <li>**Storage systems:** It's used in storage systems to detect errors on disk drives.</li>
+                                    <li>**File formats:** ZIP and PNG files use CRC-32 to check for corruption.</li>
+                                    <li>**Network protocols:** Ethernet uses it to ensure the integrity of data packets.</li>
+                                    <li>**Storage systems:** It's used to detect errors on disk drives.</li>
                                 </ul>
                             </AccordionContent>
                         </AccordionItem>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -83,18 +82,21 @@ export default function GradePercentageCalculator() {
       </Card>
       <Card>
         <CardHeader><CardTitle>About Grade Calculation</CardTitle></CardHeader>
-        <CardContent>
+        <CardContent className="prose dark:prose-invert max-w-none">
+            <p>This tool helps you quickly find your grade on a test or assignment. Just enter the points you earned and the total points possible. The calculator will show your percentage and a letter grade based on a standard scale.</p>
+            <h3>How to Use This Tool</h3>
+            <p>Enter the number of points you earned and the total points possible. The calculator will instantly show your grade.</p>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>How is the percentage calculated?</AccordionTrigger>
                     <AccordionContent>
-                        The formula is `(Points Earned / Total Possible Points) * 100`. This gives you the percentage of correct answers or points achieved out of the maximum possible.
+                        The formula is `(Points Earned / Total Possible Points) * 100`. This gives you the percentage of points you received out of the total.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>What is a standard grading scale?</AccordionTrigger>
                     <AccordionContent>
-                        A standard grading scale assigns letter grades to percentage ranges. A common scale is: 90-100% = A, 80-89% = B, 70-79% = C, 60-69% = D, and below 60% = F. However, these scales can vary significantly between schools and even teachers.
+                        A standard grading scale assigns letters to percentage ranges. A common scale is: 90-100% = A, 80-89% = B, 70-79% = C, 60-69% = D, and below 60% = F. However, these scales can vary between schools and teachers.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

@@ -4,7 +4,7 @@ import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Privacy Policy | CalcPro",
-    description: "Review the official privacy policy for CalcPro. Understand how we collect, use, and protect your data when you use our free online calculator services.",
+    description: "Read the privacy policy for CalcPro. We are committed to protecting your data and privacy when you use our free online calculator tools.",
     alternates: {
         canonical: "/privacy-policy",
     },
@@ -26,40 +26,40 @@ export default function PrivacyPolicyPage() {
                 </p>
 
                 <p>
-                    By using our Service, you agree to this policy. The information we collect helps us improve our tools. We will not share your data with anyone except as described here.
+                    By using our Service, you agree to this policy. We use the information we collect to improve our tools. We will not share your data with anyone except as described here.
                 </p>
 
-                <h2>What We Collect</h2>
+                <h2>Information We Collect</h2>
                 <p>
-                    We respect your privacy. Our calculators do not require you to provide any personal information.
+                    We respect your privacy. Our calculators do not require you to provide any personal information to use them.
                 </p>
 
-                <h2>Log Data</h2>
+                <h2>Website Analytics</h2>
                 <p>
-                    Like most websites, we collect "Log Data" that your browser sends us. This may include your device's IP address, browser type, and which pages you visit. This helps us see how our Service is being used.
+                    Like most websites, we collect "Log Data" that your browser sends. This may include your device's IP address, browser type, and which pages you visit. This data helps us understand how our Service is being used so we can improve it.
                 </p>
 
-                <h2>Cookies</h2>
+                <h2>Cookie Policy</h2>
                 <p>
-                    We use "cookies" to improve our Service. Cookies are small files stored on your device. You can set your browser to refuse them, but some parts of our site may not work if you do.
+                    We use "cookies" to make our Service better. Cookies are small files stored on your device. You can set your browser to refuse them, but some parts of our site may not work correctly if you do.
                 </p>
 
-                <h2>Security</h2>
+                <h2>Data Security</h2>
                 <p>
-                    Protecting your information is important to us. However, no method of sharing data over the internet is 100% secure. We use standard security measures, but we cannot guarantee perfect security.
+                    We work hard to protect your information. However, no method of sharing data over the internet is 100% secure. We use standard security measures, but we cannot guarantee perfect security.
                 </p>
 
-                <h2>Links to Other Sites</h2>
+                <h2>Links to Other Websites</h2>
                 <p>
-                    Our website may contain links to other sites. If you click a third-party link, you will be taken to their website. We don't control those sites, so we recommend you review their privacy policies.
+                    Our website may link to other sites. If you click a third-party link, you will be taken to their website. We do not control those sites, so we suggest you review their privacy policies.
                 </p>
 
-                <h2>Changes to This Policy</h2>
+                <h2>Policy Updates</h2>
                 <p>
-                    We may update this policy from time to time. Please check this page for the latest version. Changes are effective as soon as they are posted here.
+                    We may update this policy. Please check this page for the latest version. Changes are effective as soon as they are posted here.
                 </p>
 
-                <h2>Contact Us</h2>
+                <h2 id="contact">Contact Us</h2>
                 <p>
                     If you have any questions, please contact us at: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>.
                 </p>

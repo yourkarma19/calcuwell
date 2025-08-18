@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -97,32 +96,32 @@ export default function DataTransferRateConverter() {
             <CardTitle>About the Data Transfer Rate Converter</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Data Transfer Rate Converter** is a crucial tool for understanding internet speeds, download times, and network performance. It helps you translate between the different units used to measure how quickly digital data moves from one point to another, such as from a server to your computer. This is essential for comparing internet plans, estimating file download times, and troubleshooting network issues.</p>
+            <p>Our Data Transfer Rate Converter helps you understand internet speeds, download times, and network performance. It translates between the different units used to measure how quickly digital data moves from one point to another. This is key for comparing internet plans and estimating file download times.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>Enter the speed value you want to convert in the "From" field.</li>
                 <li>Select the starting unit (e.g., Megabits per second - Mbps).</li>
                 <li>Select the target unit you want to convert to (e.g., Megabytes per second - MB/s).</li>
             </ol>
-            <p>The converted speed will be displayed instantly, helping you understand your connection's true performance.</p>
+            <p>The converted speed will be displayed instantly. This helps you understand your connection's true performance.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>What's the difference between Megabits (Mbps) and Megabytes (MB/s)?</AccordionTrigger>
+                    <AccordionTrigger>What's the difference between Mbps and MB/s?</AccordionTrigger>
                     <AccordionContent>
-                        This is the most common point of confusion. **Internet Service Providers (ISPs)** advertise speeds in **megabits per second (Mbps)**. However, the download speed shown in your web browser or applications is usually in **megabytes per second (MB/s)**. Since there are 8 bits in 1 byte, to find your theoretical maximum download speed in MB/s, you divide the Mbps value by 8. For example, a 100 Mbps connection has a maximum theoretical download speed of 12.5 MB/s.
+                        This is a common point of confusion. **Internet Service Providers (ISPs)** advertise speeds in **megabits per second (Mbps)**. But download speeds in your browser are usually in **megabytes per second (MB/s)**. Since there are 8 bits in 1 byte, to find your download speed in MB/s, divide the Mbps value by 8. For example, a 100 Mbps connection has a max download speed of 12.5 MB/s.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                    <AccordionTrigger>Why is my download speed slower than what my ISP advertises?</AccordionTrigger>
+                    <AccordionTrigger>Why is my download speed slower than advertised?</AccordionTrigger>
                     <AccordionContent>
-                        Advertised speeds are "up to" a certain maximum under ideal conditions. Real-world speeds can be affected by many factors, including network congestion, the quality of your router and local network (Wi-Fi vs. Ethernet), the server you're downloading from, and the number of devices using your connection simultaneously.
+                        Advertised speeds are an "up to" maximum. Real-world speeds can be affected by many factors. This includes network traffic, router quality, and the server you're downloading from.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                     <AccordionTrigger>What are decimal (Mbps) vs. binary (Mibps) prefixes?</AccordionTrigger>
                     <AccordionContent>
-                       **Decimal prefixes (kilo, mega, giga)** use powers of 1000. For example, 1 Mbps = 1,000,000 bits per second. This is the standard for measuring data transfer rates. **Binary prefixes (kibi, mebi, gibi)** use powers of 1024 (e.g., 1 Mibps = 1,048,576 bits per second) and are more commonly associated with data storage, but can sometimes appear in networking contexts.
+                       **Decimal prefixes (kilo, mega)** use powers of 1000. For example, 1 Mbps = 1,000,000 bits per second. This is the standard for data transfer rates. **Binary prefixes (kibi, mebi)** use powers of 1024. For example, 1 Mibps = 1,048,576 bits per second. These are more common for data storage.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

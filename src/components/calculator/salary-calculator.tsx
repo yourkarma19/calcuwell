@@ -86,35 +86,35 @@ export default function SalaryCalculator() {
         <Card>
             <CardHeader><CardTitle>About Salary Calculations</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Salary Calculator** is a practical tool for anyone wanting to understand their true earnings after taxes and other deductions. It helps bridge the gap between the "gross salary" offered by an employer and the actual "net salary" or "take-home pay" that you receive. This is crucial for accurate budgeting, financial planning, and managing your expenses effectively.</p>
+                <p>The Salary Calculator is a practical tool for anyone wanting to understand their true earnings after taxes and other deductions. It helps bridge the gap between the "gross salary" offered by an employer and the actual "net salary" or "take-home pay" that you receive. This is crucial for accurate budgeting and financial planning.</p>
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter your **Gross Salary** amount.</li>
-                    <li>Select the **Pay Period** (Annually or Monthly).</li>
-                    <li>Set your estimated **Income Tax Rate** as a percentage.</li>
-                    <li>Add any **Other Deductions** you have per pay period (e.g., retirement contributions, insurance).</li>
+                    <li>Enter your Gross Salary amount.</li>
+                    <li>Select the Pay Period (Annually or Monthly).</li>
+                    <li>Set your estimated Income Tax Rate as a percentage.</li>
+                    <li>Add any Other Deductions you have per pay period (e.g., retirement contributions, insurance).</li>
                 </ol>
                 <p>The calculator will instantly break down your take-home pay and show you how much goes towards taxes and other deductions annually.</p>
                 
-                <h3>Frequently Asked Questions (FAQs)</h3>
+                <h3>Frequently Asked Questions</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Gross Salary vs. Net Salary</AccordionTrigger>
                         <AccordionContent>
-                            **Gross salary** is the total amount of money an employer agrees to pay an employee before any taxes or deductions are taken out. **Net salary**, or take-home pay, is the amount of money you receive in your bank account after all mandatory and voluntary deductions have been subtracted.
+                            **Gross salary** is the total amount of money an employer agrees to pay you before any taxes or deductions are taken out. **Net salary**, or take-home pay, is the amount of money you actually receive after all deductions have been subtracted.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What are common deductions?</AccordionTrigger>
                         <AccordionContent>
-                            Common deductions include income tax (at central and sometimes state levels), social security contributions (like provident fund), retirement plan contributions (like a 401(k) or pension), health insurance premiums, and other voluntary deductions like union dues or charitable giving.
+                            Common deductions include income tax, social security contributions (like provident fund), retirement plan contributions, and health insurance premiums.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Why is my tax rate an estimate?</AccordionTrigger>
                         <AccordionContent>
-                           Income tax is often progressive, meaning the rate increases as your income increases. Different portions of your income are taxed at different rates (tax brackets). This calculator uses a single, blended tax rate for simplicity. For a precise calculation, you would need to consult official tax tables for your jurisdiction.
+                           Income tax is often progressive, meaning the rate increases as your income increases. This calculator uses a single, blended tax rate for simplicity. For a precise calculation, you should consult official tax tables for your area.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

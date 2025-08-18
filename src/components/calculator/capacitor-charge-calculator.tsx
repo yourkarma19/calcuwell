@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -58,7 +57,7 @@ export default function CapacitorChargeCalculator() {
             </div>
           </div>
           <Card>
-            <CardHeader><CardTitle className="text-xl">Results</CardTitle></CardHeader>
+            <CardHeader><CardTitle className="text-xl">Circuit Analysis Results</CardTitle></CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                 <div className="bg-muted p-4 rounded-lg">
                     <p className="text-sm text-muted-foreground">Charge (V)</p>
@@ -77,7 +76,7 @@ export default function CapacitorChargeCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About RC Circuits</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Understanding RC Circuits</CardTitle></CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">

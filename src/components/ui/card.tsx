@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -29,19 +30,22 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = "CardHeader"
 
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
+type CardTitleProps = React.HTMLAttributes<HTMLHeadingElement> & {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div';
+};
+
+const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
+  ({ className, as: Component = 'div', ...props }, ref) => (
+    <Component
+      ref={ref}
+      className={cn(
+        "text-2xl font-semibold leading-none tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  )
+);
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<

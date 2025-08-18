@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -83,7 +82,7 @@ export default function BacCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About BAC</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Understanding Blood Alcohol Content</CardTitle></CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">

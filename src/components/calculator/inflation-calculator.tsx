@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -91,24 +90,27 @@ export default function InflationCalculator() {
         </Card>
         <Card>
           <CardHeader><CardTitle>About Inflation</CardTitle></CardHeader>
-          <CardContent>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>This calculator shows how the value of money changes over time due to inflation. It helps you understand the purchasing power of an amount of money from the past in today's terms.</p>
+            <h3>How to Use this Tool</h3>
+            <p>Enter an amount of money and select a start and end year. The calculator will show you what that amount would be worth in the end year, based on historical inflation data.</p>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is inflation?</AccordionTrigger>
                 <AccordionContent>
-                  Inflation is the rate at which the general level of prices for goods and services is rising, and subsequently, purchasing power is falling. For example, if the inflation rate is 2%, then a ₹100 item will cost ₹102 next year.
+                  Inflation is the rate at which prices for goods and services rise, and the purchasing power of money falls. For example, if the inflation rate is 2%, then a ₹100 item will cost ₹102 next year.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger>How does this calculator work?</AccordionTrigger>
                 <AccordionContent>
-                  This calculator uses historical inflation rate data to adjust the value of money over time. It compounds the inflation rate for each year in the selected range to find the equivalent value.
+                  This calculator uses historical inflation rate data to adjust the value of money over time. It combines the inflation rate for each year in the selected range to find the new equivalent value.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger>Disclaimer</AccordionTrigger>
                 <AccordionContent>
-                  This calculator uses historical mock inflation data for demonstration. In a real-world scenario, this data would be fetched from a reliable economic data source.
+                  This calculator uses historical mock inflation data for demonstration. In a real-world scenario, this data would be fetched from a reliable source like a government statistics agency.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -150,59 +149,41 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
                 <CardTitle>About the EMI Calculator</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our <strong>EMI Calculator</strong> helps you calculate your <strong>Equated Monthly Installments (EMI)</strong> in just a few clicks. Whether you are planning to take a <strong>home loan, car loan, personal loan, or education loan</strong>, knowing your EMI in advance allows you to plan your finances better. By entering just three key values – <strong>loan amount, interest rate, and tenure</strong>, you can instantly get your monthly EMI, total interest payable, and the overall cost of the loan.</p>
-                <p>This EMI calculator is designed for <strong>students, professionals, business owners, and families</strong> who want to make smarter borrowing decisions. Unlike manual EMI formulas, which are time-consuming and prone to error, this calculator is <strong>instant, accurate, and user-friendly</strong>.</p>
+                <p>Our EMI Calculator helps you find your Equated Monthly Installments (EMI) in just a few clicks. Knowing your EMI in advance allows you to plan your finances better. This tool is useful for home loans, car loans, or personal loans. By entering the loan amount, interest rate, and tenure, you can instantly get your monthly payment and total loan cost.</p>
+                <p>This calculator is great for anyone who wants to make smarter borrowing decisions. It is instant, accurate, and user-friendly.</p>
 
                 <h3>How to Use the EMI Calculator</h3>
                 <ol>
-                    <li>Enter the <strong>Loan Amount</strong> you wish to borrow.</li>
-                    <li>Input the <strong>Annual Interest Rate</strong> (e.g., 7.5%).</li>
-                    <li>Select the <strong>Loan Tenure</strong> (in years).</li>
+                    <li>Enter the **Loan Amount** you wish to borrow.</li>
+                    <li>Input the **Annual Interest Rate**.</li>
+                    <li>Select the **Loan Tenure** (in years).</li>
                 </ol>
-                <p>The calculator will instantly display your monthly EMI, total interest, and total payment. You can also add optional extra monthly or yearly payments to see how it reduces your loan duration and saves you money on interest.</p>
+                <p>The calculator will instantly display your monthly EMI. You can also add extra payments to see how it reduces your loan duration and saves you money.</p>
                 
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">What is EMI?</AccordionTrigger>
                         <AccordionContent>
-                            <p>EMI (Equated Monthly Installment) is the fixed amount you pay every month to repay your loan. It consists of both a principal component and an interest component. The payment is structured so that the loan is fully paid off by the end of its tenure.</p>
+                            <p>EMI (Equated Monthly Installment) is the fixed amount you pay each month to repay your loan. It includes both a principal amount and an interest amount. The payment is set up so that the loan is fully paid off by the end of its term.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger className="font-semibold">How is EMI calculated?</AccordionTrigger>
                         <AccordionContent>
-                            <p>Banks use the following formula to calculate EMI:</p>
-                            <p className="font-mono bg-muted p-2 rounded-md text-center my-2">EMI = [P x R x (1+R)^N] / [(1+R)^N-1]</p>
-                            <p>Where:</p>
-                            <ul className="list-disc pl-5">
-                                <li><strong>P</strong> = Principal loan amount</li>
-                                <li><strong>R</strong> = Monthly interest rate (Annual Rate ÷ 12 ÷ 100)</li>
-                                <li><strong>N</strong> = Number of months in the loan tenure</li>
-                            </ul>
-                            <p>Our EMI Calculator applies this formula automatically, saving you time and effort.</p>
+                            <p>Banks use the formula `EMI = [P x R x (1+R)^N] / [(1+R)^N-1]`. In this formula, P is the loan amount, R is the monthly interest rate, and N is the number of months.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger className="font-semibold">How can I reduce my EMI?</AccordionTrigger>
                         <AccordionContent>
-                            <p>You can reduce your EMI by:</p>
-                            <ul className="list-disc pl-5">
-                                <li><strong>Choosing a longer tenure:</strong> This spreads the loan over more time, lowering the monthly payment, but increases the total interest paid.</li>
-                                <li><strong>Finding a lower interest rate:</strong> Even a small difference in the rate can significantly reduce your EMI.</li>
-                                <li><strong>Making a larger down payment:</strong> This reduces your principal loan amount.</li>
-                            </ul>
+                            <p>You can reduce your EMI by choosing a longer tenure, finding a lower interest rate, or making a larger down payment. A longer tenure will lower the monthly payment, but you will pay more in total interest.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
                         <AccordionTrigger className="font-semibold">Why should I use an EMI Calculator?</AccordionTrigger>
                         <AccordionContent>
-                            <p>It helps you:</p>
-                             <ul className="list-disc pl-5">
-                                <li><strong>Plan your budget:</strong> Know exactly how much you need to set aside each month.</li>
-                                <li><strong>Avoid financial stress:</strong> Choose a loan amount and tenure with an EMI you can comfortably afford.</li>
-                                <li><strong>Compare loans:</strong> Easily see the difference in cost between various loan offers from different banks.</li>
-                            </ul>
+                            <p>It helps you plan your budget, avoid financial stress by choosing an EMI you can afford, and compare loans from different banks.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

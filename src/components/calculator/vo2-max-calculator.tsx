@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -51,7 +50,7 @@ export default function Vo2MaxCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About VO₂ Max</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Understanding VO₂ Max</CardTitle></CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
