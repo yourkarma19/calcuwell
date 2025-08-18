@@ -57,18 +57,29 @@ export default function BasicCalculator() {
     }
     return result;
   };
+  
+  const resetCalculator = useCallback(() => {
+    setExpression("");
+    setDisplayValue("0");
+    setJustEvaluated(false);
+  }, []);
 
   const handleInput = useCallback((input: string) => {
+    if (input === "AC") {
+      resetCalculator();
+      return;
+    }
+
+    if (displayValue === "Error" || displayValue === "I ❤️ You") {
+        resetCalculator();
+        if(!isOperator(input)) setDisplayValue(input);
+        return;
+    }
+    
     if (justEvaluated && !isOperator(input) && input !== '.') {
         setExpression(""); 
         setDisplayValue(input);
         setJustEvaluated(false);
-        return;
-    }
-    
-    if (displayValue === "Error" || displayValue === "I ❤️ You") {
-        resetCalculator();
-        if(!isOperator(input) && input !== "AC") setDisplayValue(input);
         return;
     }
 
@@ -76,8 +87,6 @@ export default function BasicCalculator() {
         handleOperator(input);
     } else if (input === "=") {
       handleEquals();
-    } else if (input === "AC") {
-      resetCalculator();
     } else if (input === "+/-") {
         setDisplayValue(prev => (parseFloat(prev) * -1).toString());
     } else if (input === "%") {
@@ -93,26 +102,23 @@ export default function BasicCalculator() {
     }
     
     if(input !== "=") setJustEvaluated(false);
-  }, [displayValue, justEvaluated]);
+  }, [displayValue, justEvaluated, resetCalculator]);
 
   const handleOperator = (op: string) => {
     if (displayValue !== "Error") {
+      const currentVal = parseFloat(displayValue);
       if (justEvaluated) {
           setExpression(displayValue + op);
-          setJustEvaluated(false);
       } else {
-          const lastChar = expression.slice(-1);
-          if (isOperator(lastChar)) {
-              setExpression(prev => prev.slice(0, -1) + op);
-          } else {
-              setExpression(prev => prev + displayValue + op);
-          }
+          setExpression(prev => prev + displayValue + op);
       }
       setDisplayValue("0");
+      setJustEvaluated(false);
     }
   };
 
   const handleEquals = () => {
+    if (justEvaluated) return;
     const fullExpression = (expression + displayValue);
     if (fullExpression === '12082007+19112005') {
       setDisplayValue("I ❤️ You");
@@ -132,7 +138,7 @@ export default function BasicCalculator() {
             setExpression(safeExpression);
             setDisplayValue("Error");
         } else {
-            setExpression(safeExpression);
+            setExpression("");
             setDisplayValue(result.toString());
         }
     } catch (error) {
@@ -140,13 +146,6 @@ export default function BasicCalculator() {
         setDisplayValue("Error");
     }
     setJustEvaluated(true);
-    setExpression("");
-  };
-  
-  const resetCalculator = () => {
-    setExpression("");
-    setDisplayValue("0");
-    setJustEvaluated(false);
   };
   
   useEffect(() => {
