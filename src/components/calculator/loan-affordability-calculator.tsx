@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -80,16 +79,16 @@ export default function LoanAffordabilityCalculator() {
         <Card>
             <CardHeader><CardTitle>About Loan Affordability</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Loan Affordability Calculator is a crucial first step for any borrower. It helps you see how much you can realistically borrow for a home, car, or personal expense. This tool provides a clear estimate based on your income and existing debts. It empowers you to set realistic goals and approach lenders with confidence.</p>
+                <p>The Loan Affordability Calculator is a key first step for any borrower. It helps you see how much you can realistically borrow for a home, car, or personal expense. This tool provides a clear estimate based on your income and existing debts. It empowers you to set realistic goals and approach lenders with confidence.</p>
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter your total gross Annual Income.</li>
-                    <li>Provide your total Monthly Debt Payments (e.g., credit card bills, other loans).</li>
-                    <li>Input the estimated Interest Rate and Loan Term for the new loan.</li>
-                    <li>Adjust the Debt-to-Income (DTI) Ratio slider. This is the percentage of your income lenders are willing to let you use for debt payments. 43% is a common maximum.</li>
+                    <li>Enter your total gross **Annual Income**.</li>
+                    <li>Provide your total **Monthly Debt Payments** (e.g., credit card bills, other loans).</li>
+                    <li>Input the estimated **Interest Rate** and **Loan Term** for the new loan.</li>
+                    <li>Adjust the **Debt-to-Income (DTI) Ratio** slider. 43% is a common maximum that lenders allow.</li>
                 </ol>
-                <p>The calculator will instantly show you the maximum loan you can likely afford and the corresponding monthly payment.</p>
+                <p>The calculator will instantly show you the maximum loan you can likely afford and the estimated monthly payment.</p>
                 
                 <h3>Frequently Asked Questions</h3>
                 <Accordion type="single" collapsible className="w-full">
@@ -102,7 +101,7 @@ export default function LoanAffordabilityCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>How can I improve my DTI?</AccordionTrigger>
                         <AccordionContent>
-                           You can improve your DTI by either increasing your income or reducing your monthly debt. Try to pay down existing loans or credit card balances. You should also avoid new debt before applying for a major loan.
+                           You can improve your DTI by increasing your income or reducing your monthly debt. Try to pay down existing loans or credit card balances. You should also avoid new debt before applying for a major loan.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">

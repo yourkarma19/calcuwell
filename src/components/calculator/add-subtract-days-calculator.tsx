@@ -52,22 +52,22 @@ export default function AddSubtractDaysCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>Understanding the Date Calculator</CardTitle></CardHeader>
+          <CardHeader><CardTitle>About the Date Calculator</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Add/Subtract Days Calculator** is a simple and effective tool for anyone who needs to quickly project dates forward or backward. Whether you're setting a deadline, scheduling a follow-up, or calculating a warranty period, this calculator removes the hassle of manually counting days on a calendar.</p>
+            <p>Our Add/Subtract Days Calculator is a simple tool for anyone who needs to quickly find a future or past date. It's great for setting a deadline, scheduling a follow-up, or finding a warranty period. This tool removes the need to count days on a calendar.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>Pick a **Start Date** from the calendar.</li>
                 <li>Enter the number of **Days to Add/Subtract**.</li>
                 <li>Click either the **"Add Days"** or **"Subtract Days"** button.</li>
             </ol>
-            <p>The resulting date will be instantly displayed in the results card on the right.</p>
+            <p>The resulting date will appear in the results card on the right.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
               <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                       <AccordionTrigger>How does this calculator work?</AccordionTrigger>
                       <AccordionContent>
-                          This tool takes a starting date and adds or subtracts the exact number of calendar days you specify to find the new date. It correctly handles all month and year transitions, including leap years, so you get an accurate result every time.
+                          This tool adds or subtracts the number of calendar days you enter from a start date. It handles all month and year changes, including leap years, so you get an accurate result every time.
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">

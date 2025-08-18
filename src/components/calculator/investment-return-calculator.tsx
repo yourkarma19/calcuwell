@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -67,39 +66,39 @@ export default function InvestmentReturnCalculator() {
         <Card>
             <CardHeader><CardTitle>About Return on Investment (ROI)</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Return on Investment (ROI) Calculator** is a simple yet powerful tool for evaluating the profitability of an investment. It measures the gain or loss generated on an investment relative to the amount of money invested. Whether you're a seasoned investor or just starting, understanding your ROI is fundamental to making smart financial choices and assessing the performance of your portfolio.</p>
+                <p>The ROI Calculator is a simple yet powerful tool for checking how profitable an investment was. It measures the gain or loss on an investment relative to its cost. Understanding your ROI is key to making smart financial choices and checking how well your portfolio is doing.</p>
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter the **Initial Investment** amount (the total cost of the investment).</li>
+                    <li>Enter the **Initial Investment** amount (the total cost).</li>
                     <li>Enter the **Final Value** of the investment (what it's worth now or when you sold it).</li>
                 </ol>
-                <p>The calculator will instantly display the net profit or loss in currency and the overall ROI as a percentage.</p>
+                <p>The calculator will instantly show the net profit or loss in currency and the overall ROI as a percentage.</p>
                 
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is Return on Investment (ROI)?</AccordionTrigger>
                         <AccordionContent>
-                            Return on Investment (ROI) is a performance measure used to evaluate the efficiency or profitability of an investment. It measures the amount of return on an investment relative to its cost. A high ROI means the investment's gains compare favorably to its cost.
+                            ROI is a measure used to check the efficiency of an investment. It measures the return of an investment relative to its cost. A high ROI means the investment's gains are good compared to its cost.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>How is ROI calculated?</AccordionTrigger>
                         <AccordionContent>
-                            The formula is `ROI = (Final Value - Initial Investment) / Initial Investment * 100%`. This calculation shows the percentage gain or loss on the investment. A positive ROI indicates a profit, while a negative ROI indicates a loss.
+                            The formula is `ROI = (Final Value - Initial Investment) / Initial Investment * 100%`. This calculation shows the percentage gain or loss on the investment. A positive ROI means a profit, while a negative ROI means a loss.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>What is a "good" ROI?</AccordionTrigger>
                         <AccordionContent>
-                           A "good" ROI is subjective and depends on the type of investment and its associated risk. For example, a 7-10% average annual return from the stock market is often considered good. However, a less risky investment like a government bond would have a much lower, but more predictable, ROI. The key is to compare an investment's ROI to other similar opportunities.
+                           A "good" ROI depends on the type of investment and its risk. For example, a 7-10% average annual return from the stock market is often seen as good. A less risky investment like a government bond would have a lower, but more predictable, ROI. The key is to compare an investment's ROI to other similar options.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-4">
-                        <AccordionTrigger>What are the limitations of ROI?</AccordionTrigger>
+                        <AccordionTrigger>What are the limits of ROI?</AccordionTrigger>
                         <AccordionContent>
-                           ROI does not consider the time period of an investment. For example, a 20% ROI over one year is much better than a 20% ROI over ten years. For comparing investments over different timeframes, it's often better to use metrics that account for time, such as the Annualized ROI.
+                           ROI does not consider the time period of an investment. For example, a 20% ROI over one year is much better than a 20% ROI over ten years. To compare investments over different timeframes, it's often better to use metrics that account for time, such as Annualized ROI.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

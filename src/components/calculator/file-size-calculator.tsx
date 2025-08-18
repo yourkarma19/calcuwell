@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -91,12 +90,19 @@ export default function FileSizeCalculator() {
         </Card>
         <Card>
           <CardHeader><CardTitle>About File Size & Bitrate</CardTitle></CardHeader>
-          <CardContent>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <p>This tool helps you estimate the size of a digital file. This is useful for video or audio files. You can find the size based on its length (duration) and quality (bitrate). This helps you plan for storage space or data usage.</p>
+            <h3>How to Use It</h3>
+            <ol>
+              <li>Enter the **Duration** of the file (e.g., 3 minutes).</li>
+              <li>Enter the **Bitrate** of the file (e.g., 128 kbit/s).</li>
+            </ol>
+            <p>The estimated file size will be shown automatically.</p>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is bitrate?</AccordionTrigger>
                 <AccordionContent>
-                  Bitrate is the number of bits processed per unit of time, usually seconds. For video and audio files, a higher bitrate generally means higher quality and a larger file size.
+                  Bitrate is the amount of data used to represent one second of audio or video. A higher bitrate usually means better quality and a larger file size. It is often measured in kilobits per second (kbit/s).
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

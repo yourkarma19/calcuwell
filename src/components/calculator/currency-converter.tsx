@@ -114,38 +114,38 @@ export default function CurrencyConverter() {
             <CardTitle>About the Currency Converter</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Currency Converter** is an essential tool for anyone dealing with international transactions, travel, or online shopping. It simplifies the process of converting one currency to another by using up-to-date (mock) exchange rates. Whether you're a business professional, a globetrotter, or an online shopper, this tool helps you understand the true cost of items in your local currency.</p>
+            <p>Our Currency Converter is a key tool for anyone dealing with international money, travel, or online shopping. It makes it easy to convert one currency to another using mock exchange rates. This tool helps you understand the true cost of items in your local currency.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>Enter the **Amount** you wish to convert in the first field.</li>
-                <li>Select the currency you are converting **from** using the dropdown menu.</li>
+                <li>Select the currency you are converting **from**.</li>
                 <li>Select the currency you want to convert **to**.</li>
             </ol>
-            <p>The converted amount will be displayed instantly. Use the swap button to quickly reverse the conversion.</p>
+            <p>The converted amount will be displayed instantly. Use the swap button to quickly reverse the currencies.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is an exchange rate?</AccordionTrigger>
                     <AccordionContent>
-                        An exchange rate is the value of one currency for the purpose of conversion to another. For example, if the USD to INR exchange rate is 83, it means 1 US Dollar is worth 83 Indian Rupees. These rates determine how much of one currency you get for another.
+                        An exchange rate is the value of one currency when converting to another. For example, if the USD to INR exchange rate is 83, it means 1 US Dollar is worth 83 Indian Rupees.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Why do exchange rates change?</AccordionTrigger>
                     <AccordionContent>
-                        Exchange rates fluctuate constantly due to a variety of economic and political factors. These include a country's inflation rate, interest rates set by its central bank, trade balances, political stability, and overall economic performance. This constant movement is why financial markets for currencies are active 24/7.
+                        Exchange rates change all the time because of many economic and political factors. These include inflation, interest rates, trade balances, and economic performance. This constant movement is why financial markets for currencies are always active.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                     <AccordionTrigger>What does "mock data" mean?</AccordionTrigger>
                     <AccordionContent>
-                        The exchange rates used in this calculator are for informational and demonstration purposes only and are based on pre-set "mock" data. They are not real-time market values and should not be used for actual financial transactions. For real trades, always consult a financial institution or a verified foreign exchange provider.
+                        The exchange rates in this calculator are for demonstration purposes only. They are not real-time market values. You should not use them for actual financial trades. For real trades, always check with a bank or a verified currency exchange service.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
                     <AccordionTrigger>What is a currency pair?</AccordionTrigger>
                     <AccordionContent>
-                        A currency pair quotes the value of one currency relative to another. The first currency is the "base" currency, and the second is the "quote" currency. For example, in the pair EUR/USD = 1.08, one Euro (the base) is worth 1.08 US Dollars (the quote).
+                        A currency pair shows the value of one currency against another. The first currency is the "base" and the second is the "quote." For example, in the pair EUR/USD = 1.08, one Euro is worth 1.08 US Dollars.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

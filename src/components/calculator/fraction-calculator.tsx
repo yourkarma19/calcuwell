@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -99,12 +98,12 @@ export default function FractionCalculator() {
             <CardTitle>About Fraction Calculations</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Fraction Calculator** is designed to simplify arithmetic operations on fractions. Whether you're a student learning about fractions for the first time or a professional needing a quick calculation, this tool provides instant and accurate results for adding, subtracting, multiplying, and dividing fractions. It also automatically simplifies the result to its lowest terms.</p>
+            <p>Our Fraction Calculator is designed to simplify math with fractions. It provides instant and accurate results for adding, subtracting, multiplying, and dividing fractions. It also automatically simplifies the result to its lowest terms.</p>
             
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>Enter the numerator and denominator for the **first fraction**.</li>
-                <li>Select the desired arithmetic **operator** (+, -, ×, ÷).</li>
+                <li>Select the desired math **operator** (+, -, ×, ÷).</li>
                 <li>Enter the numerator and denominator for the **second fraction**.</li>
             </ol>
             <p>The result of the calculation will be displayed instantly, already simplified for you.</p>
@@ -114,19 +113,19 @@ export default function FractionCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="font-semibold">How do you add fractions with different denominators?</AccordionTrigger>
                     <AccordionContent>
-                        <p>To add fractions with different denominators, you must first find a common denominator. This is a number that both denominators can divide into, preferably the smallest one (the Least Common Multiple or LCM). Once both fractions are converted to have the same denominator, you can add their numerators together. For example, to add 1/2 + 1/4, you convert 1/2 to 2/4. Then, you simply add the numerators: 2/4 + 1/4 = 3/4.</p>
+                        <p>To add fractions with different denominators, you must first find a common denominator. This is a number that both denominators can divide into. Once both fractions have the same denominator, you can add their numerators. For example, to add 1/2 + 1/4, you convert 1/2 to 2/4. Then, you add the numerators: 2/4 + 1/4 = 3/4.</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger className="font-semibold">How do you simplify a fraction?</AccordionTrigger>
                     <AccordionContent>
-                        <p>To simplify a fraction, you find the largest number that can divide both the numerator and the denominator evenly. This number is called the Greatest Common Divisor (GCD). You then divide both the top and bottom numbers by the GCD to get the simplified fraction. For example, for the fraction 12/16, the GCD is 4. Dividing both parts by 4 gives you the simplified fraction 3/4.</p>
+                        <p>To simplify a fraction, you find the largest number that divides both the numerator and the denominator evenly. This number is called the Greatest Common Divisor (GCD). You then divide both the top and bottom numbers by the GCD. For example, for the fraction 12/16, the GCD is 4. Dividing both parts by 4 gives you the simplified fraction 3/4.</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                     <AccordionTrigger className="font-semibold">What is the difference between a proper and improper fraction?</AccordionTrigger>
                     <AccordionContent>
-                       <p>A **proper fraction** is one where the numerator is smaller than the denominator (e.g., 3/4), representing a value less than 1. An **improper fraction** is one where the numerator is larger than or equal to the denominator (e.g., 5/4), representing a value greater than or equal to 1. Improper fractions can also be written as mixed numbers (e.g., 5/4 is the same as 1 ¼).</p>
+                       <p>A **proper fraction** is one where the top number is smaller than the bottom number (e.g., 3/4). An **improper fraction** is one where the top number is larger than or equal to the bottom number (e.g., 5/4). Improper fractions can also be written as mixed numbers (e.g., 5/4 is the same as 1 ¼).</p>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

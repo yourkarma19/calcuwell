@@ -114,14 +114,14 @@ export default function BinaryConverter() {
             <CardTitle>About the Number System Converter</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Number System Converter** is an essential tool for programmers, computer science students, and anyone working with low-level data. It allows you to seamlessly translate numbers between the four most common number systems in computing: **Decimal (Base-10)**, **Binary (Base-2)**, **Hexadecimal (Base-16)**, and **Octal (Base-8)**. Understanding these systems is fundamental to computing, and this tool makes their conversion effortless.</p>
+            <p>Our Number System Converter is a key tool for programmers and computer science students. It helps you translate numbers between the four most common systems in computing: Decimal (Base-10), Binary (Base-2), Hexadecimal (Base-16), and Octal (Base-8). This tool makes their conversion easy.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>Enter the number you want to convert in the "From" field.</li>
                 <li>Select its current number system (e.g., Decimal).</li>
                 <li>Select the target number system you want to convert to (e.g., Binary).</li>
             </ol>
-            <p>The converted value will appear instantly in the "To" field. The input is validated to ensure you only enter characters appropriate for the selected base.</p>
+            <p>The converted value will appear instantly in the "To" field. The input only allows characters that are valid for the chosen system.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
@@ -129,28 +129,28 @@ export default function BinaryConverter() {
                     <AccordionContent>
                         <ul className="list-disc pl-5 space-y-2">
                             <li><strong>Decimal (Base-10):</strong> The system we use every day, with 10 digits (0-9).</li>
-                            <li><strong>Binary (Base-2):</strong> The fundamental language of computers, using only two digits: 0 and 1. Each digit is a "bit".</li>
-                            <li>**Hexadecimal (Base-16):** Uses 16 symbols (0-9 and A-F). It's a compact way to represent binary data, as one hex digit represents four binary digits.</li>
-                            <li>**Octal (Base-8):** Uses 8 digits (0-7). It was more common in early computing systems.</li>
+                            <li><strong>Binary (Base-2):</strong> The language of computers, using only two digits: 0 and 1. Each digit is a "bit".</li>
+                            <li>**Hexadecimal (Base-16):** Uses 16 symbols (0-9 and A-F). It's a short way to represent binary data, as one hex digit represents four binary digits.</li>
+                            <li>**Octal (Base-8):** Uses 8 digits (0-7). It was more common in older computer systems.</li>
                         </ul>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Why is binary important in computing?</AccordionTrigger>
                     <AccordionContent>
-                        Computers operate using transistors, which can be in one of two states: on or off. These two states are perfectly represented by the binary digits 1 (on) and 0 (off). All computer data—from text and images to executable programs—is ultimately stored and processed in binary form.
+                        Computers use transistors that have two states: on or off. The binary digits 1 (on) and 0 (off) perfectly represent these states. All computer data, like text and images, is stored and processed in binary form.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                     <AccordionTrigger>How does the conversion work?</AccordionTrigger>
                     <AccordionContent>
-                        This calculator works by first converting the input number from its original base into the decimal (base-10) system. Once it has the decimal value, it can then easily convert that value into any other target base. This two-step process (Source Base → Decimal → Target Base) is a standard method for number system conversion.
+                        This calculator first converts the input number into the decimal (base-10) system. Once it has the decimal value, it can then easily convert that value into any other target base. This two-step process is a standard way to convert number systems.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
                     <AccordionTrigger>What is Hexadecimal used for?</AccordionTrigger>
                     <AccordionContent>
-                        Hexadecimal is very common in computing because it's a human-friendly way to represent long binary numbers. For example, it's used for color codes on the web (e.g., `#FFC0CB` is pink), defining memory addresses, and in debugging. A single hexadecimal digit can represent four binary digits (a nibble), making `1111` in binary simply `F` in hex.
+                        Hexadecimal is common in computing because it's a simple way to show long binary numbers. For example, it's used for color codes on the web (e.g., `#FFC0CB` is pink) and for memory addresses. A single hexadecimal digit can represent four binary digits.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

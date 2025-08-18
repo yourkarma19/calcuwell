@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -69,39 +68,39 @@ export default function FactorialCalculator() {
       <Card>
         <CardHeader><CardTitle>About the Factorial Calculator</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Factorial Calculator** is a mathematical tool designed to find the factorial of any non-negative integer. A factorial, symbolized by an exclamation mark (!), is a cornerstone of combinatorics and probability theory. This calculator simplifies a potentially tedious manual calculation, providing instant and accurate results for students, mathematicians, and anyone working with permutations and combinations.</p>
+            <p>The Factorial Calculator is a tool for finding the factorial of any non-negative integer. A factorial, shown by an exclamation mark (!), is a key idea in probability. This calculator simplifies a long manual calculation. It gives instant and accurate results for students and mathematicians.</p>
             
             <h3>How to Use the Calculator</h3>
-            <p>Using the tool is straightforward:</p>
+            <p>Using the tool is simple:</p>
             <ol>
                 <li>Enter a non-negative integer (0 or greater) into the input box.</li>
             </ol>
-            <p>The calculator will instantly display the factorial of that number. Note that factorials grow very quickly, so the calculator has a limit to prevent computational overflow (usually around 170!).</p>
+            <p>The calculator will instantly show the factorial of that number. Factorials grow very quickly, so the calculator has a limit to prevent errors (around 170!).</p>
 
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>What Does the Exclamation Mark (!) Mean in Math?</AccordionTrigger>
+                    <AccordionTrigger>What Does an Exclamation Mark (!) Mean in Math?</AccordionTrigger>
                     <AccordionContent>
-                        The exclamation mark denotes a factorial operation. The factorial of a non-negative integer 'n', written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.
+                        The exclamation mark shows a factorial. The factorial of a non-negative integer 'n', written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>How to Calculate a Factorial Manually</AccordionTrigger>
                     <AccordionContent>
-                        To calculate a factorial, you multiply the number by every positive integer smaller than it, all the way down to 1. For example, to find the factorial of 4 (4!), you would compute 4 × 3 × 2 × 1, which equals 24.
+                        To calculate a factorial, multiply the number by every positive whole number smaller than it. For example, to find the factorial of 4 (4!), you would compute 4 × 3 × 2 × 1, which equals 24.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                    <AccordionTrigger>The Special Case: What is Zero Factorial (0!) and Why Does it Equal 1?</AccordionTrigger>
+                    <AccordionTrigger>What is Zero Factorial (0!)?</AccordionTrigger>
                     <AccordionContent>
-                       By definition, 0! is equal to 1. This is a convention that makes many mathematical formulas, especially in combinatorics (like permutations and combinations), work correctly. It represents the single way to arrange zero objects, which is to do nothing.
+                       By definition, 0! is equal to 1. This is a rule that makes many math formulas work correctly. It represents the single way to arrange zero objects, which is to do nothing.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Where are factorials used in real life?</AccordionTrigger>
                     <AccordionContent>
-                       Factorials are fundamental in probability and combinatorics. They are used to calculate the number of possible arrangements or sequences of a set of items, such as figuring out the number of ways a group of people can stand in a line or the number of possible outcomes in a lottery.
+                       Factorials are key in probability. They are used to calculate the number of possible ways to arrange a set of items. For example, finding the number of ways a group of people can stand in a line.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
