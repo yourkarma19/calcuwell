@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   }
 
   return {
-    title: `${category.name} Calculators | CalcPro`,
-    description: `Browse a collection of free online ${category.name.toLowerCase()} calculators. Instantly solve problems in ${category.name.toLowerCase()} with our easy-to-use tools.`,
+    title: `${category.name} Calculators | Free Online Tools | CalcPro`,
+    description: `Browse a collection of free online ${category.name.toLowerCase()} calculators. Instantly solve problems for ${category.name.toLowerCase()} with our easy-to-use tools.`,
     alternates: {
         canonical: `/categories/${awaitedParams.slug}`,
     },

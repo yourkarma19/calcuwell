@@ -8,7 +8,7 @@ import CalculatorCard from '@/components/calculator/calculator-card';
 
 export const metadata: Metadata = {
   title: 'CalcPro Blog | Insights & Explanations',
-  description: 'Explore articles from the CalcPro team. We break down complex topics, from math concepts to financial planning, behind our free online calculators.',
+  description: 'Explore articles that break down complex topics in math, finance, and health. Get simple explanations for the concepts behind our free online calculators.',
   alternates: {
     canonical: '/blog',
   },

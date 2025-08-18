@@ -44,7 +44,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Percent',
     seoTitle: 'Percentage Calculator | Find Percentages Online | CalcPro',
-    metaDescription: 'Easily calculate percentages with our free online tool. Find the percentage of a number, percent increase/decrease, and solve other common problems.',
+    metaDescription: 'Easily calculate percentages with our free online tool. Find the percentage of a number, percent increase/decrease, and other common problems.',
   },
   {
     slug: 'fraction-calculator',
@@ -52,8 +52,8 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add, subtract, multiply, and divide fractions.',
     category: 'Math',
     iconName: 'Pi',
-    seoTitle: 'Fraction Calculator | Add, Subtract, Multiply & Divide | CalcPro',
-    metaDescription: 'Our free fraction calculator makes fraction math easy. Add, subtract, multiply, and divide proper and improper fractions with instant results.',
+    seoTitle: 'Fraction Calculator | Add, Subtract & More | CalcPro',
+    metaDescription: 'Our free fraction calculator makes math easy. Add, subtract, multiply, and divide proper and improper fractions with step-by-step results.',
   },
   {
     slug: 'mixed-number-calculator',
@@ -61,7 +61,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     iconName: 'Pi',
-    seoTitle: 'Mixed Number Calculator | Add & Subtract Fractions | CalcPro',
+    seoTitle: 'Mixed Number Calculator | Fractions Tool | CalcPro',
     metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.',
   },
   {
@@ -98,7 +98,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     seoTitle: 'Standard Deviation Calculator | Sample & Population | CalcPro',
-    metaDescription: 'Calculate the standard deviation, variance, and mean for a sample or population data set. Understand the spread and consistency of your data.',
+    metaDescription: 'Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with this tool.',
   },
   {
     slug: 'probability-calculator',
@@ -107,7 +107,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Beaker',
     seoTitle: 'Probability Calculator | Find Likelihood of Events | CalcPro',
-    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use online tool. Perfect for solving homework problems and understanding chance.',
+    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use online tool. Perfect for solving problems and understanding chance.',
   },
   {
     slug: 'permutation-combination-calculator',
@@ -116,7 +116,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     seoTitle: 'Permutation & Combination Calculator (nPr, nCr) | CalcPro',
-    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Our tool helps you understand when order matters in probability and combinatorics.',
+    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability and combinatorics with this tool.',
   },
   {
     slug: 'factorial-calculator',
@@ -210,7 +210,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
     seoTitle: 'Loan EMI Calculator | Free EMI Calculation Tool | CalcPro',
-    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free and easy-to-use tool. See how extra payments can reduce your loan tenure.',
+    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free tool. See how extra payments can reduce your loan tenure and save you money.',
   },
   {
     slug: 'loan-comparison-calculator',
@@ -229,7 +229,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Home',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
     seoTitle: 'Mortgage Calculator | Estimate Monthly Payments | CalcPro',
-    metaDescription: 'Use our free mortgage calculator to estimate your monthly payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget.',
+    metaDescription: 'Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our free calculator.',
   },
   {
     slug: 'car-loan-calculator',
@@ -259,7 +259,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'PiggyBank',
     formula: 'A = P(1 + r/n)^(nt)',
     seoTitle: 'Compound Interest Calculator | Future Value Tool | CalcPro',
-    metaDescription: 'See how your savings can grow with the power of compound interest. Our calculator projects your investment growth over time with this essential tool.',
+    metaDescription: 'See how your savings can grow with compound interest. Our calculator projects your investment growth over time with this essential tool.',
   },
   {
     slug: 'savings-calculator',
@@ -268,7 +268,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'PiggyBank',
     seoTitle: 'Savings Growth Calculator | Future Value Planner | CalcPro',
-    metaDescription: 'Project the future value of your savings with our easy calculator. See how initial deposits, monthly contributions, and interest rates impact your growth.',
+    metaDescription: 'Project the future value of your savings with our easy calculator. See how deposits, contributions, and interest rates impact your growth.',
   },
   {
     slug: 'retirement-calculator',
@@ -295,7 +295,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'AreaChart',
     seoTitle: 'Stock Profit & Loss Calculator | Trade ROI Tool | CalcPro',
-    metaDescription: 'Determine the profit or loss from your stock trades. Factor in buy/sell prices, quantity, and commissions to find your true Return on Investment (ROI).',
+    metaDescription: 'Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI).',
   },
   {
     slug: 'currency-converter',
@@ -331,7 +331,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Wallet',
     seoTitle: 'Tip Calculator | Calculate & Split The Bill Easily | CalcPro',
-    metaDescription: 'A quick and easy tip calculator. Determine the tip amount for any bill, adjust the percentage, and split the total cost among any number of people.',
+    metaDescription: 'A quick and easy tip calculator. Determine the tip amount for any bill and split the total cost among any number of people.',
   },
   {
     slug: 'discount-calculator',
@@ -349,7 +349,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Briefcase',
     seoTitle: 'Salary Calculator | Estimate Your Net Take-Home Pay | CalcPro',
-    metaDescription: 'Estimate your take-home pay by entering your gross salary, pay period, and tax/deduction rates. See a breakdown of your net income.',
+    metaDescription: 'Estimate your take-home pay by entering your gross salary and tax/deduction rates. See a breakdown of your net income for better budgeting.',
   },
   {
     slug: 'overtime-pay-calculator',
@@ -358,7 +358,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Clock',
     seoTitle: 'Overtime Pay Calculator | Estimate Your OT Earnings | CalcPro',
-    metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete earnings.',
+    metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete earnings for the week.',
   },
   {
     slug: 'break-even-point-calculator',
@@ -483,7 +483,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Droplets',
     seoTitle: 'Daily Water Intake Calculator | Hydration Needs | CalcPro',
-    metaDescription: 'Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated and healthy with our personalized calculation.',
+    metaDescription: 'Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated with our personalized calculation.',
   },
   {
     slug: 'heart-rate-zone-calculator',
@@ -633,7 +633,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'Globe2',
     seoTitle: 'Time Zone Converter | World Time Zone Tool | CalcPro',
-    metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly for meetings or travel.',
+    metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
   },
   {
     slug: 'world-clock-calculator',
@@ -755,7 +755,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     iconName: 'Circle',
-    seoTitle: 'Circle Calculator | Area, Circumference, Diameter | CalcPro',
+    seoTitle: 'Circle Calculator | Area, Circumference & Diameter | CalcPro',
     metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas.',
   },
   {
