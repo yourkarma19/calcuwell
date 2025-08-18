@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
 
   return {
     title: calculator.seoTitle || `${calculator.name} | CalcPro`,
-    description: calculator.metaDescription || `Use the free ${calculator.name} on CalcPro. ${calculator.description}.`,
+    description: calculator.metaDescription,
     alternates: {
         canonical: `/calculators/${awaitedParams.slug}`,
     },

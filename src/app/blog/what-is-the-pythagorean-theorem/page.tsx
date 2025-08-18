@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'What is the Pythagorean Theorem? | CalcPro',
-  description: 'An in-depth explanation of the Pythagorean theorem, its history, proof, and real-world applications. Learn how a² + b² = c² works.',
+  description: 'Learn the history, proof, and real-world applications of the Pythagorean theorem. A simple guide to understanding the a² + b² = c² formula.',
   alternates: {
     canonical: '/blog/what-is-the-pythagorean-theorem',
   },

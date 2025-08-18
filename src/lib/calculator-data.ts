@@ -13,7 +13,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Lifestyle',
     iconName: 'Heart',
     seoTitle: 'Wedding Budget Calculator | Free Planner Tool | CalcPro',
-    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, photography, and more to create a realistic wedding budget.',
+    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, photography, and more to stay on budget.',
     formula: 'Total = Venue + (Catering × Guests) + Photography + Dress + ...'
   },
   {
@@ -23,7 +23,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Lifestyle',
     iconName: 'Dog',
     seoTitle: 'Pet Care Cost Calculator | Dog & Cat Expenses | CalcPro',
-    metaDescription: 'Estimate the annual and monthly cost of owning a pet. Our calculator helps you budget for food, vet visits, grooming, and other expenses for your dog, cat, or other pet.',
+    metaDescription: 'Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog or cat.',
     formula: 'Annual Cost = (Food × 12) + (Vet × Visits) + ...'
   },
 
@@ -35,7 +35,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Calculator',
     seoTitle: 'Free Online Basic Calculator | Simple Math Tool | CalcPro',
-    metaDescription: 'A simple and fast online basic calculator for your everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease on this free four-function calculator.',
+    metaDescription: 'A simple and fast online calculator for your everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease.',
   },
   {
     slug: 'percentage-calculator',
@@ -44,7 +44,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Percent',
     seoTitle: 'Percentage Calculator | Find Percentages Online | CalcPro',
-    metaDescription: 'Easily calculate percentages with our free online percentage calculator. Find percentage of a number, percentage increase or decrease, and solve other common percentage problems.',
+    metaDescription: 'Easily calculate percentages with our free online tool. Find the percentage of a number, percent increase/decrease, and solve other common problems.',
   },
   {
     slug: 'fraction-calculator',
@@ -53,7 +53,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Pi',
     seoTitle: 'Fraction Calculator | Add, Subtract, Multiply & Divide | CalcPro',
-    metaDescription: 'Our free fraction calculator makes fraction math easy. Add, subtract, multiply, and divide proper and improper fractions, with step-by-step results.',
+    metaDescription: 'Our free fraction calculator makes fraction math easy. Add, subtract, multiply, and divide proper and improper fractions with instant results.',
   },
   {
     slug: 'mixed-number-calculator',
@@ -62,7 +62,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Pi',
     seoTitle: 'Mixed Number Calculator | Add & Subtract Fractions | CalcPro',
-    metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers and mixed fractions. Get accurate answers with steps.',
+    metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.',
   },
   {
     slug: 'ratio-calculator',
@@ -71,7 +71,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Scale',
     seoTitle: 'Ratio Calculator | Simplify & Solve Proportions | CalcPro',
-    metaDescription: 'Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy to use, and perfect for students and professionals.',
+    metaDescription: 'Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for students and professionals.',
   },
   {
     slug: 'proportion-calculator',
@@ -80,7 +80,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     seoTitle: 'Proportion Calculator | Solve for X in Ratios | CalcPro',
-    metaDescription: 'An easy-to-use proportion calculator that helps you solve for the missing value (x) in a proportion. Understand cross-multiplication with step-by-step examples.',
+    metaDescription: 'An easy-to-use proportion calculator that helps you solve for the missing value in a proportion using cross-multiplication. Includes examples.',
   },
   {
     slug: 'mean-median-mode-calculator',
@@ -89,7 +89,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     seoTitle: 'Mean, Median, & Mode Calculator | Find Averages | CalcPro',
-    metaDescription: 'Quickly find the mean, median, mode, and range of any data set. Our calculator explains each measure of central tendency to help you understand your data.',
+    metaDescription: 'Quickly find the mean, median, mode, and range of any data set. Our calculator helps you understand the central tendency of your data.',
   },
   {
     slug: 'standard-deviation-calculator',
@@ -98,7 +98,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     seoTitle: 'Standard Deviation Calculator | Sample & Population | CalcPro',
-    metaDescription: 'A powerful calculator to find the standard deviation, variance, and mean of a sample or population data set. Includes formulas and step-by-step explanations.',
+    metaDescription: 'Calculate the standard deviation, variance, and mean for a sample or population data set. Understand the spread and consistency of your data.',
   },
   {
     slug: 'probability-calculator',
@@ -107,7 +107,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Beaker',
     seoTitle: 'Probability Calculator | Find Likelihood of Events | CalcPro',
-    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use probability calculator. Perfect for solving homework problems involving dice, coins, and more.',
+    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use online tool. Perfect for solving homework problems and understanding chance.',
   },
   {
     slug: 'permutation-combination-calculator',
@@ -116,7 +116,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     seoTitle: 'Permutation & Combination Calculator (nPr, nCr) | CalcPro',
-    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Our tool helps you understand the key difference: whether the order of selection matters.',
+    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Our tool helps you understand when order matters in probability and combinatorics.',
   },
   {
     slug: 'factorial-calculator',
@@ -126,7 +126,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Variable',
     formula: 'n!',
     seoTitle: 'Factorial Calculator | Find n! For Any Integer | CalcPro',
-    metaDescription: 'An online factorial calculator that quickly finds the factorial (n!) of any non-negative integer. Includes the factorial formula and an explanation of zero factorial.',
+    metaDescription: 'Our online factorial calculator quickly finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.',
   },
   {
     slug: 'lcm-gcd-calculator',
@@ -135,7 +135,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     seoTitle: 'LCM & GCD Calculator | Free Number Tool | CalcPro',
-    metaDescription: 'Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. Our tool explains the methods and their applications.',
+    metaDescription: 'Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. A fundamental tool for number theory.',
   },
   {
     slug: 'square-root-cube-root-calculator',
@@ -144,7 +144,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     seoTitle: 'Square Root & Cube Root Calculator | Find √ & ∛ | CalcPro',
-    metaDescription: 'A simple calculator to find the square root and cube root of any number, including negative numbers. Fast, accurate, and easy to use.',
+    metaDescription: 'A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast, accurate, and easy to use.',
   },
   {
     slug: 'exponent-power-calculator',
@@ -153,7 +153,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     seoTitle: 'Exponent & Power Calculator | Calculate x^y Online | CalcPro',
-    metaDescription: 'Quickly calculate the result of any base raised to the power of any exponent. Handles both positive and negative, integer and fractional exponents.',
+    metaDescription: 'Quickly calculate the result of a base raised to a power. Handles both positive and negative, integer and fractional exponents with ease.',
   },
   {
     slug: 'logarithm-calculator',
@@ -162,7 +162,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     seoTitle: 'Logarithm Calculator | Log & Natural Log (ln) Tool | CalcPro',
-    metaDescription: 'An easy-to-use log calculator. Solve for the logarithm of any number with any base, including natural logs (ln) and common logs (log10).',
+    metaDescription: 'An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs (base 10) and natural logs (base e).',
   },
   {
     slug: 'equation-solver',
@@ -189,7 +189,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     seoTitle: 'Complex Number Calculator | Add, Subtract & More | CalcPro',
-    metaDescription: 'Perform arithmetic operations on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.',
+    metaDescription: 'Perform arithmetic on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.',
   },
   {
     slug: 'roman-numeral-converter',
@@ -198,7 +198,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'ArrowRightLeft',
     seoTitle: 'Roman Numeral Converter | To & From Roman Numerals | CalcPro',
-    metaDescription: 'A fast and accurate Roman numeral converter. Easily translate numbers to Roman numerals and back. Includes conversion rules and examples.',
+    metaDescription: 'A fast and accurate Roman numeral converter. Easily translate numbers to Roman numerals and back, for values between 1 and 3,999.',
   },
 
   // Finance & Money
@@ -210,7 +210,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
     seoTitle: 'Loan EMI Calculator | Free EMI Calculation Tool | CalcPro',
-    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free and easy-to-use calculator. See how extra payments can reduce your loan tenure and save you interest.',
+    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free and easy-to-use tool. See how extra payments can reduce your loan tenure.',
   },
   {
     slug: 'loan-comparison-calculator',
@@ -219,7 +219,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Scale',
     seoTitle: 'Loan Comparison Calculator | Compare Two Loans | CalcPro',
-    metaDescription: 'Compare two loans instantly. Our Loan Comparison Calculator shows you the EMI, total interest, and total cost side-by-side to help you choose the cheapest option.',
+    metaDescription: 'Compare two loans instantly. Our calculator shows the EMI and total cost side-by-side to help you choose the cheapest option for your needs.',
   },
   {
     slug: 'mortgage-calculator',
@@ -229,7 +229,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Home',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
     seoTitle: 'Mortgage Calculator | Estimate Monthly Payments | CalcPro',
-    metaDescription: 'Use our free mortgage calculator to estimate your monthly payment, including principal, interest, taxes, and insurance (PITI). Plan your home purchase budget.'
+    metaDescription: 'Use our free mortgage calculator to estimate your monthly payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget.',
   },
   {
     slug: 'car-loan-calculator',
@@ -239,7 +239,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Car',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
     seoTitle: 'Car Loan Calculator | Estimate Your Auto Loan EMI | CalcPro',
-    metaDescription: 'Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. Includes amortization.'
+    metaDescription: 'Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. Plan your budget.',
   },
   {
     slug: 'simple-interest-calculator',
@@ -249,7 +249,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'PiggyBank',
     formula: 'P * R * T / 100',
     seoTitle: 'Simple Interest Calculator | Using SI Formula | CalcPro',
-    metaDescription: 'Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula (Principal × Rate × Time) and explains how it works.',
+    metaDescription: 'Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula and explains how it works.',
   },
   {
     slug: 'compound-interest-calculator',
@@ -259,7 +259,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'PiggyBank',
     formula: 'A = P(1 + r/n)^(nt)',
     seoTitle: 'Compound Interest Calculator | Future Value Tool | CalcPro',
-    metaDescription: 'See how your savings can grow with the power of compound interest. Our calculator projects your investment growth over time and explains the compounding formula.',
+    metaDescription: 'See how your savings can grow with the power of compound interest. Our calculator projects your investment growth over time with this essential tool.',
   },
   {
     slug: 'savings-calculator',
@@ -268,7 +268,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'PiggyBank',
     seoTitle: 'Savings Growth Calculator | Future Value Planner | CalcPro',
-    metaDescription: 'Project the future value of your savings with our easy-to-use calculator. See how initial deposits, monthly contributions, and interest rates impact your growth.',
+    metaDescription: 'Project the future value of your savings with our easy calculator. See how initial deposits, monthly contributions, and interest rates impact your growth.',
   },
   {
     slug: 'retirement-calculator',
@@ -286,7 +286,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'AreaChart',
     seoTitle: 'ROI Calculator | Calculate Return on Investment | CalcPro',
-    metaDescription: 'Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage quickly.',
+    metaDescription: 'Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.',
   },
   {
     slug: 'stock-profit-loss-calculator',
@@ -295,7 +295,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'AreaChart',
     seoTitle: 'Stock Profit & Loss Calculator | Trade ROI Tool | CalcPro',
-    metaDescription: 'Determine the profit or loss from your stock trades with our easy-to-use calculator. Factor in buy/sell prices, quantity, and commissions to find your true ROI.',
+    metaDescription: 'Determine the profit or loss from your stock trades. Factor in buy/sell prices, quantity, and commissions to find your true Return on Investment (ROI).',
   },
   {
     slug: 'currency-converter',
@@ -304,7 +304,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Globe',
     seoTitle: 'Currency Converter | Free Online Exchange Rates | CalcPro',
-    metaDescription: 'A simple currency converter for real-time exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.',
+    metaDescription: 'A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.',
   },
   {
     slug: 'inflation-calculator',
@@ -313,7 +313,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Banknote',
     seoTitle: 'Inflation Calculator | Value of Money Over Time | CalcPro',
-    metaDescription: 'Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount and a year range to see its value today.',
+    metaDescription: 'Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount and year range to see its value.',
   },
   {
     slug: 'vat-gst-calculator',
@@ -322,7 +322,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Tag',
     seoTitle: 'VAT & GST Calculator | Add or Remove Sales Tax | CalcPro',
-    metaDescription: 'A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate for accurate calculations.',
+    metaDescription: 'A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate.',
   },
   {
     slug: 'tip-calculator',
@@ -340,7 +340,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Tag',
     seoTitle: 'Discount Calculator | Find The Final Sale Price | CalcPro',
-    metaDescription: 'Easily calculate the final price after a discount. Enter the original price and discount percentage to find out how much you will pay and how much you save.',
+    metaDescription: 'Easily calculate the final price after a discount. Enter the original price and discount percentage to find out how much you will pay and save.',
   },
   {
     slug: 'salary-calculator',
@@ -358,7 +358,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Clock',
     seoTitle: 'Overtime Pay Calculator | Estimate Your OT Earnings | CalcPro',
-    metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, overtime hours, and overtime multiplier to see your complete earnings.',
+    metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete earnings.',
   },
   {
     slug: 'break-even-point-calculator',
@@ -367,7 +367,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Briefcase',
     seoTitle: 'Break-Even Point Calculator | Business Analysis | CalcPro',
-    metaDescription: 'Determine the break-even point for your business. Enter your fixed costs, variable costs, and price per unit to find out how many units you need to sell.',
+    metaDescription: 'Determine the break-even point for your business. Enter fixed costs, variable costs, and price per unit to find how many units you need to sell.',
   },
   {
     slug: 'business-profit-margin-calculator',
@@ -376,7 +376,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Briefcase',
     seoTitle: 'Profit Margin Calculator | Business Profitability | CalcPro',
-    metaDescription: 'Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy-to-use financial tool.',
+    metaDescription: 'Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.',
   },
   {
     slug: 'credit-card-payoff-calculator',
@@ -385,7 +385,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'CreditCard',
     seoTitle: 'Credit Card Payoff Calculator | Debt Repayment Plan | CalcPro',
-    metaDescription: 'Find out how long it will take to pay off your credit card balance. Enter your balance, APR, and monthly payment to see your payoff schedule and total interest.',
+    metaDescription: 'Find out how long it will take to pay off your credit card balance. See your payoff schedule and total interest paid based on your payments.',
   },
 
   // Health & Fitness
@@ -417,7 +417,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'HeartPulse',
     seoTitle: 'Daily Calorie Calculator | How Many Calories To Eat? | CalcPro',
-    metaDescription: 'Estimate the number of calories you need to consume daily to maintain your current weight, based on your age, gender, weight, height, and activity level.',
+    metaDescription: 'Estimate the calories you need daily to maintain your weight, based on your age, gender, height, weight, and activity level.'
   },
   {
     slug: 'ideal-weight-calculator',
@@ -446,7 +446,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Bone',
     seoTitle: 'Lean Body Mass Calculator | Free LBM Tool | CalcPro',
-    metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle, bone, and organs.',
+    metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle, bone, and organs.'
   },
   {
     slug: 'waist-to-hip-ratio-calculator',
@@ -455,7 +455,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Ruler',
     seoTitle: 'Waist-to-Hip Ratio Calculator | WHR & Health Risk | CalcPro',
-    metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means for your health.',
+    metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means for your health.'
   },
   {
     slug: 'pregnancy-due-date-calculator',
@@ -465,7 +465,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Baby',
     formula: "Naegele's rule",
     seoTitle: 'Pregnancy Due Date Calculator | Baby Delivery Date | CalcPro',
-    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.',
+    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.'
   },
   {
     slug: 'ovulation-calculator',
@@ -474,7 +474,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'CalendarClock',
     seoTitle: 'Ovulation Calculator | Predict Your Fertile Window | CalcPro',
-    metaDescription: 'Estimate your fertile window and ovulation date based on your menstrual cycle length. Our ovulation calculator helps you predict your most fertile days to increase your chances of conception.',
+    metaDescription: 'Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days to help you conceive.',
   },
   {
     slug: 'water-intake-calculator',
@@ -492,7 +492,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'HeartPulse',
     seoTitle: 'Heart Rate Zone Calculator | Target HR Training | CalcPro',
-    metaDescription: 'Determine your target heart rate zones for exercise. Use our calculator to find your optimal training zones for fat burning, cardio, and peak performance.',
+    metaDescription: 'Determine your target heart rate zones for exercise. Use our calculator to find your optimal zones for fat burning, cardio, and peak performance.',
   },
   {
     slug: 'vo2-max-calculator',
@@ -501,7 +501,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Wind',
     seoTitle: 'VO₂ Max Calculator | Estimate Aerobic Capacity | CalcPro',
-    metaDescription: 'Estimate your VO₂ max, a key indicator of your cardiovascular fitness and aerobic endurance. This non-exercise estimation is based on your resting heart rate and age.',
+    metaDescription: 'Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate and age.',
   },
   {
     slug: 'bac-calculator',
@@ -521,7 +521,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Conversions',
     iconName: 'Ruler',
     seoTitle: 'Universal Unit Converter | Length, Weight, Temp | CalcPro',
-    metaDescription: 'A versatile online unit converter for a wide range of measurements, including length, weight, temperature, area, volume, and speed. Fast and easy to use.',
+    metaDescription: 'A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for a wide range of measurements.',
   },
   {
     slug: 'data-storage-converter',
@@ -530,7 +530,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Conversions',
     iconName: 'Database',
     seoTitle: 'Data Storage Converter | KB, MB, GB, TB, PB | CalcPro',
-    metaDescription: 'Convert between various units of digital data storage, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).',
+    metaDescription: 'Convert between digital data storage units, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).',
   },
   {
     slug: 'data-transfer-rate-converter',
@@ -539,7 +539,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Conversions',
     iconName: 'Shuffle',
     seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s Tool | CalcPro',
-    metaDescription: 'Convert between different data transfer speed units, such as megabits per second (Mbps) to megabytes per second (MB/s). Essential for internet speed and file download calculations.',
+    metaDescription: 'Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed and file download calculations.',
   },
   {
     slug: 'time-converter',
@@ -548,7 +548,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Conversions',
     iconName: 'Clock',
     seoTitle: 'Time Converter | Hours, Minutes, Seconds & More | CalcPro',
-    metaDescription: 'A simple and fast time converter for converting between various units of time, including seconds, minutes, hours, days, weeks, and years.',
+    metaDescription: 'A simple and fast time converter for various units of time, including seconds, minutes, hours, days, weeks, and years.',
   },
   {
     slug: 'energy-converter',
@@ -605,7 +605,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'CalendarClock',
     formula: 'Current Date - Date of Birth',
     seoTitle: 'Age Calculator | How Old Am I? | Birthday Tool | CalcPro',
-    metaDescription: 'Find your exact age in years, months, and days with our easy-to-use online age calculator. Simply enter your date of birth to get your detailed chronological age.',
+    metaDescription: 'Find your exact age in years, months, and days with our online age calculator. Simply enter your date of birth to get your chronological age.',
   },
   {
     slug: 'date-difference-calculator',
@@ -615,7 +615,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'CalendarDays',
     formula: "endDate - startDate",
     seoTitle: 'Date Difference Calculator | Days Between Dates | CalcPro',
-    metaDescription: "Calculate the exact number of years, months, weeks, and days between any two dates. Perfect for finding the duration of projects, events, or time-sensitive tasks.",
+    metaDescription: "Calculate the exact number of years, months, weeks, and days between any two dates. Perfect for finding the duration of projects and events.",
   },
   {
     slug: 'countdown-timer',
@@ -624,7 +624,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'Timer',
     seoTitle: 'Countdown Timer | Online Event & Holiday Timer | CalcPro',
-    metaDescription: 'Set a countdown to any date and time. Our online timer will track the days, hours, minutes, and seconds remaining until your event.',
+    metaDescription: 'Set a countdown to any date and time. Our online timer will track the days, hours, minutes, and seconds remaining until your special event.',
   },
   {
     slug: 'time-zone-converter',
@@ -633,7 +633,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'Globe2',
     seoTitle: 'Time Zone Converter | World Time Zone Tool | CalcPro',
-    metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
+    metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly for meetings or travel.',
   },
   {
     slug: 'world-clock-calculator',
@@ -642,7 +642,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'Globe',
     seoTitle: 'World Clock | Current Time in Major Cities | CalcPro',
-    metaDescription: 'View the current local time in major cities across the globe. Our world clock provides an easy way to check time differences and plan international calls.',
+    metaDescription: 'View the current local time in major cities across the globe. Our world clock is an easy way to check time differences and plan international calls.',
   },
   {
     slug: 'working-days-calculator',
@@ -651,7 +651,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'Briefcase',
     seoTitle: 'Working Days Calculator | Business Day Counter | CalcPro',
-    metaDescription: "Easily calculate the number of working days (business days) between two dates. This tool automatically excludes weekends to give you an accurate count for project planning.",
+    metaDescription: "Calculate the number of working days (business days) between two dates. This tool excludes weekends to give you an accurate count for project planning.",
   },
   {
     slug: 'week-number-calculator',
@@ -660,7 +660,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarDays',
     seoTitle: 'Week Number Calculator | ISO Week Date Tool | CalcPro',
-    metaDescription: "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for scheduling and planning weekly tasks.",
+    metaDescription: "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for scheduling weekly tasks.",
   },
   {
     slug: 'add-subtract-days-calculator',
@@ -669,7 +669,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarClock',
     seoTitle: 'Add/Subtract Days from a Date | Date Calculator | CalcPro',
-    metaDescription: "Find a future or past date by adding or subtracting any number of days from a given start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
+    metaDescription: "Find a future or past date by adding or subtracting days from a start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
   },
   {
     slug: 'business-day-calculator',
@@ -678,7 +678,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'Briefcase',
     seoTitle: 'Business Day Calculator | Add/Subtract Workdays | CalcPro',
-    metaDescription: "Calculate a future date by adding or subtracting a specific number of business days, automatically skipping weekends to ensure accuracy for business deadlines.",
+    metaDescription: "Calculate a future date by adding or subtracting business days, automatically skipping weekends to ensure accuracy for professional deadlines.",
   },
 
   // Programming & Tech
@@ -690,7 +690,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Binary',
     formula: 'parseInt(num, fromBase).toString(toBase)',
     seoTitle: 'Binary & Number System Converter | Base Tool | CalcPro',
-    metaDescription: 'A versatile number system converter for binary, decimal, hexadecimal, and octal values. Essential for programmers, developers, and computer science students.',
+    metaDescription: 'A versatile number system converter for binary, decimal, hexadecimal, and octal values. Essential for programmers and computer science students.',
   },
   {
     slug: 'ascii-text-converter',
@@ -708,7 +708,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'Binary',
     seoTitle: 'Base64 Encoder & Decoder | Online UTF-8 Tool | CalcPro',
-    metaDescription: 'A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 for international characters.',
+    metaDescription: 'A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 for international text.',
   },
   {
     slug: 'ip-subnet-calculator',
@@ -717,7 +717,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'Network',
     seoTitle: 'IP Subnet Calculator | CIDR & Network Mask Tool | CalcPro',
-    metaDescription: 'An easy-to-use IP subnet calculator for network administrators and IT professionals. Quickly find network addresses, broadcast addresses, subnet masks, and host ranges.',
+    metaDescription: 'An easy-to-use IP subnet calculator for network administrators. Quickly find network addresses, broadcast addresses, subnet masks, and host ranges.',
     formula: 'Network Address = IP Address & Subnet Mask'
   },
   {
@@ -736,7 +736,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'FileBox',
     seoTitle: 'File Size Calculator | Estimate Video & Audio Size | CalcPro',
-    metaDescription: 'Estimate the size of a file based on its duration and bitrate. Useful for video, audio, and other media files to plan for storage and bandwidth.',
+    metaDescription: 'Estimate the size of a file based on its duration and bitrate. Useful for video, audio, and other media files to plan for storage or bandwidth.',
   },
   {
     slug: 'color-converter',
@@ -745,7 +745,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'Palette',
     seoTitle: 'Color Converter | HEX, RGB, HSL Conversion | CalcPro',
-    metaDescription: 'A simple and intuitive tool for web designers and developers to convert between HEX, RGB, and HSL color formats in real-time.',
+    metaDescription: 'A simple tool for web designers and developers to convert between HEX, RGB, and HSL color formats in real-time.',
   },
 
   // Geometry & Engineering
@@ -756,7 +756,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Circle',
     seoTitle: 'Circle Calculator | Area, Circumference, Diameter | CalcPro',
-    metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas and explanations.',
+    metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas.',
   },
   {
     slug: 'triangle-area-calculator',
@@ -765,7 +765,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Triangle Area & Perimeter Calculator | Free Tool | CalcPro',
-    metaDescription: 'Calculate the area and perimeter of a triangle using various methods, including Base & Height, Heron\'s formula (3 sides), and Side-Angle-Side (SAS).',
+    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
   },
   {
     slug: 'rectangle-area-calculator',
@@ -775,7 +775,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Ruler',
     formula: "Area = Length * Width",
     seoTitle: 'Rectangle Area & Perimeter Calculator | Shape Tool | CalcPro',
-    metaDescription: 'A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results. Works for squares too.'
+    metaDescription: 'A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results. Works for squares.'
   },
   {
     slug: 'cylinder-volume-calculator',
@@ -784,7 +784,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Beaker',
     seoTitle: 'Cylinder Volume & Surface Area Calculator | CalcPro',
-    metaDescription: 'Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Includes the formulas used.',
+    metaDescription: 'Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Includes formulas.',
   },
   {
     slug: 'sphere-volume-surface-area-calculator',
@@ -793,7 +793,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Globe',
     seoTitle: 'Sphere Volume & Surface Area Calculator | CalcPro',
-    metaDescription: 'Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses the standard geometric formulas for accurate results.',
+    metaDescription: 'Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas for accuracy.',
   },
   {
     slug: 'cone-volume-calculator',
@@ -812,7 +812,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Triangle',
     formula: 'a² + b² = c²',
     seoTitle: 'Pythagorean Theorem Calculator | Solve a²+b²=c² | CalcPro',
-    metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Find the hypotenuse or either of the other two sides.',
+    metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Find the hypotenuse or other sides.',
   },
   {
     slug: 'trigonometry-calculator',
@@ -821,7 +821,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Trigonometry Calculator | Sin, Cos, Tan & Inverse | CalcPro',
-    metaDescription: 'A free trigonometry calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians. Perfect for students and engineers.',
+    metaDescription: 'A free trigonometry calculator to find sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.',
   },
   {
     slug: 'beam-deflection-calculator',
@@ -839,7 +839,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Wind',
     seoTitle: 'Torque Calculator | Force x Distance Formula | CalcPro',
-    metaDescription: 'Calculate the resulting torque by entering the force and distance (lever arm length). An easy-to-use tool for physics and engineering students.',
+    metaDescription: 'Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering students.',
   },
   {
     slug: 'ohms-law-calculator',
@@ -848,7 +848,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Atom',
     seoTitle: 'Ohm\'s Law Calculator | Voltage, Current, Resistance | CalcPro',
-    metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the other two. Essential tool for electronics.',
+    metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.',
     formula: 'V = I × R'
   },
   {
