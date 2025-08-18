@@ -1,7 +1,8 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
+import dynamic from "next/dynamic";
 
 interface AboutLoanEMICalculatorProps {
     principal: number;
@@ -9,7 +10,7 @@ interface AboutLoanEMICalculatorProps {
 }
 
 const LoanBreakdownChart = dynamic(
-    () => import('@/components/charts/loan-breakdown-chart').then(mod => mod.LoanBreakdownChart),
+    () => import('@/components/charts/loan-breakdown-chart'),
     { 
         ssr: false,
         loading: () => <Skeleton className="w-full h-[25rem]" />
