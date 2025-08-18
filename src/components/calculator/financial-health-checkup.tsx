@@ -77,7 +77,7 @@ const ResultsScreen = ({ report, formData, downloadPDF }: { report: FinancialHea
     const chartData = [
         { name: "Savings", value: formData.monthlySavings, fill: "hsl(var(--chart-1))" },
         { name: "Debt (EMI)", value: formData.monthlyDebt, fill: "hsl(var(--chart-2))" },
-        { name: "Expenses", value: incomeAfterDebtAndSavings, fill: "hsl(var(--chart-3))" },
+        { name: "Expenses", value: incomeAfterDebtAndSavings > 0 ? incomeAfterDebtAndSavings : 0, fill: "hsl(var(--chart-3))" },
     ].filter(item => item.value > 0);
 
     const chartConfig = {
@@ -169,7 +169,7 @@ export default function FinancialHealthCheckup() {
     hasCreditCardDebt: false,
   });
 
-  const [report, setReport] = usePersistentState<FinancialHealthOutput | null>('fhc-report', null);
+  const [report, setReport] = useState<FinancialHealthOutput | null>(null);
   
   const currentQuestion = questions[step];
 
