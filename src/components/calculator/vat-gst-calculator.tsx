@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import { useSearchParams } from "next/navigation";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import ExportShareControls from "./export-share-controls";
+import CalculatorUIWrapper from "./calculator-ui-wrapper";
 
 export default function VatGstCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const searchParams = useSearchParams();
@@ -57,9 +57,8 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
       includes: priceIncludesTax,
   }
 
-  return (
-    <div className="space-y-6">
-      <Card id="vat-gst-inputs">
+  const inputCard = (
+     <Card id="vat-gst-inputs">
         <CardHeader>
           <CardTitle>VAT / GST Calculator</CardTitle>
           <CardDescription>Easily add or remove Value Added Tax (VAT) or Goods and Services Tax (GST) from a price.</CardDescription>
@@ -107,8 +106,10 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
           </div>
         </CardContent>
       </Card>
-      
-      <Card id="vat-gst-results">
+  );
+
+  const resultsCard = (
+     <Card id="vat-gst-results">
         <CardHeader>
           <CardTitle>Final Calculation</CardTitle>
         </CardHeader>
@@ -127,11 +128,15 @@ export default function VatGstCalculator({ setFormula }: { setFormula: (formula:
           </div>
         </CardContent>
       </Card>
-      
-      <ExportShareControls 
-        elementIds={['vat-gst-inputs', 'vat-gst-results']}
-        shareParams={shareParams}
-      />
-    </div>
+  );
+
+
+  return (
+    <CalculatorUIWrapper
+      inputCard={inputCard}
+      resultsCard={resultsCard}
+      shareParams={shareParams}
+      elementIds={['vat-gst-inputs', 'vat-gst-results']}
+    />
   );
 }
