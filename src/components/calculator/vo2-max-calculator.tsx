@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -21,65 +22,43 @@ export default function Vo2MaxCalculator() {
   }, [age, restingHR]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>VO₂ Max Estimator</CardTitle>
-            <CardDescription>Estimate your maximum oxygen uptake based on resting heart rate and age.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-                <Label>Gender</Label>
-                <RadioGroup value={gender} onValueChange={(v) => setGender(v as any)} className="flex items-center space-x-4 pt-2">
-                    <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
-                    <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
-                </RadioGroup>
-            </div>
-             <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                    <Label htmlFor="age">Age</Label>
-                    <Input id="age" type="number" value={age} onChange={e => setAge(Number(e.target.value))} />
-                </div>
-                <div className="space-y-2">
-                    <Label htmlFor="resting-hr">Resting Heart Rate (BPM)</Label>
-                    <Input id="resting-hr" type="number" value={restingHR} onChange={e => setRestingHR(Number(e.target.value))} />
-                </div>
-            </div>
-             <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is a non-exercise estimation and may not be as accurate as a clinical test. It's for informational purposes only.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><CardTitle>Understanding VO₂ Max</CardTitle></CardHeader>
-          <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is VO₂ max?</AccordionTrigger>
-                <AccordionContent>
-                  VO₂ max, or maximal oxygen uptake, is the maximum amount of oxygen your body can utilize during intense exercise. It's a common indicator of your aerobic fitness level.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>How is this estimated?</AccordionTrigger>
-                <AccordionContent>
-                  This calculator uses a non-exercise estimation formula based on your resting heart rate and maximum heart rate (which is estimated from your age). While convenient, it is not as precise as a clinical test performed on a treadmill or stationary bike.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </CardContent>
-        </Card>
-      </div>
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Estimated VO₂ Max</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="text-5xl font-bold font-headline text-primary">{vo2Max.toFixed(1)}</p>
-            <p className="text-lg text-muted-foreground">mL/kg/min</p>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>VO₂ Max Estimator</CardTitle>
+          <CardDescription>Estimate your maximum oxygen uptake based on resting heart rate and age.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+              <Label>Gender</Label>
+              <RadioGroup value={gender} onValueChange={(v) => setGender(v as any)} className="flex items-center space-x-4 pt-2">
+                  <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
+                  <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
+              </RadioGroup>
+          </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                  <Label htmlFor="age">Age</Label>
+                  <Input id="age" type="number" value={age} onChange={e => setAge(Number(e.target.value))} />
+              </div>
+              <div className="space-y-2">
+                  <Label htmlFor="resting-hr">Resting Heart Rate (BPM)</Label>
+                  <Input id="resting-hr" type="number" value={restingHR} onChange={e => setRestingHR(Number(e.target.value))} />
+              </div>
+          </div>
+            <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is a non-exercise estimation and may not be as accurate as a clinical test. It's for informational purposes only.</p>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader>
+          <CardTitle>Estimated VO₂ Max</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className="text-5xl font-bold font-headline text-primary">{vo2Max.toFixed(1)}</p>
+          <p className="text-lg text-muted-foreground">mL/kg/min</p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

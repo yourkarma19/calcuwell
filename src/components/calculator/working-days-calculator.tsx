@@ -23,81 +23,43 @@ export default function WorkingDaysCalculator() {
   };
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Calculate Working Days</CardTitle>
+          <CardDescription>Calculate the number of business days between two dates. This calculation excludes weekends but not public holidays.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>Start Date</Label>
+              <DatePicker date={startDate} setDate={setStartDate} disabled={() => false} />
+            </div>
+            <div className="space-y-2">
+              <Label>End Date</Label>
+              <DatePicker date={endDate} setDate={setEndDate} disabled={() => false}/>
+            </div>
+          </div>
+          <Button onClick={handleCalculate} className="w-full">
+            Calculate Working Days
+          </Button>
+          <p className="text-xs text-muted-foreground">This calculation excludes weekends (Saturdays and Sundays). It does not account for public holidays.</p>
+        </CardContent>
+      </Card>
+      
+      {workingDays !== null && (
         <Card>
           <CardHeader>
-            <CardTitle>Calculate Working Days</CardTitle>
-            <CardDescription>Calculate the number of business days between two dates. This calculation excludes weekends but not public holidays.</CardDescription>
+            <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label>Start Date</Label>
-                <DatePicker date={startDate} setDate={setStartDate} disabled={() => false} />
-              </div>
-              <div className="space-y-2">
-                <Label>End Date</Label>
-                <DatePicker date={endDate} setDate={setEndDate} disabled={() => false}/>
-              </div>
-            </div>
-            <Button onClick={handleCalculate} className="w-full">
-              Calculate Working Days
-            </Button>
-            <p className="text-xs text-muted-foreground">This calculation excludes weekends (Saturdays and Sundays). It does not account for public holidays.</p>
+          <CardContent className="text-center">
+            <p className="text-sm text-muted-foreground">Total Working Days</p>
+            <p className="text-6xl font-bold font-headline text-primary my-2">
+              {workingDays}
+            </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader><CardTitle>About Working Days</CardTitle></CardHeader>
-          <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Working Days Calculator** is an essential tool for professionals in project management, HR, and logistics. It helps you quickly determine the number of business days between two dates, automatically excluding weekends (Saturdays and Sundays). This allows for accurate planning and realistic deadline setting in a professional context.</p>
-            <h3>How to Use the Calculator</h3>
-            <ol>
-              <li>Select a **Start Date** from the calendar.</li>
-              <li>Select an **End Date**.</li>
-              <li>Click the **"Calculate Working Days"** button to see the result.</li>
-            </ol>
-            <p>The tool provides the total count of business days, which is crucial for any task that depends on a standard workweek.</p>
-            <h3>Frequently Asked Questions (FAQs)</h3>
-              <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                      <AccordionTrigger>What is a working/business day?</AccordionTrigger>
-                      <AccordionContent>
-                          A working or business day is any official working day. This typically means Monday through Friday and excludes weekends and public holidays. This calculator only excludes weekends (Saturday and Sunday).
-                      </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                      <AccordionTrigger>Why is calculating working days important?</AccordionTrigger>
-                      <AccordionContent>
-                          It is essential for project management, logistics, and financial services to set realistic deadlines. For example, it helps in estimating project completion dates, delivery times, and contract fulfillment periods that are based on a 5-day work week.
-                      </AccordionContent>
-                  </AccordionItem>
-                   <AccordionItem value="item-3">
-                      <AccordionTrigger>Does this calculator account for public holidays?</AccordionTrigger>
-                      <AccordionContent>
-                         No, this calculator does not account for public holidays as they vary significantly by country and region. The calculation is based purely on the number of weekdays between the two selected dates. You should manually subtract any holidays that fall within your date range for a more precise count.
-                      </AccordionContent>
-                  </AccordionItem>
-              </Accordion>
-          </CardContent>
-        </Card>
-      </div>
-
-       {workingDays !== null && (
-          <div className="lg:col-span-1">
-            <Card className="sticky top-24">
-              <CardHeader>
-                <CardTitle>Result</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-sm text-muted-foreground">Total Working Days</p>
-                <p className="text-6xl font-bold font-headline text-primary my-2">
-                  {workingDays}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        )}
-    </>
+      )}
+    </div>
   );
 }

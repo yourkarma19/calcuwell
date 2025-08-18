@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -55,91 +56,60 @@ export default function InflationCalculator() {
   const yearOptions = Object.keys(MOCK_INFLATION_RATES).map(Number).sort((a,b) => b-a);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Inflation Calculator</CardTitle>
-            <CardDescription>Calculate the change in purchasing power of a certain amount of money between two years.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Inflation Calculator</CardTitle>
+          <CardDescription>Calculate the change in purchasing power of a certain amount of money between two years.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="amount">Amount</Label>
+            <Input
+              id="amount"
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(Number(e.target.value))}
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="amount">Amount</Label>
-              <Input
-                id="amount"
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
-              />
+              <Label htmlFor="start-year">Start Year</Label>
+                <select id="start-year" value={startYear} onChange={e => setStartYear(Number(e.target.value))} className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md">
+                  {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
+                </select>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="start-year">Start Year</Label>
-                 <select id="start-year" value={startYear} onChange={e => setStartYear(Number(e.target.value))} className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md">
-                   {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
-                 </select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="end-year">End Year</Label>
-                 <select id="end-year" value={endYear} onChange={e => setEndYear(Number(e.target.value))} className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md">
-                   {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
-                 </select>
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="end-year">End Year</Label>
+                <select id="end-year" value={endYear} onChange={e => setEndYear(Number(e.target.value))} className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md">
+                  {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
+                </select>
             </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><CardTitle>About Inflation</CardTitle></CardHeader>
-          <CardContent className="prose dark:prose-invert max-w-none">
-            <p>This calculator shows how the value of money changes over time due to inflation. It helps you understand the purchasing power of an amount of money from the past in today's terms.</p>
-            <h3>How to Use this Tool</h3>
-            <p>Enter an amount of money and select a start and end year. The calculator will show you what that amount would be worth in the end year, based on historical inflation data.</p>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is inflation?</AccordionTrigger>
-                <AccordionContent>
-                  Inflation is the rate at which prices for goods and services rise, and the purchasing power of money falls. For example, if the inflation rate is 2%, then a ₹100 item will cost ₹102 next year.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>How does this calculator work?</AccordionTrigger>
-                <AccordionContent>
-                  This calculator uses historical inflation rate data to adjust the value of money over time. It combines the inflation rate for each year in the selected range to find the new equivalent value.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Disclaimer</AccordionTrigger>
-                <AccordionContent>
-                  This calculator uses historical mock inflation data for demonstration. In a real-world scenario, this data would be fetched from a reliable source like a government statistics agency.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </CardContent>
-        </Card>
-      </div>
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Results</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <div>
-              <p className="text-sm text-muted-foreground">
-                Value of ₹{amount.toLocaleString()} from {startYear} in {endYear}
-              </p>
-              <p className="text-4xl font-bold font-headline text-primary">
-                ₹{adjustedAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Total Inflation</p>
-              <p className="text-2xl font-semibold">
-                {totalInflation.toFixed(2)}%
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader>
+          <CardTitle>Results</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4">
+          <div>
+            <p className="text-sm text-muted-foreground">
+              Value of ₹{amount.toLocaleString()} from {startYear} in {endYear}
+            </p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              ₹{adjustedAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
+            </p>
+          </div>
+          <div>
+            <p className="text-sm text-muted-foreground">Total Inflation</p>
+            <p className="text-2xl font-semibold">
+              {totalInflation.toFixed(2)}%
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

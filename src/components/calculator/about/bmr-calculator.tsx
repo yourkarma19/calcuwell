@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
@@ -20,7 +21,7 @@ export default function AboutBmrCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is the difference between BMR and TDEE?</AccordionTrigger>
                     <AccordionContent>
-                    BMR is the calories you burn at complete rest. **Total Daily Energy Expenditure (TDEE)** is the total calories you burn in a day. TDEE includes your BMR plus calories burned from activity and digestion. Find your TDEE with our <Link href="/calculators/calorie-needs-calculator" className="text-primary underline">Calorie Needs Calculator</Link>.
+                    BMR is the calories you burn at complete rest. **Total Daily Energy Expenditure (TDEE)** is the total calories you burn in a day. TDEE includes your BMR plus calories burned from activity and digestion. Find your TDEE with our <a href="/calculators/calorie-needs-calculator" className="text-primary underline">Calorie Needs Calculator</a>.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">

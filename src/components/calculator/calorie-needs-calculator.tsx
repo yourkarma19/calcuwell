@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -39,92 +40,60 @@ export default function CalorieNeedsCalculator() {
   const dailyCalories = useMemo(() => bmr * activityLevels[activityLevel], [bmr, activityLevel]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Daily Calorie Needs</CardTitle>
-            <CardDescription>Estimate the number of calories you need to consume daily to maintain your current weight, based on the Mifflin-St Jeor equation.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="age">Age (years)</Label>
-                <Input id="age" type="number" value={age} onChange={(e) => setAge(Number(e.target.value))} />
-              </div>
-              <div className="space-y-2">
-                <Label>Gender</Label>
-                <RadioGroup value={gender} onValueChange={(v) => setGender(v as "male" | "female")} className="flex items-center space-x-4 pt-2">
-                  <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
-                  <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
-                </RadioGroup>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="height">Height (cm)</Label>
-                <Input id="height" type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="weight">Weight (kg)</Label>
-                <Input id="weight" type="number" value={weight} onChange={(e) => setWeight(Number(e.target.value))} />
-              </div>
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Daily Calorie Needs</CardTitle>
+          <CardDescription>Estimate the number of calories you need to consume daily to maintain your current weight, based on the Mifflin-St Jeor equation.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="age">Age (years)</Label>
+              <Input id="age" type="number" value={age} onChange={(e) => setAge(Number(e.target.value))} />
             </div>
             <div className="space-y-2">
-              <Label>Activity Level</Label>
-              <Select value={activityLevel} onValueChange={(v) => setActivityLevel(v as ActivityLevel)}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="sedentary">Sedentary (little or no exercise)</SelectItem>
-                  <SelectItem value="light">Lightly active (light exercise/sports 1-3 days/week)</SelectItem>
-                  <SelectItem value="moderate">Moderately active (moderate exercise/sports 3-5 days/week)</SelectItem>
-                  <SelectItem value="active">Very active (hard exercise/sports 6-7 days a week)</SelectItem>
-                  <SelectItem value="veryActive">Extra active (very hard exercise/sports & physical job)</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label>Gender</Label>
+              <RadioGroup value={gender} onValueChange={(v) => setGender(v as "male" | "female")} className="flex items-center space-x-4 pt-2">
+                <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
+                <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
+              </RadioGroup>
             </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><CardTitle>About Calorie Needs</CardTitle></CardHeader>
-          <CardContent className="prose dark:prose-invert max-w-none">
-              <p>The Daily Calorie Needs calculator estimates how many calories you should eat per day to maintain your current weight. It uses the Mifflin-St Jeor equation, a widely accepted formula.</p>
-              <h3>How to Use This Tool</h3>
-              <p>To find your daily calorie needs, enter your age, gender, height, weight, and activity level. The calculator will then show an estimate of the calories you need to consume to keep your weight stable.</p>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What are maintenance calories?</AccordionTrigger>
-                <AccordionContent>
-                  Maintenance calories are the calories you need to eat each day to maintain your current weight. This calculator estimates that value. It first finds your Basal Metabolic Rate (BMR) and then multiplies it by an activity level factor.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>What is BMR?</AccordionTrigger>
-                <AccordionContent>
-                  Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic functions while at rest, like breathing. You can calculate your BMR with our <Link href="/calculators/bmr-calculator" className="text-primary underline">BMR Calculator</Link>.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>How do I use this for weight loss or gain?</AccordionTrigger>
-                <AccordionContent>
-                  This result is for weight maintenance. To lose weight, you need to eat fewer calories (a caloric deficit). To gain weight or muscle, you need to eat more (a caloric surplus). For specific advice, talk to a healthcare or nutrition professional.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader><CardTitle>Daily Calorie Needs</CardTitle></CardHeader>
-          <CardContent className="text-center">
-            <p className="text-sm text-muted-foreground">To maintain your weight</p>
-            <p className="text-5xl font-bold font-headline text-primary my-2">{dailyCalories.toFixed(0)}</p>
-            <p className="text-lg text-muted-foreground">calories / day</p>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="height">Height (cm)</Label>
+              <Input id="height" type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="weight">Weight (kg)</Label>
+              <Input id="weight" type="number" value={weight} onChange={(e) => setWeight(Number(e.target.value))} />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label>Activity Level</Label>
+            <Select value={activityLevel} onValueChange={(v) => setActivityLevel(v as ActivityLevel)}>
+              <SelectTrigger><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="sedentary">Sedentary (little or no exercise)</SelectItem>
+                <SelectItem value="light">Lightly active (light exercise/sports 1-3 days/week)</SelectItem>
+                <SelectItem value="moderate">Moderately active (moderate exercise/sports 3-5 days/week)</SelectItem>
+                <SelectItem value="active">Very active (hard exercise/sports 6-7 days a week)</SelectItem>
+                <SelectItem value="veryActive">Extra active (very hard exercise/sports & physical job)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader><CardTitle>Daily Calorie Needs</CardTitle></CardHeader>
+        <CardContent className="text-center">
+          <p className="text-sm text-muted-foreground">To maintain your weight</p>
+          <p className="text-5xl font-bold font-headline text-primary my-2">{dailyCalories.toFixed(0)}</p>
+          <p className="text-lg text-muted-foreground">calories / day</p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

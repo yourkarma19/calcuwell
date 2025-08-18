@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -34,7 +35,7 @@ export default function AngleConverter() {
     const toLabel = isDegreesToRadians ? "Radians (rad)" : "Degrees (°)";
     
     return (
-        <div className="lg:col-span-3 space-y-6">
+        <div className="space-y-6">
             <Card>
                 <CardHeader>
                     <CardTitle>Angle Converter</CardTitle>

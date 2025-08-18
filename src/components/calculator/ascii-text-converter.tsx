@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -27,7 +28,7 @@ export default function AsciiTextConverter() {
     };
 
     return (
-        <div className="lg:col-span-3 space-y-6">
+        <div className="space-y-6">
             <Card>
                 <CardHeader>
                     <CardTitle>ASCII ↔ Text Converter</CardTitle>
