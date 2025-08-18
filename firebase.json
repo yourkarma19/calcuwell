@@ -42,7 +42,7 @@
         "source": "**/*.html",
         "headers": [
           {
-            "key": "Cache-Control",
+            "key": "Cache-control",
             "value": "public, max-age=0, must-revalidate"
           }
         ]
