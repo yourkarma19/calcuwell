@@ -94,14 +94,15 @@ const ResultsScreen = ({ report, formData, downloadPDF }: { report: FinancialHea
                         <CardTitle className="text-3xl font-headline">Your Financial Report</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-6">
-                        <div className="w-40 h-40 mx-auto">
+                         <div className="w-40 h-40 mx-auto transition-all duration-500">
                             <CircularProgressbar
                                 value={report.score}
                                 text={`${report.score}`}
                                 styles={buildStyles({
-                                    pathColor: report.score >= 80 ? "hsl(var(--primary))" : report.score >= 60 ? "#facc15" : "#ef4444",
+                                    pathColor: `hsl(${report.score < 60 ? 0 : (report.score - 50) * 3}, 84%, 58%)`,
                                     textColor: "hsl(var(--primary))",
                                     trailColor: "hsl(var(--muted))",
+                                    pathTransitionDuration: 1.5,
                                 })}
                             />
                         </div>
