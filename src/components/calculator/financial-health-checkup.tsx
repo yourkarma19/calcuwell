@@ -69,14 +69,14 @@ const LoadingScreen = () => {
 };
 
 
-const ResultsScreen = ({ report, downloadPDF }: { report: FinancialHealthOutput, downloadPDF: () => void }) => {
+const ResultsScreen = ({ report, formData, downloadPDF }: { report: FinancialHealthOutput, formData: FinancialHealthInput, downloadPDF: () => void }) => {
     const reportRef = useRef<HTMLDivElement>(null);
 
-    const incomeAfterDebtAndSavings = (report as any).monthlyIncome - (report as any).monthlySavings - (report as any).monthlyDebt;
+    const incomeAfterDebtAndSavings = formData.monthlyIncome - formData.monthlySavings - formData.monthlyDebt;
 
     const chartData = [
-        { name: "Savings", value: (report as any).monthlySavings, fill: "hsl(var(--chart-1))" },
-        { name: "Debt (EMI)", value: (report as any).monthlyDebt, fill: "hsl(var(--chart-2))" },
+        { name: "Savings", value: formData.monthlySavings, fill: "hsl(var(--chart-1))" },
+        { name: "Debt (EMI)", value: formData.monthlyDebt, fill: "hsl(var(--chart-2))" },
         { name: "Expenses", value: incomeAfterDebtAndSavings, fill: "hsl(var(--chart-3))" },
     ].filter(item => item.value > 0);
 
@@ -174,7 +174,7 @@ export default function FinancialHealthCheckup() {
 
   const handleNext = () => {
       const value = formData[currentQuestion.id as keyof FinancialHealthInput];
-      if(currentQuestion.type === 'number' && (value <= 0 || value === undefined)){
+      if(currentQuestion.type === 'number' && (value === undefined || value <= 0)){
         toast({ variant: "destructive", title: "Invalid Input", description: "Please enter a valid positive number." });
         return;
       }
@@ -271,7 +271,7 @@ export default function FinancialHealthCheckup() {
       return <LoadingScreen />;
     }
     if (report) {
-      return <ResultsScreen report={report} downloadPDF={downloadPDF}/>;
+      return <ResultsScreen report={report} formData={formData} downloadPDF={downloadPDF}/>;
     }
     
     return (
@@ -302,7 +302,7 @@ export default function FinancialHealthCheckup() {
                         <SelectTrigger className="h-12 text-lg"><SelectValue /></SelectTrigger>
                         <SelectContent>
                             {currentQuestion.options?.map((opt) => (
-                                <SelectItem key={opt} value={opt.toLowerCase()}>{opt}</SelectItem>
+                                <SelectItem key={opt} value={opt}>{opt}</SelectItem>
                             ))}
                         </SelectContent>
                     </Select>
