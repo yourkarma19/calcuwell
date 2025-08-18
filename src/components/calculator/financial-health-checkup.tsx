@@ -24,11 +24,11 @@ import {
 } from "@/components/ui/chart";
 
 const questions = [
-  { id: 'income', label: "💰 What is your monthly take-home salary (after tax)?", type: "number", placeholder: "e.g., 50000" },
-  { id: 'savings', label: "📈 How much do you typically save or invest each month?", type: "number", placeholder: "e.g., 10000" },
-  { id: 'debt', label: "🏦 What is your total monthly EMI payment?", type: "number", placeholder: "e.g., 15000" },
-  { id: 'goal', label: "🎯 What is your primary financial goal?", type: "select", options: ["Pay off debt", "Retirement", "Build emergency fund", "Buy a home", "Grow wealth"] },
-  { id: 'creditCardDebt', label: "💳 Do you have unpaid credit card debt?", type: "toggle", options: ["Yes", "No"] },
+  { id: 'monthlyIncome', label: "💰 What is your monthly take-home salary (after tax)?", type: "number", placeholder: "e.g., 50000" },
+  { id: 'monthlySavings', label: "📈 How much do you typically save or invest each month?", type: "number", placeholder: "e.g., 10000" },
+  { id: 'monthlyDebt', label: "🏦 What is your total monthly EMI payment?", type: "number", placeholder: "e.g., 15000" },
+  { id: 'financialGoal', label: "🎯 What is your primary financial goal?", type: "select", options: ["Pay off debt", "Retirement", "Build emergency fund", "Buy a home", "Grow wealth"] },
+  { id: 'hasCreditCardDebt', label: "💳 Do you have unpaid credit card debt?", type: "toggle", options: ["Yes", "No"] },
 ];
 
 const LoadingScreen = () => {
@@ -72,11 +72,11 @@ const LoadingScreen = () => {
 const ResultsScreen = ({ report, downloadPDF }: { report: FinancialHealthOutput, downloadPDF: () => void }) => {
     const reportRef = useRef<HTMLDivElement>(null);
 
-    const incomeAfterDebtAndSavings = Number(report.monthlyIncome) - Number(report.monthlySavings) - Number(report.monthlyDebt);
+    const incomeAfterDebtAndSavings = (report as any).monthlyIncome - (report as any).monthlySavings - (report as any).monthlyDebt;
 
     const chartData = [
-        { name: "Savings", value: Number(report.monthlySavings), fill: "hsl(var(--chart-1))" },
-        { name: "Debt (EMI)", value: Number(report.monthlyDebt), fill: "hsl(var(--chart-2))" },
+        { name: "Savings", value: (report as any).monthlySavings, fill: "hsl(var(--chart-1))" },
+        { name: "Debt (EMI)", value: (report as any).monthlyDebt, fill: "hsl(var(--chart-2))" },
         { name: "Expenses", value: incomeAfterDebtAndSavings, fill: "hsl(var(--chart-3))" },
     ].filter(item => item.value > 0);
 
@@ -292,7 +292,7 @@ export default function FinancialHealthCheckup() {
                 {currentQuestion.type === "number" ? (
                     <Input
                         type="number"
-                        value={formData[currentQuestion.id as keyof FinancialHealthInput] as number}
+                        value={(formData[currentQuestion.id as keyof FinancialHealthInput] as number) || ''}
                         onChange={(e) => handleInputChange(currentQuestion.id, Number(e.target.value))}
                         className="h-12 text-lg text-center"
                         placeholder={currentQuestion.placeholder}
