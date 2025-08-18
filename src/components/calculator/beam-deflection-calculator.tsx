@@ -60,7 +60,7 @@ export default function BeamDeflectionCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Beam Deflection</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Understanding Beam Deflection</CardTitle></CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">

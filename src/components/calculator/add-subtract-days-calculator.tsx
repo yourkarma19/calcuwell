@@ -52,7 +52,7 @@ export default function AddSubtractDaysCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About the Date Adder/Subtractor</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Understanding the Date Calculator</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
             <p>Our **Add/Subtract Days Calculator** is a simple and effective tool for anyone who needs to quickly project dates forward or backward. Whether you're setting a deadline, scheduling a follow-up, or calculating a warranty period, this calculator removes the hassle of manually counting days on a calendar.</p>
             <h3>How to Use the Calculator</h3>

@@ -87,11 +87,11 @@ export default function ComplexNumberCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Complex Numbers</CardTitle></CardHeader>
+        <CardHeader><CardTitle>What are Complex Numbers?</CardTitle></CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>What is a complex number?</AccordionTrigger>
+              <AccordionTrigger>Complex Number Definition</AccordionTrigger>
               <AccordionContent>
                 A complex number is a number that can be expressed in the form `a + bi`, where `a` and `b` are real numbers, and `i` is the imaginary unit, which satisfies the equation `i² = -1`.
               </AccordionContent>

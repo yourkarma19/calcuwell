@@ -58,7 +58,7 @@ export default function BreakEvenPointCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Break-Even Analysis</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Understanding Break-Even Analysis</CardTitle></CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">

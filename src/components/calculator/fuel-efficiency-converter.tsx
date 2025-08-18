@@ -76,7 +76,7 @@ export default function FuelEfficiencyConverter() {
                 </CardContent>
             </Card>
             <Card>
-              <CardHeader><CardTitle>About Fuel Efficiency</CardTitle></CardHeader>
+              <CardHeader><CardTitle>Understanding Fuel Efficiency Units</CardTitle></CardHeader>
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">

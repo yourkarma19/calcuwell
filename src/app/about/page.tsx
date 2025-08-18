@@ -28,7 +28,7 @@ export default function AboutPage() {
                     We have calculators for finance, health, math, and more. Our goal is to be the only website you need for quick math. We think the internet should be open, so our tools are always free to use without needing to sign up.
                 </p>
                 
-                <h2>Our Calculators & Accuracy</h2>
+                <h2>Our Commitment to Accuracy</h2>
                 <p>
                     We build each calculator with care and test it to make sure it's right. If you see something that's not working, please let us know. Your feedback helps us make things better.
                 </p>
@@ -37,7 +37,7 @@ export default function AboutPage() {
                     Our tools are based on common formulas you find in textbooks. For some topics, we show results from different methods. All of our financial and health tools have been double-checked by professionals.
                 </p>
 
-                <h2>Contact Us</h2>
+                <h2>Get in Touch</h2>
                 <p>
                     If you have questions or feedback, please email us at <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>. We would love to hear from you!
                 </p>

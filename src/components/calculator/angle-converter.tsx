@@ -69,7 +69,7 @@ export default function AngleConverter() {
                 </CardContent>
             </Card>
             <Card>
-                <CardHeader><CardTitle>About Angle Units</CardTitle></CardHeader>
+                <CardHeader><CardTitle>Understanding Angle Units</CardTitle></CardHeader>
                 <CardContent>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">

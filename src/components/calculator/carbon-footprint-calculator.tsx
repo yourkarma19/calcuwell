@@ -102,7 +102,7 @@ export default function CarbonFootprintCalculator() {
         </CardContent>
       </Card>
       <Card>
-          <CardHeader><CardTitle>About Your Carbon Footprint</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Understanding Your Carbon Footprint</CardTitle></CardHeader>
           <CardContent>
               <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">

@@ -87,7 +87,7 @@ export default function EquationSolver() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Equation Solving</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Understanding Equation Types</CardTitle></CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">

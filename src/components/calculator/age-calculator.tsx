@@ -65,7 +65,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
       
       <Card>
         <CardHeader>
-          <CardTitle>About the Age Calculator</CardTitle>
+          <CardTitle>Understanding Chronological Age</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
             <p>The Age Calculator helps you determine your precise chronological age based on your date of birth. It breaks down your age into years, months, and days, giving you a detailed view of how old you are. This tool is perfect for anyone curious about their exact age, for filling out applications, or for planning age-related milestones.</p>
