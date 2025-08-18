@@ -1,36 +1,23 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
+import dynamic from "next/dynamic";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface AboutLoanEMICalculatorProps {
     principal: number;
     totalInterest: number;
 }
 
-const chartConfig = {
-    principal: {
-      label: "Principal",
-      color: "hsl(var(--chart-1))",
-    },
-    interest: {
-      label: "Interest",
-      color: "hsl(var(--chart-2))",
-    },
-}
+const LoanBreakdownChart = dynamic(
+    () => import('@/components/charts/loan-breakdown-chart').then(mod => mod.LoanBreakdownChart),
+    { 
+        ssr: false,
+        loading: () => <Skeleton className="w-full h-[25rem]" />
+    }
+);
+
 
 export default function AboutLoanEMICalculator({ principal, totalInterest }: AboutLoanEMICalculatorProps) {
-
-    const chartData = [
-        { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
-        { name: "Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
-    ].filter(item => item.value > 0);
-
     return (
         <div className="space-y-6">
             <Card>
@@ -79,28 +66,11 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
                 </CardContent>
             </Card>
             
-            {chartData.length > 0 && principal > 0 && (
-                <Card>
+            {principal > 0 && totalInterest > 0 && (
+                 <Card>
                     <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-                    <CardContent className="h-[25rem]">
-                        <ChartContainer config={chartConfig} className="w-full h-full">
-                            <ResponsiveContainer width="100%" height="100%">
-                                <PieChart>
-                                    <Tooltip
-                                    cursor={false}
-                                    content={<ChartTooltipContent 
-                                        formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
-                                        />}
-                                    />
-                                    <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="80%" strokeWidth={2} labelLine={false} label>
-                                        {chartData.map((entry) => (
-                                            <Cell key={entry.name} fill={entry.fill} />
-                                        ))}
-                                    </Pie>
-                                    <ChartLegend content={<ChartLegendContent />} />
-                                </PieChart>
-                            </ResponsiveContainer>
-                        </ChartContainer>
+                    <CardContent>
+                       <LoanBreakdownChart principal={principal} totalInterest={totalInterest} />
                     </CardContent>
                 </Card>
             )}

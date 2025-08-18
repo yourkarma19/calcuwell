@@ -1,13 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
-
+import { Skeleton } from "@/components/ui/skeleton";
+import dynamic from "next/dynamic";
 
 interface AboutMortgageCalculatorProps {
     principal: number;
@@ -17,23 +11,16 @@ interface AboutMortgageCalculatorProps {
     tenure: number;
 }
 
-const chartConfig = {
-      principal: { label: "Principal", color: "hsl(var(--chart-1))" },
-      "Total Interest": { label: "Total Interest", color: "hsl(var(--chart-2))" },
-      "Property Tax": { label: "Property Tax", color: "hsl(var(--chart-3))" },
-      "Home Insurance": { label: "Home Insurance", color: "hsl(var(--chart-4))" },
-};
+const MortgageBreakdownChart = dynamic(
+    () => import('@/components/charts/mortgage-breakdown-chart').then(mod => mod.MortgageBreakdownChart),
+    { 
+        ssr: false,
+        loading: () => <Skeleton className="w-full h-[25rem]" />
+    }
+);
 
 
 export default function AboutMortgageCalculator({ principal, totalInterest, propertyTax, homeInsurance, tenure }: AboutMortgageCalculatorProps) {
-
-    const chartData = [
-      { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
-      { name: "Total Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
-      { name: "Property Tax", value: propertyTax * tenure, fill: "hsl(var(--chart-3))" },
-      { name: "Home Insurance", value: homeInsurance * tenure, fill: "hsl(var(--chart-4))" },
-    ].filter(item => item.value > 0);
-    
     return (
         <div className="space-y-6">
             <Card>
@@ -71,28 +58,17 @@ export default function AboutMortgageCalculator({ principal, totalInterest, prop
                 </CardContent>
             </Card>
              
-            {chartData.length > 0 && principal > 0 && (
+            {principal > 0 && totalInterest > 0 && (
                 <Card>
                     <CardHeader><CardTitle>Loan Cost Breakdown</CardTitle></CardHeader>
-                    <CardContent className="h-[25rem]">
-                        <ChartContainer config={chartConfig} className="w-full h-full">
-                            <ResponsiveContainer width="100%" height="100%">
-                                <PieChart>
-                                    <Tooltip
-                                    cursor={false}
-                                    content={<ChartTooltipContent 
-                                        formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
-                                        />}
-                                    />
-                                    <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="80%" strokeWidth={2}>
-                                        {chartData.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={entry.fill} name={entry.name} />
-                                        ))}
-                                    </Pie>
-                                    <ChartLegend content={<ChartLegendContent nameKey="name" />} />
-                                </PieChart>
-                            </ResponsiveContainer>
-                        </ChartContainer>
+                    <CardContent>
+                        <MortgageBreakdownChart 
+                            principal={principal} 
+                            totalInterest={totalInterest} 
+                            propertyTax={propertyTax} 
+                            homeInsurance={homeInsurance} 
+                            tenure={tenure} 
+                        />
                     </CardContent>
                 </Card>
             )}
