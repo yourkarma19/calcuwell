@@ -68,11 +68,11 @@ export default function WaistToHipRatioCalculator() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="waist">Waist Circumference</Label>
-              <Input id="waist" type="number" value={waist} onChange={e => setWaist(Number(e.target.value))} />
+              <Input id="waist" type="number" value={waist} onChange={e => setWaist(Number(e.target.value) || 0)} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="hip">Hip Circumference</Label>
-              <Input id="hip" type="number" value={hip} onChange={e => setHip(Number(e.target.value))} />
+              <Input id="hip" type="number" value={hip} onChange={e => setHip(Number(e.target.value) || 0)} />
             </div>
           </div>
         </CardContent>
