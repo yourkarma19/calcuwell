@@ -10,6 +10,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateAge, Age } from "@/lib/math/date";
 import { useSearchParams } from "next/navigation";
+import ExportShareControls from "./export-share-controls";
 
 
 export default function AgeCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
@@ -38,11 +39,15 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
   useEffect(() => {
     handleCalculateAge();
   }, [handleCalculateAge]);
+  
+  const shareParams = {
+      dob: dateOfBirth ? dateOfBirth.toISOString().split('T')[0] : ""
+  }
 
 
   return (
     <div className="space-y-6">
-      <Card>
+      <Card id="age-inputs">
         <CardHeader>
           <CardTitle>Enter Your Date of Birth</CardTitle>
         </CardHeader>
@@ -63,7 +68,7 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
       </Card>
       
     {age && (
-        <Card>
+        <Card id="age-results">
         <CardHeader>
             <CardTitle>Your Age</CardTitle>
         </CardHeader>
@@ -87,6 +92,11 @@ export default function AgeCalculator({ setFormula }: { setFormula: (formula: st
         </CardContent>
         </Card>
     )}
+    
+     <ExportShareControls
+        elementIds={['age-inputs', 'age-results']}
+        shareParams={shareParams}
+      />
     </div>
   );
 }

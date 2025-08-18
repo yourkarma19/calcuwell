@@ -1,4 +1,6 @@
 
+"use client";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -10,7 +12,7 @@ interface AboutLoanEMICalculatorProps {
 }
 
 const LoanBreakdownChart = dynamic(
-    () => import('@/components/charts/loan-breakdown-chart'),
+    () => import('@/components/charts/loan-breakdown-chart').then(mod => mod.LoanBreakdownChart),
     { 
         ssr: false,
         loading: () => <Skeleton className="w-full h-[25rem]" />

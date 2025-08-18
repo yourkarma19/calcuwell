@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
+import ExportShareControls from "./export-share-controls";
 
 type UnitSystem = "metric" | "imperial";
 
@@ -72,10 +73,16 @@ export default function BMICalculator() {
   };
 
   const { category, color } = getBmiCategory(bmi);
+  
+  const shareParams = {
+      weight: weight.toString(),
+      height: height.toString(),
+      units: unitSystem
+  }
 
   return (
     <div className="space-y-6">
-        <Card>
+        <Card id="bmi-inputs">
           <CardHeader>
             <CardTitle>Enter Your Details</CardTitle>
              <CardDescription>Calculate your Body Mass Index (BMI) using metric or imperial units.</CardDescription>
@@ -139,7 +146,7 @@ export default function BMICalculator() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card id="bmi-results">
           <CardHeader>
             <CardTitle>Your Result</CardTitle>
           </CardHeader>
@@ -151,6 +158,11 @@ export default function BMICalculator() {
             <p className={cn("text-xl font-semibold", color)}>{category}</p>
           </CardContent>
         </Card>
+        
+        <ExportShareControls
+            elementIds={['bmi-inputs', 'bmi-results']}
+            shareParams={shareParams}
+        />
     </div>
   );
 }
