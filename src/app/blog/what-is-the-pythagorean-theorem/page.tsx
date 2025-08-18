@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'What is the Pythagorean Theorem? | CalcPro Blog',
+  title: 'What is the Pythagorean Theorem? | CalcPro',
   description: 'An in-depth explanation of the Pythagorean theorem, its history, proof, and real-world applications. Learn how a² + b² = c² works.',
   alternates: {
     canonical: '/blog/what-is-the-pythagorean-theorem',

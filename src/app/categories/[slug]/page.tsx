@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   return {
     title: `${category.name} Calculators | CalcPro`,
-    description: `Browse a comprehensive collection of free online ${category.name.toLowerCase()} calculators. ${category.description} Instantly solve problems with CalcPro.`,
+    description: `Browse a collection of free online ${category.name.toLowerCase()} calculators. ${category.description} Instantly solve problems with CalcPro.`,
     alternates: {
         canonical: `/categories/${awaitedParams.slug}`,
     },

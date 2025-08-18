@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
 
   return {
     title: calculator.seoTitle || `${calculator.name} | CalcPro`,
-    description: calculator.metaDescription || `Use the free ${calculator.name} on CalcPro to ${calculator.description.toLowerCase()}. Fast, accurate, and easy to use for all your needs.`,
+    description: calculator.metaDescription || `Use the free ${calculator.name} on CalcPro. ${calculator.description}.`,
     alternates: {
         canonical: `/calculators/${awaitedParams.slug}`,
     },
@@ -54,4 +54,3 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     </main>
   );
 }
-
