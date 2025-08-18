@@ -8,19 +8,19 @@ export default function Footer() {
     <footer className="bg-muted/50 text-muted-foreground">
       <div className="container mx-auto py-8 text-center">
         <div className="flex justify-center gap-4 sm:gap-6 mb-4">
-          <Link href="/about?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
+          <Link href="/about" className="text-sm hover:text-primary transition-colors">
             About
           </Link>
-          <Link href="/blog?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
+          <Link href="/blog" className="text-sm hover:text-primary transition-colors">
             Blog
           </Link>
-          <Link href="/sitemap?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
+          <Link href="/sitemap" className="text-sm hover:text-primary transition-colors">
             Sitemap
           </Link>
-          <Link href="/terms-of-use?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
+          <Link href="/terms-of-use" className="text-sm hover:text-primary transition-colors">
             Terms of Use
           </Link>
-          <Link href="/privacy-policy?utm_source=embed&utm_medium=footer" className="text-sm hover:text-primary transition-colors">
+          <Link href="/privacy-policy" className="text-sm hover:text-primary transition-colors">
             Privacy Policy
           </Link>
         </div>
