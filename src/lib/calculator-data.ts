@@ -5,6 +5,18 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Financial Health Check-up
+  {
+    slug: 'financial-health-checkup',
+    name: 'AI Financial Health Check-up',
+    description: 'Get a free, personalized financial health score in 2 minutes.',
+    category: 'Finance',
+    iconName: 'ShieldCheck',
+    seoTitle: 'AI Financial Health Check-up | Free Financial Score | CalcPro',
+    metaDescription: 'Get a free, AI-powered financial health score. Our tool analyzes your income, savings, and debts to provide a personalized action plan.',
+    formula: 'AI-driven analysis based on financial health metrics.'
+  },
+
   // Lifestyle
   {
     slug: 'wedding-budget-calculator',
