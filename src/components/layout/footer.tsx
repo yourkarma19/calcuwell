@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="mb-4 text-sm">
             Contact us: <a href="mailto:gridguruu@gmail.com" className="text-primary hover:underline">gridguruu@gmail.com</a>
         </div>
-        <p className="text-xs">&copy; 2024 - {currentYear} calcpro.online. All Rights Reserved.</p>
+        <p className="text-xs">&copy; {currentYear} calcpro.online. All Rights Reserved.</p>
       </div>
     </footer>
   );
