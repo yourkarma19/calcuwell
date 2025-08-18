@@ -6,17 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
 import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 import { useSearchParams } from "next/navigation";
 
-export default function LoanEMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function LoanEMICalculator({ setFormula, setChildProps }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
@@ -38,6 +31,11 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
   const { emi, totalPayable, totalInterest } = useMemo(() => {
     return calculateEMI(principal, rate, tenure);
   }, [principal, rate, tenure]);
+  
+  useEffect(() => {
+    setChildProps({ principal, totalInterest });
+  }, [principal, totalInterest, setChildProps]);
+
 
   const { newTotalInterest, newTotalMonths, interestSaved, timeSaved } = useMemo(() => {
     if (extraMonthlyPayment > 0 || extraYearlyPayment > 0) {
@@ -46,24 +44,6 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
     return { newTotalInterest: 0, newTotalMonths: 0, interestSaved: 0, timeSaved: { years: 0, months: 0 }};
   }, [principal, rate, tenure, extraMonthlyPayment, extraYearlyPayment]);
   
-  const originalTotalMonths = tenure * 12;
-
-  const chartData = useMemo(() => ([
-      { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
-      { name: "Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
-  ]), [principal, totalInterest]);
-
-  const chartConfig = {
-      principal: {
-        label: "Principal",
-        color: "hsl(var(--chart-1))",
-      },
-      interest: {
-        label: "Interest",
-        color: "hsl(var(--chart-2))",
-      },
-  }
-
   const formatCurrency = (value: number) => {
     return `₹${value.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
   };

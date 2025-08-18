@@ -8,7 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "../ui/input";
 
-export default function MortgageCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function MortgageCalculator({ setChildProps }: { setChildProps: (props: any) => void }) {
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
   const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);
   const [tenure, setTenure] = usePersistentState("mortgage-tenure", 30);
@@ -43,6 +43,10 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
     }
     return { monthlyPayment: 0, totalPayable: 0, totalInterest: 0, principalAndInterest: 0, monthlyTaxes: 0, monthlyInsurance: 0 };
   }, [principal, rate, tenure, propertyTax, homeInsurance]);
+  
+  useEffect(() => {
+    setChildProps({ principal, totalInterest, propertyTax, homeInsurance, tenure });
+  }, [principal, totalInterest, propertyTax, homeInsurance, tenure, setChildProps]);
   
 
   return (

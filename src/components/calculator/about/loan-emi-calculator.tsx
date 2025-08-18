@@ -29,7 +29,7 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
     const chartData = [
         { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
         { name: "Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
-    ]
+    ].filter(item => item.value > 0);
 
     return (
         <div className="space-y-6">
@@ -79,29 +79,31 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
                 </CardContent>
             </Card>
             
-            <Card>
-                <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-                <CardContent className="h-[25rem]">
-                    <ChartContainer config={chartConfig} className="w-full h-full">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <PieChart>
-                                <Tooltip
-                                cursor={false}
-                                content={<ChartTooltipContent 
-                                    formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
-                                    />}
-                                />
-                                <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="30%" outerRadius="80%" strokeWidth={5} labelLine={false} label>
-                                    {chartData.map((entry) => (
-                                        <Cell key={entry.name} fill={entry.fill} />
-                                    ))}
-                                </Pie>
-                                <ChartLegend content={<ChartLegendContent />} />
-                            </PieChart>
-                        </ResponsiveContainer>
-                    </ChartContainer>
-                </CardContent>
-            </Card>
+            {chartData.length > 0 && principal > 0 && (
+                <Card>
+                    <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
+                    <CardContent className="h-[25rem]">
+                        <ChartContainer config={chartConfig} className="w-full h-full">
+                            <ResponsiveContainer width="100%" height="100%">
+                                <PieChart>
+                                    <Tooltip
+                                    cursor={false}
+                                    content={<ChartTooltipContent 
+                                        formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
+                                        />}
+                                    />
+                                    <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="80%" strokeWidth={2} labelLine={false} label>
+                                        {chartData.map((entry) => (
+                                            <Cell key={entry.name} fill={entry.fill} />
+                                        ))}
+                                    </Pie>
+                                    <ChartLegend content={<ChartLegendContent />} />
+                                </PieChart>
+                            </ResponsiveContainer>
+                        </ChartContainer>
+                    </CardContent>
+                </Card>
+            )}
         </div>
     )
 }

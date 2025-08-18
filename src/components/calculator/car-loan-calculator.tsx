@@ -6,10 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Info } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
-export default function CarLoanCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function CarLoanCalculator() {
   const [carPrice, setCarPrice] = usePersistentState("car-loan-price", 25000);
   const [downPayment, setDownPayment] = usePersistentState("car-loan-downpayment", 5000);
   const [tradeInValue, setTradeInValue] = usePersistentState("car-loan-tradein", 2000);
@@ -78,25 +76,6 @@ export default function CarLoanCalculator({ setFormula }: { setFormula: (formula
                 <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
             </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><CardTitle>Car Loan Fundamentals</CardTitle></CardHeader>
-          <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is an EMI?</AccordionTrigger>
-                <AccordionContent>
-                  An Equated Monthly Installment (EMI) is the fixed payment amount a borrower makes to a lender each month. It includes both the principal amount and the interest on the loan, ensuring the loan is fully paid off over the specified tenure.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>How is the total cost calculated?</AccordionTrigger>
-                <AccordionContent>
-                  The total cost of the car includes the principal loan amount, all the interest paid over the loan's life, and any initial down payment or trade-in value you provided. It's the complete out-of-pocket expense for the vehicle.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
           </CardContent>
         </Card>
       </div>
