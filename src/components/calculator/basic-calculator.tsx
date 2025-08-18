@@ -67,14 +67,10 @@ export default function BasicCalculator() {
     }
     
     if (displayValue === "Error" || displayValue === "I ❤️ You") {
-        setExpression("");
-        setDisplayValue("0");
-        setJustEvaluated(false);
-        if(!isOperator(input)) setDisplayValue(input);
+        resetCalculator();
+        if(!isOperator(input) && input !== "AC") setDisplayValue(input);
         return;
     }
-    
-    setJustEvaluated(false);
 
     if (isOperator(input)) {
         handleOperator(input);
@@ -95,17 +91,24 @@ export default function BasicCalculator() {
         setDisplayValue(prev => prev + input);
       }
     }
+    
+    if(input !== "=") setJustEvaluated(false);
   }, [displayValue, justEvaluated]);
 
   const handleOperator = (op: string) => {
     if (displayValue !== "Error") {
-        const lastChar = expression.slice(-1);
-        if (isOperator(lastChar)) {
-            setExpression(prev => prev.slice(0, -1) + op);
-        } else {
-            setExpression(prev => prev + displayValue + op);
-        }
-        setDisplayValue("0");
+      if (justEvaluated) {
+          setExpression(displayValue + op);
+          setJustEvaluated(false);
+      } else {
+          const lastChar = expression.slice(-1);
+          if (isOperator(lastChar)) {
+              setExpression(prev => prev.slice(0, -1) + op);
+          } else {
+              setExpression(prev => prev + displayValue + op);
+          }
+      }
+      setDisplayValue("0");
     }
   };
 
@@ -176,7 +179,7 @@ export default function BasicCalculator() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleInput]);
+  }, [handleInput, handleOperator]);
   
     const handleScientificInput = (func: string) => {
     if (displayValue === "Error" && func !== 'AC') return;
