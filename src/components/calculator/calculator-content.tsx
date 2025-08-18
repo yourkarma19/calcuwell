@@ -27,7 +27,7 @@ const ContentLoader = () => (
 export default function CalculatorContent({ slug, ...props }: CalculatorContentProps) {
   const AboutComponent = useMemo(() => {
     return dynamic(
-      () => import(`@/components/calculator/about/${slug}`),
+      () => import(`@/components/calculator/about/${slug}`).catch(() => () => null),
       {
         loading: () => <ContentLoader />,
         ssr: false,

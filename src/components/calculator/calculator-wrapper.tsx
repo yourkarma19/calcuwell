@@ -28,12 +28,20 @@ export default function CalculatorWrapper({
   const isEmbed = searchParams.get('embed') === 'true';
 
   const LucideIcon = icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
+  
+  const [childProps, setChildProps] = React.useState({});
 
-  // Clone the child element to pass the setFormula function as a prop
-  const childrenWithProps = React.Children.map(children, child => {
+  const EnhancedChildren = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
       // @ts-ignore
-      return React.cloneElement(child, { setFormula });
+      const originalOnSubmit = child.props.onSubmit;
+      const newProps = {
+        ...child.props,
+        setFormula,
+        setChildProps,
+      };
+      
+      return React.cloneElement(child, newProps);
     }
     return child;
   });
@@ -42,7 +50,7 @@ export default function CalculatorWrapper({
     return (
         <div className="p-2">
              <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
-                {childrenWithProps}
+                {EnhancedChildren}
             </div>
         </div>
     )
@@ -73,7 +81,7 @@ export default function CalculatorWrapper({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
         <div className="lg:col-span-2 space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-             {childrenWithProps}
+             {EnhancedChildren}
           </div>
         </div>
         <div className="lg:col-span-1 lg:sticky top-24 no-print space-y-6">
@@ -85,7 +93,7 @@ export default function CalculatorWrapper({
         </div>
       </div>
       <div className="max-w-5xl mx-auto mt-12">
-        <CalculatorContent slug={calculator.slug} />
+        <CalculatorContent slug={calculator.slug} {...childProps} />
       </div>
     </div>
   );
