@@ -8,7 +8,7 @@ import CalculatorCard from '@/components/calculator/calculator-card';
 
 export const metadata: Metadata = {
   title: 'CalcPro Blog | Insights & Explanations',
-  description: 'Explore articles that break down complex topics in math, finance, and health. Get simple explanations for the concepts behind our free online calculators.',
+  description: 'Explore articles about math, finance, and health. Get simple explanations for the concepts behind our free online calculators.',
   alternates: {
     canonical: '/blog',
   },
@@ -39,20 +39,23 @@ export default function BlogIndexPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="block h-full">
-            <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
-              <CardHeader>
-                  <CardTitle className="font-headline group-hover:text-primary transition-colors">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription>{post.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
-      </div>
+      <section aria-labelledby="blog-posts-heading">
+        <h2 id="blog-posts-heading" className="sr-only">Blog Posts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="block h-full">
+              <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
+                <CardHeader>
+                    <CardTitle as="h3" className="font-headline group-hover:text-primary transition-colors">
+                      {post.title}
+                    </CardTitle>
+                    <CardDescription>{post.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
