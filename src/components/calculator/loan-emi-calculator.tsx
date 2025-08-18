@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 import { useSearchParams } from "next/navigation";
+import ExportShareControls from "./export-share-controls";
 
 export default function LoanEMICalculator({ setFormula, setChildProps }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void }) {
   const searchParams = useSearchParams();
@@ -56,9 +57,15 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
       return `${years} yr, ${months} mo`;
   }
 
+  const shareParams = {
+      principal: principal.toString(),
+      rate: rate.toString(),
+      tenure: tenure.toString()
+  }
+
   return (
     <div className="space-y-6">
-        <Card>
+        <Card id="loan-emi-inputs">
           <CardHeader>
             <CardTitle>Enter Loan Details</CardTitle>
           </CardHeader>
@@ -122,7 +129,7 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
           </CardContent>
         </Card>
 
-        <Card>
+        <Card id="loan-emi-results">
           <CardHeader>
             <CardTitle>Your Loan EMI</CardTitle>
           </CardHeader>
@@ -166,6 +173,10 @@ export default function LoanEMICalculator({ setFormula, setChildProps }: { setFo
             )}
           </CardContent>
         </Card>
+        <ExportShareControls
+            elementIds={['loan-emi-inputs', 'loan-emi-results']}
+            shareParams={shareParams}
+        />
     </div>
   );
 }

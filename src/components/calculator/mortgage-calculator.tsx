@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "../ui/input";
+import ExportShareControls from "./export-share-controls";
 
 export default function MortgageCalculator({ setChildProps }: { setChildProps: (props: any) => void }) {
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
@@ -50,10 +51,17 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
     }
   }, [principal, totalInterest, propertyTax, homeInsurance, tenure, setChildProps]);
   
+  const shareParams = {
+      principal: principal.toString(),
+      rate: rate.toString(),
+      tenure: tenure.toString(),
+      propertyTax: propertyTax.toString(),
+      homeInsurance: homeInsurance.toString(),
+  }
 
   return (
     <div className="space-y-6">
-        <Card>
+        <Card id="mortgage-inputs">
           <CardHeader>
             <CardTitle>Enter Mortgage Details</CardTitle>
           </CardHeader>
@@ -96,7 +104,7 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
           </CardContent>
         </Card>
         
-        <Card>
+        <Card id="mortgage-results">
           <CardHeader>
             <CardTitle>Your Mortgage EMI</CardTitle>
           </CardHeader>
@@ -131,6 +139,10 @@ export default function MortgageCalculator({ setChildProps }: { setChildProps: (
             </div>
           </CardContent>
         </Card>
+        <ExportShareControls 
+            elementIds={['mortgage-inputs', 'mortgage-results']}
+            shareParams={shareParams}
+        />
     </div>
   );
 }
