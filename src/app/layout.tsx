@@ -24,7 +24,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://calcpro.online"),
-  title: "Free Online Calculators for Everything | CalcPro",
+  title: "CalcPro: Your Free Online Calculator Hub",
   description: "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
   alternates: {
     canonical: '/',
