@@ -1,6 +1,4 @@
 
-"use client";
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -16,7 +14,7 @@ export default function AboutBase64Converter() {
               <ol>
                   <li>Enter the text or data you want to convert into the top input box.</li>
                   <li>Click **"Encode"** to turn it into a Base64 string.</li>
-                  <li>To decode, paste a Base64 string into the input box and click **"Decode"**.</li>
+                  <li>To decode, paste a Base64 string into the input box and click **"Decode"**</li>
               </ol>
               <p>The result will appear in the bottom box instantly.</p>
               <h3>Frequently Asked Questions (FAQs)</h3>
@@ -44,3 +42,5 @@ export default function AboutBase64Converter() {
       </Card>
     );
 }
+
+  

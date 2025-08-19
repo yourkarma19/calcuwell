@@ -5,6 +5,39 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Time Card Calculator
+  {
+    slug: 'time-card-calculator',
+    name: 'Time Card Calculator',
+    description: 'Calculate total work hours and pay for a week, including breaks.',
+    category: 'Finance',
+    iconName: 'Clock',
+    seoTitle: 'Free Time Card Calculator | Calculate Work Hours & Pay | CalcPro',
+    metaDescription: 'Easily calculate weekly work hours and gross pay with our free time card calculator. Enter your daily start and end times, including breaks, to get an accurate summary.',
+    formula: 'Total Hours = Sum(End Time - Start Time - Break Time)'
+  },
+  // New Concrete Slab Calculator
+  {
+    slug: 'concrete-slab-calculator',
+    name: 'Concrete Slab Calculator',
+    description: 'Estimate the bags of concrete needed for a slab, footer, or posts.',
+    category: 'Geometry & Engineering',
+    iconName: 'Calculator',
+    seoTitle: 'Concrete Slab Calculator | Estimate Concrete Bags Needed | CalcPro',
+    metaDescription: 'Calculate the volume and number of concrete bags needed for your project. Our calculator works for slabs, footers, and round post holes. Get instant results.',
+    formula: 'Volume = Length × Width × Thickness'
+  },
+  // New Wind Chill Calculator
+  {
+    slug: 'wind-chill-calculator',
+    name: 'Wind Chill Calculator',
+    description: 'Calculate the perceived temperature based on wind speed.',
+    category: 'Miscellaneous',
+    iconName: 'Wind',
+    seoTitle: 'Wind Chill Calculator | Feels Like Temperature | CalcPro',
+    metaDescription: 'Calculate the wind chill temperature based on the actual air temperature and wind speed. Find out how cold it really feels with our free online tool.',
+    formula: 'Wind Chill (F) = 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)'
+  },
   // New Cubic Equation Calculator
   {
     slug: 'cubic-equation-calculator',
@@ -88,8 +121,8 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Atom',
     formula: 'Power (P) = Voltage (V) × Current (I)',
-    seoTitle: 'Volts to Watts Calculator | P = V × I Conversion | CalcPro',
-    metaDescription: 'Instantly convert Volts and Amps to Watts using the P=VI formula. Our free online calculator is perfect for any electrical calculation.',
+    seoTitle: 'Volts to Watts (W) Conversion Calculator | P = V × I',
+    metaDescription: 'Instantly convert Volts and Amps to Watts using our free online calculator. Understand the power formula (P=VI) with real-world examples and clear explanations.',
   },
    // New Partial Fraction Calculator
   {
@@ -318,8 +351,8 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    seoTitle: 'Loan EMI Calculator | Free EMI Calculation Tool | CalcPro',
-    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free tool. See how extra payments can reduce your loan tenure and save you money.',
+    seoTitle: 'Loan EMI Calculator with Prepayment | Free Tool | CalcPro',
+    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free tool. See how optional extra payments can reduce your loan tenure and save you money.',
   },
   {
     slug: 'loan-comparison-calculator',
@@ -385,7 +418,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    seoTitle: 'Retirement Calculator | Plan For Your Future | CalcPro',
+    seoTitle: 'Retirement Calculator | How Much Should I Save at 30? | CalcPro',
     metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to achieve your retirement goals and see if you are on track.',
   },
   {
@@ -394,7 +427,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the return on your investments.',
     category: 'Finance',
     iconName: 'AreaChart',
-    seoTitle: 'ROI Calculator | Calculate Return on Investment | CalcPro',
+    seoTitle: 'ROI Calculator | How to Calculate Return on Investment | CalcPro',
     metaDescription: 'Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.',
   },
   {
@@ -409,10 +442,10 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'currency-converter',
     name: 'Currency Converter',
-    description: 'Convert between different currencies with live rates.',
+    description: 'Convert between different currencies with mock rates.',
     category: 'Finance',
     iconName: 'Globe',
-    seoTitle: 'Currency Converter | Free Online Exchange Rates | CalcPro',
+    seoTitle: 'Currency Converter for International Meetings | CalcPro',
     metaDescription: 'A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.',
   },
   {
@@ -541,12 +574,12 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'body-fat-percentage-calculator',
     name: 'Body Fat Percentage Calculator',
-    description: 'Estimate your body fat percentage.',
+    description: 'Estimate body fat with a tape measure.',
     category: 'Health',
     iconName: 'Percent',
     formula: "U.S. Navy Method",
-    seoTitle: 'Body Fat Percentage Calculator | US Navy Method | CalcPro',
-    metaDescription: 'Estimate your body fat percentage using the U.S. Navy method. This calculator uses your body measurements for a more accurate assessment than BMI alone.'
+    seoTitle: 'Body Fat Percentage Calculator (Tape Measure) | CalcPro',
+    metaDescription: 'Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment than BMI alone.'
   },
   {
     slug: 'lean-body-mass-calculator',
@@ -719,7 +752,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'date-difference-calculator',
     name: 'Date Difference Calculator',
-    description: 'Calculate the difference between two dates.',
+    description: 'Calculate days between two dates.',
     category: 'Date & Time',
     iconName: 'CalendarDays',
     formula: "endDate - startDate",
@@ -741,7 +774,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
     iconName: 'Globe2',
-    seoTitle: 'Time Zone Converter | World Time Tool | CalcPro',
+    seoTitle: 'Time Zone Converter for International Meetings | CalcPro',
     metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
   },
   {
@@ -756,7 +789,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'working-days-calculator',
     name: 'Working Days Calculator',
-    description: 'Calculate working days between two dates.',
+    description: 'Calculate business days between two dates.',
     category: 'Date & Time',
     iconName: 'Briefcase',
     seoTitle: 'Working Days Calculator | Business Day Counter | CalcPro',
@@ -963,7 +996,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'resistor-color-code-calculator',
     name: 'Resistor Color Code Calculator',
-    description: 'Determine resistor values from color codes.',
+    description: 'Decode 4-band resistor color codes.',
     category: 'Geometry & Engineering',
     iconName: 'Palette',
     seoTitle: '4-Band Resistor Color Code Calculator | Decoder | CalcPro',
@@ -987,7 +1020,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Miscellaneous',
     iconName: 'GraduationCap',
     formula: 'Σ(Grade Points * Credits) / Σ(Credits)',
-    seoTitle: 'GPA Calculator | Calculate Grade Point Average | CalcPro',
+    seoTitle: 'GPA Calculator for College | Calculate Grade Point Average | CalcPro',
     metaDescription: 'Calculate your GPA quickly and easily. Enter your courses, credits, and grades to find your Grade Point Average on a 4.0 scale.'
   },
   {
@@ -1023,7 +1056,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     iconName: 'Landmark',
-    seoTitle: 'Loan Affordability Calculator | How Much Can I Borrow?',
+    seoTitle: 'Loan Affordability Calculator | How Much House Can I Afford?',
     metaDescription: 'Estimate how much you can afford to borrow for a loan based on your income, monthly debts, and the desired loan terms. Perfect for home or car loan planning.',
   },
   {
@@ -1045,3 +1078,5 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
   },
 ];
+
+  
