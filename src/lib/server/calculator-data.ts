@@ -3,16 +3,13 @@ import 'server-only';
 import type { Calculator } from '@/lib/types';
 import { calculatorsData } from '@/lib/calculator-data';
 import { categories } from '@/lib/calculators';
+import { cache } from 'react';
 
-let allCalculators: Omit<Calculator, 'component'>[] | null = null;
-
-// This function now only runs on the server.
-export const loadFullCalculatorData = async () => {
-  if (allCalculators === null) {
-    allCalculators = calculatorsData;
-  }
-  return allCalculators;
-}
+// Using React's `cache` to ensure this function only runs once per request.
+// This is a key optimization for server-side rendering performance.
+export const loadFullCalculatorData = cache(async () => {
+  return calculatorsData;
+});
 
 export const getCalculatorBySlug = async (slug: string): Promise<Omit<Calculator, 'component'> | undefined> => {
   const allCalculators = await loadFullCalculatorData();
