@@ -11,7 +11,7 @@ export default function AboutFinancialHealthCheckup() {
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>A financial health check-up is like a report card for your money. It provides a score and a summary of your current financial situation, helping you understand your strengths and identify areas for improvement. This tool uses key metrics like your savings rate and debt-to-income ratio to give you a clear picture of where you stand.</p>
 
-                <h3>How to Use This Tool</h3>
+                <h2>How to Use This Tool</h2>
                 <ol>
                     <li><strong>Monthly Income:</strong> Enter your total take-home pay per month.</li>
                     <li><strong>Monthly Savings:</strong> Input the amount you regularly save or invest.</li>
@@ -21,7 +21,7 @@ export default function AboutFinancialHealthCheckup() {
                 </ol>
                 <p>After you submit your information, our AI will analyze your data and provide a personalized report with a score, a summary of your situation, and a concrete action plan to help you improve.</p>
 
-                <h3>Frequently Asked Questions (FAQs)</h3>
+                <h2>Financial Health FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is a good savings rate?</AccordionTrigger>
