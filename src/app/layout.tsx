@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
-import Script from "next/script";
 import { headers } from 'next/headers';
 import { cn } from "@/lib/utils";
 
@@ -67,19 +66,6 @@ export default async function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-DNV4NPYV0F');
-          `}
-        </Script>
-        <Script 
-          src="https://www.googletagmanager.com/gtag/js?id=G-DNV4NPYV0F"
-          strategy="lazyOnload" 
-        />
       </head>
       <body
         className={cn(
