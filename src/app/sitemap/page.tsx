@@ -7,7 +7,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
- title: "Sitemap | CalcPro",
+ title: "Sitemap | List of All Calculators | CalcPro",
  description: "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, health, and more.",
  alternates: {
     canonical: "/sitemap",
