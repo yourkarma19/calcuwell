@@ -87,9 +87,20 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert voltage (V) and current (A) to power in watts (W).',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    formula: 'P = V * I',
-    seoTitle: 'Voltage to Watts Calculator | CalcPro Online',
-    metaDescription: 'Instantly convert voltage (V) and current (A) to power (W) with our simple and free online calculator. Accurate results for your electrical calculations.',
+    formula: 'Power (P) = Voltage (V) × Current (I)',
+    seoTitle: 'Volts to Watts Calculator | P = V × I Conversion | CalcPro',
+    metaDescription: 'Instantly convert Volts and Amps to Watts using the P=VI formula. Our free online calculator is perfect for any electrical calculation.',
+  },
+   // New Partial Fraction Calculator
+  {
+    slug: 'partial-fraction-calculator',
+    name: 'Partial Fraction Calculator',
+    description: 'Decompose rational functions into simpler fractions.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: 'f(x) = P(x) / Q(x)',
+    seoTitle: 'Partial Fraction Calculator with Steps | CalcPro Online',
+    metaDescription: 'Solve complex partial fraction decomposition problems instantly. Our free online calculator provides a detailed step-by-step solution to help you learn the process.',
   },
   // New Financial Health Check-up
   {

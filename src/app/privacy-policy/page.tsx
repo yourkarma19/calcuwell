@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | How We Handle Your Data | CalcPro",
-    description: "Read the privacy policy for CalcPro. We are committed to protecting your data and privacy when you use our free online calculator tools.",
+    title: "Privacy Policy | CalcPro",
+    description: "Read the privacy policy for CalcPro. We are committed to protecting your data and privacy when you use our free online calculator tools. We do not store your calculation data.",
     alternates: {
         canonical: "/privacy-policy",
     },

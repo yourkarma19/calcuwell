@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About CalcPro | Our Mission & Story",
-    description: "Learn about CalcPro and our mission to provide fast, free, and easy-to-use online calculators for math, finance, health, and more.",
+    description: "Learn about CalcPro, our mission to provide the best free online calculators for math, finance, and health, and our commitment to accuracy and user privacy.",
     alternates: {
         canonical: "/about",
     },
