@@ -64,7 +64,7 @@ export default function PythagoreanTheoremBlogPage() {
             Need to solve a triangle problem quickly? Try our <Link href="/calculators/pythagorean-theorem-calculator" className="text-primary hover:underline">Pythagorean Theorem Calculator</Link>.
         </p>
         
-        <h2>A Simple Example</h2>
+        <h3>A Simple Example</h3>
         <p>
           Imagine a right triangle with one side of 3 units and another of 4 units. To find the length of the longest side (the hypotenuse):
         </p>
@@ -77,7 +77,7 @@ export default function PythagoreanTheoremBlogPage() {
             The length of the hypotenuse is 5 units. This is a classic "3-4-5 triangle."
         </p>
 
-        <h2>Real-World Applications</h2>
+        <h3>Real-World Applications</h3>
         <p>
           The Pythagorean theorem is not just for math class. It is used in many real-world situations:
         </p>
