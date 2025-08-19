@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
+  CardContent,
 } from "@/components/ui/card";
 import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
