@@ -32,17 +32,17 @@ export default function PrivacyPolicyPage() {
 
                 <h2>Information We Collect</h2>
                 <p>
-                    We respect your privacy. Our calculators do not require you to provide any personal information to use them.
+                    We respect your privacy. Our calculators do not require you to provide any personal information to use them. Any data you enter into a calculator is processed in your browser and is not stored on our servers.
                 </p>
 
                 <h2>Website Analytics</h2>
                 <p>
-                    Like most websites, we collect "Log Data" that your browser sends. This may include your device's IP address, browser type, and which pages you visit. This data helps us understand how our Service is being used so we can improve it.
+                    Like most websites, we collect "Log Data" that your browser sends. This may include your device's IP address, browser type, and which pages you visit. This data helps us understand how our Service is being used so we can improve it. We use Google Analytics for this purpose.
                 </p>
 
                 <h2>Advertising and Cookies</h2>
                 <p>
-                    We use Google AdSense to serve advertisements on our site. Our advertising partners, including Google, may use cookies to serve ads based on a user's prior visits to our website or other websites.
+                    We use Google AdSense to serve advertisements on our site. Our advertising partners, including Google, may use cookies to serve ads based on a user's prior visits to our website or other websites on the internet.
                 </p>
                 <ul>
                     <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
