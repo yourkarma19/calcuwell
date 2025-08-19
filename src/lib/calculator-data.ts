@@ -5,6 +5,17 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Voltage to Watts Calculator
+  {
+    slug: 'voltage-to-watts-calculator',
+    name: 'Voltage to Watts Calculator',
+    description: 'Convert voltage (V) and current (A) to power in watts (W).',
+    category: 'Geometry & Engineering',
+    iconName: 'Atom',
+    formula: 'P = V * I',
+    seoTitle: 'Voltage to Watts Calculator | CalcPro Online',
+    metaDescription: 'Instantly convert voltage (V) and current (A) to power (W) with our simple and free online calculator. Accurate results for your electrical calculations.',
+  },
   // New Financial Health Check-up
   {
     slug: 'financial-health-checkup',
@@ -948,4 +959,5 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
 ];
+
 
