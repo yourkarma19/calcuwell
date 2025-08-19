@@ -5,6 +5,17 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Partial Fraction Calculator
+  {
+    slug: 'partial-fraction-calculator',
+    name: 'Partial Fraction Calculator',
+    description: 'Solve partial fraction decomposition problems with a full, step-by-step solution.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: 'Decomposition of rational functions into simpler fractions.',
+    seoTitle: 'Partial Fraction Calculator with Steps | CalcPro Online',
+    metaDescription: 'Solve complex partial fraction decomposition problems instantly. Our free online calculator provides a detailed step-by-step solution to help you learn the process.',
+  },
   // New Voltage to Watts Calculator
   {
     slug: 'voltage-to-watts-calculator',
@@ -959,5 +970,6 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
 ];
+
 
 
