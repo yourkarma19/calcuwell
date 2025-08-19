@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -35,8 +34,16 @@ export default function AboutMixedNumberCalculator() {
                             The easiest and most reliable way to add or subtract mixed numbers is to first convert them all into improper fractions. Once you have two improper fractions, you find a common denominator for both. After they share a common denominator, you can perform the addition or subtraction on the numerators. Finally, you can convert the resulting improper fraction back to a mixed number if needed.
                         </AccordionContent>
                     </AccordionItem>
+                     <AccordionItem value="item-4">
+                        <AccordionTrigger>What is an improper fraction?</AccordionTrigger>
+                        <AccordionContent>
+                            An improper fraction is a fraction where the numerator (the top number) is greater than or equal to the denominator (the bottom number). For example, 5/4 or 3/3 are improper fractions. They represent a value of 1 or more. They can always be converted into a mixed number or a whole number.
+                        </AccordionContent>
+                    </AccordionItem>
                 </Accordion>
             </CardContent>
         </Card>
     )
 }
+
+    
