@@ -1,11 +1,14 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function AboutCalorieNeedsCalculator() {
     return (
-        <div className="prose dark:prose-invert max-w-none">
+      <Card>
+        <CardHeader><CardTitle as="h2">About Daily Calorie Needs</CardTitle></CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
             <p>The Daily Calorie Needs calculator estimates how many calories you should eat per day to maintain your current weight. It uses the Mifflin-St Jeor equation, a widely accepted formula.</p>
-            <h2>How to Use This Calorie Needs Tool</h2>
+            <h3>How to Use This Calorie Needs Tool</h3>
             <p>To find your daily calorie needs, enter your age, gender, height, weight, and activity level. The calculator will then show an estimate of the calories you need to consume to keep your weight stable.</p>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
@@ -27,6 +30,7 @@ export default function AboutCalorieNeedsCalculator() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
+        </CardContent>
+      </Card>
     )
 }

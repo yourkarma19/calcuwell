@@ -20,7 +20,7 @@ export default function AboutInterceptCalculator() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle as="h2">How to Find Intercepts from a Graph</CardTitle>
+                    <CardTitle as="h3">How to Find Intercepts from a Graph</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                      <p>Visually finding intercepts is straightforward. Simply look for the two points where the line of your equation makes contact with the x-axis and the y-axis. The image below illustrates this concept clearly.</p>
@@ -39,7 +39,7 @@ export default function AboutInterceptCalculator() {
 
              <Card>
                 <CardHeader>
-                    <CardTitle as="h2">Why Are Intercepts Useful?</CardTitle>
+                    <CardTitle as="h3">Why Are Intercepts Useful?</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                     <p>Intercepts are not just abstract points on a graph; they often have significant real-world meaning in various contexts:</p>

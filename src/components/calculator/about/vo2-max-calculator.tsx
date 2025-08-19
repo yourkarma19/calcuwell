@@ -10,10 +10,10 @@ export default function AboutVo2MaxCalculator() {
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This tool gives you an estimate of your VO₂ max. This is a key measure of your aerobic fitness. It shows how well your body can use oxygen during exercise. A higher VO₂ max usually means better cardiovascular health.</p>
 
-                <h2>How to Use the VO₂ Max Estimator</h2>
+                <h3>How to Use the VO₂ Max Estimator</h3>
                 <p>This calculator uses a non-exercise method to estimate your VO₂ max. Simply enter your age and your resting heart rate. Your resting heart rate is your pulse when you are calm and relaxed.</p>
                 
-                <h2>VO₂ Max FAQs</h2>
+                <h3>VO₂ Max FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is VO₂ max?</AccordionTrigger>

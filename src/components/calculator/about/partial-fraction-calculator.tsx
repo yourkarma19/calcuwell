@@ -8,12 +8,12 @@ export default function AboutPartialFractionCalculator() {
                 <CardTitle as="h2">About Partial Fraction Decomposition</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <h2>What is Partial Fraction Decomposition?</h2>
+                <h3>What is Partial Fraction Decomposition?</h3>
                 <p>
                     Partial fraction decomposition is a technique in algebra used to break down a complex rational function (a fraction of two polynomials) into a sum of simpler fractions. This process makes the expression much easier to work with, especially for operations in calculus like integration.
                 </p>
 
-                <h2>When is This Used?</h2>
+                <h3>When is This Used?</h3>
                 <ul>
                     <li>
                         <strong>Integral Calculus:</strong> This is the most common application. Integrating a complex rational function can be very difficult, but integrating the sum of its simpler partial fractions is often straightforward.
@@ -23,7 +23,7 @@ export default function AboutPartialFractionCalculator() {
                     </li>
                 </ul>
                 
-                <h2>Partial Fraction FAQs</h2>
+                <h3>Partial Fraction FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What about repeated linear factors?</AccordionTrigger>

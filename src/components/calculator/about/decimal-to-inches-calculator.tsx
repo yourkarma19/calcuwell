@@ -56,7 +56,7 @@ export default function AboutDecimalToInchesCalculator() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle as="h2">Common Decimal to Inch Fraction Conversions</CardTitle>
+                    <CardTitle as="h3">Common Decimal to Inch Fraction Conversions</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Table>
@@ -80,7 +80,7 @@ export default function AboutDecimalToInchesCalculator() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle as="h2">Decimal to Inches FAQs</CardTitle>
+                    <CardTitle as="h3">Decimal to Inches FAQs</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Accordion type="single" collapsible className="w-full">

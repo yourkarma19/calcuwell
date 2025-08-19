@@ -8,7 +8,7 @@ export default function AboutCarLoanCalculator() {
             <CardContent className="prose dark:prose-invert max-w-none">
             <p>Our **Car Loan Calculator** is an essential tool for anyone planning to finance a vehicle. It helps you understand the true cost of a car loan by calculating your Equated Monthly Installment (EMI) and showing a full breakdown of the principal versus interest paid. By using this tool, you can budget effectively, compare different loan offers, and make a financially sound decision before stepping into the dealership.</p>
             
-            <h2>How to Use the Calculator</h2>
+            <h3>How to Use the Calculator</h3>
             <ol>
               <li>Enter the total **Car Price** (the on-road price).</li>
               <li>Input your **Down Payment** and the **Trade-in Value** of your old vehicle, if any. These amounts reduce the total loan you need.</li>
@@ -16,7 +16,7 @@ export default function AboutCarLoanCalculator() {
             </ol>
             <p>The calculator will instantly display your monthly payment and show how the total cost is divided between the loan amount and the interest you'll pay over time.</p>
             
-            <h2>Frequently Asked Questions (FAQs)</h2>
+            <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is an EMI?</AccordionTrigger>

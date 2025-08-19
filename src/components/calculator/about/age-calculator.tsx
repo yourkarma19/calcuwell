@@ -10,14 +10,14 @@ export default function AboutAgeCalculator() {
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>The Age Calculator shows your exact age based on your birth date. It breaks down your age into years, months, and days. This tool is great for anyone curious about their age, for filling out applications, or for planning events.</p>
 
-                <h2>How to Use the Age Calculator</h2>
+                <h3>How to Use the Age Calculator</h3>
                 <ol>
                     <li>Select your date of birth using the date picker.</li>
                     <li>Click the "Calculate Age" button.</li>
                     <li>Your age will be shown in the results card. It will include total years, months, and days.</li>
                 </ol>
                 
-                <h2>Age Calculator FAQs</h2>
+                <h3>Age Calculator FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">How is age calculated?</AccordionTrigger>

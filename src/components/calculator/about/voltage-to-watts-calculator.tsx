@@ -8,23 +8,23 @@ export default function AboutVoltageToWattsCalculator() {
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This calculator helps you understand the relationship between voltage, current, and power. By converting volts and amps to watts, you can determine how much power an electrical device is consuming. This is a fundamental calculation in electronics.</p>
                 
-                <h2>How to Convert Volts to Watts</h2>
+                <h3>How to Convert Volts to Watts</h3>
                 <p>The conversion is based on Watt's Law, which states that power is the product of voltage and current.</p>
                 <p className="font-mono bg-muted p-2 rounded-md text-center my-2">Power (Watts) = Voltage (Volts) × Current (Amps)</p>
                 <p className="text-center font-bold">P = V × I</p>
 
-                <h2>Electrical Definitions</h2>
+                <h3>Electrical Definitions</h3>
                 <ul>
                     <li><strong>What is a Volt?</strong> A Volt (V) is the unit of electric potential difference or "electrical pressure" in a circuit.</li>
                     <li><strong>What is an Amp?</strong> An Ampere or Amp (A) is the unit of electrical current, representing the rate of flow of electric charge.</li>
                     <li><strong>What is a Watt?</strong> A Watt (W) is the unit of electrical power, representing the rate at which electrical energy is transferred.</li>
                 </ul>
 
-                <h2>Worked Example</h2>
+                <h3>Worked Example</h3>
                 <p>If you have a device running on a 12V power supply and it draws 2A of current, the power consumption is:</p>
                 <p className="font-mono bg-muted p-2 rounded-md">12V × 2A = 24W</p>
 
-                <h2>When to Use This Calculation</h2>
+                <h3>When to Use This Calculation</h3>
                 <ul>
                     <li><strong>Home Appliances:</strong> Understanding the power consumption of devices like microwaves or hair dryers.</li>
                     <li><strong>Automotive Electronics:</strong> Calculating power for car audio systems or lighting.</li>
@@ -32,7 +32,7 @@ export default function AboutVoltageToWattsCalculator() {
                     <li><strong>Electronics Projects:</strong> Ensuring your power supply can handle the load of your components.</li>
                 </ul>
 
-                <h2>Voltage to Watts FAQs</h2>
+                <h3>Voltage to Watts FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Can you convert volts to watts without amps?</AccordionTrigger>

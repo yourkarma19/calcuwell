@@ -21,7 +21,7 @@ export default function AboutWeddingBudgetCalculator({ totalCost, chartData }: A
         <div className="space-y-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>How to Plan Your Wedding Budget</CardTitle>
+                    <CardTitle as="h2">How to Plan Your Wedding Budget</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                     <p>Our **Wedding Budget Calculator** is designed to help you plan and manage the financial aspect of your special day. By breaking down the costs into key categories, you can get a realistic estimate of your total expenses and see where your money is going. This is the first step to a stress-free wedding planning experience.</p>
@@ -56,7 +56,7 @@ export default function AboutWeddingBudgetCalculator({ totalCost, chartData }: A
                 </CardContent>
             </Card>
             <Card>
-                <CardHeader><CardTitle>Cost Breakdown</CardTitle></CardHeader>
+                <CardHeader><CardTitle as="h3">Cost Breakdown</CardTitle></CardHeader>
                 <CardContent className="h-[25rem]">
                     <ChartContainer config={{}} className="w-full h-full">
                     <ResponsiveContainer width="100%" height="100%">

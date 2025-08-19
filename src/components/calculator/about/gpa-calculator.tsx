@@ -7,7 +7,7 @@ export default function AboutGpaCalculator() {
             <CardHeader><CardTitle as="h2">About GPA Calculation</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>A GPA (Grade Point Average) is a standard way to measure academic success. It's a number that shows your average grade, weighted by the number of credits for each course.</p>
-                <h2>How to Use This GPA Tool</h2>
+                <h3>How to Use This GPA Tool</h3>
                 <p>Simply enter your courses, the grade you received, and the number of credits for each course. The calculator will then compute your GPA for you.</p>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">

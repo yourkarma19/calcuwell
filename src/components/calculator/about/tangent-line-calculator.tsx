@@ -7,7 +7,7 @@ export default function AboutTangentLineCalculator() {
             <CardHeader><CardTitle as="h2">About the Tangent Line Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This calculator is designed for calculus students to find the equation of a line that is tangent to a function at a specific point. The tangent line represents the instantaneous rate of change of the function at that exact point. Understanding how to find it is a core concept in differential calculus.</p>
-                <h2>How to Use the Tangent Line Calculator</h2>
+                <h3>How to Use the Tangent Line Calculator</h3>
                 <ol>
                     <li>Enter the function `f(x)` you want to analyze.</li>
                     <li>Enter the specific point `x` where you want to find the tangent line.</li>
@@ -15,7 +15,7 @@ export default function AboutTangentLineCalculator() {
                 </ol>
                 <p>The tool will provide the equation of the tangent line in slope-intercept form (`y = mx + b`) and show the detailed steps to arrive at the solution.</p>
 
-                <h2>Tangent Line FAQs</h2>
+                <h3>Tangent Line FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is a Tangent Line?</AccordionTrigger>

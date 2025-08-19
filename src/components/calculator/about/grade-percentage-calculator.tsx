@@ -7,13 +7,13 @@ export default function AboutGradePercentageCalculator() {
             <CardHeader><CardTitle as="h2">About Grade Calculation</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This simple tool helps you quickly calculate the percentage score of a test, quiz, or assignment. By entering the points you earned and the total points possible, you can instantly see your performance as a percentage and its corresponding letter grade based on a standard scale. It's a great way for students to track their progress and understand their grades.</p>
-                <h2>How to Use This Grade Calculator</h2>
+                <h3>How to Use This Grade Calculator</h3>
                 <ol>
                     <li>Enter the total **Points Earned** (the score you received).</li>
                     <li>Enter the **Total Possible Points** for the assignment.</li>
                 </ol>
                 <p>The calculator will instantly show your grade as a percentage and a letter.</p>
-                <h2>Grading FAQs</h2>
+                <h3>Grading FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How is the percentage calculated?</AccordionTrigger>
