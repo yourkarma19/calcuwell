@@ -12,7 +12,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Get a free, personalized financial health score in 2 minutes.',
     category: 'Finance',
     iconName: 'ShieldCheck',
-    seoTitle: 'AI Financial Health Check-up | Free Financial Score | CalcPro',
+    seoTitle: 'AI Financial Health Score Checker | Free Report | CalcPro',
     metaDescription: 'Get a free, AI-powered financial health score. Our tool analyzes your income, savings, and debts to provide a personalized action plan.',
     formula: 'AI-driven analysis based on financial health metrics.'
   },
@@ -109,7 +109,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the standard deviation of a data set.',
     category: 'Math',
     iconName: 'Sigma',
-    seoTitle: 'Standard Deviation Calculator | Sample & Population | CalcPro',
+    seoTitle: 'Standard Deviation Calculator | Sample & Pop | CalcPro',
     metaDescription: 'Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with this tool.',
   },
   {
@@ -155,7 +155,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate square roots and cube roots.',
     category: 'Math',
     iconName: 'Variable',
-    seoTitle: 'Square Root & Cube Root Calculator | Find √ & ∛ | CalcPro',
+    seoTitle: 'Square & Cube Root Calculator | Find √ & ∛ | CalcPro',
     metaDescription: 'A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast, accurate, and easy to use.',
   },
   {
@@ -209,7 +209,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Roman numerals and numbers.',
     category: 'Math',
     iconName: 'ArrowRightLeft',
-    seoTitle: 'Roman Numeral Converter | To & From Roman Numerals | CalcPro',
+    seoTitle: 'Roman Numeral Converter | To & From Numerals | CalcPro',
     metaDescription: 'A fast and accurate Roman numeral converter. Easily translate numbers to Roman numerals and back, for values between 1 and 3,999.',
   },
 
@@ -250,7 +250,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Car',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    seoTitle: 'Car Loan Calculator | Estimate Your Auto Loan EMI | CalcPro',
+    seoTitle: 'Car Loan Calculator | Estimate Auto Loan EMI | CalcPro',
     metaDescription: 'Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. Plan your budget.',
   },
   {
@@ -288,7 +288,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    seoTitle: 'Retirement Calculator | Plan For Your Golden Years | CalcPro',
+    seoTitle: 'Retirement Calculator | Plan For Your Future | CalcPro',
     metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to achieve your retirement goals and see if you are on track.',
   },
   {
@@ -369,7 +369,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your overtime pay.',
     category: 'Finance',
     iconName: 'Clock',
-    seoTitle: 'Overtime Pay Calculator | Estimate Your OT Earnings | CalcPro',
+    seoTitle: 'Overtime Pay Calculator | Estimate OT Earnings | CalcPro',
     metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete earnings for the week.',
   },
   {
@@ -419,7 +419,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Scale',
     formula: "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
-    seoTitle: 'BMR Calculator | Basal Metabolic Rate Estimation | CalcPro',
+    seoTitle: 'BMR Calculator | Basal Metabolic Rate Est. | CalcPro',
     metaDescription: 'Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the accurate Mifflin-St Jeor equation.'
   },
   {
@@ -428,7 +428,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your daily calorie needs.',
     category: 'Health',
     iconName: 'HeartPulse',
-    seoTitle: 'Daily Calorie Calculator | How Many Calories To Eat? | CalcPro',
+    seoTitle: 'Daily Calorie Calculator | How Many Calories? | CalcPro',
     metaDescription: 'Estimate the calories you need daily to maintain your weight, based on your age, gender, height, weight, and activity level.'
   },
   {
@@ -457,7 +457,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your lean body mass.',
     category: 'Health',
     iconName: 'Bone',
-    seoTitle: 'Lean Body Mass Calculator | Free LBM Tool | CalcPro',
+    seoTitle: 'Lean Body Mass (LBM) Calculator | Free Tool | CalcPro',
     metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle, bone, and organs.'
   },
   {
@@ -466,7 +466,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your waist-to-hip ratio.',
     category: 'Health',
     iconName: 'Ruler',
-    seoTitle: 'Waist-to-Hip Ratio Calculator | WHR & Health Risk | CalcPro',
+    seoTitle: 'Waist-to-Hip Ratio (WHR) Calculator | Health Risk | CalcPro',
     metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means for your health.'
   },
   {
@@ -550,7 +550,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between bps, Kbps, Mbps, and more.',
     category: 'Conversions',
     iconName: 'Shuffle',
-    seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s Tool | CalcPro',
+    seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s | CalcPro',
     metaDescription: 'Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed and file download calculations.',
   },
   {
@@ -559,7 +559,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between seconds, minutes, hours, and days.',
     category: 'Conversions',
     iconName: 'Clock',
-    seoTitle: 'Time Converter | Hours, Minutes, Seconds & More | CalcPro',
+    seoTitle: 'Time Converter | Hours, Minutes, Seconds | CalcPro',
     metaDescription: 'A simple and fast time converter for various units of time, including seconds, minutes, hours, days, weeks, and years.',
   },
   {
@@ -568,7 +568,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between joules, calories, kWh, and more.',
     category: 'Conversions',
     iconName: 'Atom',
-    seoTitle: 'Energy Converter | Joules, Calories, kWh & More | CalcPro',
+    seoTitle: 'Energy Converter | Joules, Calories, kWh | CalcPro',
     metaDescription: 'Convert between different units of energy, such as Joules, Kilojoules, calories, Kilocalories (kcal), and Kilowatt-hours (kWh).',
   },
   {
@@ -577,7 +577,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Pa, bar, psi, and more.',
     category: 'Conversions',
     iconName: 'Cloud',
-    seoTitle: 'Pressure Converter | Pa, Bar, PSI, ATM & More | CalcPro',
+    seoTitle: 'Pressure Converter | Pa, Bar, PSI, ATM | CalcPro',
     metaDescription: 'Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and pounds per square inch (psi).',
   },
   {
@@ -644,7 +644,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
     iconName: 'Globe2',
-    seoTitle: 'Time Zone Converter | World Time Zone Tool | CalcPro',
+    seoTitle: 'Time Zone Converter | World Time Tool | CalcPro',
     metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
   },
   {
@@ -680,7 +680,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     iconName: 'CalendarClock',
-    seoTitle: 'Add/Subtract Days from a Date | Date Calculator | CalcPro',
+    seoTitle: 'Add/Subtract Days From a Date Calculator | CalcPro',
     metaDescription: "Find a future or past date by adding or subtracting days from a start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
   },
   {
@@ -767,7 +767,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     iconName: 'Circle',
-    seoTitle: 'Circle Calculator | Area, Circumference & Diameter | CalcPro',
+    seoTitle: 'Circle Calculator | Area, Circumference, Diameter | CalcPro',
     metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas.',
   },
   {
@@ -859,7 +859,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate voltage, current, and resistance.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    seoTitle: 'Ohm\'s Law Calculator | Voltage, Current, Resistance | CalcPro',
+    seoTitle: "Ohm's Law Calculator | V, I, R, P | CalcPro",
     metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.',
     formula: 'V = I × R'
   },
@@ -878,7 +878,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    seoTitle: 'Capacitor Charging Calculator for RC Circuits | CalcPro',
+    seoTitle: 'Capacitor Charge Calculator for RC Circuits | CalcPro',
     metaDescription: 'Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. An essential tool for electronics.',
   },
 
@@ -899,7 +899,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your grade percentage.',
     category: 'Miscellaneous',
     iconName: 'Percent',
-    seoTitle: 'Grade Percentage Calculator | Find Your Test Score | CalcPro',
+    seoTitle: 'Grade Percentage Calculator | Find Test Score | CalcPro',
     metaDescription: 'Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.'
   },
   {
@@ -944,7 +944,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your pet\'s age in human years.',
     category: 'Miscellaneous',
     iconName: 'Dog',
-    seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human Years | CalcPro',
+    seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human | CalcPro',
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
 ];
