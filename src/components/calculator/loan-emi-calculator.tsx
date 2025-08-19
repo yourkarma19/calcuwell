@@ -10,6 +10,17 @@ import { Slider } from "@/components/ui/slider";
 import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 import { useSearchParams } from "next/navigation";
 import ExportShareControls from "./export-share-controls";
+import dynamic from "next/dynamic";
+import { Skeleton } from "../ui/skeleton";
+
+const LoanBreakdownChart = dynamic(
+    () => import('@/components/charts/loan-breakdown-chart').then(mod => mod.LoanBreakdownChart),
+    { 
+        ssr: false,
+        loading: () => <Skeleton className="w-full h-[25rem]" />
+    }
+);
+
 
 export default function LoanEMICalculator({ setFormula, setChildProps, calculatorName }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
