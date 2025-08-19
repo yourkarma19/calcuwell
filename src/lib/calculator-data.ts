@@ -1,9 +1,21 @@
+
 import type { Calculator } from '@/lib/types';
 
 // This file is separate to avoid bloating the initial bundle of pages
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Intercept Calculator
+  {
+    slug: 'intercept-calculator',
+    name: 'X and Y Intercept Calculator',
+    description: 'Find the x and y-intercepts of any linear equation with a step-by-step breakdown.',
+    category: 'Math',
+    iconName: 'Sigma',
+    seoTitle: 'X and Y Intercept Calculator with Steps | CalcPro Online',
+    metaDescription: 'A free and easy calculator to find the x and y-intercepts of a line from any equation. Get instant results and see the step-by-step calculations.',
+    formula: 'Set x=0 for y-intercept, set y=0 for x-intercept.'
+  },
   // New Decimal to Inches Calculator
   {
     slug: 'decimal-to-inches-calculator',
