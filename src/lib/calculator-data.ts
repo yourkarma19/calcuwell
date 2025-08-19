@@ -12,7 +12,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate total work hours and pay for a week, including breaks.',
     category: 'Finance',
     iconName: 'Clock',
-    metaDescription: 'Calculate weekly work hours and gross pay. Enter start/end times and breaks to get an accurate summary of your time card. Free and easy to use.',
+    metaDescription: 'Calculate weekly work hours & gross pay. Enter start/end times & breaks to get an accurate time card summary. Free & easy to use.',
     formula: 'Total Hours = Sum(End Time - Start Time - Break Time)'
   },
   // New Concrete Slab Calculator
@@ -22,7 +22,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the bags of concrete needed for a slab, footer, or posts.',
     category: 'Geometry & Engineering',
     iconName: 'Calculator',
-    metaDescription: 'Calculate the volume and number of concrete bags for your project. Our tool works for slabs, footers, and round post holes. Get an instant estimate.',
+    metaDescription: 'Estimate the volume & number of concrete bags for your project. Works for slabs, footers, & round post holes. Get an instant, free estimate.',
     formula: 'Volume = Length × Width × Thickness'
   },
   // New Wind Chill Calculator
@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the perceived temperature based on wind speed.',
     category: 'Miscellaneous',
     iconName: 'Wind',
-    metaDescription: 'Calculate wind chill temperature based on air temp and wind speed. Find out how cold it really feels and understand the risk of frostbite.',
+    metaDescription: 'Calculate wind chill temperature based on air temp & wind speed. Find out how cold it really feels & understand the risk of frostbite.',
     formula: 'Wind Chill (F) = 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)'
   },
   // New Cubic Equation Calculator
@@ -43,7 +43,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     formula: 'ax³ + bx² + cx + d = 0',
-    metaDescription: 'Solve any cubic equation instantly. Our calculator finds all real and complex roots and shows the steps using the cubic formula. Free and accurate.',
+    metaDescription: 'Solve any cubic equation instantly. Our calculator finds all real & complex roots & shows the steps using the cubic formula. Free & accurate.',
   },
   // New Triangle Angle Calculator
   {
@@ -53,7 +53,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     formula: 'Law of Cosines & Law of Sines',
-    metaDescription: 'Calculate unknown angles in a triangle. Enter side lengths and/or angles to find the missing values using the Law of Sines and Cosines.',
+    metaDescription: 'Calculate unknown angles in any triangle. Enter side lengths and/or angles to find missing values using the Law of Sines & Cosines.',
   },
   // New Tangent Line Calculator
   {
@@ -63,7 +63,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     formula: "y - f(a) = f'(a)(x - a)",
-    metaDescription: 'Find the tangent line equation for any function at a given point. Our calculus calculator provides the full, step-by-step solution.',
+    metaDescription: 'Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.',
   },
   // New Fraction to Percentage Calculator
   {
@@ -73,7 +73,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Conversions',
     iconName: 'Percent',
     formula: '(Numerator / Denominator) * 100',
-    metaDescription: 'Quickly convert any fraction to a percentage with our free online calculator. Shows you the steps and the final answer instantly.',
+    metaDescription: 'Quickly convert any fraction to a percentage with our free online tool. Shows you the calculation steps and the final answer instantly.',
   },
   // New Intercept Calculator
   {
@@ -82,7 +82,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the x and y-intercepts of any linear equation with a step-by-step breakdown.',
     category: 'Math',
     iconName: 'Sigma',
-    metaDescription: 'A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results and see step-by-step calculations.',
+    metaDescription: 'A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results & see step-by-step calculations.',
     formula: 'Set x=0 for y-intercept, set y=0 for x-intercept.'
   },
   // New Decimal to Inches Calculator
@@ -92,7 +92,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert any decimal number into inches and a usable fraction.',
     category: 'Conversions',
     iconName: 'Ruler',
-    metaDescription: 'Convert any decimal value into inches and a usable fraction (e.g., 1/8", 1/16"). Perfect for woodworking, machining, and engineering projects.',
+    metaDescription: 'Convert any decimal value into inches and a usable fraction (e.g., 1/8", 1/16"). Perfect for woodworking, machining, and engineering.',
   },
   // New Feet and Inches Calculator
   {
@@ -101,7 +101,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add, subtract, multiply, and divide feet and inches.',
     category: 'Conversions',
     iconName: 'Ruler',
-    metaDescription: 'An online calculator to add, subtract, multiply, and divide feet and inches. Perfect for construction, DIY projects, and woodworking. Get instant results.',
+    metaDescription: 'An online calculator to add, subtract, multiply, & divide feet and inches. Perfect for construction & DIY projects. Get instant results.',
   },
   // New Voltage to Watts Calculator
   {
@@ -111,7 +111,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Atom',
     formula: 'Power (P) = Voltage (V) × Current (I)',
-    metaDescription: 'Instantly convert Volts and Amps to Watts using our free online calculator. Understand the power formula (P=VI) with examples and explanations.',
+    metaDescription: 'Instantly convert Volts & Amps to Watts using our free online calculator. Understand the power formula (P=VI) with examples and explanations.',
   },
    // New Partial Fraction Calculator
   {
@@ -121,7 +121,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     formula: 'f(x) = P(x) / Q(x)',
-    metaDescription: 'Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution to help you learn the process.',
+    metaDescription: 'Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your math homework.',
   },
   // New Financial Health Check-up
   {
@@ -130,7 +130,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Get a free, personalized financial health score in 2 minutes.',
     category: 'Finance',
     iconName: 'ShieldCheck',
-    metaDescription: 'Get a free, AI-powered financial health score. Our tool analyzes your income, savings, and debts to provide a personalized action plan in minutes.',
+    metaDescription: 'Get a free AI-powered financial health score. Our tool analyzes your income, savings, and debt to provide a personalized action plan in minutes.',
     formula: 'AI-driven analysis based on financial health metrics.'
   },
 
@@ -141,7 +141,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the total cost of your wedding.',
     category: 'Lifestyle',
     iconName: 'Heart',
-    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, and photography to stay on budget and plan ahead.',
+    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for the venue, catering, and photography to stay on budget.',
     formula: 'Total = Venue + (Catering × Guests) + Photography + Dress + ...'
   },
   {
@@ -150,7 +150,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the monthly and yearly cost of owning a pet.',
     category: 'Lifestyle',
     iconName: 'Dog',
-    metaDescription: 'Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog, cat, or other pet.',
+    metaDescription: 'Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog or cat.',
     formula: 'Annual Cost = (Food × 12) + (Vet × Visits) + ...'
   },
 
@@ -161,7 +161,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Perform basic arithmetic operations.',
     category: 'Math',
     iconName: 'Calculator',
-    metaDescription: 'A simple and fast online calculator for everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease.',
+    metaDescription: 'A simple and fast online calculator for everyday arithmetic. Perform addition, subtraction, multiplication, and division with ease.',
   },
   {
     slug: 'percentage-calculator',
@@ -169,7 +169,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate percentages, increases, and decreases.',
     category: 'Math',
     iconName: 'Percent',
-    metaDescription: 'Easily calculate percentages with our free online tool. Find the percentage of a number, percent increase/decrease, and other common problems.',
+    metaDescription: 'Easily calculate percentages with our free tool. Find the percentage of a number, percent increase/decrease, & other common problems.',
   },
   {
     slug: 'fraction-calculator',
@@ -193,7 +193,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Simplify and work with ratios.',
     category: 'Math',
     iconName: 'Scale',
-    metaDescription: 'Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for students and professionals.',
+    metaDescription: 'Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for students.',
   },
   {
     slug: 'proportion-calculator',
@@ -201,7 +201,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Solve proportions and find missing values.',
     category: 'Math',
     iconName: 'Variable',
-    metaDescription: 'An easy-to-use proportion calculator that helps you solve for the missing value in a proportion using cross-multiplication. Includes examples.',
+    metaDescription: 'An easy-to-use proportion calculator to help you solve for the missing value in a proportion using cross-multiplication. Includes examples.',
   },
   {
     slug: 'mean-median-mode-calculator',
@@ -217,7 +217,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the standard deviation of a data set.',
     category: 'Math',
     iconName: 'Sigma',
-    metaDescription: 'Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with this tool.',
+    metaDescription: 'Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with our tool.',
   },
   {
     slug: 'probability-calculator',
@@ -225,7 +225,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the probability of events.',
     category: 'Math',
     iconName: 'Beaker',
-    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use online tool. Perfect for solving problems and understanding chance.',
+    metaDescription: 'Calculate the probability of single and multiple events with our easy-to-use tool. Perfect for solving problems and understanding chance.',
   },
   {
     slug: 'permutation-combination-calculator',
@@ -233,7 +233,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     iconName: 'Sigma',
-    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability and combinatorics with this tool.',
+    metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability with this essential tool.',
   },
   {
     slug: 'factorial-calculator',
@@ -242,7 +242,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Variable',
     formula: 'n!',
-    metaDescription: 'Our online factorial calculator quickly finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.',
+    metaDescription: 'Our online factorial calculator finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.',
   },
   {
     slug: 'lcm-gcd-calculator',
@@ -250,7 +250,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the Least Common Multiple and Greatest Common Divisor.',
     category: 'Math',
     iconName: 'Variable',
-    metaDescription: 'Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. A fundamental tool for number theory.',
+    metaDescription: 'Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. A tool for number theory.',
   },
   {
     slug: 'square-root-cube-root-calculator',
@@ -258,7 +258,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate square roots and cube roots.',
     category: 'Math',
     iconName: 'Variable',
-    metaDescription: 'A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast, accurate, and easy to use.',
+    metaDescription: 'A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast and easy to use.',
   },
   {
     slug: 'exponent-power-calculator',
@@ -266,7 +266,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate powers and exponents.',
     category: 'Math',
     iconName: 'Variable',
-    metaDescription: 'Quickly calculate the result of a base raised to a power. Handles both positive and negative, integer and fractional exponents with ease.',
+    metaDescription: 'Quickly calculate the result of a base raised to a power. Handles positive, negative, integer, and fractional exponents with ease.',
   },
   {
     slug: 'logarithm-calculator',
@@ -274,7 +274,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate logarithms with different bases.',
     category: 'Math',
     iconName: 'Variable',
-    metaDescription: 'An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs (base 10) and natural logs (base e).',
+    metaDescription: 'An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs and natural logs (ln).',
   },
   {
     slug: 'equation-solver',
@@ -282,7 +282,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Solve linear and quadratic equations.',
     category: 'Math',
     iconName: 'Variable',
-    metaDescription: 'Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and explains the formulas.',
+    metaDescription: 'Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and the formulas used.',
   },
   {
     slug: 'matrix-calculator',
@@ -306,7 +306,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Roman numerals and numbers.',
     category: 'Math',
     iconName: 'ArrowRightLeft',
-    metaDescription: 'A fast and accurate Roman numeral converter. Easily translate numbers to Roman numerals and back, for values between 1 and 3,999.',
+    metaDescription: 'A fast and accurate Roman numeral converter. Translate numbers to Roman numerals and back for values between 1 and 3,999.',
   },
 
   // Finance & Money
@@ -317,7 +317,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    metaDescription: 'Calculate your loan EMI. See how optional extra payments can reduce your loan tenure and save you money. Works for home, car, or personal loans.',
+    metaDescription: 'Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans.',
   },
   {
     slug: 'loan-comparison-calculator',
@@ -325,7 +325,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Compare two loans side-by-side.',
     category: 'Finance',
     iconName: 'Scale',
-    metaDescription: 'Compare two loans instantly. Our calculator shows the EMI and total cost side-by-side to help you choose the cheapest option for your needs.',
+    metaDescription: 'Compare two loans instantly. Our calculator shows the EMI and total cost side-by-side to help you choose the cheapest option.',
   },
   {
     slug: 'mortgage-calculator',
@@ -334,7 +334,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Home',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    metaDescription: 'Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our free calculator.',
+    metaDescription: 'Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.',
   },
   {
     slug: 'car-loan-calculator',
@@ -343,7 +343,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Car',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    metaDescription: 'Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. Plan your budget.',
+    metaDescription: 'Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy.',
   },
   {
     slug: 'simple-interest-calculator',
@@ -361,7 +361,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'PiggyBank',
     formula: 'A = P(1 + r/n)^(nt)',
-    metaDescription: 'See how your savings can grow with compound interest. Our calculator projects your investment growth over time with this essential tool.',
+    metaDescription: 'See how your savings can grow with compound interest. Our calculator projects your investment growth over time with this tool.',
   },
   {
     slug: 'savings-calculator',
@@ -377,7 +377,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to achieve your retirement goals and see if you are on track.',
+    metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.',
   },
   {
     slug: 'investment-return-calculator',
@@ -409,7 +409,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'See how inflation affects purchasing power.',
     category: 'Finance',
     iconName: 'Banknote',
-    metaDescription: 'Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount and year range to see its value.',
+    metaDescription: 'Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount & year range to see its value.',
   },
   {
     slug: 'vat-gst-calculator',
@@ -433,7 +433,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the final price after a discount.',
     category: 'Finance',
     iconName: 'Tag',
-    metaDescription: 'Easily calculate the final price after a discount. Enter the original price and discount percentage to find out how much you will pay and save.',
+    metaDescription: 'Easily calculate the final price after a discount. Enter the original price & discount percentage to find out how much you will pay and save.',
   },
   {
     slug: 'salary-calculator',
@@ -449,7 +449,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your overtime pay.',
     category: 'Finance',
     iconName: 'Clock',
-    metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete earnings for the week.',
+    metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete weekly earnings.',
   },
   {
     slug: 'break-even-point-calculator',
@@ -457,7 +457,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the point where revenue equals costs.',
     category: 'Finance',
     iconName: 'Briefcase',
-    metaDescription: 'Determine the break-even point for your business. Enter fixed costs, variable costs, and price per unit to find how many units you need to sell.',
+    metaDescription: 'Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.',
   },
   {
     slug: 'business-profit-margin-calculator',
@@ -473,7 +473,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Plan how to pay off your credit card debt.',
     category: 'Finance',
     iconName: 'CreditCard',
-    metaDescription: 'Find out how long it will take to pay off your credit card balance. See your payoff schedule and total interest paid based on your payments.',
+    metaDescription: 'Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.',
   },
 
   // Health & Fitness
@@ -485,7 +485,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'HeartPulse',
     formula: 'weight (kg) / (height (m) * height (m))',
     tags: ['health', 'fitness', 'weight', 'body mass index'],
-    metaDescription: 'Calculate your Body Mass Index (BMI) to assess your weight status. Our calculator uses the standard formula and provides WHO categories for adults.'
+    metaDescription: 'Calculate your Body Mass Index (BMI) to assess your weight status. Our calculator uses the standard formula and provides WHO categories.'
   },
   {
     slug: 'bmr-calculator',
@@ -494,7 +494,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Scale',
     formula: "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
-    metaDescription: 'Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the accurate Mifflin-St Jeor equation.'
+    metaDescription: 'Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the Mifflin-St Jeor equation.'
   },
   {
     slug: 'calorie-needs-calculator',
@@ -511,7 +511,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Scale',
     formula: "Robinson Formula (1983)",
-    metaDescription: 'Determine your ideal body weight based on your height and gender using the Robinson formula. A useful tool for setting fitness and health goals.'
+    metaDescription: 'Determine your ideal body weight based on height and gender using the Robinson formula. A useful tool for setting fitness goals.'
   },
   {
     slug: 'body-fat-percentage-calculator',
@@ -520,7 +520,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Percent',
     formula: "U.S. Navy Method",
-    metaDescription: 'Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment than BMI alone.'
+    metaDescription: 'Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment of health than BMI alone.'
   },
   {
     slug: 'lean-body-mass-calculator',
@@ -528,7 +528,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your lean body mass.',
     category: 'Health',
     iconName: 'Bone',
-    metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle, bone, and organs.'
+    metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle and bone.'
   },
   {
     slug: 'waist-to-hip-ratio-calculator',
@@ -536,7 +536,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your waist-to-hip ratio.',
     category: 'Health',
     iconName: 'Ruler',
-    metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means for your health.'
+    metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.',
   },
   {
     slug: 'pregnancy-due-date-calculator',
@@ -545,7 +545,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Baby',
     formula: "Naegele's rule",
-    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.',
+    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date methods.',
   },
   {
     slug: 'ovulation-calculator',
@@ -553,7 +553,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your most fertile days.',
     category: 'Health',
     iconName: 'CalendarClock',
-    metaDescription: 'Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days to help you conceive.',
+    metaDescription: 'Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days.',
   },
   {
     slug: 'water-intake-calculator',
@@ -561,7 +561,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your daily water intake needs.',
     category: 'Health',
     iconName: 'Droplets',
-    metaDescription: 'Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated with our personalized calculation.',
+    metaDescription: 'Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated with our personalized calculator.',
   },
   {
     slug: 'heart-rate-zone-calculator',
@@ -569,7 +569,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your target heart rate zones.',
     category: 'Health',
     iconName: 'HeartPulse',
-    metaDescription: 'Determine your target heart rate zones for exercise. Use our calculator to find your optimal zones for fat burning, cardio, and peak performance.',
+    metaDescription: 'Determine your target heart rate zones for exercise. Use our calculator to find your optimal zones for fat burning, cardio, and performance.',
   },
   {
     slug: 'vo2-max-calculator',
@@ -577,7 +577,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your maximum oxygen uptake.',
     category: 'Health',
     iconName: 'Wind',
-    metaDescription: 'Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate and age.',
+    metaDescription: 'Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate.',
   },
   {
     slug: 'bac-calculator',
@@ -585,7 +585,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your blood alcohol content.',
     category: 'Health',
     iconName: 'TestTube',
-    metaDescription: 'Estimate your Blood Alcohol Content (BAC) using the Widmark formula. This calculator provides an educational estimate and is not for legal use.',
+    metaDescription: 'Estimate your Blood Alcohol Content (BAC) using the Widmark formula. This calculator provides an educational estimate & is not for legal use.',
   },
 
   // Conversions
@@ -595,7 +595,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert length, weight, temperature, etc.',
     category: 'Conversions',
     iconName: 'Ruler',
-    metaDescription: 'A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for a wide range of measurements.',
+    metaDescription: 'A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.',
   },
   {
     slug: 'data-storage-converter',
@@ -611,7 +611,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between bps, Kbps, Mbps, and more.',
     category: 'Conversions',
     iconName: 'Shuffle',
-    metaDescription: 'Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed and file download calculations.',
+    metaDescription: 'Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed & file downloads.',
   },
   {
     slug: 'time-converter',
@@ -619,7 +619,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between seconds, minutes, hours, and days.',
     category: 'Conversions',
     iconName: 'Clock',
-    metaDescription: 'A simple and fast time converter for various units of time, including seconds, minutes, hours, days, weeks, and years.',
+    metaDescription: 'A simple and fast time converter for various units of time, including seconds, minutes, hours, days, weeks, and years (approximate).',
   },
   {
     slug: 'energy-converter',
@@ -635,7 +635,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Pa, bar, psi, and more.',
     category: 'Conversions',
     iconName: 'Cloud',
-    metaDescription: 'Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and pounds per square inch (psi).',
+    metaDescription: 'Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and psi.',
   },
   {
     slug: 'power-converter',
@@ -659,7 +659,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between mpg and L/100km.',
     category: 'Conversions',
     iconName: 'Car',
-    metaDescription: 'Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicle fuel economy.',
+    metaDescription: 'Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicles.',
   },
 
   // Date & Time
@@ -670,7 +670,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarClock',
     formula: 'Current Date - Date of Birth',
-    metaDescription: 'Find your exact age in years, months, and days with our online age calculator. Simply enter your date of birth to get your chronological age.',
+    metaDescription: 'Find your exact age in years, months, and days with our online age calculator. Simply enter your date of birth to get your age.',
   },
   {
     slug: 'date-difference-calculator',
@@ -679,7 +679,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Date & Time',
     iconName: 'CalendarDays',
     formula: "endDate - startDate",
-    metaDescription: "Calculate the exact number of years, months, weeks, and days between any two dates. Perfect for finding the duration of projects and events.",
+    metaDescription: "Calculate the exact number of years, months, weeks, & days between any two dates. Perfect for finding the duration of projects and events.",
   },
   {
     slug: 'countdown-timer',
@@ -687,7 +687,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Count down to a specific date and time.',
     category: 'Date & Time',
     iconName: 'Timer',
-    metaDescription: 'Set a countdown to any date and time. Our online timer will track the days, hours, minutes, and seconds remaining until your special event.',
+    metaDescription: 'Set a countdown to any date & time. Our online timer will track the days, hours, minutes, and seconds remaining until your event.',
   },
   {
     slug: 'time-zone-converter',
@@ -703,7 +703,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate time differences between cities.',
     category: 'Date & Time',
     iconName: 'Globe',
-    metaDescription: 'View the current local time in major cities across the globe. Our world clock is an easy way to check time differences and plan international calls.',
+    metaDescription: 'View the current local time in major cities across the globe. Our world clock is an easy way to check time differences and plan calls.',
   },
   {
     slug: 'working-days-calculator',
@@ -711,7 +711,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate business days between two dates.',
     category: 'Date & Time',
     iconName: 'Briefcase',
-    metaDescription: "Calculate the number of working days (business days) between two dates. This tool excludes weekends to give you an accurate count for project planning.",
+    metaDescription: "Calculate the number of working days (business days) between two dates. This tool excludes weekends to give you an accurate count.",
   },
   {
     slug: 'week-number-calculator',
@@ -719,7 +719,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the week number for a given date.',
     category: 'Date & Time',
     iconName: 'CalendarDays',
-    metaDescription: "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for scheduling weekly tasks.",
+    metaDescription: "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for weekly scheduling.",
   },
   {
     slug: 'add-subtract-days-calculator',
@@ -727,7 +727,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     iconName: 'CalendarClock',
-    metaDescription: "Find a future or past date by adding or subtracting days from a start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
+    metaDescription: "Find a future or past date by adding or subtracting days from a start date. Perfect for calculating deadlines, follow-ups, and events.",
   },
   {
     slug: 'business-day-calculator',
@@ -735,7 +735,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the next business day.',
     category: 'Date & Time',
     iconName: 'Briefcase',
-    metaDescription: "Calculate a future date by adding or subtracting business days, automatically skipping weekends to ensure accuracy for professional deadlines.",
+    metaDescription: "Calculate a future date by adding or subtracting business days, automatically skipping weekends to ensure accuracy for deadlines.",
   },
 
   // Programming & Tech
@@ -746,7 +746,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'Binary',
     formula: 'parseInt(num, fromBase).toString(toBase)',
-    metaDescription: 'A versatile number system converter for binary, decimal, hexadecimal, and octal values. Essential for programmers and computer science students.',
+    metaDescription: 'A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.',
   },
   {
     slug: 'ascii-text-converter',
@@ -754,7 +754,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between ASCII codes and text.',
     category: 'Programming',
     iconName: 'ArrowRightLeft',
-    metaDescription: 'Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with character encoding.',
+    metaDescription: 'Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with encoding.',
   },
   {
     slug: 'base64-converter',
@@ -762,7 +762,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Encode and decode Base64 strings.',
     category: 'Programming',
     iconName: 'Binary',
-    metaDescription: 'A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 for international text.',
+    metaDescription: 'A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 text.',
   },
   {
     slug: 'ip-subnet-calculator',
@@ -770,7 +770,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate IP subnets and networks.',
     category: 'Programming',
     iconName: 'Network',
-    metaDescription: 'Calculate IP subnet details from an IP and CIDR mask. Find network addresses, broadcast addresses, subnet masks, and usable hosts instantly.',
+    metaDescription: 'Calculate IP subnet details from an IP and CIDR mask. Find network addresses, broadcast addresses, subnet masks, and usable hosts.',
     formula: 'Network Address = IP Address & Subnet Mask'
   },
   {
@@ -779,7 +779,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Generate a CRC-32 checksum for your text input.',
     category: 'Programming',
     iconName: 'Hash',
-    metaDescription: 'Generate a CRC-32 hash (checksum) for any string or text input. Our free online tool helps you verify data integrity quickly and easily.',
+    metaDescription: 'Generate a CRC-32 hash (checksum) for any string or text input. Our free online tool helps you verify data integrity quickly.',
   },
   {
     slug: 'file-size-calculator',
@@ -787,7 +787,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate file size from bitrate and duration.',
     category: 'Programming',
     iconName: 'FileBox',
-    metaDescription: 'Estimate the size of a file based on its duration and bitrate. Useful for video, audio, and other media files to plan for storage or bandwidth.',
+    metaDescription: 'Estimate the size of a file based on its duration and bitrate. Useful for video & audio files to plan for storage or bandwidth.',
   },
   {
     slug: 'color-converter',
@@ -795,7 +795,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between HEX, RGB, and HSL color codes.',
     category: 'Programming',
     iconName: 'Palette',
-    metaDescription: 'A simple tool for web designers and developers to convert between HEX, RGB, and HSL color formats in real-time.',
+    metaDescription: 'A simple tool for web designers & developers to convert between HEX, RGB, and HSL color formats in real-time.',
   },
 
   // Geometry & Engineering
@@ -805,7 +805,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     iconName: 'Circle',
-    metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas.',
+    metaDescription: 'A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.',
   },
   {
     slug: 'triangle-area-calculator',
@@ -813,7 +813,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and perimeter of a triangle.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
-    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS) for any triangle shape.",
+    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
   },
   {
     slug: 'rectangle-area-calculator',
@@ -822,7 +822,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Ruler',
     formula: "Area = Length * Width",
-    metaDescription: 'A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results. Works for squares.'
+    metaDescription: 'A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results.'
   },
   {
     slug: 'cylinder-volume-calculator',
@@ -830,7 +830,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume of a cylinder.',
     category: 'Geometry & Engineering',
     iconName: 'Beaker',
-    metaDescription: 'Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Includes formulas.',
+    metaDescription: 'Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height.',
   },
   {
     slug: 'sphere-volume-surface-area-calculator',
@@ -838,7 +838,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume and surface area of a sphere.',
     category: 'Geometry & Engineering',
     iconName: 'Globe',
-    metaDescription: 'Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas for accuracy.',
+    metaDescription: 'Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas.',
   },
   {
     slug: 'cone-volume-calculator',
@@ -846,7 +846,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the volume of a cone.',
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
-    metaDescription: 'Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results with formulas.',
+    metaDescription: 'Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results.',
   },
   {
     slug: 'pythagorean-theorem-calculator',
@@ -855,7 +855,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     formula: 'a² + b² = c²',
-    metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Find the hypotenuse or other sides.',
+    metaDescription: 'Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Finds the hypotenuse or other sides.',
   },
   {
     slug: 'trigonometry-calculator',
@@ -871,7 +871,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the deflection of beams.',
     category: 'Geometry & Engineering',
     iconName: 'Ruler',
-    metaDescription: 'A simple calculator to find the maximum deflection of a cantilever beam with a point load at the end. An essential tool for structural engineers.',
+    metaDescription: 'A simple calculator to find the maximum deflection of a cantilever beam with a point load at the end. For structural engineers.',
   },
   {
     slug: 'torque-calculator',
@@ -879,7 +879,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate torque from force and distance.',
     category: 'Geometry & Engineering',
     iconName: 'Wind',
-    metaDescription: 'Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering students.',
+    metaDescription: 'Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering.',
   },
   {
     slug: 'ohms-law-calculator',
@@ -896,7 +896,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Decode 4-band resistor color codes.',
     category: 'Geometry & Engineering',
     iconName: 'Palette',
-    metaDescription: 'Decode 4-band resistor color codes with our simple tool. Select the colors for each band to instantly find the resistance value and tolerance.',
+    metaDescription: 'Decode 4-band resistor color codes with our tool. Select the colors for each band to instantly find the resistance value and tolerance.',
   },
   {
     slug: 'capacitor-charge-calculator',
@@ -904,7 +904,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    metaDescription: 'Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. An essential tool for electronics.',
+    metaDescription: 'Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. For electronics.',
   },
 
   // Education & Miscellaneous
@@ -931,7 +931,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the time it takes to read a text.',
     category: 'Miscellaneous',
     iconName: 'Book',
-    metaDescription: 'Estimate how long it will take to read any text. Paste your content and adjust the Words Per Minute (WPM) for a personalized reading time estimate.'
+    metaDescription: 'Estimate how long it will take to read any text. Paste your content & adjust the Words Per Minute (WPM) for a personalized reading time.'
   },
   {
     slug: 'typing-speed-calculator',
@@ -939,7 +939,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Measure your words per minute typing speed.',
     category: 'Miscellaneous',
     iconName: 'Keyboard',
-    metaDescription: 'Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts and get instant results.',
+    metaDescription: 'Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts & get instant results.',
   },
   {
     slug: 'loan-affordability-calculator',
@@ -947,7 +947,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     iconName: 'Landmark',
-    metaDescription: 'Estimate how much you can afford to borrow based on your income, monthly debts, and desired loan terms. Perfect for home or car loan planning.',
+    metaDescription: 'Estimate how much you can afford to borrow based on your income, monthly debts, and desired loan terms. For home or car loan planning.',
   },
   {
     slug: 'carbon-footprint-calculator',
