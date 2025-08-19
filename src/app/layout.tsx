@@ -8,7 +8,7 @@ import Footer from "@/components/layout/footer";
 import "./globals.css";
 import { headers } from 'next/headers';
 import { cn } from "@/lib/utils";
-import { GoogleAnalytics } from '@next/third-party/google'
+import { GoogleAnalytics } from '@next/third-party/google';
 
 const inter = Inter({
   subsets: ["latin"],
