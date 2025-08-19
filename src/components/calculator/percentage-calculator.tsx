@@ -52,8 +52,10 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
         case "percentOf":
           return percentageOf(a, b);
         case "isWhatPercent":
+           if (b === 0) return null; // Prevent division by zero
           return isWhatPercentageOf(a, b);
         case "percentageChange":
+          if (a === 0) return null; // Prevent division by zero
           return percentageChange(a, b);
         default:
           return null;
