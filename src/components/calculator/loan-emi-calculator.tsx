@@ -26,9 +26,12 @@ export default function LoanEMICalculator({ setFormula, setChildProps, calculato
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));
     if (t) setTenure(parseFloat(t));
-    setFormula("EMI = [P x R x (1+R)^N] / [(1+R)^N-1]");
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
+
+  useEffect(() => {
+    setFormula("EMI = [P x R x (1+R)^N] / [(1+R)^N-1]");
+  }, [setFormula]);
 
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {

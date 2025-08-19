@@ -17,6 +17,13 @@ export default function AgeCalculator({ setFormula, calculatorName }: { setFormu
   const searchParams = useSearchParams();
   const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
+  
+  const handleCalculateAge = useCallback(() => {
+    if (dateOfBirth) {
+      const now = new Date();
+      setAge(calculateAge(now, dateOfBirth));
+    }
+  }, [dateOfBirth]);
 
   useEffect(() => {
     const dobParam = searchParams.get('dob');
@@ -28,13 +35,6 @@ export default function AgeCalculator({ setFormula, calculatorName }: { setFormu
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
-
-  const handleCalculateAge = useCallback(() => {
-    if (dateOfBirth) {
-      const now = new Date();
-      setAge(calculateAge(now, dateOfBirth));
-    }
-  }, [dateOfBirth]);
   
   useEffect(() => {
     handleCalculateAge();
