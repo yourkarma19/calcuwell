@@ -125,6 +125,16 @@ export default {
             '--tw-prose-invert-pre-bg': theme('colors.muted'),
             '--tw-prose-invert-th-borders': theme('colors.border'),
             '--tw-prose-invert-td-borders': theme('colors.border'),
+            // Disable all default prose styles
+            'h1, h2, h3, h4, p, a, ul, ol, li, blockquote, figure, figcaption, strong, em, code, pre, table, thead, tbody, tr, th, td, img, video': {
+                margin: 0,
+                padding: 0,
+                fontWeight: 'inherit',
+                fontSize: 'inherit',
+                lineHeight: 'inherit',
+                color: 'inherit',
+            },
+            // Selectively re-apply what we need in globals.css
           },
         },
       }),
