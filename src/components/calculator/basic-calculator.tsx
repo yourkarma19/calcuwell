@@ -239,7 +239,7 @@ export default function BasicCalculator() {
   const renderBasicButtons = () => (
     <div className="grid grid-cols-4 grid-rows-5 gap-2 mt-4">
         <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
-        <Button onClick={() => handleInput("Backspace")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
+        <Button onClick={() => handleInput("Backspace")} aria-label="Backspace" variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
         <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
         <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">÷</Button>
         <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
