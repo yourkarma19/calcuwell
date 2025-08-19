@@ -40,15 +40,19 @@ export default function PrivacyPolicyPage() {
                     Like most websites, we collect "Log Data" that your browser sends. This may include your device's IP address, browser type, and which pages you visit. This data helps us understand how our Service is being used so we can improve it.
                 </p>
 
-                <h2>Cookie Policy</h2>
+                <h2>Advertising and Cookies</h2>
                 <p>
-                    We use "cookies" to make our Service better. Cookies are small files stored on your device. You can set your browser to refuse them, but some parts of our site may not work correctly if you do.
+                    We use Google AdSense to serve advertisements on our site. Our advertising partners, including Google, may use cookies to serve ads based on a user's prior visits to our website or other websites.
+                </p>
+                <ul>
+                    <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
+                    <li>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
+                    <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ads Settings</a>. Alternatively, you can direct users to opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.aboutads.info/choices</a>.</li>
+                </ul>
+                <p>
+                    If you have not opted out of third-party ad serving, the cookies of other third-party vendors or ad networks may also be used to serve ads on your site.
                 </p>
 
-                <h2>Data Security</h2>
-                <p>
-                    We work hard to protect your information. However, no method of sharing data over the internet is 100% secure. We use standard security measures, but we cannot guarantee perfect security.
-                </p>
 
                 <h2>Links to Other Websites</h2>
                 <p>
