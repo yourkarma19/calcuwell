@@ -4,14 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutComplexNumberCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>About Complex Numbers</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">About Complex Numbers</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This calculator is a tool for working with complex numbers. Complex numbers are a key part of math and engineering. They help solve problems that regular numbers cannot. This tool lets you easily add, subtract, multiply, and divide them.</p>
 
-                <h3>How to Use It</h3>
+                <h2>How to Use It</h2>
                 <p>A complex number has two parts: a real part and an imaginary part. Enter the two parts for both numbers you want to use. Then, select the operation you want to perform.</p>
 
-                <h3>Frequently Asked Questions</h3>
+                <h2>Frequently Asked Questions</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is a complex number?</AccordionTrigger>

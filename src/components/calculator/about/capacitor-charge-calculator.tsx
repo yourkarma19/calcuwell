@@ -4,13 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutCapacitorChargeCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>About RC Circuits</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">About RC Circuits</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This calculator helps you understand what happens in a simple RC circuit, which is a circuit with a resistor and a capacitor. When you apply voltage, the capacitor starts to store energy, or "charge." This tool shows you how much charge it has and the current flowing at any given time.</p>
-                <h3>How to Use It</h3>
+                <h2>How to Use It</h2>
                 <p>Enter the voltage of your power source, the resistance, the capacitance, and the amount of time that has passed since the circuit was turned on. The calculator will do the rest.</p>
                 
-                <h3>Frequently Asked Questions</h3>
+                <h2>Frequently Asked Questions</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is an RC circuit?</AccordionTrigger>

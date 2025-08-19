@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutFeetAndInchesCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>Working with Feet and Inches</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">Working with Feet and Inches</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <h2>How to Use the Calculator</h2>
                 <ol>
