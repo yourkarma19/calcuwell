@@ -21,17 +21,17 @@ export default function AboutWaistToHipRatioCalculator() {
         <div className="space-y-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>About the Waist-to-Hip Ratio</CardTitle>
+                    <CardTitle as="h2">About the Waist-to-Hip Ratio</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                     <p>The Waist-to-Hip Ratio (WHR) is a simple measurement used to check for fat distribution. It can give you a general idea of your risk for certain health problems. This calculator quickly finds your WHR and tells you what risk category you fall into based on guidelines from the World Health Organization (WHO).</p>
-                    <h3>How to Use It</h3>
+                    <h2>How to Use the WHR Calculator</h2>
                     <p>Select your gender, then enter your waist and hip measurements in centimeters. To measure correctly:</p>
                     <ul>
                         <li>**Waist:** Measure at the narrowest point, usually just above your belly button.</li>
                         <li>**Hip:** Measure at the widest part of your buttocks.</li>
                     </ul>
-                    <h3>Frequently Asked Questions</h3>
+                    <h2>Waist-to-Hip Ratio FAQs</h2>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger>Why is WHR important?</AccordionTrigger>
@@ -57,7 +57,7 @@ export default function AboutWaistToHipRatioCalculator() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle>WHR Health Risk Categories (WHO)</CardTitle>
+                    <CardTitle as="h2">WHR Health Risk Categories (WHO)</CardTitle>
                 </CardHeader>
                 <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>

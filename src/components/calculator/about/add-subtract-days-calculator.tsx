@@ -7,14 +7,14 @@ export default function AboutAddSubtractDaysCalculator() {
             <CardHeader><CardTitle as="h2">About the Date Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
             <p>Our Add/Subtract Days Calculator is a simple tool for anyone who needs to quickly find a future or past date. It's great for setting a deadline, scheduling a follow-up, or finding a warranty period. This tool removes the need to count days on a calendar.</p>
-            <h2>How to Use the Calculator</h2>
+            <h2>How to Use the Date Calculator</h2>
             <ol>
                 <li>Pick a **Start Date** from the calendar.</li>
                 <li>Enter the number of **Days to Add/Subtract**.</li>
                 <li>Click either the **"Add Days"** or **"Subtract Days"** button.</li>
             </ol>
             <p>The resulting date will appear in the results card on the right.</p>
-            <h2>Frequently Asked Questions (FAQs)</h2>
+            <h2>Date Calculator FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How does this calculator work?</AccordionTrigger>

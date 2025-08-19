@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -24,7 +23,7 @@ export default function AboutPartialFractionCalculator() {
                     </li>
                 </ul>
                 
-                <h2>Frequently Asked Questions (FAQs)</h2>
+                <h2>Partial Fraction FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What about repeated linear factors?</AccordionTrigger>

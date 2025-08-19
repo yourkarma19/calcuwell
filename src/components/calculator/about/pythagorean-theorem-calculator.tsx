@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
@@ -10,7 +9,7 @@ export default function AboutPythagoreanTheoremCalculator() {
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>This calculator helps you find the length of a missing side of a right-angled triangle using the Pythagorean theorem. This famous formula is a key part of geometry and has many practical uses.</p>
                 
-                <h3>How to Use the Calculator</h3>
+                <h2>How to Use the Pythagorean Theorem Calculator</h2>
                 <ol>
                     <li>Select which side you need to solve for (side 'a', side 'b', or hypotenuse 'c').</li>
                     <li>Enter the lengths of the two sides that you know.</li>
@@ -18,7 +17,7 @@ export default function AboutPythagoreanTheoremCalculator() {
                 </ol>
                 <p>Remember that the hypotenuse 'c' must always be the longest side. The calculator will show an error if this is not true.</p>
 
-                <h3>Frequently Asked Questions</h3>
+                <h2>Pythagorean Theorem FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">What is the Pythagorean Theorem?</AccordionTrigger>

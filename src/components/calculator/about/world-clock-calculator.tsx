@@ -1,18 +1,17 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutWorldClock() {
     return (
         <Card>
-            <CardHeader><CardTitle>About the World Clock</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">About the World Clock</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>The World Clock is a tool that displays the current local time and date for a selection of major cities across the globe. It is essential for anyone who works with international teams, travels frequently, or needs to stay connected with friends and family in different countries. The clock automatically accounts for different time zones and Daylight Saving Time rules.</p>
                 
-                <h3>How to Use the World Clock</h3>
+                <h2>How to Use the World Clock</h2>
                 <p>The clock is fully automatic. Upon loading, it fetches the current time and displays it for a predefined list of major international cities. The time for each city updates every second, providing a real-time view of global times.</p>
                 
-                <h3>Frequently Asked Questions (FAQs)</h3>
+                <h2>World Clock FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How does it handle Daylight Saving Time (DST)?</AccordionTrigger>

@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -10,14 +9,14 @@ export default function AboutBase64Converter() {
           </CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
               <p>The Base64 Converter is a key tool for web developers and anyone working with data. It allows you to encode data (like images or files) and text into a safe, text-based format. This format can be reliably sent over systems designed to handle only text. You can also decode Base64 strings back to their original form.</p>
-              <h2>How to Use the Converter</h2>
+              <h2>How to Use the Base64 Converter</h2>
               <ol>
                   <li>Enter the text or data you want to convert into the top input box.</li>
                   <li>Click **"Encode"** to turn it into a Base64 string.</li>
                   <li>To decode, paste a Base64 string into the input box and click **"Decode"**</li>
               </ol>
               <p>The result will appear in the bottom box instantly.</p>
-              <h2>Frequently Asked Questions (FAQs)</h2>
+              <h2>Base64 Converter FAQs</h2>
               <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
                       <AccordionTrigger>What is Base64 and why is it used?</AccordionTrigger>

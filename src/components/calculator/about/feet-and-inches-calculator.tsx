@@ -6,7 +6,7 @@ export default function AboutFeetAndInchesCalculator() {
         <Card>
             <CardHeader><CardTitle as="h2">Working with Feet and Inches</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <h2>How to Use the Calculator</h2>
+                <h2>How to Use the Feet and Inches Calculator</h2>
                 <ol>
                     <li>Enter your first measurement in the 'Feet' and 'Inches' boxes.</li>
                     <li>Select the operation you want to perform (Add, Subtract, Multiply, or Divide).</li>
@@ -23,7 +23,7 @@ export default function AboutFeetAndInchesCalculator() {
                     <li><strong>Combine the results:</strong> The final answer is 8' 5".</li>
                 </ol>
 
-                <h2>Common Uses</h2>
+                <h2>Common Uses for this Calculator</h2>
                 <ul>
                     <li><strong>Construction & Carpentry:</strong> Calculating material lengths and room dimensions.</li>
                     <li><strong>Interior Design:</strong> Planning furniture placement and room layouts.</li>
@@ -31,7 +31,7 @@ export default function AboutFeetAndInchesCalculator() {
                     <li><strong>Gardening & Landscaping:</strong> Laying out garden beds, pathways, or fencing.</li>
                 </ul>
 
-                <h2>Frequently Asked Questions</h2>
+                <h2>Feet and Inches FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How do you multiply feet and inches?</AccordionTrigger>

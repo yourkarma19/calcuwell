@@ -25,12 +25,12 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
         <div className="space-y-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>About the EMI Calculator</CardTitle>
+                    <CardTitle as="h2">About the EMI Calculator</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                     <p>Our EMI Calculator helps you find your Equated Monthly Installments (EMI) in just a few clicks. Knowing your EMI in advance allows you to plan your finances better. This tool is useful for home loans, car loans, or personal loans. By entering the loan amount, interest rate, and tenure, you can instantly get your monthly payment and total loan cost.</p>
                     
-                    <h3>How to Use the EMI Calculator</h3>
+                    <h2>How to Use the EMI Calculator</h2>
                     <ol>
                         <li>Enter the **Loan Amount** you wish to borrow.</li>
                         <li>Input the **Annual Interest Rate**.</li>
@@ -38,14 +38,14 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
                         <li>(Optional) Add any extra monthly or yearly payments to see how it reduces your loan duration and saves you money.</li>
                     </ol>
                     
-                    <h3>Understanding Your EMI Results</h3>
+                    <h2>Understanding Your EMI Results</h2>
                     <ul>
                         <li><strong>Monthly EMI:</strong> This is the fixed amount you will pay to the bank every month.</li>
                         <li><strong>Total Interest Payable:</strong> This shows the *cost* of borrowing the money. A lower figure here is always better.</li>
                         <li><strong>Total Payment:</strong> This is the sum of the principal loan amount and the total interest.</li>
                     </ul>
 
-                    <h3>Frequently Asked Questions (FAQs)</h3>
+                    <h2>EMI FAQs</h2>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="font-semibold">What is the formula for calculating EMI?</AccordionTrigger>
@@ -73,7 +73,7 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
             
             {principal > 0 && totalInterest > 0 && (
                  <Card>
-                    <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
+                    <CardHeader><CardTitle as="h2">Loan Breakdown</CardTitle></CardHeader>
                     <CardContent>
                        <LoanBreakdownChart principal={principal} totalInterest={totalInterest} />
                     </CardContent>

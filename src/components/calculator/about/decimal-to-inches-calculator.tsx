@@ -33,7 +33,7 @@ export default function AboutDecimalToInchesCalculator() {
         <div className="space-y-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>How to Manually Convert Decimal to Inches</CardTitle>
+                    <CardTitle as="h2">How to Manually Convert Decimal to Inches</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                     <p>To convert a decimal to an inch fraction, you can follow these simple steps:</p>
@@ -56,7 +56,7 @@ export default function AboutDecimalToInchesCalculator() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle>Common Decimal to Inch Fraction Conversions</CardTitle>
+                    <CardTitle as="h2">Common Decimal to Inch Fraction Conversions</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Table>
@@ -80,7 +80,7 @@ export default function AboutDecimalToInchesCalculator() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle>Frequently Asked Questions</CardTitle>
+                    <CardTitle as="h2">Decimal to Inches FAQs</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Accordion type="single" collapsible className="w-full">
