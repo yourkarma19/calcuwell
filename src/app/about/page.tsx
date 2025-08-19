@@ -20,6 +20,7 @@ export default function AboutPage() {
             </div>
 
             <div className="prose dark:prose-invert max-w-none text-lg">
+                <h2>Our Mission</h2>
                 <p>
                     CalcPro gives you fast, easy-to-use, and free online calculators. We are a small team of tech lovers who enjoy making great tools for everyone.
                 </p>

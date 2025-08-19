@@ -21,6 +21,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div className="prose dark:prose-invert max-w-none text-lg">
+                <h2>Our Commitment</h2>
                 <p>
                     This page explains how we handle your information when you use our website, calcpro.online (the "Service").
                 </p>
