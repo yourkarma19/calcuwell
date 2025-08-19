@@ -99,6 +99,9 @@
     background-color: hsl(var(--card));
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
+  .fluid-display-font {
+    font-size: clamp(1.5rem, 10vw - 1rem, 3rem);
+  }
 }
 
 @keyframes float {

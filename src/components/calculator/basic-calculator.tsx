@@ -219,21 +219,16 @@ export default function BasicCalculator() {
     }
   }
 
-  const displayFontSize = () => {
-    const len = displayValue.length;
-    if (len > 16) return 'text-2xl';
-    if (len > 12) return 'text-3xl';
-    if (len > 8) return 'text-4xl';
-    return 'text-5xl';
-  };
-
   const renderDisplay = () => (
     <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
         <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || (activeTab === 'sci' ? 'Scientific Mode' : ' ')}</div>
         <div className="h-2/3 w-full flex items-end justify-end">
             <div
                 aria-label="Calculator display"
-                className={cn("w-full text-right font-mono", displayFontSize(), displayValue === "I ❤️ You" && "text-pink-500")}
+                className={cn(
+                    "w-full text-right font-mono fluid-display-font", 
+                    displayValue === "I ❤️ You" && "text-pink-500"
+                )}
             >
                 {displayValue}
             </div>
