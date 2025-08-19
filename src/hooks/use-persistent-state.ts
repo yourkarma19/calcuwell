@@ -3,11 +3,6 @@
 
 import { useState, useEffect, Dispatch, SetStateAction, useCallback } from "react";
 
-// This is a global cache for our persistent state.
-// By caching promises, we ensure that the localStorage is read only once
-// per key, even if multiple components use the same hook simultaneously.
-const stateCache = new Map<string, Promise<any>>();
-
 function usePersistentState<T>(
     key: string,
     defaultValue: T,
@@ -17,36 +12,18 @@ function usePersistentState<T>(
 
     useEffect(() => {
         let cacheKey = `persistent-state-${key}`;
-        
-        // Check if we already have a promise for this key in our cache
-        let promise = stateCache.get(cacheKey);
-
-        if (!promise) {
-            // If not, create a new promise to fetch the value from localStorage
-            promise = new Promise((resolve) => {
-                try {
-                    const item = window.localStorage.getItem(key);
-                    if (item) {
-                        const parsed = JSON.parse(item);
-                        resolve(reviver ? reviver(parsed) : parsed);
-                    } else {
-                        resolve(defaultValue);
-                    }
-                } catch (error) {
-                    console.error(`Error reading localStorage key “${key}”:`, error);
-                    resolve(defaultValue);
-                }
-            });
-            // Store the promise in the cache
-            stateCache.set(cacheKey, promise);
-        }
-
-        // Use the promise (either the new one or the one from the cache)
-        promise.then(storedValue => {
-            if(storedValue !== null && storedValue !== undefined) {
-              setState(storedValue);
+        try {
+            const item = window.localStorage.getItem(key);
+            if (item) {
+                const parsed = JSON.parse(item);
+                setState(reviver ? reviver(parsed) : parsed);
+            } else {
+                setState(defaultValue);
             }
-        });
+        } catch (error) {
+            console.error(`Error reading localStorage key “${key}”:`, error);
+            setState(defaultValue);
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [key]);
 
