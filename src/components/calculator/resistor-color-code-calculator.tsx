@@ -90,31 +90,31 @@ export default function ResistorColorCodeCalculator() {
       <Card>
         <CardHeader><CardTitle>About the Resistor Color Code Calculator</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Resistor Color Code Calculator** is a vital tool for anyone working in electronics, from students to seasoned engineers. It demystifies the colored bands on a resistor, allowing you to quickly determine its resistance value and tolerance without needing a multimeter. This calculator focuses on the common 4-band resistor type.</p>
+            <p>The **Resistor Color Code Calculator** helps you figure out the value of a resistor by reading its colored bands. This is a key tool for anyone working with electronics. It lets you find a resistor's resistance value without needing to use a multimeter. This calculator is for common 4-band resistors.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Identify the bands on your resistor. Start with the band closest to an edge. The tolerance band is usually gold or silver and is at the opposite end.</li>
-                <li>For each of the four bands, select the corresponding color from the dropdown menus.</li>
+                <li>Hold the resistor with the gold or silver band (the tolerance band) on the right side. Read the colors from left to right.</li>
+                <li>Select the color for each of the four bands from the dropdown menus.</li>
             </ol>
-            <p>The calculator will instantly display the resistor's value in Ohms (Ω), along with its tolerance percentage.</p>
+            <p>The calculator will instantly show the resistor's value in Ohms (Ω) and its tolerance.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>How to Read a 4-Band Resistor</AccordionTrigger>
                     <AccordionContent>
-                       For a 4-band resistor, the first two bands represent the significant digits of the resistance value. The third band is the multiplier (the power of 10 to multiply the digits by), and the fourth band indicates the tolerance (the acceptable range of error).
+                       The first two bands give you the first two digits of the resistance value. The third band tells you what number to multiply those digits by (a power of 10). The last band shows the tolerance.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>What is Tolerance?</AccordionTrigger>
                     <AccordionContent>
-                        Tolerance is the percentage of error in the resistor's resistance. For example, a 100 Ω resistor with a 5% tolerance (gold band) could have an actual resistance anywhere between 95 Ω and 105 Ω. A lower tolerance means a more precise resistor.
+                        Tolerance tells you how accurate a resistor's value is. For example, a 100 Ω resistor with a 5% tolerance could have a real value between 95 Ω and 105 Ω. A smaller tolerance means the resistor is more precise.
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-3">
                     <AccordionTrigger>What if there are 5 or 6 bands?</AccordionTrigger>
                     <AccordionContent>
-                        5-band resistors provide a third significant digit for higher precision. The first three bands are digits, the fourth is the multiplier, and the fifth is tolerance. A 6-band resistor adds a final band for the temperature coefficient, indicating how the resistance changes with temperature.
+                        A 5-band resistor adds a third digit for more precision. The first three bands are digits, the fourth is the multiplier, and the fifth is tolerance. A 6-band resistor adds a final band that indicates how the resistance changes with temperature.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

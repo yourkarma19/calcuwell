@@ -43,7 +43,9 @@ function usePersistentState<T>(
 
         // Use the promise (either the new one or the one from the cache)
         promise.then(storedValue => {
-            setState(storedValue);
+            if(storedValue !== null && storedValue !== undefined) {
+              setState(storedValue);
+            }
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [key]);
@@ -52,7 +54,9 @@ function usePersistentState<T>(
         setState(prevState => {
             const resolvedValue = typeof newValue === 'function' ? (newValue as (prevState: T) => T)(prevState) : newValue;
             try {
-                window.localStorage.setItem(key, JSON.stringify(resolvedValue));
+                if (resolvedValue !== undefined && resolvedValue !== null) {
+                    window.localStorage.setItem(key, JSON.stringify(resolvedValue));
+                }
             } catch (error) {
                 console.error(`Error setting localStorage key “${key}”:`, error);
             }

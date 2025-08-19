@@ -35,7 +35,7 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
 
   const getInputProps = (side: "a" | "b" | "c") => {
     if (side === solveFor) {
-      return { value: result !== null ? result.toFixed(4) : "Result", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20" };
+      return { value: result !== null && isFinite(result) ? result.toFixed(4) : "Result", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20" };
     }
     
     let value, setter;
@@ -84,7 +84,7 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">The length of the missing side is:</p>
             <p className="text-5xl font-bold font-headline text-primary my-2">
-                {result !== null ? result.toFixed(4) : "Invalid"}
+                {result !== null && isFinite(result) ? result.toFixed(4) : "Invalid"}
             </p>
           </CardContent>
         </Card>
