@@ -8,7 +8,6 @@ import Footer from "@/components/layout/footer";
 import "./globals.css";
 import { headers } from 'next/headers';
 import { cn } from "@/lib/utils";
-import { GoogleAnalytics } from '@next/third-party/google';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -86,7 +85,6 @@ export default async function RootLayout({
           <Footer />
           <Toaster />
         </ThemeProvider>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
       </body>
     </html>
   );
