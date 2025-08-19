@@ -4,6 +4,16 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Decimal to Inches Calculator
+  {
+    slug: 'decimal-to-inches-calculator',
+    name: 'Decimal to Inches Fraction Calculator',
+    description: 'Convert any decimal number into inches and a usable fraction.',
+    category: 'Conversions',
+    iconName: 'Ruler',
+    seoTitle: 'Decimal to Inches Fraction Calculator | CalcPro Online',
+    metaDescription: 'Free online calculator to convert any decimal value into inches and a usable fraction (1/2, 1/4, 1/8, etc.). Perfect for woodworking, machining, and engineering projects.',
+  },
   // New Feet and Inches Calculator
   {
     slug: 'feet-and-inches-calculator',
