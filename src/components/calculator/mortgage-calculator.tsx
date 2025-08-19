@@ -7,21 +7,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { Input } from "../ui/input";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import ExportShareControls from "./export-share-controls";
+import { useSearchParams } from "next/navigation";
 
-export default function MortgageCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: any) => void, calculatorName: string }) {
+  const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
   const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);
   const [tenure, setTenure] = usePersistentState("mortgage-tenure", 30);
   const [propertyTax, setPropertyTax] = usePersistentState("mortgage-tax", 2000);
   const [homeInsurance, setHomeInsurance] = usePersistentState("mortgage-insurance", 1000);
+
+  useEffect(() => {
+    const p = searchParams.get('principal');
+    const r = searchParams.get('rate');
+    const t = searchParams.get('tenure');
+    const tax = searchParams.get('propertyTax');
+    const ins = searchParams.get('homeInsurance');
+
+    if(p) setPrincipal(parseFloat(p));
+    if(r) setRate(parseFloat(r));
+    if(t) setTenure(parseFloat(t));
+    if(tax) setPropertyTax(parseFloat(tax));
+    if(ins) setHomeInsurance(parseFloat(ins));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
   
   const { monthlyPayment, totalPayable, totalInterest, principalAndInterest, monthlyTaxes, monthlyInsurance } = useMemo(() => {
     if (principal > 0 && rate > 0 && tenure > 0) {
@@ -52,160 +62,104 @@ export default function MortgageCalculator({ setFormula }: { setFormula: (formul
     return { monthlyPayment: 0, totalPayable: 0, totalInterest: 0, principalAndInterest: 0, monthlyTaxes: 0, monthlyInsurance: 0 };
   }, [principal, rate, tenure, propertyTax, homeInsurance]);
   
-  const chartData = useMemo(() => ([
-      { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
-      { name: "Total Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
-      { name: "Property Tax", value: propertyTax * tenure, fill: "hsl(var(--chart-3))" },
-      { name: "Home Insurance", value: homeInsurance * tenure, fill: "hsl(var(--chart-4))" },
-  ]), [principal, totalInterest, propertyTax, homeInsurance, tenure]);
+  useEffect(() => {
+    if (setChildProps) {
+        setChildProps({ principal, totalInterest, propertyTax, homeInsurance, tenure });
+    }
+  }, [principal, totalInterest, propertyTax, homeInsurance, tenure, setChildProps]);
   
-  const chartConfig = {
-      principal: { label: "Principal", color: "hsl(var(--chart-1))" },
-      "Total Interest": { label: "Total Interest", color: "hsl(var(--chart-2))" },
-      "Property Tax": { label: "Property Tax", color: "hsl(var(--chart-3))" },
-      "Home Insurance": { label: "Home Insurance", color: "hsl(var(--chart-4))" },
+  const shareParams = {
+      principal: principal.toString(),
+      rate: rate.toString(),
+      tenure: tenure.toString(),
+      propertyTax: propertyTax.toString(),
+      homeInsurance: homeInsurance.toString(),
   };
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
+    <div className="space-y-6">
+       <Card id="mortgage-inputs">
           <CardHeader>
-            <CardTitle>Enter Mortgage Details</CardTitle>
+          <CardTitle>Enter Mortgage Details</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="space-y-2">
+          <div className="space-y-2">
               <Label>Home Price</Label>
               <div className="flex items-center gap-4">
-                <Slider value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={10000} max={2000000} step={10000} />
-                 <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="10000" />
+              <Slider value={[principal]} onValueChange={(v) => setPrincipal(v[0])} min={10000} max={2000000} step={10000} />
+                  <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="10000" />
               </div>
-            </div>
-            <div className="space-y-2">
+          </div>
+          <div className="space-y-2">
               <Label>Interest Rate (% p.a.)</Label>
               <div className="flex items-center gap-4">
-                <Slider value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={20} step={0.05} />
-                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
+              <Slider value={[rate]} onValueChange={(v) => setRate(v[0])} min={1} max={20} step={0.05} />
+              <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
               </div>
-            </div>
-            <div className="space-y-2">
+          </div>
+          <div className="space-y-2">
               <Label>Loan Term (Years)</Label>
-               <div className="flex items-center gap-4">
-                <Slider value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={30} step={1} />
-                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
+              <div className="flex items-center gap-4">
+              <Slider value={[tenure]} onValueChange={(v) => setTenure(v[0])} min={1} max={30} step={1} />
+              <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
               </div>
-            </div>
-            <div className="space-y-2">
+          </div>
+          <div className="space-y-2">
               <Label>Annual Property Tax</Label>
               <div className="flex items-center gap-4">
-                <Slider value={[propertyTax]} onValueChange={(v) => setPropertyTax(v[0])} min={0} max={20000} step={100} />
-                <Input type="number" value={propertyTax} onChange={e => setPropertyTax(Number(e.target.value))} className="w-32" step="100" />
+              <Slider value={[propertyTax]} onValueChange={(v) => setPropertyTax(v[0])} min={0} max={20000} step={100} />
+              <Input type="number" value={propertyTax} onChange={e => setPropertyTax(Number(e.target.value))} className="w-32" step="100" />
               </div>
-            </div>
-            <div className="space-y-2">
+          </div>
+          <div className="space-y-2">
               <Label>Annual Home Insurance</Label>
               <div className="flex items-center gap-4">
-                <Slider value={[homeInsurance]} onValueChange={(v) => setHomeInsurance(v[0])} min={0} max={10000} step={50} />
-                <Input type="number" value={homeInsurance} onChange={e => setHomeInsurance(Number(e.target.value))} className="w-32" step="50" />
+              <Slider value={[homeInsurance]} onValueChange={(v) => setHomeInsurance(v[0])} min={0} max={10000} step={50} />
+              <Input type="number" value={homeInsurance} onChange={e => setHomeInsurance(Number(e.target.value))} className="w-32" step="50" />
               </div>
-            </div>
+          </div>
           </CardContent>
-        </Card>
-        <Card>
-            <CardHeader><CardTitle>About the Mortgage Calculator</CardTitle></CardHeader>
-            <CardContent className="prose dark:prose-invert max-w-none">
-              <p>Our **Mortgage Calculator** is a comprehensive tool designed to help prospective homebuyers understand the full cost of their home loan. It goes beyond a simple EMI calculation by incorporating key expenses like property taxes and home insurance, providing a realistic estimate of your total monthly housing payment. This empowers you to budget accurately and make informed decisions during the home-buying process.</p>
-              <h3>How to Use the Calculator</h3>
-              <ol>
-                  <li>Enter the **Home Price** and your estimated **Interest Rate**.</li>
-                  <li>Select the **Loan Term** in years (e.g., 30 years).</li>
-                  <li>Provide estimates for your **Annual Property Tax** and **Home Insurance** costs.</li>
-              </ol>
-              <p>The calculator will instantly break down your monthly payment into principal, interest, tax, and insurance (PITI) and show you the total cost of the loan over its lifetime.</p>
-              <h3>Frequently Asked Questions (FAQs)</h3>
-              <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                      <AccordionTrigger>What is PITI?</AccordionTrigger>
-                      <AccordionContent>
-                          PITI stands for Principal, Interest, Taxes, and Insurance. These are the four main components of a monthly mortgage payment. Principal is the amount that goes towards paying down your loan balance, while Interest is the cost of borrowing. Taxes and Insurance are often collected by the lender and paid on your behalf from an escrow account.
-                      </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                      <AccordionTrigger>Why is it important to include taxes and insurance?</AccordionTrigger>
-                      <AccordionContent>
-                         Property taxes and homeowners insurance are significant ongoing costs of homeownership. Forgetting to include them in your budget can lead to a payment that is much higher than you expected. This calculator includes them to give you a more complete picture of your financial commitment.
-                      </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3">
-                      <AccordionTrigger>What is loan amortization?</AccordionTrigger>
-                      <AccordionContent>
-                         Amortization is the process of paying off a loan over time with regular payments. In the early years of a mortgage, a larger portion of your payment goes towards interest. As you continue to make payments, more of your money goes towards paying down the principal balance. The amortization chart visualizes how much of your total payment goes to principal versus interest and other costs over the life of the loan.
-                      </AccordionContent>
-                  </AccordionItem>
-              </Accordion>
-            </CardContent>
-        </Card>
-        <Card>
-            <CardHeader><CardTitle>Loan Amortization</CardTitle></CardHeader>
-            <CardContent className="h-[25rem]">
-                <ChartContainer config={chartConfig} className="w-full h-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                            <Tooltip
-                            cursor={false}
-                            content={<ChartTooltipContent 
-                                formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
-                                />}
-                            />
-                            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="30%" outerRadius="80%" strokeWidth={5}>
-                                {chartData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.fill} name={entry.name} />
-                                ))}
-                            </Pie>
-                            <ChartLegend content={<ChartLegendContent nameKey="name" />} />
-                        </PieChart>
-                    </ResponsiveContainer>
-                </ChartContainer>
-            </CardContent>
-        </Card>
-      </div>
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
+      </Card>
+      <Card id="mortgage-results">
           <CardHeader>
-            <CardTitle>Your Mortgage EMI</CardTitle>
+          <CardTitle>Your Mortgage EMI</CardTitle>
           </CardHeader>
           <CardContent className="text-center space-y-4">
-            <div>
+          <div>
               <p className="text-sm text-muted-foreground">Total Monthly Payment</p>
               <p className="text-4xl font-bold font-headline text-primary">₹ {monthlyPayment.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
-            </div>
-            <div className="space-y-2 text-sm text-left border-t pt-2">
-                <div className="flex justify-between">
+          </div>
+          <div className="space-y-2 text-sm text-left border-t pt-2">
+              <div className="flex justify-between">
                   <p className="text-muted-foreground">Principal & Interest</p>
                   <p className="font-semibold">₹ {principalAndInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
-                </div>
-                <div className="flex justify-between">
+              </div>
+              <div className="flex justify-between">
                   <p className="text-muted-foreground">Property Tax</p>
                   <p className="font-semibold">₹ {monthlyTaxes.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
-                </div>
-                <div className="flex justify-between">
+              </div>
+              <div className="flex justify-between">
                   <p className="text-muted-foreground">Home Insurance</p>
                   <p className="font-semibold">₹ {monthlyInsurance.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
-                </div>
-            </div>
-            <div className="space-y-2 text-sm text-left border-t pt-2">
-                 <div className="flex justify-between">
-                    <span className="text-muted-foreground">Total Interest Paid:</span>
-                    <span className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
-                </div>
-                 <div className="flex justify-between font-bold">
-                    <span className="text-muted-foreground">Total Payment:</span>
-                    <span className="font-semibold">₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
-                </div>
-            </div>
+              </div>
+          </div>
+          <div className="space-y-2 text-sm text-left border-t pt-2">
+                  <div className="flex justify-between">
+                  <span className="text-muted-foreground">Total Interest Paid:</span>
+                  <span className="font-semibold">₹ {totalInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+              </div>
+                  <div className="flex justify-between font-bold">
+                  <span className="text-muted-foreground">Total Payment:</span>
+                  <span className="font-semibold">₹ {totalPayable.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+              </div>
+          </div>
           </CardContent>
-        </Card>
-      </div>
-    </>
+      </Card>
+      <ExportShareControls
+        elementIds={['mortgage-inputs', 'mortgage-results']}
+        shareParams={shareParams}
+        calculatorName={calculatorName}
+      />
+    </div>
   );
 }

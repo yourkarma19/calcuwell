@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -47,74 +48,51 @@ export default function BacCalculator() {
   const { level, color, description } = getBacInfo(bac);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Enter Your Details</CardTitle>
-            <CardDescription>Estimate your Blood Alcohol Content (BAC). This is an educational estimate and should not be used to determine if it is safe to drive.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Enter Your Details</CardTitle>
+          <CardDescription>Estimate your Blood Alcohol Content (BAC). This is an educational estimate and should not be used to determine if it is safe to drive.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                  <Label htmlFor="weight">Body Weight (kg)</Label>
+                  <Input id="weight" type="number" value={weight} onChange={e => setWeight(Number(e.target.value))} />
+              </div>
+              <div className="space-y-2">
+                  <Label>Gender</Label>
+                  <RadioGroup value={gender} onValueChange={(v) => setGender(v as any)} className="flex items-center space-x-4 pt-2">
+                      <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
+                      <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
+                  </RadioGroup>
+              </div>
+          </div>
             <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                    <Label htmlFor="weight">Body Weight (kg)</Label>
-                    <Input id="weight" type="number" value={weight} onChange={e => setWeight(Number(e.target.value))} />
-                </div>
-                <div className="space-y-2">
-                    <Label>Gender</Label>
-                    <RadioGroup value={gender} onValueChange={(v) => setGender(v as any)} className="flex items-center space-x-4 pt-2">
-                        <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
-                        <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
-                    </RadioGroup>
-                </div>
-            </div>
-             <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                    <Label htmlFor="drinks">Standard Drinks Consumed</Label>
-                    <Input id="drinks" type="number" value={drinks} onChange={e => setDrinks(Number(e.target.value))} />
-                </div>
-                <div className="space-y-2">
-                    <Label htmlFor="hours">Hours Since First Drink</Label>
-                    <Input id="hours" type="number" value={hours} onChange={e => setHours(Number(e.target.value))} />
-                </div>
-            </div>
-             <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is an estimate and should not be used to determine if it is safe to drive. Many factors affect BAC, including metabolism, food intake, and health conditions.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><CardTitle>Understanding Blood Alcohol Content</CardTitle></CardHeader>
-          <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is BAC?</AccordionTrigger>
-                <AccordionContent>
-                  Blood Alcohol Content (BAC) is a measure of the amount of alcohol in a person's bloodstream. It is expressed as a percentage.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>How does this calculator work?</AccordionTrigger>
-                <AccordionContent>
-                  This calculator uses the Widmark formula, a common method for estimating BAC based on weight, gender, alcohol consumed, and time. It's important to remember this is only an estimate.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader><CardTitle>Estimated BAC</CardTitle></CardHeader>
-          <CardContent className="text-center">
-            <p className="text-sm text-muted-foreground">Blood Alcohol Content</p>
-            <p className={cn("text-6xl font-bold font-headline my-2", color)}>
-              {bac.toFixed(3)}%
-            </p>
-            <p className={cn("text-xl font-semibold", color)}>{level}</p>
-            <p className="text-sm text-muted-foreground mt-2">{description}</p>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+              <div className="space-y-2">
+                  <Label htmlFor="drinks">Standard Drinks Consumed</Label>
+                  <Input id="drinks" type="number" value={drinks} onChange={e => setDrinks(Number(e.target.value))} />
+              </div>
+              <div className="space-y-2">
+                  <Label htmlFor="hours">Hours Since First Drink</Label>
+                  <Input id="hours" type="number" value={hours} onChange={e => setHours(Number(e.target.value))} />
+              </div>
+          </div>
+            <p className="text-xs text-muted-foreground pt-2">Disclaimer: This is an estimate and should not be used to determine if it is safe to drive. Many factors affect BAC, including metabolism, food intake, and health conditions.</p>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader><CardTitle>Estimated BAC</CardTitle></CardHeader>
+        <CardContent className="text-center">
+          <p className="text-sm text-muted-foreground">Blood Alcohol Content</p>
+          <p className={cn("text-6xl font-bold font-headline my-2", color)}>
+            {bac.toFixed(3)}%
+          </p>
+          <p className={cn("text-xl font-semibold", color)}>{level}</p>
+          <p className="text-sm text-muted-foreground mt-2">{description}</p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

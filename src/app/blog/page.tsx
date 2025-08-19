@@ -19,7 +19,7 @@ const blogPosts = [
   {
     slug: 'what-is-the-pythagorean-theorem',
     title: 'What is the Pythagorean Theorem?',
-    description: 'An in-depth explanation of the Pythagorean theorem, its history, proof, and real-world applications. Learn how a² + b² = c² works.',
+    description: 'A simple guide to the a² + b² = c² formula, its history, proof, and real-world applications for students and professionals alike.',
     iconName: 'Triangle',
     category: 'Math'
   },

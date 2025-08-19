@@ -5,6 +5,148 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Time Card Calculator
+  {
+    slug: 'time-card-calculator',
+    name: 'Time Card Calculator',
+    description: 'Calculate total work hours and pay for a week, including breaks.',
+    category: 'Finance',
+    iconName: 'Clock',
+    seoTitle: 'Free Time Card Calculator | Calculate Work Hours & Pay | CalcPro',
+    metaDescription: 'Easily calculate weekly work hours and gross pay with our free time card calculator. Enter your daily start and end times, including breaks, to get an accurate summary.',
+    formula: 'Total Hours = Sum(End Time - Start Time - Break Time)'
+  },
+  // New Concrete Slab Calculator
+  {
+    slug: 'concrete-slab-calculator',
+    name: 'Concrete Slab Calculator',
+    description: 'Estimate the bags of concrete needed for a slab, footer, or posts.',
+    category: 'Geometry & Engineering',
+    iconName: 'Calculator',
+    seoTitle: 'Concrete Slab Calculator | Estimate Concrete Bags Needed | CalcPro',
+    metaDescription: 'Calculate the volume and number of concrete bags needed for your project. Our calculator works for slabs, footers, and round post holes. Get instant results.',
+    formula: 'Volume = Length × Width × Thickness'
+  },
+  // New Wind Chill Calculator
+  {
+    slug: 'wind-chill-calculator',
+    name: 'Wind Chill Calculator',
+    description: 'Calculate the perceived temperature based on wind speed.',
+    category: 'Miscellaneous',
+    iconName: 'Wind',
+    seoTitle: 'Wind Chill Calculator | Feels Like Temperature | CalcPro',
+    metaDescription: 'Calculate the wind chill temperature based on the actual air temperature and wind speed. Find out how cold it really feels with our free online tool.',
+    formula: 'Wind Chill (F) = 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)'
+  },
+  // New Cubic Equation Calculator
+  {
+    slug: 'cubic-equation-calculator',
+    name: 'Cubic Equation Calculator',
+    description: 'Solve cubic equations of the form ax³+bx²+cx+d=0 for their real and complex roots.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: 'ax³ + bx² + cx + d = 0',
+    seoTitle: 'Cubic Equation Calculator with Steps | CalcPro Online',
+    metaDescription: 'Solve any cubic equation instantly. Our calculator finds the real and complex roots and shows the steps using the cubic formula.',
+  },
+  // New Triangle Angle Calculator
+  {
+    slug: 'triangle-angle-calculator',
+    name: 'Triangle Angle Calculator',
+    description: 'Find unknown angles in a triangle given three sides (SSS) or two sides and an angle (SAS).',
+    category: 'Geometry & Engineering',
+    iconName: 'Triangle',
+    formula: 'Law of Cosines & Law of Sines',
+    seoTitle: 'Find Angle of a Triangle Calculator (SSS, SAS) | CalcPro',
+    metaDescription: 'Calculate any unknown angle in a triangle. Enter the sides and/or angles you know to find the missing angles using the Law of Sines and Cosines.',
+  },
+  // New Tangent Line Calculator
+  {
+    slug: 'tangent-line-calculator',
+    name: 'Tangent Line Calculator',
+    description: 'Find the equation of a line tangent to a function at a specific point.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: "y - f(a) = f'(a)(x - a)",
+    seoTitle: 'Tangent Line Calculator with Steps | CalcPro Online',
+    metaDescription: 'Find the equation of a tangent line to any function at a given point. Our calculus calculator provides a full, step-by-step solution.',
+  },
+  // New Fraction to Percentage Calculator
+  {
+    slug: 'fraction-to-percentage-calculator',
+    name: 'Fraction to Percentage Calculator',
+    description: 'Convert any fraction into its percentage value.',
+    category: 'Conversions',
+    iconName: 'Percent',
+    formula: '(Numerator / Denominator) * 100',
+    seoTitle: 'Fraction to Percentage Calculator | CalcPro Online',
+    metaDescription: 'Quickly convert any fraction to a percentage. Our free online calculator shows you the steps and the final answer instantly.',
+  },
+  // New Intercept Calculator
+  {
+    slug: 'intercept-calculator',
+    name: 'X and Y Intercept Calculator',
+    description: 'Find the x and y-intercepts of any linear equation with a step-by-step breakdown.',
+    category: 'Math',
+    iconName: 'Sigma',
+    seoTitle: 'X and Y Intercept Calculator with Steps | CalcPro Online',
+    metaDescription: 'A free and easy calculator to find the x and y-intercepts of a line from any equation. Get instant results and see the step-by-step calculations.',
+    formula: 'Set x=0 for y-intercept, set y=0 for x-intercept.'
+  },
+  // New Decimal to Inches Calculator
+  {
+    slug: 'decimal-to-inches-calculator',
+    name: 'Decimal to Inches Fraction Calculator',
+    description: 'Convert any decimal number into inches and a usable fraction.',
+    category: 'Conversions',
+    iconName: 'Ruler',
+    seoTitle: 'Decimal to Inches Fraction Calculator | CalcPro Online',
+    metaDescription: 'Free online calculator to convert any decimal value into inches and a usable fraction (1/2, 1/4, 1/8, etc.). Perfect for woodworking, machining, and engineering projects.',
+  },
+  // New Feet and Inches Calculator
+  {
+    slug: 'feet-and-inches-calculator',
+    name: 'Feet and Inches Calculator',
+    description: 'Add, subtract, multiply, and divide feet and inches.',
+    category: 'Conversions',
+    iconName: 'Ruler',
+    seoTitle: 'Feet and Inches Calculator (Add, Subtract, Multiply) | CalcPro Online',
+    metaDescription: 'A free and easy online calculator to add, subtract, multiply, and divide feet and inches. Perfect for construction, DIY projects, and woodworking. Get instant results in imperial and metric.',
+  },
+  // New Voltage to Watts Calculator
+  {
+    slug: 'voltage-to-watts-calculator',
+    name: 'Voltage to Watts Calculator',
+    description: 'Convert voltage (V) and current (A) to power in watts (W).',
+    category: 'Geometry & Engineering',
+    iconName: 'Atom',
+    formula: 'Power (P) = Voltage (V) × Current (I)',
+    seoTitle: 'Volts to Watts (W) Conversion Calculator | P = V × I',
+    metaDescription: 'Instantly convert Volts and Amps to Watts using our free online calculator. Understand the power formula (P=VI) with real-world examples and clear explanations.',
+  },
+   // New Partial Fraction Calculator
+  {
+    slug: 'partial-fraction-calculator',
+    name: 'Partial Fraction Calculator',
+    description: 'Decompose rational functions into simpler fractions.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: 'f(x) = P(x) / Q(x)',
+    seoTitle: 'Partial Fraction Calculator with Steps | CalcPro Online',
+    metaDescription: 'Solve complex partial fraction decomposition problems instantly. Our free online calculator provides a detailed step-by-step solution to help you learn the process.',
+  },
+  // New Financial Health Check-up
+  {
+    slug: 'financial-health-checkup',
+    name: 'AI Financial Health Check-up',
+    description: 'Get a free, personalized financial health score in 2 minutes.',
+    category: 'Finance',
+    iconName: 'ShieldCheck',
+    seoTitle: 'AI Financial Health Score Checker | Free Report | CalcPro',
+    metaDescription: 'Get a free, AI-powered financial health score. Our tool analyzes your income, savings, and debts to provide a personalized action plan.',
+    formula: 'AI-driven analysis based on financial health metrics.'
+  },
+
   // Lifestyle
   {
     slug: 'wedding-budget-calculator',
@@ -61,7 +203,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     iconName: 'Pi',
-    seoTitle: 'Mixed Number Calculator | Fractions Tool | CalcPro',
+    seoTitle: 'Mixed Number Calculator | Add, Subtract & Convert | CalcPro',
     metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.',
   },
   {
@@ -97,7 +239,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the standard deviation of a data set.',
     category: 'Math',
     iconName: 'Sigma',
-    seoTitle: 'Standard Deviation Calculator | Sample & Population | CalcPro',
+    seoTitle: 'Standard Deviation Calculator | Sample & Pop | CalcPro',
     metaDescription: 'Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with this tool.',
   },
   {
@@ -115,7 +257,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     iconName: 'Sigma',
-    seoTitle: 'Permutation & Combination Calculator (nPr, nCr) | CalcPro',
+    seoTitle: 'Permutation & Combination (nPr, nCr) Calculator | CalcPro',
     metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability and combinatorics with this tool.',
   },
   {
@@ -143,7 +285,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate square roots and cube roots.',
     category: 'Math',
     iconName: 'Variable',
-    seoTitle: 'Square Root & Cube Root Calculator | Find √ & ∛ | CalcPro',
+    seoTitle: 'Square & Cube Root Calculator | Find √ & ∛ | CalcPro',
     metaDescription: 'A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast, accurate, and easy to use.',
   },
   {
@@ -197,7 +339,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Roman numerals and numbers.',
     category: 'Math',
     iconName: 'ArrowRightLeft',
-    seoTitle: 'Roman Numeral Converter | To & From Roman Numerals | CalcPro',
+    seoTitle: 'Roman Numeral Converter | To & From Numerals | CalcPro',
     metaDescription: 'A fast and accurate Roman numeral converter. Easily translate numbers to Roman numerals and back, for values between 1 and 3,999.',
   },
 
@@ -209,8 +351,8 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    seoTitle: 'Loan EMI Calculator | Free EMI Calculation Tool | CalcPro',
-    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free tool. See how extra payments can reduce your loan tenure and save you money.',
+    seoTitle: 'Loan EMI Calculator with Prepayment | Free Tool | CalcPro',
+    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free tool. See how optional extra payments can reduce your loan tenure and save you money.',
   },
   {
     slug: 'loan-comparison-calculator',
@@ -238,7 +380,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Car',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    seoTitle: 'Car Loan Calculator | Estimate Your Auto Loan EMI | CalcPro',
+    seoTitle: 'Car Loan Calculator | Estimate Auto Loan EMI | CalcPro',
     metaDescription: 'Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. Plan your budget.',
   },
   {
@@ -276,7 +418,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your retirement savings needs.',
     category: 'Finance',
     iconName: 'PiggyBank',
-    seoTitle: 'Retirement Calculator | Plan For Your Golden Years | CalcPro',
+    seoTitle: 'Retirement Calculator | How Much Should I Save at 30? | CalcPro',
     metaDescription: 'Plan for your future with our retirement calculator. Estimate how much you need to save to achieve your retirement goals and see if you are on track.',
   },
   {
@@ -285,7 +427,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the return on your investments.',
     category: 'Finance',
     iconName: 'AreaChart',
-    seoTitle: 'ROI Calculator | Calculate Return on Investment | CalcPro',
+    seoTitle: 'ROI Calculator | How to Calculate Return on Investment | CalcPro',
     metaDescription: 'Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.',
   },
   {
@@ -300,10 +442,10 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'currency-converter',
     name: 'Currency Converter',
-    description: 'Convert between different currencies with live rates.',
+    description: 'Convert between different currencies with mock rates.',
     category: 'Finance',
     iconName: 'Globe',
-    seoTitle: 'Currency Converter | Free Online Exchange Rates | CalcPro',
+    seoTitle: 'Currency Converter for International Meetings | CalcPro',
     metaDescription: 'A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.',
   },
   {
@@ -357,7 +499,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your overtime pay.',
     category: 'Finance',
     iconName: 'Clock',
-    seoTitle: 'Overtime Pay Calculator | Estimate Your OT Earnings | CalcPro',
+    seoTitle: 'Overtime Pay Calculator | Estimate OT Earnings | CalcPro',
     metaDescription: 'Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete earnings for the week.',
   },
   {
@@ -375,7 +517,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the profit margin for your business.',
     category: 'Finance',
     iconName: 'Briefcase',
-    seoTitle: 'Profit Margin Calculator | Business Profitability | CalcPro',
+    seoTitle: 'Profit Margin Calculator | Gross, Operating & Net | CalcPro',
     metaDescription: 'Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.',
   },
   {
@@ -407,7 +549,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Scale',
     formula: "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
-    seoTitle: 'BMR Calculator | Basal Metabolic Rate Estimation | CalcPro',
+    seoTitle: 'BMR Calculator | Basal Metabolic Rate Est. | CalcPro',
     metaDescription: 'Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the accurate Mifflin-St Jeor equation.'
   },
   {
@@ -416,7 +558,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate your daily calorie needs.',
     category: 'Health',
     iconName: 'HeartPulse',
-    seoTitle: 'Daily Calorie Calculator | How Many Calories To Eat? | CalcPro',
+    seoTitle: 'Daily Calorie Calculator | How Many Calories? | CalcPro',
     metaDescription: 'Estimate the calories you need daily to maintain your weight, based on your age, gender, height, weight, and activity level.'
   },
   {
@@ -432,12 +574,12 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'body-fat-percentage-calculator',
     name: 'Body Fat Percentage Calculator',
-    description: 'Estimate your body fat percentage.',
+    description: 'Estimate body fat with a tape measure.',
     category: 'Health',
     iconName: 'Percent',
     formula: "U.S. Navy Method",
-    seoTitle: 'Body Fat Percentage Calculator | US Navy Method | CalcPro',
-    metaDescription: 'Estimate your body fat percentage using the U.S. Navy method. This calculator uses your body measurements for a more accurate assessment than BMI alone.'
+    seoTitle: 'Body Fat Percentage Calculator (Tape Measure) | CalcPro',
+    metaDescription: 'Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment than BMI alone.'
   },
   {
     slug: 'lean-body-mass-calculator',
@@ -445,7 +587,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your lean body mass.',
     category: 'Health',
     iconName: 'Bone',
-    seoTitle: 'Lean Body Mass Calculator | Free LBM Tool | CalcPro',
+    seoTitle: 'Lean Body Mass (LBM) Calculator | Free Tool | CalcPro',
     metaDescription: 'Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle, bone, and organs.'
   },
   {
@@ -454,7 +596,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your waist-to-hip ratio.',
     category: 'Health',
     iconName: 'Ruler',
-    seoTitle: 'Waist-to-Hip Ratio Calculator | WHR & Health Risk | CalcPro',
+    seoTitle: 'Waist-to-Hip Ratio (WHR) Calculator | Health Risk | CalcPro',
     metaDescription: 'Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means for your health.'
   },
   {
@@ -538,7 +680,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between bps, Kbps, Mbps, and more.',
     category: 'Conversions',
     iconName: 'Shuffle',
-    seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s Tool | CalcPro',
+    seoTitle: 'Data Transfer Rate Converter | Mbps to MB/s | CalcPro',
     metaDescription: 'Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed and file download calculations.',
   },
   {
@@ -547,7 +689,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between seconds, minutes, hours, and days.',
     category: 'Conversions',
     iconName: 'Clock',
-    seoTitle: 'Time Converter | Hours, Minutes, Seconds & More | CalcPro',
+    seoTitle: 'Time Converter | Hours, Minutes, Seconds | CalcPro',
     metaDescription: 'A simple and fast time converter for various units of time, including seconds, minutes, hours, days, weeks, and years.',
   },
   {
@@ -556,7 +698,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between joules, calories, kWh, and more.',
     category: 'Conversions',
     iconName: 'Atom',
-    seoTitle: 'Energy Converter | Joules, Calories, kWh & More | CalcPro',
+    seoTitle: 'Energy Converter | Joules, Calories, kWh | CalcPro',
     metaDescription: 'Convert between different units of energy, such as Joules, Kilojoules, calories, Kilocalories (kcal), and Kilowatt-hours (kWh).',
   },
   {
@@ -565,7 +707,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert between Pa, bar, psi, and more.',
     category: 'Conversions',
     iconName: 'Cloud',
-    seoTitle: 'Pressure Converter | Pa, Bar, PSI, ATM & More | CalcPro',
+    seoTitle: 'Pressure Converter | Pa, Bar, PSI, ATM | CalcPro',
     metaDescription: 'Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and pounds per square inch (psi).',
   },
   {
@@ -610,7 +752,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'date-difference-calculator',
     name: 'Date Difference Calculator',
-    description: 'Calculate the difference between two dates.',
+    description: 'Calculate days between two dates.',
     category: 'Date & Time',
     iconName: 'CalendarDays',
     formula: "endDate - startDate",
@@ -632,7 +774,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
     iconName: 'Globe2',
-    seoTitle: 'Time Zone Converter | World Time Zone Tool | CalcPro',
+    seoTitle: 'Time Zone Converter for International Meetings | CalcPro',
     metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
   },
   {
@@ -647,7 +789,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'working-days-calculator',
     name: 'Working Days Calculator',
-    description: 'Calculate working days between two dates.',
+    description: 'Calculate business days between two dates.',
     category: 'Date & Time',
     iconName: 'Briefcase',
     seoTitle: 'Working Days Calculator | Business Day Counter | CalcPro',
@@ -668,7 +810,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add or subtract days from a date.',
     category: 'Date & Time',
     iconName: 'CalendarClock',
-    seoTitle: 'Add/Subtract Days from a Date | Date Calculator | CalcPro',
+    seoTitle: 'Add/Subtract Days From a Date Calculator | CalcPro',
     metaDescription: "Find a future or past date by adding or subtracting days from a start date. Perfect for calculating deadlines, follow-ups, and key milestones.",
   },
   {
@@ -717,7 +859,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'Network',
     seoTitle: 'IP Subnet Calculator | CIDR & Network Mask Tool | CalcPro',
-    metaDescription: 'An easy-to-use IP subnet calculator for network administrators. Quickly find network addresses, broadcast addresses, subnet masks, and host ranges.',
+    metaDescription: 'Calculate IP subnet details from an IP and CIDR mask. Find network addresses, broadcast addresses, subnet masks, and usable hosts instantly.',
     formula: 'Network Address = IP Address & Subnet Mask'
   },
   {
@@ -755,7 +897,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the area and circumference of a circle.',
     category: 'Geometry & Engineering',
     iconName: 'Circle',
-    seoTitle: 'Circle Calculator | Area, Circumference & Diameter | CalcPro',
+    seoTitle: 'Circle Calculator | Area, Circumference, Diameter | CalcPro',
     metaDescription: 'A versatile circle calculator. Enter the radius, diameter, circumference, or area to find the other three properties instantly. Includes formulas.',
   },
   {
@@ -765,7 +907,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Triangle Area & Perimeter Calculator | Free Tool | CalcPro',
-    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
+    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS) for any triangle shape.",
   },
   {
     slug: 'rectangle-area-calculator',
@@ -821,7 +963,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Trigonometry Calculator | Sin, Cos, Tan & Inverse | CalcPro',
-    metaDescription: 'A free trigonometry calculator to find sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.',
+    metaDescription: 'A free trig calculator to find sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.',
   },
   {
     slug: 'beam-deflection-calculator',
@@ -847,18 +989,18 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate voltage, current, and resistance.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    seoTitle: 'Ohm\'s Law Calculator | Voltage, Current, Resistance | CalcPro',
-    metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.',
+    seoTitle: "Ohm's Law Calculator | V, I, R, P | CalcPro",
+    metaDescription: "An easy-to-use Ohm's law calculator for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.",
     formula: 'V = I × R'
   },
   {
     slug: 'resistor-color-code-calculator',
     name: 'Resistor Color Code Calculator',
-    description: 'Determine resistor values from color codes.',
+    description: 'Decode 4-band resistor color codes.',
     category: 'Geometry & Engineering',
     iconName: 'Palette',
     seoTitle: '4-Band Resistor Color Code Calculator | Decoder | CalcPro',
-    metaDescription: 'A simple tool to decode 4-band resistor color codes. Select the colors for each band to instantly find the resistance value and tolerance.',
+    metaDescription: 'Decode 4-band resistor color codes with our simple tool. Select the colors for each band to instantly find the resistance value and tolerance.',
   },
   {
     slug: 'capacitor-charge-calculator',
@@ -866,7 +1008,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate capacitor charge and discharge times.',
     category: 'Geometry & Engineering',
     iconName: 'Atom',
-    seoTitle: 'Capacitor Charging Calculator for RC Circuits | CalcPro',
+    seoTitle: 'Capacitor Charge Calculator for RC Circuits | CalcPro',
     metaDescription: 'Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. An essential tool for electronics.',
   },
 
@@ -878,7 +1020,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Miscellaneous',
     iconName: 'GraduationCap',
     formula: 'Σ(Grade Points * Credits) / Σ(Credits)',
-    seoTitle: 'GPA Calculator | Calculate Grade Point Average | CalcPro',
+    seoTitle: 'GPA Calculator for College | Calculate Grade Point Average | CalcPro',
     metaDescription: 'Calculate your GPA quickly and easily. Enter your courses, credits, and grades to find your Grade Point Average on a 4.0 scale.'
   },
   {
@@ -887,7 +1029,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate your grade percentage.',
     category: 'Miscellaneous',
     iconName: 'Percent',
-    seoTitle: 'Grade Percentage Calculator | Find Your Test Score | CalcPro',
+    seoTitle: 'Grade Percentage Calculator | Find Test Score | CalcPro',
     metaDescription: 'Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.'
   },
   {
@@ -914,7 +1056,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     iconName: 'Landmark',
-    seoTitle: 'Loan Affordability Calculator | How Much Can I Borrow? | CalcPro',
+    seoTitle: 'Loan Affordability Calculator | How Much House Can I Afford?',
     metaDescription: 'Estimate how much you can afford to borrow for a loan based on your income, monthly debts, and the desired loan terms. Perfect for home or car loan planning.',
   },
   {
@@ -929,10 +1071,12 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'pet-age-calculator',
     name: 'Pet Age Calculator',
-    description: 'Calculate your pet\'s age in human years.',
+    description: "Calculate your pet's age in human years.",
     category: 'Miscellaneous',
     iconName: 'Dog',
-    seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human Years | CalcPro',
-    metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
+    seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human | CalcPro',
+    metaDescription: "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
   },
 ];
+
+  

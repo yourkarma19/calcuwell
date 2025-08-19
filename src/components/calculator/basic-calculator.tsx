@@ -71,8 +71,9 @@ export default function BasicCalculator() {
     }
 
     if (displayValue === "Error" || displayValue === "I ❤️ You") {
-        resetCalculator();
-        if(!isOperator(input)) setDisplayValue(input);
+        if(input === "AC") {
+          resetCalculator();
+        }
         return;
     }
     
@@ -119,7 +120,7 @@ export default function BasicCalculator() {
 
   const handleEquals = () => {
     if (justEvaluated) return;
-    const fullExpression = (expression + displayValue);
+    let fullExpression = (expression + displayValue).replace(/‑/g, "-");
     if (fullExpression === '12082007+19112005') {
       setDisplayValue("I ❤️ You");
       setExpression("");
@@ -150,28 +151,16 @@ export default function BasicCalculator() {
   
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Do not prevent default if the user is typing in an input field
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
         return;
       }
-
       const { key } = event;
       
-      if (/[0-9.]/.test(key) || isOperator(key) || key === 'Enter' || key === '=' || key === 'Backspace' || key === 'Escape') {
-          // event.preventDefault();
-      }
-      
-      if (/[0-9.]/.test(key)) {
-        handleInput(key);
-      } else if (isOperator(key)) {
-        handleOperator(key);
-      } else if (key === 'Enter' || key === '=') {
-        handleInput('=');
-      } else if (key === 'Backspace') {
-        handleInput('Backspace');
-      } else if (key === 'Escape') {
-        handleInput('AC');
-      }
+      if (/[0-9.]/.test(key)) handleInput(key);
+      else if (isOperator(key)) handleOperator(key);
+      else if (key === 'Enter' || key === '=') handleInput('=');
+      else if (key === 'Backspace') handleInput('Backspace');
+      else if (key === 'Escape') handleInput('AC');
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -211,22 +200,14 @@ export default function BasicCalculator() {
         case 'tan⁻¹': result = radToAngle(Math.atan(value)); break;
         case 'e': result = Math.E; break;
         case 'π': result = Math.PI; break;
-        case 'Rand': 
-          if (typeof window !== 'undefined') {
-            result = Math.random();
-          } else {
-            result = 0.5; // fallback for SSR
-          }
-          break;
+        case 'Rand': result = typeof window !== 'undefined' ? Math.random() : 0.5; break;
         case 'mc': setMemory(0); return;
         case 'm+': setMemory(prev => prev + value); return;
         case 'm-': setMemory(prev => prev - value); return;
         case 'mr': setDisplayValue(memory.toString()); return;
         case 'Rad': setIsRadians(true); return;
         case 'deg': setIsRadians(false); return;
-        default:
-          setDisplayValue(currentDisplay + func);
-          return;
+        default: setDisplayValue(currentDisplay + func); return;
       }
       if (result !== undefined && isFinite(result)) {
         setDisplayValue(result.toString());
@@ -245,6 +226,65 @@ export default function BasicCalculator() {
     if (len > 8) return 'text-4xl';
     return 'text-5xl';
   };
+
+  const renderDisplay = () => (
+    <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
+        <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || (activeTab === 'sci' ? 'Scientific Mode' : ' ')}</div>
+        <div className="h-2/3 w-full flex items-end justify-end">
+            <div
+                aria-label="Calculator display"
+                className={cn("w-full text-right font-mono", displayFontSize(), displayValue === "I ❤️ You" && "text-pink-500")}
+            >
+                {displayValue}
+            </div>
+        </div>
+    </div>
+  );
+
+  const renderBasicButtons = () => (
+    <div className="grid grid-cols-4 grid-rows-5 gap-2 mt-4">
+        <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
+        <Button onClick={() => handleInput("Backspace")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
+        <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
+        <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">÷</Button>
+        <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
+        <Button onClick={() => handleInput("8")} variant="outline" className="h-16 text-2xl">8</Button>
+        <Button onClick={() => handleInput("9")} variant="outline" className="h-16 text-2xl">9</Button>
+        <Button onClick={() => handleOperator("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">×</Button>
+        <Button onClick={() => handleInput("4")} variant="outline" className="h-16 text-2xl">4</Button>
+        <Button onClick={() => handleInput("5")} variant="outline" className="h-16 text-2xl">5</Button>
+        <Button onClick={() => handleInput("6")} variant="outline" className="h-16 text-2xl">6</Button>
+        <Button onClick={() => handleOperator("-")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">-</Button>
+        <Button onClick={() => handleInput("1")} variant="outline" className="h-16 text-2xl">1</Button>
+        <Button onClick={() => handleInput("2")} variant="outline" className="h-16 text-2xl">2</Button>
+        <Button onClick={() => handleInput("3")} variant="outline" className="h-16 text-2xl">3</Button>
+        <Button onClick={() => handleOperator("+")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">+</Button>
+        <Button onClick={() => handleInput("0")} variant="outline" className="h-16 text-2xl col-span-2">0</Button>
+        <Button onClick={() => handleInput(".")} variant="outline" className="h-16 text-2xl">.</Button>
+        <Button onClick={() => handleInput("=")} variant="default" className="bg-primary hover:bg-primary/90 h-16 text-2xl">=</Button>
+    </div>
+  );
+
+  const renderScientificButtons = () => (
+      <div className="grid grid-cols-6 gap-2 mt-4">
+          {scientificButtons
+              .concat(isRadians ? {func: 'deg', tooltip: 'Switch to Degrees'} : {func: 'Rad', tooltip: 'Switch to Radians'})
+              .map(({func, tooltip, active}) => (
+              <Tooltip key={func}>
+                  <TooltipTrigger asChild>
+                      <Button
+                          variant="outline"
+                          onClick={() => handleScientificInput(func)}
+                          className={cn("h-12 text-sm", active && "bg-primary/80 text-primary-foreground hover:bg-primary")}
+                      >
+                          {func}
+                      </Button>
+                  </TooltipTrigger>
+                  <TooltipContent><p>{tooltip}</p></TooltipContent>
+              </Tooltip>
+          ))}
+      </div>
+  );
 
   return (
     <div className="lg:col-span-3 space-y-6">
@@ -268,85 +308,13 @@ export default function BasicCalculator() {
             </TabsList>
             
             <TabsContent value="basic" className="mt-4">
-                <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
-                  <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || " "}</div>
-                  <div className="h-2/3 w-full flex items-end justify-end">
-                      <div
-                      aria-label="Calculator display"
-                      className={cn(
-                          "w-full text-right font-mono",
-                          displayFontSize(),
-                          displayValue === "I ❤️ You" && "text-pink-500"
-                      )}
-                      >
-                      {displayValue}
-                      </div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-4 grid-rows-5 gap-2 mt-4">
-                    <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
-                    <Button onClick={() => handleInput("Backspace")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
-                    <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
-                    <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">÷</Button>
-                    
-                    <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>
-                    <Button onClick={() => handleInput("8")} variant="outline" className="h-16 text-2xl">8</Button>
-                    <Button onClick={() => handleInput("9")} variant="outline" className="h-16 text-2xl">9</Button>
-                    <Button onClick={() => handleOperator("*")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">×</Button>
-
-                    <Button onClick={() => handleInput("4")} variant="outline" className="h-16 text-2xl">4</Button>
-                    <Button onClick={() => handleInput("5")} variant="outline" className="h-16 text-2xl">5</Button>
-                    <Button onClick={() => handleInput("6")} variant="outline" className="h-16 text-2xl">6</Button>
-                    <Button onClick={() => handleOperator("-")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">-</Button>
-
-                    <Button onClick={() => handleInput("1")} variant="outline" className="h-16 text-2xl">1</Button>
-                    <Button onClick={() => handleInput("2")} variant="outline" className="h-16 text-2xl">2</Button>
-                    <Button onClick={() => handleInput("3")} variant="outline" className="h-16 text-2xl">3</Button>
-                    <Button onClick={() => handleOperator("+")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">+</Button>
-
-                    <Button onClick={() => handleInput("0")} variant="outline" className="h-16 text-2xl col-span-2">0</Button>
-                    <Button onClick={() => handleInput(".")} variant="outline" className="h-16 text-2xl">.</Button>
-                    <Button onClick={() => handleInput("=")} variant="default" className="bg-primary hover:bg-primary/90 h-16 text-2xl">=</Button>
-                </div>
+                {renderDisplay()}
+                {renderBasicButtons()}
             </TabsContent>
 
             <TabsContent value="sci" className="mt-4">
-                 <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
-                    <div data-testid="expression-display" className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || 'Scientific Mode'}</div>
-                    <div 
-                      data-testid="main-display"
-                      aria-label="Calculator display"
-                      className={cn(
-                        "font-mono h-2/3 w-full text-right break-all flex items-center justify-end",
-                        displayFontSize()
-                      )}
-                    >
-                      {displayValue}
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-6 gap-2 mt-4">
-                    {scientificButtons
-                        .concat(isRadians ? {func: 'deg', tooltip: 'Switch to Degrees'} : {func: 'Rad', tooltip: 'Switch to Radians'})
-                        .map(({func, tooltip, active}) => (
-                        <Tooltip key={func}>
-                            <TooltipTrigger asChild>
-                                <Button
-                                    variant="outline"
-                                    onClick={() => handleScientificInput(func)}
-                                    className={cn(
-                                      "h-12 text-sm",
-                                      active && "bg-primary/80 text-primary-foreground hover:bg-primary"
-                                    )}
-                                >
-                                    {func}
-                                </Button>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>{tooltip}</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    ))}
-                  </div>
+                {renderDisplay()}
+                {renderScientificButtons()}
             </TabsContent>
           </Tabs>
         </CardContent>

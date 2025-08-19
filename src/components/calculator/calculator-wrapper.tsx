@@ -10,6 +10,7 @@ import { ChevronRight, icons } from "lucide-react";
 import { categories } from "@/lib/calculators";
 import React from 'react';
 import { useSearchParams } from "next/navigation";
+import CalculatorContent from "./calculator-content";
 
 
 interface CalculatorWrapperProps {
@@ -27,12 +28,21 @@ export default function CalculatorWrapper({
   const isEmbed = searchParams.get('embed') === 'true';
 
   const LucideIcon = icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
+  
+  const [childProps, setChildProps] = React.useState({});
 
-  // Clone the child element to pass the setFormula function as a prop
-  const childrenWithProps = React.Children.map(children, child => {
+  const EnhancedChildren = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
       // @ts-ignore
-      return React.cloneElement(child, { setFormula });
+      const originalOnSubmit = child.props.onSubmit;
+      const newProps = {
+        ...child.props,
+        setFormula,
+        setChildProps,
+        calculatorName: calculator.name, // Pass down the calculator name
+      };
+      
+      return React.cloneElement(child, newProps);
     }
     return child;
   });
@@ -41,7 +51,7 @@ export default function CalculatorWrapper({
     return (
         <div className="p-2">
              <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
-                {childrenWithProps}
+                {EnhancedChildren}
             </div>
         </div>
     )
@@ -69,15 +79,20 @@ export default function CalculatorWrapper({
           {calculator.description}
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-        {childrenWithProps}
-        <div className="lg:col-span-1 lg:sticky top-24 no-print space-y-6">
-           <FormulaExplainer 
-            calculatorName={calculator.name}
-            formula={formula}
-          />
-          <EmbedCalculator slug={calculator.slug} />
-        </div>
+
+      <div className="max-w-2xl mx-auto space-y-8">
+        {EnhancedChildren}
+
+        <CalculatorContent slug={calculator.slug} {...childProps} />
+        
+        {calculator.formula && (
+            <FormulaExplainer 
+                calculatorName={calculator.name}
+                formula={formula}
+            />
+        )}
+        
+        <EmbedCalculator slug={calculator.slug} />
       </div>
     </div>
   );

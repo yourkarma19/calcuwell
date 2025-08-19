@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
@@ -6,20 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
 import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 import { useSearchParams } from "next/navigation";
-import { Info } from "lucide-react";
-import { format } from "path";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import ExportShareControls from "./export-share-controls";
 
-export default function LoanEMICalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function LoanEMICalculator({ setFormula, setChildProps, calculatorName }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
@@ -37,10 +29,19 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
+  useEffect(() => {
+    setFormula("EMI = [P x R x (1+R)^N] / [(1+R)^N-1]");
+  }, [setFormula]);
+
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {
     return calculateEMI(principal, rate, tenure);
   }, [principal, rate, tenure]);
+  
+  useEffect(() => {
+    setChildProps({ principal, totalInterest });
+  }, [principal, totalInterest, setChildProps]);
+
 
   const { newTotalInterest, newTotalMonths, interestSaved, timeSaved } = useMemo(() => {
     if (extraMonthlyPayment > 0 || extraYearlyPayment > 0) {
@@ -49,24 +50,6 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
     return { newTotalInterest: 0, newTotalMonths: 0, interestSaved: 0, timeSaved: { years: 0, months: 0 }};
   }, [principal, rate, tenure, extraMonthlyPayment, extraYearlyPayment]);
   
-  const originalTotalMonths = tenure * 12;
-
-  const chartData = useMemo(() => ([
-      { name: "Principal", value: principal, fill: "hsl(var(--chart-1))" },
-      { name: "Interest", value: totalInterest, fill: "hsl(var(--chart-2))" },
-  ]), [principal, totalInterest]);
-
-  const chartConfig = {
-      principal: {
-        label: "Principal",
-        color: "hsl(var(--chart-1))",
-      },
-      interest: {
-        label: "Interest",
-        color: "hsl(var(--chart-2))",
-      },
-  }
-
   const formatCurrency = (value: number) => {
     return `₹${value.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
   };
@@ -76,192 +59,128 @@ export default function LoanEMICalculator({ setFormula }: { setFormula: (formula
       const months = totalMonths % 12;
       return `${years} yr, ${months} mo`;
   }
+  
+  const shareParams = {
+      principal: principal.toString(),
+      rate: rate.toString(),
+      tenure: tenure.toString()
+  }
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Enter Loan Details</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
+    <div className="space-y-6">
+      <Card id="loan-emi-inputs">
+        <CardHeader>
+          <CardTitle>Enter Loan Details</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="principal">Loan Amount</Label>
+            <div className="flex items-center gap-4">
+              <Slider
+                id="principal"
+                value={[principal]}
+                onValueChange={(value) => setPrincipal(value[0])}
+                min={10000}
+                max={10000000}
+                step={10000}
+              />
+              <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="10000" />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+             <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
+             <div className="flex items-center gap-4">
+              <Slider
+                id="rate"
+                value={[rate]}
+                onValueChange={(value) => setRate(value[0])}
+                min={0}
+                max={20}
+                step={0.05}
+              />
+              <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
+             </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="tenure">Loan Tenure (Years)</Label>
+             <div className="flex items-center gap-4">
+              <Slider
+                id="tenure"
+                value={[tenure]}
+                onValueChange={(value) => setTenure(value[0])}
+                min={1}
+                max={30}
+                step={1}
+              />
+              <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
             <div className="space-y-2">
-              <Label htmlFor="principal">Loan Amount</Label>
-              <div className="flex items-center gap-4">
-                <Slider
-                  id="principal"
-                  value={[principal]}
-                  onValueChange={(value) => setPrincipal(value[0])}
-                  min={10000}
-                  max={10000000}
-                  step={10000}
-                />
-                <Input type="number" value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="w-32" step="10000" />
-              </div>
+              <Label htmlFor="extra-monthly">Extra Monthly Payment (Optional)</Label>
+              <Input type="number" value={extraMonthlyPayment} onChange={e => setExtraMonthlyPayment(Number(e.target.value))} className="w-full" />
             </div>
-
             <div className="space-y-2">
-               <Label htmlFor="rate">Interest Rate (% p.a.)</Label>
-               <div className="flex items-center gap-4">
-                <Slider
-                  id="rate"
-                  value={[rate]}
-                  onValueChange={(value) => setRate(value[0])}
-                  min={0}
-                  max={20}
-                  step={0.05}
-                />
-                <Input type="number" value={rate} onChange={e => setRate(Number(e.target.value))} className="w-24" step="0.05" />
-               </div>
+              <Label htmlFor="extra-yearly">Extra Yearly Payment (Optional)</Label>
+              <Input type="number" value={extraYearlyPayment} onChange={e => setExtraYearlyPayment(Number(e.target.value))} className="w-full" />
             </div>
+          </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="tenure">Loan Tenure (Years)</Label>
-               <div className="flex items-center gap-4">
-                <Slider
-                  id="tenure"
-                  value={[tenure]}
-                  onValueChange={(value) => setTenure(value[0])}
-                  min={1}
-                  max={30}
-                  step={1}
-                />
-                <Input type="number" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="w-24" />
+        </CardContent>
+      </Card>
+      
+      <Card id="loan-emi-results">
+        <CardHeader>
+          <CardTitle>Your Loan EMI</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4" aria-live="polite">
+           <div>
+              <p className="text-sm text-muted-foreground">Monthly EMI</p>
+              <p className="text-4xl font-bold font-headline text-primary">
+                {formatCurrency(emi)}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-2 text-sm text-left border-t pt-2">
+               <div className="flex justify-between">
+                  <span className="text-muted-foreground">Principal Amount:</span>
+                  <span className="font-semibold">{formatCurrency(principal)}</span>
+              </div>
+               <div className="flex justify-between">
+                  <span className="text-muted-foreground">Total Interest:</span>
+                  <span className="font-semibold">{formatCurrency(totalInterest)}</span>
+              </div>
+               <div className="flex justify-between font-bold">
+                  <span className="text-muted-foreground">Total Payable:</span>
+                  <span className="font-semibold">{formatCurrency(totalPayable)}</span>
+              </div>
+          </div>
+          {(extraMonthlyPayment > 0 || extraYearlyPayment > 0) && interestSaved > 0 && (
+            <div className="space-y-2 text-sm text-left border-t pt-4 mt-4">
+              <p className="font-bold text-center text-primary">With Extra Payments</p>
+               <div className="flex justify-between">
+                  <span className="text-muted-foreground">New Loan Term:</span>
+                  <span className="font-semibold">{formatTime(newTotalMonths)}</span>
+              </div>
+              <div className="flex justify-between">
+                  <span className="text-muted-foreground">Time Saved:</span>
+                  <span className="font-semibold">{timeSaved.years} yr, {timeSaved.months} mo</span>
+              </div>
+              <div className="flex justify-between font-bold text-green-600">
+                  <span className="text-muted-foreground">Interest Saved:</span>
+                  <span className="font-semibold">{formatCurrency(interestSaved)}</span>
               </div>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
-              <div className="space-y-2">
-                <Label htmlFor="extra-monthly">Extra Monthly Payment (Optional)</Label>
-                <Input type="number" value={extraMonthlyPayment} onChange={e => setExtraMonthlyPayment(Number(e.target.value))} className="w-full" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="extra-yearly">Extra Yearly Payment (Optional)</Label>
-                <Input type="number" value={extraYearlyPayment} onChange={e => setExtraYearlyPayment(Number(e.target.value))} className="w-full" />
-              </div>
-            </div>
-
-          </CardContent>
-        </Card>
-
-         <Card>
-            <CardHeader>
-                <CardTitle>About the EMI Calculator</CardTitle>
-            </CardHeader>
-            <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our EMI Calculator helps you find your Equated Monthly Installments (EMI) in just a few clicks. Knowing your EMI in advance allows you to plan your finances better. This tool is useful for home loans, car loans, or personal loans. By entering the loan amount, interest rate, and tenure, you can instantly get your monthly payment and total loan cost.</p>
-                <p>This calculator is great for anyone who wants to make smarter borrowing decisions. It is instant, accurate, and user-friendly.</p>
-
-                <h3>How to Use the EMI Calculator</h3>
-                <ol>
-                    <li>Enter the **Loan Amount** you wish to borrow.</li>
-                    <li>Input the **Annual Interest Rate**.</li>
-                    <li>Select the **Loan Tenure** (in years).</li>
-                </ol>
-                <p>The calculator will instantly display your monthly EMI. You can also add extra payments to see how it reduces your loan duration and saves you money.</p>
-                
-                <h3>Frequently Asked Questions (FAQs)</h3>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger className="font-semibold">What is EMI?</AccordionTrigger>
-                        <AccordionContent>
-                            <p>EMI (Equated Monthly Installment) is the fixed amount you pay each month to repay your loan. It includes both a principal amount and an interest amount. The payment is set up so that the loan is fully paid off by the end of its term.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger className="font-semibold">How is EMI calculated?</AccordionTrigger>
-                        <AccordionContent>
-                            <p>Banks use the formula `EMI = [P x R x (1+R)^N] / [(1+R)^N-1]`. In this formula, P is the loan amount, R is the monthly interest rate, and N is the number of months.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger className="font-semibold">How can I reduce my EMI?</AccordionTrigger>
-                        <AccordionContent>
-                            <p>You can reduce your EMI by choosing a longer tenure, finding a lower interest rate, or making a larger down payment. A longer tenure will lower the monthly payment, but you will pay more in total interest.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-4">
-                        <AccordionTrigger className="font-semibold">Why should I use an EMI Calculator?</AccordionTrigger>
-                        <AccordionContent>
-                            <p>It helps you plan your budget, avoid financial stress by choosing an EMI you can afford, and compare loans from different banks.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-            </CardContent>
-        </Card>
-        
-        <Card>
-            <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
-            <CardContent className="h-[25rem]">
-                <ChartContainer config={chartConfig} className="w-full h-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                            <Tooltip
-                            cursor={false}
-                            content={<ChartTooltipContent 
-                                formatter={(value, name) => `${name}: ₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 0})}`}
-                                />}
-                            />
-                            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="30%" outerRadius="80%" strokeWidth={5} labelLine={false} label>
-                                {chartData.map((entry) => (
-                                    <Cell key={entry.name} fill={entry.fill} />
-                                ))}
-                            </Pie>
-                            <ChartLegend content={<ChartLegendContent />} />
-                        </PieChart>
-                    </ResponsiveContainer>
-                </ChartContainer>
-            </CardContent>
-        </Card>
-        
-      </div>
-
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Your Loan EMI</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center space-y-4" aria-live="polite">
-             <div>
-                <p className="text-sm text-muted-foreground">Monthly EMI</p>
-                <p className="text-4xl font-bold font-headline text-primary">
-                  {formatCurrency(emi)}
-                </p>
-              </div>
-              <div className="grid grid-cols-1 gap-2 text-sm text-left border-t pt-2">
-                 <div className="flex justify-between">
-                    <span className="text-muted-foreground">Principal Amount:</span>
-                    <span className="font-semibold">{formatCurrency(principal)}</span>
-                </div>
-                 <div className="flex justify-between">
-                    <span className="text-muted-foreground">Total Interest:</span>
-                    <span className="font-semibold">{formatCurrency(totalInterest)}</span>
-                </div>
-                 <div className="flex justify-between font-bold">
-                    <span className="text-muted-foreground">Total Payable:</span>
-                    <span className="font-semibold">{formatCurrency(totalPayable)}</span>
-                </div>
-            </div>
-            {(extraMonthlyPayment > 0 || extraYearlyPayment > 0) && interestSaved > 0 && (
-              <div className="space-y-2 text-sm text-left border-t pt-4 mt-4">
-                <p className="font-bold text-center text-primary">With Extra Payments</p>
-                 <div className="flex justify-between">
-                    <span className="text-muted-foreground">New Loan Term:</span>
-                    <span className="font-semibold">{formatTime(newTotalMonths)}</span>
-                </div>
-                <div className="flex justify-between">
-                    <span className="text-muted-foreground">Time Saved:</span>
-                    <span className="font-semibold">{timeSaved.years} yr, {timeSaved.months} mo</span>
-                </div>
-                <div className="flex justify-between font-bold text-green-600">
-                    <span className="text-muted-foreground">Interest Saved:</span>
-                    <span className="font-semibold">{formatCurrency(interestSaved)}</span>
-                </div>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      </div>
-    </>
+          )}
+        </CardContent>
+      </Card>
+      <ExportShareControls 
+        elementIds={['loan-emi-inputs', 'loan-emi-results']}
+        shareParams={shareParams}
+        calculatorName={calculatorName}
+      />
+    </div>
   );
 }

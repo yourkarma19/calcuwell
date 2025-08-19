@@ -9,40 +9,37 @@ function usePersistentState<T>(
     reviver?: (value: any) => T
 ): [T, Dispatch<SetStateAction<T>>] {
     const [state, setState] = useState<T>(defaultValue);
-    const [isInitialized, setIsInitialized] = useState(false);
 
     useEffect(() => {
-        let storedValue: T;
+        let cacheKey = `persistent-state-${key}`;
         try {
             const item = window.localStorage.getItem(key);
             if (item) {
                 const parsed = JSON.parse(item);
-                storedValue = reviver ? reviver(parsed) : parsed;
+                setState(reviver ? reviver(parsed) : parsed);
             } else {
-                storedValue = defaultValue;
+                setState(defaultValue);
             }
         } catch (error) {
             console.error(`Error reading localStorage key “${key}”:`, error);
-            storedValue = defaultValue;
+            setState(defaultValue);
         }
-        setState(storedValue);
-        setIsInitialized(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [key]);
 
     const setPersistentState: Dispatch<SetStateAction<T>> = useCallback((newValue) => {
-        if (!isInitialized) return;
-        
         setState(prevState => {
             const resolvedValue = typeof newValue === 'function' ? (newValue as (prevState: T) => T)(prevState) : newValue;
             try {
-                window.localStorage.setItem(key, JSON.stringify(resolvedValue));
+                if (resolvedValue !== undefined && resolvedValue !== null) {
+                    window.localStorage.setItem(key, JSON.stringify(resolvedValue));
+                }
             } catch (error) {
                 console.error(`Error setting localStorage key “${key}”:`, error);
             }
             return resolvedValue;
         });
-    }, [key, isInitialized]);
+    }, [key]);
 
     return [state, setPersistentState];
 }

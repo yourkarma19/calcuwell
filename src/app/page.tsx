@@ -9,10 +9,9 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, Smartphone, icons, FlaskConical } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import BasicCalculator from "@/components/calculator/basic-calculator";
+import HomeCalculator from "@/components/home-calculator";
 
 
 export default function Home() {
@@ -31,7 +30,7 @@ export default function Home() {
       </section>
       
       <section id="main-calculator" className="py-12">
-        <BasicCalculator />
+        <HomeCalculator />
       </section>
       
       <section id="categories" className="py-8">

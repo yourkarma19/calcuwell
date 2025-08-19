@@ -52,8 +52,10 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
         case "percentOf":
           return percentageOf(a, b);
         case "isWhatPercent":
+           if (b === 0) return null; // Prevent division by zero
           return isWhatPercentageOf(a, b);
         case "percentageChange":
+          if (a === 0) return null; // Prevent division by zero
           return percentageChange(a, b);
         default:
           return null;
@@ -62,6 +64,21 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
       return null;
     }
   }, [mode, valA, valB]);
+  
+  const handleModeChange = (newMode: CalculationMode) => {
+    setMode(newMode);
+    // Reset values to defaults for the new mode to avoid confusion
+    if (newMode === 'percentOf') {
+      setValA(10);
+      setValB(50);
+    } else if (newMode === 'isWhatPercent') {
+      setValA(5);
+      setValB(50);
+    } else if (newMode === 'percentageChange') {
+      setValA(100);
+      setValB(120);
+    }
+  }
 
   const renderInputs = () => {
     switch (mode) {
@@ -136,7 +153,7 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Calculation Mode</Label>
-            <Select value={mode} onValueChange={(v) => setMode(v as CalculationMode)}>
+            <Select value={mode} onValueChange={(v) => handleModeChange(v as CalculationMode)}>
               <SelectTrigger data-testid="mode-select-trigger">
                 <SelectValue placeholder="Select calculation mode" />
               </SelectTrigger>

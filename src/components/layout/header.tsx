@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calculator } from "lucide-react";
+import { Calculator, Sparkles } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { SearchBar } from "@/components/search-bar";
 
@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center max-w-7xl mx-auto">
-        <div className="mr-4 flex">
+        <div className="mr-6 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Calculator className="h-6 w-6 text-primary" />
             <span className="font-bold font-headline sm:inline-block bg-gradient-to-r from-purple-500 to-purple-600 text-transparent bg-clip-text">
@@ -15,6 +15,17 @@ export default function Header() {
             </span>
           </Link>
         </div>
+        
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <Link
+              href="/calculators/financial-health-checkup"
+              className="flex items-center gap-1 transition-colors hover:text-primary"
+            >
+              <Sparkles className="w-4 h-4 text-primary" />
+              AI Financial Health Check-up
+          </Link>
+        </nav>
+
         <div className="flex flex-1 items-center justify-end space-x-2">
           <SearchBar />
           <ThemeToggle />
