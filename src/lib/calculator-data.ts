@@ -5,6 +5,50 @@ import type { Calculator } from '@/lib/types';
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Cubic Equation Calculator
+  {
+    slug: 'cubic-equation-calculator',
+    name: 'Cubic Equation Calculator',
+    description: 'Solve cubic equations of the form ax³+bx²+cx+d=0 for their real and complex roots.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: 'ax³ + bx² + cx + d = 0',
+    seoTitle: 'Cubic Equation Calculator with Steps | CalcPro Online',
+    metaDescription: 'Solve any cubic equation instantly. Our calculator finds the real and complex roots and shows the steps using the cubic formula.',
+  },
+  // New Triangle Angle Calculator
+  {
+    slug: 'triangle-angle-calculator',
+    name: 'Triangle Angle Calculator',
+    description: 'Find unknown angles in a triangle given three sides (SSS) or two sides and an angle (SAS).',
+    category: 'Geometry & Engineering',
+    iconName: 'Triangle',
+    formula: 'Law of Cosines & Law of Sines',
+    seoTitle: 'Find Angle of a Triangle Calculator (SSS, SAS) | CalcPro',
+    metaDescription: 'Calculate any unknown angle in a triangle. Enter the sides and/or angles you know to find the missing angles using the Law of Sines and Cosines.',
+  },
+  // New Tangent Line Calculator
+  {
+    slug: 'tangent-line-calculator',
+    name: 'Tangent Line Calculator',
+    description: 'Find the equation of a line tangent to a function at a specific point.',
+    category: 'Math',
+    iconName: 'Sigma',
+    formula: "y - f(a) = f'(a)(x - a)",
+    seoTitle: 'Tangent Line Calculator with Steps | CalcPro Online',
+    metaDescription: 'Find the equation of a tangent line to any function at a given point. Our calculus calculator provides a full, step-by-step solution.',
+  },
+  // New Fraction to Percentage Calculator
+  {
+    slug: 'fraction-to-percentage-calculator',
+    name: 'Fraction to Percentage Calculator',
+    description: 'Convert any fraction into its percentage value.',
+    category: 'Conversions',
+    iconName: 'Percent',
+    formula: '(Numerator / Denominator) * 100',
+    seoTitle: 'Fraction to Percentage Calculator | CalcPro Online',
+    metaDescription: 'Quickly convert any fraction to a percentage. Our free online calculator shows you the steps and the final answer instantly.',
+  },
   // New Intercept Calculator
   {
     slug: 'intercept-calculator',
@@ -35,17 +79,6 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     iconName: 'Ruler',
     seoTitle: 'Feet and Inches Calculator (Add, Subtract, Multiply) | CalcPro Online',
     metaDescription: 'A free and easy online calculator to add, subtract, multiply, and divide feet and inches. Perfect for construction, DIY projects, and woodworking. Get instant results in imperial and metric.',
-  },
-  // New Partial Fraction Calculator
-  {
-    slug: 'partial-fraction-calculator',
-    name: 'Partial Fraction Calculator',
-    description: 'Solve partial fraction decomposition problems with a full, step-by-step solution.',
-    category: 'Math',
-    iconName: 'Sigma',
-    formula: 'Decomposition of rational functions into simpler fractions.',
-    seoTitle: 'Partial Fraction Calculator with Steps | CalcPro Online',
-    metaDescription: 'Solve complex partial fraction decomposition problems instantly. Our free online calculator provides a detailed step-by-step solution to help you learn the process.',
   },
   // New Voltage to Watts Calculator
   {
@@ -830,7 +863,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Triangle Area & Perimeter Calculator | Free Tool | CalcPro',
-    metaDescription: 'Calculate a triangle\'s area and perimeter using Base & Height, Heron\'s formula (3 sides), or Side-Angle-Side (SAS) for any triangle shape.',
+    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS) for any triangle shape.",
   },
   {
     slug: 'rectangle-area-calculator',
@@ -994,10 +1027,10 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
   {
     slug: 'pet-age-calculator',
     name: 'Pet Age Calculator',
-    description: 'Calculate your pet\'s age in human years.',
+    description: "Calculate your pet's age in human years.",
     category: 'Miscellaneous',
     iconName: 'Dog',
     seoTitle: 'Pet Age Calculator | Dog & Cat Years to Human | CalcPro',
-    metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
+    metaDescription: "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
   },
 ];
