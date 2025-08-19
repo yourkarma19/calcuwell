@@ -127,7 +127,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate permutations and combinations.',
     category: 'Math',
     iconName: 'Sigma',
-    seoTitle: 'Permutation & Combination Calculator (nPr, nCr) | CalcPro',
+    seoTitle: 'Permutation & Combination (nPr, nCr) Calculator | CalcPro',
     metaDescription: 'Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability and combinatorics with this tool.',
   },
   {
@@ -926,7 +926,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     iconName: 'Landmark',
-    seoTitle: 'Loan Affordability Calculator | How Much Can I Borrow? | CalcPro',
+    seoTitle: 'Loan Affordability Calculator | How Much Can I Borrow?',
     metaDescription: 'Estimate how much you can afford to borrow for a loan based on your income, monthly debts, and the desired loan terms. Perfect for home or car loan planning.',
   },
   {
