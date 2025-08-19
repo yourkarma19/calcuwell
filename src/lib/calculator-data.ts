@@ -729,7 +729,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Programming',
     iconName: 'Network',
     seoTitle: 'IP Subnet Calculator | CIDR & Network Mask Tool | CalcPro',
-    metaDescription: 'An easy-to-use IP subnet calculator for network administrators. Quickly find network addresses, broadcast addresses, subnet masks, and host ranges.',
+    metaDescription: 'Calculate IP subnet details from an IP and CIDR mask. Find network addresses, broadcast addresses, subnet masks, and usable hosts instantly.',
     formula: 'Network Address = IP Address & Subnet Mask'
   },
   {
@@ -777,7 +777,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Triangle Area & Perimeter Calculator | Free Tool | CalcPro',
-    metaDescription: "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
+    metaDescription: 'Calculate a triangle\'s area and perimeter using Base & Height, Heron\'s formula (3 sides), or Side-Angle-Side (SAS) for any triangle shape.',
   },
   {
     slug: 'rectangle-area-calculator',
@@ -833,7 +833,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     seoTitle: 'Trigonometry Calculator | Sin, Cos, Tan & Inverse | CalcPro',
-    metaDescription: 'A free trigonometry calculator to find sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.',
+    metaDescription: 'A free trig calculator to find sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.',
   },
   {
     slug: 'beam-deflection-calculator',
@@ -860,7 +860,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Atom',
     seoTitle: "Ohm's Law Calculator | V, I, R, P | CalcPro",
-    metaDescription: 'An easy-to-use Ohm\'s law calculator to solve for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.',
+    metaDescription: "An easy-to-use Ohm's law calculator for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.",
     formula: 'V = I × R'
   },
   {
@@ -870,7 +870,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Palette',
     seoTitle: '4-Band Resistor Color Code Calculator | Decoder | CalcPro',
-    metaDescription: 'A simple tool to decode 4-band resistor color codes. Select the colors for each band to instantly find the resistance value and tolerance.',
+    metaDescription: 'Decode 4-band resistor color codes with our simple tool. Select the colors for each band to instantly find the resistance value and tolerance.',
   },
   {
     slug: 'capacitor-charge-calculator',
