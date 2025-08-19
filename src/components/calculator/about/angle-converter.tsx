@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -16,8 +17,8 @@ export default function AboutAngleConverter() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What are degrees and radians?</AccordionTrigger>
                         <AccordionContent>
-                            <p><strong>Degrees (°)** are the most common unit for measuring angles in everyday life, with a full circle containing 360°. Each degree is a 1/360th part of a full rotation.</p>
-                            <p><strong>Radians (rad)** are the standard unit of angular measure in mathematics and physics. A radian is defined by the arc of a circle: one radian is the angle at the center of a circle where the arc length is equal to the radius. A full circle contains 2π radians.</p>
+                            <p><strong>Degrees (°)</strong > are the most common unit for measuring angles in everyday life, with a full circle containing 360°. Each degree is a 1/360th part of a full rotation.</p>
+                            <p><strong>Radians (rad)</strong > are the standard unit of angular measure in mathematics and physics. A radian is defined by the arc of a circle: one radian is the angle at the center of a circle where the arc length is equal to the radius. A full circle contains 2π radians.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
