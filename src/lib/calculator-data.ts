@@ -1,10 +1,19 @@
-
 import type { Calculator } from '@/lib/types';
 
 // This file is separate to avoid bloating the initial bundle of pages
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, 'component'>[] = [
+  // New Feet and Inches Calculator
+  {
+    slug: 'feet-and-inches-calculator',
+    name: 'Feet and Inches Calculator',
+    description: 'Add, subtract, multiply, and divide feet and inches.',
+    category: 'Conversions',
+    iconName: 'Ruler',
+    seoTitle: 'Feet and Inches Calculator (Add, Subtract, Multiply) | CalcPro Online',
+    metaDescription: 'A free and easy online calculator to add, subtract, multiply, and divide feet and inches. Perfect for construction, DIY projects, and woodworking. Get instant results in imperial and metric.',
+  },
   // New Partial Fraction Calculator
   {
     slug: 'partial-fraction-calculator',
@@ -970,6 +979,3 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
 ];
-
-
-
