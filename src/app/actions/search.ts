@@ -2,7 +2,7 @@
 'use server';
 
 import { loadFullCalculatorData } from '@/lib/server/calculator-data';
-import Fuse from 'fuse.js';
+import type Fuse from 'fuse.js';
 import type { Calculator } from '@/lib/types';
 
 type SearchResult = Omit<Calculator, 'component'>;
@@ -13,8 +13,11 @@ let calculators: SearchResult[] = [];
 async function initializeSearch() {
   if (fuse) return;
   
+  // Dynamically import Fuse.js to reduce initial bundle size
+  const FuseJs = (await import('fuse.js')).default;
+  
   calculators = await loadFullCalculatorData();
-  fuse = new Fuse(calculators, {
+  fuse = new FuseJs(calculators, {
     keys: ['name', 'category', 'tags'],
     threshold: 0.3,
   });

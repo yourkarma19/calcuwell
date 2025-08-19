@@ -9,6 +9,17 @@ import { Label } from "@/components/ui/label";
 import { Input } from "../ui/input";
 import ExportShareControls from "./export-share-controls";
 import { useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
+import { Skeleton } from "../ui/skeleton";
+
+const MortgageBreakdownChart = dynamic(
+    () => import('@/components/charts/mortgage-breakdown-chart').then(mod => mod.MortgageBreakdownChart),
+    { 
+        ssr: false,
+        loading: () => <Skeleton className="w-full h-[25rem]" />
+    }
+);
+
 
 export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: any) => void, calculatorName: string }) {
   const searchParams = useSearchParams();

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -5,7 +6,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function LogarithmCalculator() {
   const [number, setNumber] = usePersistentState("log-number", 100);
@@ -57,18 +58,18 @@ export default function LogarithmCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About the Logarithm Calculator</CardTitle></CardHeader>
+          <CardHeader><CardTitle as="h2">About the Logarithm Calculator</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
             <p>The Logarithm Calculator helps you find the logarithm of any positive number to any positive base (except 1). Logarithms are the reverse of exponents. They answer the question: "To what power must we raise a base to get another number?" This tool is great for students and professionals who work with exponential growth or decay.</p>
             
-            <h3>How to Use the Calculator</h3>
+            <h2>How to Use the Logarithm Calculator</h2>
             <ol>
                 <li>Enter the **Number (x)** you want to find the logarithm of.</li>
                 <li>Enter the **Base (b)** for the logarithm.</li>
             </ol>
             <p>The result of log b(x) will be calculated and displayed instantly.</p>
 
-            <h3>Frequently Asked Questions (FAQs)</h3>
+            <h2>Logarithm FAQs</h2>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is a logarithm?</AccordionTrigger>

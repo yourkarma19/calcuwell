@@ -4,11 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutLoanComparisonCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>How to Choose the Right Loan?</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">How to Choose the Right Loan?</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>Choosing the right loan can save you thousands of rupees. Our Loan Comparison Calculator is a tool designed to help you make a good decision by putting two loan offers side-by-side. By showing the differences in monthly payments, total interest, and overall cost, you can easily see the best financial option.</p>
                 
-                <h3>How to Use the Calculator</h3>
+                <h3>How to Use the Loan Comparison Calculator</h3>
                 <ol>
                     <li>Enter the **Loan Amount**, **Interest Rate**, and **Tenure** for "Loan Option A".</li>
                     <li>Do the same for "Loan Option B".</li>
@@ -16,7 +16,7 @@ export default function AboutLoanComparisonCalculator() {
                 </ol>
                 <p>The tool will generate a clear verdict, a detailed table, and a chart to help you understand which loan is better for you.</p>
 
-                <h3>Frequently Asked Questions (FAQs)</h3>
+                <h3>Loan Comparison FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">Should I always choose the loan with the lower EMI?</AccordionTrigger>

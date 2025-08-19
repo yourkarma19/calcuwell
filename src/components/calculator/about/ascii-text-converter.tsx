@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -8,17 +7,17 @@ export default function AboutAsciiTextConverter() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>About the ASCII & Text Converter</CardTitle>
+                <CardTitle as="h2">About the ASCII & Text Converter</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>Our ASCII to Text Converter is a simple tool for developers, data analysts, and students. It lets you quickly convert between plain text and its ASCII (American Standard Code for Information Interchange) value. This is useful for debugging data, understanding character codes, or for school work.</p>
-                <h3>How to Use the Converter</h3>
+                <h2>How to Use the ASCII Converter</h2>
                 <p>The converter works in both directions at the same time:</p>
                 <ol>
                     <li>To convert **text to ASCII**, type your message in the "Text" box. The matching ASCII codes will appear in the "ASCII Codes" box.</li>
                     <li>To convert **ASCII to text**, type the number codes in the "ASCII Codes" box. The text will appear in the "Text" box.</li>
                 </ol>
-                <h3>Frequently Asked Questions (FAQs)</h3>
+                <h2>ASCII Converter FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is ASCII?</AccordionTrigger>

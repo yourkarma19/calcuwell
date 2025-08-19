@@ -2,8 +2,6 @@
 "use client";
 
 import { useState } from "react";
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 import { Download, Share2, Copy, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -23,6 +21,9 @@ export default function ExportShareControls({ elementIds, shareParams, calculato
   const handleDownloadPdf = async () => {
     setIsDownloading(true);
     try {
+      const { jsPDF } = await import('jspdf');
+      const html2canvas = (await import('html2canvas')).default;
+
       const pdf = new jsPDF('p', 'mm', 'a4');
       let yOffset = 15;
       const pageHeight = pdf.internal.pageSize.getHeight();

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: CalculatorPageProps): Promise
   }
 
   return {
-    title: calculator.seoTitle || `${calculator.name} | CalcPro`,
+    title: `${calculator.name} | CalcPro`,
     description: calculator.metaDescription,
     alternates: {
         canonical: `/calculators/${awaitedParams.slug}`,

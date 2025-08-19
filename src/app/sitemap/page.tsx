@@ -7,7 +7,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
- title: "Sitemap | List of All Calculators & Tools | CalcPro",
+ title: "Sitemap | CalcPro",
  description: "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, and more.",
  alternates: {
     canonical: "/sitemap",
@@ -37,17 +37,19 @@ export default async function SitemapPage() {
                            <CategoryIcon className="w-8 h-8"/> 
                            {category.name} Calculators
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {categoryCalculators
                                 .map((calc) => {
                                     const CalcIcon = icons[calc.iconName as keyof typeof icons] || icons.Calculator;
                                     return (
-                                    <Link key={calc.slug} href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors">
-                                        <CalcIcon className="w-4 h-4 text-muted-foreground"/>
-                                        {calc.name}
-                                    </Link>
+                                    <li key={calc.slug}>
+                                        <Link href={`/calculators/${calc.slug}`} className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors">
+                                            <CalcIcon className="w-4 h-4 text-muted-foreground"/>
+                                            {calc.name}
+                                        </Link>
+                                    </li>
                                 )})}
-                        </div>
+                        </ul>
                     </section>
                 )}))}
             </div>

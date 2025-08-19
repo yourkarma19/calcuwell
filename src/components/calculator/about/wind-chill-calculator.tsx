@@ -1,21 +1,20 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutWindChillCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>About Wind Chill</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">About Wind Chill</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>The Wind Chill Calculator determines how cold the air actually feels on your skin when wind is factored in. It's a crucial tool for understanding the potential danger of frostbite and hypothermia in cold, windy conditions.</p>
-                <h3>How to Use It</h3>
+                <h2>How to Use the Wind Chill Calculator</h2>
                 <ol>
                     <li>Select your preferred temperature and speed units (°F/mph or °C/kmh).</li>
                     <li>Enter the current **Air Temperature**.</li>
                     <li>Enter the current **Wind Speed**.</li>
                 </ol>
                 <p>The calculator will instantly show the "feels like" temperature, or wind chill, along with a general risk level for frostbite.</p>
-                <h3>Frequently Asked Questions</h3>
+                <h2>Wind Chill FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is Wind Chill?</AccordionTrigger>
@@ -40,5 +39,3 @@ export default function AboutWindChillCalculator() {
         </Card>
     );
 }
-
-  

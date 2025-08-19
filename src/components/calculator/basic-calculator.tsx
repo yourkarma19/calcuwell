@@ -219,21 +219,16 @@ export default function BasicCalculator() {
     }
   }
 
-  const displayFontSize = () => {
-    const len = displayValue.length;
-    if (len > 16) return 'text-2xl';
-    if (len > 12) return 'text-3xl';
-    if (len > 8) return 'text-4xl';
-    return 'text-5xl';
-  };
-
   const renderDisplay = () => (
     <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
         <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || (activeTab === 'sci' ? 'Scientific Mode' : ' ')}</div>
         <div className="h-2/3 w-full flex items-end justify-end">
             <div
                 aria-label="Calculator display"
-                className={cn("w-full text-right font-mono", displayFontSize(), displayValue === "I ❤️ You" && "text-pink-500")}
+                className={cn(
+                    "w-full text-right font-mono fluid-display-font", 
+                    displayValue === "I ❤️ You" && "text-pink-500"
+                )}
             >
                 {displayValue}
             </div>
@@ -244,7 +239,7 @@ export default function BasicCalculator() {
   const renderBasicButtons = () => (
     <div className="grid grid-cols-4 grid-rows-5 gap-2 mt-4">
         <Button onClick={() => handleInput("AC")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">AC</Button>
-        <Button onClick={() => handleInput("Backspace")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
+        <Button onClick={() => handleInput("Backspace")} aria-label="Backspace" variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl"><Delete /></Button>
         <Button onClick={() => handleInput("%")} variant="outline" className="bg-secondary hover:bg-secondary/80 h-16 text-xl">%</Button>
         <Button onClick={() => handleOperator("/")} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl">÷</Button>
         <Button onClick={() => handleInput("7")} variant="outline" className="h-16 text-2xl">7</Button>

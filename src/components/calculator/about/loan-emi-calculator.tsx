@@ -25,7 +25,7 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
         <div className="space-y-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>About the EMI Calculator</CardTitle>
+                    <CardTitle as="h2">About the EMI Calculator</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                     <p>Our EMI Calculator helps you find your Equated Monthly Installments (EMI) in just a few clicks. Knowing your EMI in advance allows you to plan your finances better. This tool is useful for home loans, car loans, or personal loans. By entering the loan amount, interest rate, and tenure, you can instantly get your monthly payment and total loan cost.</p>
@@ -45,7 +45,7 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
                         <li><strong>Total Payment:</strong> This is the sum of the principal loan amount and the total interest.</li>
                     </ul>
 
-                    <h3>Frequently Asked Questions (FAQs)</h3>
+                    <h3>EMI FAQs</h3>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="font-semibold">What is the formula for calculating EMI?</AccordionTrigger>
@@ -73,7 +73,7 @@ export default function AboutLoanEMICalculator({ principal, totalInterest }: Abo
             
             {principal > 0 && totalInterest > 0 && (
                  <Card>
-                    <CardHeader><CardTitle>Loan Breakdown</CardTitle></CardHeader>
+                    <CardHeader><CardTitle as="h3">Loan Breakdown</CardTitle></CardHeader>
                     <CardContent>
                        <LoanBreakdownChart principal={principal} totalInterest={totalInterest} />
                     </CardContent>

@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -6,10 +5,10 @@ export default function AboutPartialFractionCalculator() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>About Partial Fraction Decomposition</CardTitle>
+                <CardTitle as="h2">About Partial Fraction Decomposition</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <h2>What is Partial Fraction Decomposition?</h2>
+                <h3>What is Partial Fraction Decomposition?</h3>
                 <p>
                     Partial fraction decomposition is a technique in algebra used to break down a complex rational function (a fraction of two polynomials) into a sum of simpler fractions. This process makes the expression much easier to work with, especially for operations in calculus like integration.
                 </p>
@@ -24,7 +23,7 @@ export default function AboutPartialFractionCalculator() {
                     </li>
                 </ul>
                 
-                <h3>Frequently Asked Questions (FAQs)</h3>
+                <h3>Partial Fraction FAQs</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What about repeated linear factors?</AccordionTrigger>

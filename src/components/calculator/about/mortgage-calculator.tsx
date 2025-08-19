@@ -24,11 +24,11 @@ export default function AboutMortgageCalculator({ principal, totalInterest, prop
     return (
         <div className="space-y-6">
             <Card>
-                <CardHeader><CardTitle>About the Mortgage Calculator</CardTitle></CardHeader>
+                <CardHeader><CardTitle as="h2">About the Mortgage Calculator</CardTitle></CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
                   <p>Our **Mortgage Calculator** is a comprehensive tool designed to help prospective homebuyers understand the full cost of their home loan. It goes beyond a simple EMI calculation by incorporating key expenses like property taxes and home insurance, providing a realistic estimate of your total monthly housing payment. This empowers you to budget accurately and make informed decisions during the home-buying process.</p>
                   
-                  <h3>How to Use the Calculator</h3>
+                  <h3>How to Use the Mortgage Calculator</h3>
                   <ol>
                       <li>Enter the **Home Price** you are considering.</li>
                       <li>Input the estimated annual **Interest Rate** from a lender.</li>
@@ -37,7 +37,7 @@ export default function AboutMortgageCalculator({ principal, totalInterest, prop
                   </ol>
                   <p>The calculator will instantly break down your monthly payment into principal, interest, tax, and insurance (PITI) and show you the total cost of the loan over its lifetime.</p>
                   
-                  <h3>Frequently Asked Questions (FAQs)</h3>
+                  <h3>Mortgage FAQs</h3>
                   <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="item-1">
                           <AccordionTrigger>What is PITI?</AccordionTrigger>
@@ -69,7 +69,7 @@ export default function AboutMortgageCalculator({ principal, totalInterest, prop
              
             {principal > 0 && totalInterest > 0 && (
                 <Card>
-                    <CardHeader><CardTitle>Loan Cost Breakdown</CardTitle></CardHeader>
+                    <CardHeader><CardTitle as="h3">Loan Cost Breakdown</CardTitle></CardHeader>
                     <CardContent>
                         <MortgageBreakdownChart 
                             principal={principal} 

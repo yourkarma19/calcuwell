@@ -6,26 +6,25 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
-import Script from "next/script";
 import { headers } from 'next/headers';
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
   display: 'swap',
+  variable: "--font-inter",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500", "700"],
-  variable: "--font-space-grotesk",
   display: 'swap',
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://calcpro.online"),
-  title: "CalcPro | Free Calculators for Math, Finance & Health",
+  title: "CalcPro: Your Free Online Calculator Hub",
   description: "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
   alternates: {
     canonical: '/',
@@ -46,7 +45,7 @@ export default async function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
-          className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
+          className={cn("font-body antialiased bg-transparent", inter.variable, spaceGrotesk.variable)}
         >
           <ThemeProvider
             attribute="class"
@@ -64,20 +63,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DNV4NPYV0F"></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-DNV4NPYV0F');
-          `}
-        </Script>
-      </head>
+      <head />
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
+        className={cn(
+            "min-h-screen bg-background font-body antialiased flex flex-col",
+            inter.variable, 
+            spaceGrotesk.variable
+        )}
       >
         <ThemeProvider
           attribute="class"

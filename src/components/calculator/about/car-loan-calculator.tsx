@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutCarLoanCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>Car Loan Fundamentals</CardTitle></CardHeader>
+            <CardHeader><CardTitle as="h2">Car Loan Fundamentals</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
             <p>Our **Car Loan Calculator** is an essential tool for anyone planning to finance a vehicle. It helps you understand the true cost of a car loan by calculating your Equated Monthly Installment (EMI) and showing a full breakdown of the principal versus interest paid. By using this tool, you can budget effectively, compare different loan offers, and make a financially sound decision before stepping into the dealership.</p>
             
