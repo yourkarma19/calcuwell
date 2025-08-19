@@ -18,7 +18,7 @@ export default function AboutCompoundInterestCalculator() {
                     <li>Choose the <strong>Investment Tenure</strong> in years.</li>
                     <li>Select the <strong>Compounding Frequency</strong> (how often interest is calculated and added).</li>
                 </ol>
-                <p>The results will show the total future value of your investment and the total interest earned.</p>
+                <p>The results will show the total future value of your investment and the total interest earned, illustrating the power of compounding.</p>
                 
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
@@ -47,6 +47,12 @@ export default function AboutCompoundInterestCalculator() {
                         <AccordionTrigger className="font-semibold">Simple vs. Compound Interest: What's the real difference?</AccordionTrigger>
                         <AccordionContent>
                             <p><strong>Simple interest</strong> is calculated only on the original principal amount. Your interest earnings remain the same every year. <strong>Compound interest</strong> is calculated on the principal amount and also on the accumulated interest from previous periods. This means your investment grows at an accelerating rate, which makes a huge difference over many years.</p>
+                        </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-4">
+                        <AccordionTrigger className="font-semibold">Why is starting early so important for compounding?</AccordionTrigger>
+                        <AccordionContent>
+                           <p>Time is the most critical ingredient for compound interest. The longer your money is invested, the more compounding periods it goes through, and the more your "interest on interest" earnings will dominate your growth. Someone who starts saving a small amount in their 20s can easily end up with more than someone who starts saving a larger amount in their 40s.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
