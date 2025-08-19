@@ -73,7 +73,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     iconName: 'Pi',
-    seoTitle: 'Mixed Number Calculator | Fractions Tool | CalcPro',
+    seoTitle: 'Mixed Number Calculator | Add, Subtract, & Convert | CalcPro',
     metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.',
   },
   {
@@ -387,7 +387,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the profit margin for your business.',
     category: 'Finance',
     iconName: 'Briefcase',
-    seoTitle: 'Profit Margin Calculator | Business Profitability | CalcPro',
+    seoTitle: 'Profit Margin Calculator | Gross, Operating & Net | CalcPro',
     metaDescription: 'Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.',
   },
   {
