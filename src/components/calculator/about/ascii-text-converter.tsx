@@ -1,3 +1,6 @@
+
+"use client";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -44,5 +47,5 @@ export default function AboutAsciiTextConverter() {
                 </Accordion>
             </CardContent>
         </Card>
-    )
+    );
 }
