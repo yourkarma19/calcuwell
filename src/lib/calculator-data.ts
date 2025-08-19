@@ -73,7 +73,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Work with mixed numbers and fractions.',
     category: 'Math',
     iconName: 'Pi',
-    seoTitle: 'Mixed Number Calculator | Add, Subtract, & Convert | CalcPro',
+    seoTitle: 'Mixed Number Calculator | Add, Subtract & Convert | CalcPro',
     metaDescription: 'A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.',
   },
   {
@@ -948,3 +948,4 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: 'How old is your pet in human years? Use our pet age calculator to convert your dog or cat\'s age into an equivalent human age.',
   },
 ];
+
