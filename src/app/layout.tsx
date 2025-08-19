@@ -8,19 +8,19 @@ import Footer from "@/components/layout/footer";
 import "./globals.css";
 import Script from "next/script";
 import { headers } from 'next/headers';
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
   display: 'swap',
+  variable: "--font-inter",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500", "700"],
-  variable: "--font-space-grotesk",
   display: 'swap',
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default async function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
-          className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased bg-transparent`}
+          className={cn("font-body antialiased bg-transparent", inter.variable, spaceGrotesk.variable)}
         >
           <ThemeProvider
             attribute="class"
@@ -77,7 +77,11 @@ export default async function RootLayout({
         </Script>
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased min-h-screen bg-background flex flex-col`}
+        className={cn(
+            "min-h-screen bg-background font-body antialiased flex flex-col",
+            inter.variable, 
+            spaceGrotesk.variable
+        )}
       >
         <ThemeProvider
           attribute="class"
