@@ -23,7 +23,7 @@ export default function AboutBmrCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is the difference between BMR and TDEE?</AccordionTrigger>
                     <AccordionContent>
-                        BMR is the calories you burn at complete rest. **Total Daily Energy Expenditure (TDEE)** is the total calories you burn in a 24-hour period, including all activities. TDEE is calculated by multiplying your BMR by an activity factor. Find your TDEE with our <a href="/calculators/calorie-needs-calculator" className="text-primary underline">Calorie Needs Calculator</a>.
+                        BMR is the calories you burn at complete rest. **Total Daily Energy Expenditure (TDEE)** is the total calories you burn in a 24-hour period, including all activities. TDEE is calculated by multiplying your BMR by an activity factor. Find your TDEE with our <Link href="/calculators/calorie-needs-calculator" className="text-primary hover:underline">Calorie Needs Calculator</Link>.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">

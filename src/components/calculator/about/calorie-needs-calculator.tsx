@@ -1,5 +1,6 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export default function AboutCalorieNeedsCalculator() {
     return (
@@ -17,7 +18,7 @@ export default function AboutCalorieNeedsCalculator() {
             <AccordionItem value="item-2">
               <AccordionTrigger>What is BMR?</AccordionTrigger>
               <AccordionContent>
-                Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic functions while at rest, like breathing. You can calculate your BMR with our <a href="/calculators/bmr-calculator" className="text-primary underline">BMR Calculator</a>.
+                Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic functions while at rest, like breathing. You can calculate your BMR with our <Link href="/calculators/bmr-calculator" className="text-primary hover:underline">BMR Calculator</Link>.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">

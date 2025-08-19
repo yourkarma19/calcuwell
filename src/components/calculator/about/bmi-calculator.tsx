@@ -1,6 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import Link from "next/link";
 
 const bmiCategories = [
     { range: "< 18.5", category: "Underweight" },
@@ -46,6 +47,7 @@ export default function AboutBMICalculator() {
                             <AccordionTrigger className="font-semibold">What are the limitations of BMI?</AccordionTrigger>
                             <AccordionContent>
                                 <p>While BMI is a useful population-level indicator, it has limitations for individuals. It does not differentiate between fat and muscle mass. For example, very muscular people (like athletes) may have a high BMI due to muscle weight and still have very low body fat. It may also be less accurate for certain ethnic groups, pregnant women, or the elderly. It should be used as a general screening tool, and a healthcare provider should be consulted for a complete health assessment.</p>
+                                <p>For a more detailed look at your body composition, consider using our <Link href="/calculators/body-fat-percentage-calculator" className="text-primary hover:underline">Body Fat Percentage Calculator</Link> or <Link href="/calculators/lean-body-mass-calculator" className="text-primary hover:underline">Lean Body Mass Calculator</Link>.</p>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
