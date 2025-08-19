@@ -12,7 +12,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate total work hours and pay for a week, including breaks.',
     category: 'Finance',
     iconName: 'Clock',
-    metaDescription: 'Easily calculate weekly work hours and gross pay with our free time card calculator. Enter your daily start and end times, including breaks, to get an accurate summary.',
+    metaDescription: 'Calculate weekly work hours and gross pay. Enter start/end times and breaks to get an accurate summary of your time card. Free and easy to use.',
     formula: 'Total Hours = Sum(End Time - Start Time - Break Time)'
   },
   // New Concrete Slab Calculator
@@ -22,7 +22,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the bags of concrete needed for a slab, footer, or posts.',
     category: 'Geometry & Engineering',
     iconName: 'Calculator',
-    metaDescription: 'Calculate the volume and number of concrete bags needed for your project. Our calculator works for slabs, footers, and round post holes. Get instant results.',
+    metaDescription: 'Calculate the volume and number of concrete bags for your project. Our tool works for slabs, footers, and round post holes. Get an instant estimate.',
     formula: 'Volume = Length × Width × Thickness'
   },
   // New Wind Chill Calculator
@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Calculate the perceived temperature based on wind speed.',
     category: 'Miscellaneous',
     iconName: 'Wind',
-    metaDescription: 'Calculate the wind chill temperature based on the actual air temperature and wind speed. Find out how cold it really feels with our free online tool.',
+    metaDescription: 'Calculate wind chill temperature based on air temp and wind speed. Find out how cold it really feels and understand the risk of frostbite.',
     formula: 'Wind Chill (F) = 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)'
   },
   // New Cubic Equation Calculator
@@ -43,7 +43,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     formula: 'ax³ + bx² + cx + d = 0',
-    metaDescription: 'Solve any cubic equation instantly. Our calculator finds the real and complex roots and shows the steps using the cubic formula.',
+    metaDescription: 'Solve any cubic equation instantly. Our calculator finds all real and complex roots and shows the steps using the cubic formula. Free and accurate.',
   },
   // New Triangle Angle Calculator
   {
@@ -53,7 +53,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Triangle',
     formula: 'Law of Cosines & Law of Sines',
-    metaDescription: 'Calculate any unknown angle in a triangle. Enter the sides and/or angles you know to find the missing angles using the Law of Sines and Cosines.',
+    metaDescription: 'Calculate unknown angles in a triangle. Enter side lengths and/or angles to find the missing values using the Law of Sines and Cosines.',
   },
   // New Tangent Line Calculator
   {
@@ -63,7 +63,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     formula: "y - f(a) = f'(a)(x - a)",
-    metaDescription: 'Find the equation of a tangent line to any function at a given point. Our calculus calculator provides a full, step-by-step solution.',
+    metaDescription: 'Find the tangent line equation for any function at a given point. Our calculus calculator provides the full, step-by-step solution.',
   },
   // New Fraction to Percentage Calculator
   {
@@ -73,7 +73,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Conversions',
     iconName: 'Percent',
     formula: '(Numerator / Denominator) * 100',
-    metaDescription: 'Quickly convert any fraction to a percentage. Our free online calculator shows you the steps and the final answer instantly.',
+    metaDescription: 'Quickly convert any fraction to a percentage with our free online calculator. Shows you the steps and the final answer instantly.',
   },
   // New Intercept Calculator
   {
@@ -82,7 +82,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Find the x and y-intercepts of any linear equation with a step-by-step breakdown.',
     category: 'Math',
     iconName: 'Sigma',
-    metaDescription: 'A free and easy calculator to find the x and y-intercepts of a line from any equation. Get instant results and see the step-by-step calculations.',
+    metaDescription: 'A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results and see step-by-step calculations.',
     formula: 'Set x=0 for y-intercept, set y=0 for x-intercept.'
   },
   // New Decimal to Inches Calculator
@@ -92,7 +92,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Convert any decimal number into inches and a usable fraction.',
     category: 'Conversions',
     iconName: 'Ruler',
-    metaDescription: 'Free online calculator to convert any decimal value into inches and a usable fraction (1/2, 1/4, 1/8, etc.). Perfect for woodworking, machining, and engineering projects.',
+    metaDescription: 'Convert any decimal value into inches and a usable fraction (e.g., 1/8", 1/16"). Perfect for woodworking, machining, and engineering projects.',
   },
   // New Feet and Inches Calculator
   {
@@ -101,7 +101,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Add, subtract, multiply, and divide feet and inches.',
     category: 'Conversions',
     iconName: 'Ruler',
-    metaDescription: 'A free and easy online calculator to add, subtract, multiply, and divide feet and inches. Perfect for construction, DIY projects, and woodworking. Get instant results in imperial and metric.',
+    metaDescription: 'An online calculator to add, subtract, multiply, and divide feet and inches. Perfect for construction, DIY projects, and woodworking. Get instant results.',
   },
   // New Voltage to Watts Calculator
   {
@@ -111,7 +111,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Geometry & Engineering',
     iconName: 'Atom',
     formula: 'Power (P) = Voltage (V) × Current (I)',
-    metaDescription: 'Instantly convert Volts and Amps to Watts using our free online calculator. Understand the power formula (P=VI) with real-world examples and clear explanations.',
+    metaDescription: 'Instantly convert Volts and Amps to Watts using our free online calculator. Understand the power formula (P=VI) with examples and explanations.',
   },
    // New Partial Fraction Calculator
   {
@@ -121,7 +121,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Math',
     iconName: 'Sigma',
     formula: 'f(x) = P(x) / Q(x)',
-    metaDescription: 'Solve complex partial fraction decomposition problems instantly. Our free online calculator provides a detailed step-by-step solution to help you learn the process.',
+    metaDescription: 'Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution to help you learn the process.',
   },
   // New Financial Health Check-up
   {
@@ -130,7 +130,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Get a free, personalized financial health score in 2 minutes.',
     category: 'Finance',
     iconName: 'ShieldCheck',
-    metaDescription: 'Get a free, AI-powered financial health score. Our tool analyzes your income, savings, and debts to provide a personalized action plan.',
+    metaDescription: 'Get a free, AI-powered financial health score. Our tool analyzes your income, savings, and debts to provide a personalized action plan in minutes.',
     formula: 'AI-driven analysis based on financial health metrics.'
   },
 
@@ -141,7 +141,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the total cost of your wedding.',
     category: 'Lifestyle',
     iconName: 'Heart',
-    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, photography, and more to stay on budget.',
+    metaDescription: 'Plan your dream wedding with our free budget calculator. Estimate costs for venue, catering, and photography to stay on budget and plan ahead.',
     formula: 'Total = Venue + (Catering × Guests) + Photography + Dress + ...'
   },
   {
@@ -150,7 +150,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate the monthly and yearly cost of owning a pet.',
     category: 'Lifestyle',
     iconName: 'Dog',
-    metaDescription: 'Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog or cat.',
+    metaDescription: 'Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog, cat, or other pet.',
     formula: 'Annual Cost = (Food × 12) + (Vet × Visits) + ...'
   },
 
@@ -161,7 +161,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Perform basic arithmetic operations.',
     category: 'Math',
     iconName: 'Calculator',
-    metaDescription: 'A simple and fast online calculator for your everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease.',
+    metaDescription: 'A simple and fast online calculator for everyday arithmetic needs. Perform addition, subtraction, multiplication, and division with ease.',
   },
   {
     slug: 'percentage-calculator',
@@ -317,7 +317,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Finance',
     iconName: 'Landmark',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
-    metaDescription: 'Calculate your loan EMI (Equated Monthly Installment) with our free tool. See how optional extra payments can reduce your loan tenure and save you money.',
+    metaDescription: 'Calculate your loan EMI. See how optional extra payments can reduce your loan tenure and save you money. Works for home, car, or personal loans.',
   },
   {
     slug: 'loan-comparison-calculator',
@@ -545,7 +545,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     category: 'Health',
     iconName: 'Baby',
     formula: "Naegele's rule",
-    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.'
+    metaDescription: 'Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date calculation methods.',
   },
   {
     slug: 'ovulation-calculator',
@@ -947,7 +947,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     description: 'Estimate how much loan you can afford.',
     category: 'Miscellaneous',
     iconName: 'Landmark',
-    metaDescription: 'Estimate how much you can afford to borrow for a loan based on your income, monthly debts, and the desired loan terms. Perfect for home or car loan planning.',
+    metaDescription: 'Estimate how much you can afford to borrow based on your income, monthly debts, and desired loan terms. Perfect for home or car loan planning.',
   },
   {
     slug: 'carbon-footprint-calculator',
