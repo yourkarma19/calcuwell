@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
 
                 <h2>Advertising and Cookies</h2>
                 <p>
-                    We use Google AdSense to serve advertisements on our site. Our advertising partners, including Google, may use cookies to serve ads based on a user's prior visits to our website or other websites on the internet.
+                    We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.
                 </p>
                 <ul>
                     <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
