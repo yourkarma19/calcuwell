@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -13,6 +14,13 @@ const nextConfig: NextConfig = {
     // @see https://github.com/firebase/genkit/issues/323
     config.resolve.alias.handlebars = 'handlebars/dist/handlebars.min.js';
     return config;
+  },
+  devIndicators: {
+    // This is to fix a warning that shows up in the development environment.
+    // @see https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+    allowedDevOrigins: [
+        'https://*.cloudworkstations.dev',
+    ]
   },
 };
 
