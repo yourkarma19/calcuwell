@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import Link from "next/link";
 
 const calculateLoanDetails = (principal: number, annualRate: number, tenureYears: number) => {
     if (principal <= 0 || annualRate <= 0 || tenureYears <= 0) {
