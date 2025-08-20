@@ -9,7 +9,7 @@ import { ArrowRightLeft } from "lucide-react";
 import { DatePicker } from "../ui/date-picker";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { formatInTimeZone, fromZonedTime } from "date-fns-tz";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 const timezones = [
@@ -56,17 +56,13 @@ export default function TimeZoneConverter() {
       const localDate = new Date(date);
       localDate.setHours(hours, minutes, 0, 0);
 
-      const sourceTimeInUTC = new Date(localDate.toLocaleString("en-US", {timeZone: fromZone}));
-
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone: toZone,
-        year: 'numeric', month: 'long', day: 'numeric',
-        hour: '2-digit', minute: '2-digit', second: '2-digit',
-        hour12: true
-      };
+      // 1. Create a date object that represents the correct moment in time, as if it were in the "from" timezone
+      const zonedTime = fromZonedTime(localDate, fromZone);
       
-      const formatter = new Intl.DateTimeFormat('en-US', options);
-      setConvertedTime(formatter.format(localDate));
+      // 2. Format that moment into the "to" timezone's string representation
+      const result = formatInTimeZone(zonedTime, toZone, "PPP 'at' hh:mm:ss a (zzz)");
+      
+      setConvertedTime(result);
 
     } catch(e) {
       setConvertedTime("Invalid Date/Time");
