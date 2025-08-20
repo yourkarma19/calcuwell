@@ -27,7 +27,7 @@ export default function PythagoreanTheoremBlogPage() {
         </div>
 
         <p>
-          The Pythagorean theorem is a basic rule in geometry that shows the relationship between the three sides of a right-angled triangle. It is a key part of math that has been studied for thousands of years and is used in science, engineering, and everyday life.
+          The Pythagorean theorem is a fundamental rule in geometry that describes the relationship between the three sides of a right-angled triangle. It is a key part of math that has been studied for thousands of years and is used in science, engineering, and everyday life.
         </p>
 
         <Card className="my-8">
