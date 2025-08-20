@@ -16,9 +16,10 @@ export default function LogarithmCalculator() {
     const num = Number(number);
     const b = Number(base);
 
-    if (num <= 0 || b <= 0 || b === 1) {
-      return "Invalid input";
-    }
+    if (num <= 0) return "Number must be > 0";
+    if (b <= 0) return "Base must be > 0";
+    if (b === 1) return "Base cannot be 1";
+
 
     const logResult = Math.log(num) / Math.log(b);
     return logResult.toFixed(6);

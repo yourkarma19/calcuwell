@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -39,9 +40,10 @@ export default function FeetAndInchesCalculator() {
         resultInches = totalInches1 - totalInches2;
         break;
       case 'multiply':
-        // Note: Multiplying measurements is not a standard operation.
-        // This will multiply the total inches and might not be physically meaningful.
-        resultInches = totalInches1 * totalInches2; 
+        // A more logical multiplication: length * scalar number
+        // We'll use the second input as the scalar multiplier
+        const multiplier = Number(feet2) + (Number(inches2)/12);
+        resultInches = totalInches1 * multiplier; 
         break;
       case 'divide':
         if (totalInches2 === 0) {
@@ -83,16 +85,16 @@ export default function FeetAndInchesCalculator() {
                 <SelectContent>
                   <SelectItem value="add">+ Add</SelectItem>
                   <SelectItem value="subtract">- Subtract</SelectItem>
-                  <SelectItem value="multiply">× Multiply</SelectItem>
-                  <SelectItem value="divide">÷ Divide</SelectItem>
+                  <SelectItem value="multiply">× Multiply By</SelectItem>
+                  <SelectItem value="divide">÷ Divide By</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label>Measurement 2</Label>
+              <Label>Measurement 2 / Scalar</Label>
               <div className="flex gap-2">
-                <Input type="number" value={feet2} onChange={e => setFeet2(Number(e.target.value))} placeholder="Feet" aria-label="Feet 2" />
-                <Input type="number" value={inches2} onChange={e => setInches2(Number(e.target.value))} placeholder="Inches" aria-label="Inches 2" />
+                <Input type="number" value={feet2} onChange={e => setFeet2(Number(e.target.value))} placeholder="Feet / Num" aria-label="Feet 2 or Scalar" />
+                <Input type="number" value={inches2} onChange={e => setInches2(Number(e.target.value))} placeholder="Inches / Num" aria-label="Inches 2 or Scalar" />
               </div>
             </div>
           </div>

@@ -167,7 +167,7 @@ export default function PercentageCalculator({ setFormula }: PercentageCalculato
           <div className="space-y-2 pt-4">
             {renderInputs()}
           </div>
-          <div className="pt-4 text-center">
+          <div id="result-container" className="pt-4 text-center">
             <h3 className="text-lg font-semibold">Result</h3>
             {result !== null ? (
                 <>

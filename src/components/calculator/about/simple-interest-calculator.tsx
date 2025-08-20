@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -8,13 +9,13 @@ export default function AboutSimpleInterestCalculator() {
                 <CardTitle as="h2">Understanding Simple Interest</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Simple Interest Calculator** provides a straightforward way to determine the interest earned on a principal amount over a specific period. Unlike compound interest, simple interest is calculated only on the initial amount (the principal) and does not include interest on previously earned interest. It's often used for short-term loans or investments.</p>
+                <p>The <strong>Simple Interest Calculator</strong> provides a straightforward way to determine the interest earned on a principal amount over a specific period. Unlike compound interest, simple interest is calculated only on the initial amount (the principal) and does not include interest on previously earned interest. It's often used for short-term loans or investments.</p>
                 
                 <h3>How to Use the Simple Interest Calculator</h3>
                 <ol>
-                    <li>Enter the **Principal Amount** (the initial sum of money).</li>
-                    <li>Set the annual **Interest Rate** (as a percentage).</li>
-                    <li>Define the **Tenure** in years.</li>
+                    <li>Enter the <strong>Principal Amount</strong> (the initial sum of money).</li>
+                    <li>Set the annual <strong>Interest Rate</strong> (as a percentage).</li>
+                    <li>Define the <strong>Tenure</strong> in years.</li>
                 </ol>
                 <p>The results will instantly show the total interest earned and the final amount (principal + interest).</p>
 

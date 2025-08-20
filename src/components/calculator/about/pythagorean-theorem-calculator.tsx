@@ -34,7 +34,7 @@ export default function AboutPythagoreanTheoremCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger className="font-semibold">What are some real-world uses?</AccordionTrigger>
                         <AccordionContent>
-                           <p>This theorem is not just for textbooks; it's used in many real-world applications, such as architecture (ensuring corners are square), navigation (calculating the shortest distance), and even in video game design for calculating distances and movements.</p>
+                           <p>This theorem is not just for textbooks; it is used in many real-world applications, such as architecture (ensuring corners are square), navigation (calculating the shortest distance), and even in video game design for calculating distances and movements.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">

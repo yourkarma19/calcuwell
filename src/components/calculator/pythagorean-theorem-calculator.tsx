@@ -18,19 +18,29 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
     setFormula("a² + b² = c²");
   }, [setFormula]);
 
-  const result = useMemo(() => {
+  const { result, error } = useMemo(() => {
     const a = Number(sideA);
     const b = Number(sideB);
     const c = Number(sideC);
 
+    if (a <= 0 && solveFor !== 'a' ) return { result: null, error: "Side 'a' must be positive."};
+    if (b <= 0 && solveFor !== 'b' ) return { result: null, error: "Side 'b' must be positive."};
+    if (c <= 0 && solveFor !== 'c' ) return { result: null, error: "Side 'c' must be positive."};
+
     if (solveFor === 'c') {
-      if (a > 0 && b > 0) return Math.sqrt(a * a + b * b);
+      if (a > 0 && b > 0) return { result: Math.sqrt(a * a + b * b), error: null };
     } else if (solveFor === 'a') {
-      if (c > 0 && b > 0 && c > b) return Math.sqrt(c * c - b * b);
+      if (c > 0 && b > 0) {
+        if (c <= b) return { result: null, error: "Hypotenuse 'c' must be longer than side 'b'." };
+        return { result: Math.sqrt(c * c - b * b), error: null };
+      }
     } else if (solveFor === 'b') {
-      if (c > 0 && a > 0 && c > a) return Math.sqrt(c * c - a * a);
+      if (c > 0 && a > 0) {
+        if (c <= a) return { result: null, error: "Hypotenuse 'c' must be longer than side 'a'." };
+        return { result: Math.sqrt(c * c - a * a), error: null };
+      }
     }
-    return null;
+    return { result: null, error: null };
   }, [solveFor, sideA, sideB, sideC]);
 
   const getInputProps = (side: "a" | "b" | "c") => {
@@ -84,7 +94,7 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">The length of the missing side is:</p>
             <p className="text-5xl font-bold font-headline text-primary my-2">
-                {result !== null && isFinite(result) ? result.toFixed(4) : "Invalid"}
+                {error ? <span className="text-destructive text-xl">{error}</span> : (result !== null && isFinite(result) ? result.toFixed(4) : "Invalid")}
             </p>
           </CardContent>
         </Card>

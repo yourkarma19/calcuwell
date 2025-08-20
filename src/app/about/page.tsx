@@ -22,7 +22,7 @@ export default function AboutPage() {
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <h2>Our Mission</h2>
                 <p>
-                    CalcPro gives you fast, easy-to-use, and free online calculators. We are a small team of tech lovers who enjoy making great tools for everyone. Our goal is to be the only website you need for quick math, with a wide range of calculators for finance, health, math, and more. We believe the internet should be open, so our tools are always free to use without needing to sign up.
+                    CalcPro was created to provide fast, easy-to-use, and free online calculators. We are a small team of tech lovers who enjoy making great tools for everyone. Our goal is to be the only website you need for quick math, with a wide range of calculators for finance, health, math, and more. We believe the internet should be open, so our tools are always free to use without needing to sign up.
                 </p>
                 
                 <h2 id="commitment">Our Commitment to Accuracy</h2>

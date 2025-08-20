@@ -31,7 +31,7 @@ export default function AboutProportionCalculator() {
                     <AccordionTrigger className="font-semibold">What are some real-world examples of proportions?</AccordionTrigger>
                     <AccordionContent>
                        <p>Proportions are used everywhere in daily life, often without us even realizing it. Common examples include:</p>
-                        <ul class='list-disc pl-5 mt-2'>
+                        <ul className='list-disc pl-5 mt-2'>
                           <li>**Cooking:** Scaling a recipe up or down. If a recipe for 4 people needs 2 cups of flour, you can use a proportion to find how much flour is needed for 6 people.</li>
                           <li>**Maps:** Reading a map's scale. If 1 inch on the map equals 10 miles in reality, you can calculate the actual distance between two points.</li>
                           <li>**Finance:** Calculating fuel consumption for a trip or determining the price of items sold by weight.</li>
