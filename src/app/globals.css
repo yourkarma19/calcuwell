@@ -127,11 +127,41 @@
   }
 }
 
+@keyframes digital-rain-fall {
+    from {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
 .celebrate .heart {
   position: absolute;
   bottom: 0;
   color: hsl(var(--primary));
   animation: rise 5s ease-in forwards;
+}
+
+.digital-rain {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.rain-drop {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    color: hsl(var(--primary));
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: monospace;
+    font-size: 1.25rem;
+    animation: digital-rain-fall 5s linear infinite;
 }
 
 
