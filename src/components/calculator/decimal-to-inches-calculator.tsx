@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -53,6 +53,11 @@ export default function DecimalToInchesCalculator() {
     setResult({ feet, inches: inchesPart, numerator, denominator, simpleNumerator, simpleDenominator });
   };
   
+  useEffect(() => {
+    handleConvert();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [decimalValue, precision]);
+
   const totalInchesSimpleFraction = result ? (result.feet * 12) + result.inches + (result.simpleNumerator / result.simpleDenominator) : 0;
   const simpleFractionNumerator = totalInchesSimpleFraction * (result?.simpleDenominator || 1);
 

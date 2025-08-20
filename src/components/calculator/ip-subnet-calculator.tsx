@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -86,18 +87,20 @@ export default function IpSubnetCalculator() {
         <Card>
           <CardHeader><CardTitle>Subnet Details</CardTitle></CardHeader>
           <CardContent>
-            <Table>
-              <TableBody>
-                <TableRow><TableCell>Network Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.networkAddress}</TableCell></TableRow>
-                <TableRow><TableCell>Broadcast Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.broadcastAddress}</TableCell></TableRow>
-                <TableRow><TableCell>Subnet Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.subnetMask}</TableCell></TableRow>
-                <TableRow><TableCell>Wildcard Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.wildcardMask}</TableCell></TableRow>
-                <TableRow><TableCell>First Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.firstHost}</TableCell></TableRow>
-                <TableRow><TableCell>Last Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.lastHost}</TableCell></TableRow>
-                <TableRow><TableCell>Total Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.totalHosts}</TableCell></TableRow>
-                <TableRow><TableCell>Usable Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.usableHosts}</TableCell></TableRow>
-              </TableBody>
-            </Table>
+            <div className="overflow-x-auto">
+                <Table>
+                <TableBody>
+                    <TableRow><TableCell>Network Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.networkAddress}</TableCell></TableRow>
+                    <TableRow><TableCell>Broadcast Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.broadcastAddress}</TableCell></TableRow>
+                    <TableRow><TableCell>Subnet Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.subnetMask}</TableCell></TableRow>
+                    <TableRow><TableCell>Wildcard Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.wildcardMask}</TableCell></TableRow>
+                    <TableRow><TableCell>First Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.firstHost}</TableCell></TableRow>
+                    <TableRow><TableCell>Last Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.lastHost}</TableCell></TableRow>
+                    <TableRow><TableCell>Total Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.totalHosts}</TableCell></TableRow>
+                    <TableRow><TableCell>Usable Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.usableHosts}</TableCell></TableRow>
+                </TableBody>
+                </Table>
+            </div>
           </CardContent>
         </Card>
       )}
