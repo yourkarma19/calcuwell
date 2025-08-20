@@ -123,16 +123,6 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     formula: 'f(x) = P(x) / Q(x)',
     metaDescription: 'Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your math homework.',
   },
-  // New Financial Health Check-up
-  {
-    slug: 'financial-health-checkup',
-    name: 'AI Financial Health Check-up',
-    description: 'Get a free, personalized financial health score in 2 minutes.',
-    category: 'Finance',
-    iconName: 'ShieldCheck',
-    metaDescription: 'Get a free AI-powered financial health score. Our tool analyzes your income, savings, and debt to provide a personalized action plan in minutes.',
-    formula: 'AI-driven analysis based on financial health metrics.'
-  },
 
   // Lifestyle
   {

@@ -3,7 +3,6 @@
 
 import type { ReactNode } from "react";
 import type { Calculator } from "@/lib/types";
-import FormulaExplainer from "./formula-explainer";
 import EmbedCalculator from "./embed-calculator";
 import Link from "next/link";
 import { ChevronRight, icons } from "lucide-react";
@@ -84,13 +83,6 @@ export default function CalculatorWrapper({
         {EnhancedChildren}
 
         <CalculatorContent slug={calculator.slug} {...childProps} />
-        
-        {calculator.formula && (
-            <FormulaExplainer 
-                calculatorName={calculator.name}
-                formula={formula}
-            />
-        )}
         
         <EmbedCalculator slug={calculator.slug} />
       </div>
