@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
@@ -54,29 +55,31 @@ export default function AboutWeddingBudgetCalculator({ totalCost, chartData }: A
                     </Accordion>
                 </CardContent>
             </Card>
-            <Card>
-                <CardHeader><CardTitle as="h3">Cost Breakdown</CardTitle></CardHeader>
-                <CardContent className="h-[25rem]">
-                    <ChartContainer config={{}} className="w-full h-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                            <Tooltip
-                            cursor={false}
-                            content={<ChartTooltipContent 
-                                formatter={(value) => formatCurrency(Number(value))}
-                                />}
-                            />
-                            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="80%" strokeWidth={2}>
-                                {chartData.map((entry) => (
-                                    <Cell key={entry.name} fill={entry.fill} />
-                                ))}
-                            </Pie>
-                            <ChartLegend content={<ChartLegendContent />} />
-                        </PieChart>
-                    </ResponsiveContainer>
-                </ChartContainer>
-                </CardContent>
-            </Card>
+            {chartData && chartData.length > 0 && (
+                 <Card>
+                    <CardHeader><CardTitle as="h3">Cost Breakdown</CardTitle></CardHeader>
+                    <CardContent className="h-[25rem]">
+                        <ChartContainer config={{}} className="w-full h-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <PieChart>
+                                <Tooltip
+                                cursor={false}
+                                content={<ChartTooltipContent 
+                                    formatter={(value) => formatCurrency(Number(value))}
+                                    />}
+                                />
+                                <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="80%" strokeWidth={2}>
+                                    {chartData.map((entry) => (
+                                        <Cell key={entry.name} fill={entry.fill} />
+                                    ))}
+                                </Pie>
+                                <ChartLegend content={<ChartLegendContent />} />
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </ChartContainer>
+                    </CardContent>
+                </Card>
+            )}
         </div>
     )
 }
