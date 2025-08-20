@@ -6,7 +6,7 @@ export default function AboutLoanComparisonCalculator() {
         <Card>
             <CardHeader><CardTitle as="h2">How to Choose the Right Loan?</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Choosing the right loan can save you thousands of rupees. Our Loan Comparison Calculator is a tool designed to help you make a good decision by putting two loan offers side-by-side. By showing the differences in monthly payments, total interest, and overall cost, you can easily see the best financial option.</p>
+                <p>Choosing the right loan can save you thousands. Our Loan Comparison Calculator is a tool designed to help you make an informed decision by putting two loan offers side-by-side. By showing the differences in monthly payments, total interest, and overall cost, you can easily see the best financial option.</p>
                 
                 <h3>How to Use the Loan Comparison Calculator</h3>
                 <ol>

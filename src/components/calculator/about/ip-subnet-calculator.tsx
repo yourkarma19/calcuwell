@@ -20,25 +20,25 @@ export default function AboutIpSubnetCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is an IP Address?</AccordionTrigger>
                         <AccordionContent>
-                            An IP address is a unique number given to each device on a computer network. It acts like a street address, identifying a device so it can send and receive data.
+                            An IP (Internet Protocol) address is a unique number given to each device connected to a computer network. It identifies the device and provides its location, much like a street address.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger>What is CIDR and a Subnet Mask?</AccordionTrigger>
+                        <AccordionTrigger>What is CIDR Notation and a Subnet Mask?</AccordionTrigger>
                         <AccordionContent>
-                            A **Subnet Mask** divides an IP address into two parts: one part identifies the network, and the other identifies a specific device. **CIDR** (e.g., /24) is just a shorter way to write the subnet mask.
+                            A **Subnet Mask** divides an IP address into two parts: the network address and the host address. **CIDR notation** is a short way to represent this mask. The number after the slash (e.g., /24) shows how many bits of the IP address are for the network part.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">
-                        <AccordionTrigger>Network vs. Broadcast Address</AccordionTrigger>
+                        <AccordionTrigger>Network Address vs. Broadcast Address</AccordionTrigger>
                         <AccordionContent>
-                            The **Network Address** is the very first address in a subnet; it identifies the network itself. The **Broadcast Address** is the last address; it's used to send messages to all devices on that network at once. Neither can be assigned to a single computer.
+                            The **Network Address** is the first address in a subnet and identifies the network itself. The **Broadcast Address** is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why "usable" hosts are always two less than the total.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
                         <AccordionTrigger>What is a Wildcard Mask?</AccordionTrigger>
                         <AccordionContent>
-                           A wildcard mask is like an inverted subnet mask. It is often used in networking equipment to identify a range of IP addresses for applying security or routing rules.
+                           A wildcard mask is a reverse subnet mask. It is often used in network access control lists (ACLs) to identify a range of IP addresses.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

@@ -15,7 +15,7 @@ export default function AboutFinancialHealthCheckup() {
                 <ol>
                     <li><strong>Monthly Income:</strong> Enter your total take-home pay per month.</li>
                     <li><strong>Monthly Savings:</strong> Input the amount you regularly save or invest.</li>
-                    <li><strong>Monthly Debt:</strong> Provide your total EMI payments for all loans.</li>
+                    <li><strong>Monthly Debt:</strong> Provide your total monthly loan payments.</li>
                     <li><strong>Financial Goal:</strong> Select your primary financial objective.</li>
                     <li><strong>Credit Card Debt:</strong> Indicate if you carry unpaid credit card balances.</li>
                 </ol>
