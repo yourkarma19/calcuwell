@@ -23,6 +23,10 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
     const b = Number(sideB);
     const c = Number(sideC);
 
+    if (a <= 0 && solveFor !== 'a' ) return { result: null, error: "Side 'a' must be positive."};
+    if (b <= 0 && solveFor !== 'b' ) return { result: null, error: "Side 'b' must be positive."};
+    if (c <= 0 && solveFor !== 'c' ) return { result: null, error: "Side 'c' must be positive."};
+
     if (solveFor === 'c') {
       if (a > 0 && b > 0) return { result: Math.sqrt(a * a + b * b), error: null };
     } else if (solveFor === 'a') {
