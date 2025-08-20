@@ -129,14 +129,14 @@
 
 @keyframes rain-fall {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-10vh);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    transform: translateY(100%);
+    transform: translateY(40vh);
     opacity: 0;
   }
 }
@@ -161,7 +161,7 @@
     height: 10px;
     background-color: hsl(var(--primary));
     border-radius: 50%;
-    animation: rain-fall 1s linear infinite;
+    animation: rain-fall 1.5s linear infinite;
 }
 
 

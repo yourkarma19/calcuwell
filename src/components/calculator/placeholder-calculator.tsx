@@ -19,20 +19,29 @@ export default function PlaceholderCalculator({ setFormula }: { setFormula?: (fo
     <Card className="col-span-1 lg:col-span-3">
         <CardContent className="flex flex-col items-center justify-center h-64 text-center overflow-hidden relative bg-background">
             <div className="rain-container">
-                {Array.from({ length: 30 }).map((_, i) => (
+                {Array.from({ length: 50 }).map((_, i) => (
                     <div 
                         key={i} 
                         className="raindrop" 
                         style={{ 
                             left: `${Math.random() * 100}%`,
                             animationDuration: `${Math.random() * 0.5 + 0.5}s`,
-                            animationDelay: `${Math.random() * 2}s`
+                            animationDelay: `${Math.random() * 5}s`
                         }}
                     />
                 ))}
             </div>
             <div className="relative z-10 p-4 rounded-lg bg-background/80 backdrop-blur-sm flex flex-col items-center gap-4">
-                <UmbrellaIcon className="w-16 h-16 text-primary" />
+                <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                >
+                    <UmbrellaIcon className="w-16 h-16 text-primary" />
+                </motion.div>
                 <h2 className="text-2xl font-bold font-headline mt-4">Preparing your calculator...</h2>
             </div>
         </CardContent>
