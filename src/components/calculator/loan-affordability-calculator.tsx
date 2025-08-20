@@ -53,8 +53,8 @@ export default function LoanAffordabilityCalculator({ calculatorName }: { calcul
       (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments));
 
     return { 
-      affordableLoan: isFinite(affordableLoanAmount) ? affordableLoanAmount : 0, 
-      monthlyPayment: maxMonthlyPaymentForHousing 
+      affordableLoan: isFinite(affordableLoanAmount) && affordableLoanAmount > 0 ? affordableLoanAmount : 0, 
+      monthlyPayment: maxMonthlyPaymentForHousing > 0 ? maxMonthlyPaymentForHousing : 0
     };
   }, [annualIncome, monthlyDebt, interestRate, loanTerm, dtiRatio]);
 
