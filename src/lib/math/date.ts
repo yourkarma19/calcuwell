@@ -23,7 +23,21 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
     return { years: 0, months: 0, days: 0 };
   }
 
+<<<<<<< HEAD
   let years = differenceInYears(endDate, startDate);
+=======
+    const years = differenceInYears(endDate, startDate);
+    let dateAfterYears = subYears(endDate, years);
+    
+    // Handle case where birthday hasn't occurred yet in the month
+    if (dateAfterYears < startDate) {
+        dateAfterYears = subYears(endDate, years - 1);
+    }
+    
+    const months = differenceInMonths(dateAfterYears, startDate);
+    const dateAfterMonths = subMonths(dateAfterYears, months);
+    const days = differenceInDays(dateAfterMonths, startDate);
+>>>>>>> 3312b78 (I see this error with the app, reported by NextJS, please fix it. The er)
 
   // Check if the birthday for the current year has passed
   let dateAfterYears = subYears(endDate, years);

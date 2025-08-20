@@ -1085,3 +1085,8 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Get a rough estimate of your carbon footprint based on your daily commute, energy use, and diet. Understand your environmental impact.",
   },
 ];
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> 3312b78 (I see this error with the app, reported by NextJS, please fix it. The er)
