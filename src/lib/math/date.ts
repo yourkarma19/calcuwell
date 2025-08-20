@@ -17,12 +17,13 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
         return { years: 0, months: 0, days: 0 };
     }
 
-    const years = differenceInYears(endDate, startDate);
-    let dateAfterYears = subYears(endDate, years);
+    let years = differenceInYears(endDate, startDate);
     
-    // Handle case where birthday hasn't occurred yet in the month
+    // Check if the birthday for the current year has passed
+    let dateAfterYears = subYears(endDate, years);
     if (dateAfterYears < startDate) {
-        dateAfterYears = subYears(endDate, years - 1);
+        years = years -1;
+        dateAfterYears = subYears(endDate, years);
     }
     
     const months = differenceInMonths(dateAfterYears, startDate);
