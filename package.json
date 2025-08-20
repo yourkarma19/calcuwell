@@ -5,8 +5,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
-    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,9 +17,6 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@genkit-ai/firebase": "1.14.1",
-    "@genkit-ai/googleai": "1.14.1",
-    "@genkit-ai/next": "1.14.1",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -53,12 +48,11 @@
     "firebase": "^11.9.1",
     "framer-motion": "^11.2.11",
     "fuse.js": "^7.0.0",
-    "genkit": "1.14.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "lucide-react": "^0.475.0",
     "mathjs": "^13.0.0",
-    "next": "^15.0.0",
+    "next": "^14.2.4",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-circular-progressbar": "^2.1.0",
@@ -72,13 +66,6 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@opentelemetry/exporter-jaeger": "^1.25.1",
-    "genkit-cli": "1.14.1",
-    "jsdom": "^24.1.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "vitest": "^2.0.4",
     "@playwright/test": "^1.45.3",
     "@tailwindcss/typography": "^0.5.13",
     "@testing-library/jest-dom": "^6.4.8",
@@ -89,7 +76,12 @@
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.3.1",
     "@vitest/coverage-v8": "^2.0.4",
-    "@vitest/ui": "^2.0.4"
+    "@vitest/ui": "^2.0.4",
+    "jsdom": "^24.1.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5",
+    "vitest": "^2.0.4"
   },
   "browserslist": [
     "chrome >= 64",

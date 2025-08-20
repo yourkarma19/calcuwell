@@ -35,7 +35,7 @@ export function SearchBar() {
     setIsLoading(true);
     const debounceTimeout = setTimeout(async () => {
       const searchResults = await searchCalculators(search);
-      setResults(searchResults);
+      setResults(searchResults || []); // Ensure results is always an array
       setIsLoading(false);
     }, 300); // 300ms debounce delay
 
@@ -48,7 +48,7 @@ export function SearchBar() {
         const fetchInitial = async () => {
             setIsLoading(true);
             const initialResults = await searchCalculators("");
-            setResults(initialResults);
+            setResults(initialResults || []); // Ensure results is always an array
             setIsLoading(false);
         };
         fetchInitial();

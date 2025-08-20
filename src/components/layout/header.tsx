@@ -16,16 +16,6 @@ export default function Header() {
           </Link>
         </div>
         
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <Link
-              href="/calculators/financial-health-checkup"
-              className="flex items-center gap-1 transition-colors hover:text-primary"
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              AI Financial Health Check-up
-          </Link>
-        </nav>
-
         <div className="flex flex-1 items-center justify-end space-x-2">
           <SearchBar />
           <ThemeToggle />
