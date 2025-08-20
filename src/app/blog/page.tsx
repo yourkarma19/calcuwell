@@ -35,7 +35,7 @@ export default function BlogIndexPage() {
           CalcPro Blog
         </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Deep dives and simple explanations for the concepts behind our calculators.
+          Welcome to the CalcPro Blog, your resource for deep dives and simple explanations for the concepts behind our calculators. Our goal is to demystify the formulas and ideas that power our tools, making them accessible to everyone. Whether you're a student, a professional, or just curious, our articles provide valuable context and real-world examples.
         </p>
       </div>
 
