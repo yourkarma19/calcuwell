@@ -1,6 +1,5 @@
-
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
 echo "🔍 Running ESLint + Prettier before commit..."
 npx eslint ./src --ext .tsx,.ts,.js,.jsx
