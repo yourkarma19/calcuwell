@@ -17,7 +17,7 @@ export default function AboutStandardDeviationCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">What is Standard Deviation, in Simple Terms?</AccordionTrigger>
                         <AccordionContent>
-                            <p>Standard deviation is a measure of how spread out numbers in a data set are from their average (mean). A low standard deviation means the numbers are very close to the average, indicating consistency. A high standard deviation means the numbers are spread out over a wider range, indicating variability. For example, the test scores {85, 88, 90} have a low standard deviation, while {60, 85, 100} have a high one.</p>
+                            <p>Standard deviation is a measure of how spread out numbers are from their average (mean). A low standard deviation means the numbers are very close to the average, indicating consistency. A high standard deviation means the numbers are spread out over a wider range, indicating variability. For example, the test scores {85, 88, 90} have a low standard deviation, while the scores {60, 85, 100} have a high one.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
