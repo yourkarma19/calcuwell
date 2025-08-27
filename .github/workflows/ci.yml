@@ -1,4 +1,5 @@
-name: CI - Lint & Build
+
+name: CI - Full Website Scan
 
 on:
   push:
@@ -6,16 +7,12 @@ on:
   pull_request:
     branches: [ main ]
 
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
-  lint-and-build:
+  lint-build-typecheck:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -27,8 +24,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Lint Check
-        run: npm run lint:check
+      - name: Lint Check
+        run: npm run lint
 
-      - name: Run Build
+      - name: Auto Format
+        run: npm run format
+
+      - name: Type Check
+        run: npm run type-check
+
+      - name: Build
         run: npm run build
