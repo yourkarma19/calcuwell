@@ -78,10 +78,13 @@
     "@vitejs/plugin-react": "^4.3.1",
     "@vitest/coverage-v8": "^2.0.4",
     "@vitest/ui": "^2.0.4",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
     "husky": "^8.0.0",
     "jsdom": "^24.1.1",
     "lint-staged": "^15.2.7",
     "postcss": "^8",
+    "prettier": "^3.3.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "vitest": "^2.0.4"
@@ -94,11 +97,5 @@
     "ios_saf >= 12",
     "not ie < 11",
     "not dead"
-  ],
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "next lint --fix",
-      "tsc --noEmit"
-    ]
-  }
+  ]
 }

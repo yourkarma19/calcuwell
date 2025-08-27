@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -12,10 +13,10 @@ export default function AboutBodyFatPercentageCalculator() {
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Select your **Gender**.</li>
-                    <li>Enter your **Height** and **Weight**.</li>
-                    <li>Measure and enter your **Neck** and **Waist** size in centimeters.</li>
-                    <li>If you are female, also enter your **Hip** measurement.</li>
+                    <li>Select your <strong>Gender</strong>.</li>
+                    <li>Enter your <strong>Height</strong> and <strong>Weight</strong>.</li>
+                    <li>Measure and enter your <strong>Neck</strong> and <strong>Waist</strong> size in centimeters.</li>
+                    <li>If you are female, also enter your <strong>Hip</strong> measurement.</li>
                 </ol>
                 <p>The calculator will instantly estimate your body fat percentage and classify it.</p>
                 
@@ -36,7 +37,7 @@ export default function AboutBodyFatPercentageCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>How do I measure myself correctly?</AccordionTrigger>
                         <AccordionContent>
-                           Use a flexible tape measure. For the **neck**, measure just below the Adam's apple. For the **waist**, measure at the narrowest point, usually just above the navel. For the **hips**, measure at the widest point. Keep the tape snug but not tight.
+                           Use a flexible tape measure. For the <strong>neck</strong>, measure just below the Adam's apple. For the <strong>waist</strong>, measure at the narrowest point, usually just above the navel. For the <strong>hips</strong>, measure at the widest point. Keep the tape snug but not tight.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

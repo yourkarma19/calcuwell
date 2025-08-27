@@ -10,9 +10,9 @@ export default function AboutMixedNumberCalculator() {
                  <p>Our Mixed Number Calculator is a specialized tool designed to simplify arithmetic involving mixed numbers. A mixed number is a combination of a whole number and a proper fraction, which is a common way to express quantities in everyday life, like in recipes or measurements. This calculator helps you convert them and will soon handle operations like addition and subtraction. Understanding how to work with mixed numbers is a fundamental skill in mathematics, bridging the gap between whole quantities and fractional parts.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter the **whole number** part of your mixed number.</li>
-                    <li>Enter the **numerator** (the top part of the fraction).</li>
-                    <li>Enter the **denominator** (the bottom part of the fraction).</li>
+                    <li>Enter the <strong>whole number</strong> part of your mixed number.</li>
+                    <li>Enter the <strong>numerator</strong> (the top part of the fraction).</li>
+                    <li>Enter the <strong>denominator</strong> (the bottom part of the fraction).</li>
                 </ol>
                 <p>The calculator will instantly convert your mixed number into an improper fraction, which is often easier to work with for more complex calculations. This is the first step required before performing operations like multiplication or division on mixed numbers.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
