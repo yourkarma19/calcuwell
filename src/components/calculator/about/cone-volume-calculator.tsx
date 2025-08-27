@@ -13,8 +13,8 @@ export default function AboutConeVolumeCalculator() {
             
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter the **Radius** of the cone's circular base.</li>
-                <li>Enter the perpendicular **Height** of the cone (from the base to the tip).</li>
+                <li>Enter the <strong>Radius</strong> of the cone's circular base.</li>
+                <li>Enter the perpendicular <strong>Height</strong> of the cone (from the base to the tip).</li>
             </ol>
             <p>The calculator will instantly compute the volume, slant height, and total surface area of the cone.</p>
 

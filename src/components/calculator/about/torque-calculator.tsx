@@ -11,8 +11,8 @@ export default function AboutTorqueCalculator() {
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter the amount of **Force** being applied in Newtons (N).</li>
-                    <li>Enter the **Distance** from the axis of rotation (the pivot point) to the point where the force is applied. This is also known as the lever arm, measured in meters (m).</li>
+                    <li>Enter the amount of <strong>Force</strong> being applied in Newtons (N).</li>
+                    <li>Enter the <strong>Distance</strong> from the axis of rotation (the pivot point) to the point where the force is applied. This is also known as the lever arm, measured in meters (m).</li>
                 </ol>
                 <p>The calculator will instantly compute the resulting torque in Newton-meters (Nm).</p>
 

@@ -24,7 +24,7 @@ export default function AboutDataTransferRateConverter() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What's the difference between Mbps and MB/s?</AccordionTrigger>
                     <AccordionContent>
-                        This is a common point of confusion. **Internet Service Providers (ISPs)** advertise speeds in **megabits per second (Mbps)**. But download speeds in your browser are usually in **megabytes per second (MB/s)**. Since there are 8 bits in 1 byte, to find your download speed in MB/s, divide the Mbps value by 8. For example, a 100 Mbps connection has a max download speed of 12.5 MB/s.
+                        This is a common point of confusion. <strong>Internet Service Providers (ISPs)</strong> advertise speeds in <strong>megabits per second (Mbps)</strong>. But download speeds in your browser are usually in <strong>megabytes per second (MB/s)</strong>. Since there are 8 bits in 1 byte, to find your download speed in MB/s, divide the Mbps value by 8. For example, a 100 Mbps connection has a max download speed of 12.5 MB/s.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -36,7 +36,7 @@ export default function AboutDataTransferRateConverter() {
                 <AccordionItem value="item-3">
                     <AccordionTrigger>What are decimal (Mbps) vs. binary (Mibps) prefixes?</AccordionTrigger>
                     <AccordionContent>
-                       **Decimal prefixes (kilo, mega)** use powers of 1000. For example, 1 Mbps = 1,000,000 bits per second. This is the standard for data transfer rates. **Binary prefixes (kibi, mebi)** use powers of 1024. For example, 1 Mibps = 1,048,576 bits per second. These are more common for data storage.
+                       <strong>Decimal prefixes (kilo, mega)</strong> use powers of 1000. For example, 1 Mbps = 1,000,000 bits per second. This is the standard for data transfer rates. <strong>Binary prefixes (kibi, mebi)</strong> use powers of 1024. For example, 1 Mibps = 1,048,576 bits per second. These are more common for data storage.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

@@ -7,12 +7,12 @@ export default function AboutRatioCalculator() {
        <Card>
         <CardHeader><CardTitle>About Ratios</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Ratio Calculator** is a versatile tool designed to simplify ratios and solve for missing values in a proportion. Ratios are a fundamental mathematical concept used to compare the relative size of two or more quantities. This calculator is perfect for students learning about ratios, as well as for professionals in fields like design, engineering, and finance who need to work with proportions regularly.</p>
+            <p>Our <strong>Ratio Calculator</strong> is a versatile tool designed to simplify ratios and solve for missing values in a proportion. Ratios are a fundamental mathematical concept used to compare the relative size of two or more quantities. This calculator is perfect for students learning about ratios, as well as for professionals in fields like design, engineering, and finance who need to work with proportions regularly.</p>
             
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter the values for **A**, **B**, and **C** in the proportion `A : B = C : D`.</li>
-                <li>The calculator will automatically solve for the missing value **D**.</li>
+                <li>Enter the values for <strong>A</strong>, <strong>B</strong>, and <strong>C</strong> in the proportion `A : B = C : D`.</li>
+                <li>The calculator will automatically solve for the missing value <strong>D</strong>.</li>
                 <li>It will also display the simplified version of the ratio `A : B`.</li>
             </ol>
             <p>This makes it easy to scale quantities, such as when resizing an image while maintaining its aspect ratio.</p>

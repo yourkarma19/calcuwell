@@ -9,7 +9,7 @@ export default function AboutProportionCalculator() {
       <Card>
           <CardHeader><CardTitle>About Proportions</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Proportion Calculator** is a powerful tool for solving equations involving two equivalent ratios. A proportion is a statement that two fractions are equal, written as A/B = C/D. This calculator allows you to find the missing value in the equation, making it invaluable for students, cooks, engineers, and anyone who needs to scale quantities.</p>
+            <p>Our <strong>Proportion Calculator</strong> is a powerful tool for solving equations involving two equivalent ratios. A proportion is a statement that two fractions are equal, written as A/B = C/D. This calculator allows you to find the missing value in the equation, making it invaluable for students, cooks, engineers, and anyone who needs to scale quantities.</p>
             
             <h3>How to Use the Calculator</h3>
             <ol>
@@ -32,16 +32,16 @@ export default function AboutProportionCalculator() {
                     <AccordionContent>
                        <p>Proportions are used everywhere in daily life, often without us even realizing it. Common examples include:</p>
                         <ul className='list-disc pl-5 mt-2'>
-                          <li>**Cooking:** Scaling a recipe up or down. If a recipe for 4 people needs 2 cups of flour, you can use a proportion to find how much flour is needed for 6 people.</li>
-                          <li>**Maps:** Reading a map's scale. If 1 inch on the map equals 10 miles in reality, you can calculate the actual distance between two points.</li>
-                          <li>**Finance:** Calculating fuel consumption for a trip or determining the price of items sold by weight.</li>
+                          <li><strong>Cooking:</strong> Scaling a recipe up or down. If a recipe for 4 people needs 2 cups of flour, you can use a proportion to find how much flour is needed for 6 people.</li>
+                          <li><strong>Maps:</strong> Reading a map's scale. If 1 inch on the map equals 10 miles in reality, you can calculate the actual distance between two points.</li>
+                          <li><strong>Finance:</strong> Calculating fuel consumption for a trip or determining the price of items sold by weight.</li>
                         </ul>
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-3">
                     <AccordionTrigger className="font-semibold">What is the difference between a ratio and a proportion?</AccordionTrigger>
                     <AccordionContent>
-                       <p>A **ratio** is a comparison of two numbers (e.g., A:B or A/B), showing their relative size. A **proportion** is an equation that states that two ratios are equal (e.g., A/B = C/D). In essence, a proportion is an equation built from two equal ratios. You can't have a proportion without ratios.</p>
+                       <p>A <strong>ratio</strong> is a comparison of two numbers (e.g., A:B or A/B), showing their relative size. A <strong>proportion</strong> is an equation that states that two ratios are equal (e.g., A/B = C/D). In essence, a proportion is an equation built from two equal ratios. You can't have a proportion without ratios.</p>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

@@ -8,7 +8,7 @@ export default function AboutColorConverter() {
             <CardTitle>About the Color Code Converter</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Color Code Converter** is an essential utility for web designers, developers, and digital artists. It provides a seamless way to translate colors between three of the most common web color formats: **HEX**, **RGB**, and **HSL**. By allowing real-time, two-way conversion, this tool helps you find the perfect shade and ensures consistency across your projects.</p>
+            <p>Our <strong>Color Code Converter</strong> is an essential utility for web designers, developers, and digital artists. It provides a seamless way to translate colors between three of the most common web color formats: <strong>HEX</strong>, <strong>RGB</strong>, and <strong>HSL</strong>. By allowing real-time, two-way conversion, this tool helps you find the perfect shade and ensures consistency across your projects.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>Enter a color value in any of the three formats (HEX, RGB, or HSL).</li>
@@ -21,9 +21,9 @@ export default function AboutColorConverter() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is the difference between HEX, RGB, and HSL?</AccordionTrigger>
                     <AccordionContent>
-                        <p className="mb-2">**HEX (Hexadecimal)** is a six-digit code (e.g., `#FF5733`) that represents the intensity of Red, Green, and Blue in a color. It's the most common format used in web design.</p>
-                        <p className="mb-2">**RGB (Red, Green, Blue)** is an additive color model where red, green, and blue light are combined to create a broad array of colors. Each value ranges from 0 to 255 (e.g., `rgb(255, 87, 51)`).</p>
-                        <p>**HSL (Hue, Saturation, Lightness)** represents color in a more human-intuitive way. **Hue** is the color itself (0-360 degrees), **Saturation** is the color's intensity (0-100%), and **Lightness** is its brightness (0-100%). This makes it easier to create variations of a single color (e.g., `hsl(11, 100%, 60%)`).</p>
+                        <p className="mb-2"><strong>HEX (Hexadecimal)</strong> is a six-digit code (e.g., `#FF5733`) that represents the intensity of Red, Green, and Blue in a color. It's the most common format used in web design.</p>
+                        <p className="mb-2"><strong>RGB (Red, Green, Blue)</strong> is an additive color model where red, green, and blue light are combined to create a broad array of colors. Each value ranges from 0 to 255 (e.g., `rgb(255, 87, 51)`).</p>
+                        <p><strong>HSL (Hue, Saturation, Lightness)</strong> represents color in a more human-intuitive way. <strong>Hue</strong> is the color itself (0-360 degrees), <strong>Saturation</strong> is the color's intensity (0-100%), and <strong>Lightness</strong> is its brightness (0-100%). This makes it easier to create variations of a single color (e.g., `hsl(11, 100%, 60%)`).</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">

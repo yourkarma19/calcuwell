@@ -6,11 +6,11 @@ export default function AboutBusinessDayCalculator() {
         <Card>
           <CardHeader><CardTitle>About Business Days</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Business Day Calculator** is a specialized tool for anyone who needs to plan around a standard workweek. It allows you to find a future or past date by adding or subtracting a specific number of working days, automatically ignoring weekends (Saturdays and Sundays) to give you a realistic date for business-related tasks.</p>
+            <p>The <strong>Business Day Calculator</strong> is a specialized tool for anyone who needs to plan around a standard workweek. It allows you to find a future or past date by adding or subtracting a specific number of working days, automatically ignoring weekends (Saturdays and Sundays) to give you a realistic date for business-related tasks.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
-              <li>Select the **Start Date** from which you want to calculate.</li>
-              <li>Enter the number of **Business Days** you want to add or subtract.</li>
+              <li>Select the <strong>Start Date</strong> from which you want to calculate.</li>
+              <li>Enter the number of <strong>Business Days</strong> you want to add or subtract.</li>
               <li>Click the appropriate button to see the resulting date.</li>
             </ol>
             <p>This is perfect for calculating project deadlines, shipping estimates, and contract timelines.</p>

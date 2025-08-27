@@ -9,12 +9,12 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
       <Card>
         <CardHeader><CardTitle>About the Sphere Calculator</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Sphere Calculator** is a straightforward tool for computing the essential geometric properties of a sphere from a single measurement: its radius. This calculator is ideal for students learning 3D geometry, engineers, designers, and anyone who needs to quickly find the volume or surface area of a spherical object. It eliminates manual calculations and provides instant, accurate results.</p>
+            <p>The <strong>Sphere Calculator</strong> is a straightforward tool for computing the essential geometric properties of a sphere from a single measurement: its radius. This calculator is ideal for students learning 3D geometry, engineers, designers, and anyone who needs to quickly find the volume or surface area of a spherical object. It eliminates manual calculations and provides instant, accurate results.</p>
             
             <h3>How to Use the Calculator</h3>
             <p>Using the calculator is simple:</p>
             <ol>
-                <li>Enter the **Radius** of the sphere into the input box.</li>
+                <li>Enter the <strong>Radius</strong> of the sphere into the input box.</li>
             </ol>
             <p>The calculator will automatically compute and display the sphere's volume, surface area, and diameter.</p>
 
@@ -41,7 +41,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Radius vs. Diameter</AccordionTrigger>
                     <AccordionContent>
-                        The **radius (r)** is the distance from the center of the sphere to any point on its surface. The **diameter (d)** is the distance straight through the center of the sphere, from one side to the other. The diameter is always twice the length of the radius (d = 2r).
+                        The <strong>radius (r)</strong> is the distance from the center of the sphere to any point on its surface. The <strong>diameter (d)</strong> is the distance straight through the center of the sphere, from one side to the other. The diameter is always twice the length of the radius (d = 2r).
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

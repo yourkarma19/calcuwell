@@ -6,7 +6,7 @@ export default function AboutTypingSpeedCalculator() {
         <Card>
         <CardHeader><CardTitle>About the Typing Speed Test</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Typing Speed Calculator** is an interactive tool designed to measure your typing proficiency in Words Per Minute (WPM). It's perfect for anyone looking to improve their typing skills, from students and administrative professionals to writers and developers. By practicing regularly, you can increase your speed and accuracy, boosting your productivity in any task that involves typing.</p>
+            <p>The <strong>Typing Speed Calculator</strong> is an interactive tool designed to measure your typing proficiency in Words Per Minute (WPM). It's perfect for anyone looking to improve their typing skills, from students and administrative professionals to writers and developers. By practicing regularly, you can increase your speed and accuracy, boosting your productivity in any task that involves typing.</p>
 
             <h3>How to Use the Calculator</h3>
             <ol>
@@ -14,7 +14,7 @@ export default function AboutTypingSpeedCalculator() {
                 <li>As soon as you start typing the sample text, the timer will begin.</li>
                 <li>Type the text as quickly and accurately as you can. Any errors will be highlighted in red.</li>
                 <li>Once you finish typing the full text, the test will stop automatically and display your results for WPM, accuracy, and errors.</li>
-                <li>Click **Restart Test** to try again with a new sample text.</li>
+                <li>Click <strong>Restart Test</strong> to try again with a new sample text.</li>
             </ol>
             
             <h3>Frequently Asked Questions (FAQs)</h3>

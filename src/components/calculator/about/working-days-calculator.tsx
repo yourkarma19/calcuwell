@@ -7,12 +7,12 @@ export default function AboutWorkingDaysCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Working Days Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Working Days Calculator** is a practical tool for professionals who need to plan projects, set deadlines, and manage schedules accurately. It calculates the number of business days between two dates, automatically excluding weekends (Saturdays and Sundays) to give you a realistic timeline for work-related tasks.</p>
+                <p>The <strong>Working Days Calculator</strong> is a practical tool for professionals who need to plan projects, set deadlines, and manage schedules accurately. It calculates the number of business days between two dates, automatically excluding weekends (Saturdays and Sundays) to give you a realistic timeline for work-related tasks.</p>
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Select a **Start Date** and an **End Date** using the calendars.</li>
-                    <li>Click the **"Calculate Working Days"** button.</li>
+                    <li>Select a <strong>Start Date</strong> and an <strong>End Date</strong> using the calendars.</li>
+                    <li>Click the <strong>"Calculate Working Days"</strong> button.</li>
                 </ol>
                 <p>The calculator will instantly tell you the total number of business days in that period.</p>
                 

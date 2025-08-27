@@ -10,10 +10,10 @@ export default function AboutBeamDeflectionCalculator() {
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter the **Load (P)** in Newtons that is being applied to the very end of the beam.</li>
-                    <li>Enter the total **Length (L)** of the beam in meters.</li>
-                    <li>Enter the **Modulus of Elasticity (E)** for the beam's material in Gigapascals (GPa). This value represents the material's stiffness. For example, steel is around 200 GPa.</li>
-                    <li>Enter the **Area Moment of Inertia (I)** of the beam's cross-section in meters to the fourth power (m⁴). This value represents the beam's resistance to bending due to its shape.</li>
+                    <li>Enter the <strong>Load (P)</strong> in Newtons that is being applied to the very end of the beam.</li>
+                    <li>Enter the total <strong>Length (L)</strong> of the beam in meters.</li>
+                    <li>Enter the <strong>Modulus of Elasticity (E)</strong> for the beam's material in Gigapascals (GPa). This value represents the material's stiffness. For example, steel is around 200 GPa.</li>
+                    <li>Enter the <strong>Area Moment of Inertia (I)</strong> of the beam's cross-section in meters to the fourth power (m⁴). This value represents the beam's resistance to bending due to its shape.</li>
                 </ol>
                 <p>The calculator will instantly compute the maximum deflection at the end of the beam.</p>
 

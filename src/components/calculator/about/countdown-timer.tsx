@@ -11,8 +11,8 @@ export default function AboutCountdownTimer() {
                 
                 <h3>How to Use the Timer</h3>
                 <ol>
-                    <li>Use the calendar to select the **Target Date** of your event.</li>
-                    <li>Enter the specific **Target Time** for the event.</li>
+                    <li>Use the calendar to select the <strong>Target Date</strong> of your event.</li>
+                    <li>Enter the specific <strong>Target Time</strong> for the event.</li>
                 </ol>
                 <p>The countdown will begin immediately and update every second. The page must remain open for the timer to continue running.</p>
 

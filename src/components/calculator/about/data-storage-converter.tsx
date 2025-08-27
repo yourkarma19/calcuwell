@@ -24,7 +24,7 @@ export default function AboutDataStorageConverter() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What's the difference between a Bit and a Byte?</AccordionTrigger>
                     <AccordionContent>
-                        A **bit** is the most basic unit of data in computing. It represents a single binary value of either 0 or 1. A **byte** is a group of 8 bits. Bytes are the standard unit used to measure file sizes because one byte can represent one character of text.
+                        A <strong>bit</strong> is the most basic unit of data in computing. It represents a single binary value of either 0 or 1. A <strong>byte</strong> is a group of 8 bits. Bytes are the standard unit used to measure file sizes because one byte can represent one character of text.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -36,7 +36,7 @@ export default function AboutDataStorageConverter() {
                 <AccordionItem value="item-3">
                     <AccordionTrigger>What is the difference between KB and KiB?</AccordionTrigger>
                     <AccordionContent>
-                       To reduce confusion, official standards bodies created binary prefixes. A **kilobyte (KB)** is now technically 1000 bytes. A **kibibyte (KiB)** is 1024 bytes. But in common use, "kilobyte" is still widely understood to mean 1024 bytes. This is why a 1 TB hard drive appears as about 931 GB in your operating system.
+                       To reduce confusion, official standards bodies created binary prefixes. A <strong>kilobyte (KB)</strong> is now technically 1000 bytes. A <strong>kibibyte (KiB)</strong> is 1024 bytes. But in common use, "kilobyte" is still widely understood to mean 1024 bytes. This is why a 1 TB hard drive appears as about 931 GB in your operating system.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

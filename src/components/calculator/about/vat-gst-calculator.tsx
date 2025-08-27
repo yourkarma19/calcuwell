@@ -11,9 +11,9 @@ export default function AboutVatGstCalculator() {
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter the **Initial Amount** of the product or service.</li>
-                    <li>Specify if this amount already includes tax by selecting **"Add Tax"** or **"Remove Tax"**.</li>
-                    <li>Adjust the **Tax Rate (%)** slider to match your local VAT or GST rate.</li>
+                    <li>Enter the <strong>Initial Amount</strong> of the product or service.</li>
+                    <li>Specify if this amount already includes tax by selecting <strong>"Add Tax"</strong> or <strong>"Remove Tax"</strong>.</li>
+                    <li>Adjust the <strong>Tax Rate (%)</strong> slider to match your local VAT or GST rate.</li>
                 </ol>
                 <p>The results will instantly show you the Net Price (pre-tax), the Tax Amount, and the Gross Price (inclusive of tax).</p>
 
@@ -22,7 +22,7 @@ export default function AboutVatGstCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What's the difference between VAT and GST?</AccordionTrigger>
                         <AccordionContent>
-                            <p>Functionally, for the end consumer, there is very little difference. **VAT (Value-Added Tax)** and **GST (Goods and Services Tax)** are both forms of consumption tax. The name simply differs by country. This calculator can be used for either.</p>
+                            <p>Functionally, for the end consumer, there is very little difference. <strong>VAT (Value-Added Tax)</strong> and <strong>GST (Goods and Services Tax)</strong> are both forms of consumption tax. The name simply differs by country. This calculator can be used for either.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

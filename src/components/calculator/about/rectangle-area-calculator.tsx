@@ -6,10 +6,10 @@ export default function AboutRectangleAreaCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Rectangle Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Rectangle Area & Perimeter Calculator** is a fundamental tool for anyone needing to calculate the basic properties of a rectangle. Whether you're a student learning geometry, a homeowner planning a room layout, or a contractor estimating materials, this calculator provides instant and accurate measurements for area and perimeter.</p>
+                <p>The <strong>Rectangle Area & Perimeter Calculator</strong> is a fundamental tool for anyone needing to calculate the basic properties of a rectangle. Whether you're a student learning geometry, a homeowner planning a room layout, or a contractor estimating materials, this calculator provides instant and accurate measurements for area and perimeter.</p>
 
                 <h3>How to Use the Calculator</h3>
-                <p>Simply enter the **length** and **width** of the rectangle into the designated fields. The calculator will automatically compute the area and perimeter.</p>
+                <p>Simply enter the <strong>length</strong> and <strong>width</strong> of the rectangle into the designated fields. The calculator will automatically compute the area and perimeter.</p>
 
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">

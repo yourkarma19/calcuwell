@@ -12,8 +12,8 @@ export default function AboutBase64Converter() {
               <h2>How to Use the Base64 Converter</h2>
               <ol>
                   <li>Enter the text or data you want to convert into the top input box.</li>
-                  <li>Click **"Encode"** to turn it into a Base64 string.</li>
-                  <li>To decode, paste a Base64 string into the input box and click **"Decode"**</li>
+                  <li>Click <strong>"Encode"</strong> to turn it into a Base64 string.</li>
+                  <li>To decode, paste a Base64 string into the input box and click <strong>"Decode"</strong></li>
               </ol>
               <p>The result will appear in the bottom box instantly.</p>
               <h2>Base64 Converter FAQs</h2>

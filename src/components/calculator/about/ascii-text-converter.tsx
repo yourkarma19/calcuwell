@@ -14,8 +14,8 @@ export default function AboutAsciiTextConverter() {
                 <h2>How to Use the ASCII Converter</h2>
                 <p>The converter works in both directions at the same time:</p>
                 <ol>
-                    <li>To convert **text to ASCII**, type your message in the "Text" box. The matching ASCII codes will appear in the "ASCII Codes" box.</li>
-                    <li>To convert **ASCII to text**, type the number codes in the "ASCII Codes" box. The text will appear in the "Text" box.</li>
+                    <li>To convert <strong>text to ASCII</strong>, type your message in the "Text" box. The matching ASCII codes will appear in the "ASCII Codes" box.</li>
+                    <li>To convert <strong>ASCII to text</strong>, type the number codes in the "ASCII Codes" box. The text will appear in the "Text" box.</li>
                 </ol>
                 <h2>ASCII Converter FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">

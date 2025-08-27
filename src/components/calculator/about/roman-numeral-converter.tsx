@@ -7,13 +7,13 @@ export default function AboutRomanNumeralConverter() {
        <Card>
         <CardHeader><CardTitle>About the Roman Numeral Converter</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Roman Numeral Converter** is a handy tool for anyone who needs to translate between the Arabic numerals we use today (1, 2, 3) and the ancient Roman system (I, II, III). Whether for historical context, academic purposes, or simple curiosity, this calculator provides a quick and accurate conversion for any number between 1 and 3,999.</p>
+            <p>The <strong>Roman Numeral Converter</strong> is a handy tool for anyone who needs to translate between the Arabic numerals we use today (1, 2, 3) and the ancient Roman system (I, II, III). Whether for historical context, academic purposes, or simple curiosity, this calculator provides a quick and accurate conversion for any number between 1 and 3,999.</p>
 
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter either a **Number** (e.g., 2024) or a **Roman Numeral** (e.g., MMXXIV) into the appropriate input box.</li>
+                <li>Enter either a <strong>Number</strong> (e.g., 2024) or a <strong>Roman Numeral</strong> (e.g., MMXXIV) into the appropriate input box.</li>
                 <li>The tool will instantly provide the conversion in the other box.</li>
-                <li>Use the **Swap button** to easily switch the direction of the conversion.</li>
+                <li>Use the <strong>Swap button</strong> to easily switch the direction of the conversion.</li>
             </ol>
             <p>The calculator validates input in real-time to ensure accuracy.</p>
 

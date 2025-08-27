@@ -6,7 +6,7 @@ export default function AboutSquareRootCubeRootCalculator() {
         <Card>
           <CardHeader><CardTitle>About the Root Calculator</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Square & Cube Root Calculator** is a simple tool for performing two fundamental mathematical operations. It helps you quickly find the square root and cube root of any number, which is useful in a wide range of applications, from basic algebra to complex engineering problems. This calculator handles both positive and negative inputs, correctly identifying real and imaginary roots.</p>
+            <p>The <strong>Square & Cube Root Calculator</strong> is a simple tool for performing two fundamental mathematical operations. It helps you quickly find the square root and cube root of any number, which is useful in a wide range of applications, from basic algebra to complex engineering problems. This calculator handles both positive and negative inputs, correctly identifying real and imaginary roots.</p>
             
             <h3>How to Use the Calculator</h3>
             <p>Simply enter a number into the input field. The calculator will instantly compute and display both the square root and the cube root of the number.</p>
@@ -42,5 +42,3 @@ export default function AboutSquareRootCubeRootCalculator() {
         </Card>
     )
 }
-
-    

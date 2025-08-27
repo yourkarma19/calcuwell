@@ -9,9 +9,9 @@ export default function AboutAddSubtractDaysCalculator() {
             <p>Our Add/Subtract Days Calculator is a simple tool to find a future or past date. It is great for setting a deadline, scheduling a follow-up, or finding a warranty period. This tool avoids the need to count days manually on a calendar.</p>
             <h3>How to Use the Date Calculator</h3>
             <ol>
-                <li>Choose a **Start Date** from the calendar.</li>
-                <li>Enter the number of **Days to Add/Subtract**.</li>
-                <li>Click either the **"Add Days"** or **"Subtract Days"** button.</li>
+                <li>Choose a <strong>Start Date</strong> from the calendar.</li>
+                <li>Enter the number of <strong>Days to Add/Subtract</strong>.</li>
+                <li>Click either the <strong>"Add Days"</strong> or <strong>"Subtract Days"</strong> button.</li>
             </ol>
             <p>The resulting date will be shown instantly in the results card.</p>
             <h3>Date Calculator FAQs</h3>

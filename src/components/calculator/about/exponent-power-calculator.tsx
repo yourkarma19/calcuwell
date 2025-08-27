@@ -6,12 +6,12 @@ export default function AboutExponentPowerCalculator() {
         <Card>
           <CardHeader><CardTitle>About Exponents & Powers</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Exponent & Power Calculator** is a fundamental mathematical tool that helps you compute the result of a number raised to a certain power. This operation, known as exponentiation, is essential in many fields, including finance (for compound interest), science (for exponential growth), and computer science (for data scaling).</p>
+            <p>The <strong>Exponent & Power Calculator</strong> is a fundamental mathematical tool that helps you compute the result of a number raised to a certain power. This operation, known as exponentiation, is essential in many fields, including finance (for compound interest), science (for exponential growth), and computer science (for data scaling).</p>
             
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter the **Base (x)**, which is the number being multiplied.</li>
-                <li>Enter the **Exponent (y)**, which is the number of times the base is multiplied by itself.</li>
+                <li>Enter the <strong>Base (x)</strong>, which is the number being multiplied.</li>
+                <li>Enter the <strong>Exponent (y)</strong>, which is the number of times the base is multiplied by itself.</li>
             </ol>
             <p>The calculator will instantly display the result of `x` raised to the power of `y` (x^y).</p>
 
@@ -46,5 +46,3 @@ export default function AboutExponentPowerCalculator() {
         </Card>
     );
 }
-
-    

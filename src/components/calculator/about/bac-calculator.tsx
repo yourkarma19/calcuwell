@@ -8,14 +8,14 @@ export default function AboutBacCalculator() {
         <Card>
             <CardHeader><CardTitle>About Blood Alcohol Content (BAC)</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Blood Alcohol Content (BAC) calculator provides an **estimate** of your blood alcohol level based on the Widmark formula. It is an educational tool to help you understand how different factors contribute to intoxication. **It should never be used to determine if it is safe to drive or operate machinery.**</p>
+                <p>The Blood Alcohol Content (BAC) calculator provides an <strong>estimate</strong> of your blood alcohol level based on the Widmark formula. It is an educational tool to help you understand how different factors contribute to intoxication. <strong>It should never be used to determine if it is safe to drive or operate machinery.</strong></p>
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter your **Body Weight** in kilograms.</li>
-                    <li>Select your biological **Gender**, as this affects alcohol distribution.</li>
-                    <li>Input the number of **Standard Drinks** you have consumed.</li>
-                    <li>Enter the number of **Hours** that have passed since your first drink.</li>
+                    <li>Enter your <strong>Body Weight</strong> in kilograms.</li>
+                    <li>Select your biological <strong>Gender</strong>, as this affects alcohol distribution.</li>
+                    <li>Input the number of <strong>Standard Drinks</strong> you have consumed.</li>
+                    <li>Enter the number of <strong>Hours</strong> that have passed since your first drink.</li>
                 </ol>
                 <p>The calculator will instantly show your estimated BAC percentage and a general description of the potential effects.</p>
 

@@ -6,7 +6,7 @@ export default function AboutResistorColorCodeCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Resistor Color Code Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Resistor Color Code Calculator** helps you figure out the value of a resistor by reading its colored bands. This is a key tool for anyone working with electronics. It lets you find a resistor's resistance value without needing to use a multimeter. This calculator is for common 4-band resistors.</p>
+                <p>The <strong>Resistor Color Code Calculator</strong> helps you figure out the value of a resistor by reading its colored bands. This is a key tool for anyone working with electronics. It lets you find a resistor's resistance value without needing to use a multimeter. This calculator is for common 4-band resistors.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Hold the resistor with the gold or silver band (the tolerance band) on the right side. Read the colors from left to right.</li>

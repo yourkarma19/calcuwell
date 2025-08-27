@@ -8,7 +8,7 @@ export default function AboutCrcHashGenerator() {
                 <CardTitle>About the CRC-32 Hash Generator</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>This tool creates a **CRC-32 checksum** for any text you enter. Think of a checksum as a unique fingerprint for your data. It's a fast and easy way to check if data has been accidentally changed or corrupted during transfer or storage.</p>
+                <p>This tool creates a <strong>CRC-32 checksum</strong> for any text you enter. Think of a checksum as a unique fingerprint for your data. It's a fast and easy way to check if data has been accidentally changed or corrupted during transfer or storage.</p>
                 <h3>How to Use the Calculator</h3>
                 <p>Just type or paste any text into the input box. The calculator will instantly generate the 32-bit CRC hash for that text below.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
@@ -22,7 +22,7 @@ export default function AboutCrcHashGenerator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Is CRC a form of security?</AccordionTrigger>
                         <AccordionContent>
-                            No. CRC is great at catching **accidental errors** (like from network noise or data corruption), but it is not secure against **intentional changes**. Someone trying to tamper with data could easily calculate a new, valid checksum for the modified data. For security, you need a cryptographic hash like SHA-256.
+                            No. CRC is great at catching <strong>accidental errors</strong> (like from network noise or data corruption), but it is not secure against <strong>intentional changes</strong>. Someone trying to tamper with data could easily calculate a new, valid checksum for the modified data. For security, you need a cryptographic hash like SHA-256.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
@@ -30,9 +30,9 @@ export default function AboutCrcHashGenerator() {
                         <AccordionContent>
                             CRC-32 is very common because it's fast and effective. You'll find it in:
                             <ul className="list-disc pl-5 mt-2">
-                                <li>**File formats:** ZIP and PNG files use it to check for corruption.</li>
-                                <li>**Networking:** Ethernet and Wi-Fi use it to ensure data packets are intact.</li>
-                                <li>**Storage:** It helps detect errors on hard drives and other storage media.</li>
+                                <li><strong>File formats:</strong> ZIP and PNG files use it to check for corruption.</li>
+                                <li><strong>Networking:</strong> Ethernet and Wi-Fi use it to ensure data packets are intact.</li>
+                                <li><strong>Storage:</strong> It helps detect errors on hard drives and other storage media.</li>
                             </ul>
                         </AccordionContent>
                     </AccordionItem>

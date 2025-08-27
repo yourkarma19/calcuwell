@@ -7,11 +7,11 @@ export default function AboutReadingTimeCalculator() {
         <Card>
             <CardHeader><CardTitle as="h2">About the Reading Time Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our **Reading Time Estimator** is a useful tool for writers, bloggers, students, and avid readers. It provides a quick estimate of how long it will take to read a piece of text based on the total word count and a specified reading speed (in words per minute). This is the same type of tool used by popular blogging platforms to show readers an estimated reading time at the top of articles.</p>
+                <p>Our <strong>Reading Time Estimator</strong> is a useful tool for writers, bloggers, students, and avid readers. It provides a quick estimate of how long it will take to read a piece of text based on the total word count and a specified reading speed (in words per minute). This is the same type of tool used by popular blogging platforms to show readers an estimated reading time at the top of articles.</p>
                 <h2>How to Use the Reading Time Calculator</h2>
                 <ol>
                     <li>Paste your text into the text area.</li>
-                    <li>Adjust the **Reading Speed (WPM)** slider to match your personal speed.</li>
+                    <li>Adjust the <strong>Reading Speed (WPM)</strong> slider to match your personal speed.</li>
                 </ol>
                 <p>The calculator will instantly display the estimated time required to read the text, along with the total word count.</p>
                 <h2>Reading Time FAQs</h2>
@@ -39,4 +39,3 @@ export default function AboutReadingTimeCalculator() {
       </Card>
     );
 }
-
