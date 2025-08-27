@@ -6,14 +6,14 @@ export default function AboutRetirementCalculator() {
         <Card>
             <CardHeader><CardTitle>About Retirement Planning</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Retirement Calculator** is a crucial financial planning tool that helps you estimate whether you are on track to meet your long-term savings goals. By inputting your current age, savings, contributions, and expected returns, you can get a clear projection of your financial future. This allows you to make informed decisions today to ensure a comfortable and secure retirement tomorrow.</p>
+                <p>The <strong>Retirement Calculator</strong> is a crucial financial planning tool that helps you estimate whether you are on track to meet your long-term savings goals. By inputting your current age, savings, contributions, and expected returns, you can get a clear projection of your financial future. This allows you to make informed decisions today to ensure a comfortable and secure retirement tomorrow.</p>
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter your **Current Age** and your desired **Retirement Age**.</li>
-                    <li>Input your **Current Savings** and the **Monthly Contribution** you plan to make.</li>
-                    <li>Adjust the estimated **Annual Interest Rate** your investments might earn.</li>
-                    <li>Set your **Desired Annual Retirement Income** and your **Life Expectancy**.</li>
+                    <li>Enter your <strong>Current Age</strong> and your desired <strong>Retirement Age</strong>.</li>
+                    <li>Input your <strong>Current Savings</strong> and the <strong>Monthly Contribution</strong> you plan to make.</li>
+                    <li>Adjust the estimated <strong>Annual Interest Rate</strong> your investments might earn.</li>
+                    <li>Set your <strong>Desired Annual Retirement Income</strong> and your <strong>Life Expectancy</strong>.</li>
                 </ol>
                 <p>The calculator will instantly show your projected savings, your savings goal, and whether you are on track to meet it.</p>
                 

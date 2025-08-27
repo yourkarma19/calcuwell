@@ -13,7 +13,7 @@ export default function AboutBmrCalculator() {
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter your **Age**, **Gender**, **Height** (in cm), and **Weight** (in kg).</li>
+                    <li>Enter your <strong>Age</strong>, <strong>Gender</strong>, <strong>Height</strong> (in cm), and <strong>Weight</strong> (in kg).</li>
                 </ol>
                 <p>The calculator will instantly estimate your BMR using the Mifflin-St Jeor equation, which is widely regarded as one of the most accurate formulas for most people.</p>
                 
@@ -22,7 +22,7 @@ export default function AboutBmrCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is the difference between BMR and TDEE?</AccordionTrigger>
                     <AccordionContent>
-                        BMR is the calories you burn at complete rest. **Total Daily Energy Expenditure (TDEE)** is the total calories you burn in a 24-hour period, including all activities. TDEE is calculated by multiplying your BMR by an activity factor. Find your TDEE with our <Link href="/calculators/calorie-needs-calculator" className="text-primary hover:underline">Calorie Needs Calculator</Link>.
+                        BMR is the calories you burn at complete rest. <strong>Total Daily Energy Expenditure (TDEE)</strong> is the total calories you burn in a 24-hour period, including all activities. TDEE is calculated by multiplying your BMR by an activity factor. Find your TDEE with our <Link href="/calculators/calorie-needs-calculator" className="text-primary hover:underline">Calorie Needs Calculator</Link>.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">

@@ -11,10 +11,10 @@ export default function AboutLoanAffordabilityCalculator() {
 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter your total gross **Annual Income**.</li>
-                    <li>Provide your total **Monthly Debt Payments** (e.g., credit card bills, other existing loans).</li>
-                    <li>Input the estimated **Interest Rate** and **Loan Term** for the new loan you are considering.</li>
-                    <li>Adjust the **Debt-to-Income (DTI) Ratio** slider. 43% is a common maximum that many lenders allow, but a lower ratio is generally better.</li>
+                    <li>Enter your total gross <strong>Annual Income</strong>.</li>
+                    <li>Provide your total <strong>Monthly Debt Payments</strong> (e.g., credit card bills, other existing loans).</li>
+                    <li>Input the estimated <strong>Interest Rate</strong> and <strong>Loan Term</strong> for the new loan you are considering.</li>
+                    <li>Adjust the <strong>Debt-to-Income (DTI) Ratio</strong> slider. 43% is a common maximum that many lenders allow, but a lower ratio is generally better.</li>
                 </ol>
                 <p>The calculator will instantly show you the maximum loan you can likely afford and what your estimated monthly payment would be.</p>
                 
