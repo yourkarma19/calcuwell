@@ -1,5 +1,24 @@
-# Firebase Studio
+# CalcPro - Calculator Suite
 
-This is a NextJS starter for CalcPro in Firebase Studio.
+A comprehensive calculator application built with Next.js, TypeScript, and Tailwind CSS.
 
-To get started, take a look at src/app/page.tsx.
+## Features
+
+- Multiple calculators (Ohm's Law, Pythagorean Theorem, Resistor Color Codes, Time Zone Converter)
+- Responsive design
+- Type-safe with TypeScript
+- Modern UI with Tailwind CSS
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm start
+```
