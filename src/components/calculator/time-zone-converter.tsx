@@ -57,10 +57,8 @@ export default function TimeZoneConverter() {
       const localDate = new Date(date);
       localDate.setHours(hours, minutes, 0, 0);
 
-      // 1. Create a date object that represents the correct moment in time, as if it were in the "from" timezone
       const zonedTime = fromZonedTime(localDate, fromZone);
       
-      // 2. Format that moment into the "to" timezone's string representation
       const result = formatInTimeZone(zonedTime, toZone, "PPP 'at' hh:mm:ss a (zzz)");
       
       setConvertedTime(result);
@@ -90,7 +88,7 @@ export default function TimeZoneConverter() {
                 </SelectContent>
               </Select>
               <div className="flex flex-col sm:flex-row gap-2">
-                <DatePicker date={date} setDate={setDate} disabled={(date) => false}/>
+                <DatePicker date={date} setDate={setDate} disabled={() => false}/>
                 <Input type="time" value={time} onChange={e => setTime(e.target.value)} />
               </div>
             </div>
@@ -108,7 +106,7 @@ export default function TimeZoneConverter() {
                    {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-16 text-lg sm:h-20" aria-live="polite"/>
+              <Input value={convertedTime} readOnly className="font-bold text-primary bg-primary/10 border-primary/20 h-10 sm:h-20 text-base sm:text-lg" aria-live="polite"/>
             </div>
           </div>
         </CardContent>

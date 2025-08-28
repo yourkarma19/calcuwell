@@ -14,10 +14,10 @@ type SolveFor = "voltage" | "current" | "resistance" | "power";
 export default function OhmsLawCalculator() {
   const [solveFor, setSolveFor] = usePersistentState<SolveFor>("ohms-solveFor", "voltage");
   
-  const [voltage, setVoltage] = usePersistentState<number>("ohms-voltage", 12); // V (Volts)
-  const [current, setCurrent] = usePersistentState<number>("ohms-current", 0.5); // I (Amps)
-  const [resistance, setResistance] = usePersistentState<number>("ohms-resistance", 24); // R (Ohms)
-  const [power, setPower] = usePersistentState<number>("ohms-power", 6); // P (Watts)
+  const [voltage, setVoltage] = usePersistentState<number | "">("ohms-voltage", 12); // V (Volts)
+  const [current, setCurrent] = usePersistentState<number | "">("ohms-current", 0.5); // I (Amps)
+  const [resistance, setResistance] = usePersistentState<number | "">("ohms-resistance", 24); // R (Ohms)
+  const [power, setPower] = usePersistentState<number | "">("ohms-power", 6); // P (Watts)
 
   const result = useMemo(() => {
     const V = Number(voltage);
@@ -49,23 +49,23 @@ export default function OhmsLawCalculator() {
   
   const getInputProps = (field: SolveFor) => {
     if (field === solveFor) {
-      return { value: isNaN(result.value) ? "Result" : result.value.toFixed(4), readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20" };
+      return { value: isNaN(result.value) ? "" : result.value.toFixed(4), readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20", placeholder:"Result" };
     }
     
-    let value: number, setter: React.Dispatch<React.SetStateAction<number>>;
+    let value: number | "", setter: React.Dispatch<React.SetStateAction<number| "">>;
     if (field === 'voltage') { [value, setter] = [voltage, setVoltage]; }
     else if (field === 'current') { [value, setter] = [current, setCurrent]; }
     else if (field === 'resistance') { [value, setter] = [resistance, setResistance]; }
     else { [value, setter] = [power, setPower]; }
     
-    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(Number(e.target.value)) };
+    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(e.target.value === '' ? '' : Number(e.target.value)) };
   };
 
   return (
     <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Ohm's Law Calculator</CardTitle>
+          <CardTitle>Ohm&apos;s Law Calculator</CardTitle>
           <CardDescription>Calculate Voltage (V), Current (I), Resistance (R), and Power (P). Enter any two values to solve for the other two.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -107,27 +107,27 @@ export default function OhmsLawCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About the Ohm's Law Calculator</CardTitle></CardHeader>
+        <CardHeader><CardTitle>About the Ohm&apos;s Law Calculator</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-          <p>The <strong>Ohm's Law Calculator</strong> is an essential tool for students, hobbyists, and engineers working with electronic circuits. It simplifies the relationship between <strong>Voltage (V)</strong>, <strong>Current (I)</strong>, <strong>Resistance (R)</strong>, and <strong>Power (P)</strong>. By providing any two of these values, you can instantly find the other two, making it invaluable for circuit design, analysis, and troubleshooting.</p>
+          <p>The <strong>Ohm&apos;s Law Calculator</strong> is an essential tool for students, hobbyists, and engineers working with electronic circuits. It simplifies the relationship between <strong>Voltage (V)</strong>, <strong>Current (I)</strong>, <strong>Resistance (R)</strong>, and <strong>Power (P)</strong>. By providing any two of these values, you can instantly find the other two, making it invaluable for circuit design, analysis, and troubleshooting.</p>
           <h3>How to Use the Calculator</h3>
           <ol>
               <li>First, select the value you want to calculate (e.g., Voltage).</li>
               <li>Enter any two of the other known values into their respective fields.</li>
           </ol>
-          <p>The calculator will automatically compute the result based on the formulas derived from Ohm's Law and the Power Law.</p>
+          <p>The calculator will automatically compute the result based on the formulas derived from Ohm&apos;s Law and the Power Law.</p>
           <h3>Frequently Asked Questions (FAQs)</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>What is Ohm's Law?</AccordionTrigger>
+              <AccordionTrigger>What is Ohm&apos;s Law?</AccordionTrigger>
               <AccordionContent>
-                Ohm's Law is a fundamental principle in electronics that describes the relationship between voltage (V), current (I), and resistance (R). The classic formula is `V = I × R`, which states that the voltage across a resistor is directly proportional to the current flowing through it.
+                Ohm&apos;s Law is a fundamental principle in electronics that describes the relationship between voltage (V), current (I), and resistance (R). The classic formula is `V = I × R`, which states that the voltage across a resistor is directly proportional to the current flowing through it.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>The Ohm's Law Triangle</AccordionTrigger>
+              <AccordionTrigger>The Ohm&apos;s Law Triangle</AccordionTrigger>
               <AccordionContent>
-                A common way to remember the formulas is the Ohm's Law Triangle. By covering up the value you want to find, the remaining two values show you how to calculate it:
+                A common way to remember the formulas is the Ohm&apos;s Law Triangle. By covering up the value you want to find, the remaining two values show you how to calculate it:
                 <ul className="list-disc pl-5 mt-2">
                   <li>To find Voltage (V): Cover V, you are left with I × R.</li>
                   <li>To find Current (I): Cover I, you are left with V / R.</li>
@@ -138,13 +138,13 @@ export default function OhmsLawCalculator() {
             <AccordionItem value="item-3">
               <AccordionTrigger>What about Power (P)?</AccordionTrigger>
               <AccordionContent>
-                Power (measured in Watts) is the rate at which energy is consumed in a circuit. It's related to Ohm's Law through several formulas, including `P = V × I`, `P = I² × R`, and `P = V² / R`. This calculator can also solve for power if you provide any two other values.
+                Power (measured in Watts) is the rate at which energy is consumed in a circuit. It&apos;s related to Ohm&apos;s Law through several formulas, including `P = V × I`, `P = I² × R`, and `P = V² / R`. This calculator can also solve for power if you provide any two other values.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-              <AccordionTrigger>Why is Ohm's Law important?</AccordionTrigger>
+              <AccordionTrigger>Why is Ohm&apos;s Law important?</AccordionTrigger>
               <AccordionContent>
-                Ohm's Law is essential for designing, analyzing, and troubleshooting electronic circuits. It allows engineers and hobbyists to determine the correct components to use, ensure safety by managing current flow, and diagnose problems in circuits.
+                Ohm&apos;s Law is essential for designing, analyzing, and troubleshooting electronic circuits. It allows engineers and hobbyists to determine the correct components to use, ensure safety by managing current flow, and diagnose problems in circuits.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -10,9 +10,9 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function PythagoreanTheoremCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");
-  const [sideA, setSideA] = usePersistentState<number>("pythagorean-sideA", 3);
-  const [sideB, setSideB] = usePersistentState<number>("pythagorean-sideB", 4);
-  const [sideC, setSideC] = usePersistentState<number>("pythagorean-sideC", 5);
+  const [sideA, setSideA] = usePersistentState<number | "">("pythagorean-sideA", 3);
+  const [sideB, setSideB] = usePersistentState<number | "">("pythagorean-sideB", 4);
+  const [sideC, setSideC] = usePersistentState<number | "">("pythagorean-sideC", 5);
 
   useEffect(() => {
     setFormula("a² + b² = c²");
@@ -44,16 +44,16 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
   }, [solveFor, sideA, sideB, sideC]);
 
   const getInputProps = (side: "a" | "b" | "c") => {
-    if (side === solveFor) {
-      return { value: result !== null && isFinite(result) ? result.toFixed(4) : "Result", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20" };
-    }
-    
-    let value: number, setter: React.Dispatch<React.SetStateAction<number>>;
+    let value: number | "", setter: (value: number | "") => void;
     if (side === 'a') { [value, setter] = [sideA, setSideA]; }
     else if (side === 'b') { [value, setter] = [sideB, setSideB]; }
     else { [value, setter] = [sideC, setSideC]; }
-
-    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(Number(e.target.value)) };
+    
+    if (side === solveFor) {
+      return { value: result !== null && isFinite(result) ? result.toFixed(4) : "", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20", placeholder: "Result" };
+    }
+    
+    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(e.target.value === '' ? '' : Number(e.target.value)) };
   };
 
   return (
@@ -94,7 +94,7 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">The length of the missing side is:</p>
             <p className="text-5xl font-bold font-headline text-primary my-2">
-                {error ? <span className="text-destructive text-xl">{error}</span> : (result !== null && isFinite(result) ? result.toFixed(4) : "Invalid")}
+                {error ? <span className="text-destructive text-xl">{error}</span> : (result !== null && isFinite(result) ? result.toFixed(4) : "Enter values")}
             </p>
           </CardContent>
         </Card>

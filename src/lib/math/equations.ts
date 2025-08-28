@@ -19,24 +19,24 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
   const p = (3 * a * c - b * b) / (3 * a * a);
   const q = (2 * b * b * b - 9 * a * b * c + 27 * a * a * d) / (27 * a * a * a);
 
-  const delta = pow(q / 2, 2) + pow(p / 3, 3) as number;
+  const delta = pow(q / 2, 2) + pow(p / 3, 3);
   
   let roots: Complex[];
 
   if (delta >= 0) {
-    const sqrtDelta = sqrt(delta);
+    const sqrtDelta = sqrt(delta) as number;
     const u = cbrtComplex(-q / 2 + sqrtDelta);
     const v = cbrtComplex(-q / 2 - sqrtDelta);
 
     roots = [
-      u.add(v),
-      u.mul(complex(-0.5, 0.5 * sqrt(3))).add(v.mul(complex(-0.5, -0.5 * sqrt(3)))),
-      u.mul(complex(-0.5, -0.5 * sqrt(3))).add(v.mul(complex(-0.5, 0.5 * sqrt(3))))
+      u.add(v) as Complex,
+      u.mul(complex(-0.5, 0.5 * sqrt(3))).add(v.mul(complex(-0.5, -0.5 * sqrt(3)))) as Complex,
+      u.mul(complex(-0.5, -0.5 * sqrt(3))).add(v.mul(complex(-0.5, 0.5 * sqrt(3)))) as Complex
     ];
   } else {
     // Three real roots
-    const r = sqrt(-p * p * p / 27);
-    const phi = Math.atan2(sqrt(-delta), -q/2);
+    const r = sqrt(-p * p * p / 27) as number;
+    const phi = Math.atan2(sqrt(-delta) as number, -q/2);
     
     const u = Math.cbrt(r);
     

@@ -7,6 +7,7 @@ interface CalculatorUIWrapperProps {
   resultsCard: React.ReactNode;
   shareParams: Record<string, string>;
   elementIds: string[];
+  calculatorName: string;
 }
 
 export default function CalculatorUIWrapper({
@@ -14,6 +15,7 @@ export default function CalculatorUIWrapper({
   resultsCard,
   shareParams,
   elementIds,
+  calculatorName,
 }: CalculatorUIWrapperProps) {
   return (
     <div className="space-y-6">
@@ -22,6 +24,7 @@ export default function CalculatorUIWrapper({
       <ExportShareControls
         elementIds={elementIds}
         shareParams={shareParams}
+        calculatorName={calculatorName}
       />
     </div>
   );
