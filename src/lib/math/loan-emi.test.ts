@@ -1,4 +1,3 @@
-
 import { describe, it, expect } from 'vitest';
 import { calculateEMI, calculateEMIWithExtraPayments } from './loan-emi';
 import testVectors from './loan-emi.test.json';
