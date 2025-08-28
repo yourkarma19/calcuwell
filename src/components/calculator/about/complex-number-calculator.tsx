@@ -16,19 +16,19 @@ export default function AboutComplexNumberCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is a complex number?</AccordionTrigger>
                         <AccordionContent>
-                            A complex number has the form `a + bi`. The 'a' is the "real" part, which is a regular number. The 'b' is the "imaginary" part. Complex numbers are used in many areas of science and engineering, like electronics and signal processing.
+                            A complex number has the form `a + bi`. The &apos;a&apos; is the "real" part, which is a regular number. The &apos;b&apos; is the "imaginary" part. Complex numbers are used in many areas of science and engineering, like electronics and signal processing.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger>What is the imaginary unit 'i'?</AccordionTrigger>
+                        <AccordionTrigger>What is the imaginary unit &apos;i&apos;?</AccordionTrigger>
                         <AccordionContent>
-                           The imaginary unit 'i' is the solution to the equation x² = -1. It is defined as the square root of negative one (√-1). Since you can't find a real number that gives a negative result when multiplied by itself, 'i' was created to solve these kinds of problems.
+                           The imaginary unit &apos;i&apos; is the solution to the equation x² = -1. It is defined as the square root of negative one (√-1). Since you can&apos;t find a real number that gives a negative result when multiplied by itself, &apos;i&apos; was created to solve these kinds of problems.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">
                         <AccordionTrigger>How do you add or subtract them?</AccordionTrigger>
                         <AccordionContent>
-                           It's simple: you just add or subtract the real parts together and the imaginary parts together, separately. For example, (3 + 2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i.
+                           It&apos;s simple: you just add or subtract the real parts together and the imaginary parts together, separately. For example, (3 + 2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

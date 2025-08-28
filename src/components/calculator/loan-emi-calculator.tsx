@@ -1,11 +1,9 @@
 
 "use client";
 
-import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
-import { Skeleton } from "../ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,16 +11,8 @@ import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 
-const LoanBreakdownChart = dynamic(
-    () => import('@/components/charts/loan-breakdown-chart').then(mod => mod.LoanBreakdownChart),
-    { 
-        ssr: false,
-        loading: () => <Skeleton className="w-full h-[25rem]" />
-    }
-);
 
-
-export default function LoanEMICalculator({ setFormula, setChildProps, calculatorName }: { setFormula: (formula: string) => void, setChildProps: (props: any) => void, calculatorName: string }) {
+export default function LoanEMICalculator({ setChildProps, calculatorName }: { setChildProps: (props: any) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);
@@ -39,11 +29,6 @@ export default function LoanEMICalculator({ setFormula, setChildProps, calculato
     if (t) setTenure(parseFloat(t));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
-
-  useEffect(() => {
-    setFormula("EMI = [P x R x (1+R)^N] / [(1+R)^N-1]");
-  }, [setFormula]);
-
 
   const { emi, totalPayable, totalInterest } = useMemo(() => {
     return calculateEMI(principal, rate, tenure);

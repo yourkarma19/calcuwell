@@ -13,7 +13,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateAge, Age } from "@/lib/math/date";
 
 
-export default function AgeCalculator({ setFormula, calculatorName }: { setFormula: (formula: string) => void, calculatorName: string }) {
+export default function AgeCalculator({ calculatorName }: { calculatorName: string }) {
   const searchParams = useSearchParams();
   const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
