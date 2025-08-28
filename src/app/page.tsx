@@ -1,7 +1,8 @@
 
+import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import Link from "next/link";
-import { categories } from "@/lib/calculators";
-import { trendingCalculators } from "@/lib/trending-calculators";
+import CalculatorCard from "@/components/calculator/calculator-card";
+import HomeCalculator from "@/components/home-calculator";
 import {
   Card,
   CardHeader,
@@ -9,9 +10,8 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
-import CalculatorCard from "@/components/calculator/calculator-card";
-import HomeCalculator from "@/components/home-calculator";
+import { categories } from "@/lib/calculators";
+import { trendingCalculators } from "@/lib/trending-calculators";
 
 
 export default function Home() {

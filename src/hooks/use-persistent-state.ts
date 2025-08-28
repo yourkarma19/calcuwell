@@ -11,7 +11,7 @@ function usePersistentState<T>(
     const [state, setState] = useState<T>(defaultValue);
 
     useEffect(() => {
-        let cacheKey = `persistent-state-${key}`;
+        const cacheKey = `persistent-state-${key}`;
         try {
             const item = window.localStorage.getItem(key);
             if (item) {

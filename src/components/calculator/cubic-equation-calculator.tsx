@@ -1,17 +1,17 @@
 
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
+import { Wrench } from "lucide-react";
+import { complex, format, type Complex } from "mathjs";
 import { useState, useMemo } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { motion, AnimatePresence } from "framer-motion";
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
-import { Wrench } from "lucide-react";
-import { complex, format, type Complex } from "mathjs";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { solveCubic } from "@/lib/math/equations";
 
 

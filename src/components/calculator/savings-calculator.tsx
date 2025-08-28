@@ -1,15 +1,15 @@
 
 "use client";
 
+import { Info } from "lucide-react";
 import { useState, useMemo } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Info } from "lucide-react";
-import { Input } from "../ui/input";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Slider } from "@/components/ui/slider";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function SavingsCalculator() {
   const [initialAmount, setInitialAmount] = usePersistentState("savings-initial", 1000);

@@ -1,8 +1,8 @@
 
 'use server';
 
-import { loadFullCalculatorData } from '@/lib/server/calculator-data';
 import type Fuse from 'fuse.js';
+import { loadFullCalculatorData } from '@/lib/server/calculator-data';
 import type { Calculator } from '@/lib/types';
 
 type SearchResult = Omit<Calculator, 'component'>;

@@ -1,6 +1,6 @@
 
-import { Metadata } from "next";
 import { FileText } from "lucide-react";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Terms of Use | CalcPro",

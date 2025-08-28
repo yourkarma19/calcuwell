@@ -1,8 +1,9 @@
 
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,9 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight } from "lucide-react";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { percentageOf, isWhatPercentageOf, percentageChange } from "@/lib/math/percentage";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 

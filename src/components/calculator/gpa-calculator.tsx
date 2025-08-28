@@ -1,10 +1,20 @@
 
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { X, Plus , Info } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,18 +25,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { X, Plus } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Info } from "lucide-react";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const gradePoints: { [key: string]: number } = {
   A: 4.0, "A-": 3.7, "B+": 3.3, B: 3.0, "B-": 2.7, "C+": 2.3, C: 2.0, "C-": 1.7, "D+": 1.3, D: 1.0, F: 0.0,

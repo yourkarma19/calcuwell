@@ -1,9 +1,9 @@
 
 import 'server-only';
-import type { Calculator } from '@/lib/types';
+import { cache } from 'react';
 import { calculatorsData } from '@/lib/calculator-data';
 import { categories } from '@/lib/calculators';
-import { cache } from 'react';
+import type { Calculator } from '@/lib/types';
 
 // Using React's `cache` to ensure this function only runs once per request.
 // This is a key optimization for server-side rendering performance.

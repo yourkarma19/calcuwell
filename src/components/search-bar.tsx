@@ -1,14 +1,11 @@
 
 "use client";
 
-import * as React from "react";
-import { useRouter } from "next/navigation";
 import * as Icons from "lucide-react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { useRouter } from "next/navigation";
+import * as React from "react";
+import { searchCalculators } from "@/app/actions/search";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -17,9 +14,12 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { type Calculator } from "@/lib/types";
-import { searchCalculators } from "@/app/actions/search";
 
 type SearchResult = Omit<Calculator, "component">;
 

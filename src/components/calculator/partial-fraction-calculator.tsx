@@ -1,13 +1,13 @@
 
 "use client";
 
+import { rationalize } from "mathjs";
 import { useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
-import { rationalize } from "mathjs";
 
 export default function PartialFractionCalculator() {
     const [expression, setExpression] = useState("(x^2 + 1) / (x^3 - x^2 + 2x - 2)");

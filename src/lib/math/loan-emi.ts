@@ -78,8 +78,8 @@ export function calculateEMIWithExtraPayments(
 
   while (remainingPrincipal > 0) {
     newMonths++;
-    let interestForMonth = remainingPrincipal * monthlyRate;
-    let principalForMonth = emi - interestForMonth;
+    const interestForMonth = remainingPrincipal * monthlyRate;
+    const principalForMonth = emi - interestForMonth;
     
     remainingPrincipal -= principalForMonth;
     totalInterestPaid += interestForMonth;

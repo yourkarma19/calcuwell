@@ -1,15 +1,15 @@
 
 "use client";
 
-import type { ReactNode } from "react";
-import type { Calculator } from "@/lib/types";
-import EmbedCalculator from "./embed-calculator";
-import Link from "next/link";
 import { ChevronRight, icons } from "lucide-react";
-import { categories } from "@/lib/calculators";
-import React from 'react';
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import React from 'react';
+import type { ReactNode } from "react";
 import CalculatorContent from "./calculator-content";
+import EmbedCalculator from "./embed-calculator";
+import { categories } from "@/lib/calculators";
+import type { Calculator } from "@/lib/types";
 
 
 interface CalculatorWrapperProps {

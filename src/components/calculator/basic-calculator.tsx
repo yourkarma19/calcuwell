@@ -1,13 +1,13 @@
 
 "use client";
 
+import { Delete, Heart } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { Delete, Heart } from "lucide-react";
 
 const getScientificButtonLayout = (isInverse: boolean) => [
     { func: '(', tooltip: 'Open Parenthesis' }, { func: ')', tooltip: 'Close Parenthesis' }, { func: 'mc', tooltip: 'Memory Clear' }, { func: 'm+', tooltip: 'Memory Add' }, { func: 'm-', tooltip: 'Memory Subtract' }, { func: 'mr', tooltip: 'Memory Recall' },
@@ -120,7 +120,7 @@ export default function BasicCalculator() {
 
   const handleEquals = () => {
     if (justEvaluated) return;
-    let fullExpression = (expression + displayValue).replace(/‑/g, "-");
+    const fullExpression = (expression + displayValue).replace(/‑/g, "-");
     if (fullExpression === '12082007+19112005') {
       setDisplayValue("I ❤️ You");
       setExpression("");
@@ -172,7 +172,7 @@ export default function BasicCalculator() {
     const handleScientificInput = (func: string) => {
     if (displayValue === "Error" && func !== 'AC') return;
     
-    let currentDisplay = (displayValue === "0" || displayValue === "Error") ? "" : displayValue;
+    const currentDisplay = (displayValue === "0" || displayValue === "Error") ? "" : displayValue;
     const value = parseFloat(displayValue);
     const angleToRad = (angle: number) => isRadians ? angle : angle * (Math.PI / 180);
     const radToAngle = (rad: number) => isRadians ? rad : rad * (180 / Math.PI);

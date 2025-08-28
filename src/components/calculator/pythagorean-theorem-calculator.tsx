@@ -2,11 +2,11 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function PythagoreanTheoremCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");

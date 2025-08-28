@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Calculator, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { SearchBar } from "@/components/search-bar";
 

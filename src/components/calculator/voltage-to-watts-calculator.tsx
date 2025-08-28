@@ -2,10 +2,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function VoltageToWattsCalculator() {
   const [voltage, setVoltage] = usePersistentState("vtw-voltage", 12); // Volts

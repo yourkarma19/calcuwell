@@ -1,11 +1,11 @@
 "use client";
 
+import { icons } from "lucide-react";
 import { useState, useMemo } from "react";
-import { Calculator } from "@/lib/types";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { icons } from "lucide-react";
+import { Calculator } from "@/lib/types";
 
 type StrippedCalculator = Omit<Calculator, 'component'>;
 

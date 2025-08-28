@@ -1,14 +1,14 @@
 
 "use client";
 
+import { Info } from "lucide-react";
 import { useState, useMemo } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Info } from "lucide-react";
-import { Input } from "../ui/input";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function RetirementCalculator() {
   const [currentAge, setCurrentAge] = usePersistentState("ret-current-age", 30);

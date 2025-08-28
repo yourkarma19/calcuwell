@@ -1,13 +1,13 @@
 
 "use client";
 
+import { Info } from "lucide-react";
 import { useState, useMemo } from "react";
-import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Info } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 // Note: In a real-world application, this data would come from an API.
 const MOCK_INFLATION_RATES: { [year: number]: number } = {
@@ -25,7 +25,7 @@ export default function InflationCalculator() {
   const { adjustedAmount, totalInflation } = useMemo(() => {
     const sYear = Math.min(startYear, endYear);
     const eYear = Math.max(startYear, endYear);
-    let currentAmount = Number(amount);
+    const currentAmount = Number(amount);
     let cumulativeInflation = 1;
 
     if (sYear >= eYear) {

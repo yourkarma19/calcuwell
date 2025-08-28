@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
-import { loadFullCalculatorData } from '@/lib/server/calculator-data'
-import { categories } from '@/lib/calculators';
 import { metadata } from '@/app/layout';
+import { categories } from '@/lib/calculators';
+import { loadFullCalculatorData } from '@/lib/server/calculator-data'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = metadata.metadataBase?.toString() || "https://calcpro.online";

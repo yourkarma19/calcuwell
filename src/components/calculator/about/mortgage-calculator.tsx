@@ -1,7 +1,7 @@
+import dynamic from "next/dynamic";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import dynamic from "next/dynamic";
 
 interface AboutMortgageCalculatorProps {
     principal: number;
