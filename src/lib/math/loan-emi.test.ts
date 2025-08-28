@@ -10,15 +10,16 @@ type EMITestCase = {
     expected: { emi: number; totalInterest: number; totalPayable: number; };
     precision?: number;
     description: string;
+    id: string;
 };
 
 // Create a test runner for our EMI calculation function
-const runTest = createTestRunner<EMITestCase>((testCase) => {
+const runTest = createTestRunner<EMITestCase>((testCase: EMITestCase) => {
     return calculateEMI(testCase.inputs.principal, testCase.inputs.annualRate, testCase.inputs.tenureInYears);
 });
 
 describe('calculateEMI', () => {
-    runTest(testVectors.cases);
+    runTest(testVectors.cases as EMITestCase[]);
 
     it('should throw an error for negative interest rates', () => {
         expect(() => calculateEMI(10000, -5, 5)).toThrow('Interest rate cannot be negative.');

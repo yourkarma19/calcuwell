@@ -14,10 +14,10 @@ type SolveFor = "voltage" | "current" | "resistance" | "power";
 export default function OhmsLawCalculator() {
   const [solveFor, setSolveFor] = usePersistentState<SolveFor>("ohms-solveFor", "voltage");
   
-  const [voltage, setVoltage] = usePersistentState("ohms-voltage", 12); // V (Volts)
-  const [current, setCurrent] = usePersistentState("ohms-current", 0.5); // I (Amps)
-  const [resistance, setResistance] = usePersistentState("ohms-resistance", 24); // R (Ohms)
-  const [power, setPower] = usePersistentState("ohms-power", 6); // P (Watts)
+  const [voltage, setVoltage] = usePersistentState<number>("ohms-voltage", 12); // V (Volts)
+  const [current, setCurrent] = usePersistentState<number>("ohms-current", 0.5); // I (Amps)
+  const [resistance, setResistance] = usePersistentState<number>("ohms-resistance", 24); // R (Ohms)
+  const [power, setPower] = usePersistentState<number>("ohms-power", 6); // P (Watts)
 
   const result = useMemo(() => {
     const V = Number(voltage);
@@ -52,13 +52,13 @@ export default function OhmsLawCalculator() {
       return { value: isNaN(result.value) ? "Result" : result.value.toFixed(4), readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20" };
     }
     
-    let value, setter;
-    if (field === 'voltage') { value = voltage; setter = setVoltage; }
-    if (field === 'current') { value = current; setter = setCurrent; }
-    if (field === 'resistance') { value = resistance; setter = setResistance; }
-    if (field === 'power') { value = power; setter = setPower; }
+    let value: number, setter: React.Dispatch<React.SetStateAction<number>>;
+    if (field === 'voltage') { [value, setter] = [voltage, setVoltage]; }
+    else if (field === 'current') { [value, setter] = [current, setCurrent]; }
+    else if (field === 'resistance') { [value, setter] = [resistance, setResistance]; }
+    else { [value, setter] = [power, setPower]; }
     
-    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter?.(Number(e.target.value)) };
+    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(Number(e.target.value)) };
   };
 
   return (
@@ -109,7 +109,7 @@ export default function OhmsLawCalculator() {
       <Card>
         <CardHeader><CardTitle>About the Ohm's Law Calculator</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-          <p>The **Ohm's Law Calculator** is an essential tool for students, hobbyists, and engineers working with electronic circuits. It simplifies the relationship between **Voltage (V)**, **Current (I)**, **Resistance (R)**, and **Power (P)**. By providing any two of these values, you can instantly find the other two, making it invaluable for circuit design, analysis, and troubleshooting.</p>
+          <p>The <strong>Ohm's Law Calculator</strong> is an essential tool for students, hobbyists, and engineers working with electronic circuits. It simplifies the relationship between <strong>Voltage (V)</strong>, <strong>Current (I)</strong>, <strong>Resistance (R)</strong>, and <strong>Power (P)</strong>. By providing any two of these values, you can instantly find the other two, making it invaluable for circuit design, analysis, and troubleshooting.</p>
           <h3>How to Use the Calculator</h3>
           <ol>
               <li>First, select the value you want to calculate (e.g., Voltage).</li>

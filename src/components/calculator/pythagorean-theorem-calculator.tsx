@@ -10,9 +10,9 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function PythagoreanTheoremCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");
-  const [sideA, setSideA] = usePersistentState("pythagorean-sideA", 3);
-  const [sideB, setSideB] = usePersistentState("pythagorean-sideB", 4);
-  const [sideC, setSideC] = usePersistentState("pythagorean-sideC", 5);
+  const [sideA, setSideA] = usePersistentState<number>("pythagorean-sideA", 3);
+  const [sideB, setSideB] = usePersistentState<number>("pythagorean-sideB", 4);
+  const [sideC, setSideC] = usePersistentState<number>("pythagorean-sideC", 5);
 
   useEffect(() => {
     setFormula("a² + b² = c²");
@@ -48,12 +48,12 @@ export default function PythagoreanTheoremCalculator({ setFormula }: { setFormul
       return { value: result !== null && isFinite(result) ? result.toFixed(4) : "Result", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20" };
     }
     
-    let value, setter;
-    if (side === 'a') { value = sideA; setter = setSideA; }
-    if (side === 'b') { value = sideB; setter = setSideB; }
-    if (side === 'c') { value = sideC; setter = setSideC; }
+    let value: number, setter: React.Dispatch<React.SetStateAction<number>>;
+    if (side === 'a') { [value, setter] = [sideA, setSideA]; }
+    else if (side === 'b') { [value, setter] = [sideB, setSideB]; }
+    else { [value, setter] = [sideC, setSideC]; }
 
-    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter?.(Number(e.target.value)) };
+    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(Number(e.target.value)) };
   };
 
   return (

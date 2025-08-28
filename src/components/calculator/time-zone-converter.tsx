@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const timezones = [
   // Americas
@@ -32,12 +33,12 @@ const timezones = [
 ];
 
 export default function TimeZoneConverter() {
-  const [fromZone, setFromZone] = usePersistentState("tz-from", "Asia/Kolkata");
-  const [toZone, setToZone] = usePersistentState("tz-to", "America/New_York");
+  const [fromZone, setFromZone] = usePersistentState<string>("tz-from", "Asia/Kolkata");
+  const [toZone, setToZone] = usePersistentState<string>("tz-to", "America/New_York");
   const [date, setDate] = useState<Date | undefined>(new Date());
-  const [time, setTime] = useState(new Date().toTimeString().slice(0,5));
+  const [time, setTime] = useState<string>(new Date().toTimeString().slice(0,5));
   
-  const [convertedTime, setConvertedTime] = useState("");
+  const [convertedTime, setConvertedTime] = useState<string>("");
 
   const handleSwap = () => {
     setFromZone(toZone);

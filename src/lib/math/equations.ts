@@ -12,21 +12,21 @@ import { complex, type Complex, pow, sqrt } from "mathjs";
 export function solveCubic(a: number, b: number, c: number, d: number): Complex[] {
   if (a === 0) {
     // This is a quadratic equation, not implemented here.
-    return [complex(NaN), complex(NaN), complex(NaN)];
+    return [complex(NaN, NaN), complex(NaN, NaN), complex(NaN, NaN)];
   }
 
   // Normalize to depressed cubic: t³ + pt + q = 0
   const p = (3 * a * c - b * b) / (3 * a * a);
   const q = (2 * b * b * b - 9 * a * b * c + 27 * a * a * d) / (27 * a * a * a);
 
-  const delta = pow(q / 2, 2) + pow(p / 3, 3);
+  const delta = pow(q / 2, 2) + pow(p / 3, 3) as number;
   
   let roots: Complex[];
 
   if (delta >= 0) {
     const sqrtDelta = sqrt(delta);
-    const u = complex(-q / 2 + sqrtDelta).cbrt();
-    const v = complex(-q / 2 - sqrtDelta).cbrt();
+    const u = cbrtComplex(-q / 2 + sqrtDelta);
+    const v = cbrtComplex(-q / 2 - sqrtDelta);
 
     roots = [
       u.add(v),
@@ -38,7 +38,7 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
     const r = sqrt(-p * p * p / 27);
     const phi = Math.atan2(sqrt(-delta), -q/2);
     
-    const u = pow(r, 1/3);
+    const u = Math.cbrt(r);
     
     roots = [
         complex(2 * u * Math.cos(phi / 3), 0),
@@ -50,4 +50,11 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
   // Convert back to roots of original equation: x = t - b / 3a
   const shift = b / (3 * a);
   return roots.map(t => t.sub(shift) as Complex);
+}
+
+function cbrtComplex(c: number | Complex): Complex {
+    if (typeof c === 'number') {
+        return complex(Math.cbrt(c), 0);
+    }
+    return pow(c, 1/3) as Complex;
 }
