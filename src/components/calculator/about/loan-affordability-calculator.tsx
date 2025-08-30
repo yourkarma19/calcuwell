@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -7,7 +6,7 @@ export default function AboutLoanAffordabilityCalculator() {
         <Card>
             <CardHeader><CardTitle>About Loan Affordability</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Loan Affordability Calculator is a crucial first step for any prospective borrower. It helps you estimate how much you can realistically borrow for a home, car, or personal expense. By analyzing your income and existing financial commitments, this tool provides a clear estimate of the maximum loan amount you can likely manage. This empowers you to set realistic goals and approach lenders with confidence.</p>
+                <p>The Loan Affordability Calculator is a crucial first step for any prospective borrower. It helps you determine how much you can realistically borrow for a home, car, or personal expense. By analyzing your income and existing financial commitments, this tool provides a clear estimate of the maximum loan amount you can likely manage. This empowers you to set realistic goals and approach lenders with confidence.</p>
 
                 <h3>How to Use the Calculator</h3>
                 <ol>

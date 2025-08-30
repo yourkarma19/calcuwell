@@ -2,7 +2,7 @@
 "use client";
 
 import { AlertCircle } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";

@@ -2,7 +2,7 @@
 "use client";
 
 import { addDays, subDays, format } from "date-fns";
-import { useState, useMemo, useEffect } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
