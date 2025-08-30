@@ -6,7 +6,7 @@ export default function AboutPetCareCostCalculator() {
         <Card>
             <CardHeader><CardTitle>The True Cost of Owning a Pet</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Bringing a pet into your life is a joyful experience, but it's also a significant financial commitment. Our **Pet Care Cost Calculator** helps you estimate the monthly and yearly expenses associated with owning a pet. By planning ahead, you can ensure you're financially prepared to give your furry friend the best care possible.</p>
+                <p>Bringing a pet into your life is a joyful experience, but it&#39;s also a significant financial commitment. Our **Pet Care Cost Calculator** helps you estimate the monthly and yearly expenses associated with owning a pet. By planning ahead, you can ensure you&#39;re financially prepared to give your furry friend the best care possible.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Start by selecting your **Pet Type**.</li>
@@ -30,14 +30,14 @@ export default function AboutPetCareCostCalculator() {
                                 <li>**Buy food in bulk:** Larger bags are often cheaper per kilogram.</li>
                                 <li>**Prioritize preventative care:** Regular vet check-ups and vaccinations can prevent more expensive health issues later.</li>
                                 <li>**DIY grooming:** Learn to do basic grooming like brushing and nail trimming at home.</li>
-                                <li>**Consider pet insurance:** While it's a monthly cost, it can protect you from large, unexpected vet bills.</li>
+                                <li>**Consider pet insurance:** While it&#39;s a monthly cost, it can protect you from large, unexpected vet bills.</li>
                             </ul>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Does the cost vary much by breed?</AccordionTrigger>
                         <AccordionContent>
-                           Yes, significantly. Larger dog breeds eat more food. Some breeds are prone to specific health issues, which can lead to higher vet bills. Long-haired breeds may require more frequent and expensive grooming. It's a good idea to research the specific needs of a breed before bringing one home.
+                           Yes, significantly. Larger dog breeds eat more food. Some breeds are prone to specific health issues, which can lead to higher vet bills. Long-haired breeds may require more frequent and expensive grooming. It&#39;s a good idea to research the specific needs of a breed before bringing one home.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
@@ -47,3 +47,4 @@ export default function AboutPetCareCostCalculator() {
 }
 
     
+

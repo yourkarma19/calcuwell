@@ -71,6 +71,9 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@babel/generator": "^7.24.7",
+    "@babel/parser": "^7.24.7",
+    "@babel/traverse": "^7.24.7",
     "@playwright/test": "^1.45.3",
     "@tailwindcss/typography": "^0.5.13",
     "@testing-library/jest-dom": "^6.4.8",
@@ -89,6 +92,7 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "glob": "^10.4.2",
     "husky": "^8.0.0",
     "jsdom": "^24.1.1",
     "lint-staged": "^15.2.7",
