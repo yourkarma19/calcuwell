@@ -25,8 +25,8 @@ export default function PartialFractionCalculator() {
             
             setResult(simplified.expression.toString());
 
-        } catch (e) {
-            setError((e as Error).message || "Failed to parse or decompose the expression.");
+        } catch (e: unknown) {
+            setError((e instanceof Error ? e.message : String(e)) || "Failed to parse or decompose the expression.");
             setResult(null);
         }
     };

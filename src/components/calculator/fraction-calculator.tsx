@@ -28,10 +28,22 @@ export default function FractionCalculator() {
     let resN: number, resD: number;
 
     switch (operator) {
-      case "+": [resN, resD] = [n1 * d2 + n2 * d1, d1 * d2]; break;
-      case "-": [resN, resD] = [n1 * d2 - n2 * d1, d1 * d2]; break;
-      case "*": [resN, resD] = [n1 * n2, d1 * d2]; break;
-      case "/": [resN, resD] = [n1 * d2, d1 * n2]; break;
+      case "+": {
+        [resN, resD] = [n1 * d2 + n2 * d1, d1 * d2];
+        break;
+      }
+      case "-": {
+        [resN, resD] = [n1 * d2 - n2 * d1, d1 * d2];
+        break;
+      }
+      case "*": {
+        [resN, resD] = [n1 * n2, d1 * d2];
+        break;
+      }
+      case "/": {
+        [resN, resD] = [n1 * d2, d1 * n2];
+        break;
+      }
       default: return { num: "Error", den: "" };
     }
     

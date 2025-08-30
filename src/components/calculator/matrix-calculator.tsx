@@ -63,7 +63,7 @@ export default function MatrixCalculator() {
                 </div>
                 <div className="space-y-2">
                     <Label>Operation</Label>
-                     <RadioGroup value={operation} onValueChange={(v) => setOperation(v as "add" | "subtract")} className="flex items-center space-x-4 pt-2">
+                     <RadioGroup value={operation} onValueChange={(v: "add" | "subtract") => setOperation(v)} className="flex items-center space-x-4 pt-2">
                         <div className="flex items-center space-x-2"><RadioGroupItem value="add" id="add" /><Label htmlFor="add">Addition</Label></div>
                         <div className="flex items-center space-x-2"><RadioGroupItem value="subtract" id="sub" /><Label htmlFor="sub">Subtraction</Label></div>
                     </RadioGroup>

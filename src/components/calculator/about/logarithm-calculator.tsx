@@ -1,5 +1,3 @@
-"use client";
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -14,8 +12,8 @@ export default function AboutLogarithmCalculator() {
 
         <h3>How to Use the Logarithm Calculator</h3>
         <ol>
-            <li>Enter the **Number (x)** you want to find the logarithm of.</li>
-            <li>Enter the **Base (b)** for the logarithm.</li>
+            <li>Enter the <strong>Number (x)</strong> you want to find the logarithm of.</li>
+            <li>Enter the <strong>Base (b)</strong> for the logarithm.</li>
         </ol>
         <p>The result of log(x) to the base(b) will be calculated and displayed instantly.</p>
 
@@ -30,7 +28,7 @@ export default function AboutLogarithmCalculator() {
           <AccordionItem value="item-2">
             <AccordionTrigger>Common Log vs. Natural Log</AccordionTrigger>
             <AccordionContent>
-              The **common logarithm (log)** uses base 10 and is common in science. The **natural logarithm (ln)** uses base *e* (about 2.718) and is important in math, physics, and finance for describing continuous growth.
+              The <strong>common logarithm (log)</strong> uses base 10 and is common in science. The <strong>natural logarithm (ln)</strong> uses base *e* (about 2.718) and is important in math, physics, and finance for describing continuous growth.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

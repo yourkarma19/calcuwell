@@ -48,8 +48,8 @@ export default function IpSubnetCalculator() {
         wildcardMask: longToIp(~mask),
         error: null
       };
-    } catch (e) {
-      return { error: (e as Error).message || "Invalid IP Address or CIDR" };
+    } catch (e: unknown) {
+      return { error: (e instanceof Error ? e.message : String(e)) || "Invalid IP Address or CIDR" };
     }
   }, [ipAddress, cidr]);
 

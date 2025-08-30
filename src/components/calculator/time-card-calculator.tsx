@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo } from "react";
@@ -39,7 +38,7 @@ export default function TimeCardCalculator() {
   const handleDayChange = (index: number, field: keyof Day, value: string | number) => {
     const newWeek = [...week];
     const day = { ...newWeek[index] };
-    (day as unknown as Record<keyof Day, string | number>)[field] = value;
+    (day as Record<keyof Day, string | number>)[field] = value;
     newWeek[index] = day;
     setWeek(newWeek);
   };

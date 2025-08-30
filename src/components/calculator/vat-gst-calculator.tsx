@@ -76,7 +76,7 @@ export default function VatGstCalculator({ calculatorName }: { calculatorName: s
             <Label>Does the initial price include tax?</Label>
             <RadioGroup
               value={priceIncludesTax}
-              onValueChange={(v: string) => setPriceIncludesTax(v as "yes" | "no")}
+              onValueChange={(v: "yes" | "no") => setPriceIncludesTax(v)}
               className="flex items-center space-x-4 pt-2"
             >
               <div className="flex items-center space-x-2">

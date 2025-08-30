@@ -53,7 +53,7 @@ export default function UnitConverter() {
     if (isNaN(numValue)) return "";
 
     if (conversionType === "temperature") {
-        let celsiusValue;
+        let celsiusValue: number | undefined;
         if (fromUnit === 'celsius') celsiusValue = numValue;
         if (fromUnit === 'fahrenheit') celsiusValue = (numValue - 32) * 5/9;
         if (fromUnit === 'kelvin') celsiusValue = numValue - 273.15;

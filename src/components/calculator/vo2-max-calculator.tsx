@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo } from "react";
@@ -30,7 +29,7 @@ export default function Vo2MaxCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
               <Label>Gender</Label>
-              <RadioGroup value={gender} onValueChange={(v) => setGender(v as "male" | "female")} className="flex items-center space-x-4 pt-2">
+              <RadioGroup value={gender} onValueChange={(v: "male" | "female") => setGender(v)} className="flex items-center space-x-4 pt-2">
                   <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
                   <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
               </RadioGroup>

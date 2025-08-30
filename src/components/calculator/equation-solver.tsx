@@ -50,7 +50,7 @@ export default function EquationSolver() {
           <CardDescription>Solve linear and quadratic equations.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Select value={mode} onValueChange={(m) => setMode(m as 'linear' | 'quadratic')}>
+          <Select value={mode} onValueChange={(m: 'linear' | 'quadratic') => setMode(m)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="linear">Linear Equation (ax + b = c)</SelectItem>
@@ -71,7 +71,7 @@ export default function EquationSolver() {
           {mode === 'quadratic' && (
              <div className="grid grid-cols-3 gap-2 items-center">
               <Input type="number" value={qa} onChange={e => setQa(Number(e.target.value))}/>
-              <Label className="text-center text-lg">x² +</Label>
+               <Label className="text-center text-lg">x² +</Label>
               <Input type="number" value={qb} onChange={e => setQb(Number(e.target.value))}/>
                <Label className="text-center text-lg">x +</Label>
               <Input type="number" value={qc} onChange={e => setQc(Number(e.target.value))}/>

@@ -1,6 +1,3 @@
-
-"use client";
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -9,7 +6,7 @@ export default function AboutProportionCalculator() {
       <Card>
           <CardHeader><CardTitle>About Proportions</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our <strong>Proportion Calculator</strong> is a powerful tool for solving equations involving two equivalent ratios. A proportion is a statement that two fractions are equal, written as A/B = C/D. This calculator allows you to find the missing value in the equation, making it invaluable for students, cooks, engineers, and anyone who needs to scale quantities.</p>
+            <p>Our **Proportion Calculator** is a powerful tool for solving equations involving two equivalent ratios. A proportion is a statement that two fractions are equal, written as A/B = C/D. This calculator allows you to find the missing value in the equation, making it invaluable for students, cooks, engineers, and anyone who needs to scale quantities.</p>
             
             <h3>How to Use the Calculator</h3>
             <ol>

@@ -9,8 +9,8 @@ export default function AboutPetAgeCalculator() {
             <p>The **Pet Age Calculator** is a fun and easy way to translate your dog&apos;s or cat&apos;s age into equivalent human years. While the old &quot;7 dog years to 1 human year&quot; rule is a popular myth, the aging process for our pets is more complex. This tool uses a more modern and widely accepted method to give you a better understanding of your pet&apos;s life stage.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Select the **Pet Type** (Dog or Cat).</li>
-                <li>Enter your pet&apos;s current **Age** in years.</li>
+                <li>Select the <strong>Pet Type</strong> (Dog or Cat).</li>
+                <li>Enter your pet&apos;s current <strong>Age</strong> in years.</li>
             </ol>
             <p>The calculator will instantly show you their estimated age in human years, helping you better appreciate their current needs and life stage.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>

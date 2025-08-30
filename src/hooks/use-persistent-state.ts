@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, Dispatch, SetStateAction, useCallback } from "react";
@@ -8,39 +7,29 @@ function usePersistentState<T>(
     defaultValue: T,
     reviver?: (value: string) => T
 ): [T, Dispatch<SetStateAction<T>>] {
-    const [state, setState] = useState<T>(defaultValue);
-
-    useEffect(() => {
+    const [state, setState] = useState<T>(() => {
         try {
-            const item = window.localStorage.getItem(key);
+            const item = typeof window !== 'undefined' ? window.localStorage.getItem(key) : null;
             if (item) {
                 const parsed = JSON.parse(item);
-                setState(reviver ? reviver(parsed) : parsed);
-            } else {
-                setState(defaultValue);
+                return reviver ? reviver(parsed) : parsed;
             }
         } catch (error) {
             console.error(`Error reading localStorage key “${key}”:`, error);
-            setState(defaultValue);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [key]);
+        return defaultValue;
+    });
 
-    const setPersistentState: Dispatch<SetStateAction<T>> = useCallback((newValue) => {
-        setState(prevState => {
-            const resolvedValue = typeof newValue === 'function' ? (newValue as (prevState: T) => T)(prevState) : newValue;
-            try {
-                if (resolvedValue !== undefined && resolvedValue !== null) {
-                    window.localStorage.setItem(key, JSON.stringify(resolvedValue));
-                }
-            } catch (error) {
-                console.error(`Error setting localStorage key “${key}”:`, error);
-            }
-            return resolvedValue;
-        });
-    }, [key]);
+    useEffect(() => {
+        try {
+            const serializedState = JSON.stringify(state);
+            window.localStorage.setItem(key, serializedState);
+        } catch (error) {
+            console.error(`Error setting localStorage key “${key}”:`, error);
+        }
+    }, [key, state]);
 
-    return [state, setPersistentState];
+    return [state, setState];
 }
 
 export default usePersistentState;

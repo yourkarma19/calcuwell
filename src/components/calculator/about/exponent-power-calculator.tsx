@@ -4,9 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutExponentPowerCalculator() {
     return (
         <Card>
-          <CardHeader><CardTitle>About Exponents & Powers</CardTitle></CardHeader>
+          <CardHeader><CardTitle>About Exponents &amp; Powers</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The <strong>Exponent & Power Calculator</strong> is a fundamental mathematical tool that helps you compute the result of a number raised to a certain power. This operation, known as exponentiation, is essential in many fields, including finance (for compound interest), science (for exponential growth), and computer science (for data scaling).</p>
+            <p>The <strong>Exponent &amp; Power Calculator</strong> is a fundamental mathematical tool that helps you compute the result of a number raised to a certain power. This operation, known as exponentiation, is essential in many fields, including finance (for compound interest), science (for exponential growth), and computer science (for data scaling).</p>
             
             <h3>How to Use the Calculator</h3>
             <ol>
