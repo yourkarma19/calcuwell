@@ -66,7 +66,7 @@ export default function ExponentPowerCalculator() {
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" aria-live="polite">
             <p className="text-sm text-muted-foreground">{base} ^ {exponent} is:</p>
             <p className="text-4xl font-bold font-headline text-primary my-2 break-words">
               {result}
