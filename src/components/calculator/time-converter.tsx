@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
@@ -54,7 +55,7 @@ export default function TimeConverter() {
       <Card>
         <CardHeader>
           <CardTitle>Time Converter</CardTitle>
-          <CardDescription>Convert between various units of time, from seconds to years. Note that 'month' and 'year' are average approximations.</CardDescription>
+          <CardDescription>Convert between various units of time, from seconds to years. Note that &apos;month&apos; and &apos;year&apos; are average approximations.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col md:flex-row items-center gap-4">
@@ -95,10 +96,10 @@ export default function TimeConverter() {
             <CardTitle>About the Time Converter</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Time Converter** is a versatile tool that allows you to quickly and accurately convert between various units of time. Whether you're a student working on a physics problem, a project manager planning a timeline, or just curious, this calculator simplifies time-related conversions from seconds to years.</p>
+            <p>Our **Time Converter** is a versatile tool that allows you to quickly and accurately convert between various units of time. Whether you&apos;re a student working on a physics problem, a project manager planning a timeline, or just curious, this calculator simplifies time-related conversions from seconds to years.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter the numeric value you want to convert in the "From" field.</li>
+                <li>Enter the numeric value you want to convert in the &quot;From&quot; field.</li>
                 <li>Select the starting unit of time (e.g., Hours).</li>
                 <li>Select the target unit you want to convert to (e.g., Seconds).</li>
             </ol>
@@ -114,13 +115,13 @@ export default function TimeConverter() {
                 <AccordionItem value="item-2">
                     <AccordionTrigger>How many seconds are in a day?</AccordionTrigger>
                     <AccordionContent>
-                       There are 60 seconds in a minute, 60 minutes in an hour, and 24 hours in a day. Therefore, there are `60 x 60 x 24 = 86,400` seconds in one day. This is the base value used for the 'days' unit in this converter.
+                       There are 60 seconds in a minute, 60 minutes in an hour, and 24 hours in a day. Therefore, there are `60 x 60 x 24 = 86,400` seconds in one day. This is the base value used for the &apos;days&apos; unit in this converter.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                     <AccordionTrigger>What is a leap second?</AccordionTrigger>
                     <AccordionContent>
-                       A leap second is a one-second adjustment that is occasionally applied to Coordinated Universal Time (UTC) in order to keep its time of day close to the mean solar time. It's an irregularity that this calculator does not account for, as it's not predictable in the same way as a leap year.
+                       A leap second is a one-second adjustment that is occasionally applied to Coordinated Universal Time (UTC) in order to keep its time of day close to the mean solar time. It&apos;s an irregularity that this calculator does not account for, as it&apos;s not predictable in the same way as a leap year.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

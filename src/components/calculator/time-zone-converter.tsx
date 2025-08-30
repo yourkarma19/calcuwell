@@ -1,3 +1,4 @@
+
 "use client";
 
 import { formatInTimeZone, fromZonedTime } from "date-fns-tz";
@@ -117,8 +118,8 @@ export default function TimeZoneConverter() {
           
           <h3>How to Use the Calculator</h3>
           <ol>
-              <li>In the "From" section, select your starting time zone, date, and time.</li>
-              <li>In the "To" section, select the time zone you want to convert to.</li>
+              <li>In the &quot;From&quot; section, select your starting time zone, date, and time.</li>
+              <li>In the &quot;To&quot; section, select the time zone you want to convert to.</li>
               <li>The converted date and time will be displayed instantly.</li>
           </ol>
 

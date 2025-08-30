@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -62,7 +63,7 @@ export default function WeddingBudgetCalculator() {
               <div className="space-y-2"><Label htmlFor="venue">Venue Cost</Label><Input id="venue" type="number" value={venue} onChange={e => setVenue(Number(e.target.value))} /></div>
               <div className="space-y-2"><Label htmlFor="catering">Catering (per plate)</Label><Input id="catering" type="number" value={cateringPerPlate} onChange={e => setCateringPerPlate(Number(e.target.value))} /></div>
               <div className="space-y-2"><Label htmlFor="photo">Photography</Label><Input id="photo" type="number" value={photography} onChange={e => setPhotography(Number(e.target.value))} /></div>
-              <div className="space-y-2"><Label htmlFor="dress">Dress & Attire</Label><Input id="dress" type="number" value={dress} onChange={e => setDress(Number(e.target.value))} /></div>
+              <div className="space-y-2"><Label htmlFor="dress">Dress &amp; Attire</Label><Input id="dress" type="number" value={dress} onChange={e => setDress(Number(e.target.value))} /></div>
               <div className="space-y-2"><Label htmlFor="decor">Decorations</Label><Input id="decor" type="number" value={decor} onChange={e => setDecor(Number(e.target.value))} /></div>
               <div className="space-y-2"><Label htmlFor="misc">Miscellaneous</Label><Input id="misc" type="number" value={misc} onChange={e => setMisc(Number(e.target.value))} /></div>
           </div>
@@ -113,7 +114,7 @@ export default function WeddingBudgetCalculator() {
                 <ol>
                     <li>Start by setting the **Number of Guests** you plan to invite. This is the biggest factor affecting your costs.</li>
                     <li>Enter your estimated costs for each category, such as the **Venue**, **Catering**, **Photography**, and **Decor**.</li>
-                    <li>Use the "Miscellaneous" field to account for other expenses like invitations, entertainment, or wedding rings.</li>
+                    <li>Use the &quot;Miscellaneous&quot; field to account for other expenses like invitations, entertainment, or wedding rings.</li>
                 </ol>
                 <p>The calculator will instantly update the total estimated cost and show a visual breakdown in the pie chart.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
@@ -133,7 +134,7 @@ export default function WeddingBudgetCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>How much should we budget for unexpected costs?</AccordionTrigger>
                         <AccordionContent>
-                           It's wise to set aside about 5-10% of your total budget as a contingency fund. This will help you cover any unexpected expenses that arise without adding stress. The "Miscellaneous" category in our calculator can be used for this.
+                           It&apos;s wise to set aside about 5-10% of your total budget as a contingency fund. This will help you cover any unexpected expenses that arise without adding stress. The &quot;Miscellaneous&quot; category in our calculator can be used for this.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
