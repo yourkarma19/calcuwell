@@ -164,7 +164,7 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
                   <span className="text-muted-foreground">Time Saved:</span>
                   <span className="font-semibold">{timeSaved.years} yr, {timeSaved.months} mo</span>
               </div>
-              <div className="flex justify-between font-bold text-green-600">
+              <div className="flex justify-between font-bold text-green-600 dark:text-green-400">
                   <span className="text-muted-foreground">Interest Saved:</span>
                   <span className="font-semibold">{formatCurrency(interestSaved)}</span>
               </div>

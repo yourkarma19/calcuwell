@@ -1,5 +1,9 @@
 
-export type CalculatorCategory = "Math" | "Finance" | "Health" | "Conversions" | "Date & Time" | "Programming" | "Geometry & Engineering" | "Miscellaneous" | "Lifestyle" | "Blog";
+import type { categories } from './calculators';
+
+type CategoryName = typeof categories[number]['name'];
+
+export type CalculatorCategory = CategoryName | "Blog";
 
 export interface Calculator {
   slug: string;
@@ -14,7 +18,7 @@ export interface Calculator {
 }
 
 export interface Category {
-    name: CalculatorCategory;
+    name: CategoryName;
     slug: string;
     description: string;
     iconName:string; 

@@ -2,7 +2,6 @@
 "use client";
 
 import { ArrowDown } from "lucide-react";
-import { useSearchParams } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
 import ExportShareControls from "./export-share-controls";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,6 @@ import { calculateAge, Age } from "@/lib/math/date";
 
 
 export default function AgeCalculator({ calculatorName }: { calculatorName: string }) {
-  const searchParams = useSearchParams();
   const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => value ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
   
@@ -25,17 +23,6 @@ export default function AgeCalculator({ calculatorName }: { calculatorName: stri
     }
   }, [dateOfBirth]);
 
-  useEffect(() => {
-    const dobParam = searchParams.get('dob');
-    if (dobParam) {
-      const parsedDate = new Date(dobParam);
-      if (!isNaN(parsedDate.getTime())) {
-        setDateOfBirth(parsedDate);
-      }
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams]);
-  
   useEffect(() => {
     handleCalculateAge();
   }, [handleCalculateAge]);
