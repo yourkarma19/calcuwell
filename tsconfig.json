@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "ES2022",
@@ -28,6 +29,7 @@
     "src/**/*.tsx",
     ".next/types/**/*.ts",
     "vitest.config.ts",
+    "vitest.setup.ts",
     "playwright.config.ts",
     "tests/**/*.ts"
   ],
