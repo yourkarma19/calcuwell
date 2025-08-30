@@ -9,7 +9,7 @@ export interface Calculator {
   slug: string;
   name: string;
   description: string;
-  category: CalculatorCategory;
+  category: CategoryName;
   iconName: string; 
   tags?: string[];
   formula?: string;

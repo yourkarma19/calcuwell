@@ -35,7 +35,9 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
   }, [principal, rate, tenure]);
   
   useEffect(() => {
-    setChildProps({ principal, totalInterest });
+    if (setChildProps) {
+      setChildProps({ principal, totalInterest });
+    }
   }, [principal, totalInterest, setChildProps]);
 
 
