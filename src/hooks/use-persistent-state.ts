@@ -6,7 +6,7 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 function usePersistentState<T>(
   key: string,
   defaultValue: T,
-  reviver?: (value: any) => T,
+  reviver?: (value: unknown) => T,
 ): [T, Dispatch<SetStateAction<T>>] {
   const [state, setState] = useState<T>(() => {
     try {
