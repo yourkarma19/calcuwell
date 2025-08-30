@@ -65,11 +65,11 @@ export default function DateDifferenceCalculator() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Start Date</Label>
-              <DatePicker date={startDate} setDate={setStartDate} disabled={(_date) => false} />
+              <DatePicker date={startDate} setDate={setStartDate} disabled={(_date: Date) => false} />
             </div>
             <div className="space-y-2">
               <Label>End Date</Label>
-              <DatePicker date={endDate} setDate={setEndDate} disabled={(_date) => false} />
+              <DatePicker date={endDate} setDate={setEndDate} disabled={(_date: Date) => false} />
             </div>
           </div>
           <Button onClick={handleCalculate} className="w-full">

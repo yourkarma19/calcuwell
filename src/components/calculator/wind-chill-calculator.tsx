@@ -51,7 +51,7 @@ export default function WindChillCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Temperature Unit</Label>
-            <Select value={unit} onValueChange={v => setUnit(v as Unit)}>
+            <Select value={unit} onValueChange={(v) => setUnit(v as Unit)}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                     <SelectItem value="fahrenheit">Fahrenheit (°F) / mph</SelectItem>

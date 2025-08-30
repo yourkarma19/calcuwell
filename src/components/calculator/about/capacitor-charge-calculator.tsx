@@ -6,7 +6,7 @@ export default function AboutCapacitorChargeCalculator() {
         <Card>
             <CardHeader><CardTitle as="h2">About RC Circuits</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>This calculator helps you understand what happens in a simple RC circuit, which is a circuit with a resistor and a capacitor. When you apply voltage, the capacitor starts to store energy, or "charge." This tool shows you how much charge it has and the current flowing at any given time.</p>
+                <p>This calculator helps you understand what happens in a simple RC circuit, which is a circuit with a resistor and a capacitor. When you apply voltage, the capacitor starts to store energy, or &quot;charge.&quot; This tool shows you how much charge it has and the current flowing at any given time.</p>
                 <h2>How to Use It</h2>
                 <p>Enter the voltage of your power source, the resistance, the capacitance, and the amount of time that has passed since the circuit was turned on. The calculator will do the rest.</p>
                 
@@ -21,7 +21,7 @@ export default function AboutCapacitorChargeCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What is the time constant (τ)?</AccordionTrigger>
                         <AccordionContent>
-                            The time constant (tau, or τ) tells you how quickly the capacitor charges. It's calculated by multiplying the resistance by the capacitance (τ = R × C). After one time constant, the capacitor is about 63.2% charged. It is considered fully charged after about five time constants.
+                            The time constant (tau, or τ) tells you how quickly the capacitor charges. It&apos;s calculated by multiplying the resistance by the capacitance (τ = R × C). After one time constant, the capacitor is about 63.2% charged. It is considered fully charged after about five time constants.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

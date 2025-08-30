@@ -41,7 +41,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Radius vs. Diameter</AccordionTrigger>
                     <AccordionContent>
-                        The <strong>radius (r)</strong> is the distance from the center of the sphere to any point on its surface. The <strong>diameter (d)</strong> is the distance straight through the center of the sphere, from one side to the other. The diameter is always twice the length of the radius (d = 2r).
+                        The **radius (r)** is the distance from the center of the sphere to any point on its surface. The **diameter (d)** is the distance straight through the center of the sphere, from one side to the other. The diameter is always twice the length of the radius (d = 2r).
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

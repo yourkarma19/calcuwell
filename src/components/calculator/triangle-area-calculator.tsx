@@ -59,11 +59,11 @@ export default function TriangleAreaCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Formula Type</Label>
-            <Select value={formula} onValueChange={v => setFormula(v as FormulaType)}>
+            <Select value={formula} onValueChange={(v) => setFormula(v as FormulaType)}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="base-height">Base & Height (Area = 0.5 * b * h)</SelectItem>
-                <SelectItem value="sss">3 Sides (Heron's Formula)</SelectItem>
+                <SelectItem value="sss">3 Sides (Heron&apos;s Formula)</SelectItem>
                 <SelectItem value="sas">2 Sides & Included Angle (Area = 0.5 * a * b * sin(C))</SelectItem>
               </SelectContent>
             </Select>

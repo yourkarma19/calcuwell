@@ -39,7 +39,7 @@ export default function WeekNumberCalculator() {
           </div>
           <div className="space-y-2">
               <Label>Week Definition</Label>
-              <RadioGroup value={weekDefinition} onValueChange={(v: string) => setWeekDefinition(v as "sunday" | "monday" | "iso")} className="flex items-center space-x-4 pt-2">
+              <RadioGroup value={weekDefinition} onValueChange={(v) => setWeekDefinition(v as "sunday" | "monday" | "iso")} className="flex items-center space-x-4 pt-2">
                   <div className="flex items-center space-x-2"><RadioGroupItem value="iso" id="iso" /><Label htmlFor="iso">ISO 8601</Label></div>
                   <div className="flex items-center space-x-2"><RadioGroupItem value="sunday" id="sunday" /><Label htmlFor="sunday">Starts on Sunday</Label></div>
                   <div className="flex items-center space-x-2"><RadioGroupItem value="monday" id="monday" /><Label htmlFor="monday">Starts on Monday</Label></div>

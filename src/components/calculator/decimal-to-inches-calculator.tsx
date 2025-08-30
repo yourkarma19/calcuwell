@@ -125,7 +125,7 @@ export default function DecimalToInchesCalculator() {
             <div className="grid grid-cols-2 gap-4 text-sm pt-4 border-t">
               <div>
                 <p className="font-semibold text-muted-foreground">As Feet, Inches, and Fraction</p>
-                <p>{result.feet}' {result.inches}{result.simpleNumerator > 0 ? ` ${result.simpleNumerator}/${result.simpleDenominator}` : ''}&quot;</p>
+                <p>{result.feet}&apos; {result.inches}{result.simpleNumerator > 0 ? ` ${result.simpleNumerator}/${result.simpleDenominator}` : ''}&quot;</p>
               </div>
                <div>
                 <p className="font-semibold text-muted-foreground">As a Simple Fraction</p>
