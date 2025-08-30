@@ -52,8 +52,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 263.4 95.3% 76.5%;
-    --primary-foreground: 263.4 95.3% 20%;
+    --primary: 265 91% 65%; /* Darker Purple */
+    --primary-foreground: 265 91% 15%;
 
     --secondary: 240 4% 15%;
     --secondary-foreground: 0 0% 98%;
@@ -69,9 +69,9 @@
 
     --border: 240 4% 15%;
     --input: 240 4% 15%;
-    --ring: 263.4 95.3% 76.5%;
+    --ring: 265 91% 65%;
     
-    --chart-1: 262 83% 58%;
+    --chart-1: 265 91% 65%;
     --chart-2: 142 71% 45%;
     --chart-3: 22 91% 55%;
     --chart-4: 217 91% 60%;
