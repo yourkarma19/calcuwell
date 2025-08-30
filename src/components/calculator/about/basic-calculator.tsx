@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export default function AboutBasicCalculator() {
   return (
@@ -7,10 +7,10 @@ export default function AboutBasicCalculator() {
         <CardTitle>About the Calculator</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground">
+        <CardDescription>
           This versatile calculator includes both basic arithmetic and advanced
           scientific functions to suit all your needs.
-        </p>
+        </CardDescription>
       </CardContent>
     </Card>
   );

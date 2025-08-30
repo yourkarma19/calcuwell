@@ -229,7 +229,7 @@ export default function BasicCalculator() {
         <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || (activeTab === 'sci' ? 'Scientific Mode' : ' ')}</div>
         <div className="h-2/3 w-full flex items-end justify-end">
             <div
-                
+                aria-live="polite"
                 className={cn(
                     "w-full text-right font-mono fluid-display-font", 
                     displayValue === "I ❤️ You" && "text-pink-500"
