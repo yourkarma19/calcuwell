@@ -59,8 +59,8 @@ export default function ExponentPowerCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>Understanding Exponents</CardTitle></CardHeader>
-          <CardContent className="prose dark:prose-invert max-w-none">
+          <CardHeader><CardTitle>About the Exponent Calculator</CardTitle></CardHeader>
+          <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What does an exponent mean?</AccordionTrigger>

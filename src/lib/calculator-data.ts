@@ -1,4 +1,3 @@
-
 import type { Calculator } from "@/lib/types";
 
 // This file is separate to avoid bloating the initial bundle of pages
@@ -172,6 +171,16 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog or cat.",
     formula: "Annual Cost = (Food × 12) + (Vet × Visits) + ...",
+  },
+  {
+    slug: "credit-card-payoff-calculator",
+    name: "Credit Card Payoff Calculator",
+    description: "Plan how to pay off your credit card debt.",
+    category: "Finance",
+    iconName: "CreditCard",
+    metaDescription:
+      "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
+    formula: "N = -log(1 - (B*r)/P) / log(1+r)",
   },
 
   // Math & Logic
@@ -524,15 +533,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     iconName: "Briefcase",
     metaDescription:
       "Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.",
-  },
-  {
-    slug: "credit-card-payoff-calculator",
-    name: "Credit Card Payoff Calculator",
-    description: "Plan how to pay off your credit card debt.",
-    category: "Finance",
-    iconName: "CreditCard",
-    metaDescription:
-      "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
   },
 
   // Health & Fitness
