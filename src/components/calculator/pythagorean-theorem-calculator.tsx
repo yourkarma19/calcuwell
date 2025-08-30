@@ -19,9 +19,9 @@ export default function PythagoreanTheoremCalculator() {
     const b = Number(sideB);
     const c = Number(sideC);
 
-    if (a <= 0 && solveFor !== 'a' ) return { result: null, error: "Side 'a' must be positive."};
-    if (b <= 0 && solveFor !== 'b' ) return { result: null, error: "Side 'b' must be positive."};
-    if (c <= 0 && solveFor !== 'c' ) return { result: null, error: "Side 'c' must be positive."};
+    if (a < 0 || b < 0 || c < 0) {
+        return { result: null, error: "Side lengths cannot be negative." };
+    }
 
     if (solveFor === 'c') {
       if (a > 0 && b > 0) return { result: Math.sqrt(a * a + b * b), error: null };
@@ -39,6 +39,14 @@ export default function PythagoreanTheoremCalculator() {
     return { result: null, error: null };
   }, [solveFor, sideA, sideB, sideC]);
 
+  const handleInputChange = (setter: (value: number | "") => void, value: string) => {
+      if(value === "") {
+          setter("");
+      } else {
+          setter(Number(value));
+      }
+  }
+
   const getInputProps = (side: "a" | "b" | "c") => {
     let value: number | "", setter: (value: number | "") => void;
     if (side === 'a') { [value, setter] = [sideA, setSideA]; }
@@ -46,10 +54,10 @@ export default function PythagoreanTheoremCalculator() {
     else { [value, setter] = [sideC, setSideC]; }
     
     if (side === solveFor) {
-      return { value: result !== null && isFinite(result) ? result.toFixed(4) : "", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20", placeholder: "Result" };
+      return { value: result !== null && isFinite(result) ? result.toFixed(4) : "", readOnly: true, className: "font-bold text-primary bg-primary/10 border-primary/20", placeholder: "Result", 'aria-label': `Side ${side} (calculated)` };
     }
     
-    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setter(e.target.value === '' ? '' : Number(e.target.value)) };
+    return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(setter, e.target.value), 'aria-label': `Side ${side}` };
   };
 
   return (
