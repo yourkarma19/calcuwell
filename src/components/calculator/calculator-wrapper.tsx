@@ -10,7 +10,6 @@ import EmbedCalculator from "./embed-calculator";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { categories } from "@/lib/calculators";
 import type { Calculator } from "@/lib/types";
-import { cn } from "@/lib/utils";
 
 interface CalculatorWrapperProps {
   children: ReactNode;

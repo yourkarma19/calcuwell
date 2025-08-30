@@ -1,3 +1,4 @@
+
 import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import Link from "next/link";
 import CalculatorCard from "@/components/calculator/calculator-card";
@@ -36,8 +37,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto px-4 py-12">
-        <section className="text-center py-16 md:py-24">
+      <div className="container mx-auto px-4 py-8">
+        <section className="text-center py-12 md:py-20">
           <h1 className="text-4xl md:text-6xl font-bold font-headline bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
             CalcPro
           </h1>

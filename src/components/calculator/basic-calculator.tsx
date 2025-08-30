@@ -225,11 +225,11 @@ export default function BasicCalculator() {
   }
 
   const renderDisplay = () => (
-    <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden">
+    <div className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden" aria-label="Calculator display">
         <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">{expression || (activeTab === 'sci' ? 'Scientific Mode' : ' ')}</div>
         <div className="h-2/3 w-full flex items-end justify-end">
             <div
-                aria-label="Calculator display"
+                
                 className={cn(
                     "w-full text-right font-mono fluid-display-font", 
                     displayValue === "I ❤️ You" && "text-pink-500"

@@ -159,7 +159,7 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
               </div>
           </div>
           {(extraMonthlyPayment > 0 || extraYearlyPayment > 0) && interestSaved > 0 && (
-            <div className="space-y-2 text-sm text-left border-t pt-4 mt-4">
+            <div className="space-y-2 text-sm text-left border-t pt-4 mt-4" aria-live="polite">
               <p className="font-bold text-center text-primary">With Extra Payments</p>
                <div className="flex justify-between">
                   <span className="text-muted-foreground">New Loan Term:</span>

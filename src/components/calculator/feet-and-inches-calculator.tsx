@@ -42,9 +42,7 @@ export default function FeetAndInchesCalculator() {
         break;
       }
       case 'multiply': {
-        // When multiplying lengths, the result is an area (square inches).
-        // Let's treat the second input as a scalar multiplier for clarity.
-        const scalar = Number(feet2) + (Number(inches2)/12); // Treat second input as a single number
+        const scalar = Number(feet2) + (Number(inches2)/12);
         resultInches = totalInches1 * scalar; 
         break;
       }
