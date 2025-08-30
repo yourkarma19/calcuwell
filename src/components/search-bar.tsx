@@ -1,7 +1,7 @@
 
 "use client";
 
-import * as Icons from "lucide-react";
+import { icons } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { searchCalculators } from "@/app/actions/search";
@@ -105,9 +105,7 @@ export function SearchBar() {
             )}
             <CommandGroup>
               {results.map((calc) => {
-                const LucideIcon =
-                  Icons[calc.iconName as keyof typeof Icons] ||
-                  Icons.Calculator;
+                const LucideIcon = icons[calc.iconName] || icons.Calculator;
                 return (
                   <CommandItem
                     key={calc.slug}

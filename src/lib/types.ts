@@ -17,7 +17,7 @@ export interface Calculator {
 }
 
 export interface Category {
-  name: CalculatorCategoryName;
+  name: string;
   slug: string;
   description: string;
   iconName: keyof typeof icons;
