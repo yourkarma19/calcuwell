@@ -32,7 +32,7 @@ export default function ExponentPowerCalculator() {
       <div className="lg:col-span-2 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Exponent &amp; Power Calculator</CardTitle>
+            <CardTitle>Exponent & Power Calculator</CardTitle>
             <CardDescription>Calculate the result of a base raised to the power of an exponent.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

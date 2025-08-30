@@ -2,7 +2,7 @@
 "use client";
 
 import { Delete, Heart } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -49,7 +49,7 @@ export default function BasicCalculator() {
     setRandomValue(Math.random());
   }, []);
 
-  const scientificButtons = getScientificButtonLayout(isInverse);
+  const scientificButtons = useMemo(() => getScientificButtonLayout(isInverse), [isInverse]);
 
   const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
   
