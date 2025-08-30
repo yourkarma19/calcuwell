@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
-import AboutExponentPowerCalculator from "./about/exponent-power-calculator";
 
 export default function ExponentPowerCalculator() {
   const [base, setBase] = usePersistentState("exp-base", 2);
@@ -28,52 +27,49 @@ export default function ExponentPowerCalculator() {
   }, [base, exponent]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Exponent & Power Calculator</CardTitle>
-            <CardDescription>Calculate the result of a base raised to the power of an exponent.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="base-input">Base (x)</Label>
-                <Input
-                  id="base-input"
-                  type="number"
-                  value={base}
-                  onChange={(e) => setBase(Number(e.target.value))}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="exponent-input">Exponent (y)</Label>
-                <Input
-                  id="exponent-input"
-                  type="number"
-                  value={exponent}
-                  onChange={(e) => setExponent(Number(e.target.value))}
-                />
-              </div>
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Exponent & Power Calculator</CardTitle>
+          <CardDescription>Calculate the result of a base raised to the power of an exponent.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="base-input">Base (x)</Label>
+              <Input
+                id="base-input"
+                type="number"
+                value={base}
+                onChange={(e) => setBase(Number(e.target.value))}
+                aria-label="Base value"
+              />
             </div>
-          </CardContent>
-        </Card>
-        <AboutExponentPowerCalculator />
-      </div>
-
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Result</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center" aria-live="polite">
-            <p className="text-sm text-muted-foreground">{base} ^ {exponent} is:</p>
-            <p className="text-4xl font-bold font-headline text-primary my-2 break-words">
-              {result}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+            <div className="space-y-2">
+              <Label htmlFor="exponent-input">Exponent (y)</Label>
+              <Input
+                id="exponent-input"
+                type="number"
+                value={exponent}
+                onChange={(e) => setExponent(Number(e.target.value))}
+                aria-label="Exponent value"
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardHeader>
+          <CardTitle>Result</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center" aria-live="polite">
+          <p className="text-sm text-muted-foreground">{base} ^ {exponent} is:</p>
+          <p className="text-4xl font-bold font-headline text-primary my-2 break-words">
+            {result}
+          </p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
