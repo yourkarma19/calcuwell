@@ -1,5 +1,5 @@
 
-import { complex, type Complex, pow, sqrt, add, multiply, subtract, atan2, cos, sin, pi } from "mathjs";
+import { complex, type Complex, sqrt, add, multiply, subtract, atan2, cos, pi } from "mathjs";
 
 /**
  * Solves a cubic equation of the form ax³ + bx² + cx + d = 0.
@@ -29,14 +29,14 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
     const v = Math.cbrt(subtract(-q / 2, sqrtDelta) as number);
 
     roots = [
-      add(u, v) as Complex,
+      add(u, v) as unknown as Complex,
       add(multiply(u, complex(-0.5, 0.5 * (sqrt(3) as number))), multiply(v, complex(-0.5, -0.5 * (sqrt(3) as number)))) as Complex,
       add(multiply(u, complex(-0.5, -0.5 * (sqrt(3) as number))), multiply(v, complex(-0.5, 0.5 * (sqrt(3) as number)))) as Complex
     ];
   } else {
     // Three real roots
     const r = sqrt(multiply(-1, p, p, p, 1/27)) as number;
-    const phi = atan2(sqrt(-delta), -q/2) as number;
+    const phi = atan2(Number(sqrt(-delta)), -q/2);
     
     const u = Math.pow(r, 1/3);
     
