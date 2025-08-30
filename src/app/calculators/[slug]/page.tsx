@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CalculatorContent from "@/components/calculator/calculator-content";

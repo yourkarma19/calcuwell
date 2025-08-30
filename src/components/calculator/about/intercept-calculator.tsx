@@ -26,7 +26,7 @@ export default function AboutInterceptCalculator() {
                      <p>Visually finding intercepts is straightforward. Simply look for the two points where the line of your equation makes contact with the x-axis and the y-axis. The image below illustrates this concept clearly.</p>
                     <div className="my-4 flex justify-center">
                         <Image
-                            src="https://placehold.co/600x400.png"
+                            src="https://picsum.photos/500/350"
                             alt="A graph showing the x and y intercepts of a line on a coordinate plane."
                             width={500}
                             height={350}
