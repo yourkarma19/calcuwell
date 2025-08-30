@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AlertCircle } from "lucide-react";
@@ -19,11 +20,24 @@ const longToIp = (long: number): string => {
   return [ (long >>> 24), (long >> 16) & 255, (long >> 8) & 255, long & 255 ].join('.');
 };
 
+interface SubnetInfo {
+  networkAddress: string;
+  broadcastAddress: string;
+  subnetMask: string;
+  firstHost: string;
+  lastHost: string;
+  totalHosts: string;
+  usableHosts: string;
+  wildcardMask: string;
+  error: string | null;
+}
+
+
 export default function IpSubnetCalculator() {
   const [ipAddress, setIpAddress] = usePersistentState("192.168.1.1");
   const [cidr, setCidr] = usePersistentState(24);
 
-  const subnetInfo = useMemo(() => {
+  const subnetInfo: SubnetInfo = useMemo(() => {
     try {
       if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ipAddress)) throw new Error("Invalid IP Address Format");
 
@@ -49,7 +63,10 @@ export default function IpSubnetCalculator() {
         error: null
       };
     } catch (e: unknown) {
-      return { error: (e instanceof Error ? e.message : String(e)) || "Invalid IP Address or CIDR" };
+      return { 
+        error: (e instanceof Error ? e.message : String(e)) || "Invalid IP Address or CIDR",
+        networkAddress: "", broadcastAddress: "", subnetMask: "", firstHost: "", lastHost: "", totalHosts: "", usableHosts: "", wildcardMask: ""
+      };
     }
   }, [ipAddress, cidr]);
 
@@ -112,8 +129,8 @@ export default function IpSubnetCalculator() {
 
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter a valid **IP Address** (e.g., 192.168.1.1).</li>
-                <li>Use the slider or input box to set the **CIDR** mask (e.g., /24).</li>
+                <li>Enter a valid <strong>IP Address</strong> (e.g., 192.168.1.1).</li>
+                <li>Use the slider or input box to set the <strong>CIDR</strong> mask (e.g., /24).</li>
             </ol>
             <p>The tool will automatically calculate and display the Network Address, Broadcast Address, Subnet Mask, and other relevant details.</p>
             
@@ -128,13 +145,13 @@ export default function IpSubnetCalculator() {
                 <AccordionItem value="item-2">
                     <AccordionTrigger>What is CIDR Notation and a Subnet Mask?</AccordionTrigger>
                     <AccordionContent>
-                        A **Subnet Mask** divides an IP address into two parts: the network address and the host address. **CIDR notation** is a short way to represent this mask. The number after the slash (e.g., /24) shows how many bits of the IP address are for the network part.
+                        A <strong>Subnet Mask</strong> divides an IP address into two parts: the network address and the host address. <strong>CIDR notation</strong> is a short way to represent this mask. The number after the slash (e.g., /24) shows how many bits of the IP address are for the network part.
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-3">
                     <AccordionTrigger>Network Address vs. Broadcast Address</AccordionTrigger>
                     <AccordionContent>
-                        The **Network Address** is the first address in a subnet and identifies the network itself. The **Broadcast Address** is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why &quot;usable&quot; hosts are always two less than the total.
+                        The <strong>Network Address</strong> is the first address in a subnet and identifies the network itself. The <strong>Broadcast Address</strong> is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why &quot;usable&quot; hosts are always two less than the total.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">

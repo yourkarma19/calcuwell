@@ -30,8 +30,8 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
 
     roots = [
       u.add(v) as Complex,
-      u.mul(complex(-0.5, 0.5 * sqrt(3))).add(v.mul(complex(-0.5, -0.5 * sqrt(3)))) as Complex,
-      u.mul(complex(-0.5, -0.5 * sqrt(3))).add(v.mul(complex(-0.5, 0.5 * sqrt(3)))) as Complex
+      (u.mul(complex(-0.5, 0.5 * sqrt(3)))).add(v.mul(complex(-0.5, -0.5 * sqrt(3)))) as Complex,
+      (u.mul(complex(-0.5, -0.5 * sqrt(3)))).add(v.mul(complex(-0.5, 0.5 * sqrt(3)))) as Complex
     ];
   } else {
     // Three real roots
