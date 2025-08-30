@@ -15,24 +15,22 @@ import { trendingCalculators } from "@/lib/trending-calculators";
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <section className="relative text-center py-16 md:py-24 rounded-xl bg-gradient-to-br from-primary/5 via-background to-background">
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline bg-gradient-to-r from-purple-500 to-purple-600 text-transparent bg-clip-text">
-            CalcPro
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Your one-stop destination for fast, accurate, and easy-to-use online
-            calculators.
-          </p>
-        </div>
+    <div className="container mx-auto px-4 py-12">
+      <section className="text-center py-16 md:py-24">
+        <h1 className="text-4xl md:text-6xl font-bold font-headline bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
+          CalcPro
+        </h1>
+        <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          Your one-stop destination for fast, accurate, and easy-to-use online
+          calculators.
+        </p>
       </section>
 
-      <section id="main-calculator" className="py-12">
+      <section id="main-calculator" className="pb-12">
         <HomeCalculator />
       </section>
 
-      <section id="categories" className="py-8">
+      <section id="categories" className="py-12">
         <h2 className="text-3xl font-bold font-headline text-center mb-8">
           Calculator Categories
         </h2>
