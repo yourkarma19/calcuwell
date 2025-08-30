@@ -4,10 +4,18 @@
 import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  ChartContainer,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+} from "@/components/ui/chart";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { formatCurrency } from "@/lib/utils";
 
 
 export default function PetCareCostCalculator() {
@@ -18,13 +26,24 @@ export default function PetCareCostCalculator() {
   const [groomingCost, setGroomingCost] = usePersistentState("pcc-groomingCost", 200);
   const [miscCost, setMiscCost] = usePersistentState("pcc-miscCost", 20);
 
-  const { yearlyCost, monthlyCost } = useMemo(() => {
-    const yearly = (foodCost * 12) + (vetVisits * vetCostPerVisit) + groomingCost + (miscCost * 12);
+  const { yearlyCost, monthlyCost, chartData } = useMemo(() => {
+    const annualFood = foodCost * 12;
+    const annualVet = vetVisits * vetCostPerVisit;
+    const annualMisc = miscCost * 12;
+
+    const yearly = annualFood + annualVet + groomingCost + annualMisc;
     const monthly = yearly / 12;
-    return { yearlyCost: yearly, monthlyCost: monthly };
+
+    const data = [
+        { name: "Food", value: annualFood, fill: "hsl(var(--chart-1))" },
+        { name: "Veterinary", value: annualVet, fill: "hsl(var(--chart-2))" },
+        { name: "Grooming", value: groomingCost, fill: "hsl(var(--chart-3))" },
+        { name: "Miscellaneous", value: annualMisc, fill: "hsl(var(--chart-4))" },
+    ].filter(item => item.value > 0);
+
+    return { yearlyCost: yearly, monthlyCost: monthly, chartData: data };
   }, [foodCost, vetVisits, vetCostPerVisit, groomingCost, miscCost]);
   
-  const formatCurrency = (value: number) => `₹${value.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
 
   return (
     <div className="space-y-6">

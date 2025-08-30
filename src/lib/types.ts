@@ -1,4 +1,4 @@
-
+import type { icons } from "lucide-react";
 import type { categories } from "./calculators";
 
 export type CalculatorCategoryName = (typeof categories)[number]["name"];
@@ -8,7 +8,7 @@ export interface Calculator {
   name: string;
   description: string;
   category: CalculatorCategoryName;
-  iconName: string;
+  iconName: keyof typeof icons;
   tags?: string[];
   formula?: string;
   seoTitle?: string;
@@ -19,5 +19,5 @@ export interface Category {
   name: string;
   slug: string;
   description: string;
-  iconName: string;
+  iconName: keyof typeof icons;
 }

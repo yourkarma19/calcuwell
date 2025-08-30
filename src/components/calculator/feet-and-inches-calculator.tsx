@@ -42,16 +42,19 @@ export default function FeetAndInchesCalculator() {
         break;
       }
       case 'multiply': {
-        const multiplier = Number(feet2) + (Number(inches2)/12);
-        resultInches = totalInches1 * multiplier; 
+        // When multiplying lengths, the result is an area (square inches).
+        // Let's treat the second input as a scalar multiplier for clarity.
+        const scalar = Number(feet2) + (Number(inches2)/12); // Treat second input as a single number
+        resultInches = totalInches1 * scalar; 
         break;
       }
       case 'divide': {
-        if (totalInches2 === 0) {
+        const divisor = Number(feet2) + (Number(inches2)/12);
+        if (divisor === 0) {
             alert("Cannot divide by zero.");
             return;
         }
-        resultInches = totalInches1 / totalInches2;
+        resultInches = totalInches1 / divisor;
         break;
       }
     }

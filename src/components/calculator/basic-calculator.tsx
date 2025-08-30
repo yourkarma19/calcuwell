@@ -42,6 +42,12 @@ export default function BasicCalculator() {
   const [isRadians, setIsRadians] = useState(false);
   const [isInverse, setIsInverse] = useState(false);
   const [activeTab, setActiveTab] = useState("basic");
+  const [randomValue, setRandomValue] = useState(0);
+
+  useEffect(() => {
+    // Generate random number only on the client to avoid hydration issues
+    setRandomValue(Math.random());
+  }, []);
 
   const scientificButtons = getScientificButtonLayout(isInverse);
 
@@ -199,7 +205,7 @@ export default function BasicCalculator() {
         case 'tan⁻¹': result = radToAngle(Math.atan(value)); break;
         case 'e': result = Math.E; break;
         case 'π': result = Math.PI; break;
-        case 'Rand': result = typeof window !== 'undefined' ? Math.random() : 0.5; break;
+        case 'Rand': result = randomValue; break;
         case 'mc': setMemory(0); return;
         case 'm+': setMemory(prev => prev + value); return;
         case 'm-': setMemory(prev => prev - value); return;

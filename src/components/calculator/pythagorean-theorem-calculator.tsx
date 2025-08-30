@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,7 +13,7 @@ export default function PythagoreanTheoremCalculator() {
   const [sideA, setSideA] = usePersistentState<number | "">("pythagorean-sideA", 3);
   const [sideB, setSideB] = usePersistentState<number | "">("pythagorean-sideB", 4);
   const [sideC, setSideC] = usePersistentState<number | "">("pythagorean-sideC", 5);
-
+  
   const { result, error } = useMemo(() => {
     const a = Number(sideA);
     const b = Number(sideB);
@@ -38,6 +38,13 @@ export default function PythagoreanTheoremCalculator() {
     }
     return { result: null, error: null };
   }, [solveFor, sideA, sideB, sideC]);
+  
+  // Clear the solved-for field when the mode changes
+  useEffect(() => {
+    if (solveFor === 'a') setSideA("");
+    if (solveFor === 'b') setSideB("");
+    if (solveFor === 'c') setSideC("");
+  }, [solveFor, setSideA, setSideB, setSideC]);
 
   const handleInputChange = (setter: (value: number | "") => void, value: string) => {
       if(value === "") {
