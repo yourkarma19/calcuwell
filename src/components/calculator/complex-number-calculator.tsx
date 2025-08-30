@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -30,12 +31,13 @@ export default function ComplexNumberCalculator() {
         resReal = real1 * real2 - imag1 * imag2;
         resImag = real1 * imag2 + imag1 * real2;
         break;
-      case 'divide':
+      case 'divide': {
         const denominator = real2 * real2 + imag2 * imag2;
         if (denominator === 0) return { real: NaN, imag: NaN };
         resReal = (real1 * real2 + imag1 * imag2) / denominator;
         resImag = (imag1 * real2 - real1 * imag2) / denominator;
         break;
+      }
     }
     return { real: resReal, imag: resImag };
   }, [real1, imag1, real2, imag2, operation]);
@@ -73,7 +75,7 @@ export default function ComplexNumberCalculator() {
           </div>
            <div className="space-y-2">
               <Label>Operation</Label>
-              <RadioGroup value={operation} onValueChange={(v) => setOperation(v as any)} className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+              <RadioGroup value={operation} onValueChange={(v) => setOperation(v as "add" | "subtract" | "multiply" | "divide")} className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
                 <div className="flex items-center space-x-2"><RadioGroupItem value="add" id="add" /><Label htmlFor="add">Add</Label></div>
                 <div className="flex items-center space-x-2"><RadioGroupItem value="subtract" id="sub" /><Label htmlFor="sub">Subtract</Label></div>
                 <div className="flex items-center space-x-2"><RadioGroupItem value="multiply" id="mult" /><Label htmlFor="mult">Multiply</Label></div>

@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -97,7 +97,7 @@ export default function LeanBodyMassCalculator() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>Why is LBM important?</AccordionTrigger>
                 <AccordionContent>
-                  Tracking LBM is often more useful than tracking body weight alone, as it can help you understand if you are losing fat, gaining muscle, or both. It's a key metric for athletes and those on a fitness journey.
+                  Tracking LBM is often more useful than tracking body weight alone, as it can help you understand if you are losing fat, gaining muscle, or both. It&apos;s a key metric for athletes and those on a fitness journey.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

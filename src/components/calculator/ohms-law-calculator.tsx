@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -71,7 +71,7 @@ export default function OhmsLawCalculator() {
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <Label>What do you want to calculate?</Label>
-            <RadioGroup value={solveFor} onValueChange={(v) => setSolveFor(v as any)} className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+            <RadioGroup value={solveFor} onValueChange={(v) => setSolveFor(v as SolveFor)} className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
               <div className="flex items-center space-x-2"><RadioGroupItem value="voltage" id="v" /><Label htmlFor="v">Voltage (V)</Label></div>
               <div className="flex items-center space-x-2"><RadioGroupItem value="current" id="i" /><Label htmlFor="i">Current (I)</Label></div>
               <div className="flex items-center space-x-2"><RadioGroupItem value="resistance" id="r" /><Label htmlFor="r">Resistance (R)</Label></div>

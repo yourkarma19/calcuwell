@@ -1,9 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,18 +9,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
 
-const whrCategories = {
-    male: [
-      { range: "< 0.90", risk: "Low Risk" },
-      { range: "0.90 - 1.0", risk: "Moderate Risk" },
-      { range: "> 1.0", risk: "High Risk" },
-    ],
-    female: [
-      { range: "< 0.80", risk: "Low Risk" },
-      { range: "0.80 - 0.85", risk: "Moderate Risk" },
-      { range: "> 0.85", risk: "High Risk" },
-    ],
-};
 
 const getWhrCategory = (whr: number, gender: 'male' | 'female') => {
   if (gender === 'male') {

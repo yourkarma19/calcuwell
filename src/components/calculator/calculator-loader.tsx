@@ -7,7 +7,7 @@ import PlaceholderCalculator from './placeholder-calculator';
 
 interface CalculatorLoaderProps {
   slug: string;
-  [key: string]: any; // Accept any other props
+  [key: string]: unknown; // Accept any other props
 }
 
 export default function CalculatorLoader({ slug, ...props }: CalculatorLoaderProps) {

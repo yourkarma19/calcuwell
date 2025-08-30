@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -91,11 +91,11 @@ export default function DecimalToInchesCalculator() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="2">1/2"</SelectItem>
-                  <SelectItem value="4">1/4"</SelectItem>
-                  <SelectItem value="8">1/8"</SelectItem>
-                  <SelectItem value="16">1/16"</SelectItem>
-                  <SelectItem value="32">1/32"</SelectItem>
+                  <SelectItem value="2">1/2&quot;</SelectItem>
+                  <SelectItem value="4">1/4&quot;</SelectItem>
+                  <SelectItem value="8">1/8&quot;</SelectItem>
+                  <SelectItem value="16">1/16&quot;</SelectItem>
+                  <SelectItem value="32">1/32&quot;</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -125,7 +125,7 @@ export default function DecimalToInchesCalculator() {
             <div className="grid grid-cols-2 gap-4 text-sm pt-4 border-t">
               <div>
                 <p className="font-semibold text-muted-foreground">As Feet, Inches, and Fraction</p>
-                <p>{result.feet}' {result.inches}{result.simpleNumerator > 0 ? ` ${result.simpleNumerator}/${result.simpleDenominator}` : ''}"</p>
+                <p>{result.feet}' {result.inches}{result.simpleNumerator > 0 ? ` ${result.simpleNumerator}/${result.simpleDenominator}` : ''}&quot;</p>
               </div>
                <div>
                 <p className="font-semibold text-muted-foreground">As a Simple Fraction</p>

@@ -59,14 +59,7 @@ export default function ExponentPowerCalculator() {
         <Card>
           <CardHeader><CardTitle>Understanding Exponents</CardTitle></CardHeader>
           <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is an exponent?</AccordionTrigger>
-                <AccordionContent>
-                  An exponent refers to the number of times a number (the base) is multiplied by itself. For example, in 2⁴, 2 is the base and 4 is the exponent, meaning 2 is multiplied by itself 4 times (2x2x2x2).
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            {/* Content moved to about file */}
           </CardContent>
         </Card>
       </div>

@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Download, Share2, Copy, Loader2 } from "lucide-react";
+import { Download, Copy, Loader2 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -91,7 +91,7 @@ export default function ExportShareControls({ elementIds, shareParams, calculato
         title: "Copied!",
         description: "Sharable link copied to clipboard.",
       });
-    }, (err) => {
+    }, () => {
       toast({
         title: "Error",
         description: "Could not copy link.",

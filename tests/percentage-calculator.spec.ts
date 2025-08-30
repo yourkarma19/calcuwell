@@ -1,5 +1,5 @@
 
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { goToCalculator, switchTheme } from './helpers';
 
 // Known-good test vectors for the Percentage Calculator

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { icons } from "lucide-react";
@@ -65,7 +66,7 @@ export default function CategoryClientPage({ name, iconName, description, calcul
               <CalculatorCard key={calculator.slug} calculator={calculator} />
             ))
         ) : (
-            <p className="text-muted-foreground col-span-full text-center">No calculators found for "{filter}".</p>
+            <p className="text-muted-foreground col-span-full text-center">No calculators found for &quot;{filter}&quot;.</p>
         )}
       </div>
     </main>

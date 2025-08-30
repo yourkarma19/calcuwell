@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -33,25 +33,27 @@ export default function FeetAndInchesCalculator() {
     let resultInches = 0;
 
     switch (operation) {
-      case 'add':
+      case 'add': {
         resultInches = totalInches1 + totalInches2;
         break;
-      case 'subtract':
+      }
+      case 'subtract': {
         resultInches = totalInches1 - totalInches2;
         break;
-      case 'multiply':
-        // A more logical multiplication: length * scalar number
-        // We'll use the second input as the scalar multiplier
+      }
+      case 'multiply': {
         const multiplier = Number(feet2) + (Number(inches2)/12);
         resultInches = totalInches1 * multiplier; 
         break;
-      case 'divide':
+      }
+      case 'divide': {
         if (totalInches2 === 0) {
             alert("Cannot divide by zero.");
             return;
         }
         resultInches = totalInches1 / totalInches2;
         break;
+      }
     }
     setResult(fromTotalInches(resultInches));
   };

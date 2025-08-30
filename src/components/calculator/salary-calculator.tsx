@@ -1,9 +1,7 @@
 
 "use client";
 
-import { Info } from "lucide-react";
-import { useState, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -60,7 +58,7 @@ export default function SalaryCalculator() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="pay-period">Pay Period</Label>
-              <Select value={payPeriod} onValueChange={v => setPayPeriod(v as any)}>
+              <Select value={payPeriod} onValueChange={v => setPayPeriod(v as "annually" | "monthly")}>
                   <SelectTrigger><SelectValue/></SelectTrigger>
                   <SelectContent>
                       <SelectItem value="annually">Annually</SelectItem>

@@ -1,8 +1,7 @@
 
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const UmbrellaIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -13,7 +12,7 @@ const UmbrellaIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 )
 
-export default function PlaceholderCalculator({ setFormula }: { setFormula?: (formula: string) => void; }) {
+export default function PlaceholderCalculator() {
 
   return (
     <Card className="col-span-1 lg:col-span-3">

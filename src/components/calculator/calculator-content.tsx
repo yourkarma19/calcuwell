@@ -3,12 +3,12 @@
 
 import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 
 interface CalculatorContentProps {
   slug: string;
-  [key: string]: any; // To pass through any other props
+  [key: string]: unknown; // To pass through any other props
 }
 
 const ContentLoader = () => (

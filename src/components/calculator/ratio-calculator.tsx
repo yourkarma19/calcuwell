@@ -14,7 +14,6 @@ export default function RatioCalculator() {
   const [valA, setValA] = useState(16);
   const [valB, setValB] = useState(9);
   const [valC, setValC] = useState(1920);
-  const [isSolvingForD, setIsSolvingForD] = useState(true);
 
   const { simplifiedA, simplifiedB, resultD } = useMemo(() => {
     const a = Number(valA);
@@ -27,14 +26,11 @@ export default function RatioCalculator() {
     const sA = a / commonDivisor;
     const sB = b / commonDivisor;
 
-    let rD = "";
-    if (isSolvingForD) {
-      const res = (c * sB) / sA;
-      rD = Number.isInteger(res) ? res.toString() : res.toFixed(2);
-    }
+    const res = (c * sB) / sA;
+    const rD = Number.isInteger(res) ? res.toString() : res.toFixed(2);
 
     return { simplifiedA: sA, simplifiedB: sB, resultD: rD };
-  }, [valA, valB, valC, isSolvingForD]);
+  }, [valA, valB, valC]);
 
 
   return (
@@ -96,7 +92,7 @@ export default function RatioCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is a Ratio? A Simple Explanation with Examples</AccordionTrigger>
                     <AccordionContent>
-                        A ratio compares two quantities. It shows how much of one thing there is compared to another. For example, if there are 8 girls and 12 boys in a class, the ratio of girls to boys is 8:12. This doesn't tell you the total number of students, but it describes their relationship. Ratios can be simplified just like fractions, so 8:12 is equivalent to 2:3.
+                        A ratio compares two quantities. It shows how much of one thing there is compared to another. For example, if there are 8 girls and 12 boys in a class, the ratio of girls to boys is 8:12. This doesn&apos;t tell you the total number of students, but it describes their relationship. Ratios can be simplified just like fractions, so 8:12 is equivalent to 2:3.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -114,7 +110,7 @@ export default function RatioCalculator() {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Is a ratio the same as a fraction?</AccordionTrigger>
                     <AccordionContent>
-                       They are closely related but not exactly the same. A fraction represents a part of a whole (e.g., 1/2 means one part out of two total parts). A ratio compares two different quantities (e.g., a ratio of 1:2 could mean 1 teacher for every 2 students, a total of 3 people). While the ratio A:B can be written as the fraction A/B, their conceptual meaning can be different depending on the context.
+                       <p>They are closely related but not exactly the same. A fraction represents a part of a whole (e.g., 1/2 means one part out of two total parts). A ratio compares two different quantities (e.g., a ratio of 1:2 could mean 1 teacher for every 2 students, a total of 3 people). While the ratio A:B can be written as the fraction A/B, their conceptual meaning can be different depending on the context.</p>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

@@ -1,7 +1,7 @@
 
 "use client";
 
-import { complex, format, type Complex } from "mathjs";
+import { format, type Complex } from "mathjs";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";

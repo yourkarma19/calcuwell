@@ -2,7 +2,7 @@
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -138,7 +138,7 @@ export default function RomanNumeralConverter() {
                         <AccordionItem value="item-3">
                             <AccordionTrigger>Why is there a limit of 3,999?</AccordionTrigger>
                             <AccordionContent>
-                                The standard Roman numeral system does not have a native way to represent numbers of 4,000 or greater. The largest standard numeral is M (1,000), and the rules don't allow for four consecutive identical numerals (MMMM). While other notations existed for larger numbers historically (like a bar over a numeral to multiply it by 1,000), 3,999 (MMMCMXCIX) is the practical limit for this calculator.
+                                The standard Roman numeral system does not have a native way to represent numbers of 4,000 or greater. The largest standard numeral is M (1,000), and the rules don&apos;t allow for four consecutive identical numerals (MMMM). While other notations existed for larger numbers historically (like a bar over a numeral to multiply it by 1,000), 3,999 (MMMCMXCIX) is the practical limit for this calculator.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4">

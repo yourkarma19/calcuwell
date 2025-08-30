@@ -2,7 +2,6 @@
 "use client";
 
 import { Code, Copy } from "lucide-react";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -38,7 +37,7 @@ export default function EmbedCalculator({ slug }: EmbedCalculatorProps) {
         title: "Copied!",
         description: "Embed code copied to clipboard.",
       });
-    }, (err) => {
+    }, () => {
       toast({
         title: "Error",
         description: "Could not copy code. Please try again.",

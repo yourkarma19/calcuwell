@@ -1,7 +1,7 @@
+
 "use client";
 
-import { Info } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -58,7 +58,7 @@ export default function CarbonFootprintCalculator() {
             </div>
             <div className="space-y-2">
               <Label>Transport Mode</Label>
-              <Select value={transportMode} onValueChange={v => setTransportMode(v as any)}>
+              <Select value={transportMode} onValueChange={v => setTransportMode(v as keyof typeof emissionFactors.transport)}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="car_gasoline">Gasoline Car</SelectItem>
@@ -77,7 +77,7 @@ export default function CarbonFootprintCalculator() {
           <h3 className="font-semibold pt-4">Diet</h3>
           <div className="space-y-2">
             <Label>Typical Daily Diet</Label>
-            <Select value={diet} onValueChange={v => setDiet(v as any)}>
+            <Select value={diet} onValueChange={v => setDiet(v as keyof typeof emissionFactors.diet)}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="high_meat">High Meat</SelectItem>
@@ -120,7 +120,7 @@ export default function CarbonFootprintCalculator() {
                    <AccordionItem value="item-3">
                       <AccordionTrigger>Why is this an estimate?</AccordionTrigger>
                       <AccordionContent>
-                          Calculating a precise carbon footprint is very complex. It depends on factors like your local power grid's energy sources, the specific model of your car, and the supply chains of the food you eat. This tool uses averages to provide a general idea of your impact.
+                          Calculating a precise carbon footprint is very complex. It depends on factors like your local power grid&apos;s energy sources, the specific model of your car, and the supply chains of the food you eat. This tool uses averages to provide a general idea of your impact.
                       </AccordionContent>
                   </AccordionItem>
               </Accordion>

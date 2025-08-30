@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -34,7 +35,7 @@ export default function AboutWeddingBudgetCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>How much should we budget for unexpected costs?</AccordionTrigger>
                         <AccordionContent>
-                           It&#39;s wise to set aside about 5-10% of your total budget as a contingency fund. This will help you cover any unexpected expenses that arise without adding stress. The &quot;Miscellaneous&quot; category in our calculator can be used for this.
+                           It&apos;s wise to set aside about 5-10% of your total budget as a contingency fund. This will help you cover any unexpected expenses that arise without adding stress. The &quot;Miscellaneous&quot; category in our calculator can be used for this.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

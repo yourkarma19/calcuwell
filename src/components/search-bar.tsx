@@ -101,7 +101,7 @@ export function SearchBar() {
           <CommandList>
             {isLoading && <CommandEmpty>Loading search results...</CommandEmpty>}
             {!isLoading && results.length === 0 && (
-              <CommandEmpty>No results found for "{search}".</CommandEmpty>
+              <CommandEmpty>No results found for &quot;{search}&quot;.</CommandEmpty>
             )}
             <CommandGroup>
               {results.map((calc) => {

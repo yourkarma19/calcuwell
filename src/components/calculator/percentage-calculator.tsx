@@ -2,7 +2,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -123,9 +123,10 @@ export default function PercentageCalculator() {
         return "Result";
       case "isWhatPercent":
         return "Result (%)";
-      case "percentageChange":
+      case "percentageChange": {
         const changeType = result > 0 ? "Increase" : "Decrease";
         return `Percentage ${changeType}`;
+      }
     }
   };
   

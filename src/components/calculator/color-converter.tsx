@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -29,7 +30,8 @@ function rgbToHex(r: number, g: number, b: number) {
 function rgbToHsl(r: number, g: number, b: number) {
     r /= 255; g /= 255; b /= 255;
     const max = Math.max(r, g, b), min = Math.min(r, g, b);
-    let h = 0, s, l = (max + min) / 2;
+    let h = 0, s;
+    const l = (max + min) / 2;
 
     if (max === min) {
         h = s = 0; // achromatic
@@ -48,10 +50,10 @@ function rgbToHsl(r: number, g: number, b: number) {
 
 function hslToRgb(h: number, s: number, l: number) {
     s /= 100; l /= 100;
-    let c = (1 - Math.abs(2 * l - 1)) * s,
-        x = c * (1 - Math.abs((h / 60) % 2 - 1)),
-        m = l - c/2,
-        r = 0, g = 0, b = 0;
+    const c = (1 - Math.abs(2 * l - 1)) * s;
+    const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    const m = l - c/2;
+    let r = 0, g = 0, b = 0;
     if (0 <= h && h < 60) { [r,g,b] = [c,x,0] } 
     else if (60 <= h && h < 120) { [r,g,b] = [x,c,0] }
     else if (120 <= h && h < 180) { [r,g,b] = [0,c,x] } 
@@ -151,21 +153,21 @@ export default function ColorConverter() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is the difference between HEX, RGB, and HSL?</AccordionTrigger>
                     <AccordionContent>
-                        <p className="mb-2">**HEX (Hexadecimal)** is a six-digit code (e.g., `#FF5733`) that represents the intensity of Red, Green, and Blue in a color. It's the most common format used in web design.</p>
+                        <p className="mb-2">**HEX (Hexadecimal)** is a six-digit code (e.g., `#FF5733`) that represents the intensity of Red, Green, and Blue in a color. It&apos;s the most common format used in web design.</p>
                         <p className="mb-2">**RGB (Red, Green, Blue)** is an additive color model where red, green, and blue light are combined to create a broad array of colors. Each value ranges from 0 to 255 (e.g., `rgb(255, 87, 51)`).</p>
-                        <p>**HSL (Hue, Saturation, Lightness)** represents color in a more human-intuitive way. **Hue** is the color itself (0-360 degrees), **Saturation** is the color's intensity (0-100%), and **Lightness** is its brightness (0-100%). This makes it easier to create variations of a single color (e.g., `hsl(11, 100%, 60%)`).</p>
+                        <p>**HSL (Hue, Saturation, Lightness)** represents color in a more human-intuitive way. **Hue** is the color itself (0-360 degrees), **Saturation** is the color&apos;s intensity (0-100%), and **Lightness** is its brightness (0-100%). This makes it easier to create variations of a single color (e.g., `hsl(11, 100%, 60%)`).</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Why are there different color models?</AccordionTrigger>
                     <AccordionContent>
-                        Different color models are suited for different tasks. RGB is fundamental to how digital screens create color by mixing light. HEX is a more compact, web-friendly way to write RGB values. HSL is often preferred by designers because it's more intuitive to adjust properties like lightness and saturation to create color schemes.
+                        Different color models are suited for different tasks. RGB is fundamental to how digital screens create color by mixing light. HEX is a more compact, web-friendly way to write RGB values. HSL is often preferred by designers because it&apos;s more intuitive to adjust properties like lightness and saturation to create color schemes.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                    <AccordionTrigger>What does the "alpha" value in RGBA or HSLA mean?</AccordionTrigger>
+                    <AccordionTrigger>What does the &quot;alpha&quot; value in RGBA or HSLA mean?</AccordionTrigger>
                     <AccordionContent>
-                       The 'A' stands for Alpha, which represents the opacity of the color. An alpha value of 1 is fully opaque, while 0 is fully transparent. This converter focuses on the opaque color values, but RGBA and HSLA formats are commonly used in CSS to create semi-transparent effects.
+                       The &apos;A&apos; stands for Alpha, which represents the opacity of the color. An alpha value of 1 is fully opaque, while 0 is fully transparent. This converter focuses on the opaque color values, but RGBA and HSLA formats are commonly used in CSS to create semi-transparent effects.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

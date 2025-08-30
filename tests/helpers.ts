@@ -1,12 +1,5 @@
 
-import { test, expect, Page } from '@playwright/test';
-
-export const checkAccessibility = async (page: Page) => {
-  const accessibilityScanResults = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-    .analyze();
-  expect(accessibilityScanResults.violations).toEqual([]);
-};
+import { expect, Page } from '@playwright/test';
 
 export const goToCalculator = async (page: Page, calculatorName: string, slug: string) => {
     await page.goto('/');

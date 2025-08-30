@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -99,7 +99,7 @@ export default function TrigonometryCalculator() {
       <Card>
         <CardHeader><CardTitle>About Trigonometry</CardTitle></CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our **Trigonometry Calculator** provides a powerful and easy-to-use interface for solving complex trigonometric problems. Whether you're a student tackling geometry homework, an engineer designing a structure, or a professional needing a quick calculation, this tool simplifies the process. It allows you to find the values of sine, cosine, tangent, and their inverse functions (arcsin, arccos, arctan) for any angle, specified in either degrees or radians.</p>
+            <p>Our **Trigonometry Calculator** provides a powerful and easy-to-use interface for solving complex trigonometric problems. Whether you&apos;re a student tackling geometry homework, an engineer designing a structure, or a professional needing a quick calculation, this tool simplifies the process. It allows you to find the values of sine, cosine, tangent, and their inverse functions (arcsin, arccos, arctan) for any angle, specified in either degrees or radians.</p>
 
             <h3>How to Use the Calculator</h3>
             <ol>
@@ -132,7 +132,7 @@ export default function TrigonometryCalculator() {
                 <AccordionItem value="item-3">
                     <AccordionTrigger>Degrees vs. Radians</AccordionTrigger>
                     <AccordionContent>
-                        Degrees and Radians are two different units for measuring angles. A full circle is 360 degrees or 2π radians. It's crucial to use the correct unit for your calculations, as using the wrong one will lead to incorrect results. Most advanced mathematical and physics formulas use radians for simplicity and consistency.
+                        Degrees and Radians are two different units for measuring angles. A full circle is 360 degrees or 2π radians. It&apos;s crucial to use the correct unit for your calculations, as using the wrong one will lead to incorrect results. Most advanced mathematical and physics formulas use radians for simplicity and consistency.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">

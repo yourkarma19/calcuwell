@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
@@ -91,7 +92,7 @@ export default function PressureConverter() {
             <AccordionItem value="item-1">
               <AccordionTrigger>What is the standard unit of pressure?</AccordionTrigger>
               <AccordionContent>
-                The standard SI unit for pressure is the **Pascal (Pa)**, which is equal to one newton per square meter (N/m²). It's a relatively small unit, so kilopascals (kPa) are often used.
+                The standard SI unit for pressure is the **Pascal (Pa)**, which is equal to one newton per square meter (N/m²). It&apos;s a relatively small unit, so kilopascals (kPa) are often used.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">

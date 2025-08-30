@@ -66,7 +66,6 @@ export default function BasicCalculator() {
 
   const handleOperator = useCallback((op: string) => {
     if (displayValue !== "Error") {
-      const currentVal = parseFloat(displayValue);
       if (justEvaluated) {
           setExpression(displayValue + op);
       } else {

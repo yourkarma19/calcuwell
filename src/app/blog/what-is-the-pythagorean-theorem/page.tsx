@@ -1,9 +1,8 @@
 
-import { Triangle } from 'lucide-react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'What is the Pythagorean Theorem? | CalcPro',
@@ -74,7 +73,7 @@ export default function PythagoreanTheoremBlogPage() {
             <li>Find the square root of the sum: √25 = 5.</li>
         </ol>
         <p>
-            The length of the hypotenuse is 5 units. This is a classic "3-4-5 triangle."
+            The length of the hypotenuse is 5 units. This is a classic &quot;3-4-5 triangle.&quot;
         </p>
 
         <h3>Real-World Applications</h3>

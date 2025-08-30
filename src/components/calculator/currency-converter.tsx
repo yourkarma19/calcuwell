@@ -1,6 +1,7 @@
+
 "use client";
 
-import { ArrowRightLeft, Info } from "lucide-react";
+import { ArrowRightLeft } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Button } from "../ui/button";
@@ -23,14 +24,12 @@ const currencies = {
 };
 type Currency = keyof typeof currencies;
 
-const API_KEY = 'YOUR_API_KEY'; // Replace with a real API key from a service like Open Exchange Rates
 
 export default function CurrencyConverter() {
   const [fromCurrency, setFromCurrency] = usePersistentState<Currency>("currency-from", "USD");
   const [toCurrency, setToCurrency] = usePersistentState<Currency>("currency-to", "INR");
   const [amount, setAmount] = useState("100");
   const [rates, setRates] = useState<Record<string, number> | null>(null);
-  const [error, setError] = useState<string | null>(null);
   
   useEffect(() => {
     // This is a mock implementation. In a real app, you would fetch from an API.
@@ -44,7 +43,6 @@ export default function CurrencyConverter() {
 
     if (mockRates[fromCurrency]) {
         setRates(mockRates[fromCurrency]);
-        setError(null);
     } else {
         const fallbackRates = { ...mockRates.USD, [fromCurrency]: 1 };
         Object.keys(fallbackRates).forEach(key => {
@@ -53,7 +51,6 @@ export default function CurrencyConverter() {
             }
         });
         setRates(fallbackRates);
-        setError(`Could not fetch rates for ${fromCurrency}. Using mock data.`);
     }
   }, [fromCurrency]);
   
@@ -137,7 +134,7 @@ export default function CurrencyConverter() {
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                    <AccordionTrigger>What does "mock data" mean?</AccordionTrigger>
+                    <AccordionTrigger>What does &quot;mock data&quot; mean?</AccordionTrigger>
                     <AccordionContent>
                         The exchange rates in this calculator are for demonstration purposes only. They are not real-time market values. You should not use them for actual financial trades. For real trades, always check with a bank or a verified currency exchange service.
                     </AccordionContent>
@@ -145,7 +142,7 @@ export default function CurrencyConverter() {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>What is a currency pair?</AccordionTrigger>
                     <AccordionContent>
-                        A currency pair shows the value of one currency against another. The first currency is the "base" and the second is the "quote." For example, in the pair EUR/USD = 1.08, one Euro is worth 1.08 US Dollars.
+                        A currency pair shows the value of one currency against another. The first currency is the &quot;base&quot; and the second is the &quot;quote.&quot; For example, in the pair EUR/USD = 1.08, one Euro is worth 1.08 US Dollars.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

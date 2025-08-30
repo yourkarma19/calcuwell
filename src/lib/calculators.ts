@@ -1,4 +1,5 @@
-import type { Calculator, Category } from '@/lib/types';
+
+import type { Category } from '@/lib/types';
 
 export const categories: Category[] = [
  {

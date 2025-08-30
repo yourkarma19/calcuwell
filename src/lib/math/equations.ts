@@ -19,7 +19,7 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
   const p = (3 * a * c - b * b) / (3 * a * a);
   const q = (2 * b * b * b - 9 * a * b * c + 27 * a * a * d) / (27 * a * a * a);
 
-  const delta = pow(q / 2, 2) + pow(p / 3, 3);
+  const delta = (q / 2) ** 2 + (p / 3) ** 3;
   
   let roots: Complex[];
 

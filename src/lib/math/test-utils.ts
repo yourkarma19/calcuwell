@@ -1,10 +1,11 @@
+
 import { it, expect } from 'vitest';
 
 interface TestCase {
     id: string;
     description: string;
-    inputs: any;
-    expected: any;
+    inputs: Record<string, unknown>;
+    expected: Record<string, unknown>;
     precision?: number;
 }
 
@@ -16,7 +17,7 @@ interface TestCase {
  * @param calcFunction The calculator function to be tested.
  * @returns A function that takes an array of test cases and runs them.
  */
-export function createTestRunner<T extends TestCase>(calcFunction: (testCase: T) => any) {
+export function createTestRunner<T extends TestCase>(calcFunction: (testCase: T) => Record<string, unknown>) {
     return (testCases: T[]) => {
         testCases.forEach(testCase => {
             it(`[${testCase.id}] ${testCase.description}`, () => {
@@ -27,13 +28,13 @@ export function createTestRunner<T extends TestCase>(calcFunction: (testCase: T)
                     for (const key in testCase.expected) {
                         const expectedValue = testCase.expected[key];
                         const resultValue = result[key];
-                        if (typeof expectedValue === 'number') {
+                        if (typeof expectedValue === 'number' && typeof resultValue === 'number') {
                              expect(resultValue).toBeCloseTo(expectedValue, testCase.precision ?? 2);
                         } else {
                             expect(resultValue).toEqual(expectedValue);
                         }
                     }
-                } else if (typeof testCase.expected === 'number') {
+                } else if (typeof testCase.expected === 'number' && typeof result === 'number') {
                     // Handle primitive number results
                     expect(result).toBeCloseTo(testCase.expected, testCase.precision ?? 2);
                 } else {

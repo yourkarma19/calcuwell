@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -45,7 +46,7 @@ export default function CircleCalculator() {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <Label>Input Type</Label>
-                            <Select value={inputType} onValueChange={(v) => setInputType(v as any)}>
+                            <Select value={inputType} onValueChange={(v) => setInputType(v as "radius" | "diameter" | "circumference" | "area")}>
                                 <SelectTrigger><SelectValue/></SelectTrigger>
                                 <SelectContent>
                                     <SelectItem value="radius">Radius</SelectItem>
@@ -90,7 +91,7 @@ export default function CircleCalculator() {
                         <AccordionItem value="item-1">
                             <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
                             <AccordionContent>
-                                Pi (π) is a mathematical constant that is the ratio of a circle's circumference to its diameter. It is an irrational number, approximately equal to 3.14159. It is fundamental to many formulas involving circles and spheres.
+                                Pi (π) is a mathematical constant that is the ratio of a circle&apos;s circumference to its diameter. It is an irrational number, approximately equal to 3.14159. It is fundamental to many formulas involving circles and spheres.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
