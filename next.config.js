@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    watchOptions: {
+        poll: 1000,
+        aggregateTimeout: 300,
+    }
+};
 
-module.exports = nextConfig;
+export default nextConfig;
