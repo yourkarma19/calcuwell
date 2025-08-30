@@ -9,7 +9,7 @@ export interface Calculator {
   name: string;
   description: string;
   category: CalculatorCategoryName;
-  iconName: keyof typeof icons;
+  iconName: string;
   tags?: string[];
   formula?: string;
   seoTitle?: string;
@@ -20,5 +20,5 @@ export interface Category {
   name: string;
   slug: string;
   description: string;
-  iconName: keyof typeof icons;
+  iconName: string;
 }
