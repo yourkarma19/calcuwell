@@ -31,12 +31,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
+  const headersList = headers();
   const searchParams = new URLSearchParams(headersList.get('x-search-params') || '');
   const isEmbed = searchParams.get('embed') === 'true';
 

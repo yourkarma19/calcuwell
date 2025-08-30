@@ -4,7 +4,7 @@ export default function AboutFinancialHealthCheckup() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle as="h2">Understanding Your Financial Health</CardTitle>
+                <CardTitle>Understanding Your Financial Health</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>A financial health check-up is like a report card for your money. It provides a score and a summary of your current financial situation, helping you understand your strengths and identify areas for improvement. This tool uses key metrics like your savings rate and debt-to-income ratio to give you a clear picture of where you stand. Taking a moment to assess your financial health is the first step toward building a more secure and prosperous future. It empowers you to make informed decisions, set realistic goals, and take control of your financial journey.</p>
