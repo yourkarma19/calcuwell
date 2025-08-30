@@ -124,14 +124,14 @@ export default function MortgageCalculator({ setChildProps, calculatorName }: { 
           <CardHeader>
           <CardTitle>Your Mortgage EMI</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
           <div>
               <p className="text-sm text-muted-foreground">Total Monthly Payment</p>
               <p className="text-4xl font-bold font-headline text-primary">₹ {monthlyPayment.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
           </div>
           <div className="space-y-2 text-sm text-left border-t pt-2">
               <div className="flex justify-between">
-                  <p className="text-muted-foreground">Principal &amp; Interest</p>
+                  <p className="text-muted-foreground">Principal & Interest</p>
                   <p className="font-semibold">₹ {principalAndInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
               </div>
               <div className="flex justify-between">

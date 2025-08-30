@@ -167,7 +167,7 @@ export default function FinancialHealthCheckup() {
                     <CardHeader>
                         <CardTitle>Your Financial Analysis</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-4" aria-live="polite">
                         <Alert className={
                             result.score >= 80 ? "border-green-500" :
                             result.score >= 50 ? "border-yellow-500" :

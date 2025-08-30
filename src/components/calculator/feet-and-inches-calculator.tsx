@@ -77,8 +77,8 @@ export default function FeetAndInchesCalculator() {
             <div className="space-y-2">
               <Label>Measurement 1</Label>
               <div className="flex gap-2">
-                <Input type="number" value={feet1} onChange={e => setFeet1(Number(e.target.value))} placeholder="Feet" aria-label="Feet 1" />
-                <Input type="number" value={inches1} onChange={e => setInches1(Number(e.target.value))} placeholder="Inches" aria-label="Inches 1" />
+                <Input type="number" value={feet1} onChange={e => setFeet1(Number(e.target.value))} placeholder="Feet" aria-label="Measurement 1 Feet" />
+                <Input type="number" value={inches1} onChange={e => setInches1(Number(e.target.value))} placeholder="Inches" aria-label="Measurement 1 Inches" />
               </div>
             </div>
              <div className="space-y-2">
@@ -98,8 +98,8 @@ export default function FeetAndInchesCalculator() {
             <div className="space-y-2">
               <Label>Measurement 2 / Scalar</Label>
               <div className="flex gap-2">
-                <Input type="number" value={feet2} onChange={e => setFeet2(Number(e.target.value))} placeholder="Feet / Num" aria-label="Feet 2 or Scalar" />
-                <Input type="number" value={inches2} onChange={e => setInches2(Number(e.target.value))} placeholder="Inches / Num" aria-label="Inches 2 or Scalar" />
+                <Input type="number" value={feet2} onChange={e => setFeet2(Number(e.target.value))} placeholder="Feet / Num" aria-label="Measurement 2 Feet or Scalar" />
+                <Input type="number" value={inches2} onChange={e => setInches2(Number(e.target.value))} placeholder="Inches / Num" aria-label="Measurement 2 Inches or Scalar" />
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function FeetAndInchesCalculator() {
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="text-center space-y-4">
+          <CardContent className="text-center space-y-4" aria-live="polite">
             <p className="text-4xl font-bold font-headline text-primary">
               {result.feet.toFixed(0)} feet {result.inches.toFixed(2)} inches
             </p>

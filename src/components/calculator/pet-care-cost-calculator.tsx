@@ -2,6 +2,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
@@ -14,7 +15,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { formatCurrency } from "@/lib/utils";
 
 
@@ -81,7 +81,7 @@ export default function PetCareCostCalculator() {
 
         <Card>
             <CardHeader><CardTitle>Estimated Costs</CardTitle></CardHeader>
-            <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+            <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center" aria-live="polite">
                 <div className="bg-muted p-4 rounded-lg">
                     <p className="text-sm text-muted-foreground">Total Yearly Cost</p>
                     <p className="text-3xl font-bold font-headline text-primary">{formatCurrency(yearlyCost)}</p>
@@ -93,7 +93,32 @@ export default function PetCareCostCalculator() {
             </CardContent>
         </Card>
         
-        <Card>
+        {chartData.length > 0 && (
+            <Card>
+                <CardHeader><CardTitle>Cost Breakdown</CardTitle></CardHeader>
+                <CardContent className="h-[25rem]">
+                    <ChartContainer config={{}} className="w-full h-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Tooltip
+                            cursor={false}
+                            content={<ChartTooltipContent 
+                                formatter={(value) => formatCurrency(Number(value))}
+                                />}
+                            />
+                            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="80%" strokeWidth={2}>
+                                {chartData.map((entry) => (
+                                    <Cell key={entry.name} fill={entry.fill} />
+                                ))}
+                            </Pie>
+                            <ChartLegend content={<ChartLegendContent />} />
+                        </PieChart>
+                    </ResponsiveContainer>
+                </ChartContainer>
+                </CardContent>
+            </Card>
+        )}
+       <Card>
             <CardHeader><CardTitle>The True Cost of Owning a Pet</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>Bringing a pet into your life is a joyful experience, but it&apos;s also a significant financial commitment. Our **Pet Care Cost Calculator** helps you estimate the monthly and yearly expenses associated with owning a pet. By planning ahead, you can ensure you&apos;re financially prepared to give your furry friend the best care possible.</p>
