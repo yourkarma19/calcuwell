@@ -382,7 +382,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     name: "Mortgage Calculator",
     description: "Estimate your monthly mortgage payments.",
     category: "Finance",
-    iconName: "HomeIcon",
+    iconName: "Home",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
