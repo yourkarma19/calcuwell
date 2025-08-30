@@ -1,7 +1,6 @@
 
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { headers } from "next/headers";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -37,37 +36,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = headers();
-  const searchParams = new URLSearchParams(
-    headersList.get("x-search-params") || "",
-  );
-  const isEmbed = searchParams.get("embed") === "true";
-
-  if (isEmbed) {
-    return (
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "font-body antialiased bg-transparent",
-            inter.variable,
-            spaceGrotesk.variable,
-          )}
-        >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <main>{children}</main>
-            <Toaster />
-          </ThemeProvider>
-        </body>
-      </html>
-    );
-  }
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head />

@@ -5,9 +5,12 @@ import { ChevronRight, icons } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
+import { Toaster } from "../ui/toaster";
 import EmbedCalculator from "./embed-calculator";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { categories } from "@/lib/calculators";
 import type { Calculator } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 interface CalculatorWrapperProps {
   children: ReactNode;
@@ -29,10 +32,20 @@ export default function CalculatorWrapper({
 
   if (isEmbed) {
     return (
-      <div className="p-2">
-        <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
-          {children}
-        </div>
+      <div className="bg-background font-body antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="p-2">
+            <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
+              {children}
+            </div>
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </div>
     );
   }
