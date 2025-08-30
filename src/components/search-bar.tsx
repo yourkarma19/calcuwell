@@ -105,7 +105,7 @@ export function SearchBar() {
             )}
             <CommandGroup>
               {results.map((calc) => {
-                const LucideIcon = icons[calc.iconName] || icons.Calculator;
+                const LucideIcon = icons[calc.iconName as keyof typeof icons] || icons.Calculator;
                 return (
                   <CommandItem
                     key={calc.slug}
