@@ -3,7 +3,7 @@ import type { categories } from './calculators';
 
 type CategoryName = (typeof categories)[number]['name'];
 
-export type CalculatorCategory = CategoryName | "Blog";
+export type CalculatorCategory = CategoryName;
 
 export interface Calculator {
   slug: string;

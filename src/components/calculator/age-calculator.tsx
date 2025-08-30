@@ -88,4 +88,3 @@ export default function AgeCalculator({ calculatorName }: { calculatorName: stri
     </div>
   );
 }
-
