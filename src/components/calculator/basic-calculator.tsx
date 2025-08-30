@@ -64,6 +64,50 @@ export default function BasicCalculator() {
     setJustEvaluated(false);
   }, []);
 
+  const handleOperator = useCallback((op: string) => {
+    if (displayValue !== "Error") {
+      const currentVal = parseFloat(displayValue);
+      if (justEvaluated) {
+          setExpression(displayValue + op);
+      } else {
+          setExpression(prev => prev + displayValue + op);
+      }
+      setDisplayValue("0");
+      setJustEvaluated(false);
+    }
+  }, [displayValue, justEvaluated]);
+
+  const handleEquals = useCallback(() => {
+    if (justEvaluated) return;
+    const fullExpression = (expression + displayValue).replace(/‑/g, "-");
+    if (fullExpression === '12082007+19112005') {
+      setDisplayValue("I ❤️ You");
+      setExpression("");
+      setIsCelebrating(true);
+      setTimeout(() => setIsCelebrating(false), 6000);
+      setJustEvaluated(true);
+      return;
+    }
+    
+    try {
+        const safeExpression = fullExpression.replace(/[^-()\d/*+.]/g, '');
+        // Use Function constructor for safe evaluation
+        const result = new Function('return ' + safeExpression)();
+        
+        if (result === undefined || !isFinite(result)) {
+            setExpression(safeExpression);
+            setDisplayValue("Error");
+        } else {
+            setExpression("");
+            setDisplayValue(result.toString());
+        }
+    } catch (error) {
+        setExpression(displayValue);
+        setDisplayValue("Error");
+    }
+    setJustEvaluated(true);
+  }, [expression, displayValue, justEvaluated]);
+
   const handleInput = useCallback((input: string) => {
     if (input === "AC") {
       resetCalculator();
@@ -103,51 +147,7 @@ export default function BasicCalculator() {
     }
     
     if(input !== "=") setJustEvaluated(false);
-  }, [displayValue, justEvaluated, resetCalculator]);
-
-  const handleOperator = (op: string) => {
-    if (displayValue !== "Error") {
-      const currentVal = parseFloat(displayValue);
-      if (justEvaluated) {
-          setExpression(displayValue + op);
-      } else {
-          setExpression(prev => prev + displayValue + op);
-      }
-      setDisplayValue("0");
-      setJustEvaluated(false);
-    }
-  };
-
-  const handleEquals = () => {
-    if (justEvaluated) return;
-    const fullExpression = (expression + displayValue).replace(/‑/g, "-");
-    if (fullExpression === '12082007+19112005') {
-      setDisplayValue("I ❤️ You");
-      setExpression("");
-      setIsCelebrating(true);
-      setTimeout(() => setIsCelebrating(false), 6000);
-      setJustEvaluated(true);
-      return;
-    }
-    
-    try {
-        const safeExpression = fullExpression.replace(/[^-()\d/*+.]/g, '');
-        // Use Function constructor for safe evaluation
-        const result = new Function('return ' + safeExpression)();
-        
-        if (result === undefined || !isFinite(result)) {
-            setExpression(safeExpression);
-            setDisplayValue("Error");
-        } else {
-            setExpression("");
-            setDisplayValue(result.toString());
-        }
-    } catch (error) {
-        setExpression(displayValue);
-        setDisplayValue("Error");
-    }
-    setJustEvaluated(true);
-  };
+  }, [displayValue, justEvaluated, resetCalculator, handleOperator, handleEquals]);
   
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

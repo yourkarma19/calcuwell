@@ -24,7 +24,7 @@ export default function AgeCalculator({ calculatorName }: { calculatorName: stri
 
   useEffect(() => {
     handleCalculateAge();
-  }, [handleCalculateAge]);
+  }, [dateOfBirth, handleCalculateAge]);
   
   const shareParams = {
       dob: dateOfBirth ? dateOfBirth.toISOString().split('T')[0] : ""
@@ -39,7 +39,7 @@ export default function AgeCalculator({ calculatorName }: { calculatorName: stri
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="dob">Date of Birth</Label>
+            <Label htmlFor="dob-picker">Date of Birth</Label>
             <DatePicker 
               date={dateOfBirth} 
               setDate={setDateOfBirth}

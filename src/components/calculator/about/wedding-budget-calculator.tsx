@@ -1,45 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import usePersistentState from "@/hooks/use-persistent-state";
-import { useMemo } from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 export default function AboutWeddingBudgetCalculator() {
-  const [guests, setGuests] = usePersistentState("wedding-guests", 100);
-  const [venue, setVenue] = usePersistentState("wedding-venue", 5000);
-  const [cateringPerPlate, setCateringPerPlate] = usePersistentState("wedding-catering", 75);
-  const [photography, setPhotography] = usePersistentState("wedding-photo", 3000);
-  const [dress, setDress] = usePersistentState("wedding-dress", 2000);
-  const [decor, setDecor] = usePersistentState("wedding-decor", 1500);
-  const [misc, setMisc] = usePersistentState("wedding-misc", 1000);
-
-  const formatCurrency = (value: number) => `₹${value.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
-
-  const { totalCost, chartData } = useMemo(() => {
-    const cateringCost = cateringPerPlate * guests;
-    const total = venue + cateringCost + photography + dress + decor + misc;
-    
-    const data = [
-        { name: "Venue", value: venue, fill: "hsl(var(--chart-1))" },
-        { name: "Catering", value: cateringCost, fill: "hsl(var(--chart-2))" },
-        { name: "Photography", value: photography, fill: "hsl(var(--chart-3))" },
-        { name: "Dress & Attire", value: dress, fill: "hsl(var(--chart-4))" },
-        { name: "Decorations", value: decor, fill: "hsl(var(--chart-5))" },
-        { name: "Miscellaneous", value: misc, fill: "hsl(var(--chart-2))" },
-    ].filter(item => item.value > 0);
-
-    return { totalCost: total, chartData: data };
-  }, [guests, venue, cateringPerPlate, photography, dress, decor, misc]);
-
   return (
     <div className="space-y-6">
       <Card>

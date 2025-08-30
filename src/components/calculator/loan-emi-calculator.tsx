@@ -40,7 +40,7 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
   }, [principal, totalInterest, setChildProps]);
 
 
-  const { newTotalInterest, newTotalMonths, interestSaved, timeSaved } = useMemo(() => {
+  const { newTotalMonths, interestSaved, timeSaved } = useMemo(() => {
     if (extraMonthlyPayment > 0 || extraYearlyPayment > 0) {
       return calculateEMIWithExtraPayments(principal, rate, tenure, extraMonthlyPayment, extraYearlyPayment);
     }
@@ -75,6 +75,7 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
             <div className="flex items-center gap-4">
               <Slider
                 id="principal"
+                aria-label="Loan Amount"
                 value={[principal]}
                 onValueChange={(value) => setPrincipal(value[0])}
                 min={10000}
@@ -90,6 +91,7 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
              <div className="flex items-center gap-4">
               <Slider
                 id="rate"
+                aria-label="Interest Rate"
                 value={[rate]}
                 onValueChange={(value) => setRate(value[0])}
                 min={0}
@@ -105,6 +107,7 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
              <div className="flex items-center gap-4">
               <Slider
                 id="tenure"
+                aria-label="Loan Tenure"
                 value={[tenure]}
                 onValueChange={(value) => setTenure(value[0])}
                 min={1}
@@ -118,11 +121,11 @@ export default function LoanEMICalculator({ setChildProps, calculatorName }: { s
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
             <div className="space-y-2">
               <Label htmlFor="extra-monthly">Extra Monthly Payment (Optional)</Label>
-              <Input type="number" value={extraMonthlyPayment} onChange={e => setExtraMonthlyPayment(Number(e.target.value))} className="w-full" />
+              <Input type="number" id="extra-monthly" value={extraMonthlyPayment} onChange={e => setExtraMonthlyPayment(Number(e.target.value))} className="w-full" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="extra-yearly">Extra Yearly Payment (Optional)</Label>
-              <Input type="number" value={extraYearlyPayment} onChange={e => setExtraYearlyPayment(Number(e.target.value))} className="w-full" />
+              <Input type="number" id="extra-yearly" value={extraYearlyPayment} onChange={e => setExtraYearlyPayment(Number(e.target.value))} className="w-full" />
             </div>
           </div>
 

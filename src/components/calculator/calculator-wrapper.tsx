@@ -4,7 +4,6 @@
 import { ChevronRight, icons } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React from "react";
 import type { ReactNode } from "react";
 import EmbedCalculator from "./embed-calculator";
 import { categories } from "@/lib/calculators";
