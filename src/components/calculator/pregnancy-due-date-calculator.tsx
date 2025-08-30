@@ -3,7 +3,6 @@
 
 import { addDays, format } from "date-fns";
 import { useState, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";

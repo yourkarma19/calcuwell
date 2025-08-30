@@ -123,6 +123,15 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     formula: 'f(x) = P(x) / Q(x)',
     metaDescription: 'Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your math homework.',
   },
+  // New Financial Health Checkup Calculator
+  {
+    slug: 'financial-health-checkup',
+    name: 'Financial Health Checkup',
+    description: 'Get an AI-powered analysis of your financial health.',
+    category: 'Finance',
+    iconName: 'HeartPulse',
+    metaDescription: 'Get a free, AI-powered financial health checkup. Analyze your income, savings, and debt to receive a personalized score and action plan.',
+  },
 
   // Lifestyle
   {
@@ -956,8 +965,3 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     metaDescription: "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
   },
 ];
-
-  
-
-
-

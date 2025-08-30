@@ -1,9 +1,7 @@
 
 "use client";
 
-import { Info } from "lucide-react";
-import { useState, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { useMemo } from "react";
 import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -21,8 +19,7 @@ export default function RetirementCalculator() {
 
   const { futureValue, requiredSavings, shortfall, isAchievable } = useMemo(() => {
     const yearsToRetirement = retirementAge - currentAge;
-    const retirementYears = lifeExpectancy - retirementAge;
-
+    
     if (yearsToRetirement <= 0) return { futureValue: currentSavings, requiredSavings: 0, shortfall: 0, isAchievable: false };
 
     // Calculate future value of current savings
@@ -46,7 +43,7 @@ export default function RetirementCalculator() {
       shortfall: shortfallAmount,
       isAchievable: totalFutureValue >= required,
     };
-  }, [currentAge, retirementAge, currentSavings, monthlyContribution, interestRate, retirementIncome, lifeExpectancy]);
+  }, [currentAge, retirementAge, currentSavings, monthlyContribution, interestRate, retirementIncome]);
 
   const formatCurrency = (value: number) => `₹${value.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
 
@@ -125,34 +122,6 @@ export default function RetirementCalculator() {
                     <li>Set your **Desired Annual Retirement Income** and your **Life Expectancy**.</li>
                 </ol>
                 <p>The calculator will instantly show your projected savings, your savings goal, and whether you are on track to meet it.</p>
-                
-                <h3>Frequently Asked Questions (FAQs)</h3>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger>Why is it important to start saving early?</AccordionTrigger>
-                        <AccordionContent>
-                            Starting early is the most powerful factor in retirement saving because of compound interest. The longer your money is invested, the more time it has to grow, with your earnings generating their own earnings. Even small, regular contributions can grow into a large sum over several decades.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger>What is the 4% Rule?</AccordionTrigger>
-                        <AccordionContent>
-                            The 4% rule is a guideline for retirees that suggests you can safely withdraw 4% of your savings in your first year of retirement and then adjust that amount for inflation for every subsequent year without running out of money for 30 years. This calculator uses it to estimate your savings goal by multiplying your desired annual income by 25.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger>What is a "shortfall?"</AccordionTrigger>
-                        <AccordionContent>
-                           A shortfall is the gap between your estimated savings at retirement and your required savings goal. If this calculator shows a shortfall, it means your current plan is not projected to be enough to fund your desired retirement income. You may need to increase your monthly contributions, work longer, or adjust your retirement income goal.
-                        </AccordionContent>
-                    </AccordionItem>
-                     <AccordionItem value="item-4">
-                        <AccordionTrigger>What is a realistic interest rate to assume?</AccordionTrigger>
-                        <AccordionContent>
-                           A realistic long-term interest rate depends on your investment strategy. A conservative portfolio might earn 4-5%, while a more aggressive, stock-heavy portfolio has historically returned 7-10% annually on average, though with higher risk. It's often wise to use a more conservative estimate for planning.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
             </CardContent>
         </Card>
       </div>

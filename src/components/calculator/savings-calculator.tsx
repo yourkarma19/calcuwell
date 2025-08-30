@@ -1,13 +1,10 @@
 
 "use client";
 
-import { Info } from "lucide-react";
-import { useState, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { useMemo } from "react";
 import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 

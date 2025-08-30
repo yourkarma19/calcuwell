@@ -1,10 +1,8 @@
 
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { Wrench } from "lucide-react";
 import { derivative, parse } from "mathjs";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";

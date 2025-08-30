@@ -2,16 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 const majorTimezones = [
   { city: "New York", tz: "America/New_York" },
@@ -27,7 +18,6 @@ const majorTimezones = [
 
 export default function WorldClock() {
   const [time, setTime] = useState(new Date());
-  const [selectedTz, setSelectedTz] = useState("America/New_York");
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);

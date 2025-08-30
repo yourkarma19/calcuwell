@@ -1,10 +1,8 @@
 
-import { BookOpen, Calculator } from 'lucide-react';
-import { Metadata } from 'next';
+import { BookOpen } from 'lucide-react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import CalculatorCard from '@/components/calculator/calculator-card';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { getCalculatorBySlug } from '@/lib/server/calculator-data';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'CalcPro Blog | Insights & Explanations',
