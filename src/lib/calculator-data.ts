@@ -331,7 +331,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     name: 'Mortgage Calculator',
     description: 'Estimate your monthly mortgage payments.',
     category: 'Finance',
-    iconName: 'Home',
+    iconName: 'HomeIcon',
     formula: 'P * r * (1+r)^n / ((1+r)^n - 1)',
     metaDescription: 'Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.',
   },
@@ -383,7 +383,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     name: 'Investment Return (ROI) Calculator',
     description: 'Calculate the return on your investments.',
     category: 'Finance',
-    iconName: 'AreaChart',
+    iconName: 'LineChart',
     metaDescription: 'Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.',
   },
   {
@@ -391,7 +391,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     name: 'Stock Profit/Loss Calculator',
     description: 'Calculate profits or losses from stock trades.',
     category: 'Finance',
-    iconName: 'AreaChart',
+    iconName: 'LineChart',
     metaDescription: 'Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI).',
   },
   {
@@ -693,7 +693,7 @@ export const calculatorsData: Omit<Calculator, 'component'>[] = [
     name: 'Time Zone Converter',
     description: 'Convert time between different time zones.',
     category: 'Date & Time',
-    iconName: 'Globe2',
+    iconName: 'Globe',
     metaDescription: 'Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.',
   },
   {

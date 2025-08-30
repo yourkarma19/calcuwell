@@ -72,7 +72,7 @@ const diagnoseFinancialHealthFlow = ai.defineFlow(
         inputSchema: DiagnoseFinancialHealthInputSchema,
         outputSchema: DiagnoseFinancialHealthOutputSchema,
     },
-    async (input) => {
+    async (input: DiagnoseFinancialHealthInput) => {
         const { output } = await prompt(input);
         return output!;
     }

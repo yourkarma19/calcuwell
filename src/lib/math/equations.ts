@@ -1,5 +1,5 @@
 
-import { complex, type Complex, pow, sqrt } from "mathjs";
+import { complex, type Complex, pow, sqrt, add, multiply, divide, subtract } from "mathjs";
 
 /**
  * Solves a cubic equation of the form ax³ + bx² + cx + d = 0.
@@ -24,21 +24,21 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
   let roots: Complex[];
 
   if (delta >= 0) {
-    const sqrtDelta = sqrt(delta) as number;
-    const u = cbrtComplex(-q / 2 + sqrtDelta);
-    const v = cbrtComplex(-q / 2 - sqrtDelta);
+    const sqrtDelta = sqrt(delta);
+    const u = cbrtComplex(add(-q / 2, sqrtDelta));
+    const v = cbrtComplex(subtract(-q / 2, sqrtDelta));
 
     roots = [
-      u.add(v) as Complex,
-      (u.mul(complex(-0.5, 0.5 * sqrt(3)))).add(v.mul(complex(-0.5, -0.5 * sqrt(3)))) as Complex,
-      (u.mul(complex(-0.5, -0.5 * sqrt(3)))).add(v.mul(complex(-0.5, 0.5 * sqrt(3)))) as Complex
+      add(u, v) as Complex,
+      add(multiply(u, complex(-0.5, 0.5 * sqrt(3))), multiply(v, complex(-0.5, -0.5 * sqrt(3)))) as Complex,
+      add(multiply(u, complex(-0.5, -0.5 * sqrt(3))), multiply(v, complex(-0.5, 0.5 * sqrt(3)))) as Complex
     ];
   } else {
     // Three real roots
-    const r = sqrt(-p * p * p / 27) as number;
-    const phi = Math.atan2(sqrt(-delta) as number, -q/2);
+    const r = sqrt(divide(-p * p * p, 27));
+    const phi = Math.atan2(sqrt(-delta), -q/2);
     
-    const u = Math.cbrt(r);
+    const u = Math.cbrt(r as number);
     
     roots = [
         complex(2 * u * Math.cos(phi / 3), 0),
@@ -49,7 +49,7 @@ export function solveCubic(a: number, b: number, c: number, d: number): Complex[
 
   // Convert back to roots of original equation: x = t - b / 3a
   const shift = b / (3 * a);
-  return roots.map(t => t.sub(shift) as Complex);
+  return roots.map(t => subtract(t, shift) as Complex);
 }
 
 function cbrtComplex(c: number | Complex): Complex {

@@ -34,8 +34,8 @@ interface SubnetInfo {
 
 
 export default function IpSubnetCalculator() {
-  const [ipAddress, setIpAddress] = usePersistentState("192.168.1.1");
-  const [cidr, setCidr] = usePersistentState(24);
+  const [ipAddress, setIpAddress] = usePersistentState<string>("ip-address", "192.168.1.1");
+  const [cidr, setCidr] = usePersistentState<number>("ip-cidr", 24);
 
   const subnetInfo: SubnetInfo = useMemo(() => {
     try {
