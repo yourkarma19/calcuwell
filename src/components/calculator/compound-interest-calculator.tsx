@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo } from "react";
@@ -9,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function CompoundInterestCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function CompoundInterestCalculator() {
   const [principal, setPrincipal] = usePersistentState("ci-principal", 10000);
   const [rate, setRate] = usePersistentState("ci-rate", 7);
   const [tenure, setTenure] = usePersistentState("ci-tenure", 10);

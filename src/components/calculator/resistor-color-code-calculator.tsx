@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -32,7 +31,7 @@ export default function ResistorColorCodeCalculator() {
   const [band3, setBand3] = usePersistentState<Color>("resistor-band3", "orange");
   const [band4, setBand4] = usePersistentState<Color>("resistor-band4", "gold");
 
-  const resistance = () => {
+  const resistance = useMemo(() => {
     const val1 = colors[band1]?.value;
     const val2 = colors[band2]?.value;
     const mult = colors[band3]?.multiplier;
@@ -49,7 +48,7 @@ export default function ResistorColorCodeCalculator() {
     else displayValue = `${baseValue} Ω`;
 
     return `${displayValue} ±${tol}%`;
-  };
+  }, [band1, band2, band3, band4]);
 
   const ColorSelect = ({ value, onValueChange, bandType }: { value: Color, onValueChange: (v: Color) => void, bandType: 'digit' | 'multiplier' | 'tolerance' }) => (
     <Select value={value} onValueChange={v => onValueChange(v as Color)}>
@@ -83,7 +82,7 @@ export default function ResistorColorCodeCalculator() {
             </div>
             <div className="pt-4 text-center">
                 <h3 className="text-lg font-semibold">Resistance Value</h3>
-                <p className="text-4xl font-bold font-headline text-primary">{resistance()}</p>
+                <p className="text-4xl font-bold font-headline text-primary">{resistance}</p>
             </div>
         </CardContent>
       </Card>

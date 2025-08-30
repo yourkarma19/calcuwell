@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -98,8 +97,8 @@ export default function ProbabilityCalculator() {
                 <AccordionItem value="item-2">
                     <AccordionTrigger>What do 'P(A and B)' and 'P(A or B)' mean?</AccordionTrigger>
                     <AccordionContent>
-                       <p className="mb-2"><strong>P(A and B)</strong> is the probability that both independent events A and B occur. It's calculated by multiplying their individual probabilities: `P(A) * P(B)`.</p>
-                       <p><strong>P(A or B)</strong> is the probability that either event A, event B, or both events occur. It's calculated with the formula: `P(A) + P(B) - P(A and B)`.</p>
+                       <p className="mb-2">**P(A and B)** is the probability that both independent events A and B occur. It's calculated by multiplying their individual probabilities: `P(A) * P(B)`.</p>
+                       <p>**P(A or B)** is the probability that either event A, event B, or both events occur. It's calculated with the formula: `P(A) + P(B) - P(A and B)`.</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">

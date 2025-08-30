@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
@@ -103,7 +102,7 @@ export default function TimeConverter() {
                 <li>Select the starting unit of time (e.g., Hours).</li>
                 <li>Select the target unit you want to convert to (e.g., Seconds).</li>
             </ol>
-            <p>The converted time will be displayed automatically. You can use the swap button to easily reverse the conversion direction.</p>
+            <p>The converted time will be displayed automatically. You can use the swap button to quickly reverse the conversion direction.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">

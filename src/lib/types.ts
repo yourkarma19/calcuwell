@@ -1,4 +1,3 @@
-
 import type { categories } from './calculators';
 
 type CategoryName = (typeof categories)[number]['name'];
@@ -9,7 +8,7 @@ export interface Calculator {
   slug: string;
   name: string;
   description: string;
-  category: CategoryName;
+  category: CalculatorCategory;
   iconName: string; 
   tags?: string[];
   formula?: string;
@@ -18,7 +17,7 @@ export interface Calculator {
 }
 
 export interface Category {
-    name: CategoryName;
+    name: CalculatorCategory;
     slug: string;
     description: string;
     iconName:string; 

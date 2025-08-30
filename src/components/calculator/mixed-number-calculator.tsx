@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,15 +11,6 @@ import usePersistentState from "@/hooks/use-persistent-state";
 const toImproper = (whole: number, num: number, den: number) => {
     return { num: whole * den + num, den };
 };
-
-// Helper to convert improper fraction to mixed number
-const toMixed = (num: number, den: number) => {
-    const whole = Math.floor(num / den);
-    const newNum = num % den;
-    return { whole, num: newNum, den };
-};
-
-// Placeholder for future operations like addition, subtraction etc.
 
 export default function MixedNumberCalculator() {
     const [whole, setWhole] = usePersistentState("mixed-whole", 1);

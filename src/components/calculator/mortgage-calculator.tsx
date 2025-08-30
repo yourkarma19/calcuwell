@@ -1,25 +1,13 @@
-
 "use client";
 
-import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
 import { Input } from "../ui/input";
-import { Skeleton } from "../ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
-
-const MortgageBreakdownChart = dynamic(
-    () => import('@/components/charts/mortgage-breakdown-chart').then(mod => mod.MortgageBreakdownChart),
-    { 
-        ssr: false,
-        loading: () => <Skeleton className="w-full h-[25rem]" />
-    }
-);
-
 
 export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: any) => void, calculatorName: string }) {
   const searchParams = useSearchParams();

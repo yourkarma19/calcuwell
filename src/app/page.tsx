@@ -1,4 +1,3 @@
-
 import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
 import Link from "next/link";
 import CalculatorCard from "@/components/calculator/calculator-card";

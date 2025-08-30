@@ -100,7 +100,7 @@ export default function FactorialCalculator() {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Where are factorials used in real life?</AccordionTrigger>
                     <AccordionContent>
-                       Factorials are key in probability. They are used to calculate the number of possible ways to arrange a set of items. For example, finding the number of ways a group of people can stand in a line.
+                       Factorials are key in probability. They are used to calculate the number of ways to arrange a set of items. For example, finding the number of ways a group of people can stand in a line.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
