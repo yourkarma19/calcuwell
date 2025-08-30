@@ -84,7 +84,7 @@ export default function Home() {
           </p>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <Card className="text-center">
-              <CardContent>
+              <CardContent className="pt-6">
                 <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
                    <Zap className="w-6 h-6 text-primary" />
                 </div>
@@ -93,7 +93,7 @@ export default function Home() {
               </CardContent>
             </Card>
              <Card className="text-center">
-              <CardContent>
+              <CardContent className="pt-6">
                  <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
                    <Target className="w-6 h-6 text-primary" />
                 </div>
@@ -102,7 +102,7 @@ export default function Home() {
               </CardContent>
             </Card>
              <Card className="text-center">
-              <CardContent>
+              <CardContent className="pt-6">
                  <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
                    <Smartphone className="w-6 h-6 text-primary" />
                 </div>

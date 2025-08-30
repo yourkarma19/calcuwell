@@ -22,7 +22,6 @@ export default function CalculatorWrapper({
   calculator,
 }: CalculatorWrapperProps) {
   const category = categories.find(c => c.name === calculator.category);
-  const [formula, setFormula] = React.useState(calculator.formula || "No formula available.");
   const searchParams = useSearchParams();
   const isEmbed = searchParams.get('embed') === 'true';
 
@@ -32,11 +31,8 @@ export default function CalculatorWrapper({
 
   const EnhancedChildren = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
-      // @ts-ignore
-      const originalOnSubmit = child.props.onSubmit;
       const newProps = {
         ...child.props,
-        setFormula,
         setChildProps,
         calculatorName: calculator.name, // Pass down the calculator name
       };

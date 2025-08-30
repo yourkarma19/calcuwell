@@ -1,22 +1,18 @@
 
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function PythagoreanTheoremCalculator({ setFormula }: { setFormula: (formula: string) => void }) {
+export default function PythagoreanTheoremCalculator() {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">("pythagorean-solveFor", "c");
   const [sideA, setSideA] = usePersistentState<number | "">("pythagorean-sideA", 3);
   const [sideB, setSideB] = usePersistentState<number | "">("pythagorean-sideB", 4);
   const [sideC, setSideC] = usePersistentState<number | "">("pythagorean-sideC", 5);
-
-  useEffect(() => {
-    setFormula("a² + b² = c²");
-  }, [setFormula]);
 
   const { result, error } = useMemo(() => {
     const a = Number(sideA);

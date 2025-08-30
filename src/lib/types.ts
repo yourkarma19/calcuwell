@@ -1,7 +1,7 @@
 
 import type { categories } from './calculators';
 
-type CategoryName = typeof categories[number]['name'];
+type CategoryName = (typeof categories)[number]['name'];
 
 export type CalculatorCategory = CategoryName | "Blog";
 

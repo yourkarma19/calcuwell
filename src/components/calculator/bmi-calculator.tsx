@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 
 type UnitSystem = "metric" | "imperial";
 
-export default function BMICalculator() {
+export default function BMICalculator({ calculatorName }: { calculatorName: string }) {
   const searchParams = useSearchParams();
   const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>("bmi-unit-system", "metric");
   
@@ -162,7 +162,7 @@ export default function BMICalculator() {
         <ExportShareControls
             elementIds={['bmi-inputs', 'bmi-results']}
             shareParams={shareParams}
-            calculatorName="BMI Calculator"
+            calculatorName={calculatorName}
         />
     </div>
   );

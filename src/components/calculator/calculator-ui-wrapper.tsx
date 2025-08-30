@@ -1,9 +1,10 @@
+
 import React from 'react';
 import ExportShareControls from './export-share-controls';
 
 interface CalculatorUIWrapperProps {
   inputCard: React.ReactNode;
-  resultsCard: React.ReactNode;
+  resultsCard?: React.ReactNode;
   shareParams: Record<string, string>;
   elementIds: string[];
   calculatorName: string;
