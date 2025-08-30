@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "npm run lint:check && next build",
     "start": "next start",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint ./src --ext .tsx,.ts,.js,.jsx",
     "type-check": "tsc --noEmit",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
@@ -16,7 +16,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "prepare": "husky install",
-    "lint:check": "eslint ./src --ext .tsx,.ts,.js,.jsx && prettier --check ./src",
+    "lint:check": "npm run lint && prettier --check ./src",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,md}'"
   },
@@ -78,8 +78,8 @@
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "@typescript-eslint/parser": "^7.16.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "^9.1.0",
@@ -94,7 +94,7 @@
     "postcss": "^8",
     "prettier": "^3.3.2",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.5.3",
+    "typescript": "5.5",
     "vitest": "^3.2.4"
   },
   "browserslist": [
@@ -105,5 +105,8 @@
     "ios_saf >= 12",
     "not ie < 11",
     "not dead"
-  ]
+  ],
+  "engines": {
+    "node": ">=20 <23"
+  }
 }
