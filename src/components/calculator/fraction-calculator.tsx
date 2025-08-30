@@ -64,7 +64,7 @@ export default function FractionCalculator() {
 
             <div className="flex flex-col items-center">
                 <Label>Operator</Label>
-                <Select value={operator} onValueChange={(v) => setOperator(v as any)}>
+                <Select value={operator} onValueChange={(v: "+" | "-" | "*" | "/") => setOperator(v)}>
                   <SelectTrigger className="w-20 text-2xl font-bold mt-1"><SelectValue /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="+">+</SelectItem>

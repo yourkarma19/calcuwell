@@ -1,4 +1,3 @@
-
 "use client";
 
 import { rationalize } from "mathjs";
@@ -8,9 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function PartialFractionCalculator() {
-    const [expression, setExpression] = useState("(x^2 + 1) / (x^3 - x^2 + 2x - 2)");
+    const [expression, setExpression] = usePersistentState("tangent-func","(x^2 + 1) / (x^3 - x^2 + 2x - 2)");
     const [result, setResult] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
@@ -25,8 +25,8 @@ export default function PartialFractionCalculator() {
             
             setResult(simplified.expression.toString());
 
-        } catch (e: any) {
-            setError(e.message || "Failed to parse or decompose the expression.");
+        } catch (e) {
+            setError((e as Error).message || "Failed to parse or decompose the expression.");
             setResult(null);
         }
     };

@@ -77,7 +77,7 @@ export default function MixedNumberCalculator() {
                         <AccordionItem value="item-1">
                             <AccordionTrigger>What Are Mixed Numbers?</AccordionTrigger>
                             <AccordionContent>
-                                A mixed number is a whole number combined with a proper fraction. It's a way of representing a value greater than one. For example, if you have 2 full pizzas and a half pizza, you would write it as 2 ½. This is often more intuitive to understand in daily life than its improper fraction equivalent, which would be 5/2.
+                                A mixed number is a whole number combined with a proper fraction. It&apos;s a way of representing a value greater than one. For example, if you have 2 full pizzas and a half pizza, you would write it as 2 ½. This is often more intuitive to understand in daily life than its improper fraction equivalent, which would be 5/2. They are used extensively in cooking, construction, and other hands-on fields where precise measurements that are not whole units are common.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
@@ -89,13 +89,13 @@ export default function MixedNumberCalculator() {
                         <AccordionItem value="item-3">
                             <AccordionTrigger>How to Add and Subtract Mixed Numbers (The Easy Way)</AccordionTrigger>
                             <AccordionContent>
-                                The easiest and most reliable way to add or subtract mixed numbers is to first convert them all into improper fractions. Once you have two improper fractions, you find a common denominator for both. After they share a common denominator, you can perform the addition or subtraction on the numerators. Finally, you can convert the resulting improper fraction back to a mixed number if needed.
+                                The easiest and most reliable way to add or subtract mixed numbers is to first convert them all into improper fractions. Once you have two improper fractions, you find a common denominator for both. After they share a common denominator, you can perform the addition or subtraction on the numerators. Finally, you can convert the resulting improper fraction back to a mixed number if needed. This method avoids potential errors when borrowing from the whole number in subtraction.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger>Can a mixed number be negative?</AccordionTrigger>
                             <AccordionContent>
-                                Yes, a mixed number can be negative. A negative mixed number like -3 ½ represents the sum of a negative whole number (-3) and a negative fraction (-½), which equals -3.5. It's important to treat the entire value as negative, not just the whole number part. When converting, -3 ½ would become -(3*2 + 1)/2 = -7/2.
+                                Yes, a mixed number can be negative. A negative mixed number like -3 ½ represents the sum of a negative whole number (-3) and a negative fraction (-½), which equals -3.5. It&apos;s important to treat the entire value as negative, not just the whole number part. When converting, -3 ½ would become -(3*2 + 1)/2 = -7/2.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

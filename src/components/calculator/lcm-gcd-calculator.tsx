@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Plus, X } from "lucide-react";
@@ -123,7 +122,7 @@ export default function LcmGcdCalculator() {
                 <AccordionItem value="item-3">
                     <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
                     <AccordionContent>
-                       For any two positive integers 'a' and 'b', there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a, b)`. This means the product of two numbers is equal to the product of their GCD and LCM.
+                       For any two positive integers &apos;a&apos; and &apos;b&apos;, there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a, b)`. This means the product of two numbers is equal to the product of their GCD and LCM.
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-4">

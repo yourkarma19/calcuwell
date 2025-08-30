@@ -50,7 +50,7 @@ export default function EquationSolver() {
           <CardDescription>Solve linear and quadratic equations.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Select value={mode} onValueChange={m => setMode(m as any)}>
+          <Select value={mode} onValueChange={(m) => setMode(m as 'linear' | 'quadratic')}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="linear">Linear Equation (ax + b = c)</SelectItem>
@@ -92,7 +92,7 @@ export default function EquationSolver() {
             <AccordionItem value="item-1">
               <AccordionTrigger>What is a linear equation?</AccordionTrigger>
               <AccordionContent>
-                A linear equation is an equation for a straight line. This calculator solves for 'x' in the form ax + b = c.
+                A linear equation is an equation for a straight line. This calculator solves for &apos;x&apos; in the form ax + b = c.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">

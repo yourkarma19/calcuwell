@@ -60,12 +60,12 @@ export default function LogarithmCalculator() {
         <Card>
           <CardHeader><CardTitle as="h2">About the Logarithm Calculator</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The Logarithm Calculator helps you find the logarithm of any positive number to any positive base (except 1). Logarithms are the reverse of exponents. They answer the question: "To what power must we raise a base to get another number?" This tool is great for students and professionals who work with exponential growth or decay.</p>
+            <p>The Logarithm Calculator helps you find the logarithm of any positive number to any positive base (except 1). Logarithms are the reverse of exponents. They answer the question: &quot;To what power must we raise a base to get another number?&quot; This tool is great for students and professionals who work with exponential growth or decay.</p>
             
             <h2>How to Use the Logarithm Calculator</h2>
             <ol>
-                <li>Enter the **Number (x)** you want to find the logarithm of.</li>
-                <li>Enter the **Base (b)** for the logarithm.</li>
+                <li>Enter the <strong>Number (x)</strong> you want to find the logarithm of.</li>
+                <li>Enter the <strong>Base (b)</strong> for the logarithm.</li>
             </ol>
             <p>The result of log b(x) will be calculated and displayed instantly.</p>
 
@@ -80,11 +80,11 @@ export default function LogarithmCalculator() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>Common Log vs. Natural Log</AccordionTrigger>
                 <AccordionContent>
-                  The **common logarithm (log)** has a base of 10 and is widely used in science. The **natural logarithm (ln)** has a base of *e* (about 2.718) and is important in math, physics, and finance for describing continuous growth.
+                  The <strong>common logarithm (log)</strong> has a base of 10 and is widely used in science. The <strong>natural logarithm (ln)</strong> has a base of *e* (about 2.718) and is important in math, physics, and finance for describing continuous growth.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger>Why can't the base be 1?</AccordionTrigger>
+                <AccordionTrigger>Why can&apos;t the base be 1?</AccordionTrigger>
                 <AccordionContent>
                   The base of a logarithm cannot be 1 because 1 raised to any power is always 1. This means you could never get any other number. This makes the operation undefined for most values.
                 </AccordionContent>

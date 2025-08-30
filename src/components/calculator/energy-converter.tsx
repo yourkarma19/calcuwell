@@ -88,12 +88,12 @@ export default function EnergyConverter() {
       <Card>
         <CardHeader><CardTitle>About Energy Units</CardTitle></CardHeader>
         <CardContent>
-          <p>This tool helps you convert between different units of energy like Joules, calories, and kilowatt-hours (kWh). It's useful for students, engineers, and anyone who needs to work with energy measurements.</p>
+          <p>This tool helps you convert between different units of energy like Joules, calories, and kilowatt-hours (kWh). It&apos;s useful for students, engineers, and anyone who needs to work with energy measurements.</p>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>Joule vs. Calorie</AccordionTrigger>
               <AccordionContent>
-                The **Joule (J)** is the standard SI unit of energy. A **calorie (cal)** is an older unit, often used in chemistry. The "calorie" on food labels is actually a **kilocalorie (kcal)**. One kcal is equal to 1,000 calories.
+                The <strong>Joule (J)</strong> is the standard SI unit of energy. A <strong>calorie (cal)</strong> is an older unit, often used in chemistry. The &quot;calorie&quot; on food labels is actually a <strong>kilocalorie (kcal)</strong>. One kcal is equal to 1,000 calories.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">

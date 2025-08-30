@@ -1,7 +1,7 @@
 "use client";
 
 import { AlertCircle } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 const ipToLong = (ip: string): number => {
   return ip.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;
@@ -19,8 +20,8 @@ const longToIp = (long: number): string => {
 };
 
 export default function IpSubnetCalculator() {
-  const [ipAddress, setIpAddress] = useState("192.168.1.1");
-  const [cidr, setCidr] = useState(24);
+  const [ipAddress, setIpAddress] = usePersistentState("192.168.1.1");
+  const [cidr, setCidr] = usePersistentState(24);
 
   const subnetInfo = useMemo(() => {
     try {
@@ -47,8 +48,8 @@ export default function IpSubnetCalculator() {
         wildcardMask: longToIp(~mask),
         error: null
       };
-    } catch (e: any) {
-      return { error: e.message || "Invalid IP Address or CIDR" };
+    } catch (e) {
+      return { error: (e as Error).message || "Invalid IP Address or CIDR" };
     }
   }, [ipAddress, cidr]);
 
@@ -133,7 +134,7 @@ export default function IpSubnetCalculator() {
                  <AccordionItem value="item-3">
                     <AccordionTrigger>Network Address vs. Broadcast Address</AccordionTrigger>
                     <AccordionContent>
-                        The **Network Address** is the first address in a subnet and identifies the network itself. The **Broadcast Address** is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why "usable" hosts are always two less than the total.
+                        The **Network Address** is the first address in a subnet and identifies the network itself. The **Broadcast Address** is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why &quot;usable&quot; hosts are always two less than the total.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">

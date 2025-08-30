@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -7,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 // Helper function to calculate factorial
 const factorial = (n: number): number => {
@@ -20,8 +20,8 @@ const factorial = (n: number): number => {
 };
 
 export default function PermutationCombinationCalculator() {
-  const [totalItems, setTotalItems] = useState(10); // n
-  const [chosenItems, setChosenItems] = useState(3); // r
+  const [totalItems, setTotalItems] = usePersistentState("pcc-total",10); // n
+  const [chosenItems, setChosenItems] = usePersistentState("pcc-chosen",3); // r
 
   const { permutations, combinations } = useMemo(() => {
     const n = Number(totalItems);
@@ -54,7 +54,7 @@ export default function PermutationCombinationCalculator() {
           <CardHeader>
             <CardTitle>Permutations & Combinations</CardTitle>
             <CardDescription>
-                Calculate the number of ways to choose 'r' items from a set of 'n' items. <br />
+                Calculate the number of ways to choose &apos;r&apos; items from a set of &apos;n&apos; items. <br />
                 - <span className="font-semibold">Permutation (nPr):</span> Order matters. <br />
                 - <span className="font-semibold">Combination (nCr):</span> Order does not matter.
             </CardDescription>
