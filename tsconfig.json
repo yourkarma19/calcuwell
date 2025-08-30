@@ -31,7 +31,8 @@
     "vitest.config.ts",
     "vitest.setup.ts",
     "playwright.config.ts",
-    "tests/**/*.ts"
+    "tests/**/*.ts",
+    "tailwind.config.ts"
   ],
   "exclude": ["node_modules", "dist", "build"]
 }
