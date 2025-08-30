@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
+import type { HowTo, WithContext } from 'schema-dts';
 
 export const metadata: Metadata = {
   title: 'What is the Pythagorean Theorem? | CalcPro',
@@ -12,9 +13,37 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd: WithContext<HowTo> = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to use the Pythagorean Theorem",
+    description: "A simple example of how to calculate the hypotenuse of a right triangle using the Pythagorean theorem.",
+    step: [
+        {
+            "@type": "HowToStep",
+            name: "Square the sides",
+            text: "Square the lengths of the two shorter sides. For a triangle with sides 3 and 4, this would be 3² = 9 and 4² = 16."
+        },
+        {
+            "@type": "HowToStep",
+            name: "Add the results",
+            text: "Add the squared values together: 9 + 16 = 25."
+        },
+        {
+            "@type": "HowToStep",
+            name: "Find the square root",
+            text: "Find the square root of the sum to get the length of the hypotenuse: √25 = 5."
+        }
+    ]
+};
+
 export default function PythagoreanTheoremBlogPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="prose dark:prose-invert max-w-none">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
@@ -43,7 +72,7 @@ export default function PythagoreanTheoremBlogPage() {
         <div className="my-6 flex justify-center">
             <Image 
                 src="https://placehold.co/400x300.png"
-                alt="Diagram of a right-angled triangle showing sides a, b, and hypotenuse c"
+                alt="Diagram of a right-angled triangle showing sides a, b, and hypotenuse c, illustrating the Pythagorean theorem."
                 width={400}
                 height={300}
                 className="rounded-lg shadow-md"
