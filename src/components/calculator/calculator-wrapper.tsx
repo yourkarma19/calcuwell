@@ -4,61 +4,51 @@
 import { ChevronRight, icons } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React from 'react';
+import React from "react";
 import type { ReactNode } from "react";
-import CalculatorContent from "./calculator-content";
 import EmbedCalculator from "./embed-calculator";
 import { categories } from "@/lib/calculators";
 import type { Calculator } from "@/lib/types";
 
-
 interface CalculatorWrapperProps {
   children: ReactNode;
-  calculator: Omit<Calculator, 'component'>;
+  sidebar: ReactNode;
+  calculator: Omit<Calculator, "component">;
 }
 
 export default function CalculatorWrapper({
   children,
+  sidebar,
   calculator,
 }: CalculatorWrapperProps) {
-  const category = categories.find(c => c.name === calculator.category);
+  const category = categories.find((c) => c.name === calculator.category);
   const searchParams = useSearchParams();
-  const isEmbed = searchParams.get('embed') === 'true';
+  const isEmbed = searchParams.get("embed") === "true";
 
-  const LucideIcon = icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
-  
-  const [childProps, setChildProps] = React.useState({});
-
-  const EnhancedChildren = React.Children.map(children, child => {
-    if (React.isValidElement(child)) {
-      const newProps = {
-        ...child.props,
-        setChildProps,
-        calculatorName: calculator.name,
-      };
-      
-      return React.cloneElement(child, newProps);
-    }
-    return child;
-  });
+  const LucideIcon =
+    icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
 
   if (isEmbed) {
     return (
-        <div className="p-2">
-             <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
-                {EnhancedChildren}
-            </div>
+      <div className="p-2">
+        <div className="grid grid-cols-1 gap-8 items-start max-w-5xl mx-auto">
+          {children}
         </div>
-    )
+      </div>
+    );
   }
 
   return (
     <div className="container mx-auto px-4 py-8">
       {category && (
         <div className="mb-4 text-sm text-muted-foreground flex items-center gap-2">
-          <Link href="/" className="hover:text-primary">Home</Link>
+          <Link href="/" className="hover:text-primary">
+            Home
+          </Link>
           <ChevronRight className="w-4 h-4" />
-          <Link href={`/categories/${category.slug}`} className="hover:text-primary">{category.name}</Link>
+          <Link href={`/categories/${category.slug}`} className="hover:text-primary">
+            {category.name}
+          </Link>
           <ChevronRight className="w-4 h-4" />
           <span>{calculator.name}</span>
         </div>
@@ -75,13 +65,12 @@ export default function CalculatorWrapper({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-        {EnhancedChildren}
-      </div>
-
-      <div className="max-w-5xl mx-auto mt-12 space-y-8">
-        <CalculatorContent slug={calculator.slug} {...childProps} />
-        <EmbedCalculator slug={calculator.slug} />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto">
+        <main className="lg:col-span-2">{children}</main>
+        <aside className="space-y-6 lg:sticky lg:top-24">
+            {sidebar}
+            <EmbedCalculator slug={calculator.slug} />
+        </aside>
       </div>
     </div>
   );

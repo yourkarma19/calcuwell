@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import CalculatorContent from "@/components/calculator/calculator-content";
 import CalculatorLoader from "@/components/calculator/calculator-loader";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import { getCalculatorBySlug, loadFullCalculatorData } from "@/lib/server/calculator-data";
@@ -45,7 +46,10 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   }
   
   return (
-      <CalculatorWrapper calculator={calculator}>
+      <CalculatorWrapper 
+        calculator={calculator}
+        sidebar={<CalculatorContent slug={params.slug} />}
+      >
         <CalculatorLoader slug={params.slug} />
       </CalculatorWrapper>
   );
