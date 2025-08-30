@@ -34,7 +34,7 @@ export default function CalculatorWrapper({
       const newProps = {
         ...child.props,
         setChildProps,
-        calculatorName: calculator.name, // Pass down the calculator name
+        calculatorName: calculator.name,
       };
       
       return React.cloneElement(child, newProps);
@@ -53,41 +53,36 @@ export default function CalculatorWrapper({
   }
 
   return (
-    <>
-      <div className="container mx-auto px-4 py-8">
-        {category && (
-          <div className="mb-4 text-sm text-muted-foreground flex items-center gap-2">
-            <Link href="/" className="hover:text-primary">Home</Link>
-            <ChevronRight className="w-4 h-4" />
-            <Link href={`/categories/${category.slug}`} className="hover:text-primary">{category.name}</Link>
-            <ChevronRight className="w-4 h-4" />
-            <span>{calculator.name}</span>
-          </div>
-        )}
-        <div className="text-center mb-12">
-          <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
-            <LucideIcon className="w-12 h-12 text-primary" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
-            {calculator.name}
-          </h1>
-          <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
-            {calculator.description}
-          </p>
+    <div className="container mx-auto px-4 py-8">
+      {category && (
+        <div className="mb-4 text-sm text-muted-foreground flex items-center gap-2">
+          <Link href="/" className="hover:text-primary">Home</Link>
+          <ChevronRight className="w-4 h-4" />
+          <Link href={`/categories/${category.slug}`} className="hover:text-primary">{category.name}</Link>
+          <ChevronRight className="w-4 h-4" />
+          <span>{calculator.name}</span>
         </div>
+      )}
+      <div className="text-center mb-12">
+        <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
+          <LucideIcon className="w-12 h-12 text-primary" />
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
+          {calculator.name}
+        </h1>
+        <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
+          {calculator.description}
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-          {EnhancedChildren}
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
+        {EnhancedChildren}
       </div>
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-3 space-y-6">
-            <CalculatorContent slug={calculator.slug} {...childProps} />
-            <EmbedCalculator slug={calculator.slug} />
-          </div>
-        </div>
+
+      <div className="max-w-5xl mx-auto mt-12 space-y-8">
+        <CalculatorContent slug={calculator.slug} {...childProps} />
+        <EmbedCalculator slug={calculator.slug} />
       </div>
-    </>
+    </div>
   );
 }
