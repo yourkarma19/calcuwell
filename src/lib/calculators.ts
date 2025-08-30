@@ -1,8 +1,8 @@
 
-import type { Category } from '@/lib/types';
+import type { Category } from "@/lib/types";
 
 export const categories: Category[] = [
- {
+  {
     name: "Math",
     slug: "math",
     description: "Solve mathematical problems, from basic to complex.",
@@ -47,7 +47,8 @@ export const categories: Category[] = [
   {
     name: "Geometry & Engineering",
     slug: "geometry-engineering",
-    description: "Calculators for geometric shapes and engineering principles.",
+    description:
+      "Calculators for geometric shapes and engineering principles.",
     iconName: "Triangle",
   },
   {

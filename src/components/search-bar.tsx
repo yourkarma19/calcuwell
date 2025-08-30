@@ -29,7 +29,7 @@ export function SearchBar() {
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
-  
+
   // Debounce search input
   React.useEffect(() => {
     setIsLoading(true);
@@ -41,17 +41,17 @@ export function SearchBar() {
 
     return () => clearTimeout(debounceTimeout);
   }, [search]);
-  
+
   // Pre-fetch initial results when opening
   React.useEffect(() => {
     if (isOpen && search === "") {
-        const fetchInitial = async () => {
-            setIsLoading(true);
-            const initialResults = await searchCalculators("");
-            setResults(initialResults || []); // Ensure results is always an array
-            setIsLoading(false);
-        };
-        fetchInitial();
+      const fetchInitial = async () => {
+        setIsLoading(true);
+        const initialResults = await searchCalculators("");
+        setResults(initialResults || []); // Ensure results is always an array
+        setIsLoading(false);
+      };
+      fetchInitial();
     }
   }, [isOpen, search]);
 
@@ -72,7 +72,7 @@ export function SearchBar() {
       setIsOpen(false);
       setSearch("");
     },
-    [router]
+    [router],
   );
 
   return (
@@ -105,7 +105,9 @@ export function SearchBar() {
             )}
             <CommandGroup>
               {results.map((calc) => {
-                const LucideIcon = icons[calc.iconName as keyof typeof icons] || icons.Calculator;
+                const LucideIcon =
+                  icons[calc.iconName as keyof typeof icons] ||
+                  icons.Calculator;
                 return (
                   <CommandItem
                     key={calc.slug}

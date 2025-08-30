@@ -1,5 +1,6 @@
-import React from 'react';
-import ExportShareControls from './export-share-controls';
+
+import React from "react";
+import ExportShareControls from "./export-share-controls";
 
 interface CalculatorUIWrapperProps {
   inputCard: React.ReactNode;

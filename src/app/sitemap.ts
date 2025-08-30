@@ -1,70 +1,73 @@
-import { MetadataRoute } from 'next'
-import { metadata } from '@/app/layout';
-import { categories } from '@/lib/calculators';
-import { loadFullCalculatorData } from '@/lib/server/calculator-data'
+
+import { MetadataRoute } from "next";
+import { metadata } from "@/app/layout";
+import { categories } from "@/lib/calculators";
+import { loadFullCalculatorData } from "@/lib/server/calculator-data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = metadata.metadataBase?.toString() || "https://calcpro.online";
   const allCalculators = await loadFullCalculatorData();
 
-  const calculatorEntries: MetadataRoute.Sitemap = allCalculators.map((calc) => ({
-    url: `${baseUrl}/calculators/${calc.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
+  const calculatorEntries: MetadataRoute.Sitemap = allCalculators.map(
+    (calc) => ({
+      url: `${baseUrl}/calculators/${calc.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }),
+  );
 
   const categoryEntries: MetadataRoute.Sitemap = categories.map((cat) => ({
     url: `${baseUrl}/categories/${cat.slug}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly',
+    changeFrequency: "weekly",
     priority: 0.9,
-  }))
-  
+  }));
+
   const staticEntries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/sitemap`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-use`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.3,
     },
-     {
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.7,
     },
-     {
+    {
       url: `${baseUrl}/blog/what-is-the-pythagorean-theorem`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.6,
-    }
-  ]
+    },
+  ];
 
-  return [...staticEntries, ...categoryEntries, ...calculatorEntries]
+  return [...staticEntries, ...categoryEntries, ...calculatorEntries];
 }

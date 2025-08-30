@@ -45,7 +45,10 @@ export default function CalculatorWrapper({
             Home
           </Link>
           <ChevronRight className="w-4 h-4" />
-          <Link href={`/categories/${category.slug}`} className="hover:text-primary">
+          <Link
+            href={`/categories/${category.slug}`}
+            className="hover:text-primary"
+          >
             {category.name}
           </Link>
           <ChevronRight className="w-4 h-4" />
@@ -67,8 +70,8 @@ export default function CalculatorWrapper({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto">
         <main className="lg:col-span-2">{children}</main>
         <aside className="space-y-6 lg:sticky lg:top-24">
-            {sidebar}
-            <EmbedCalculator slug={calculator.slug} />
+          {sidebar}
+          <EmbedCalculator slug={calculator.slug} />
         </aside>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calculator } from "@/lib/types";
 
-type StrippedCalculator = Omit<Calculator, 'component'>;
+type StrippedCalculator = Omit<Calculator, "component">;
 
 interface CategoryClientPageProps {
   name: string;
@@ -17,20 +17,24 @@ interface CategoryClientPageProps {
   calculators: StrippedCalculator[];
 }
 
-export default function CategoryClientPage({ name, iconName, description, calculators }: CategoryClientPageProps) {
+export default function CategoryClientPage({
+  name,
+  iconName,
+  description,
+  calculators,
+}: CategoryClientPageProps) {
   const [filter, setFilter] = useState("");
-  
+
   const LucideIcon = icons[iconName as keyof typeof icons] || icons.Calculator;
-  
+
   const filteredCalculators = useMemo(() => {
     if (!filter) {
-        return calculators;
+      return calculators;
     }
-    
-    return calculators.filter((calculator) => 
-        calculator.name.toLowerCase().includes(filter.toLowerCase())
-    );
 
+    return calculators.filter((calculator) =>
+      calculator.name.toLowerCase().includes(filter.toLowerCase()),
+    );
   }, [calculators, filter]);
 
   if (!iconName) {
@@ -50,23 +54,27 @@ export default function CategoryClientPage({ name, iconName, description, calcul
       </div>
 
       <div className="mb-8 max-w-sm mx-auto">
-        <Label htmlFor="filter-input" className="sr-only">Filter calculators</Label>
-        <Input 
-            id="filter-input"
-            type="text"
-            placeholder={`Search in ${name}...`}
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
+        <Label htmlFor="filter-input" className="sr-only">
+          Filter calculators
+        </Label>
+        <Input
+          id="filter-input"
+          type="text"
+          placeholder={`Search in ${name}...`}
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
         />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredCalculators.length > 0 ? (
-            filteredCalculators.map((calculator) => (
-              <CalculatorCard key={calculator.slug} calculator={calculator} />
-            ))
+          filteredCalculators.map((calculator) => (
+            <CalculatorCard key={calculator.slug} calculator={calculator} />
+          ))
         ) : (
-            <p className="text-muted-foreground col-span-full text-center">No calculators found for &quot;{filter}&quot;.</p>
+          <p className="text-muted-foreground col-span-full text-center">
+            No calculators found for &quot;{filter}&quot;.
+          </p>
         )}
       </div>
     </main>

@@ -16,7 +16,7 @@ export default function Header() {
             </span>
           </Link>
         </div>
-        
+
         <div className="flex flex-1 items-center justify-end space-x-2">
           <SearchBar />
           <ThemeToggle />

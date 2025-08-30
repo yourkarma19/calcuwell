@@ -1,7 +1,7 @@
 
-import type { categories } from './calculators';
+import type { categories } from "./calculators";
 
-export type CalculatorCategoryName = (typeof categories)[number]['name'];
+export type CalculatorCategoryName = (typeof categories)[number]["name"];
 
 export interface Calculator {
   slug: string;
