@@ -7,7 +7,7 @@ export default function AboutCountdownTimer() {
         <Card>
             <CardHeader><CardTitle>About the Countdown Timer</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Countdown Timer is a tool to track the time remaining until a specific future event. It continuously updates to show the number of days, hours, minutes, and seconds left, providing a dynamic and real-time countdown. It's perfect for building anticipation for personal milestones, holidays, or important deadlines.</p>
+                <p>The Countdown Timer is a tool to track the time remaining until a specific future event. It continuously updates to show the number of days, hours, minutes, and seconds left, providing a dynamic and real-time countdown. It&apos;s perfect for building anticipation for personal milestones, holidays, or important deadlines.</p>
                 
                 <h3>How to Use the Timer</h3>
                 <ol>
@@ -33,7 +33,7 @@ export default function AboutCountdownTimer() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Does the timer account for time zones?</AccordionTrigger>
                         <AccordionContent>
-                           The timer operates based on your local device's time. When you set a target date and time, it is set in your current time zone. If you share your countdown with someone in a different time zone, they will see the countdown relative to their own local time.
+                           The timer operates based on your local device&apos;s time. When you set a target date and time, it is set in your current time zone. If you share your countdown with someone in a different time zone, they will see the countdown relative to their own local time.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

@@ -38,7 +38,7 @@ export default function AboutTorqueCalculator() {
                             <ul className="list-disc pl-5 mt-2">
                                 <li>Using a wrench to tighten a bolt.</li>
                                 <li>Opening a door by pushing on the handle (the hinge is the pivot).</li>
-                                <li>A car engine's crankshaft rotating to power the wheels.</li>
+                                <li>A car engine&apos;s crankshaft rotating to power the wheels.</li>
                                 <li>Pedaling a bicycle.</li>
                             </ul>
                         </AccordionContent>

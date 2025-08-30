@@ -6,7 +6,7 @@ import { useState, useEffect, Dispatch, SetStateAction, useCallback } from "reac
 function usePersistentState<T>(
     key: string,
     defaultValue: T,
-    reviver?: (value: string) => T
+    reviver?: (value: any) => T
 ): [T, Dispatch<SetStateAction<T>>] {
     const [state, setState] = useState<T>(defaultValue);
 

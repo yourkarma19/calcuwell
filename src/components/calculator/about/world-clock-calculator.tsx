@@ -9,7 +9,7 @@ export default function AboutWorldClock() {
                 <p>The World Clock is a tool that displays the current local time and date for a selection of major cities across the globe. It is essential for anyone who works with international teams, travels frequently, or needs to stay connected with friends and family in different countries. The clock automatically accounts for different time zones and Daylight Saving Time rules, removing the guesswork and potential confusion of manual time conversions.</p>
                 
                 <h2>How to Use the World Clock</h2>
-                <p>The clock is fully automatic. Upon loading, it fetches the current time from your device and displays the equivalent local time for a predefined list of major international cities. The time for each city updates every second, providing a real-time, at-a-glance view of global times. This tool is perfect for quickly checking if it's a good time to make an international call or schedule a meeting across different regions.</p>
+                <p>The clock is fully automatic. Upon loading, it fetches the current time from your device and displays the equivalent local time for a predefined list of major international cities. The time for each city updates every second, providing a real-time, at-a-glance view of global times. This tool is perfect for quickly checking if it&apos;s a good time to make an international call or schedule a meeting across different regions.</p>
                 
                 <h2>World Clock FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">

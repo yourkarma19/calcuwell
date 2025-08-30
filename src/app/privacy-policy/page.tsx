@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
             <div className="prose dark:prose-invert max-w-none text-lg">
                 <h2>Our Commitment</h2>
                 <p>
-                    This page explains how we handle your information when you use our website, calcpro.online (the "Service").
+                    This page explains how we handle your information when you use our website, calcpro.online (the &quot;Service&quot;).
                 </p>
 
                 <p>
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
 
                 <h2>Website Analytics</h2>
                 <p>
-                    Like most websites, we collect "Log Data" that your browser sends. This may include your device's IP address, browser type, and which pages you visit. This data helps us understand how our Service is being used so we can improve it. We use Google Analytics for this purpose.
+                    Like most websites, we collect &quot;Log Data&quot; that your browser sends. This may include your device&apos;s IP address, browser type, and which pages you visit. This data helps us understand how our Service is being used so we can improve it. We use Google Analytics for this purpose.
                 </p>
 
                 <h2>Advertising and Cookies</h2>
@@ -45,9 +45,9 @@ export default function PrivacyPolicyPage() {
                     We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.
                 </p>
                 <ul>
-                    <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
-                    <li>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
-                    <li>Users may opt out of personalized advertising by visiting Ads Settings. Alternatively, you can direct users to opt out of a third-party vendor's use of cookies for personalized advertising by visiting www.aboutads.info/choices.</li>
+                    <li>Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to your website or other websites.</li>
+                    <li>Google&apos;s use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
+                    <li>Users may opt out of personalized advertising by visiting Ads Settings. Alternatively, you can direct users to opt out of a third-party vendor&apos;s use of cookies for personalized advertising by visiting www.aboutads.info/choices.</li>
                 </ul>
                 <p>
                     If you have not opted out of third-party ad serving, the cookies of other third-party vendors or ad networks may also be used to serve ads on your site.

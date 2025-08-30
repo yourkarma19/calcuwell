@@ -38,7 +38,9 @@ export default function TimeCardCalculator() {
 
   const handleDayChange = (index: number, field: keyof Day, value: string | number) => {
     const newWeek = [...week];
-    (newWeek[index] as any)[field] = value;
+    const day = { ...newWeek[index] };
+    (day as any)[field] = value;
+    newWeek[index] = day;
     setWeek(newWeek);
   };
 

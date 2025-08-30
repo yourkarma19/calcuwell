@@ -6,13 +6,13 @@ export default function AboutResistorColorCodeCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Resistor Color Code Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The <strong>Resistor Color Code Calculator</strong> helps you figure out the value of a resistor by reading its colored bands. This is a key tool for anyone working with electronics. It lets you find a resistor's resistance value without needing to use a multimeter. This calculator is for common 4-band resistors.</p>
+                <p>The <strong>Resistor Color Code Calculator</strong> helps you figure out the value of a resistor by reading its colored bands. This is a key tool for anyone working with electronics. It lets you find a resistor&apos;s resistance value without needing to use a multimeter. This calculator is for common 4-band resistors.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Hold the resistor with the gold or silver band (the tolerance band) on the right side. Read the colors from left to right.</li>
                     <li>Select the color for each of the four bands from the dropdown menus.</li>
                 </ol>
-                <p>The calculator will instantly show the resistor's value in Ohms (Ω) and its tolerance.</p>
+                <p>The calculator will instantly show the resistor&apos;s value in Ohms (Ω) and its tolerance.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
@@ -24,7 +24,7 @@ export default function AboutResistorColorCodeCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What is Tolerance?</AccordionTrigger>
                         <AccordionContent>
-                            Tolerance tells you how accurate a resistor's value is. For example, a 100 Ω resistor with a 5% tolerance could have a real value between 95 Ω and 105 Ω. A smaller tolerance means the resistor is more precise.
+                            Tolerance tells you how accurate a resistor&apos;s value is. For example, a 100 Ω resistor with a 5% tolerance could have a real value between 95 Ω and 105 Ω. A smaller tolerance means the resistor is more precise.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">

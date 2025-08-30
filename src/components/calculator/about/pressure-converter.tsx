@@ -9,7 +9,7 @@ export default function AboutPressureConverter() {
                 <p>The Pressure Converter is a versatile tool for scientists, engineers, and students who need to work with different units of pressure. Pressure is defined as the force applied perpendicular to the surface of an object per unit area. This calculator allows you to quickly convert between various metric and imperial units of pressure.</p>
                 <h3>How to Use the Converter</h3>
                 <ol>
-                    <li>Enter the value you wish to convert in the "From" field.</li>
+                    <li>Enter the value you wish to convert in the &quot;From&quot; field.</li>
                     <li>Select the unit you are converting from (e.g., psi).</li>
                     <li>Select the unit you want to convert to (e.g., bar).</li>
                 </ol>
@@ -19,7 +19,7 @@ export default function AboutPressureConverter() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is the standard unit of pressure?</AccordionTrigger>
                         <AccordionContent>
-                            The standard SI (International System of Units) unit for pressure is the **Pascal (Pa)**. One pascal is a very small amount of pressure, defined as one newton of force per square meter. Because it's so small, it's often more convenient to use **kilopascals (kPa)**, where 1 kPa = 1,000 Pa.
+                            The standard SI (International System of Units) unit for pressure is the **Pascal (Pa)**. One pascal is a very small amount of pressure, defined as one newton of force per square meter. Because it&apos;s so small, it&apos;s often more convenient to use **kilopascals (kPa)**, where 1 kPa = 1,000 Pa.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

@@ -12,7 +12,7 @@ export default function AboutConcreteSlabCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Concrete Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>This calculator helps you estimate the volume of concrete needed for your project and how many pre-mixed concrete bags to buy. It's an essential tool for any DIY or professional construction project, ensuring you purchase the right amount of material without waste.</p>
+                <p>This calculator helps you estimate the volume of concrete needed for your project and how many pre-mixed concrete bags to buy. It&apos;s an essential tool for any DIY or professional construction project, ensuring you purchase the right amount of material without waste.</p>
                 <h3>How to Use It</h3>
                 <ol>
                     <li>Select your **Project Shape** (Slab, Footer, or round Post Hole).</li>

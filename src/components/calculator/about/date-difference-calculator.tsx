@@ -6,11 +6,11 @@ export default function AboutDateDifferenceCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Date Difference Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our Date Difference Calculator is an essential tool to find the exact time between two dates. Whether you're tracking a project, calculating an age, or checking the time between historical events, this tool gives you a full breakdown in several units.</p>
+                <p>Our Date Difference Calculator is an essential tool to find the exact time between two dates. Whether you&apos;re tracking a project, calculating an age, or checking the time between historical events, this tool gives you a full breakdown in several units.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Choose a **Start Date** and an **End Date** from the calendars.</li>
-                    <li>Click the **"Calculate Difference"** button.</li>
+                    <li>Click the **&quot;Calculate Difference&quot;** button.</li>
                 </ol>
                 <p>The results will show the total duration in years, months, weeks, days, hours, and minutes.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
@@ -18,7 +18,7 @@ export default function AboutDateDifferenceCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How does this calculator show the results?</AccordionTrigger>
                         <AccordionContent>
-                            This calculator shows the total duration between two dates, expressed separately in different units. For example, it will show the total number of months and, separately, the total number of days. It does not provide a combined "X years, Y months, and Z days" result like our age calculator.
+                            This calculator shows the total duration between two dates, expressed separately in different units. For example, it will show the total number of months and, separately, the total number of days. It does not provide a combined &quot;X years, Y months, and Z days&quot; result like our age calculator.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

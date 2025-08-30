@@ -40,9 +40,9 @@ export default function AboutEquationSolver() {
                         <AccordionContent>
                            The discriminant (`b²-4ac`) tells you the nature of the roots (solutions) without having to fully solve the equation.
                            <ul className="list-disc pl-5 mt-2">
-                            <li>If it's **positive**, there are two distinct real roots.</li>
-                            <li>If it's **zero**, there is exactly one real root.</li>
-                            <li>If it's **negative**, there are no real roots (the solutions are complex numbers).</li>
+                            <li>If it&apos;s positive, there are two distinct real roots.</li>
+                            <li>If it&apos;s zero, there is exactly one real root.</li>
+                            <li>If it&apos;s negative, there are no real roots (the solutions are complex numbers).</li>
                            </ul>
                         </AccordionContent>
                     </AccordionItem>

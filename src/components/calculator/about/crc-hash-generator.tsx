@@ -8,7 +8,7 @@ export default function AboutCrcHashGenerator() {
                 <CardTitle>About the CRC-32 Hash Generator</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>This tool creates a <strong>CRC-32 checksum</strong> for any text you enter. Think of a checksum as a unique fingerprint for your data. It's a fast and easy way to check if data has been accidentally changed or corrupted during transfer or storage.</p>
+                <p>This tool creates a <strong>CRC-32 checksum</strong> for any text you enter. Think of a checksum as a unique fingerprint for your data. It&apos;s a fast and easy way to check if data has been accidentally changed or corrupted during transfer or storage.</p>
                 <h3>How to Use the Calculator</h3>
                 <p>Just type or paste any text into the input box. The calculator will instantly generate the 32-bit CRC hash for that text below.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
@@ -28,7 +28,7 @@ export default function AboutCrcHashGenerator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Where is CRC-32 used?</AccordionTrigger>
                         <AccordionContent>
-                            CRC-32 is very common because it's fast and effective. You'll find it in:
+                            CRC-32 is very common because it&apos;s fast and effective. You&apos;ll find it in:
                             <ul className="list-disc pl-5 mt-2">
                                 <li><strong>File formats:</strong> ZIP and PNG files use it to check for corruption.</li>
                                 <li><strong>Networking:</strong> Ethernet and Wi-Fi use it to ensure data packets are intact.</li>

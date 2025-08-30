@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutFileSizeCalculator() {
     return (
         <Card>
-          <CardHeader><CardTitle>About File Size & Bitrate</CardTitle></CardHeader>
+          <CardHeader><CardTitle>About File Size &amp; Bitrate</CardTitle></CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
             <p>This tool helps you estimate the size of a digital file, particularly useful for video or audio, based on its length (duration) and quality (bitrate). This allows you to plan for storage space or data usage when downloading or creating media.</p>
             <h3>How to Use It</h3>
@@ -17,7 +17,7 @@ export default function AboutFileSizeCalculator() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is bitrate?</AccordionTrigger>
                 <AccordionContent>
-                  Bitrate is the amount of data used to represent one second of audio or video. A higher bitrate generally results in better quality and a larger file size. It's often measured in kilobits per second (kbit/s) or megabits per second (mbit/s).
+                  Bitrate is the amount of data used to represent one second of audio or video. A higher bitrate generally results in better quality and a larger file size. It&apos;s often measured in kilobits per second (kbit/s) or megabits per second (mbit/s).
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">

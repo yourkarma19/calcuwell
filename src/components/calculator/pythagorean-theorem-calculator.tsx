@@ -62,7 +62,7 @@ export default function PythagoreanTheoremCalculator() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label>Solve for which side?</Label>
-              <RadioGroup value={solveFor} onValueChange={(v) => setSolveFor(v as "a" | "b" | "c")} className="flex space-x-4 pt-2">
+              <RadioGroup value={solveFor} onValueChange={(v: string) => setSolveFor(v as "a" | "b" | "c")} className="flex space-x-4 pt-2">
                 <div className="flex items-center space-x-2"><RadioGroupItem value="a" id="a" /><Label htmlFor="a">Side a</Label></div>
                 <div className="flex items-center space-x-2"><RadioGroupItem value="b" id="b" /><Label htmlFor="b">Side b</Label></div>
                 <div className="flex items-center space-x-2"><RadioGroupItem value="c" id="c" /><Label htmlFor="c">Hypotenuse c</Label></div>

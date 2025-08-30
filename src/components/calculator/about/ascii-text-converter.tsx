@@ -7,22 +7,22 @@ export default function AboutAsciiTextConverter() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle as="h2">About the ASCII & Text Converter</CardTitle>
+                <CardTitle as="h2">About the ASCII &amp; Text Converter</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>Our ASCII to Text Converter is a simple tool for developers, data analysts, and students. It lets you quickly convert between plain text and its ASCII (American Standard Code for Information Interchange) value. This is useful for debugging data, understanding character codes, or for school work.</p>
                 <h2>How to Use the ASCII Converter</h2>
                 <p>The converter works in both directions at the same time:</p>
                 <ol>
-                    <li>To convert <strong>text to ASCII</strong>, type your message in the "Text" box. The matching ASCII codes will appear in the "ASCII Codes" box.</li>
-                    <li>To convert <strong>ASCII to text</strong>, type the number codes in the "ASCII Codes" box. The text will appear in the "Text" box.</li>
+                    <li>To convert <strong>text to ASCII</strong>, type your message in the &quot;Text&quot; box. The matching ASCII codes will appear in the &quot;ASCII Codes&quot; box.</li>
+                    <li>To convert <strong>ASCII to text</strong>, type the number codes in the &quot;ASCII Codes&quot; box. The text will appear in the &quot;Text&quot; box.</li>
                 </ol>
                 <h2>ASCII Converter FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is ASCII?</AccordionTrigger>
                         <AccordionContent>
-                            ASCII is a system that gives a unique number to each letter, digit, and symbol. For example, the capital letter 'A' is 65, and 'B' is 66. This allows computers to store and handle text as numbers.
+                            ASCII is a system that gives a unique number to each letter, digit, and symbol. For example, the capital letter &apos;A&apos; is 65, and &apos;B&apos; is 66. This allows computers to store and handle text as numbers.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
@@ -40,7 +40,7 @@ export default function AboutAsciiTextConverter() {
                      <AccordionItem value="item-4">
                         <AccordionTrigger>What is an ASCII code?</AccordionTrigger>
                         <AccordionContent>
-                            An ASCII code is the number for a character. For example, the text "Hello" is represented by the ASCII codes `72 101 108 108 111`. Each number matches a specific character that the computer can show.
+                            An ASCII code is the number for a character. For example, the text &quot;Hello&quot; is represented by the ASCII codes `72 101 108 108 111`. Each number matches a specific character that the computer can show.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

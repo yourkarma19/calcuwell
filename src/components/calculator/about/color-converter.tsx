@@ -21,21 +21,21 @@ export default function AboutColorConverter() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is the difference between HEX, RGB, and HSL?</AccordionTrigger>
                     <AccordionContent>
-                        <p className="mb-2"><strong>HEX (Hexadecimal)</strong> is a six-digit code (e.g., `#FF5733`) that represents the intensity of Red, Green, and Blue in a color. It's the most common format used in web design.</p>
+                        <p className="mb-2"><strong>HEX (Hexadecimal)</strong> is a six-digit code (e.g., `#FF5733`) that represents the intensity of Red, Green, and Blue in a color. It&apos;s the most common format used in web design.</p>
                         <p className="mb-2"><strong>RGB (Red, Green, Blue)</strong> is an additive color model where red, green, and blue light are combined to create a broad array of colors. Each value ranges from 0 to 255 (e.g., `rgb(255, 87, 51)`).</p>
-                        <p><strong>HSL (Hue, Saturation, Lightness)</strong> represents color in a more human-intuitive way. <strong>Hue</strong> is the color itself (0-360 degrees), <strong>Saturation</strong> is the color's intensity (0-100%), and <strong>Lightness</strong> is its brightness (0-100%). This makes it easier to create variations of a single color (e.g., `hsl(11, 100%, 60%)`).</p>
+                        <p><strong>HSL (Hue, Saturation, Lightness)</strong> represents color in a more human-intuitive way. <strong>Hue</strong> is the color itself (0-360 degrees), <strong>Saturation</strong> is the color&apos;s intensity (0-100%), and <strong>Lightness</strong> is its brightness (0-100%). This makes it easier to create variations of a single color (e.g., `hsl(11, 100%, 60%)`).</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Why are there different color models?</AccordionTrigger>
                     <AccordionContent>
-                        Different color models are suited for different tasks. RGB is fundamental to how digital screens create color by mixing light. HEX is a more compact, web-friendly way to write RGB values. HSL is often preferred by designers because it's more intuitive to adjust properties like lightness and saturation to create color schemes.
+                        Different color models are suited for different tasks. RGB is fundamental to how digital screens create color by mixing light. HEX is a more compact, web-friendly way to write RGB values. HSL is often preferred by designers because it&apos;s more intuitive to adjust properties like lightness and saturation to create color schemes.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                    <AccordionTrigger>What does the "alpha" value in RGBA or HSLA mean?</AccordionTrigger>
+                    <AccordionTrigger>What does the &quot;alpha&quot; value in RGBA or HSLA mean?</AccordionTrigger>
                     <AccordionContent>
-                       The 'A' stands for Alpha, which represents the opacity of the color. An alpha value of 1 is fully opaque, while 0 is fully transparent. This converter focuses on the opaque color values, but RGBA and HSLA formats are commonly used in CSS to create semi-transparent effects.
+                       The &apos;A&apos; stands for Alpha, which represents the opacity of the color. An alpha value of 1 is fully opaque, while 0 is fully transparent. This converter focuses on the opaque color values, but RGBA and HSLA formats are commonly used in CSS to create semi-transparent effects.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

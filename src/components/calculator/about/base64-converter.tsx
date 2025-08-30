@@ -12,8 +12,8 @@ export default function AboutBase64Converter() {
               <h2>How to Use the Base64 Converter</h2>
               <ol>
                   <li>Enter the text or data you want to convert into the top input box.</li>
-                  <li>Click <strong>"Encode"</strong> to turn it into a Base64 string.</li>
-                  <li>To decode, paste a Base64 string into the input box and click <strong>"Decode"</strong></li>
+                  <li>Click <strong>&quot;Encode&quot;</strong> to turn it into a Base64 string.</li>
+                  <li>To decode, paste a Base64 string into the input box and click <strong>&quot;Decode&quot;</strong></li>
               </ol>
               <p>The result will appear in the bottom box instantly.</p>
               <h2>Base64 Converter FAQs</h2>
@@ -27,13 +27,13 @@ export default function AboutBase64Converter() {
                   <AccordionItem value="item-2">
                       <AccordionTrigger>Is Base64 a form of encryption?</AccordionTrigger>
                       <AccordionContent>
-                          No, Base64 is an encoding, not an encryption. It's a way to represent data, not secure it. Anyone can decode a Base64 string back to its original form, so it offers no privacy. For security, you should use an encryption algorithm like AES.
+                          No, Base64 is an encoding, not an encryption. It&apos;s a way to represent data, not secure it. Anyone can decode a Base64 string back to its original form, so it offers no privacy. For security, you should use an encryption algorithm like AES.
                       </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
                       <AccordionTrigger>What is a Data URI?</AccordionTrigger>
                       <AccordionContent>
-                         A Data URI lets you embed small files, like images, directly into a web page's HTML or CSS code. The file data is encoded using Base64. This can reduce the number of HTTP requests a browser needs to make. This can help speed up page load times for very small files.
+                         A Data URI lets you embed small files, like images, directly into a web page&apos;s HTML or CSS code. The file data is encoded using Base64. This can reduce the number of HTTP requests a browser needs to make. This can help speed up page load times for very small files.
                       </AccordionContent>
                   </AccordionItem>
               </Accordion>

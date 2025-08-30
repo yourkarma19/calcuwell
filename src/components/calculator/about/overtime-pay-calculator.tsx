@@ -6,13 +6,13 @@ export default function AboutOvertimePayCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Overtime Pay Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Overtime Pay Calculator helps you determine your total earnings for a pay period, including both your regular hours and any overtime hours worked. It allows you to adjust the overtime multiplier to match your company's policy, giving you an accurate estimate of your gross pay.</p>
+                <p>The Overtime Pay Calculator helps you determine your total earnings for a pay period, including both your regular hours and any overtime hours worked. It allows you to adjust the overtime multiplier to match your company&apos;s policy, giving you an accurate estimate of your gross pay.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Enter your **Hourly Rate** of pay.</li>
                     <li>Input the number of **Regular Hours** you worked.</li>
                     <li>Enter the number of **Overtime Hours** worked.</li>
-                    <li>Adjust the **Overtime Multiplier** (e.g., 1.5 for "time and a half").</li>
+                    <li>Adjust the **Overtime Multiplier** (e.g., 1.5 for &quot;time and a half&quot;).</li>
                 </ol>
                 <p>The calculator will instantly break down your pay into regular and overtime earnings and show you the total pay for the period.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
@@ -20,7 +20,7 @@ export default function AboutOvertimePayCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is a standard overtime rate?</AccordionTrigger>
                         <AccordionContent>
-                            The most common overtime rate is "time and a half," which means your overtime pay is 1.5 times your regular hourly rate. Some jobs or holidays may offer "double time," which is 2 times your regular rate.
+                            The most common overtime rate is &quot;time and a half,&quot; which means your overtime pay is 1.5 times your regular hourly rate. Some jobs or holidays may offer &quot;double time,&quot; which is 2 times your regular rate.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

@@ -11,7 +11,7 @@ export default function AboutTipCalculator() {
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Enter the total **Bill Amount**.</li>
-                    <li>Use the slider to select the **Tip Percentage** you'd like to leave.</li>
+                    <li>Use the slider to select the **Tip Percentage** you&apos;d like to leave.</li>
                     <li>Adjust the slider for the **Number of People** to split the bill with.</li>
                 </ol>
                 <p>The calculator will instantly display the tip amount, the total bill including the tip, and the amount each person should pay.</p>
@@ -30,7 +30,7 @@ export default function AboutTipCalculator() {
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger>How does the "split the bill" feature work?</AccordionTrigger>
+                        <AccordionTrigger>How does the &quot;split the bill&quot; feature work?</AccordionTrigger>
                         <AccordionContent>
                            The calculator first adds the tip amount to the total bill. It then divides that new total evenly by the number of people you specify. This gives you the exact amount each person needs to contribute to cover their share of the bill and the tip.
                         </AccordionContent>

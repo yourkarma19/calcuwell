@@ -21,7 +21,7 @@ export default function AboutWaterIntakeCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Is this the exact amount I must drink?</AccordionTrigger>
                         <AccordionContent>
-                           No, this is a general guideline. Your individual needs can vary based on factors like the climate you live in, your overall health, and specific medical conditions. It's a great starting point, but the best indicator is to drink when you feel thirsty and monitor the color of your urine (it should be light yellow).
+                           No, this is a general guideline. Your individual needs can vary based on factors like the climate you live in, your overall health, and specific medical conditions. It&apos;s a great starting point, but the best indicator is to drink when you feel thirsty and monitor the color of your urine (it should be light yellow).
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

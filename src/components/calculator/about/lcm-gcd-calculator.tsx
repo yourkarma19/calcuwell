@@ -4,13 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutLcmGcdCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>About LCM & GCD</CardTitle></CardHeader>
+            <CardHeader><CardTitle>About LCM &amp; GCD</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our **LCM & GCD Calculator** is a fundamental tool for number theory and mathematics. It allows you to quickly find the Least Common Multiple (LCM) and the Greatest Common Divisor (GCD) for a set of two or more positive integers. This is useful for students learning about number properties and for solving a variety of mathematical problems.</p>
+                <p>Our **LCM &amp; GCD Calculator** is a fundamental tool for number theory and mathematics. It allows you to quickly find the Least Common Multiple (LCM) and the Greatest Common Divisor (GCD) for a set of two or more positive integers. This is useful for students learning about number properties and for solving a variety of mathematical problems.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Enter at least two positive integers into the input boxes.</li>
-                    <li>If you need to analyze more numbers, click the **"Add Number"** button.</li>
+                    <li>If you need to analyze more numbers, click the **&quot;Add Number&quot;** button.</li>
                 </ol>
                 <p>The calculator will instantly display the GCD and LCM for the entire set of numbers you have entered.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
@@ -30,7 +30,7 @@ export default function AboutLcmGcdCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
                         <AccordionContent>
-                           For any two positive integers 'a' and 'b', there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a, b)`. This means the product of two numbers is equal to the product of their GCD and LCM. This relationship is often used to calculate the LCM once the GCD is known.
+                           For any two positive integers &apos;a&apos; and &apos;b&apos;, there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a, b)`. This means the product of two numbers is equal to the product of their GCD and LCM. This relationship is often used to calculate the LCM once the GCD is known.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-4">

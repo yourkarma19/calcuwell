@@ -82,7 +82,7 @@ test.describe('Percentage Calculator', () => {
     test('handles division by zero', async ({ page }) => {
         await page.getByTestId('input-a').fill('10');
         await page.getByTestId('input-b').fill('0');
-        await expect(page.getByTestId('result-container')).toContainText('Enter values to calculate');
+        await expect(page.getByTestId('result-container')).toContainText('Enter valid values to calculate');
     });
   });
 

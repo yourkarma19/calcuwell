@@ -25,7 +25,7 @@ export default function AboutBreakEvenPointCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What is the contribution margin?</AccordionTrigger>
                         <AccordionContent>
-                            The contribution margin is the amount of revenue from each sale that is left over to cover your fixed costs. It's calculated as `Price Per Unit - Variable Cost Per Unit`. A higher contribution margin means you break even faster.
+                            The contribution margin is the amount of revenue from each sale that is left over to cover your fixed costs. It&apos;s calculated as `Price Per Unit - Variable Cost Per Unit`. A higher contribution margin means you break even faster.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

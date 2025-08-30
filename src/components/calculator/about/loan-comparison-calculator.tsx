@@ -10,9 +10,9 @@ export default function AboutLoanComparisonCalculator() {
                 
                 <h3>How to Use the Loan Comparison Calculator</h3>
                 <ol>
-                    <li>Enter the **Loan Amount**, **Interest Rate**, and **Tenure** for "Loan Option A".</li>
-                    <li>Do the same for "Loan Option B".</li>
-                    <li>Click the **"Compare Loans"** button.</li>
+                    <li>Enter the **Loan Amount**, **Interest Rate**, and **Tenure** for &quot;Loan Option A&quot;.</li>
+                    <li>Do the same for &quot;Loan Option B&quot;.</li>
+                    <li>Click the **&quot;Compare Loans&quot;** button.</li>
                 </ol>
                 <p>The tool will generate a clear verdict, a detailed table, and a chart to help you understand which loan is better for you.</p>
 
@@ -33,7 +33,7 @@ export default function AboutLoanComparisonCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger className="font-semibold">What other factors should I consider?</AccordionTrigger>
                         <AccordionContent>
-                           <p>Besides the interest rate, consider other loan costs like processing fees and prepayment penalties. Also, check the lender's reputation for customer service. Sometimes a slightly higher EMI is worth it for better terms or service.</p>
+                           <p>Besides the interest rate, consider other loan costs like processing fees and prepayment penalties. Also, check the lender&apos;s reputation for customer service. Sometimes a slightly higher EMI is worth it for better terms or service.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

@@ -7,7 +7,7 @@ export default function AboutCircleCalculator() {
         <Card>
             <CardHeader><CardTitle>About Circle Formulas</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Circle Calculator is a dynamic tool for finding the properties of a circle from any single known measurement. Whether you know the radius, diameter, circumference, or area, this calculator can instantly compute the other three values. It's an essential tool for students, designers, engineers, and anyone working with geometric shapes.</p>
+                <p>The Circle Calculator is a dynamic tool for finding the properties of a circle from any single known measurement. Whether you know the radius, diameter, circumference, or area, this calculator can instantly compute the other three values. It&apos;s an essential tool for students, designers, engineers, and anyone working with geometric shapes.</p>
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
@@ -21,7 +21,7 @@ export default function AboutCircleCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
                         <AccordionContent>
-                            Pi (π) is a fundamental mathematical constant representing the ratio of a circle's circumference to its diameter. It's an irrational number, approximately equal to 3.14159, and is crucial for all calculations involving circles and spheres.
+                            Pi (π) is a fundamental mathematical constant representing the ratio of a circle&apos;s circumference to its diameter. It&apos;s an irrational number, approximately equal to 3.14159, and is crucial for all calculations involving circles and spheres.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

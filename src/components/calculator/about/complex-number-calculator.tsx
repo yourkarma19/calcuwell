@@ -16,7 +16,7 @@ export default function AboutComplexNumberCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What is a complex number?</AccordionTrigger>
                         <AccordionContent>
-                            A complex number has the form `a + bi`. The 'a' is the "real" part, which is a regular number. The 'b' is the "imaginary" part. Complex numbers are used in many areas of science and engineering, like electronics and signal processing.
+                            A complex number has the form `a + bi`. The &apos;a&apos; is the &quot;real&quot; part, which is a regular number. The &apos;b&apos; is the &quot;imaginary&quot; part. Complex numbers are used in many areas of science and engineering, like electronics and signal processing.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

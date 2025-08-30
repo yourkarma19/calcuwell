@@ -9,7 +9,7 @@ export default function AboutCompoundInterestCalculator() {
                 <CardTitle>Understanding Compound Interest</CardTitle>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The <strong>Compound Interest Calculator</strong> demonstrates one of the most powerful concepts in finance: how your money can grow exponentially over time. By reinvesting the interest you earn, your investment base gets larger, leading to even more interest in the next period. This "interest on interest" effect can significantly boost your savings over the long term.</p>
+                <p>The <strong>Compound Interest Calculator</strong> demonstrates one of the most powerful concepts in finance: how your money can grow exponentially over time. By reinvesting the interest you earn, your investment base gets larger, leading to even more interest in the next period. This &quot;interest on interest&quot; effect can significantly boost your savings over the long term.</p>
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
@@ -44,7 +44,7 @@ export default function AboutCompoundInterestCalculator() {
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">
-                        <AccordionTrigger className="font-semibold">Simple vs. Compound Interest: What's the real difference?</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">Simple vs. Compound Interest: What&apos;s the real difference?</AccordionTrigger>
                         <AccordionContent>
                             <p><strong>Simple interest</strong> is calculated only on the original principal amount. Your interest earnings remain the same every year. <strong>Compound interest</strong> is calculated on the principal amount and also on the accumulated interest from previous periods. This means your investment grows at an accelerating rate, which makes a huge difference over many years.</p>
                         </AccordionContent>
@@ -52,7 +52,7 @@ export default function AboutCompoundInterestCalculator() {
                     <AccordionItem value="item-4">
                         <AccordionTrigger className="font-semibold">Why is starting early so important for compounding?</AccordionTrigger>
                         <AccordionContent>
-                           <p>Time is the most critical ingredient for compound interest. The longer your money is invested, the more compounding periods it goes through, and the more your "interest on interest" earnings will dominate your growth. Someone who starts saving a small amount in their 20s can easily end up with more than someone who starts saving a larger amount in their 40s.</p>
+                           <p>Time is the most critical ingredient for compound interest. The longer your money is invested, the more compounding periods it goes through, and the more your &quot;interest on interest&quot; earnings will dominate your growth. Someone who starts saving a small amount in their 20s can easily end up with more than someone who starts saving a larger amount in their 40s.</p>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

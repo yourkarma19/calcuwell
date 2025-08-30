@@ -2,7 +2,6 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { useMemo } from 'react';
 import PlaceholderCalculator from './placeholder-calculator';
 
 interface CalculatorLoaderProps {
@@ -11,14 +10,12 @@ interface CalculatorLoaderProps {
 }
 
 export default function CalculatorLoader({ slug, ...props }: CalculatorLoaderProps) {
-  const CalculatorComponent = useMemo(() => {
-    return dynamic(
+  const CalculatorComponent = dynamic(
       () => import(`@/components/calculator/${slug}`),
       {
         loading: () => <PlaceholderCalculator />,
       }
     );
-  }, [slug]);
 
   // Pass all props through to the loaded component
   return <CalculatorComponent {...props} />;

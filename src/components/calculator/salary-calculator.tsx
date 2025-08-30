@@ -47,7 +47,7 @@ export default function SalaryCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Salary & Deductions</CardTitle>
+          <CardTitle>Salary &amp; Deductions</CardTitle>
           <CardDescription>Calculate your take-home pay by providing your gross salary and any applicable deductions.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -58,7 +58,7 @@ export default function SalaryCalculator() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="pay-period">Pay Period</Label>
-              <Select value={payPeriod} onValueChange={v => setPayPeriod(v as "annually" | "monthly")}>
+              <Select value={payPeriod} onValueChange={(v: string) => setPayPeriod(v as "annually" | "monthly")}>
                   <SelectTrigger><SelectValue/></SelectTrigger>
                   <SelectContent>
                       <SelectItem value="annually">Annually</SelectItem>

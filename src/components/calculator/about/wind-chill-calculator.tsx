@@ -6,14 +6,14 @@ export default function AboutWindChillCalculator() {
         <Card>
             <CardHeader><CardTitle as="h2">About Wind Chill</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Wind Chill Calculator determines how cold the air actually feels on your skin when wind is factored in. It's a crucial tool for understanding the potential danger of frostbite and hypothermia in cold, windy conditions.</p>
+                <p>The Wind Chill Calculator determines how cold the air actually feels on your skin when wind is factored in. It&apos;s a crucial tool for understanding the potential danger of frostbite and hypothermia in cold, windy conditions.</p>
                 <h2>How to Use the Wind Chill Calculator</h2>
                 <ol>
                     <li>Select your preferred temperature and speed units (°F/mph or °C/kmh).</li>
                     <li>Enter the current **Air Temperature**.</li>
                     <li>Enter the current **Wind Speed**.</li>
                 </ol>
-                <p>The calculator will instantly show the "feels like" temperature, or wind chill, along with a general risk level for frostbite.</p>
+                <p>The calculator will instantly show the &quot;feels like&quot; temperature, or wind chill, along with a general risk level for frostbite.</p>
                 <h2>Wind Chill FAQs</h2>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
@@ -29,9 +29,9 @@ export default function AboutWindChillCalculator() {
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">
-                        <AccordionTrigger>Why Doesn't It Work for Low Wind Speeds?</AccordionTrigger>
+                        <AccordionTrigger>Why Doesn&apos;t It Work for Low Wind Speeds?</AccordionTrigger>
                         <AccordionContent>
-                            The wind chill formula is only defined for wind speeds above 3 mph (or 5 km/h). At lower speeds, the effect of wind on heat loss is negligible and the "feels like" temperature is essentially the same as the actual air temperature.
+                            The wind chill formula is only defined for wind speeds above 3 mph (or 5 km/h). At lower speeds, the effect of wind on heat loss is negligible and the &quot;feels like&quot; temperature is essentially the same as the actual air temperature.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

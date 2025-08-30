@@ -7,13 +7,13 @@ export default function AboutDiscountCalculator() {
         <Card>
             <CardHeader><CardTitle>About the Discount Calculator</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The Discount Calculator is a simple tool to help you figure out the final price of an item after a percentage-based discount is applied. It's perfect for shoppers who want to quickly see the sale price and how much money they are saving during a sale.</p>
+                <p>The Discount Calculator is a simple tool to help you figure out the final price of an item after a percentage-based discount is applied. It&apos;s perfect for shoppers who want to quickly see the sale price and how much money they are saving during a sale.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Enter the **Original Price** of the item.</li>
                     <li>Use the slider to set the **Discount Percentage**.</li>
                 </ol>
-                <p>The calculator will instantly show you the final price you'll pay and the total amount you save.</p>
+                <p>The calculator will instantly show you the final price you&apos;ll pay and the total amount you save.</p>
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
@@ -25,7 +25,7 @@ export default function AboutDiscountCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What if there are multiple discounts?</AccordionTrigger>
                         <AccordionContent>
-                            If you have multiple discounts (e.g., 20% off, plus an additional 10% off), you cannot simply add them together (it's not 30% off). You must apply them sequentially. First, calculate the price after the 20% discount. Then, take that new, lower price and apply the 10% discount to it.
+                            If you have multiple discounts (e.g., 20% off, plus an additional 10% off), you cannot simply add them together (it&apos;s not 30% off). You must apply them sequentially. First, calculate the price after the 20% discount. Then, take that new, lower price and apply the 10% discount to it.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

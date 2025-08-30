@@ -10,11 +10,11 @@ export default function AboutProbabilityCalculator() {
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Select the **Mode**: choose between "Single Event" or "Two Independent Events".</li>
+                    <li>Select the **Mode**: choose between &quot;Single Event&quot; or &quot;Two Independent Events&quot;.</li>
                     <li>Enter the probability for **Event A** (a number between 0 and 1).</li>
-                    <li>If you chose "Two Independent Events", also enter the probability for **Event B**.</li>
+                    <li>If you chose &quot;Two Independent Events&quot;, also enter the probability for **Event B**.</li>
                 </ol>
-                <p>The calculator will instantly display the relevant probabilities, such as the probability of "not A," "A and B," and "A or B."</p>
+                <p>The calculator will instantly display the relevant probabilities, such as the probability of &quot;not A,&quot; &quot;A and B,&quot; and &quot;A or B.&quot;</p>
 
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
@@ -25,10 +25,10 @@ export default function AboutProbabilityCalculator() {
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                        <AccordionTrigger>What do 'P(A and B)' and 'P(A or B)' mean?</AccordionTrigger>
+                        <AccordionTrigger>What do &apos;P(A and B)&apos; and &apos;P(A or B)&apos; mean?</AccordionTrigger>
                         <AccordionContent>
-                           <p className="mb-2"><strong>P(A and B)</strong> is the probability that both independent events A and B occur. It's calculated by multiplying their individual probabilities: `P(A) * P(B)`.</p>
-                           <p><strong>P(A or B)</strong> is the probability that either event A, event B, or both events occur. It's calculated with the formula: `P(A) + P(B) - P(A and B)`.</p>
+                           <p className="mb-2">**P(A and B)** is the probability that both independent events A and B occur. It&apos;s calculated by multiplying their individual probabilities: `P(A) * P(B)`.</p>
+                           <p>**P(A or B)** is the probability that either event A, event B, or both events occur. It&apos;s calculated with the formula: `P(A) + P(B) - P(A and B)`.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

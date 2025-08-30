@@ -59,7 +59,7 @@ export default function TriangleAngleCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>What information do you have?</Label>
-            <Select value={formula} onValueChange={v => setFormula(v as FormulaType)}>
+            <Select value={formula} onValueChange={(v: string) => setFormula(v as FormulaType)}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="sss">Three Sides (SSS)</SelectItem>

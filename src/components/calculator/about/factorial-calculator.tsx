@@ -20,7 +20,7 @@ export default function AboutFactorialCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What Does an Exclamation Mark (!) Mean in Math?</AccordionTrigger>
                     <AccordionContent>
-                        The exclamation mark shows a factorial. The factorial of a non-negative integer 'n', written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.
+                        The exclamation mark shows a factorial. The factorial of a non-negative integer &apos;n&apos;, written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">

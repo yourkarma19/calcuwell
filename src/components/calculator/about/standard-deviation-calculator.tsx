@@ -39,7 +39,7 @@ export default function AboutStandardDeviationCalculator() {
 
                     <AccordionItem value="item-2">
                         <AccordionTrigger className="font-semibold">
-                            What's the Difference Between Sample and Population Standard Deviation?
+                            What&apos;s the Difference Between Sample and Population Standard Deviation?
                         </AccordionTrigger>
                         <AccordionContent>
                             <p>
@@ -72,8 +72,8 @@ export default function AboutStandardDeviationCalculator() {
                         </AccordionTrigger>
                         <AccordionContent>
                            <p>
-                               It's crucial in many fields. In finance, it measures the volatility of an investment. 
-                               In manufacturing, it's used for quality control to ensure products are consistent. 
+                               It&apos;s crucial in many fields. In finance, it measures the volatility of an investment. 
+                               In manufacturing, it&apos;s used for quality control to ensure products are consistent. 
                                In science, it helps determine if the results of an experiment are statistically significant.
                            </p>
                         </AccordionContent>

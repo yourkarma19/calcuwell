@@ -46,7 +46,7 @@ export default function ProbabilityCalculator() {
         <CardContent className="space-y-4">
             <div className="space-y-2">
                 <Label>Mode</Label>
-                <Select value={mode} onValueChange={m => setMode(m as 'single' | 'independent')}>
+                <Select value={mode} onValueChange={(m: string) => setMode(m as 'single' | 'independent')}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                         <SelectItem value="single">Single Event Probability</SelectItem>

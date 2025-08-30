@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: Record<string, number | string>) => void, calculatorName: string }) {
+export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: Record<string, unknown>) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
   const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);
@@ -131,7 +131,7 @@ export default function MortgageCalculator({ setChildProps, calculatorName }: { 
           </div>
           <div className="space-y-2 text-sm text-left border-t pt-2">
               <div className="flex justify-between">
-                  <p className="text-muted-foreground">Principal & Interest</p>
+                  <p className="text-muted-foreground">Principal &amp; Interest</p>
                   <p className="font-semibold">₹ {principalAndInterest.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
               </div>
               <div className="flex justify-between">

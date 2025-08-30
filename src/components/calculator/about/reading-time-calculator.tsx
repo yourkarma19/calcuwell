@@ -24,7 +24,7 @@ export default function AboutReadingTimeCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>How is reading time calculated?</AccordionTrigger>
                         <AccordionContent>
-                            The calculation is straightforward: `Reading Time = Total Word Count / Words Per Minute`. This provides an estimate of how many minutes it will take to read the text. The calculator then formats this into a more readable "minutes and seconds" format.
+                            The calculation is straightforward: `Reading Time = Total Word Count / Words Per Minute`. This provides an estimate of how many minutes it will take to read the text. The calculator then formats this into a more readable &quot;minutes and seconds&quot; format.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

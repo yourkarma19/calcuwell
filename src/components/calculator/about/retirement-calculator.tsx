@@ -32,7 +32,7 @@ export default function AboutRetirementCalculator() {
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                        <AccordionTrigger>What is a "shortfall?"</AccordionTrigger>
+                        <AccordionTrigger>What is a &quot;shortfall?&quot;</AccordionTrigger>
                         <AccordionContent>
                            A shortfall is the gap between your estimated savings at retirement and your required savings goal. If this calculator shows a shortfall, it means your current plan is not projected to be enough to fund your desired retirement income. You may need to increase your monthly contributions, work longer, or adjust your retirement income goal.
                         </AccordionContent>
@@ -40,7 +40,7 @@ export default function AboutRetirementCalculator() {
                      <AccordionItem value="item-4">
                         <AccordionTrigger>What is a realistic interest rate to assume?</AccordionTrigger>
                         <AccordionContent>
-                           A realistic long-term interest rate depends on your investment strategy. A conservative portfolio might earn 4-5%, while a more aggressive, stock-heavy portfolio has historically returned 7-10% annually on average, though with higher risk. It's often wise to use a more conservative estimate for planning.
+                           A realistic long-term interest rate depends on your investment strategy. A conservative portfolio might earn 4-5%, while a more aggressive, stock-heavy portfolio has historically returned 7-10% annually on average, though with higher risk. It&apos;s often wise to use a more conservative estimate for planning.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

@@ -13,23 +13,23 @@ export default function AboutCylinderVolumeCalculator() {
                 
                 <h3>How to Use the Calculator</h3>
                 <ol>
-                    <li>Enter the <strong>Radius</strong> of the cylinder's circular base.</li>
+                    <li>Enter the <strong>Radius</strong> of the cylinder&apos;s circular base.</li>
                     <li>Enter the <strong>Height</strong> of the cylinder.</li>
                 </ol>
-                <p>The calculator will automatically display the cylinder's volume, total surface area, lateral area, and base area.</p>
+                <p>The calculator will automatically display the cylinder&apos;s volume, total surface area, lateral area, and base area.</p>
 
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How is the volume of a cylinder calculated?</AccordionTrigger>
                         <AccordionContent>
-                            The volume of a cylinder is found by multiplying the area of its circular base by its height. The formula is `Volume = π * r² * h`, where 'r' is the radius of the base and 'h' is the height. This tells you the total capacity of the cylinder.
+                            The volume of a cylinder is found by multiplying the area of its circular base by its height. The formula is `Volume = π * r² * h`, where &apos;r&apos; is the radius of the base and &apos;h&apos; is the height. This tells you the total capacity of the cylinder.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What is the difference between lateral and total surface area?</AccordionTrigger>
                         <AccordionContent>
-                            The <strong>lateral surface area</strong> is the area of the curved side of the cylinder (imagine the label on a can). It's calculated as `2 * π * r * h`. The <strong>total surface area</strong> is the lateral area plus the area of the two circular bases at the top and bottom, calculated as `2 * π * r * h + 2 * π * r²`.
+                            The <strong>lateral surface area</strong> is the area of the curved side of the cylinder (imagine the label on a can). It&apos;s calculated as `2 * π * r * h`. The <strong>total surface area</strong> is the lateral area plus the area of the two circular bases at the top and bottom, calculated as `2 * π * r * h + 2 * π * r²`.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

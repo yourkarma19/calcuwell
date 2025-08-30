@@ -25,7 +25,7 @@ export default function AboutStockProfitLossCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>What is Return on Investment (ROI)?</AccordionTrigger>
                         <AccordionContent>
-                            Return on Investment (ROI) shows your net profit as a percentage of your total cost. It's a standard way to measure the performance of an investment, allowing you to compare the profitability of different trades on a like-for-like basis.
+                            Return on Investment (ROI) shows your net profit as a percentage of your total cost. It&apos;s a standard way to measure the performance of an investment, allowing you to compare the profitability of different trades on a like-for-like basis.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

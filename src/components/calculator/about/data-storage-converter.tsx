@@ -14,15 +14,15 @@ export default function AboutDataStorageConverter() {
             <p>Our Data Storage Converter is a key tool for anyone who works with digital files. This includes software developers, IT professionals, and casual computer users. It helps you quickly convert between different units of digital information, such as bits, bytes, kilobytes (KB), megabytes (MB), and gigabytes (GB). This makes it easy to understand file sizes, disk space, and data limits.</p>
             <h3>How to Use the Calculator</h3>
             <ol>
-                <li>Enter the data size you want to convert in the "From" field.</li>
+                <li>Enter the data size you want to convert in the &quot;From&quot; field.</li>
                 <li>Select the starting unit (e.g., Megabyte).</li>
                 <li>Select the target unit you want to convert to (e.g., Gigabyte).</li>
             </ol>
-            <p>The new value will be instantly calculated and displayed in the "To" field.</p>
+            <p>The new value will be instantly calculated and displayed in the &quot;To&quot; field.</p>
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>What's the difference between a Bit and a Byte?</AccordionTrigger>
+                    <AccordionTrigger>What&apos;s the difference between a Bit and a Byte?</AccordionTrigger>
                     <AccordionContent>
                         A <strong>bit</strong> is the most basic unit of data in computing. It represents a single binary value of either 0 or 1. A <strong>byte</strong> is a group of 8 bits. Bytes are the standard unit used to measure file sizes because one byte can represent one character of text.
                     </AccordionContent>
@@ -36,7 +36,7 @@ export default function AboutDataStorageConverter() {
                 <AccordionItem value="item-3">
                     <AccordionTrigger>What is the difference between KB and KiB?</AccordionTrigger>
                     <AccordionContent>
-                       To reduce confusion, official standards bodies created binary prefixes. A <strong>kilobyte (KB)</strong> is now technically 1000 bytes. A <strong>kibibyte (KiB)</strong> is 1024 bytes. But in common use, "kilobyte" is still widely understood to mean 1024 bytes. This is why a 1 TB hard drive appears as about 931 GB in your operating system.
+                       To reduce confusion, official standards bodies created binary prefixes. A <strong>kilobyte (KB)</strong> is now technically 1000 bytes. A <strong>kibibyte (KiB)</strong> is 1024 bytes. But in common use, &quot;kilobyte&quot; is still widely understood to mean 1024 bytes. This is why a 1 TB hard drive appears as about 931 GB in your operating system.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

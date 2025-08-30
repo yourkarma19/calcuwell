@@ -9,7 +9,7 @@ export default function AboutHeartRateZoneCalculator() {
         <Card>
             <CardHeader><CardTitle>About Heart Rate Zones</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our **Heart Rate Zone Calculator** is a vital tool for anyone looking to optimize their cardiovascular workouts. By calculating your personalized training zones, you can ensure you are exercising at the right intensity to meet your specific fitness goals, whether that's burning fat, improving endurance, or boosting your peak performance. This tool uses the Karvonen formula for a more accurate, personalized result.</p>
+                <p>Our **Heart Rate Zone Calculator** is a vital tool for anyone looking to optimize their cardiovascular workouts. By calculating your personalized training zones, you can ensure you are exercising at the right intensity to meet your specific fitness goals, whether that&apos;s burning fat, improving endurance, or boosting your peak performance. This tool uses the Karvonen formula for a more accurate, personalized result.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Enter your **Age** in years.</li>

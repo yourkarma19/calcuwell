@@ -9,7 +9,7 @@ export default function AboutPercentageCalculator() {
             <CardTitle>About the Percentage Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The Percentage Calculator is a versatile tool designed to solve a variety of percentage-related problems that we encounter in daily life. Whether you're calculating a discount, figuring out a tip, or analyzing a statistical change, this calculator provides instant and accurate results. It simplifies complex calculations and helps you make informed decisions quickly.</p>
+            <p>The Percentage Calculator is a versatile tool designed to solve a variety of percentage-related problems that we encounter in daily life. Whether you&apos;re calculating a discount, figuring out a tip, or analyzing a statistical change, this calculator provides instant and accurate results. It simplifies complex calculations and helps you make informed decisions quickly.</p>
 
             <h3>How to Use the Percentage Calculator</h3>
             <p>This tool offers three distinct calculation modes. Simply select the one that matches your needs:</p>

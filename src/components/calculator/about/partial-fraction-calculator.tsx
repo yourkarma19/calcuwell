@@ -40,7 +40,7 @@ export default function AboutPartialFractionCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Can I use this to check my homework?</AccordionTrigger>
                         <AccordionContent>
-                            Yes, absolutely. Our tool is designed to help you verify your work and understand the steps involved in reaching the correct solution. It's a great way to learn and build confidence.
+                            Yes, absolutely. Our tool is designed to help you verify your work and understand the steps involved in reaching the correct solution. It&apos;s a great way to learn and build confidence.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

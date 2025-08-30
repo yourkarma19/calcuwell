@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function AboutPermutationCombinationCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>About Permutations & Combinations</CardTitle></CardHeader>
+            <CardHeader><CardTitle>About Permutations &amp; Combinations</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
                 <p>The **Permutation and Combination Calculator** is a tool used in combinatorics and probability to figure out the number of ways a subset of items can be selected from a larger set. The key difference between the two is whether the order of selection matters. This tool instantly calculates both, helping you solve complex problems quickly.</p>
 
@@ -19,7 +19,7 @@ export default function AboutPermutationCombinationCalculator() {
                 <h3>Frequently Asked Questions (FAQs)</h3>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
-                        <AccordionTrigger className="font-semibold">Permutation vs. Combination: What's the Difference?</AccordionTrigger>
+                        <AccordionTrigger className="font-semibold">Permutation vs. Combination: What&apos;s the Difference?</AccordionTrigger>
                         <AccordionContent>
                             <p>The key difference is whether **order matters**. Use a **Permutation** when the order of selection is important (e.g., arranging books on a shelf, 1st/2nd/3rd place winners). Use a **Combination** when the order of selection does not matter (e.g., picking a team, choosing pizza toppings).</p>
                         </AccordionContent>
@@ -36,7 +36,7 @@ export default function AboutPermutationCombinationCalculator() {
                         <AccordionContent>
                            <p className="mb-2">**Permutation (nPr):** `n! / (n-r)!`</p>
                            <p>**Combination (nCr):** `n! / (r! * (n-r)!)`</p>
-                           <p className="mt-2">Where 'n' is the total items, and 'r' is the items to choose. Notice the combination formula is the permutation formula divided by `r!`, which removes the different orderings.</p>
+                           <p className="mt-2">Where &apos;n&apos; is the total items, and &apos;r&apos; is the items to choose. Notice the combination formula is the permutation formula divided by `r!`, which removes the different orderings.</p>
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">

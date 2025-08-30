@@ -64,8 +64,8 @@ export default function UnitConverter() {
         if (toUnit === 'kelvin') return (celsiusValue + 273.15).toFixed(2);
 
     } else {
-        const fromFactor = (units[conversionType] as any)[fromUnit];
-        const toFactor = (units[conversionType] as any)[toUnit];
+        const fromFactor = (units[conversionType] as Record<string, number>)[fromUnit];
+        const toFactor = (units[conversionType] as Record<string, number>)[toUnit];
         const result = (numValue * fromFactor) / toFactor;
         return result.toLocaleString(undefined, { maximumFractionDigits: result > 1 ? 4 : 8});
     }
@@ -137,7 +137,7 @@ export default function UnitConverter() {
             <h3>How to Use the Calculator</h3>
             <ol>
                 <li>First, select the Conversion Type (e.g., Length, Weight, Temperature).</li>
-                <li>Enter the value you wish to convert in the "From" field.</li>
+                <li>Enter the value you wish to convert in the &quot;From&quot; field.</li>
                 <li>Select the starting unit and the target unit from the dropdown menus.</li>
             </ol>
             <p>The result of the conversion will be displayed instantly. Use the swap button to quickly reverse the units.</p>

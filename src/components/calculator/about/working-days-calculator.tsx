@@ -12,7 +12,7 @@ export default function AboutWorkingDaysCalculator() {
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Select a <strong>Start Date</strong> and an <strong>End Date</strong> using the calendars.</li>
-                    <li>Click the <strong>"Calculate Working Days"</strong> button.</li>
+                    <li>Click the <strong>&quot;Calculate Working Days&quot;</strong> button.</li>
                 </ol>
                 <p>The calculator will instantly tell you the total number of business days in that period.</p>
                 

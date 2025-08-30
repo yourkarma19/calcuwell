@@ -20,7 +20,7 @@ export default function AboutMixedNumberCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>What Are Mixed Numbers?</AccordionTrigger>
                         <AccordionContent>
-                            A mixed number is a whole number combined with a proper fraction. It's a way of representing a value greater than one. For example, if you have 2 full pizzas and a half pizza, you would write it as 2 ½. This is often more intuitive to understand in daily life than its improper fraction equivalent, which would be 5/2. They are used extensively in cooking, construction, and other hands-on fields where precise measurements that are not whole units are common.
+                            A mixed number is a whole number combined with a proper fraction. It&apos;s a way of representing a value greater than one. For example, if you have 2 full pizzas and a half pizza, you would write it as 2 ½. This is often more intuitive to understand in daily life than its improper fraction equivalent, which would be 5/2. They are used extensively in cooking, construction, and other hands-on fields where precise measurements that are not whole units are common.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

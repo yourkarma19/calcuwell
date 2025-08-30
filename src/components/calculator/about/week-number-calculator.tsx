@@ -32,7 +32,7 @@ export default function AboutWeekNumberCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Why does the ISO week year sometimes differ from the calendar year?</AccordionTrigger>
                         <AccordionContent>
-                           Because the ISO week year is based on which year the majority of the week's days fall in, the first few days of January can sometimes belong to the last week of the previous year, and the last few days of December can belong to the first week of the next year.
+                           Because the ISO week year is based on which year the majority of the week&apos;s days fall in, the first few days of January can sometimes belong to the last week of the previous year, and the last few days of December can belong to the first week of the next year.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

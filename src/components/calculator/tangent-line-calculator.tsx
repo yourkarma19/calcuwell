@@ -46,8 +46,12 @@ export default function TangentLineCalculator() {
                 ]
             });
 
-        } catch (e: any) {
-            setError(e.message || "Failed to parse function.");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                setError(e.message || "Failed to parse function.");
+            } else {
+                setError("An unknown error occurred.");
+            }
             setSolution(null);
         }
     };

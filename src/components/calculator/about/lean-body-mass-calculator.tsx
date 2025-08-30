@@ -19,13 +19,13 @@ export default function AboutLeanBodyMassCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Why is LBM an important health metric?</AccordionTrigger>
                         <AccordionContent>
-                            Tracking LBM is often more useful for assessing health and fitness than tracking body weight alone. A standard scale doesn't differentiate between fat loss and muscle loss. By monitoring your LBM, you can better understand if your fitness and diet plan is helping you lose fat while preserving or gaining muscle, which is crucial for a healthy metabolism and overall strength.
+                            Tracking LBM is often more useful for assessing health and fitness than tracking body weight alone. A standard scale doesn&apos;t differentiate between fat loss and muscle loss. By monitoring your LBM, you can better understand if your fitness and diet plan is helping you lose fat while preserving or gaining muscle, which is crucial for a healthy metabolism and overall strength.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>How is LBM different from BMI?</AccordionTrigger>
                         <AccordionContent>
-                            LBM and BMI (Body Mass Index) measure different aspects of your body. BMI is a simple ratio of your weight to your height and is used as a general screening tool for weight categories. However, BMI can't distinguish between fat and muscle. LBM, on the other hand, specifically focuses on your non-fat mass, providing a clearer picture of your body composition. An athlete might have a high BMI due to muscle mass but a healthy LBM and low body fat percentage.
+                            LBM and BMI (Body Mass Index) measure different aspects of your body. BMI is a simple ratio of your weight to your height and is used as a general screening tool for weight categories. However, BMI can&apos;t distinguish between fat and muscle. LBM, on the other hand, specifically focuses on your non-fat mass, providing a clearer picture of your body composition. An athlete might have a high BMI due to muscle mass but a healthy LBM and low body fat percentage.
                         </AccordionContent>
                     </AccordionItem>
                      <AccordionItem value="item-3">

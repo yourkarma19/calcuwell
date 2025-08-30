@@ -11,7 +11,7 @@ export default function AboutAddSubtractDaysCalculator() {
             <ol>
                 <li>Choose a <strong>Start Date</strong> from the calendar.</li>
                 <li>Enter the number of <strong>Days to Add/Subtract</strong>.</li>
-                <li>Click either the <strong>"Add Days"</strong> or <strong>"Subtract Days"</strong> button.</li>
+                <li>Click either the <strong>&quot;Add Days&quot;</strong> or <strong>&quot;Subtract Days&quot;</strong> button.</li>
             </ol>
             <p>The resulting date will be shown instantly in the results card.</p>
             <h3>Date Calculator FAQs</h3>

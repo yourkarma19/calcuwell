@@ -19,11 +19,11 @@ export default function AboutBMICalculator() {
                     <CardTitle>About the BMI Calculator</CardTitle>
                 </CardHeader>
                 <CardContent className="prose dark:prose-invert max-w-none">
-                    <p>The <strong>Body Mass Index (BMI)</strong> is a widely used measure to gauge whether your weight is healthy in proportion to your height. It's a simple screening tool that can help identify potential weight-related health issues for adults. Our calculator makes it easy to find your BMI using either metric or imperial units.</p>
+                    <p>The <strong>Body Mass Index (BMI)</strong> is a widely used measure to gauge whether your weight is healthy in proportion to your height. It&apos;s a simple screening tool that can help identify potential weight-related health issues for adults. Our calculator makes it easy to find your BMI using either metric or imperial units.</p>
 
                     <h3>How to Use the BMI Calculator</h3>
                     <ol>
-                        <li>Select your preferred unit system (<strong>Metric</strong> for kilograms & centimeters or <strong>Imperial</strong> for pounds & feet/inches).</li>
+                        <li>Select your preferred unit system (<strong>Metric</strong> for kilograms &amp; centimeters or <strong>Imperial</strong> for pounds &amp; feet/inches).</li>
                         <li>Enter your current <strong>Weight</strong>.</li>
                         <li>Enter your <strong>Height</strong>.</li>
                         <li>Your BMI result and corresponding weight category will be shown automatically.</li>

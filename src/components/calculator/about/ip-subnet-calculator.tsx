@@ -32,7 +32,7 @@ export default function AboutIpSubnetCalculator() {
                      <AccordionItem value="item-3">
                         <AccordionTrigger>Network Address vs. Broadcast Address</AccordionTrigger>
                         <AccordionContent>
-                            The **Network Address** is the first address in a subnet and identifies the network itself. The **Broadcast Address** is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why "usable" hosts are always two less than the total.
+                            The **Network Address** is the first address in a subnet and identifies the network itself. The **Broadcast Address** is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why &quot;usable&quot; hosts are always two less than the total.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">

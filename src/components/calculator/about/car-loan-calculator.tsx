@@ -14,7 +14,7 @@ export default function AboutCarLoanCalculator() {
               <li>Input your <strong>Down Payment</strong> and the <strong>Trade-in Value</strong> of your old vehicle, if any. These amounts reduce the total loan you need.</li>
               <li>Adjust the <strong>Interest Rate</strong> and <strong>Loan Tenure</strong> (in years) to match the loan offer you have received.</li>
             </ol>
-            <p>The calculator will instantly display your monthly payment and show how the total cost is divided between the loan amount and the interest you'll pay over time.</p>
+            <p>The calculator will instantly display your monthly payment and show how the total cost is divided between the loan amount and the interest you&apos;ll pay over time.</p>
             
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
@@ -27,7 +27,7 @@ export default function AboutCarLoanCalculator() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>How is the total cost of the car calculated?</AccordionTrigger>
                 <AccordionContent>
-                  The total cost of the car includes the principal loan amount, all the interest paid over the loan's life, and any initial down payment or trade-in value you provided. It's the complete out-of-pocket expense for the vehicle.
+                  The total cost of the car includes the principal loan amount, all the interest paid over the loan&apos;s life, and any initial down payment or trade-in value you provided. It&apos;s the complete out-of-pocket expense for the vehicle.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">

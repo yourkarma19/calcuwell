@@ -16,20 +16,20 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
             <ol>
                 <li>Enter the <strong>Radius</strong> of the sphere into the input box.</li>
             </ol>
-            <p>The calculator will automatically compute and display the sphere's volume, surface area, and diameter.</p>
+            <p>The calculator will automatically compute and display the sphere&apos;s volume, surface area, and diameter.</p>
 
             <h3>Frequently Asked Questions (FAQs)</h3>
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>How is the volume of a sphere calculated?</AccordionTrigger>
                     <AccordionContent>
-                        The volume of a sphere is the total amount of space inside it. It is calculated using the formula `V = (4/3) * π * r³`, where 'r' is the radius of the sphere and π (pi) is approximately 3.14159.
+                        The volume of a sphere is the total amount of space inside it. It is calculated using the formula `V = (4/3) * π * r³`, where &apos;r&apos; is the radius of the sphere and π (pi) is approximately 3.14159.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>How is the surface area of a sphere calculated?</AccordionTrigger>
                     <AccordionContent>
-                       The surface area is the total area on the outer surface of the sphere. It is calculated with the formula `A = 4 * π * r²`, where 'r' is the radius. An interesting fact is that this is the same area as four circles with the same radius, or the area of the curved part of a cylinder that would perfectly enclose the sphere.
+                       The surface area is the total area on the outer surface of the sphere. It is calculated with the formula `A = 4 * π * r²`, where &apos;r&apos; is the radius. An interesting fact is that this is the same area as four circles with the same radius, or the area of the curved part of a cylinder that would perfectly enclose the sphere.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">

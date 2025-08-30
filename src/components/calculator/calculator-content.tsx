@@ -2,7 +2,6 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { useMemo } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -26,14 +25,12 @@ const ContentLoader = () => (
 
 
 export default function CalculatorContent({ slug, ...props }: CalculatorContentProps) {
-  const AboutComponent = useMemo(() => {
-    return dynamic(
+  const AboutComponent = dynamic(
       () => import(`@/components/calculator/about/${slug}`).catch(() => () => null),
       {
         loading: () => <ContentLoader />,
       }
     );
-  }, [slug]);
 
   return <AboutComponent {...props} />;
 }

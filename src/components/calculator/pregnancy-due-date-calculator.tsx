@@ -35,7 +35,7 @@ export default function PregnancyDueDateCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Calculation Method</Label>
-            <RadioGroup value={calculationMethod} onValueChange={(v) => setCalculationMethod(v as "lmp" | "conception")} className="flex items-center space-x-4 pt-2">
+            <RadioGroup value={calculationMethod} onValueChange={(v: string) => setCalculationMethod(v as "lmp" | "conception")} className="flex items-center space-x-4 pt-2">
               <div className="flex items-center space-x-2"><RadioGroupItem value="lmp" id="lmp" /><Label htmlFor="lmp">Last Menstrual Period</Label></div>
               <div className="flex items-center space-x-2"><RadioGroupItem value="conception" id="conception" /><Label htmlFor="conception">Conception Date</Label></div>
             </RadioGroup>

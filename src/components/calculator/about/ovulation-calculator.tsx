@@ -1,12 +1,14 @@
+"use client";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutOvulationCalculator() {
     return (
         <Card>
-            <CardHeader><CardTitle>About Ovulation & Fertility</CardTitle></CardHeader>
+            <CardHeader><CardTitle>About Ovulation &amp; Fertility</CardTitle></CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-                <p>Our **Ovulation Calculator** is a simple tool designed to help you predict your most fertile days based on your menstrual cycle. By estimating your ovulation date, you can identify your "fertile window," which is the period when you have the highest chance of conceiving. This calculator is a helpful first step for anyone planning a pregnancy.</p>
+                <p>Our **Ovulation Calculator** is a simple tool designed to help you predict your most fertile days based on your menstrual cycle. By estimating your ovulation date, you can identify your &quot;fertile window,&quot; which is the period when you have the highest chance of conceiving. This calculator is a helpful first step for anyone planning a pregnancy.</p>
                 <h3>How to Use the Calculator</h3>
                 <ol>
                     <li>Select the **First Day of Your Last Menstrual Period** from the calendar.</li>
@@ -36,7 +38,7 @@ export default function AboutOvulationCalculator() {
                   <AccordionItem value="item-4">
                     <AccordionTrigger>My cycle is irregular. Can I still use this calculator?</AccordionTrigger>
                     <AccordionContent>
-                      If your cycle is irregular, prediction can be more challenging. It's best to calculate your average cycle length over the last several months to use in the calculator. However, for irregular cycles, other methods like ovulation predictor kits may provide more reliable results. Always consult a healthcare provider for personalized advice.
+                      If your cycle is irregular, prediction can be more challenging. It&apos;s best to calculate your average cycle length over the last several months to use in the calculator. However, for irregular cycles, other methods like ovulation predictor kits may provide more reliable results. Always consult a healthcare provider for personalized advice.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>

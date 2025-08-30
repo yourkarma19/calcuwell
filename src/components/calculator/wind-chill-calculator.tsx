@@ -46,7 +46,7 @@ export default function WindChillCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Wind Chill Calculator</CardTitle>
-          <CardDescription>Calculate the "feels like" temperature based on wind speed.</CardDescription>
+          <CardDescription>Calculate the &quot;feels like&quot; temperature based on wind speed.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">

@@ -10,10 +10,10 @@ export default function AboutBinaryConverter() {
             <CardTitle as="h2">About Number System Conversions</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our <strong>Binary & Number System Converter</strong> is an essential tool for programmers, computer science students, and networking professionals. It allows for quick and accurate conversion between the four most common number systems used in computing: binary (base-2), decimal (base-10), hexadecimal (base-16), and octal (base-8). Understanding these systems is fundamental to working with computers at a low level.</p>
+            <p>Our <strong>Binary &amp; Number System Converter</strong> is an essential tool for programmers, computer science students, and networking professionals. It allows for quick and accurate conversion between the four most common number systems used in computing: binary (base-2), decimal (base-10), hexadecimal (base-16), and octal (base-8). Understanding these systems is fundamental to working with computers at a low level.</p>
             <h2>How to Use the Calculator</h2>
             <ol>
-                <li>Enter a value in the "From" field.</li>
+                <li>Enter a value in the &quot;From&quot; field.</li>
                 <li>Select the number system you are converting from (e.g., Decimal).</li>
                 <li>Select the target number system you wish to convert to (e.g., Binary).</li>
             </ol>
@@ -25,14 +25,14 @@ export default function AboutBinaryConverter() {
                     <AccordionContent>
                         <p className="mb-2"><strong>Decimal (Base-10):</strong> The system we use every day, with digits 0-9.</p>
                         <p className="mb-2"><strong>Binary (Base-2):</strong> The fundamental language of computers, using only digits 0 and 1.</p>
-                        <p className="mb-2"><strong>Hexadecimal (Base-16):</strong> Uses digits 0-9 and letters A-F. It's a more compact way to represent binary data, as one hex digit represents four binary digits.</p>
+                        <p className="mb-2"><strong>Hexadecimal (Base-16):</strong> Uses digits 0-9 and letters A-F. It&apos;s a more compact way to represent binary data, as one hex digit represents four binary digits.</p>
                         <p><strong>Octal (Base-8):</strong> Uses digits 0-7. It was more common in older computing systems.</p>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Why is hexadecimal used in programming?</AccordionTrigger>
                     <AccordionContent>
-                       Hexadecimal is widely used because it's a human-friendly way to represent long binary values. For example, the binary value `11111111` is much easier to read and write as `FF` in hexadecimal. It's commonly used for memory addresses, color codes (e.g., `#FF0000` for red), and file-level data.
+                       Hexadecimal is widely used because it&apos;s a human-friendly way to represent long binary values. For example, the binary value `11111111` is much easier to read and write as `FF` in hexadecimal. It&apos;s commonly used for memory addresses, color codes (e.g., `#FF0000` for red), and file-level data.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

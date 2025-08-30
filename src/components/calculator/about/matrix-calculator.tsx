@@ -32,7 +32,7 @@ export default function AboutMatrixCalculator() {
                     <AccordionItem value="item-3">
                         <AccordionTrigger>What about matrix multiplication?</AccordionTrigger>
                         <AccordionContent>
-                           Matrix multiplication is more complex than addition or subtraction. It involves a "dot product" of rows and columns. This calculator does not currently support matrix multiplication, but it is a key operation in linear algebra used for transformations, solving systems of equations, and more.
+                           Matrix multiplication is more complex than addition or subtraction. It involves a &quot;dot product&quot; of rows and columns. This calculator does not currently support matrix multiplication, but it is a key operation in linear algebra used for transformations, solving systems of equations, and more.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

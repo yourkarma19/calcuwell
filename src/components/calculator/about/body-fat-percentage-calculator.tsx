@@ -25,19 +25,19 @@ export default function AboutBodyFatPercentageCalculator() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Why is body fat percentage better than BMI?</AccordionTrigger>
                         <AccordionContent>
-                            Body fat percentage directly measures fat mass, while BMI is a general measure. BMI can be misleading for muscular people (who may be called "overweight") or older adults. Body fat percentage gives a clearer picture of your body composition.
+                            Body fat percentage directly measures fat mass, while BMI is a general measure. BMI can be misleading for muscular people (who may be called &quot;overweight&quot;) or older adults. Body fat percentage gives a clearer picture of your body composition.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>How does the U.S. Navy method work?</AccordionTrigger>
                         <AccordionContent>
-                            This method uses body measurements to estimate body density. It's a convenient and cheap way to estimate body fat without special equipment. However, it's not as accurate as clinical methods like DEXA scans.
+                            This method uses body measurements to estimate body density. It&apos;s a convenient and cheap way to estimate body fat without special equipment. However, it&apos;s not as accurate as clinical methods like DEXA scans.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>How do I measure myself correctly?</AccordionTrigger>
                         <AccordionContent>
-                           Use a flexible tape measure. For the <strong>neck</strong>, measure just below the Adam's apple. For the <strong>waist</strong>, measure at the narrowest point, usually just above the navel. For the <strong>hips</strong>, measure at the widest point. Keep the tape snug but not tight.
+                           Use a flexible tape measure. For the <strong>neck</strong>, measure just below the Adam&apos;s apple. For the <strong>waist</strong>, measure at the narrowest point, usually just above the navel. For the <strong>hips</strong>, measure at the widest point. Keep the tape snug but not tight.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

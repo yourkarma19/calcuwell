@@ -9,13 +9,13 @@ export default function AboutVoltageToWattsCalculator() {
                 <p>This calculator helps you understand the relationship between voltage, current, and power. By converting volts and amps to watts, you can determine how much power an electrical device is consuming. This is a fundamental calculation in electronics, essential for ensuring safety and proper functionality of circuits. Understanding this relationship is key for anyone from DIY hobbyists to professional electrical engineers.</p>
                 
                 <h3>How to Convert Volts to Watts</h3>
-                <p>The conversion is based on Watt's Law, which states that power is the product of voltage and current. To use this calculator, simply input the voltage (in Volts) and the current (in Amps) of your circuit, and it will instantly compute the power in Watts.</p>
+                <p>The conversion is based on Watt&apos;s Law, which states that power is the product of voltage and current. To use this calculator, simply input the voltage (in Volts) and the current (in Amps) of your circuit, and it will instantly compute the power in Watts.</p>
                 <p className="font-mono bg-muted p-2 rounded-md text-center my-2">Power (Watts) = Voltage (Volts) × Current (Amps)</p>
                 <p className="text-center font-bold">P = V × I</p>
 
                 <h3>Electrical Definitions</h3>
                 <ul>
-                    <li><strong>What is a Volt?</strong> A Volt (V) is the unit of electric potential difference or "electrical pressure" in a circuit. It represents the potential energy difference between two points.</li>
+                    <li><strong>What is a Volt?</strong> A Volt (V) is the unit of electric potential difference or &quot;electrical pressure&quot; in a circuit. It represents the potential energy difference between two points.</li>
                     <li><strong>What is an Amp?</strong> An Ampere or Amp (A) is the unit of electrical current, representing the rate of flow of electric charge. It is the amount of charge flowing past a point per unit time.</li>
                     <li><strong>What is a Watt?</strong> A Watt (W) is the unit of electrical power, representing the rate at which electrical energy is transferred or consumed. One Watt is equivalent to one Joule per second.</li>
                 </ul>

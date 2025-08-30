@@ -28,7 +28,7 @@ export default function AboutCarbonFootprintCalculator() {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Why is this an estimate?</AccordionTrigger>
                         <AccordionContent>
-                            Calculating a precise carbon footprint is very complex. The actual impact depends on factors like your local power grid's mix of renewable vs. fossil fuels, your car's specific fuel efficiency, and the complex supply chains of the food you eat. This tool uses global and national averages to provide a general but insightful estimate.
+                            Calculating a precise carbon footprint is very complex. The actual impact depends on factors like your local power grid&apos;s mix of renewable vs. fossil fuels, your car&apos;s specific fuel efficiency, and the complex supply chains of the food you eat. This tool uses global and national averages to provide a general but insightful estimate.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">

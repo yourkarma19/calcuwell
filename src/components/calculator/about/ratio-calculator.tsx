@@ -22,7 +22,7 @@ export default function AboutRatioCalculator() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is a Ratio? A Simple Explanation with Examples</AccordionTrigger>
                     <AccordionContent>
-                        A ratio compares two quantities. It shows how much of one thing there is compared to another. For example, if there are 8 girls and 12 boys in a class, the ratio of girls to boys is 8:12. This doesn't tell you the total number of students, but it describes their relationship. Ratios can be simplified just like fractions, so 8:12 is equivalent to 2:3.
+                        A ratio compares two quantities. It shows how much of one thing there is compared to another. For example, if there are 8 girls and 12 boys in a class, the ratio of girls to boys is 8:12. This doesn&apos;t tell you the total number of students, but it describes their relationship. Ratios can be simplified just like fractions, so 8:12 is equivalent to 2:3.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
