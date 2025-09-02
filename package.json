@@ -23,6 +23,7 @@
     "check-all": "npm run type-check && npm run lint:check && npm run test"
   },
   "dependencies": {
+    "@genkit-ai/firebase": "^1.0.0",
     "@genkit-ai/googleai": "^1.0.0",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -82,7 +83,6 @@
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/babel__traverse": "^7.20.6",
-    "@types/mathjs": "^9.4.2",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
