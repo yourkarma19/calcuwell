@@ -12,10 +12,6 @@ const nextConfig = {
         });
         return config;
     },
-    experimental: {
-        // This is to allow requests from the development environment
-        allowedDevOrigins: ["https://*.cloudworkstations.dev"],
-    }
 };
 
 export default nextConfig;
