@@ -3,10 +3,7 @@ import React from "react";
 import * as lucideIcons from "lucide-react";
 import type { LucideProps } from "lucide-react";
 
-const icons = lucideIcons as unknown as Record<
-  string,
-  React.FC<LucideProps>
->;
+const icons = lucideIcons as unknown as Record<string, React.FC<LucideProps>>;
 
 type IconWrapperProps = {
   iconName: string;
