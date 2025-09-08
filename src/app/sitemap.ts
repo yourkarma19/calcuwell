@@ -54,7 +54,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-<<<<<<< HEAD
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
@@ -68,21 +67,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
   ];
-=======
-     {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-     {
-      url: `${baseUrl}/blog/what-is-the-pythagorean-theorem`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    }
-  ]
->>>>>>> 3312b78 (I see this error with the app, reported by NextJS, please fix it. The er)
 
   return [...staticEntries, ...categoryEntries, ...calculatorEntries];
 }

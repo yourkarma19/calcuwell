@@ -50,7 +50,6 @@ export default function PrivacyPolicyPage() {
           for this purpose.
         </p>
 
-<<<<<<< HEAD
         <h2>Advertising and Cookies</h2>
         <p>
           We use third-party advertising companies, including Google AdSense, to
@@ -83,20 +82,6 @@ export default function PrivacyPolicyPage() {
           other third-party vendors or ad networks may also be used to serve ads
           on your site.
         </p>
-=======
-                <h2>Advertising and Cookies</h2>
-                <p>
-                    We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.
-                </p>
-                <ul>
-                    <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
-                    <li>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
-                    <li>Users may opt out of personalized advertising by visiting Ads Settings. Alternatively, you can direct users to opt out of a third-party vendor's use of cookies for personalized advertising by visiting www.aboutads.info/choices.</li>
-                </ul>
-                <p>
-                    If you have not opted out of third-party ad serving, the cookies of other third-party vendors or ad networks may also be used to serve ads on your site.
-                </p>
->>>>>>> 3312b78 (I see this error with the app, reported by NextJS, please fix it. The er)
 
         <h2>Links to Other Websites</h2>
         <p>
