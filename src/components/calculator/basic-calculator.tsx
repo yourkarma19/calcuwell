@@ -375,15 +375,17 @@ export default function BasicCalculator() {
       >
         AC
       </Button>
-      <Button
-        onClick={() => handleInput("Backspace")}
-        aria-label="Backspace"
-        variant="outline"
-        size="icon"
-        className="bg-secondary hover:bg-secondary/80 h-16 w-full"
-      >
-        <Delete />
-      </Button>
+      <div className="flex items-center justify-center">
+        <Button
+          onClick={() => handleInput("Backspace")}
+          aria-label="Backspace"
+          variant="outline"
+          size="icon"
+          className="bg-secondary hover:bg-secondary/80 h-16 w-16"
+        >
+          <Delete />
+        </Button>
+      </div>
       <Button
         onClick={() => handleInput("%")}
         variant="outline"
