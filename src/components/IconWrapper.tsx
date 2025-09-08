@@ -1,6 +1,10 @@
-import React, { ComponentType } from "react";
-import * as lucideIcons from "lucide-react";
-import { LucideProps } from "lucide-react";
+import React from 'react';
+import * as lucideIcons from 'lucide-react';
+import type { LucideProps } from 'lucide-react';
+
+const { createReactComponent, ...icons } = lucideIcons;
+
+const validIcons = icons as Record<string, React.FC<LucideProps>>;
 
 type IconWrapperProps = {
   iconName: string;
@@ -10,15 +14,6 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
   iconName,
   ...props
 }) => {
-  // Filter only valid React components
-  const validIcons: Record<string, ComponentType<LucideProps>> = {};
-  Object.entries(lucideIcons).forEach(([key, value]) => {
-    if (typeof value === "function") {
-      validIcons[key] = value as ComponentType<LucideProps>;
-    }
-  });
-
   const Icon = validIcons[iconName] || validIcons.Calculator;
-
   return <Icon {...props} />;
 };
