@@ -1,5 +1,5 @@
 
-import { ArrowRight, Zap, Target, Smartphone, icons } from "lucide-react";
+import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import HomeCalculator from "@/components/home-calculator";
@@ -14,6 +14,7 @@ import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import type { WebSite, WithContext } from 'schema-dts';
 import type { Metadata } from "next";
+import { icons } from "@/lib/icons";
 
 export const metadata: Metadata = {
   title: "CalcPro: Your Free Online Calculator Hub",
@@ -32,8 +33,8 @@ const jsonLd: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}"
     },
-    ["query-input"]: "required name=search_term_string"
-  }
+    "query-input": "required name=search_term_string"
+  } as any,
 };
 
 

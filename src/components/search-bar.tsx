@@ -1,7 +1,7 @@
 
+
 "use client";
 
-import { icons } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { searchCalculators } from "@/app/actions/search";
@@ -19,6 +19,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { icons } from "@/lib/icons";
 import { type Calculator } from "@/lib/types";
 
 type SearchResult = Omit<Calculator, "component">;

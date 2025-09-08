@@ -1,4 +1,5 @@
-import type { icons } from "lucide-react";
+
+import type { icons } from "./icons";
 import type { categories } from "./calculators";
 
 export type CalculatorCategoryName = (typeof categories)[number]["name"];

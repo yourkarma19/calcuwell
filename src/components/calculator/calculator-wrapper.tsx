@@ -1,7 +1,8 @@
 
+
 "use client";
 
-import { ChevronRight, icons } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
@@ -9,6 +10,7 @@ import { Toaster } from "../ui/toaster";
 import EmbedCalculator from "./embed-calculator";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { categories } from "@/lib/calculators";
+import { icons } from "@/lib/icons";
 import type { Calculator } from "@/lib/types";
 
 interface CalculatorWrapperProps {

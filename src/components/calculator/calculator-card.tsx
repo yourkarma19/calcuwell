@@ -1,4 +1,4 @@
-import { icons } from "lucide-react";
+
 import Link from "next/link";
 import {
   Card,
@@ -7,6 +7,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import type { Calculator } from "@/lib/types";
+import { icons } from "@/lib/icons";
 
 
 interface CalculatorCardProps {
