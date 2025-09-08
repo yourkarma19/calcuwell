@@ -1,4 +1,3 @@
-
 import type { categories } from "./calculators";
 
 export type CalculatorCategoryName = (typeof categories)[number]["name"];

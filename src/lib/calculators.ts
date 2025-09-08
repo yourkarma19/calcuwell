@@ -24,7 +24,7 @@ export const categories: Category[] = [
     name: "Lifestyle",
     slug: "lifestyle",
     description: "Calculators for daily life, planning, and personal use.",
-    iconName: "House",
+    iconName: "Home",
   },
   {
     name: "Conversions",
