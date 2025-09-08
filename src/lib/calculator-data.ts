@@ -1,3 +1,4 @@
+
 import type { Calculator } from "@/lib/types";
 
 // This file is separate to avoid bloating the initial bundle of pages
@@ -163,14 +164,22 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     formula: "Total = Venue + (Catering × Guests) + Photography + Dress + ...",
   },
   {
-    slug: "pet-care-cost-calculator",
-    name: "Pet Care Cost Calculator",
-    description: "Estimate the monthly and yearly cost of owning a pet.",
+    slug: "pet-age-calculator",
+    name: "Pet Age Calculator",
+    description: "Calculate your pet's age in human years.",
     category: "Lifestyle",
     iconName: "Dog",
     metaDescription:
-      "Estimate the annual and monthly cost of pet ownership. Our tool helps you budget for food, vet visits, and grooming for your dog or cat.",
-    formula: "Annual Cost = (Food × 12) + (Vet × Visits) + ...",
+      "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
+  },
+   {
+    slug: "pet-care-cost-calculator",
+    name: "Pet Care Cost Calculator",
+    description: "Estimate the monthly and yearly costs of owning a pet.",
+    category: "Lifestyle",
+    iconName: "Dog",
+    metaDescription:
+      "Estimate the annual and monthly costs of pet ownership. Our calculator helps you budget for food, vet care, grooming, and other expenses.",
   },
   {
     slug: "credit-card-payoff-calculator",
@@ -1074,13 +1083,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Get a rough estimate of your carbon footprint based on your daily commute, energy use, and diet. Understand your environmental impact.",
   },
-  {
-    slug: "pet-age-calculator",
-    name: "Pet Age Calculator",
-    description: "Calculate your pet's age in human years.",
-    category: "Miscellaneous",
-    iconName: "Dog",
-    metaDescription:
-      "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
-  },
 ];
+
+    
