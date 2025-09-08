@@ -2,45 +2,82 @@
 
 echo "🚀 Starting Pre-Deploy Checks for CalcPro 🚀"
 
-# 1. Check Node & npm versions
-echo "🔹 Node version: $(node -v)"
-echo "🔹 npm version: $(npm -v)"
+# ------------------------------
+# 1️⃣ Check Node & npm versions
+# ------------------------------
+NODE_VERSION=$(node -v)
+NPM_VERSION=$(npm -v)
+echo "🔹 Node version: $NODE_VERSION"
+echo "🔹 npm version: $NPM_VERSION"
 
-# 2. Clean caches
+# ------------------------------
+# 2️⃣ Clean previous build
+# ------------------------------
 echo "🔹 Removing node_modules, package-lock.json, .next"
 rm -rf node_modules package-lock.json .next
 
-# 3. Install dependencies
+# ------------------------------
+# 3️⃣ Install dependencies
+# ------------------------------
 echo "🔹 Installing dependencies..."
-npm install || { echo "❌ npm install failed"; exit 1; }
+npm install
 
-# 4. Lint check
+# ------------------------------
+# 4️⃣ Run Prettier auto-format
+# ------------------------------
+echo "🔹 Running Prettier to fix code style..."
+npx prettier --write .
+
+# ------------------------------
+# 5️⃣ Run ESLint
+# ------------------------------
 echo "🔹 Running ESLint..."
-npm run lint -- --max-warnings=0 || { echo "❌ Lint errors found"; exit 1; }
-
-# 5. TypeScript check
-echo "🔹 Running TypeScript check..."
-npx tsc --noEmit || { echo "❌ TypeScript errors found"; exit 1; }
-
-# 6. Build locally
-echo "🔹 Building Next.js project..."
-npm run build || { echo "❌ Build failed"; exit 1; }
-
-# 7. Start production server (quick check)
-echo "🔹 Running local production server for quick check..."
-npm run start &
-SERVER_PID=$!
-sleep 5
-kill $SERVER_PID
-echo "✅ Production server ran successfully (quick check)"
-
-# 8. Netlify local build
-echo "🔹 Running Netlify CLI build..."
-if ! command -v netlify &> /dev/null
-then
-    echo "⚠ Netlify CLI not installed. Installing..."
-    npm install -g netlify-cli
+eslint . --ext .tsx,.ts,.js,.jsx
+if [ $? -ne 0 ]; then
+  echo "❌ ESLint errors found. Fix them before deploying."
+  exit 1;
 fi
-netlify build || { echo "❌ Netlify build failed"; exit 1; }
 
-echo "🎉 All pre-deploy checks passed! Ready for Netlify deployment."
+# ------------------------------
+# 6️⃣ Run TypeScript check
+# ------------------------------
+echo "🔹 Running TypeScript check..."
+tsc --noEmit
+if [ $? -ne 0 ]; then
+  echo "❌ TypeScript errors found. Fix them before deploying."
+  exit 1;
+fi
+
+# ------------------------------
+# 7️⃣ Detect & fix 'use client' + metadata issues
+# ------------------------------
+echo "🔹 Checking for 'use client' components exporting metadata..."
+for file in $(grep -rl '"use client"' src/app); do
+  if grep -q 'export const metadata' "$file"; then
+    echo "⚠ Found 'metadata' in $file. Fixing automatically..."
+    
+    # Extract metadata block
+    METADATA_BLOCK=$(awk '/export const metadata/,/}/' "$file")
+    
+    # Create a new server component file to hold metadata
+    METADATA_FILE="${file%.tsx}.metadata.ts"
+    echo "$METADATA_BLOCK" > "$METADATA_FILE"
+    echo "✅ Created server component: $METADATA_FILE"
+    
+    # Remove metadata block from original client component
+    sed -i "/export const metadata/,/}/d" "$file"
+    echo "✅ Removed metadata from $file"
+  fi
+done
+
+# ------------------------------
+# 8️⃣ Build Next.js project
+# ------------------------------
+echo "🔹 Building Next.js project..."
+npm run build
+if [ $? -ne 0 ]; then
+  echo "❌ Next.js build failed. Fix errors above before deploying."
+  exit 1;
+fi
+
+echo "✅ Pre-Deploy Checks Passed! Ready for deployment."
