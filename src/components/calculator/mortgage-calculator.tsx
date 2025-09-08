@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function MortgageCalculator({ setChildProps, calculatorName }: { setChildProps: (props: Record<string, unknown>) => void, calculatorName: string }) {
+export default function MortgageCalculator({ setChildProps = () => {}, calculatorName }: { setChildProps?: (props: Record<string, unknown>) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("mortgage-principal", 250000);
   const [rate, setRate] = usePersistentState("mortgage-rate", 6.5);

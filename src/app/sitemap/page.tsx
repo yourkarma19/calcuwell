@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@/lib/calculators";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
+import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sitemap | CalcPro",
@@ -26,7 +27,7 @@ export default async function SitemapPage() {
           Welcome to the sitemap for CalcPro. Here you can find a comprehensive
           list of all our calculators, neatly organized by category. This page
           is designed to help you quickly navigate to the specific tool you
-          need, whether you&apos;re solving a complex math problem, managing
+          need, whether you're solving a complex math problem, managing
           your finances, or exploring health metrics. Browse through the
           sections below to discover the wide range of free tools we offer.
         </p>
@@ -36,7 +37,7 @@ export default async function SitemapPage() {
         {await Promise.all(
           categories.map(async (category) => {
             const CategoryIcon =
-              icons[category.iconName as keyof typeof icons] || icons.Calculator;
+              (icons[category.iconName as keyof typeof icons] as LucideIcon) || icons.Calculator;
             const categoryCalculators = await getCalculatorsByCategory(
               category.slug,
             );
@@ -49,7 +50,7 @@ export default async function SitemapPage() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {categoryCalculators.map((calc) => {
                     const CalcIcon =
-                      icons[calc.iconName as keyof typeof icons] ||
+                      (icons[calc.iconName as keyof typeof icons] as LucideIcon) ||
                       icons.Calculator;
                     return (
                       <li key={calc.slug}>
