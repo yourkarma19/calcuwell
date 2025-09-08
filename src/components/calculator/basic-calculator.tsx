@@ -3,7 +3,7 @@
 import { Delete, Heart } from "lucide-react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -371,7 +371,7 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("AC")}
         variant="outline"
-        className="bg-secondary hover:bg-secondary/80 h-16 text-xl"
+        className="bg-accent hover:bg-accent/80 h-16 text-xl"
       >
         AC
       </Button>
@@ -381,7 +381,7 @@ export default function BasicCalculator() {
           aria-label="Backspace"
           variant="outline"
           size="icon"
-          className="bg-secondary hover:bg-secondary/80 h-16 w-16"
+          className="bg-accent hover:bg-accent/80 h-16 w-16"
         >
           <Delete />
         </Button>
@@ -389,7 +389,7 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("%")}
         variant="outline"
-        className="bg-secondary hover:bg-secondary/80 h-16 text-xl"
+        className="bg-accent hover:bg-accent/80 h-16 text-xl"
       >
         %
       </Button>
@@ -540,51 +540,47 @@ export default function BasicCalculator() {
   );
 
   return (
-    <div className="lg:col-span-3 space-y-6">
-      <TooltipProvider>
-        <Card className="max-w-sm mx-auto overflow-hidden relative">
-          {isCelebrating && (
-            <div className="celebrate absolute inset-0 pointer-events-none">
-              {Array.from({ length: 10 }).map((_, i) => (
-                <Heart
-                  key={i}
-                  className="heart absolute"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 5}s`,
-                  }}
-                />
-              ))}
-            </div>
-          )}
-          <CardHeader>
-            <CardTitle>Calculator</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Tabs
-              defaultValue="basic"
-              value={activeTab}
-              onValueChange={setActiveTab}
-              className="w-full"
-            >
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="basic">Basic</TabsTrigger>
-                <TabsTrigger value="sci">Sci</TabsTrigger>
-              </TabsList>
+    <Card className="max-w-md mx-auto overflow-hidden relative shadow-2xl">
+      {isCelebrating && (
+        <div className="celebrate absolute inset-0 pointer-events-none">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <Heart
+              key={i}
+              className="heart absolute"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
-              <TabsContent value="basic" className="mt-4">
-                {renderDisplay()}
-                {renderBasicButtons()}
-              </TabsContent>
+      <CardContent className="p-4">
+        <Tabs
+          defaultValue="basic"
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="w-full"
+        >
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="basic">Basic</TabsTrigger>
+            <TabsTrigger value="sci">Scientific</TabsTrigger>
+          </TabsList>
 
-              <TabsContent value="sci" className="mt-4">
-                {renderDisplay()}
-                {renderScientificButtons()}
-              </TabsContent>
-            </Tabs>
-          </CardContent>
-        </Card>
-      </TooltipProvider>
-    </div>
+          <TabsContent value="basic" className="mt-4">
+            {renderDisplay()}
+            {renderBasicButtons()}
+          </TabsContent>
+
+          <TabsContent value="sci" className="mt-4">
+            {renderDisplay()}
+            <TooltipProvider>
+              {renderScientificButtons()}
+            </TooltipProvider>
+          </TabsContent>
+        </Tabs>
+      </CardContent>
+    </Card>
   );
 }

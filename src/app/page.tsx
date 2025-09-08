@@ -1,17 +1,17 @@
 "use client";
 
-import { Suspense } from "react";
 import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
 import { IconWrapper } from "@/components/IconWrapper";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { HomeCalculator } from "@/components/calculator/home-calculator";
 import {
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
@@ -21,7 +21,7 @@ export default function Home() {
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container mx-auto px-4 py-8">
         <section className="text-center py-12 md:py-20">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
+          <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
             CalcPro
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 bg-muted/40 rounded-xl mt-12">
+        <section className="py-16 bg-card rounded-xl mt-12">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold font-headline text-center mb-6">
               Why Choose CalcPro?
@@ -97,7 +97,7 @@ export default function Home() {
               an effortless experience.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <Card className="text-center">
+              <Card className="text-center bg-background">
                 <CardContent className="pt-6">
                   <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
                     <Zap className="w-6 h-6 text-primary" />
@@ -109,7 +109,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="text-center">
+              <Card className="text-center bg-background">
                 <CardContent className="pt-6">
                   <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
                     <Target className="w-6 h-6 text-primary" />
@@ -121,7 +121,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="text-center">
+              <Card className="text-center bg-background">
                 <CardContent className="pt-6">
                   <div className="p-3 inline-block bg-primary/10 rounded-full mb-2">
                     <Smartphone className="w-6 h-6 text-primary" />
