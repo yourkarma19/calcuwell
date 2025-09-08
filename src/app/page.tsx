@@ -1,4 +1,3 @@
-
 import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
@@ -29,8 +28,11 @@ const jsonLd: WithContext<WebSite> = {
   url: "https://calcpro.online",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://calcpro.online/search?q={search_term_string}",
-    query: "required name=search_term_string",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://calcpro.online/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
   },
 };
 
