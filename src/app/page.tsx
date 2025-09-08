@@ -12,6 +12,13 @@ import {
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import type { WebSite, WithContext } from 'schema-dts';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CalcPro: Your Free Online Calculator Hub",
+  description: "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
+};
+
 
 const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
@@ -24,7 +31,7 @@ const jsonLd: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}"
     },
-    "queryInput": "required name=search_term_string"
+    queryInput: "required name=search_term_string"
   }
 };
 
