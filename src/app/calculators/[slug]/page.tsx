@@ -3,7 +3,6 @@ import CalculatorContent from "@/components/calculator/calculator-content";
 import CalculatorLoader from "@/components/calculator/calculator-loader";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import { getCalculatorBySlug } from "@/lib/server/calculator-data";
-import type { Calculator } from "@/lib/types";
 
 type CalculatorPageProps = {
   params: {
