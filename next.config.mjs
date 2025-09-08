@@ -1,11 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
   experimental: {
-    allowedDevOrigins: ["http://localhost:3000", "https://calcpro.online"],
+    serverActions: true,
   },
-  typescript: {
-    // Tell Next.js to use our custom tsconfig for builds
-    tsconfigPath: "./tsconfig.json",
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
