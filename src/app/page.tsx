@@ -31,7 +31,7 @@ const jsonLd: WithContext<WebSite> = {
     "@type": "SearchAction",
     target: "https://calcpro.online/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
-  },
+  } as any,
 };
 
 
@@ -54,7 +54,7 @@ export default function Home() {
         </section>
 
         <section id="main-calculator" className="pb-12">
-          <HomeCalculator />
+          <HomeCalculator calculatorName="Home" />
         </section>
 
         <section id="categories" className="py-12">

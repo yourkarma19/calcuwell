@@ -4,7 +4,7 @@
 import React from "react";
 import BasicCalculator from "@/components/calculator/basic-calculator";
 
-function HomeCalculator({ calculatorName }: { calculatorName: string }) {
+function HomeCalculator() {
     return <BasicCalculator />;
 }
 
