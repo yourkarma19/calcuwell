@@ -15,7 +15,7 @@ interface CalculatorCardProps {
 }
 
 export default function CalculatorCard({ calculator }: CalculatorCardProps) {
-  const LucideIcon = icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
+  const LucideIcon = icons[calculator.iconName] || icons.Calculator;
 
   return (
     <Link href={`/calculators/${calculator.slug}`} className="block h-full">

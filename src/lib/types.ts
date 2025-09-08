@@ -1,5 +1,5 @@
 
-import type { icons } from "./icons";
+import type { IconName } from "./icons";
 import type { categories } from "./calculators";
 
 export type CalculatorCategoryName = (typeof categories)[number]["name"];
@@ -9,7 +9,7 @@ export interface Calculator {
   name: string;
   description: string;
   category: CalculatorCategoryName;
-  iconName: keyof typeof icons;
+  iconName: IconName;
   tags?: string[];
   formula?: string;
   seoTitle?: string;
@@ -20,5 +20,5 @@ export interface Category {
   name: string;
   slug: string;
   description: string;
-  iconName: keyof typeof icons;
+  iconName: IconName;
 }

@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -26,7 +25,7 @@ export default function CategoryClientPage({
 }: CategoryClientPageProps) {
   const [filter, setFilter] = useState("");
 
-  const LucideIcon = icons[iconName as keyof typeof icons] || icons.Calculator;
+  const LucideIcon = icons[iconName] || icons.Calculator;
 
   const filteredCalculators = useMemo(() => {
     if (!filter) {

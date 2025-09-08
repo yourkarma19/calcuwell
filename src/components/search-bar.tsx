@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -107,7 +106,7 @@ export function SearchBar() {
             <CommandGroup>
               {results.map((calc) => {
                 const LucideIcon =
-                  icons[calc.iconName as keyof typeof icons] ||
+                  icons[calc.iconName] ||
                   icons.Calculator;
                 return (
                   <CommandItem

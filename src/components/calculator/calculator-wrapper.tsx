@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { ChevronRight } from "lucide-react";
@@ -29,7 +28,7 @@ export default function CalculatorWrapper({
   const isEmbed = searchParams.get("embed") === "true";
 
   const LucideIcon =
-    icons[calculator.iconName as keyof typeof icons] || icons.Calculator;
+    icons[calculator.iconName] || icons.Calculator;
 
   if (isEmbed) {
     return (

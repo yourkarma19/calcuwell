@@ -67,7 +67,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category) => {
               const LucideIcon =
-                icons[category.iconName as keyof typeof icons] || icons.Calculator;
+                icons[category.iconName] || icons.Calculator;
               return (
                 <Link
                   key={category.slug}
