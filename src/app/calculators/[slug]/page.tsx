@@ -25,10 +25,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
       calculator={calculator}
       sidebar={<CalculatorContent slug={params.slug} />}
     >
-      <CalculatorLoader
-        slug={params.slug}
-        calculatorName={calculator.name}
-      />
+      <CalculatorLoader slug={params.slug} calculatorName={calculator.name} />
     </CalculatorWrapper>
   );
 }
