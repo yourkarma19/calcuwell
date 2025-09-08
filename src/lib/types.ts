@@ -1,10 +1,9 @@
 
-import type { IconName as LucideIconName } from "./icons";
 import type { categories } from "./calculators";
 
 export type CalculatorCategoryName = (typeof categories)[number]["name"];
 
-export type IconName = LucideIconName;
+export type IconName = string;
 
 export interface Calculator {
   slug: string;

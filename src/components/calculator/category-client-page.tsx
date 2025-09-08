@@ -2,10 +2,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { IconWrapper } from "@/components/IconWrapper";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { icons } from "@/lib/icons";
 import { Calculator } from "@/lib/types";
 
 type StrippedCalculator = Omit<Calculator, "component">;
@@ -25,8 +25,6 @@ export default function CategoryClientPage({
 }: CategoryClientPageProps) {
   const [filter, setFilter] = useState("");
 
-  const LucideIcon = icons[iconName] || icons.Calculator;
-
   const filteredCalculators = useMemo(() => {
     if (!filter) {
       return calculators;
@@ -44,7 +42,7 @@ export default function CategoryClientPage({
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
-        <LucideIcon className="w-16 h-16 text-primary mx-auto mb-4" />
+        <IconWrapper iconName={iconName} className="w-16 h-16 text-primary mx-auto mb-4" />
         <h1 className="text-4xl font-bold font-headline text-primary">
           {name} Calculators
         </h1>

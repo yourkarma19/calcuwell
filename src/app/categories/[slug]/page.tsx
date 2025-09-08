@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CategoryClientPage from "@/components/calculator/category-client-page";
@@ -65,7 +66,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       />
       <CategoryClientPage 
         name={category.name}
-        iconName={category.iconName}
+        iconName={category.iconName as string}
         description={category.description}
         calculators={categoryCalculators}
       />

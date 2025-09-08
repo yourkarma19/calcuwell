@@ -4,6 +4,7 @@
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { searchCalculators } from "@/app/actions/search";
+import { IconWrapper } from "@/components/IconWrapper";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -18,7 +19,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { icons } from "@/lib/icons";
 import { type Calculator } from "@/lib/types";
 
 type SearchResult = Omit<Calculator, "component">;
@@ -105,16 +105,13 @@ export function SearchBar() {
             )}
             <CommandGroup>
               {results.map((calc) => {
-                const LucideIcon =
-                  icons[calc.iconName] ||
-                  icons.Calculator;
                 return (
                   <CommandItem
                     key={calc.slug}
                     onSelect={() => runCommand(calc.slug)}
                     className="flex items-center gap-3 cursor-pointer"
                   >
-                    <LucideIcon className="w-4 h-4 text-muted-foreground" />
+                    <IconWrapper iconName={calc.iconName} className="w-4 h-4 text-muted-foreground" />
                     <div className="flex flex-col">
                       <span>{calc.name}</span>
                       <span className="text-xs text-muted-foreground">

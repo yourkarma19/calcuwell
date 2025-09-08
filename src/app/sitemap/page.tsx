@@ -1,11 +1,13 @@
 
 
-import { List, type LucideIcon } from "lucide-react";
+import { List } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
+import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
-import { icons, type IconName } from "@/lib/icons";
+import { IconName } from "@/lib/types";
+
 
 export const metadata: Metadata = {
   title: "Sitemap | CalcPro",
@@ -37,29 +39,24 @@ export default async function SitemapPage() {
       <div className="space-y-12">
         {await Promise.all(
           categories.map(async (category) => {
-            const CategoryIcon =
-              (icons[category.iconName as IconName] as LucideIcon) || icons.Calculator;
             const categoryCalculators = await getCalculatorsByCategory(
               category.slug,
             );
             return (
               <section key={category.slug}>
                 <h2 className="text-3xl font-bold font-headline text-primary mb-6 flex items-center gap-3">
-                  <CategoryIcon className="w-8 h-8" />
+                  <IconWrapper iconName={category.iconName as IconName} className="w-8 h-8" />
                   {category.name} Calculators
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {categoryCalculators.map((calc) => {
-                    const CalcIcon =
-                      (icons[calc.iconName as IconName] as LucideIcon) ||
-                      icons.Calculator;
                     return (
                       <li key={calc.slug}>
                         <Link
                           href={`/calculators/${calc.slug}`}
                           className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors"
                         >
-                          <CalcIcon className="w-4 h-4 text-muted-foreground" />
+                          <IconWrapper iconName={calc.iconName as IconName} className="w-4 h-4 text-muted-foreground" />
                           {calc.name}
                         </Link>
                       </li>

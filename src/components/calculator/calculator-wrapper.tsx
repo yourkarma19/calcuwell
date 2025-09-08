@@ -5,11 +5,11 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
+import { IconWrapper } from "../IconWrapper";
 import { Toaster } from "../ui/toaster";
 import EmbedCalculator from "./embed-calculator";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { categories } from "@/lib/calculators";
-import { icons } from "@/lib/icons";
 import type { Calculator } from "@/lib/types";
 
 interface CalculatorWrapperProps {
@@ -26,9 +26,6 @@ export default function CalculatorWrapper({
   const category = categories.find((c) => c.name === calculator.category);
   const searchParams = useSearchParams();
   const isEmbed = searchParams.get("embed") === "true";
-
-  const LucideIcon =
-    icons[calculator.iconName] || icons.Calculator;
 
   if (isEmbed) {
     return (
@@ -70,7 +67,7 @@ export default function CalculatorWrapper({
       )}
       <div className="text-center mb-12">
         <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
-          <LucideIcon className="w-12 h-12 text-primary" />
+          <IconWrapper iconName={calculator.iconName} className="w-12 h-12 text-primary" />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           {calculator.name}

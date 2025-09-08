@@ -1,6 +1,7 @@
 
 import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
+import { IconWrapper } from "@/components/IconWrapper";
 import CalculatorCard from "@/components/calculator/calculator-card";
 import HomeCalculator from "@/components/home-calculator";
 import {
@@ -14,7 +15,6 @@ import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import type { WebSite, WithContext } from 'schema-dts';
 import type { Metadata } from "next";
-import { icons } from "@/lib/icons";
 
 export const metadata: Metadata = {
   title: "CalcPro: Your Free Online Calculator Hub",
@@ -66,8 +66,6 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category) => {
-              const LucideIcon =
-                icons[category.iconName] || icons.Calculator;
               return (
                 <Link
                   key={category.slug}
@@ -77,7 +75,7 @@ export default function Home() {
                   <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                     <CardHeader className="flex flex-row items-center gap-4">
                       <div className="bg-primary/10 p-3 rounded-lg">
-                        <LucideIcon className="w-6 h-6 text-primary" />
+                        <IconWrapper iconName={category.iconName} className="w-6 h-6 text-primary" />
                       </div>
                       <div>
                         <CardTitle as="h3" className="font-headline group-hover:text-primary transition-colors">

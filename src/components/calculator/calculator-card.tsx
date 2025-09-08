@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import { IconWrapper } from "@/components/IconWrapper";
 import {
   Card,
   CardHeader,
@@ -7,7 +8,6 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import type { Calculator } from "@/lib/types";
-import { icons } from "@/lib/icons";
 
 
 interface CalculatorCardProps {
@@ -15,7 +15,6 @@ interface CalculatorCardProps {
 }
 
 export default function CalculatorCard({ calculator }: CalculatorCardProps) {
-  const LucideIcon = icons[calculator.iconName] || icons.Calculator;
 
   return (
     <Link href={`/calculators/${calculator.slug}`} className="block h-full">
@@ -23,7 +22,7 @@ export default function CalculatorCard({ calculator }: CalculatorCardProps) {
         <CardHeader>
           <div className="flex items-center gap-4">
             <div className="bg-primary/10 p-3 rounded-lg">
-              <LucideIcon className="w-6 h-6 text-primary" />
+              <IconWrapper iconName={calculator.iconName} className="w-6 h-6 text-primary" />
             </div>
             <div className="flex-1">
               <CardTitle className="font-headline group-hover:text-primary transition-colors">
