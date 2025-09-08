@@ -1,3 +1,4 @@
+
 import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
