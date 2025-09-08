@@ -2,9 +2,20 @@
 
 import { Plus, X } from "lucide-react";
 import { useState, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -37,15 +48,15 @@ export default function LcmGcdCalculator() {
   };
 
   const { finalGcd, finalLcm } = useMemo(() => {
-    const validNumbers = numbers.filter(n => Number.isInteger(n) && n > 0);
-    
+    const validNumbers = numbers.filter((n) => Number.isInteger(n) && n > 0);
+
     if (validNumbers.length < 2) {
       return { finalGcd: "N/A", finalLcm: "N/A" };
     }
 
     const gcdResult = validNumbers.reduce((acc, val) => gcd(acc, val));
     const lcmResult = validNumbers.reduce((acc, val) => lcm(acc, val));
-    
+
     return { finalGcd: gcdResult, finalLcm: lcmResult };
   }, [numbers]);
 
@@ -54,7 +65,9 @@ export default function LcmGcdCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>LCM & GCD Calculator</CardTitle>
-          <CardDescription>Enter a list of positive integers to find their LCM and GCD.</CardDescription>
+          <CardDescription>
+            Enter a list of positive integers to find their LCM and GCD.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -91,47 +104,77 @@ export default function LcmGcdCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>Results</CardTitle></CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center" aria-live="polite">
+        <CardHeader>
+          <CardTitle>Results</CardTitle>
+        </CardHeader>
+        <CardContent
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center"
+          aria-live="polite"
+        >
           <div>
-            <p className="text-sm text-muted-foreground">Greatest Common Divisor (GCD)</p>
-            <p className="text-4xl font-bold font-headline text-primary">{finalGcd}</p>
+            <p className="text-sm text-muted-foreground">
+              Greatest Common Divisor (GCD)
+            </p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              {finalGcd}
+            </p>
           </div>
           <div>
-            <p className="text-sm text-muted-foreground">Least Common Multiple (LCM)</p>
-            <p className="text-4xl font-bold font-headline text-primary">{finalLcm}</p>
+            <p className="text-sm text-muted-foreground">
+              Least Common Multiple (LCM)
+            </p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              {finalLcm}
+            </p>
           </div>
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About LCM & GCD</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>About LCM & GCD</CardTitle>
+        </CardHeader>
         <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>What is the Greatest Common Divisor (GCD)?</AccordionTrigger>
-                    <AccordionContent>
-                        The Greatest Common Divisor (also known as the Greatest Common Factor) is the largest positive integer that divides each of the integers in a set without leaving a remainder. For example, the GCD of 12 and 18 is 6.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>What is the Least Common Multiple (LCM)?</AccordionTrigger>
-                    <AccordionContent>
-                        The Least Common Multiple is the smallest positive integer that is a multiple of every integer in a set. For example, the LCM of 12 and 18 is 36.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                    <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
-                    <AccordionContent>
-                       For any two positive integers &apos;a&apos; and &apos;b&apos;, there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a, b)`. This means the product of two numbers is equal to the product of their GCD and LCM.
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-4">
-                    <AccordionTrigger>Practical Uses</AccordionTrigger>
-                    <AccordionContent>
-                       GCD is used to simplify fractions to their lowest terms. LCM is often used when adding or subtracting fractions with different denominators to find a common denominator. They are both fundamental concepts in number theory.
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                What is the Greatest Common Divisor (GCD)?
+              </AccordionTrigger>
+              <AccordionContent>
+                The Greatest Common Divisor (also known as the Greatest Common
+                Factor) is the largest positive integer that divides each of the
+                integers in a set without leaving a remainder. For example, the
+                GCD of 12 and 18 is 6.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                What is the Least Common Multiple (LCM)?
+              </AccordionTrigger>
+              <AccordionContent>
+                The Least Common Multiple is the smallest positive integer that
+                is a multiple of every integer in a set. For example, the LCM of
+                12 and 18 is 36.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
+              <AccordionContent>
+                For any two positive integers &apos;a&apos; and &apos;b&apos;,
+                there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a,
+                b)`. This means the product of two numbers is equal to the
+                product of their GCD and LCM.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Practical Uses</AccordionTrigger>
+              <AccordionContent>
+                GCD is used to simplify fractions to their lowest terms. LCM is
+                often used when adding or subtracting fractions with different
+                denominators to find a common denominator. They are both
+                fundamental concepts in number theory.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

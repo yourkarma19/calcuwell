@@ -10,7 +10,13 @@ import {
 } from "date-fns";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 
@@ -26,14 +32,21 @@ type Difference = {
 export default function DateDifferenceCalculator() {
   const [startDate, setStartDate] = useState<Date | undefined>(new Date());
   const [endDate, setEndDate] = useState<Date | undefined>(
-    new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+    new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
   );
   const [difference, setDifference] = useState<Difference | null>(null);
 
   const handleCalculate = () => {
     if (startDate && endDate) {
       if (endDate < startDate) {
-        setDifference({ years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0 });
+        setDifference({
+          years: 0,
+          months: 0,
+          weeks: 0,
+          days: 0,
+          hours: 0,
+          minutes: 0,
+        });
         return;
       }
       setDifference({
@@ -52,23 +65,33 @@ export default function DateDifferenceCalculator() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
 
-
   return (
     <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Calculate Date Difference</CardTitle>
-          <CardDescription>Find the total duration between two dates in various units like years, months, weeks, days, and more.</CardDescription>
+          <CardDescription>
+            Find the total duration between two dates in various units like
+            years, months, weeks, days, and more.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Start Date</Label>
-              <DatePicker date={startDate} setDate={setStartDate} disabled={() => false} />
+              <DatePicker
+                date={startDate}
+                setDate={setStartDate}
+                disabled={() => false}
+              />
             </div>
             <div className="space-y-2">
               <Label>End Date</Label>
-              <DatePicker date={endDate} setDate={setEndDate} disabled={() => false} />
+              <DatePicker
+                date={endDate}
+                setDate={setEndDate}
+                disabled={() => false}
+              />
             </div>
           </div>
           <Button onClick={handleCalculate} className="w-full">
@@ -80,7 +103,9 @@ export default function DateDifferenceCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Result</CardTitle>
-            <CardDescription>The total difference between the selected dates is:</CardDescription>
+            <CardDescription>
+              The total difference between the selected dates is:
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-2" aria-live="polite">
@@ -97,11 +122,17 @@ export default function DateDifferenceCalculator() {
                 <li>
                   <span className="font-bold">{difference.days}</span> days
                 </li>
-                  <li>
-                  <span className="font-bold">{difference.hours.toLocaleString()}</span> hours
+                <li>
+                  <span className="font-bold">
+                    {difference.hours.toLocaleString()}
+                  </span>{" "}
+                  hours
                 </li>
-                  <li>
-                  <span className="font-bold">{difference.minutes.toLocaleString()}</span> minutes
+                <li>
+                  <span className="font-bold">
+                    {difference.minutes.toLocaleString()}
+                  </span>{" "}
+                  minutes
                 </li>
               </ul>
             </div>

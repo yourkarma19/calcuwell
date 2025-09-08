@@ -1,30 +1,41 @@
-
 "use client";
 
 import { useSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function VatGstCalculator({ calculatorName }: { calculatorName: string }) {
+export default function VatGstCalculator({
+  calculatorName,
+}: {
+  calculatorName: string;
+}) {
   const searchParams = useSearchParams();
   const [amount, setAmount] = usePersistentState("vat-amount", 100);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);
-  const [priceIncludesTax, setPriceIncludesTax] = usePersistentState<"yes" | "no">("vat-includes", "no");
+  const [priceIncludesTax, setPriceIncludesTax] = usePersistentState<
+    "yes" | "no"
+  >("vat-includes", "no");
 
   useEffect(() => {
-    const a = searchParams.get('amount');
-    const r = searchParams.get('rate');
-    const i = searchParams.get('includes');
+    const a = searchParams.get("amount");
+    const r = searchParams.get("rate");
+    const i = searchParams.get("includes");
     if (a) setAmount(parseFloat(a));
     if (r) setTaxRate(parseFloat(r));
-    if (i === 'yes' || i === 'no') setPriceIncludesTax(i);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (i === "yes" || i === "no") setPriceIncludesTax(i);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const { taxAmount, netPrice, grossPrice } = useMemo(() => {
@@ -35,7 +46,7 @@ export default function VatGstCalculator({ calculatorName }: { calculatorName: s
       return { taxAmount: 0, netPrice: 0, grossPrice: 0 };
     }
 
-    if (priceIncludesTax === 'yes') {
+    if (priceIncludesTax === "yes") {
       // Amount is the gross price
       const gross = initialAmount;
       const net = initialAmount / (1 + rate);
@@ -49,19 +60,22 @@ export default function VatGstCalculator({ calculatorName }: { calculatorName: s
       return { taxAmount: tax, netPrice: net, grossPrice: gross };
     }
   }, [amount, taxRate, priceIncludesTax]);
-  
+
   const shareParams = {
-      amount: amount.toString(),
-      rate: taxRate.toString(),
-      includes: priceIncludesTax,
-  }
+    amount: amount.toString(),
+    rate: taxRate.toString(),
+    includes: priceIncludesTax,
+  };
 
   return (
     <div className="space-y-6">
       <Card id="vat-gst-inputs">
         <CardHeader>
           <CardTitle>VAT / GST Calculator</CardTitle>
-          <CardDescription>Easily add or remove Value Added Tax (VAT) or Goods and Services Tax (GST) from a price.</CardDescription>
+          <CardDescription>
+            Easily add or remove Value Added Tax (VAT) or Goods and Services Tax
+            (GST) from a price.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
@@ -101,12 +115,18 @@ export default function VatGstCalculator({ calculatorName }: { calculatorName: s
                 max={100}
                 step={0.5}
               />
-              <Input type="number" value={taxRate} onChange={e => setTaxRate(Number(e.target.value))} className="w-24" step="0.5" />
+              <Input
+                type="number"
+                value={taxRate}
+                onChange={(e) => setTaxRate(Number(e.target.value))}
+                className="w-24"
+                step="0.5"
+              />
             </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card id="vat-gst-results">
         <CardHeader>
           <CardTitle>Final Calculation</CardTitle>
@@ -114,21 +134,28 @@ export default function VatGstCalculator({ calculatorName }: { calculatorName: s
         <CardContent className="space-y-4" aria-live="polite">
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Net Price</span>
-            <span className="font-semibold">₹{netPrice.toLocaleString('en-IN', {maximumFractionDigits: 2})}</span>
+            <span className="font-semibold">
+              ₹{netPrice.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
+            </span>
           </div>
-           <div className="flex justify-between text-sm">
+          <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Tax Amount</span>
-            <span className="font-semibold">₹{taxAmount.toLocaleString('en-IN', {maximumFractionDigits: 2})}</span>
+            <span className="font-semibold">
+              ₹{taxAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
+            </span>
           </div>
-           <div className="flex justify-between text-lg font-bold border-t pt-2 mt-2">
+          <div className="flex justify-between text-lg font-bold border-t pt-2 mt-2">
             <span>Gross Price</span>
-            <span className="text-primary">₹{grossPrice.toLocaleString('en-IN', {maximumFractionDigits: 2})}</span>
+            <span className="text-primary">
+              ₹
+              {grossPrice.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
+            </span>
           </div>
         </CardContent>
       </Card>
 
       <ExportShareControls
-        elementIds={['vat-gst-inputs', 'vat-gst-results']}
+        elementIds={["vat-gst-inputs", "vat-gst-results"]}
         shareParams={shareParams}
         calculatorName={calculatorName}
       />

@@ -2,8 +2,19 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -20,21 +31,27 @@ const factorial = (n: number): number => {
 };
 
 export default function PermutationCombinationCalculator() {
-  const [totalItems, setTotalItems] = usePersistentState("pcc-total",10); // n
-  const [chosenItems, setChosenItems] = usePersistentState("pcc-chosen",3); // r
+  const [totalItems, setTotalItems] = usePersistentState("pcc-total", 10); // n
+  const [chosenItems, setChosenItems] = usePersistentState("pcc-chosen", 3); // r
 
   const { permutations, combinations } = useMemo(() => {
     const n = Number(totalItems);
     const r = Number(chosenItems);
 
-    if (n < 0 || r < 0 || r > n || !Number.isInteger(n) || !Number.isInteger(r)) {
+    if (
+      n < 0 ||
+      r < 0 ||
+      r > n ||
+      !Number.isInteger(n) ||
+      !Number.isInteger(r)
+    ) {
       return { permutations: "Invalid input", combinations: "Invalid input" };
     }
 
     const nFact = factorial(n);
     const rFact = factorial(r);
     const nMinusRFact = factorial(n - r);
-    
+
     if (!isFinite(nFact) || !isFinite(rFact) || !isFinite(nMinusRFact)) {
       return { permutations: "Overflow", combinations: "Overflow" };
     }
@@ -51,88 +68,162 @@ export default function PermutationCombinationCalculator() {
   return (
     <div className="lg:col-span-3 space-y-6">
       <Card>
-          <CardHeader>
-            <CardTitle>Permutations & Combinations</CardTitle>
-            <CardDescription>
-                Calculate the number of ways to choose &apos;r&apos; items from a set of &apos;n&apos; items. <br />
-                - <span className="font-semibold">Permutation (nPr):</span> Order matters. <br />
-                - <span className="font-semibold">Combination (nCr):</span> Order does not matter.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="total-items">Total number of items (n)</Label>
-                <Input id="total-items" type="number" value={totalItems} onChange={e => setTotalItems(Number(e.target.value))} />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="chosen-items">Number of items to choose (r)</Label>
-                <Input id="chosen-items" type="number" value={chosenItems} onChange={e => setChosenItems(Number(e.target.value))} />
-              </div>
+        <CardHeader>
+          <CardTitle>Permutations & Combinations</CardTitle>
+          <CardDescription>
+            Calculate the number of ways to choose &apos;r&apos; items from a
+            set of &apos;n&apos; items. <br />-{" "}
+            <span className="font-semibold">Permutation (nPr):</span> Order
+            matters. <br />-{" "}
+            <span className="font-semibold">Combination (nCr):</span> Order does
+            not matter.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="total-items">Total number of items (n)</Label>
+              <Input
+                id="total-items"
+                type="number"
+                value={totalItems}
+                onChange={(e) => setTotalItems(Number(e.target.value))}
+              />
             </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle>Results</CardTitle>
-          </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
-            <div>
-              <p className="text-sm text-muted-foreground">Permutations (nPr)</p>
-              <p className="text-3xl font-bold font-headline text-primary">{permutations}</p>
+            <div className="space-y-2">
+              <Label htmlFor="chosen-items">
+                Number of items to choose (r)
+              </Label>
+              <Input
+                id="chosen-items"
+                type="number"
+                value={chosenItems}
+                onChange={(e) => setChosenItems(Number(e.target.value))}
+              />
             </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Combinations (nCr)</p>
-              <p className="text-3xl font-bold font-headline">{combinations}</p>
-            </div>
-          </CardContent>
-        </Card>
+          </div>
+        </CardContent>
+      </Card>
 
-        <Card>
-            <CardHeader><CardTitle>About Permutations & Combinations</CardTitle></CardHeader>
-            <CardContent className="prose dark:prose-invert max-w-none">
-                <p>The **Permutation and Combination Calculator** is a tool used in combinatorics and probability to figure out the number of ways a subset of items can be selected from a larger set. The key difference between the two is whether the order of selection matters. This tool instantly calculates both, helping you solve complex problems quickly.</p>
+      <Card>
+        <CardHeader>
+          <CardTitle>Results</CardTitle>
+        </CardHeader>
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+          <div>
+            <p className="text-sm text-muted-foreground">Permutations (nPr)</p>
+            <p className="text-3xl font-bold font-headline text-primary">
+              {permutations}
+            </p>
+          </div>
+          <div>
+            <p className="text-sm text-muted-foreground">Combinations (nCr)</p>
+            <p className="text-3xl font-bold font-headline">{combinations}</p>
+          </div>
+        </CardContent>
+      </Card>
 
-                <h3>How to Use the Calculator</h3>
-                <ol>
-                    <li>Enter the **Total number of items (n)**, which is the size of the entire set you are choosing from.</li>
-                    <li>Enter the **Number of items to choose (r)**, which is the size of the subset you are selecting.</li>
-                </ol>
-                <p>The calculator will automatically display the results for both permutations (nPr) and combinations (nCr).</p>
+      <Card>
+        <CardHeader>
+          <CardTitle>About Permutations & Combinations</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <p>
+            The **Permutation and Combination Calculator** is a tool used in
+            combinatorics and probability to figure out the number of ways a
+            subset of items can be selected from a larger set. The key
+            difference between the two is whether the order of selection
+            matters. This tool instantly calculates both, helping you solve
+            complex problems quickly.
+          </p>
 
-                <h3>Frequently Asked Questions (FAQs)</h3>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger className="font-semibold">Permutation vs. Combination: What&apos;s the Difference?</AccordionTrigger>
-                        <AccordionContent>
-                            <p>The key difference is whether **order matters**. Use a **Permutation** when the order of selection is important (e.g., arranging books on a shelf, 1st/2nd/3rd place winners). Use a **Combination** when the order of selection does not matter (e.g., picking a team, choosing pizza toppings).</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger className="font-semibold">Can you give a clear example?</AccordionTrigger>
-                        <AccordionContent>
-                            <p className="mb-2">**Permutation Example:** Picking a 3-digit lock code from digits 0-9 without repetition. The order `1-2-3` is different from `3-2-1`. This is a permutation.</p>
-                            <p>**Combination Example:** Picking three friends from a group of ten for a committee. Picking Alice, Bob, and Carol is the same as picking Carol, Bob, and Alice. This is a combination.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger className="font-semibold">What are the formulas for nPr and nCr?</AccordionTrigger>
-                        <AccordionContent>
-                           <p className="mb-2">**Permutation (nPr):** `n! / (n-r)!`</p>
-                           <p>**Combination (nCr):** `n! / (r! * (n-r)!)`</p>
-                           <p className="mt-2">Where &apos;n&apos; is the total items, and &apos;r&apos; is the items to choose. Notice the combination formula is the permutation formula divided by `r!`, which removes the different orderings.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-4">
-                        <AccordionTrigger className="font-semibold">What is a factorial (!)?</AccordionTrigger>
-                        <AccordionContent>
-                           <p>Factorials (like n!) are a key part of these calculations. A factorial is the product of all positive integers up to that number (e.g., 5! = 5×4×3×2×1). They represent the total number of ways to arrange a set of items. You can learn more with our <Link href="/calculators/factorial-calculator" className="text-primary hover:underline">Factorial Calculator</Link>.</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-            </CardContent>
-        </Card>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              Enter the **Total number of items (n)**, which is the size of the
+              entire set you are choosing from.
+            </li>
+            <li>
+              Enter the **Number of items to choose (r)**, which is the size of
+              the subset you are selecting.
+            </li>
+          </ol>
+          <p>
+            The calculator will automatically display the results for both
+            permutations (nPr) and combinations (nCr).
+          </p>
+
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="font-semibold">
+                Permutation vs. Combination: What&apos;s the Difference?
+              </AccordionTrigger>
+              <AccordionContent>
+                <p>
+                  The key difference is whether **order matters**. Use a
+                  **Permutation** when the order of selection is important
+                  (e.g., arranging books on a shelf, 1st/2nd/3rd place winners).
+                  Use a **Combination** when the order of selection does not
+                  matter (e.g., picking a team, choosing pizza toppings).
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="font-semibold">
+                Can you give a clear example?
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="mb-2">
+                  **Permutation Example:** Picking a 3-digit lock code from
+                  digits 0-9 without repetition. The order `1-2-3` is different
+                  from `3-2-1`. This is a permutation.
+                </p>
+                <p>
+                  **Combination Example:** Picking three friends from a group of
+                  ten for a committee. Picking Alice, Bob, and Carol is the same
+                  as picking Carol, Bob, and Alice. This is a combination.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="font-semibold">
+                What are the formulas for nPr and nCr?
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="mb-2">**Permutation (nPr):** `n! / (n-r)!`</p>
+                <p>**Combination (nCr):** `n! / (r! * (n-r)!)`</p>
+                <p className="mt-2">
+                  Where &apos;n&apos; is the total items, and &apos;r&apos; is
+                  the items to choose. Notice the combination formula is the
+                  permutation formula divided by `r!`, which removes the
+                  different orderings.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="font-semibold">
+                What is a factorial (!)?
+              </AccordionTrigger>
+              <AccordionContent>
+                <p>
+                  Factorials (like n!) are a key part of these calculations. A
+                  factorial is the product of all positive integers up to that
+                  number (e.g., 5! = 5×4×3×2×1). They represent the total number
+                  of ways to arrange a set of items. You can learn more with our{" "}
+                  <Link
+                    href="/calculators/factorial-calculator"
+                    className="text-primary hover:underline"
+                  >
+                    Factorial Calculator
+                  </Link>
+                  .
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </CardContent>
+      </Card>
     </div>
   );
 }

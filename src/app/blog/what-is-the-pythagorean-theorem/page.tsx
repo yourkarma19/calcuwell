@@ -1,39 +1,41 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
-import type { HowTo, WithContext } from 'schema-dts';
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import type { HowTo, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
-  title: 'What is the Pythagorean Theorem? | CalcPro',
-  description: 'A simple guide to the a² + b² = c² formula. Learn its history, see a proof, and understand real-world examples of how the theorem is used.',
+  title: "What is the Pythagorean Theorem? | CalcPro",
+  description:
+    "A simple guide to the a² + b² = c² formula. Learn its history, see a proof, and understand real-world examples of how the theorem is used.",
   alternates: {
-    canonical: '/blog/what-is-the-pythagorean-theorem',
+    canonical: "/blog/what-is-the-pythagorean-theorem",
   },
 };
 
 const jsonLd: WithContext<HowTo> = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "How to use the Pythagorean Theorem",
-    description: "A simple example of how to calculate the hypotenuse of a right triangle using the Pythagorean theorem.",
-    step: [
-        {
-            "@type": "HowToStep",
-            name: "Square the sides",
-            text: "Square the lengths of the two shorter sides. For a triangle with sides 3 and 4, this would be 3² = 9 and 4² = 16."
-        },
-        {
-            "@type": "HowToStep",
-            name: "Add the results",
-            text: "Add the squared values together: 9 + 16 = 25."
-        },
-        {
-            "@type": "HowToStep",
-            name: "Find the square root",
-            text: "Find the square root of the sum to get the length of the hypotenuse: √25 = 5."
-        }
-    ]
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to use the Pythagorean Theorem",
+  description:
+    "A simple example of how to calculate the hypotenuse of a right triangle using the Pythagorean theorem.",
+  step: [
+    {
+      "@type": "HowToStep",
+      name: "Square the sides",
+      text: "Square the lengths of the two shorter sides. For a triangle with sides 3 and 4, this would be 3² = 9 and 4² = 16.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Add the results",
+      text: "Add the squared values together: 9 + 16 = 25.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Find the square root",
+      text: "Find the square root of the sum to get the length of the hypotenuse: √25 = 5.",
+    },
+  ],
 };
 
 export default function PythagoreanTheoremBlogPage() {
@@ -54,64 +56,98 @@ export default function PythagoreanTheoremBlogPage() {
         </div>
 
         <p>
-          The Pythagorean theorem is a fundamental rule in geometry that describes the relationship between the three sides of a right-angled triangle. It is a key part of math that has been studied for thousands of years and is used in science, engineering, and everyday life.
+          The Pythagorean theorem is a fundamental rule in geometry that
+          describes the relationship between the three sides of a right-angled
+          triangle. It is a key part of math that has been studied for thousands
+          of years and is used in science, engineering, and everyday life.
         </p>
 
         <Card className="my-8">
-            <CardContent className="p-6 text-center">
-                 <p className="text-2xl font-bold font-headline text-primary">a² + b² = c²</p>
-            </CardContent>
+          <CardContent className="p-6 text-center">
+            <p className="text-2xl font-bold font-headline text-primary">
+              a² + b² = c²
+            </p>
+          </CardContent>
         </Card>
-        
+
         <h2>The Formula Explained</h2>
         <p>
-          The theorem states that for a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides.
+          The theorem states that for a right-angled triangle, the square of the
+          hypotenuse (the side opposite the right angle) is equal to the sum of
+          the squares of the other two sides.
         </p>
 
         <div className="my-6 flex justify-center">
-            <Image 
-                src="https://picsum.photos/400/300"
-                alt="Diagram of a right-angled triangle showing sides a, b, and hypotenuse c, illustrating the Pythagorean theorem."
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md"
-                data-ai-hint="triangle diagram"
-                priority={true}
-            />
+          <Image
+            src="https://picsum.photos/400/300"
+            alt="Diagram of a right-angled triangle showing sides a, b, and hypotenuse c, illustrating the Pythagorean theorem."
+            width={400}
+            height={300}
+            className="rounded-lg shadow-md"
+            data-ai-hint="triangle diagram"
+            priority={true}
+          />
         </div>
 
         <ul>
-          <li><strong>a and b</strong> are the lengths of the two shorter sides of the triangle.</li>
-          <li><strong>c</strong> is the length of the hypotenuse, which is always the longest side.</li>
+          <li>
+            <strong>a and b</strong> are the lengths of the two shorter sides of
+            the triangle.
+          </li>
+          <li>
+            <strong>c</strong> is the length of the hypotenuse, which is always
+            the longest side.
+          </li>
         </ul>
         <p>
-          This simple formula allows you to find a missing side if you know the lengths of the other two. For instance, if you know `a` and `b`, you can find `c` by calculating `√(a² + b²)`.
+          This simple formula allows you to find a missing side if you know the
+          lengths of the other two. For instance, if you know `a` and `b`, you
+          can find `c` by calculating `√(a² + b²)`.
         </p>
         <p>
-            Need to solve a triangle problem quickly? Try our <Link href="/calculators/pythagorean-theorem-calculator" className="text-primary hover:underline">Pythagorean Theorem Calculator</Link>.
+          Need to solve a triangle problem quickly? Try our{" "}
+          <Link
+            href="/calculators/pythagorean-theorem-calculator"
+            className="text-primary hover:underline"
+          >
+            Pythagorean Theorem Calculator
+          </Link>
+          .
         </p>
-        
+
         <h3>A Simple Example</h3>
         <p>
-          Imagine a right triangle with one side of 3 units and another of 4 units. To find the length of the longest side (the hypotenuse):
+          Imagine a right triangle with one side of 3 units and another of 4
+          units. To find the length of the longest side (the hypotenuse):
         </p>
         <ol>
-            <li>Square the lengths of the sides: 3² = 9 and 4² = 16.</li>
-            <li>Add the results: 9 + 16 = 25.</li>
-            <li>Find the square root of the sum: √25 = 5.</li>
+          <li>Square the lengths of the sides: 3² = 9 and 4² = 16.</li>
+          <li>Add the results: 9 + 16 = 25.</li>
+          <li>Find the square root of the sum: √25 = 5.</li>
         </ol>
         <p>
-            The length of the hypotenuse is 5 units. This is a classic &quot;3-4-5 triangle.&quot;
+          The length of the hypotenuse is 5 units. This is a classic &quot;3-4-5
+          triangle.&quot;
         </p>
 
         <h3>Real-World Applications</h3>
         <p>
-          The Pythagorean theorem is not just for math class. It is used in many real-world situations:
+          The Pythagorean theorem is not just for math class. It is used in many
+          real-world situations:
         </p>
         <ul>
-          <li><strong>Construction:</strong> Making sure the corners of buildings are perfectly square.</li>
-          <li><strong>Navigation:</strong> Calculating the shortest distance between two points on a map.</li>
-          <li><strong>Design:</strong> Finding the diagonal size of a TV screen or computer monitor.</li>
+          <li>
+            <strong>Construction:</strong> Making sure the corners of buildings
+            are perfectly square.
+          </li>
+          <li>
+            <strong>Navigation:</strong> Calculating the shortest distance
+            between two points on a map.
+          </li>
+          <li>
+            <strong>Design:</strong> Finding the diagonal size of a TV screen or
+            computer monitor.
+          </li>
         </ul>
       </article>
     </main>

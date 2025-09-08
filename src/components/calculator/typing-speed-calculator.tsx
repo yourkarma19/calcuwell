@@ -1,11 +1,21 @@
-
 "use client";
 
 import { RefreshCw } from "lucide-react";
 import { useState, useEffect, useRef, useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
@@ -35,13 +45,13 @@ export default function TypingSpeedCalculator() {
     const grossWpm = Math.round(wordsTyped / durationInMinutes);
     return Math.max(0, grossWpm);
   }, [startTime, endTime, text]);
-  
+
   const accuracy = useMemo(() => {
-      if(!isTestFinished && !isTestActive) return 100;
-      const totalChars = text.length;
-      if(totalChars === 0) return 100;
-      return Math.max(0, ((userInput.length - errors) / userInput.length) * 100);
-  }, [isTestActive, isTestFinished, userInput, errors, text])
+    if (!isTestFinished && !isTestActive) return 100;
+    const totalChars = text.length;
+    if (totalChars === 0) return 100;
+    return Math.max(0, ((userInput.length - errors) / userInput.length) * 100);
+  }, [isTestActive, isTestFinished, userInput, errors, text]);
 
   const startTest = () => {
     const newText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
@@ -54,49 +64,64 @@ export default function TypingSpeedCalculator() {
   };
 
   useEffect(() => {
-      startTest();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    startTest();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (isTestActive && userInput.length >= text.length) {
       setEndTime(Date.now());
     }
   }, [isTestActive, userInput, text]);
-  
-  const handleUserInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      if(isTestFinished) return;
-      if(startTime === null) setStartTime(Date.now());
 
-      const value = e.target.value;
-      let currentErrors = 0;
-      for(let i=0; i<value.length; i++){
-          if(value[i] !== text[i]){
-              currentErrors++;
-          }
+  const handleUserInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (isTestFinished) return;
+    if (startTime === null) setStartTime(Date.now());
+
+    const value = e.target.value;
+    let currentErrors = 0;
+    for (let i = 0; i < value.length; i++) {
+      if (value[i] !== text[i]) {
+        currentErrors++;
       }
-      setErrors(currentErrors);
-      setUserInput(value);
-  }
+    }
+    setErrors(currentErrors);
+    setUserInput(value);
+  };
 
   return (
     <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Typing Speed (WPM) Calculator</CardTitle>
-          <CardDescription>Test your typing speed in words per minute (WPM). Type the sample text in the box below to start the test.</CardDescription>
+          <CardDescription>
+            Test your typing speed in words per minute (WPM). Type the sample
+            text in the box below to start the test.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <Card className="p-4 bg-muted font-mono text-lg relative">
-            <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={startTest}>
-                <RefreshCw className="w-4 h-4"/>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-2 right-2"
+              onClick={startTest}
+            >
+              <RefreshCw className="w-4 h-4" />
             </Button>
             {text.split("").map((char, index) => {
               let color = "text-muted-foreground";
               if (index < userInput.length) {
-                color = char === userInput[index] ? "text-primary" : "text-destructive";
+                color =
+                  char === userInput[index]
+                    ? "text-primary"
+                    : "text-destructive";
               }
-              return <span key={index} className={cn(color)}>{char}</span>;
+              return (
+                <span key={index} className={cn(color)}>
+                  {char}
+                </span>
+              );
             })}
           </Card>
           <Textarea
@@ -123,60 +148,109 @@ export default function TypingSpeedCalculator() {
           <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <div>
               <p className="text-sm text-muted-foreground">Speed (WPM)</p>
-              <p className="text-4xl font-bold font-headline text-primary">{wpm}</p>
+              <p className="text-4xl font-bold font-headline text-primary">
+                {wpm}
+              </p>
             </div>
-             <div>
+            <div>
               <p className="text-sm text-muted-foreground">Accuracy</p>
-              <p className="text-4xl font-bold font-headline">{accuracy.toFixed(1)}%</p>
+              <p className="text-4xl font-bold font-headline">
+                {accuracy.toFixed(1)}%
+              </p>
             </div>
-             <div>
+            <div>
               <p className="text-sm text-muted-foreground">Errors</p>
               <p className="text-4xl font-bold font-headline">{errors}</p>
             </div>
           </CardContent>
         </Card>
       )}
-       <Card>
-        <CardHeader><CardTitle>About the Typing Speed Test</CardTitle></CardHeader>
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Typing Speed Test</CardTitle>
+        </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The <strong>Typing Speed Calculator</strong> is an interactive tool designed to measure your typing proficiency in Words Per Minute (WPM). It&apos;s perfect for anyone looking to improve their typing skills, from students and administrative professionals to writers and developers. By practicing regularly, you can increase your speed and accuracy, boosting your productivity in any task that involves typing.</p>
+          <p>
+            The <strong>Typing Speed Calculator</strong> is an interactive tool
+            designed to measure your typing proficiency in Words Per Minute
+            (WPM). It&apos;s perfect for anyone looking to improve their typing
+            skills, from students and administrative professionals to writers
+            and developers. By practicing regularly, you can increase your speed
+            and accuracy, boosting your productivity in any task that involves
+            typing.
+          </p>
 
-            <h3>How to Use the Calculator</h3>
-            <ol>
-                <li>Click on the text area to begin the test.</li>
-                <li>As soon as you start typing the sample text, the timer will begin.</li>
-                <li>Type the text as quickly and accurately as you can. Any errors will be highlighted in red.</li>
-                <li>Once you finish typing the full text, the test will stop automatically and display your results for WPM, accuracy, and errors.</li>
-                <li>Click <strong>Restart Test</strong> to try again with a new sample text.</li>
-            </ol>
-            
-            <h3>Frequently Asked Questions (FAQs)</h3>
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>How is WPM (Words Per Minute) Calculated?</AccordionTrigger>
-                    <AccordionContent>
-                        Gross WPM is calculated by taking the number of words typed and dividing it by the time taken in minutes. For standardization, a &quot;word&quot; is often considered to be five characters long, including spaces. This calculator uses the actual word count of the sample text for its calculation.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>What is a good typing speed?</AccordionTrigger>
-                    <AccordionContent>
-                        An average typing speed is around 40 WPM. A speed of 60 WPM or higher is considered good for most professional roles that require significant typing. Professional typists and transcriptionists often achieve speeds well over 100 WPM, demonstrating exceptional skill.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                    <AccordionTrigger>How can I improve my typing speed?</AccordionTrigger>
-                    <AccordionContent>
-                       The key to improving typing speed is consistent practice. Focus on accuracy first, then work on speed. Proper hand positioning on the keyboard (touch typing) is crucial. Avoid looking at the keyboard and practice using all ten fingers. Regular practice sessions, even short ones, will build muscle memory and increase your speed and accuracy over time.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4">
-                    <AccordionTrigger>Does accuracy matter more than speed?</AccordionTrigger>
-                    <AccordionContent>
-                       Yes, for most practical purposes, accuracy is more important. A high WPM is useless if it&apos;s full of errors that you have to go back and correct. Correcting mistakes takes more time than typing carefully in the first place. Focus on achieving over 95% accuracy before pushing for higher speeds.
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>Click on the text area to begin the test.</li>
+            <li>
+              As soon as you start typing the sample text, the timer will begin.
+            </li>
+            <li>
+              Type the text as quickly and accurately as you can. Any errors
+              will be highlighted in red.
+            </li>
+            <li>
+              Once you finish typing the full text, the test will stop
+              automatically and display your results for WPM, accuracy, and
+              errors.
+            </li>
+            <li>
+              Click <strong>Restart Test</strong> to try again with a new sample
+              text.
+            </li>
+          </ol>
+
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                How is WPM (Words Per Minute) Calculated?
+              </AccordionTrigger>
+              <AccordionContent>
+                Gross WPM is calculated by taking the number of words typed and
+                dividing it by the time taken in minutes. For standardization, a
+                &quot;word&quot; is often considered to be five characters long,
+                including spaces. This calculator uses the actual word count of
+                the sample text for its calculation.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is a good typing speed?</AccordionTrigger>
+              <AccordionContent>
+                An average typing speed is around 40 WPM. A speed of 60 WPM or
+                higher is considered good for most professional roles that
+                require significant typing. Professional typists and
+                transcriptionists often achieve speeds well over 100 WPM,
+                demonstrating exceptional skill.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                How can I improve my typing speed?
+              </AccordionTrigger>
+              <AccordionContent>
+                The key to improving typing speed is consistent practice. Focus
+                on accuracy first, then work on speed. Proper hand positioning
+                on the keyboard (touch typing) is crucial. Avoid looking at the
+                keyboard and practice using all ten fingers. Regular practice
+                sessions, even short ones, will build muscle memory and increase
+                your speed and accuracy over time.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>
+                Does accuracy matter more than speed?
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes, for most practical purposes, accuracy is more important. A
+                high WPM is useless if it&apos;s full of errors that you have to
+                go back and correct. Correcting mistakes takes more time than
+                typing carefully in the first place. Focus on achieving over 95%
+                accuracy before pushing for higher speeds.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

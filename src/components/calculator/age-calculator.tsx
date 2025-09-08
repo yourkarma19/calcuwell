@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ArrowDown } from "lucide-react";
@@ -11,11 +10,23 @@ import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateAge, Age } from "@/lib/math/date";
 
-
-export default function AgeCalculator({ calculatorName }: { calculatorName: string }) {
-  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => (typeof value === "string" || typeof value === "number" || value instanceof Date) ? new Date(value) : undefined);
+export default function AgeCalculator({
+  calculatorName,
+}: {
+  calculatorName: string;
+}) {
+  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>(
+    "age-dob",
+    new Date("1990-01-01"),
+    (value) =>
+      typeof value === "string" ||
+      typeof value === "number" ||
+      value instanceof Date
+        ? new Date(value)
+        : undefined,
+  );
   const [age, setAge] = useState<Age | null>(null);
-  
+
   const handleCalculateAge = useCallback(() => {
     if (dateOfBirth) {
       const now = new Date();
@@ -26,11 +37,10 @@ export default function AgeCalculator({ calculatorName }: { calculatorName: stri
   useEffect(() => {
     handleCalculateAge();
   }, [dateOfBirth, handleCalculateAge]);
-  
-  const shareParams = {
-      dob: dateOfBirth ? dateOfBirth.toISOString().split('T')[0] : ""
-  }
 
+  const shareParams = {
+    dob: dateOfBirth ? dateOfBirth.toISOString().split("T")[0] : "",
+  };
 
   return (
     <div className="space-y-6">
@@ -41,47 +51,53 @@ export default function AgeCalculator({ calculatorName }: { calculatorName: stri
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="dob-picker">Date of Birth</Label>
-            <DatePicker 
-              date={dateOfBirth} 
+            <DatePicker
+              date={dateOfBirth}
               setDate={setDateOfBirth}
               disabled={(date) => date > new Date()}
             />
           </div>
-          <Button onClick={handleCalculateAge} disabled={!dateOfBirth} className="w-full">
-            <ArrowDown className="mr-2"/>
+          <Button
+            onClick={handleCalculateAge}
+            disabled={!dateOfBirth}
+            className="w-full"
+          >
+            <ArrowDown className="mr-2" />
             Calculate Age
           </Button>
         </CardContent>
       </Card>
-      
-    {age && (
+
+      {age && (
         <Card id="age-results">
-        <CardHeader>
+          <CardHeader>
             <CardTitle>Your Age</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center" aria-live="polite">
+          </CardHeader>
+          <CardContent className="text-center" aria-live="polite">
             <div>
-            <div className="flex justify-center items-baseline gap-2">
-                <p className="text-6xl font-bold font-headline text-primary">{age.years}</p>
+              <div className="flex justify-center items-baseline gap-2">
+                <p className="text-6xl font-bold font-headline text-primary">
+                  {age.years}
+                </p>
                 <p className="text-xl text-muted-foreground">Years</p>
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-4 text-lg">
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-4 text-lg">
                 <div className="text-center">
-                    <p className="font-bold font-headline">{age.months}</p>
-                    <p className="text-sm text-muted-foreground">Months</p>
+                  <p className="font-bold font-headline">{age.months}</p>
+                  <p className="text-sm text-muted-foreground">Months</p>
                 </div>
                 <div className="text-center">
-                    <p className="font-bold font-headline">{age.days}</p>
-                    <p className="text-sm text-muted-foreground">Days</p>
+                  <p className="font-bold font-headline">{age.days}</p>
+                  <p className="text-sm text-muted-foreground">Days</p>
                 </div>
+              </div>
             </div>
-            </div>
-        </CardContent>
+          </CardContent>
         </Card>
-    )}
-    
-     <ExportShareControls
-        elementIds={['age-inputs', 'age-results']}
+      )}
+
+      <ExportShareControls
+        elementIds={["age-inputs", "age-results"]}
         shareParams={shareParams}
         calculatorName={calculatorName}
       />

@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -12,12 +17,20 @@ const calculateStandardDeviation = (numbers: number[]) => {
   }
 
   const mean = numbers.reduce((acc, val) => acc + val, 0) / numbers.length;
-  const variance = numbers.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0);
-  
+  const variance = numbers.reduce(
+    (acc, val) => acc + Math.pow(val - mean, 2),
+    0,
+  );
+
   const populationStdDev = Math.sqrt(variance / numbers.length);
   const sampleStdDev = Math.sqrt(variance / (numbers.length - 1));
 
-  return { populationStdDev, sampleStdDev, mean, variance: variance / numbers.length };
+  return {
+    populationStdDev,
+    sampleStdDev,
+    mean,
+    variance: variance / numbers.length,
+  };
 };
 
 export default function StandardDeviationCalculator() {
@@ -26,9 +39,9 @@ export default function StandardDeviationCalculator() {
   const stats = useMemo(() => {
     const numbers = input
       .split(/[\s,]+/)
-      .filter(n => n !== "")
+      .filter((n) => n !== "")
       .map(Number)
-      .filter(n => !isNaN(n));
+      .filter((n) => !isNaN(n));
     return calculateStandardDeviation(numbers);
   }, [input]);
 
@@ -37,7 +50,9 @@ export default function StandardDeviationCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Standard Deviation Calculator</CardTitle>
-          <CardDescription>Enter numbers separated by commas or spaces.</CardDescription>
+          <CardDescription>
+            Enter numbers separated by commas or spaces.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
@@ -54,23 +69,35 @@ export default function StandardDeviationCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>Results</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>Results</CardTitle>
+        </CardHeader>
         <CardContent className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Population Std Dev (σ)</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.populationStdDev.toFixed(4)}</p>
+            <p className="text-sm text-muted-foreground">
+              Population Std Dev (σ)
+            </p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.populationStdDev.toFixed(4)}
+            </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Sample Std Dev (s)</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.sampleStdDev.toFixed(4)}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.sampleStdDev.toFixed(4)}
+            </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Mean (μ)</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.mean.toFixed(4)}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.mean.toFixed(4)}
+            </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Variance (σ²)</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.variance.toFixed(4)}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.variance.toFixed(4)}
+            </p>
           </div>
         </CardContent>
       </Card>

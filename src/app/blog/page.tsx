@@ -1,25 +1,31 @@
-
-import { BookOpen } from 'lucide-react';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { BookOpen } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: 'CalcPro Blog | Insights & Explanations',
-  description: 'Explore articles about math, finance, and health. Get simple explanations for the concepts behind our free online calculators.',
+  title: "CalcPro Blog | Insights & Explanations",
+  description:
+    "Explore articles about math, finance, and health. Get simple explanations for the concepts behind our free online calculators.",
   alternates: {
-    canonical: '/blog',
+    canonical: "/blog",
   },
 };
 
 // In a real app, you would fetch this list from a CMS
 const blogPosts = [
   {
-    slug: 'what-is-the-pythagorean-theorem',
-    title: 'What is the Pythagorean Theorem?',
-    description: 'A simple guide to the a² + b² = c² formula, its history, proof, and real-world applications for students and professionals alike.',
-    iconName: 'Triangle',
-    category: 'Math'
+    slug: "what-is-the-pythagorean-theorem",
+    title: "What is the Pythagorean Theorem?",
+    description:
+      "A simple guide to the a² + b² = c² formula, its history, proof, and real-world applications for students and professionals alike.",
+    iconName: "Triangle",
+    category: "Math",
   },
   // Add future blog posts here
 ];
@@ -33,21 +39,35 @@ export default function BlogIndexPage() {
           CalcPro Blog
         </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Welcome to the CalcPro Blog, your resource for deep dives and simple explanations for the concepts behind our calculators. Our goal is to demystify the formulas and ideas that power our tools, making them accessible to everyone. Whether you&apos;re a student, a professional, or just curious, our articles provide valuable context and real-world examples.
+          Welcome to the CalcPro Blog, your resource for deep dives and simple
+          explanations for the concepts behind our calculators. Our goal is to
+          demystify the formulas and ideas that power our tools, making them
+          accessible to everyone. Whether you&apos;re a student, a professional,
+          or just curious, our articles provide valuable context and real-world
+          examples.
         </p>
       </div>
 
       <section aria-labelledby="blog-posts-heading">
-        <h2 id="blog-posts-heading" className="sr-only">Blog Posts</h2>
+        <h2 id="blog-posts-heading" className="sr-only">
+          Blog Posts
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="block h-full">
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="block h-full"
+            >
               <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                 <CardHeader>
-                    <CardTitle as="h3" className="font-headline group-hover:text-primary transition-colors">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription>{post.description}</CardDescription>
+                  <CardTitle
+                    as="h3"
+                    className="font-headline group-hover:text-primary transition-colors"
+                  >
+                    {post.title}
+                  </CardTitle>
+                  <CardDescription>{post.description}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>

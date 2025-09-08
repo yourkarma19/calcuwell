@@ -1,23 +1,45 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 // Note: In a real-world application, this data would come from an API.
 const MOCK_INFLATION_RATES: { [year: number]: number } = {
-  2023: 3.4, 2022: 8.0, 2021: 4.7, 2020: 1.2, 2019: 1.8, 2018: 2.4,
-  2017: 2.1, 2016: 1.3, 2015: 0.1, 2014: 1.6, 2013: 1.5, 2012: 2.1,
-  2011: 3.2, 2010: 1.6
+  2023: 3.4,
+  2022: 8.0,
+  2021: 4.7,
+  2020: 1.2,
+  2019: 1.8,
+  2018: 2.4,
+  2017: 2.1,
+  2016: 1.3,
+  2015: 0.1,
+  2014: 1.6,
+  2013: 1.5,
+  2012: 2.1,
+  2011: 3.2,
+  2010: 1.6,
 };
 
 export default function InflationCalculator() {
   const currentYear = new Date().getFullYear();
-  const [startYear, setStartYear] = usePersistentState("inflation-start-year", 2010);
-  const [endYear, setEndYear] = usePersistentState("inflation-end-year", currentYear);
+  const [startYear, setStartYear] = usePersistentState(
+    "inflation-start-year",
+    2010,
+  );
+  const [endYear, setEndYear] = usePersistentState(
+    "inflation-end-year",
+    currentYear,
+  );
   const [amount, setAmount] = usePersistentState("inflation-amount", 100);
 
   const { adjustedAmount, totalInflation } = useMemo(() => {
@@ -33,32 +55,36 @@ export default function InflationCalculator() {
     for (let year = sYear; year < eYear; year++) {
       const rate = MOCK_INFLATION_RATES[year];
       if (rate !== undefined) {
-        cumulativeInflation *= (1 + rate / 100);
+        cumulativeInflation *= 1 + rate / 100;
       }
     }
-    
+
     let finalAmount = currentAmount * cumulativeInflation;
-    
+
     // If calculating from a future year to a past year, we need to deflate
-    if(startYear > endYear) {
+    if (startYear > endYear) {
       finalAmount = currentAmount / cumulativeInflation;
     }
 
-    return { 
-      adjustedAmount: finalAmount, 
-      totalInflation: (cumulativeInflation - 1) * 100 
+    return {
+      adjustedAmount: finalAmount,
+      totalInflation: (cumulativeInflation - 1) * 100,
     };
-
   }, [startYear, endYear, amount]);
 
-  const yearOptions = Object.keys(MOCK_INFLATION_RATES).map(Number).sort((a,b) => b-a);
+  const yearOptions = Object.keys(MOCK_INFLATION_RATES)
+    .map(Number)
+    .sort((a, b) => b - a);
 
   return (
     <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Inflation Calculator</CardTitle>
-          <CardDescription>Calculate the change in purchasing power of a certain amount of money between two years.</CardDescription>
+          <CardDescription>
+            Calculate the change in purchasing power of a certain amount of
+            money between two years.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -73,20 +99,38 @@ export default function InflationCalculator() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="start-year">Start Year</Label>
-                <select id="start-year" value={startYear} onChange={e => setStartYear(Number(e.target.value))} className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md">
-                  {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
-                </select>
+              <select
+                id="start-year"
+                value={startYear}
+                onChange={(e) => setStartYear(Number(e.target.value))}
+                className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md"
+              >
+                {yearOptions.map((y) => (
+                  <option key={y} value={y}>
+                    {y}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="space-y-2">
               <Label htmlFor="end-year">End Year</Label>
-                <select id="end-year" value={endYear} onChange={e => setEndYear(Number(e.target.value))} className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md">
-                  {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
-                </select>
+              <select
+                id="end-year"
+                value={endYear}
+                onChange={(e) => setEndYear(Number(e.target.value))}
+                className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md"
+              >
+                {yearOptions.map((y) => (
+                  <option key={y} value={y}>
+                    {y}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Results</CardTitle>
@@ -97,7 +141,10 @@ export default function InflationCalculator() {
               Value of ₹{amount.toLocaleString()} from {startYear} in {endYear}
             </p>
             <p className="text-4xl font-bold font-headline text-primary">
-              ₹{adjustedAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
+              ₹
+              {adjustedAmount.toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}
             </p>
           </div>
           <div>

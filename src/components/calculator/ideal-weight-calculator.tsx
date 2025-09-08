@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -22,7 +27,7 @@ const calculateIdealWeight = (heightCm: number, gender: "male" | "female") => {
 export default function IdealWeightCalculator() {
   const [gender, setGender] = usePersistentState<"male" | "female">(
     "ideal-weight-gender",
-    "male"
+    "male",
   );
   const [height, setHeight] = usePersistentState("ideal-weight-height", 175);
 
@@ -47,7 +52,10 @@ export default function IdealWeightCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Enter Your Details</CardTitle>
-          <CardDescription>Calculate your ideal body weight based on your height and gender using the Robinson formula.</CardDescription>
+          <CardDescription>
+            Calculate your ideal body weight based on your height and gender
+            using the Robinson formula.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -79,18 +87,21 @@ export default function IdealWeightCalculator() {
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Your Ideal Weight</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <p className="text-sm text-muted-foreground">According to Robinson Formula</p>
+          <p className="text-sm text-muted-foreground">
+            According to Robinson Formula
+          </p>
           <p className="text-5xl font-bold font-headline text-primary my-2">
             {idealWeightKg.toFixed(1)} kg
           </p>
           <p className="text-muted-foreground">
-            Healthy range: {idealWeightRange.lower} - {idealWeightRange.upper} kg
+            Healthy range: {idealWeightRange.lower} - {idealWeightRange.upper}{" "}
+            kg
           </p>
         </CardContent>
       </Card>

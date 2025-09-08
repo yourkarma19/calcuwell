@@ -1,29 +1,39 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
 
-
-const getWhrCategory = (whr: number, gender: 'male' | 'female') => {
-  if (gender === 'male') {
+const getWhrCategory = (whr: number, gender: "male" | "female") => {
+  if (gender === "male") {
     if (whr < 0.9) return { category: "Low Risk", color: "text-green-500" };
-    if (whr <= 1.0) return { category: "Moderate Risk", color: "text-yellow-500" };
+    if (whr <= 1.0)
+      return { category: "Moderate Risk", color: "text-yellow-500" };
     return { category: "High Risk", color: "text-red-500" };
-  } else { // female
+  } else {
+    // female
     if (whr < 0.8) return { category: "Low Risk", color: "text-green-500" };
-    if (whr <= 0.85) return { category: "Moderate Risk", color: "text-yellow-500" };
+    if (whr <= 0.85)
+      return { category: "Moderate Risk", color: "text-yellow-500" };
     return { category: "High Risk", color: "text-red-500" };
   }
 };
 
 export default function WaistToHipRatioCalculator() {
-  const [gender, setGender] = usePersistentState<'male' | 'female'>("whr-gender", "male");
+  const [gender, setGender] = usePersistentState<"male" | "female">(
+    "whr-gender",
+    "male",
+  );
   const [waist, setWaist] = usePersistentState("whr-waist", 90);
   const [hip, setHip] = usePersistentState("whr-hip", 100);
 
@@ -33,7 +43,7 @@ export default function WaistToHipRatioCalculator() {
     }
     return 0;
   }, [waist, hip]);
-  
+
   const { category, color } = getWhrCategory(whr, gender);
 
   return (
@@ -41,31 +51,56 @@ export default function WaistToHipRatioCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Enter Your Measurements (cm)</CardTitle>
-          <CardDescription>Calculate your Waist-to-Hip Ratio and understand its health implications.</CardDescription>
+          <CardDescription>
+            Calculate your Waist-to-Hip Ratio and understand its health
+            implications.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Gender</Label>
-            <RadioGroup value={gender} onValueChange={(v) => setGender(v as 'male' | 'female')} className="flex items-center space-x-4 pt-2">
-              <div className="flex items-center space-x-2"><RadioGroupItem value="male" id="male" /><Label htmlFor="male">Male</Label></div>
-              <div className="flex items-center space-x-2"><RadioGroupItem value="female" id="female" /><Label htmlFor="female">Female</Label></div>
+            <RadioGroup
+              value={gender}
+              onValueChange={(v) => setGender(v as "male" | "female")}
+              className="flex items-center space-x-4 pt-2"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="male" id="male" />
+                <Label htmlFor="male">Male</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="female" id="female" />
+                <Label htmlFor="female">Female</Label>
+              </div>
             </RadioGroup>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="waist">Waist Circumference</Label>
-              <Input id="waist" type="number" value={waist} onChange={e => setWaist(Number(e.target.value) || 0)} />
+              <Input
+                id="waist"
+                type="number"
+                value={waist}
+                onChange={(e) => setWaist(Number(e.target.value) || 0)}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="hip">Hip Circumference</Label>
-              <Input id="hip" type="number" value={hip} onChange={e => setHip(Number(e.target.value) || 0)} />
+              <Input
+                id="hip"
+                type="number"
+                value={hip}
+                onChange={(e) => setHip(Number(e.target.value) || 0)}
+              />
             </div>
           </div>
         </CardContent>
       </Card>
 
       <Card>
-        <CardHeader><CardTitle>Your Result</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>Your Result</CardTitle>
+        </CardHeader>
         <CardContent className="text-center space-y-2">
           <p className="text-sm text-muted-foreground">Waist-to-Hip Ratio</p>
           <p className="text-5xl font-bold font-headline text-primary">

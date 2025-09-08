@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -99,9 +98,13 @@ export function SearchBar() {
             placeholder="Type to search..."
           />
           <CommandList>
-            {isLoading && <CommandEmpty>Loading search results...</CommandEmpty>}
+            {isLoading && (
+              <CommandEmpty>Loading search results...</CommandEmpty>
+            )}
             {!isLoading && results.length === 0 && (
-              <CommandEmpty>No results found for &quot;{search}&quot;.</CommandEmpty>
+              <CommandEmpty>
+                No results found for &quot;{search}&quot;.
+              </CommandEmpty>
             )}
             <CommandGroup>
               {results.map((calc) => {
@@ -111,7 +114,10 @@ export function SearchBar() {
                     onSelect={() => runCommand(calc.slug)}
                     className="flex items-center gap-3 cursor-pointer"
                   >
-                    <IconWrapper iconName={calc.iconName} className="w-4 h-4 text-muted-foreground" />
+                    <IconWrapper
+                      iconName={calc.iconName}
+                      className="w-4 h-4 text-muted-foreground"
+                    />
                     <div className="flex flex-col">
                       <span>{calc.name}</span>
                       <span className="text-xs text-muted-foreground">

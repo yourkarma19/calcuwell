@@ -1,4 +1,3 @@
-
 # CalcPro - The Ultimate Calculator Suite
 
 ## 1. Overview
@@ -8,12 +7,15 @@
 ## 2. Core Features
 
 ### 2.1. Global Search
+
 - **Technology**: Fuzzy search with `fuse.js`.
 - **Functionality**: A global search bar will be prominently displayed in the header. As the user types, it will instantly suggest calculators and categories that match the query.
 - **User Experience**: The search will be fast and forgiving, handling typos and partial matches to help users find the right tool quickly.
 
 ### 2.2. Diverse Calculator Categories
+
 The application will feature a wide array of calculators organized into intuitive categories:
+
 - **Math**: Basic arithmetic, fractions, percentages, geometry (area, volume), algebra (equation solvers), trigonometry, and statistics (mean, median, mode).
 - **Finance**: Loan EMI, mortgage, compound interest, investment ROI, savings, retirement, and inflation calculators.
 - **Health**: BMI, BMR, daily calorie needs, body fat percentage, and pregnancy due date calculators.
@@ -22,18 +24,22 @@ The application will feature a wide array of calculators organized into intuitiv
 - **Date & Time**: Age calculator, date difference, time zone converter, and countdown timer.
 
 ### 2.3. Responsive Design & Mobile-First Keypad
+
 - **Technology**: Tailwind CSS for responsive utility classes.
 - **Functionality**: The layout will adapt seamlessly to mobile, tablet, and desktop screens. For calculators requiring numerical input (like the basic calculator), a custom, mobile-friendly numeric keypad will be displayed to enhance usability on touch devices.
 
 ### 2.4. Persistent Forms
+
 - **Technology**: `localStorage` and a custom React hook (`usePersistentState`).
 - **Functionality**: When a user enters data into a calculator form, the values will be automatically saved to their browser's local storage. Upon returning to that calculator, the form will be pre-filled with their last-used values, saving them from re-entering data.
 
 ### 2.5. Theme Toggle
+
 - **Technology**: `next-themes`.
 - **Functionality**: Users can switch between light and dark themes. Their preference will be saved in local storage and applied on subsequent visits.
 
 ### 2.6. AI-Powered Formula Explanations
+
 - **Technology**: Genkit AI.
 - **Functionality**: For select calculators with complex formulas (e.g., compound interest, loan EMI), an "Explain Formula" button will be available. Clicking this will trigger an AI-powered agent to provide a simple, clear explanation of the formula, how it works, and what each variable represents.
 

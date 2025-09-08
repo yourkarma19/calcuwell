@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -20,7 +25,10 @@ export default function TorqueCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Torque Calculator</CardTitle>
-          <CardDescription>Calculate torque based on force and distance from the axis of rotation.</CardDescription>
+          <CardDescription>
+            Calculate torque based on force and distance from the axis of
+            rotation.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -45,7 +53,7 @@ export default function TorqueCalculator() {
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Resulting Torque</CardTitle>

@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -21,9 +26,8 @@ export default function ExponentPowerCalculator() {
 
     const res = Math.pow(b, exp);
     if (!isFinite(res)) return "Result too large";
-    
+
     return res.toLocaleString();
-    
   }, [base, exponent]);
 
   return (
@@ -31,7 +35,9 @@ export default function ExponentPowerCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Exponent & Power Calculator</CardTitle>
-          <CardDescription>Calculate the result of a base raised to the power of an exponent.</CardDescription>
+          <CardDescription>
+            Calculate the result of a base raised to the power of an exponent.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -58,13 +64,15 @@ export default function ExponentPowerCalculator() {
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Result</CardTitle>
         </CardHeader>
         <CardContent className="text-center" aria-live="polite">
-          <p className="text-sm text-muted-foreground">{base} ^ {exponent} is:</p>
+          <p className="text-sm text-muted-foreground">
+            {base} ^ {exponent} is:
+          </p>
           <p className="text-4xl font-bold font-headline text-primary my-2 break-words">
             {result}
           </p>

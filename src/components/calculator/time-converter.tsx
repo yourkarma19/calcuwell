@@ -1,10 +1,15 @@
-
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -29,10 +34,16 @@ const timeUnits = {
 type TimeUnit = keyof typeof timeUnits;
 
 export default function TimeConverter() {
-  const [fromUnit, setFromUnit] = usePersistentState<TimeUnit>("time-from", "hours");
-  const [toUnit, setToUnit] = usePersistentState<TimeUnit>("time-to", "minutes");
+  const [fromUnit, setFromUnit] = usePersistentState<TimeUnit>(
+    "time-from",
+    "hours",
+  );
+  const [toUnit, setToUnit] = usePersistentState<TimeUnit>(
+    "time-to",
+    "minutes",
+  );
   const [value, setValue] = useState("1");
-  
+
   const handleSwap = () => {
     setFromUnit(toUnit);
     setToUnit(fromUnit);
@@ -41,48 +52,83 @@ export default function TimeConverter() {
   const convertedValue = useMemo(() => {
     const numValue = parseFloat(value);
     if (isNaN(numValue)) return "";
-    
+
     const fromFactor = timeUnits[fromUnit];
     const toFactor = timeUnits[toUnit];
-    
+
     const result = (numValue * fromFactor) / toFactor;
-    return result.toLocaleString(undefined, { maximumFractionDigits: result > 1 ? 4 : 8});
+    return result.toLocaleString(undefined, {
+      maximumFractionDigits: result > 1 ? 4 : 8,
+    });
   }, [value, fromUnit, toUnit]);
-  
+
   return (
     <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Time Converter</CardTitle>
-          <CardDescription>Convert between various units of time, from seconds to years. Note that &apos;month&apos; and &apos;year&apos; are average approximations.</CardDescription>
+          <CardDescription>
+            Convert between various units of time, from seconds to years. Note
+            that &apos;month&apos; and &apos;year&apos; are average
+            approximations.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="w-full space-y-2">
               <Label htmlFor="from-value">From</Label>
-              <Input id="from-value" type="number" value={value} onChange={(e) => setValue(e.target.value)} />
-              <Select value={fromUnit} onValueChange={(v) => setFromUnit(v as TimeUnit)}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
+              <Input
+                id="from-value"
+                type="number"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+              <Select
+                value={fromUnit}
+                onValueChange={(v) => setFromUnit(v as TimeUnit)}
+              >
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
                 <SelectContent>
-                  {Object.keys(timeUnits).map(unit => (
-                    <SelectItem key={unit} value={unit} className="capitalize">{unit}</SelectItem>
+                  {Object.keys(timeUnits).map((unit) => (
+                    <SelectItem key={unit} value={unit} className="capitalize">
+                      {unit}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
-            <Button variant="ghost" size="icon" className="shrink-0 mt-4 md:mt-7" onClick={handleSwap}>
-                <ArrowRightLeft className="w-5 h-5 text-primary" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="shrink-0 mt-4 md:mt-7"
+              onClick={handleSwap}
+            >
+              <ArrowRightLeft className="w-5 h-5 text-primary" />
             </Button>
-            
+
             <div className="w-full space-y-2">
               <Label htmlFor="to-value">To</Label>
-              <Input id="to-value" value={convertedValue} readOnly className="font-bold text-primary bg-primary/10 border-primary/20" />
-               <Select value={toUnit} onValueChange={(v) => setToUnit(v as TimeUnit)}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
+              <Input
+                id="to-value"
+                value={convertedValue}
+                readOnly
+                className="font-bold text-primary bg-primary/10 border-primary/20"
+              />
+              <Select
+                value={toUnit}
+                onValueChange={(v) => setToUnit(v as TimeUnit)}
+              >
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
                 <SelectContent>
-                  {Object.keys(timeUnits).map(unit => (
-                    <SelectItem key={unit} value={unit} className="capitalize">{unit}</SelectItem>
+                  {Object.keys(timeUnits).map((unit) => (
+                    <SelectItem key={unit} value={unit} className="capitalize">
+                      {unit}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>

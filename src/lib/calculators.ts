@@ -1,4 +1,3 @@
-
 import type { Category } from "@/lib/types";
 
 export const categories: Category[] = [
@@ -47,8 +46,7 @@ export const categories: Category[] = [
   {
     name: "Geometry & Engineering",
     slug: "geometry-engineering",
-    description:
-      "Calculators for geometric shapes and engineering principles.",
+    description: "Calculators for geometric shapes and engineering principles.",
     iconName: "Triangle",
   },
   {

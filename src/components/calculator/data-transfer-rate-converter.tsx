@@ -2,12 +2,29 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 const units = {
@@ -30,8 +47,14 @@ const units = {
 type Unit = keyof typeof units;
 
 export default function DataTransferRateConverter() {
-  const [fromUnit, setFromUnit] = usePersistentState<Unit>("data-transfer-from", "megabit/s (Mbps)");
-  const [toUnit, setToUnit] = usePersistentState<Unit>("data-transfer-to", "megabyte/s (MB/s)");
+  const [fromUnit, setFromUnit] = usePersistentState<Unit>(
+    "data-transfer-from",
+    "megabit/s (Mbps)",
+  );
+  const [toUnit, setToUnit] = usePersistentState<Unit>(
+    "data-transfer-to",
+    "megabyte/s (MB/s)",
+  );
   const [value, setValue] = usePersistentState("data-transfer-value", "100");
 
   const handleSwap = () => {
@@ -42,48 +65,82 @@ export default function DataTransferRateConverter() {
   const convertedValue = useMemo(() => {
     const numValue = parseFloat(value);
     if (isNaN(numValue)) return "";
-    
+
     const fromFactor = units[fromUnit];
     const toFactor = units[toUnit];
-    
+
     const result = (numValue * fromFactor) / toFactor;
-    return result.toLocaleString(undefined, { maximumFractionDigits: result > 1 ? 4 : 8 });
+    return result.toLocaleString(undefined, {
+      maximumFractionDigits: result > 1 ? 4 : 8,
+    });
   }, [value, fromUnit, toUnit]);
-  
+
   return (
     <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Data Transfer Rate Converter</CardTitle>
-          <CardDescription>Convert between different units of data transfer speed, like Mbps to MB/s.</CardDescription>
+          <CardDescription>
+            Convert between different units of data transfer speed, like Mbps to
+            MB/s.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="w-full space-y-2">
               <Label htmlFor="from-value">From</Label>
-              <Input id="from-value" type="number" value={value} onChange={(e) => setValue(e.target.value)} />
-              <Select value={fromUnit} onValueChange={(v) => setFromUnit(v as Unit)}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
+              <Input
+                id="from-value"
+                type="number"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+              <Select
+                value={fromUnit}
+                onValueChange={(v) => setFromUnit(v as Unit)}
+              >
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
                 <SelectContent>
-                  {Object.keys(units).map(unit => (
-                    <SelectItem key={unit} value={unit} className="capitalize">{unit}</SelectItem>
+                  {Object.keys(units).map((unit) => (
+                    <SelectItem key={unit} value={unit} className="capitalize">
+                      {unit}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
-            <Button variant="ghost" size="icon" className="shrink-0 mt-4 md:mt-7" onClick={handleSwap}>
-                <ArrowRightLeft className="w-5 h-5 text-primary" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="shrink-0 mt-4 md:mt-7"
+              onClick={handleSwap}
+            >
+              <ArrowRightLeft className="w-5 h-5 text-primary" />
             </Button>
-            
+
             <div className="w-full space-y-2">
               <Label htmlFor="to-value">To</Label>
-              <Input id="to-value" value={convertedValue} readOnly className="font-bold text-primary bg-primary/10 border-primary/20" />
-               <Select value={toUnit} onValueChange={(v) => setToUnit(v as Unit)}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
+              <Input
+                id="to-value"
+                value={convertedValue}
+                readOnly
+                className="font-bold text-primary bg-primary/10 border-primary/20"
+              />
+              <Select
+                value={toUnit}
+                onValueChange={(v) => setToUnit(v as Unit)}
+              >
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
                 <SelectContent>
-                  {Object.keys(units).map(unit => (
-                    <SelectItem key={unit} value={unit} className="capitalize">{unit}</SelectItem>
+                  {Object.keys(units).map((unit) => (
+                    <SelectItem key={unit} value={unit} className="capitalize">
+                      {unit}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -93,38 +150,76 @@ export default function DataTransferRateConverter() {
       </Card>
       <Card>
         <CardHeader>
-            <CardTitle>About the Data Transfer Rate Converter</CardTitle>
+          <CardTitle>About the Data Transfer Rate Converter</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>Our Data Transfer Rate Converter helps you understand internet speeds, download times, and network performance. It translates between the different units used to measure how quickly digital data moves from one point to another. This is key for comparing internet plans and estimating file download times.</p>
-            <h3>How to Use the Calculator</h3>
-            <ol>
-                <li>Enter the speed value you want to convert in the &quot;From&quot; field.</li>
-                <li>Select the starting unit (e.g., Megabits per second - Mbps).</li>
-                <li>Select the target unit you want to convert to (e.g., Megabytes per second - MB/s).</li>
-            </ol>
-            <p>The converted speed will be displayed instantly. This helps you understand your connection&apos;s true performance.</p>
-            <h3>Frequently Asked Questions (FAQs)</h3>
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>What&apos;s the difference between Mbps and MB/s?</AccordionTrigger>
-                    <AccordionContent>
-                        This is a common point of confusion. <strong>Internet Service Providers (ISPs)</strong> advertise speeds in <strong>megabits per second (Mbps)</strong>. But download speeds in your browser are usually in <strong>megabytes per second (MB/s)</strong>. Since there are 8 bits in 1 byte, to find your download speed in MB/s, divide the Mbps value by 8. For example, a 100 Mbps connection has a max download speed of 12.5 MB/s.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>Why is my download speed slower than advertised?</AccordionTrigger>
-                    <AccordionContent>
-                        Advertised speeds are an &quot;up to&quot; maximum. Real-world speeds can be affected by many factors. This includes network traffic, router quality, and the server you&apos;re downloading from.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                    <AccordionTrigger>What are decimal (Mbps) vs. binary (Mibps) prefixes?</AccordionTrigger>
-                    <AccordionContent>
-                       <strong>Decimal prefixes (kilo, mega)</strong> use powers of 1000. For example, 1 Mbps = 1,000,000 bits per second. This is the standard for data transfer rates. <strong>Binary prefixes (kibi, mebi)</strong> use powers of 1024. For example, 1 Mibps = 1,048,576 bits per second. These are more common for data storage.
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+          <p>
+            Our Data Transfer Rate Converter helps you understand internet
+            speeds, download times, and network performance. It translates
+            between the different units used to measure how quickly digital data
+            moves from one point to another. This is key for comparing internet
+            plans and estimating file download times.
+          </p>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              Enter the speed value you want to convert in the &quot;From&quot;
+              field.
+            </li>
+            <li>
+              Select the starting unit (e.g., Megabits per second - Mbps).
+            </li>
+            <li>
+              Select the target unit you want to convert to (e.g., Megabytes per
+              second - MB/s).
+            </li>
+          </ol>
+          <p>
+            The converted speed will be displayed instantly. This helps you
+            understand your connection&apos;s true performance.
+          </p>
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                What&apos;s the difference between Mbps and MB/s?
+              </AccordionTrigger>
+              <AccordionContent>
+                This is a common point of confusion.{" "}
+                <strong>Internet Service Providers (ISPs)</strong> advertise
+                speeds in <strong>megabits per second (Mbps)</strong>. But
+                download speeds in your browser are usually in{" "}
+                <strong>megabytes per second (MB/s)</strong>. Since there are 8
+                bits in 1 byte, to find your download speed in MB/s, divide the
+                Mbps value by 8. For example, a 100 Mbps connection has a max
+                download speed of 12.5 MB/s.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                Why is my download speed slower than advertised?
+              </AccordionTrigger>
+              <AccordionContent>
+                Advertised speeds are an &quot;up to&quot; maximum. Real-world
+                speeds can be affected by many factors. This includes network
+                traffic, router quality, and the server you&apos;re downloading
+                from.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                What are decimal (Mbps) vs. binary (Mibps) prefixes?
+              </AccordionTrigger>
+              <AccordionContent>
+                <strong>Decimal prefixes (kilo, mega)</strong> use powers of
+                1000. For example, 1 Mbps = 1,000,000 bits per second. This is
+                the standard for data transfer rates.{" "}
+                <strong>Binary prefixes (kibi, mebi)</strong> use powers of
+                1024. For example, 1 Mibps = 1,048,576 bits per second. These
+                are more common for data storage.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Code, Copy } from "lucide-react";
@@ -32,37 +31,40 @@ export default function EmbedCalculator({ slug }: EmbedCalculatorProps) {
 </p>`;
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(embedCode).then(() => {
-      toast({
-        title: "Copied!",
-        description: "Embed code copied to clipboard.",
-      });
-    }, () => {
-      toast({
-        title: "Error",
-        description: "Could not copy code. Please try again.",
-        variant: "destructive",
-      });
-    });
+    navigator.clipboard.writeText(embedCode).then(
+      () => {
+        toast({
+          title: "Copied!",
+          description: "Embed code copied to clipboard.",
+        });
+      },
+      () => {
+        toast({
+          title: "Error",
+          description: "Could not copy code. Please try again.",
+          variant: "destructive",
+        });
+      },
+    );
   };
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>
-            <Code className="mr-2" />
-            Embed Calculator
+          <Code className="mr-2" />
+          Embed Calculator
         </CardTitle>
         <CardDescription>
-            Copy the code below to embed this calculator on your website.
+          Copy the code below to embed this calculator on your website.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Textarea
-            value={embedCode}
-            readOnly
-            rows={8}
-            className="font-mono text-xs mb-4"
+          value={embedCode}
+          readOnly
+          rows={8}
+          className="font-mono text-xs mb-4"
         />
         <Button onClick={handleCopy} className="w-full">
           <Copy className="mr-2 h-4 w-4" />

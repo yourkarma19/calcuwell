@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -10,9 +15,18 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function OvertimePayCalculator() {
   const [hourlyRate, setHourlyRate] = usePersistentState("overtime-rate", 20);
-  const [regularHours, setRegularHours] = usePersistentState("overtime-regular-hours", 40);
-  const [overtimeHours, setOvertimeHours] = usePersistentState("overtime-overtime-hours", 10);
-  const [overtimeMultiplier, setOvertimeMultiplier] = usePersistentState("overtime-multiplier", 1.5);
+  const [regularHours, setRegularHours] = usePersistentState(
+    "overtime-regular-hours",
+    40,
+  );
+  const [overtimeHours, setOvertimeHours] = usePersistentState(
+    "overtime-overtime-hours",
+    10,
+  );
+  const [overtimeMultiplier, setOvertimeMultiplier] = usePersistentState(
+    "overtime-multiplier",
+    1.5,
+  );
 
   const { regularPay, overtimePay, totalPay } = useMemo(() => {
     const rate = Number(hourlyRate);
@@ -38,35 +52,68 @@ export default function OvertimePayCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Enter Work Details</CardTitle>
-          <CardDescription>Calculate your total pay, including regular and overtime hours. Adjust the overtime multiplier as needed.</CardDescription>
+          <CardDescription>
+            Calculate your total pay, including regular and overtime hours.
+            Adjust the overtime multiplier as needed.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                  <Label htmlFor="hourly-rate">Hourly Rate</Label>
-                  <Input id="hourly-rate" type="number" value={hourlyRate} onChange={e => setHourlyRate(Number(e.target.value))} />
-              </div>
-              <div className="space-y-2">
-                  <Label htmlFor="regular-hours">Regular Hours per Week</Label>
-                  <Input id="regular-hours" type="number" value={regularHours} onChange={e => setRegularHours(Number(e.target.value))} />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="hourly-rate">Hourly Rate</Label>
+              <Input
+                id="hourly-rate"
+                type="number"
+                value={hourlyRate}
+                onChange={(e) => setHourlyRate(Number(e.target.value))}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="regular-hours">Regular Hours per Week</Label>
+              <Input
+                id="regular-hours"
+                type="number"
+                value={regularHours}
+                onChange={(e) => setRegularHours(Number(e.target.value))}
+              />
+            </div>
           </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="overtime-hours">Overtime Hours</Label>
-                  <Input id="overtime-hours" type="number" value={overtimeHours} onChange={e => setOvertimeHours(Number(e.target.value))} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="overtime-hours">Overtime Hours</Label>
+              <Input
+                id="overtime-hours"
+                type="number"
+                value={overtimeHours}
+                onChange={(e) => setOvertimeHours(Number(e.target.value))}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="overtime-multiplier">Overtime Multiplier</Label>
+              <div className="flex items-center gap-4">
+                <Slider
+                  id="overtime-multiplier"
+                  value={[overtimeMultiplier]}
+                  onValueChange={(v) => setOvertimeMultiplier(v[0])}
+                  min={1}
+                  max={3}
+                  step={0.1}
+                />
+                <Input
+                  type="number"
+                  value={overtimeMultiplier}
+                  onChange={(e) =>
+                    setOvertimeMultiplier(Number(e.target.value))
+                  }
+                  className="w-24"
+                  step="0.1"
+                />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="overtime-multiplier">Overtime Multiplier</Label>
-                <div className="flex items-center gap-4">
-                  <Slider id="overtime-multiplier" value={[overtimeMultiplier]} onValueChange={v => setOvertimeMultiplier(v[0])} min={1} max={3} step={0.1} />
-                  <Input type="number" value={overtimeMultiplier} onChange={e => setOvertimeMultiplier(Number(e.target.value))} className="w-24" step="0.1" />
-                </div>
-              </div>
+            </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Pay Summary</CardTitle>
@@ -79,14 +126,18 @@ export default function OvertimePayCalculator() {
             </p>
           </div>
           <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                  <span>Regular Pay:</span>
-                  <span className="font-semibold">{formatCurrency(regularPay)}</span>
-              </div>
-                <div className="flex justify-between">
-                  <span>Overtime Pay:</span>
-                  <span className="font-semibold">{formatCurrency(overtimePay)}</span>
-              </div>
+            <div className="flex justify-between">
+              <span>Regular Pay:</span>
+              <span className="font-semibold">
+                {formatCurrency(regularPay)}
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span>Overtime Pay:</span>
+              <span className="font-semibold">
+                {formatCurrency(overtimePay)}
+              </span>
+            </div>
           </div>
         </CardContent>
       </Card>

@@ -1,15 +1,23 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function DiscountCalculator() {
-  const [originalPrice, setOriginalPrice] = usePersistentState("discount-price", 100);
+  const [originalPrice, setOriginalPrice] = usePersistentState(
+    "discount-price",
+    100,
+  );
   const [discount, setDiscount] = usePersistentState("discount-percentage", 25);
 
   const { finalPrice, amountSaved } = useMemo(() => {
@@ -29,23 +37,43 @@ export default function DiscountCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Discount Calculator</CardTitle>
-          <CardDescription>Calculate the final price of an item after a discount has been applied.</CardDescription>
+          <CardDescription>
+            Calculate the final price of an item after a discount has been
+            applied.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="original-price">Original Price</Label>
-            <Input id="original-price" type="number" value={originalPrice} onChange={(e) => setOriginalPrice(Number(e.target.value))} />
+            <Input
+              id="original-price"
+              type="number"
+              value={originalPrice}
+              onChange={(e) => setOriginalPrice(Number(e.target.value))}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="discount">Discount Percentage</Label>
             <div className="flex items-center gap-4">
-              <Slider id="discount" value={[discount]} onValueChange={(v) => setDiscount(v[0])} min={0} max={100} step={1} />
-                <Input type="number" value={discount} onChange={e => setDiscount(Number(e.target.value))} className="w-24" />
+              <Slider
+                id="discount"
+                value={[discount]}
+                onValueChange={(v) => setDiscount(v[0])}
+                min={0}
+                max={100}
+                step={1}
+              />
+              <Input
+                type="number"
+                value={discount}
+                onChange={(e) => setDiscount(Number(e.target.value))}
+                className="w-24"
+              />
             </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Final Price</CardTitle>
@@ -53,7 +81,9 @@ export default function DiscountCalculator() {
         <CardContent className="text-center space-y-4">
           <div>
             <p className="text-sm text-muted-foreground">You Pay</p>
-            <p className="text-4xl font-bold font-headline text-primary">₹{finalPrice.toFixed(2)}</p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              ₹{finalPrice.toFixed(2)}
+            </p>
           </div>
           <div>
             <p className="text-sm text-muted-foreground">You Save</p>

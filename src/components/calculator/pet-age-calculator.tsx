@@ -1,8 +1,19 @@
 "use client";
 
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -12,17 +23,20 @@ import usePersistentState from "@/hooks/use-persistent-state";
 // Dog: 1st year = 15 human years, 2nd year = +9 years, subsequent years = +5 years
 // Cat: 1st year = 15 human years, 2nd year = +9 years, subsequent years = +4 years
 const calculateHumanYears = (petAge: number, petType: "dog" | "cat") => {
-    if (petAge <= 0) return 0;
-    if (petAge === 1) return 15;
-    if (petAge === 2) return 24;
-    
-    const subsequentYears = petAge - 2;
-    const multiplier = petType === 'dog' ? 5 : 4;
-    return 24 + subsequentYears * multiplier;
+  if (petAge <= 0) return 0;
+  if (petAge === 1) return 15;
+  if (petAge === 2) return 24;
+
+  const subsequentYears = petAge - 2;
+  const multiplier = petType === "dog" ? 5 : 4;
+  return 24 + subsequentYears * multiplier;
 };
 
 export default function PetAgeCalculator() {
-  const [petType, setPetType] = usePersistentState<"dog" | "cat">("pet-type", "dog");
+  const [petType, setPetType] = usePersistentState<"dog" | "cat">(
+    "pet-type",
+    "dog",
+  );
   const [petAge, setPetAge] = usePersistentState("pet-age", 5);
 
   const humanYears = useMemo(() => {
@@ -34,7 +48,10 @@ export default function PetAgeCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Enter Your Pet&apos;s Details</CardTitle>
-          <CardDescription>Curious how old your furry friend is in human years? Select your pet type and enter their age to find out.</CardDescription>
+          <CardDescription>
+            Curious how old your furry friend is in human years? Select your pet
+            type and enter their age to find out.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -66,7 +83,7 @@ export default function PetAgeCalculator() {
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Your Pet&apos;s Age</CardTitle>
@@ -80,36 +97,68 @@ export default function PetAgeCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About the Pet Age Calculator</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>About the Pet Age Calculator</CardTitle>
+        </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The **Pet Age Calculator** is a fun and easy way to translate your dog&apos;s or cat&apos;s age into equivalent human years. While the old &quot;7 dog years to 1 human year&quot; rule is a popular myth, the aging process for our pets is more complex. This tool uses a more modern and widely accepted method to give you a better understanding of your pet&apos;s life stage.</p>
-            <h3>How to Use the Calculator</h3>
-            <ol>
-                <li>Select the <strong>Pet Type</strong> (Dog or Cat).</li>
-                <li>Enter your pet&apos;s current <strong>Age</strong> in years.</li>
-            </ol>
-            <p>The calculator will instantly show you their estimated age in human years, helping you better appreciate their current needs and life stage.</p>
-            <h3>Frequently Asked Questions (FAQs)</h3>
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>Is the &quot;7 dog years to 1 human year&quot; rule true?</AccordionTrigger>
-                    <AccordionContent>
-                        The 7:1 ratio is a common myth. In reality, dogs and cats mature much faster in their first two years than humans do. This calculator uses a more widely accepted method where the first year equals about 15 human years, the second year adds another 9, and every subsequent year adds 4-5 years.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>Does breed or size matter?</AccordionTrigger>
-                    <AccordionContent>
-                       Yes, significantly. Smaller dog breeds tend to live longer and mature slower than large breeds. For example, a 7-year-old Great Dane is much &quot;older&quot; in human years than a 7-year-old Chihuahua. This calculator provides a general estimate for an average-sized pet, but breed-specific charts can offer more accuracy.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                    <AccordionTrigger>How can I tell my pet&apos;s age if they were a rescue?</AccordionTrigger>
-                    <AccordionContent>
-                       A veterinarian is the best person to help estimate a pet&apos;s age. They look at factors like the condition of the teeth, coat, eyes, and overall physical health to make an educated guess.
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+          <p>
+            The **Pet Age Calculator** is a fun and easy way to translate your
+            dog&apos;s or cat&apos;s age into equivalent human years. While the
+            old &quot;7 dog years to 1 human year&quot; rule is a popular myth,
+            the aging process for our pets is more complex. This tool uses a
+            more modern and widely accepted method to give you a better
+            understanding of your pet&apos;s life stage.
+          </p>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              Select the <strong>Pet Type</strong> (Dog or Cat).
+            </li>
+            <li>
+              Enter your pet&apos;s current <strong>Age</strong> in years.
+            </li>
+          </ol>
+          <p>
+            The calculator will instantly show you their estimated age in human
+            years, helping you better appreciate their current needs and life
+            stage.
+          </p>
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                Is the &quot;7 dog years to 1 human year&quot; rule true?
+              </AccordionTrigger>
+              <AccordionContent>
+                The 7:1 ratio is a common myth. In reality, dogs and cats mature
+                much faster in their first two years than humans do. This
+                calculator uses a more widely accepted method where the first
+                year equals about 15 human years, the second year adds another
+                9, and every subsequent year adds 4-5 years.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Does breed or size matter?</AccordionTrigger>
+              <AccordionContent>
+                Yes, significantly. Smaller dog breeds tend to live longer and
+                mature slower than large breeds. For example, a 7-year-old Great
+                Dane is much &quot;older&quot; in human years than a 7-year-old
+                Chihuahua. This calculator provides a general estimate for an
+                average-sized pet, but breed-specific charts can offer more
+                accuracy.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                How can I tell my pet&apos;s age if they were a rescue?
+              </AccordionTrigger>
+              <AccordionContent>
+                A veterinarian is the best person to help estimate a pet&apos;s
+                age. They look at factors like the condition of the teeth, coat,
+                eyes, and overall physical health to make an educated guess.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

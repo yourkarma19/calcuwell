@@ -1,7 +1,13 @@
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -20,10 +26,10 @@ export default function BeamDeflectionCalculator() {
     const I = inertia;
 
     if (P <= 0 || L <= 0 || E <= 0 || I <= 0) return 0;
-    
+
     // Formula for cantilever beam with point load at the end: PL³ / 3EI
     const def = (P * Math.pow(L, 3)) / (3 * E * I);
-    
+
     return def * 1000; // Convert to mm
   }, [load, length, modulus, inertia]);
 
@@ -32,36 +38,63 @@ export default function BeamDeflectionCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Beam Deflection Calculator</CardTitle>
-          <CardDescription>For a simple cantilever beam with a point load at the end.</CardDescription>
+          <CardDescription>
+            For a simple cantilever beam with a point load at the end.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="load">Load (P) in Newtons</Label>
-              <Input id="load" type="number" value={load} onChange={e => setLoad(Number(e.target.value))} />
+              <Input
+                id="load"
+                type="number"
+                value={load}
+                onChange={(e) => setLoad(Number(e.target.value))}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="length">Length (L) in meters</Label>
-              <Input id="length" type="number" value={length} onChange={e => setLength(Number(e.target.value))} />
+              <Input
+                id="length"
+                type="number"
+                value={length}
+                onChange={(e) => setLength(Number(e.target.value))}
+              />
             </div>
           </div>
-            <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="modulus">Modulus of Elasticity (E) in GPa</Label>
-              <Input id="modulus" type="number" value={modulus} onChange={e => setModulus(Number(e.target.value))} />
+              <Input
+                id="modulus"
+                type="number"
+                value={modulus}
+                onChange={(e) => setModulus(Number(e.target.value))}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="inertia">Area Moment of Inertia (I) in m⁴</Label>
-              <Input id="inertia" type="number" value={inertia} onChange={e => setInertia(Number(e.target.value))} step="1e-7" />
+              <Input
+                id="inertia"
+                type="number"
+                value={inertia}
+                onChange={(e) => setInertia(Number(e.target.value))}
+                step="1e-7"
+              />
             </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
-        <CardHeader><CardTitle>Maximum Deflection</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>Maximum Deflection</CardTitle>
+        </CardHeader>
         <CardContent className="text-center">
-          <p className="text-4xl font-bold font-headline text-primary">{deflection.toFixed(4)}</p>
+          <p className="text-4xl font-bold font-headline text-primary">
+            {deflection.toFixed(4)}
+          </p>
           <p className="text-lg text-muted-foreground">mm</p>
         </CardContent>
       </Card>

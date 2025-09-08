@@ -1,5 +1,3 @@
-
-
 import { List } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -7,7 +5,6 @@ import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
 import { IconName } from "@/lib/types";
-
 
 export const metadata: Metadata = {
   title: "Sitemap | CalcPro",
@@ -45,7 +42,10 @@ export default async function SitemapPage() {
             return (
               <section key={category.slug}>
                 <h2 className="text-3xl font-bold font-headline text-primary mb-6 flex items-center gap-3">
-                  <IconWrapper iconName={category.iconName as IconName} className="w-8 h-8" />
+                  <IconWrapper
+                    iconName={category.iconName as IconName}
+                    className="w-8 h-8"
+                  />
                   {category.name} Calculators
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -56,7 +56,10 @@ export default async function SitemapPage() {
                           href={`/calculators/${calc.slug}`}
                           className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors"
                         >
-                          <IconWrapper iconName={calc.iconName as IconName} className="w-4 h-4 text-muted-foreground" />
+                          <IconWrapper
+                            iconName={calc.iconName as IconName}
+                            className="w-4 h-4 text-muted-foreground"
+                          />
                           {calc.name}
                         </Link>
                       </li>

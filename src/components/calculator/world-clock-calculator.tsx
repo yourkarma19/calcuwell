@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 const majorTimezones = [
   { city: "New York", tz: "America/New_York" },
@@ -23,24 +28,24 @@ export default function WorldClock() {
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
-  
+
   const formatTime = (tz: string) => {
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat("en-US", {
       timeZone: tz,
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
       hour12: true,
     }).format(time);
   };
-  
+
   const formatDate = (tz: string) => {
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat("en-US", {
       timeZone: tz,
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     }).format(time);
   };
 
@@ -49,22 +54,29 @@ export default function WorldClock() {
       <Card>
         <CardHeader>
           <CardTitle>World Clock</CardTitle>
-          <CardDescription>View the current time and date in major cities around the world. The times update automatically every second.</CardDescription>
+          <CardDescription>
+            View the current time and date in major cities around the world. The
+            times update automatically every second.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {majorTimezones.map(({ city, tz }) => (
-                    <Card key={tz}>
-                        <CardHeader>
-                            <CardTitle>{city}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-3xl font-mono font-bold text-primary">{formatTime(tz)}</p>
-                            <p className="text-sm text-muted-foreground">{formatDate(tz)}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {majorTimezones.map(({ city, tz }) => (
+              <Card key={tz}>
+                <CardHeader>
+                  <CardTitle>{city}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-3xl font-mono font-bold text-primary">
+                    {formatTime(tz)}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {formatDate(tz)}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>

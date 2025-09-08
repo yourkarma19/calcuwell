@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -23,7 +28,10 @@ const formatTime = (minutes: number) => {
 };
 
 export default function ReadingTimeCalculator() {
-  const [text, setText] = usePersistentState("reading-time-text", "The quick brown fox jumps over the lazy dog. This is some sample text to estimate the reading time. The average adult reading speed is around 200 to 250 words per minute. You can adjust the slider below to match your personal reading speed for a more accurate estimate.");
+  const [text, setText] = usePersistentState(
+    "reading-time-text",
+    "The quick brown fox jumps over the lazy dog. This is some sample text to estimate the reading time. The average adult reading speed is around 200 to 250 words per minute. You can adjust the slider below to match your personal reading speed for a more accurate estimate.",
+  );
   const [wpm, setWpm] = usePersistentState("reading-time-wpm", 200);
 
   const { wordCount, readingTime } = useMemo(() => {
@@ -41,7 +49,10 @@ export default function ReadingTimeCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Reading Time Estimator</CardTitle>
-          <CardDescription>Paste your text and set your reading speed to estimate how long it will take to read.</CardDescription>
+          <CardDescription>
+            Paste your text and set your reading speed to estimate how long it
+            will take to read.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -65,7 +76,13 @@ export default function ReadingTimeCalculator() {
                 max={500}
                 step={10}
               />
-              <Input type="number" value={wpm} onChange={e => setWpm(Number(e.target.value))} className="w-24" step="10" />
+              <Input
+                type="number"
+                value={wpm}
+                onChange={(e) => setWpm(Number(e.target.value))}
+                className="w-24"
+                step="10"
+              />
             </div>
           </div>
         </CardContent>
@@ -76,16 +93,16 @@ export default function ReadingTimeCalculator() {
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
           <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Estimated Reading Time</p>
+            <p className="text-sm text-muted-foreground">
+              Estimated Reading Time
+            </p>
             <p className="text-4xl font-bold font-headline text-primary">
               {formatTime(readingTime)}
             </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Word Count</p>
-            <p className="text-2xl font-semibold">
-              {wordCount}
-            </p>
+            <p className="text-2xl font-semibold">{wordCount}</p>
           </div>
         </CardContent>
       </Card>

@@ -1,14 +1,33 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-const colors: Record<string, { value?: number, multiplier?: number, tolerance?: number }> = {
+const colors: Record<
+  string,
+  { value?: number; multiplier?: number; tolerance?: number }
+> = {
   black: { value: 0, multiplier: 1, tolerance: 20 },
   brown: { value: 1, multiplier: 10, tolerance: 1 },
   red: { value: 2, multiplier: 100, tolerance: 2 },
@@ -27,9 +46,18 @@ const colors: Record<string, { value?: number, multiplier?: number, tolerance?: 
 type Color = keyof typeof colors;
 
 export default function ResistorColorCodeCalculator() {
-  const [band1, setBand1] = usePersistentState<Color>("resistor-band1", "brown");
-  const [band2, setBand2] = usePersistentState<Color>("resistor-band2", "black");
-  const [band3, setBand3] = usePersistentState<Color>("resistor-band3", "orange");
+  const [band1, setBand1] = usePersistentState<Color>(
+    "resistor-band1",
+    "brown",
+  );
+  const [band2, setBand2] = usePersistentState<Color>(
+    "resistor-band2",
+    "black",
+  );
+  const [band3, setBand3] = usePersistentState<Color>(
+    "resistor-band3",
+    "orange",
+  );
   const [band4, setBand4] = usePersistentState<Color>("resistor-band4", "gold");
 
   const resistance = useMemo(() => {
@@ -38,7 +66,13 @@ export default function ResistorColorCodeCalculator() {
     const mult = colors[band3]?.multiplier;
     const tol = colors[band4]?.tolerance;
 
-    if (val1 === undefined || val2 === undefined || mult === undefined || tol === undefined) return "Invalid selection";
+    if (
+      val1 === undefined ||
+      val2 === undefined ||
+      mult === undefined ||
+      tol === undefined
+    )
+      return "Invalid selection";
 
     const baseValue = (val1 * 10 + val2) * mult;
 
@@ -51,19 +85,40 @@ export default function ResistorColorCodeCalculator() {
     return `${displayValue} ±${tol}%`;
   }, [band1, band2, band3, band4]);
 
-  const ColorSelect = ({ value, onValueChange, bandType }: { value: Color, onValueChange: (v: Color) => void, bandType: 'digit' | 'multiplier' | 'tolerance' }) => (
-    <Select value={value} onValueChange={v => onValueChange(v as Color)}>
-        <SelectTrigger style={{ backgroundColor: value !== 'none' ? value : 'transparent' }} className="capitalize text-white font-bold">
-            <SelectValue>{value}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-            {Object.entries(colors).map(([name, props]) => {
-                if (bandType === 'digit' && props.value === undefined) return null;
-                if (bandType === 'multiplier' && props.multiplier === undefined) return null;
-                if (bandType === 'tolerance' && props.tolerance === undefined && name !== 'none') return null;
-                return <SelectItem key={name} value={name} className="capitalize">{name}</SelectItem>
-            })}
-        </SelectContent>
+  const ColorSelect = ({
+    value,
+    onValueChange,
+    bandType,
+  }: {
+    value: Color;
+    onValueChange: (v: Color) => void;
+    bandType: "digit" | "multiplier" | "tolerance";
+  }) => (
+    <Select value={value} onValueChange={(v) => onValueChange(v as Color)}>
+      <SelectTrigger
+        style={{ backgroundColor: value !== "none" ? value : "transparent" }}
+        className="capitalize text-white font-bold"
+      >
+        <SelectValue>{value}</SelectValue>
+      </SelectTrigger>
+      <SelectContent>
+        {Object.entries(colors).map(([name, props]) => {
+          if (bandType === "digit" && props.value === undefined) return null;
+          if (bandType === "multiplier" && props.multiplier === undefined)
+            return null;
+          if (
+            bandType === "tolerance" &&
+            props.tolerance === undefined &&
+            name !== "none"
+          )
+            return null;
+          return (
+            <SelectItem key={name} value={name} className="capitalize">
+              {name}
+            </SelectItem>
+          );
+        })}
+      </SelectContent>
     </Select>
   );
 
@@ -71,53 +126,113 @@ export default function ResistorColorCodeCalculator() {
     <div className="lg:col-span-3 space-y-6">
       <Card>
         <CardHeader>
-            <CardTitle>Resistor Color Code Calculator</CardTitle>
-            <CardDescription>Select the colors for a 4-band resistor to determine its value.</CardDescription>
+          <CardTitle>Resistor Color Code Calculator</CardTitle>
+          <CardDescription>
+            Select the colors for a 4-band resistor to determine its value.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="space-y-2"><Label>1st Band (Digit)</Label><ColorSelect value={band1} onValueChange={setBand1} bandType="digit"/></div>
-                <div className="space-y-2"><Label>2nd Band (Digit)</Label><ColorSelect value={band2} onValueChange={setBand2} bandType="digit"/></div>
-                <div className="space-y-2"><Label>3rd Band (Multiplier)</Label><ColorSelect value={band3} onValueChange={setBand3} bandType="multiplier"/></div>
-                <div className="space-y-2"><Label>4th Band (Tolerance)</Label><ColorSelect value={band4} onValueChange={setBand4} bandType="tolerance"/></div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="space-y-2">
+              <Label>1st Band (Digit)</Label>
+              <ColorSelect
+                value={band1}
+                onValueChange={setBand1}
+                bandType="digit"
+              />
             </div>
-            <div className="pt-4 text-center">
-                <h3 className="text-lg font-semibold">Resistance Value</h3>
-                <p className="text-4xl font-bold font-headline text-primary">{resistance}</p>
+            <div className="space-y-2">
+              <Label>2nd Band (Digit)</Label>
+              <ColorSelect
+                value={band2}
+                onValueChange={setBand2}
+                bandType="digit"
+              />
             </div>
+            <div className="space-y-2">
+              <Label>3rd Band (Multiplier)</Label>
+              <ColorSelect
+                value={band3}
+                onValueChange={setBand3}
+                bandType="multiplier"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label>4th Band (Tolerance)</Label>
+              <ColorSelect
+                value={band4}
+                onValueChange={setBand4}
+                bandType="tolerance"
+              />
+            </div>
+          </div>
+          <div className="pt-4 text-center">
+            <h3 className="text-lg font-semibold">Resistance Value</h3>
+            <p className="text-4xl font-bold font-headline text-primary">
+              {resistance}
+            </p>
+          </div>
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About the Resistor Color Code Calculator</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>About the Resistor Color Code Calculator</CardTitle>
+        </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The <strong>Resistor Color Code Calculator</strong> helps you figure out the value of a resistor by reading its colored bands. This is a key tool for anyone working with electronics. It lets you find a resistor&apos;s resistance value without needing to use a multimeter. This calculator is for common 4-band resistors.</p>
-            <h3>How to Use the Calculator</h3>
-            <ol>
-                <li>Hold the resistor with the gold or silver band (the tolerance band) on the right side. Read the colors from left to right.</li>
-                <li>Select the color for each of the four bands from the dropdown menus.</li>
-            </ol>
-            <p>The calculator will instantly show the resistor&apos;s value in Ohms (Ω) and its tolerance.</p>
-            <h3>Frequently Asked Questions (FAQs)</h3>
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>How to Read a 4-Band Resistor</AccordionTrigger>
-                    <AccordionContent>
-                       The first two bands give you the first two digits of the resistance value. The third band tells you what number to multiply those digits by (a power of 10). The last band shows the tolerance.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>What is Tolerance?</AccordionTrigger>
-                    <AccordionContent>
-                        Tolerance tells you how accurate a resistor&apos;s value is. For example, a 100 Ω resistor with a 5% tolerance could have a real value between 95 Ω and 105 Ω. A smaller tolerance means the resistor is more precise.
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-3">
-                    <AccordionTrigger>What if there are 5 or 6 bands?</AccordionTrigger>
-                    <AccordionContent>
-                        A 5-band resistor adds a third digit for more precision. The first three bands are digits, the fourth is the multiplier, and the fifth is tolerance. A 6-band resistor adds a final band that indicates how the resistance changes with temperature.
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+          <p>
+            The <strong>Resistor Color Code Calculator</strong> helps you figure
+            out the value of a resistor by reading its colored bands. This is a
+            key tool for anyone working with electronics. It lets you find a
+            resistor&apos;s resistance value without needing to use a
+            multimeter. This calculator is for common 4-band resistors.
+          </p>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              Hold the resistor with the gold or silver band (the tolerance
+              band) on the right side. Read the colors from left to right.
+            </li>
+            <li>
+              Select the color for each of the four bands from the dropdown
+              menus.
+            </li>
+          </ol>
+          <p>
+            The calculator will instantly show the resistor&apos;s value in Ohms
+            (Ω) and its tolerance.
+          </p>
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>How to Read a 4-Band Resistor</AccordionTrigger>
+              <AccordionContent>
+                The first two bands give you the first two digits of the
+                resistance value. The third band tells you what number to
+                multiply those digits by (a power of 10). The last band shows
+                the tolerance.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is Tolerance?</AccordionTrigger>
+              <AccordionContent>
+                Tolerance tells you how accurate a resistor&apos;s value is. For
+                example, a 100 Ω resistor with a 5% tolerance could have a real
+                value between 95 Ω and 105 Ω. A smaller tolerance means the
+                resistor is more precise.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                What if there are 5 or 6 bands?
+              </AccordionTrigger>
+              <AccordionContent>
+                A 5-band resistor adds a third digit for more precision. The
+                first three bands are digits, the fourth is the multiplier, and
+                the fifth is tolerance. A 6-band resistor adds a final band that
+                indicates how the resistance changes with temperature.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

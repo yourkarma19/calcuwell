@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -29,22 +34,35 @@ export default function RectangleAreaCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Rectangle Area & Perimeter</CardTitle>
-          <CardDescription>Enter the length and width of a rectangle to calculate its area and perimeter.</CardDescription>
+          <CardDescription>
+            Enter the length and width of a rectangle to calculate its area and
+            perimeter.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="length">Length</Label>
-              <Input id="length" type="number" value={length} onChange={(e) => setLength(Number(e.target.value))} />
+              <Input
+                id="length"
+                type="number"
+                value={length}
+                onChange={(e) => setLength(Number(e.target.value))}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="width">Width</Label>
-              <Input id="width" type="number" value={width} onChange={(e) => setWidth(Number(e.target.value))} />
+              <Input
+                id="width"
+                type="number"
+                value={width}
+                onChange={(e) => setWidth(Number(e.target.value))}
+              />
             </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Results</CardTitle>
@@ -52,11 +70,15 @@ export default function RectangleAreaCalculator() {
         <CardContent className="text-center space-y-4">
           <div>
             <p className="text-sm text-muted-foreground">Area</p>
-            <p className="text-4xl font-bold font-headline text-primary">{area.toLocaleString()}</p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              {area.toLocaleString()}
+            </p>
           </div>
           <div>
             <p className="text-sm text-muted-foreground">Perimeter</p>
-            <p className="text-2xl font-semibold">{perimeter.toLocaleString()}</p>
+            <p className="text-2xl font-semibold">
+              {perimeter.toLocaleString()}
+            </p>
           </div>
         </CardContent>
       </Card>

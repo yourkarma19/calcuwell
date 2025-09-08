@@ -6,11 +6,17 @@ type IconWrapperProps = {
   iconName: string;
 } & LucideProps;
 
-export const IconWrapper: React.FC<IconWrapperProps> = ({ iconName, ...props }) => {
+export const IconWrapper: React.FC<IconWrapperProps> = ({
+  iconName,
+  ...props
+}) => {
   // Filter only valid React components
   const validIcons: Record<string, ComponentType<LucideProps>> = {};
   Object.entries(lucideIcons).forEach(([key, value]) => {
-    if (typeof value === "function" || (typeof value === 'object' && value !== null && 'render' in value)) {
+    if (
+      typeof value === "function" ||
+      (typeof value === "object" && value !== null && "render" in value)
+    ) {
       validIcons[key] = value as ComponentType<LucideProps>;
     }
   });

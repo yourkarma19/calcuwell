@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +21,7 @@ interface TimeLeft {
 
 export default function CountdownTimer() {
   const [targetDate, setTargetDate] = useState<Date | undefined>(
-    new Date(new Date().getFullYear() + 1, 0, 1) // Default to next New Year
+    new Date(new Date().getFullYear() + 1, 0, 1), // Default to next New Year
   );
   const [targetTime, setTargetTime] = useState("00:00");
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
@@ -26,7 +31,7 @@ export default function CountdownTimer() {
 
     const calculateTimeLeft = () => {
       const now = new Date();
-      const [hours, minutes] = targetTime.split(':').map(Number);
+      const [hours, minutes] = targetTime.split(":").map(Number);
       const targetDateTime = new Date(targetDate);
       targetDateTime.setHours(hours, minutes, 0, 0);
 
@@ -52,10 +57,12 @@ export default function CountdownTimer() {
 
     return () => clearInterval(interval);
   }, [targetDate, targetTime]);
-  
-  const TimeBox = ({ value, label }: { value: number, label: string }) => (
+
+  const TimeBox = ({ value, label }: { value: number; label: string }) => (
     <div className="bg-muted p-4 rounded-lg text-center">
-      <p className="text-4xl font-bold font-headline text-primary">{String(value).padStart(2, '0')}</p>
+      <p className="text-4xl font-bold font-headline text-primary">
+        {String(value).padStart(2, "0")}
+      </p>
       <p className="text-sm text-muted-foreground">{label}</p>
     </div>
   );
@@ -65,20 +72,31 @@ export default function CountdownTimer() {
       <Card>
         <CardHeader>
           <CardTitle>Set Countdown Target</CardTitle>
-          <CardDescription>Set a future date and time to start the countdown. The timer will update every second.</CardDescription>
+          <CardDescription>
+            Set a future date and time to start the countdown. The timer will
+            update every second.
+          </CardDescription>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label>Target Date</Label>
-            <DatePicker date={targetDate} setDate={setTargetDate} disabled={() => false}/>
+            <DatePicker
+              date={targetDate}
+              setDate={setTargetDate}
+              disabled={() => false}
+            />
           </div>
           <div className="space-y-2">
             <Label>Target Time</Label>
-            <Input type="time" value={targetTime} onChange={e => setTargetTime(e.target.value)} />
+            <Input
+              type="time"
+              value={targetTime}
+              onChange={(e) => setTargetTime(e.target.value)}
+            />
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Time Remaining</CardTitle>
@@ -92,7 +110,9 @@ export default function CountdownTimer() {
               <TimeBox value={timeLeft.seconds} label="Seconds" />
             </div>
           ) : (
-            <div className="text-center text-muted-foreground">Calculating...</div>
+            <div className="text-center text-muted-foreground">
+              Calculating...
+            </div>
           )}
         </CardContent>
       </Card>

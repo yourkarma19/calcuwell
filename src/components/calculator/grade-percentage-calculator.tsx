@@ -1,15 +1,26 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function GradePercentageCalculator() {
-  const [pointsEarned, setPointsEarned] = usePersistentState("grade-points-earned", 85);
-  const [totalPoints, setTotalPoints] = usePersistentState("grade-points-total", 100);
+  const [pointsEarned, setPointsEarned] = usePersistentState(
+    "grade-points-earned",
+    85,
+  );
+  const [totalPoints, setTotalPoints] = usePersistentState(
+    "grade-points-total",
+    100,
+  );
 
   const percentage = useMemo(() => {
     if (totalPoints > 0) {
@@ -25,7 +36,7 @@ export default function GradePercentageCalculator() {
     if (p >= 60) return "D";
     return "F";
   };
-  
+
   const letterGrade = getLetterGrade(percentage);
 
   return (
@@ -33,7 +44,10 @@ export default function GradePercentageCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Calculate Your Grade</CardTitle>
-          <CardDescription>Enter the points you earned and the total possible points to find your percentage and letter grade.</CardDescription>
+          <CardDescription>
+            Enter the points you earned and the total possible points to find
+            your percentage and letter grade.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -75,16 +89,28 @@ export default function GradePercentageCalculator() {
           <div>
             <p className="text-sm text-muted-foreground">Letter Grade</p>
             <p className="text-3xl font-semibold">{letterGrade}</p>
-            <p className="text-xs text-muted-foreground">(Based on a standard scale)</p>
+            <p className="text-xs text-muted-foreground">
+              (Based on a standard scale)
+            </p>
           </div>
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>About Grade Calculation</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>About Grade Calculation</CardTitle>
+        </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>This tool helps you quickly find your grade on a test or assignment. Just enter the points you earned and the total points possible. The calculator will show your percentage and a letter grade based on a standard scale.</p>
-            <h3>How to Use This Tool</h3>
-            <p>Enter the number of points you earned and the total points possible. The calculator will instantly show your grade.</p>
+          <p>
+            This tool helps you quickly find your grade on a test or assignment.
+            Just enter the points you earned and the total points possible. The
+            calculator will show your percentage and a letter grade based on a
+            standard scale.
+          </p>
+          <h3>How to Use This Tool</h3>
+          <p>
+            Enter the number of points you earned and the total points possible.
+            The calculator will instantly show your grade.
+          </p>
         </CardContent>
       </Card>
     </div>

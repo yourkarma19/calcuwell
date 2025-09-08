@@ -1,17 +1,28 @@
-
 "use client";
 
 import { addDays, format } from "date-fns";
 import { useState, useMemo } from "react";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 
 export default function PregnancyDueDateCalculator() {
-  const [calculationMethod, setCalculationMethod] = useState<"lmp" | "conception">("lmp");
-  const [lastPeriodDate, setLastPeriodDate] = useState<Date | undefined>(new Date());
-  const [conceptionDate, setConceptionDate] = useState<Date | undefined>(new Date());
+  const [calculationMethod, setCalculationMethod] = useState<
+    "lmp" | "conception"
+  >("lmp");
+  const [lastPeriodDate, setLastPeriodDate] = useState<Date | undefined>(
+    new Date(),
+  );
+  const [conceptionDate, setConceptionDate] = useState<Date | undefined>(
+    new Date(),
+  );
 
   const estimatedDueDate = useMemo(() => {
     if (calculationMethod === "lmp" && lastPeriodDate) {
@@ -30,41 +41,56 @@ export default function PregnancyDueDateCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Estimate Your Due Date</CardTitle>
-          <CardDescription>Get an estimated due date based on your last menstrual period or date of conception.</CardDescription>
+          <CardDescription>
+            Get an estimated due date based on your last menstrual period or
+            date of conception.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Calculation Method</Label>
-            <RadioGroup value={calculationMethod} onValueChange={(v: string) => setCalculationMethod(v as "lmp" | "conception")} className="flex items-center space-x-4 pt-2">
-              <div className="flex items-center space-x-2"><RadioGroupItem value="lmp" id="lmp" /><Label htmlFor="lmp">Last Menstrual Period</Label></div>
-              <div className="flex items-center space-x-2"><RadioGroupItem value="conception" id="conception" /><Label htmlFor="conception">Conception Date</Label></div>
+            <RadioGroup
+              value={calculationMethod}
+              onValueChange={(v: string) =>
+                setCalculationMethod(v as "lmp" | "conception")
+              }
+              className="flex items-center space-x-4 pt-2"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="lmp" id="lmp" />
+                <Label htmlFor="lmp">Last Menstrual Period</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="conception" id="conception" />
+                <Label htmlFor="conception">Conception Date</Label>
+              </div>
             </RadioGroup>
           </div>
-          
-          {calculationMethod === 'lmp' && (
+
+          {calculationMethod === "lmp" && (
             <div className="space-y-2">
               <Label>First Day of Last Menstrual Period</Label>
-              <DatePicker 
-                date={lastPeriodDate} 
-                setDate={setLastPeriodDate} 
+              <DatePicker
+                date={lastPeriodDate}
+                setDate={setLastPeriodDate}
                 disabled={(date) => date > new Date()}
               />
             </div>
           )}
 
-          {calculationMethod === 'conception' && (
+          {calculationMethod === "conception" && (
             <div className="space-y-2">
               <Label>Date of Conception</Label>
-              <DatePicker 
-                date={conceptionDate} 
-                setDate={setConceptionDate} 
+              <DatePicker
+                date={conceptionDate}
+                setDate={setConceptionDate}
                 disabled={(date) => date > new Date()}
               />
             </div>
           )}
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Estimated Due Date</CardTitle>

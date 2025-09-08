@@ -3,7 +3,13 @@
 import React, { useState } from "react";
 import { Label } from "../ui/label";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardDescription,
+} from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function Base64Converter() {
@@ -30,7 +36,11 @@ export default function Base64Converter() {
     <Card>
       <CardHeader>
         <CardTitle>Base64 Encoder / Decoder</CardTitle>
-        <CardDescription>Easily encode text into Base64 format or decode a Base64 string back to its original text. This tool is useful for developers working with web data.</CardDescription>
+        <CardDescription>
+          Easily encode text into Base64 format or decode a Base64 string back
+          to its original text. This tool is useful for developers working with
+          web data.
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">

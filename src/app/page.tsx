@@ -1,4 +1,3 @@
-
 import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
@@ -13,14 +12,14 @@ import {
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
-import type { WebSite, WithContext } from 'schema-dts';
+import type { WebSite, WithContext } from "schema-dts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "CalcPro: Your Free Online Calculator Hub",
-  description: "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
+  description:
+    "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
 };
-
 
 const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
@@ -30,10 +29,9 @@ const jsonLd: WithContext<WebSite> = {
   potentialAction: {
     "@type": "SearchAction",
     target: "https://calcpro.online/search?q={search_term_string}",
-    "query": "required name=search_term_string",
+    query: "required name=search_term_string",
   },
 };
-
 
 export default function Home() {
   return (
@@ -72,13 +70,21 @@ export default function Home() {
                   <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                     <CardHeader className="flex flex-row items-center gap-4">
                       <div className="bg-primary/10 p-3 rounded-lg">
-                        <IconWrapper iconName={category.iconName} className="w-6 h-6 text-primary" />
+                        <IconWrapper
+                          iconName={category.iconName}
+                          className="w-6 h-6 text-primary"
+                        />
                       </div>
                       <div>
-                        <CardTitle as="h3" className="font-headline group-hover:text-primary transition-colors">
+                        <CardTitle
+                          as="h3"
+                          className="font-headline group-hover:text-primary transition-colors"
+                        >
                           {category.name}
                         </CardTitle>
-                        <CardDescription>{category.description}</CardDescription>
+                        <CardDescription>
+                          {category.description}
+                        </CardDescription>
                       </div>
                       <ArrowRight className="w-5 h-5 ml-auto text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1" />
                     </CardHeader>
@@ -119,8 +125,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-bold font-headline">Fast</h3>
                   <p className="text-sm text-muted-foreground">
-                    Instant results with a focus on performance and no unnecessary
-                    lag.
+                    Instant results with a focus on performance and no
+                    unnecessary lag.
                   </p>
                 </CardContent>
               </Card>
@@ -131,8 +137,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-bold font-headline">Accurate</h3>
                   <p className="text-sm text-muted-foreground">
-                    Our tools are built on reliable formulas and rigorous testing
-                    to ensure you get the right answer.
+                    Our tools are built on reliable formulas and rigorous
+                    testing to ensure you get the right answer.
                   </p>
                 </CardContent>
               </Card>

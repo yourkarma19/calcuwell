@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Footer from "@/components/layout/footer";
@@ -31,26 +30,28 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "CalcPro: Your Free Online Calculator Hub",
-    description: "Fast, accurate online calculators for finance, health, math, and more.",
+    description:
+      "Fast, accurate online calculators for finance, health, math, and more.",
     url: "https://calcpro.online",
     siteName: "CalcPro",
     images: [
       {
-        url: 'https://calcpro.online/og-image.png', // It's recommended to create and add an actual OG image
+        url: "https://calcpro.online/og-image.png", // It's recommended to create and add an actual OG image
         width: 1200,
         height: 630,
-        alt: 'CalcPro Logo and Calculator Montage',
+        alt: "CalcPro Logo and Calculator Montage",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "CalcPro: Your Free Online Calculator Hub",
-    description: "Fast, accurate online calculators for finance, health, math, and more.",
+    description:
+      "Fast, accurate online calculators for finance, health, math, and more.",
     // creator: '@yourtwitterhandle', // Optional: Add your Twitter handle
-    images: ['https://calcpro.online/og-image.png'], // Must be an absolute URL
+    images: ["https://calcpro.online/og-image.png"], // Must be an absolute URL
   },
 };
 

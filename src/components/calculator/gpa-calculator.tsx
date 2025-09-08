@@ -1,4 +1,3 @@
-
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -6,7 +5,13 @@ import { X, Plus } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
 import {
   Select,
   SelectContent,
@@ -27,53 +32,70 @@ import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 const gradePoints: { [key: string]: number } = {
-  A: 4.0, "A-": 3.7, "B+": 3.3, B: 3.0, "B-": 2.7, "C+": 2.3, C: 2.0, "C-": 1.7, "D+": 1.3, D: 1.0, F: 0.0,
+  A: 4.0,
+  "A-": 3.7,
+  "B+": 3.3,
+  B: 3.0,
+  "B-": 2.7,
+  "C+": 2.3,
+  C: 2.0,
+  "C-": 1.7,
+  "D+": 1.3,
+  D: 1.0,
+  F: 0.0,
 };
 
 const courseSchema = z.object({
   name: z.string().optional(),
-  grade: z.string().refine(val => Object.keys(gradePoints).includes(val), { message: "Required" }),
-  credits: z.coerce.number().min(0.1, { message: "Must be > 0" }).max(10, {message: "< 10"}),
+  grade: z.string().refine((val) => Object.keys(gradePoints).includes(val), {
+    message: "Required",
+  }),
+  credits: z.coerce
+    .number()
+    .min(0.1, { message: "Must be > 0" })
+    .max(10, { message: "< 10" }),
 });
 
 const formSchema = z.object({
-  courses: z.array(courseSchema).min(1, { message: "At least one course is required." }),
+  courses: z
+    .array(courseSchema)
+    .min(1, { message: "At least one course is required." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
-
 export default function GpaCalculator() {
   const [gpa, setGpa] = useState<number | null>(null);
-  
-  const [defaultCourses, setDefaultCourses] = usePersistentState<FormValues['courses']>('gpa-courses', [{ name: "Example Course", grade: "A", credits: 3 }]);
+
+  const [defaultCourses, setDefaultCourses] = usePersistentState<
+    FormValues["courses"]
+  >("gpa-courses", [{ name: "Example Course", grade: "A", credits: 3 }]);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       courses: defaultCourses,
     },
-     mode: "onChange",
+    mode: "onChange",
   });
-  
+
   useEffect(() => {
     form.reset({ courses: defaultCourses });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultCourses]);
-  
+
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: "courses",
   });
-  
-  const watchedCourses = form.watch('courses');
-  
+
+  const watchedCourses = form.watch("courses");
+
   useEffect(() => {
-    if(watchedCourses.length > 0) {
-        setDefaultCourses(watchedCourses);
+    if (watchedCourses.length > 0) {
+      setDefaultCourses(watchedCourses);
     }
   }, [watchedCourses, setDefaultCourses]);
-
 
   const onSubmit = (data: FormValues) => {
     let totalPoints = 0;
@@ -107,7 +129,10 @@ export default function GpaCalculator() {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-4"
+              >
                 <div className="space-y-2">
                   <div className="hidden md:grid md:grid-cols-[1fr_140px_110px_auto] gap-2 items-center mb-2">
                     <Label>Course Name (Optional)</Label>
@@ -125,48 +150,61 @@ export default function GpaCalculator() {
                         name={`courses.${index}.name`}
                         render={({ field }) => (
                           <FormItem className="md:space-y-0">
-                             <Label className="md:hidden mb-1">Course Name (Optional)</Label>
-                              <FormControl>
-                                  <Input {...field} placeholder="e.g. Intro to Physics" />
-                              </FormControl>
+                            <Label className="md:hidden mb-1">
+                              Course Name (Optional)
+                            </Label>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                placeholder="e.g. Intro to Physics"
+                              />
+                            </FormControl>
                           </FormItem>
                         )}
                       />
-                       <FormField
+                      <FormField
                         control={form.control}
                         name={`courses.${index}.grade`}
                         render={({ field }) => (
-                            <FormItem className="md:space-y-0">
-                                <Label className="md:hidden mb-1">Grade</Label>
-                                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                    <FormControl>
-                                        <SelectTrigger aria-label="Course grade">
-                                            <SelectValue placeholder="Grade" />
-                                        </SelectTrigger>
-                                    </FormControl>
-                                    <SelectContent>
-                                    {Object.keys(gradePoints).map((grade) => (
-                                        <SelectItem key={grade} value={grade}>
-                                        {grade}
-                                        </SelectItem>
-                                    ))}
-                                    </SelectContent>
-                                </Select>
-                                <FormMessage/>
-                            </FormItem>
+                          <FormItem className="md:space-y-0">
+                            <Label className="md:hidden mb-1">Grade</Label>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger aria-label="Course grade">
+                                  <SelectValue placeholder="Grade" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {Object.keys(gradePoints).map((grade) => (
+                                  <SelectItem key={grade} value={grade}>
+                                    {grade}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
                         )}
                       />
-                       <FormField
+                      <FormField
                         control={form.control}
                         name={`courses.${index}.credits`}
                         render={({ field }) => (
-                            <FormItem className="md:space-y-0">
-                                <Label className="md:hidden mb-1">Credits</Label>
-                                <FormControl>
-                                    <Input {...field} type="number" placeholder="Credits" step="0.1"/>
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
+                          <FormItem className="md:space-y-0">
+                            <Label className="md:hidden mb-1">Credits</Label>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                type="number"
+                                placeholder="Credits"
+                                step="0.1"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
                         )}
                       />
                       <Button
@@ -184,7 +222,11 @@ export default function GpaCalculator() {
                 </div>
 
                 <div className="flex justify-between mt-4">
-                  <Button type="button" variant="outline" onClick={() => append({ name: "", grade: "A", credits: 3 })}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => append({ name: "", grade: "A", credits: 3 })}
+                  >
                     <Plus className="mr-2" /> Add Course
                   </Button>
                   <Button type="submit">Calculate GPA</Button>

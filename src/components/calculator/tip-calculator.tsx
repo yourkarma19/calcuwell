@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -10,15 +15,18 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function TipCalculator() {
   const [bill, setBill] = usePersistentState("tip-bill", 50);
-  const [tipPercentage, setTipPercentage] = usePersistentState("tip-percentage", 18);
+  const [tipPercentage, setTipPercentage] = usePersistentState(
+    "tip-percentage",
+    18,
+  );
   const [people, setPeople] = usePersistentState("tip-people", 1);
 
   const { tipAmount, totalAmount, perPersonAmount } = useMemo(() => {
     const billAmount = Number(bill);
     const numPeople = Number(people);
 
-    if(billAmount <= 0 || numPeople <= 0) {
-        return { tipAmount: 0, totalAmount: 0, perPersonAmount: 0 };
+    if (billAmount <= 0 || numPeople <= 0) {
+      return { tipAmount: 0, totalAmount: 0, perPersonAmount: 0 };
     }
 
     const tip = billAmount * (tipPercentage / 100);
@@ -26,13 +34,12 @@ export default function TipCalculator() {
     const perPerson = total / numPeople;
 
     return {
-        tipAmount: tip,
-        totalAmount: total,
-        perPersonAmount: perPerson,
+      tipAmount: tip,
+      totalAmount: total,
+      perPersonAmount: perPerson,
     };
-
   }, [bill, tipPercentage, people]);
-  
+
   const formatCurrency = (value: number) => `₹${value.toFixed(2)}`;
 
   return (
@@ -40,48 +47,81 @@ export default function TipCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Bill and Tip Details</CardTitle>
-          <CardDescription>Calculate the tip and split the bill between any number of people.</CardDescription>
+          <CardDescription>
+            Calculate the tip and split the bill between any number of people.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
-              <Label htmlFor="bill">Bill Amount</Label>
-              <Input id="bill" type="number" value={bill} onChange={e => setBill(Number(e.target.value))} />
-          </div>
-            <div className="space-y-2">
-              <Label htmlFor="tip-percentage">Tip Percentage</Label>
-              <div className="flex items-center gap-4">
-                <Slider id="tip-percentage" value={[tipPercentage]} onValueChange={v => setTipPercentage(v[0])} min={0} max={50} step={1} />
-                <Input type="number" value={tipPercentage} onChange={e => setTipPercentage(Number(e.target.value))} className="w-24" />
-              </div>
+            <Label htmlFor="bill">Bill Amount</Label>
+            <Input
+              id="bill"
+              type="number"
+              value={bill}
+              onChange={(e) => setBill(Number(e.target.value))}
+            />
           </div>
           <div className="space-y-2">
-              <Label htmlFor="people">Number of People</Label>
-              <div className="flex items-center gap-4">
-                <Slider id="people" value={[people]} onValueChange={v => setPeople(v[0])} min={1} max={20} step={1} />
-                <Input type="number" value={people} onChange={e => setPeople(Number(e.target.value))} className="w-24" />
-              </div>
+            <Label htmlFor="tip-percentage">Tip Percentage</Label>
+            <div className="flex items-center gap-4">
+              <Slider
+                id="tip-percentage"
+                value={[tipPercentage]}
+                onValueChange={(v) => setTipPercentage(v[0])}
+                min={0}
+                max={50}
+                step={1}
+              />
+              <Input
+                type="number"
+                value={tipPercentage}
+                onChange={(e) => setTipPercentage(Number(e.target.value))}
+                className="w-24"
+              />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="people">Number of People</Label>
+            <div className="flex items-center gap-4">
+              <Slider
+                id="people"
+                value={[people]}
+                onValueChange={(v) => setPeople(v[0])}
+                min={1}
+                max={20}
+                step={1}
+              />
+              <Input
+                type="number"
+                value={people}
+                onChange={(e) => setPeople(Number(e.target.value))}
+                className="w-24"
+              />
+            </div>
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
-        <CardHeader><CardTitle>Your Split</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>Your Split</CardTitle>
+        </CardHeader>
         <CardContent className="text-center space-y-4" aria-live="polite">
-            <div>
-              <p className="text-sm text-muted-foreground">Amount per Person</p>
-              <p className="text-4xl font-bold font-headline text-primary">
-                  {formatCurrency(perPersonAmount)}
-              </p>
+          <div>
+            <p className="text-sm text-muted-foreground">Amount per Person</p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              {formatCurrency(perPersonAmount)}
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <p className="text-muted-foreground">Tip Amount</p>
-                <p className="font-semibold">{formatCurrency(tipAmount)}</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">Total Bill</p>
-                <p className="font-semibold">{formatCurrency(totalAmount)}</p>
-              </div>
+            <div>
+              <p className="text-muted-foreground">Tip Amount</p>
+              <p className="font-semibold">{formatCurrency(tipAmount)}</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground">Total Bill</p>
+              <p className="font-semibold">{formatCurrency(totalAmount)}</p>
+            </div>
           </div>
         </CardContent>
       </Card>

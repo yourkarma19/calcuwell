@@ -1,4 +1,3 @@
-
 import type { Calculator } from "@/lib/types";
 
 // This file is separate to avoid bloating the initial bundle of pages
@@ -9,7 +8,8 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "time-card-calculator",
     name: "Time Card Calculator",
-    description: "Calculate total work hours and pay for a week, including breaks.",
+    description:
+      "Calculate total work hours and pay for a week, including breaks.",
     category: "Finance",
     iconName: "Clock",
     metaDescription:
@@ -103,7 +103,8 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "decimal-to-inches-calculator",
     name: "Decimal to Inches Fraction Calculator",
-    description: "Convert any decimal number into inches and a usable fraction.",
+    description:
+      "Convert any decimal number into inches and a usable fraction.",
     category: "Conversions",
     iconName: "Ruler",
     metaDescription:
@@ -172,7 +173,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
   },
-   {
+  {
     slug: "pet-care-cost-calculator",
     name: "Pet Care Cost Calculator",
     description: "Estimate the monthly and yearly costs of owning a pet.",

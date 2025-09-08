@@ -1,33 +1,34 @@
+"use server";
 
-'use server';
+import type Fuse from "fuse.js";
+import { loadFullCalculatorData } from "@/lib/server/calculator-data";
+import type { Calculator } from "@/lib/types";
 
-import type Fuse from 'fuse.js';
-import { loadFullCalculatorData } from '@/lib/server/calculator-data';
-import type { Calculator } from '@/lib/types';
-
-type SearchResult = Omit<Calculator, 'component'>;
+type SearchResult = Omit<Calculator, "component">;
 
 let fuse: Fuse<SearchResult> | null = null;
 let calculators: SearchResult[] = [];
 
 async function initializeSearch() {
   if (fuse) return;
-  
+
   // Dynamically import Fuse.js to reduce initial bundle size
-  const FuseJs = (await import('fuse.js')).default;
-  
+  const FuseJs = (await import("fuse.js")).default;
+
   calculators = await loadFullCalculatorData();
   fuse = new FuseJs(calculators, {
-    keys: ['name', 'category', 'tags'],
+    keys: ["name", "category", "tags"],
     threshold: 0.3,
   });
 }
 
-export async function searchCalculators(query: string): Promise<SearchResult[]> {
+export async function searchCalculators(
+  query: string,
+): Promise<SearchResult[]> {
   await initializeSearch();
-  
+
   if (!fuse) {
-      return [];
+    return [];
   }
 
   if (!query) {
@@ -37,5 +38,5 @@ export async function searchCalculators(query: string): Promise<SearchResult[]> 
   }
 
   const results = fuse.search(query);
-  return results.map(result => result.item);
+  return results.map((result) => result.item);
 }

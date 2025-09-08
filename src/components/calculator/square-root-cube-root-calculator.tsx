@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -12,16 +17,15 @@ export default function SquareRootCubeRootCalculator() {
   const { squareRoot, cubeRoot } = useMemo(() => {
     const num = Number(number);
     if (isNaN(num)) return { squareRoot: "Invalid", cubeRoot: "Invalid" };
-    
+
     // For negative numbers, square root is imaginary, but cube root is real.
     const sqRoot = num >= 0 ? Math.sqrt(num) : `√${-num} i`;
     const cbRoot = Math.cbrt(num);
 
-    return { 
-        squareRoot: typeof sqRoot === 'number' ? sqRoot.toFixed(6) : sqRoot, 
-        cubeRoot: cbRoot.toFixed(6) 
+    return {
+      squareRoot: typeof sqRoot === "number" ? sqRoot.toFixed(6) : sqRoot,
+      cubeRoot: cbRoot.toFixed(6),
     };
-
   }, [number]);
 
   return (
@@ -29,7 +33,9 @@ export default function SquareRootCubeRootCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Square & Cube Root Calculator</CardTitle>
-          <CardDescription>Enter a number to find its square and cube roots.</CardDescription>
+          <CardDescription>
+            Enter a number to find its square and cube roots.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -50,14 +56,18 @@ export default function SquareRootCubeRootCalculator() {
           <CardTitle>Results</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
-            <div className="bg-muted p-4 rounded-lg">
-                <p className="text-sm text-muted-foreground">Square Root (√)</p>
-                <p className="text-3xl font-bold font-headline text-primary break-all">{squareRoot}</p>
-            </div>
-            <div className="bg-muted p-4 rounded-lg">
-                <p className="text-sm text-muted-foreground">Cube Root (∛)</p>
-                <p className="text-3xl font-bold font-headline text-primary">{cubeRoot}</p>
-            </div>
+          <div className="bg-muted p-4 rounded-lg">
+            <p className="text-sm text-muted-foreground">Square Root (√)</p>
+            <p className="text-3xl font-bold font-headline text-primary break-all">
+              {squareRoot}
+            </p>
+          </div>
+          <div className="bg-muted p-4 rounded-lg">
+            <p className="text-sm text-muted-foreground">Cube Root (∛)</p>
+            <p className="text-3xl font-bold font-headline text-primary">
+              {cubeRoot}
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>

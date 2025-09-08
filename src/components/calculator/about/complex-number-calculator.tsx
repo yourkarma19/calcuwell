@@ -1,38 +1,68 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutComplexNumberCalculator() {
-    return (
-        <Card>
-            <CardHeader><CardTitle as="h2">About Complex Numbers</CardTitle></CardHeader>
-            <CardContent className="prose dark:prose-invert max-w-none">
-                <p>This calculator is a tool for working with complex numbers. Complex numbers are a key part of math and engineering. They help solve problems that regular numbers cannot. This tool lets you easily add, subtract, multiply, and divide them.</p>
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle as="h2">About Complex Numbers</CardTitle>
+      </CardHeader>
+      <CardContent className="prose dark:prose-invert max-w-none">
+        <p>
+          This calculator is a tool for working with complex numbers. Complex
+          numbers are a key part of math and engineering. They help solve
+          problems that regular numbers cannot. This tool lets you easily add,
+          subtract, multiply, and divide them.
+        </p>
 
-                <h2>How to Use It</h2>
-                <p>A complex number has two parts: a real part and an imaginary part. Enter the two parts for both numbers you want to use. Then, select the operation you want to perform.</p>
+        <h2>How to Use It</h2>
+        <p>
+          A complex number has two parts: a real part and an imaginary part.
+          Enter the two parts for both numbers you want to use. Then, select the
+          operation you want to perform.
+        </p>
 
-                <h2>Frequently Asked Questions</h2>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger>What is a complex number?</AccordionTrigger>
-                        <AccordionContent>
-                            A complex number has the form `a + bi`. The &apos;a&apos; is the &quot;real&quot; part, which is a regular number. The &apos;b&apos; is the &quot;imaginary&quot; part. Complex numbers are used in many areas of science and engineering, like electronics and signal processing.
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger>What is the imaginary unit &apos;i&apos;?</AccordionTrigger>
-                        <AccordionContent>
-                           The imaginary unit &apos;i&apos; is the solution to the equation x² = -1. It is defined as the square root of negative one (√-1). Since you can&apos;t find a real number that gives a negative result when multiplied by itself, &apos;i&apos; was created to solve these kinds of problems.
-                        </AccordionContent>
-                    </AccordionItem>
-                     <AccordionItem value="item-3">
-                        <AccordionTrigger>How do you add or subtract them?</AccordionTrigger>
-                        <AccordionContent>
-                           It&apos;s simple: you just add or subtract the real parts together and the imaginary parts together, separately. For example, (3 + 2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-            </CardContent>
-        </Card>
-    );
+        <h2>Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>What is a complex number?</AccordionTrigger>
+            <AccordionContent>
+              A complex number has the form `a + bi`. The &apos;a&apos; is the
+              &quot;real&quot; part, which is a regular number. The
+              &apos;b&apos; is the &quot;imaginary&quot; part. Complex numbers
+              are used in many areas of science and engineering, like
+              electronics and signal processing.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>
+              What is the imaginary unit &apos;i&apos;?
+            </AccordionTrigger>
+            <AccordionContent>
+              The imaginary unit &apos;i&apos; is the solution to the equation
+              x² = -1. It is defined as the square root of negative one (√-1).
+              Since you can&apos;t find a real number that gives a negative
+              result when multiplied by itself, &apos;i&apos; was created to
+              solve these kinds of problems.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              How do you add or subtract them?
+            </AccordionTrigger>
+            <AccordionContent>
+              It&apos;s simple: you just add or subtract the real parts together
+              and the imaginary parts together, separately. For example, (3 +
+              2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </CardContent>
+    </Card>
+  );
 }

@@ -1,5 +1,3 @@
-
-
 /**
  * Calculates the Equated Monthly Installment (EMI) for a loan.
  *
@@ -8,42 +6,45 @@
  * @param tenureInYears The loan tenure in years.
  * @returns An object containing the EMI, total interest payable, and total amount payable.
  */
-export function calculateEMI(principal: number, annualRate: number, tenureInYears: number) {
-    if (principal <= 0 || tenureInYears <= 0) {
-        return { emi: 0, totalInterest: 0, totalPayable: 0 };
-    }
-    
-    if (annualRate < 0) {
-         throw new Error("Interest rate cannot be negative.");
-    }
+export function calculateEMI(
+  principal: number,
+  annualRate: number,
+  tenureInYears: number,
+) {
+  if (principal <= 0 || tenureInYears <= 0) {
+    return { emi: 0, totalInterest: 0, totalPayable: 0 };
+  }
 
-    // Handle zero interest rate as a special case
-    if (annualRate === 0) {
-        const emi = principal / (tenureInYears * 12);
-        return { emi, totalInterest: 0, totalPayable: principal };
-    }
+  if (annualRate < 0) {
+    throw new Error("Interest rate cannot be negative.");
+  }
 
-    const monthlyRate = annualRate / 12 / 100;
-    const numberOfMonths = tenureInYears * 12;
+  // Handle zero interest rate as a special case
+  if (annualRate === 0) {
+    const emi = principal / (tenureInYears * 12);
+    return { emi, totalInterest: 0, totalPayable: principal };
+  }
 
-    const emi =
-        (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) /
-        (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
+  const monthlyRate = annualRate / 12 / 100;
+  const numberOfMonths = tenureInYears * 12;
 
-    if (!isFinite(emi)) {
-        return { emi: 0, totalInterest: 0, totalPayable: principal };
-    }
-    
-    const totalPayable = emi * numberOfMonths;
-    const totalInterest = totalPayable - principal;
+  const emi =
+    (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) /
+    (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
 
-    return {
-        emi,
-        totalInterest,
-        totalPayable,
-    };
+  if (!isFinite(emi)) {
+    return { emi: 0, totalInterest: 0, totalPayable: principal };
+  }
+
+  const totalPayable = emi * numberOfMonths;
+  const totalInterest = totalPayable - principal;
+
+  return {
+    emi,
+    totalInterest,
+    totalPayable,
+  };
 }
-
 
 /**
  * Calculates the impact of extra payments on a loan.
@@ -60,7 +61,7 @@ export function calculateEMIWithExtraPayments(
   annualRate: number,
   tenureInYears: number,
   extraMonthlyPayment: number,
-  extraYearlyPayment: number
+  extraYearlyPayment: number,
 ) {
   const monthlyRate = annualRate / 12 / 100;
   const originalMonths = tenureInYears * 12;
@@ -68,9 +69,15 @@ export function calculateEMIWithExtraPayments(
   const { emi, totalInterest: originalTotalInterest } = calculateEMI(
     principal,
     annualRate,
-    tenureInYears
+    tenureInYears,
   );
-  if (emi === 0) return { newTotalInterest: 0, newTotalMonths: 0, interestSaved: 0, timeSaved: { years: 0, months: 0 } };
+  if (emi === 0)
+    return {
+      newTotalInterest: 0,
+      newTotalMonths: 0,
+      interestSaved: 0,
+      timeSaved: { years: 0, months: 0 },
+    };
 
   let remainingPrincipal = principal;
   let newMonths = 0;
@@ -80,10 +87,10 @@ export function calculateEMIWithExtraPayments(
     newMonths++;
     const interestForMonth = remainingPrincipal * monthlyRate;
     const principalForMonth = emi - interestForMonth;
-    
+
     remainingPrincipal -= principalForMonth;
     totalInterestPaid += interestForMonth;
-    
+
     // Apply extra monthly payment
     if (extraMonthlyPayment > 0) {
       if (remainingPrincipal > extraMonthlyPayment) {
@@ -92,18 +99,19 @@ export function calculateEMIWithExtraPayments(
         remainingPrincipal = 0;
       }
     }
-    
+
     // Apply extra yearly payment
     if (newMonths % 12 === 0 && extraYearlyPayment > 0) {
-       if (remainingPrincipal > extraYearlyPayment) {
+      if (remainingPrincipal > extraYearlyPayment) {
         remainingPrincipal -= extraYearlyPayment;
       } else {
         remainingPrincipal = 0;
       }
     }
 
-    if (newMonths > originalMonths * 2) { // Safety break
-        break;
+    if (newMonths > originalMonths * 2) {
+      // Safety break
+      break;
     }
   }
 

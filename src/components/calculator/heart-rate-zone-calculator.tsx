@@ -1,20 +1,32 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
 
 const zones = [
-  { name: 'Zone 1: Very Light', percentage: '50-60%', color: 'bg-blue-200' },
-  { name: 'Zone 2: Light', percentage: '60-70%', color: 'bg-green-200' },
-  { name: 'Zone 3: Moderate', percentage: '70-80%', color: 'bg-yellow-200' },
-  { name: 'Zone 4: Hard', percentage: '80-90%', color: 'bg-orange-200' },
-  { name: 'Zone 5: Maximum', percentage: '90-100%', color: 'bg-red-200' },
+  { name: "Zone 1: Very Light", percentage: "50-60%", color: "bg-blue-200" },
+  { name: "Zone 2: Light", percentage: "60-70%", color: "bg-green-200" },
+  { name: "Zone 3: Moderate", percentage: "70-80%", color: "bg-yellow-200" },
+  { name: "Zone 4: Hard", percentage: "80-90%", color: "bg-orange-200" },
+  { name: "Zone 5: Maximum", percentage: "90-100%", color: "bg-red-200" },
 ];
 
 export default function HeartRateZoneCalculator() {
@@ -38,51 +50,71 @@ export default function HeartRateZoneCalculator() {
 
   return (
     <div className="lg:col-span-3 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Enter Your Details</CardTitle>
-            <CardDescription>Calculate your target heart rate zones for effective workouts using the Karvonen formula.</CardDescription>
-          </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="age">Age</Label>
-                <Input id="age" type="number" value={age} onChange={e => setAge(Number(e.target.value))} />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="resting-hr">Resting Heart Rate (BPM)</Label>
-                <Input id="resting-hr" type="number" value={restingHr} onChange={e => setRestingHr(Number(e.target.value))} />
-              </div>
-          </CardContent>
-        </Card>
-      
-        <Card>
-          <CardHeader>
-            <CardTitle>Your Heart Rate Zones (Karvonen Formula)</CardTitle>
-            <CardContent className="pt-4">
-              <p className="text-center mb-4">Maximum Heart Rate: <span className="font-bold text-primary">{maxHr} BPM</span></p>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Zone</TableHead>
-                    <TableHead>Intensity</TableHead>
-                    <TableHead className="text-right">Heart Rate Range (BPM)</TableHead>
+      <Card>
+        <CardHeader>
+          <CardTitle>Enter Your Details</CardTitle>
+          <CardDescription>
+            Calculate your target heart rate zones for effective workouts using
+            the Karvonen formula.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="age">Age</Label>
+            <Input
+              id="age"
+              type="number"
+              value={age}
+              onChange={(e) => setAge(Number(e.target.value))}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="resting-hr">Resting Heart Rate (BPM)</Label>
+            <Input
+              id="resting-hr"
+              type="number"
+              value={restingHr}
+              onChange={(e) => setRestingHr(Number(e.target.value))}
+            />
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Your Heart Rate Zones (Karvonen Formula)</CardTitle>
+          <CardContent className="pt-4">
+            <p className="text-center mb-4">
+              Maximum Heart Rate:{" "}
+              <span className="font-bold text-primary">{maxHr} BPM</span>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Zone</TableHead>
+                  <TableHead>Intensity</TableHead>
+                  <TableHead className="text-right">
+                    Heart Rate Range (BPM)
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {zones.map((zone, index) => (
+                  <TableRow key={zone.name}>
+                    <TableCell className="font-medium">
+                      <span className={cn("p-1 rounded-sm", zone.color)}>
+                        {zone.name}
+                      </span>
+                    </TableCell>
+                    <TableCell>{zone.percentage}</TableCell>
+                    <TableCell className="text-right font-mono">{`${heartRateZones[index].min.toFixed(0)} - ${heartRateZones[index].max.toFixed(0)}`}</TableCell>
                   </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {zones.map((zone, index) => (
-                    <TableRow key={zone.name}>
-                      <TableCell className="font-medium">
-                        <span className={cn("p-1 rounded-sm", zone.color)}>{zone.name}</span>
-                      </TableCell>
-                      <TableCell>{zone.percentage}</TableCell>
-                      <TableCell className="text-right font-mono">{`${heartRateZones[index].min.toFixed(0)} - ${heartRateZones[index].max.toFixed(0)}`}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </CardHeader>
-        </Card>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </CardHeader>
+      </Card>
     </div>
   );
 }

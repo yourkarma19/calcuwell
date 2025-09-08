@@ -1,25 +1,42 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 // Using the Boer formula
-const calculateLBM = (weightKg: number, heightCm: number, gender: "male" | "female") => {
+const calculateLBM = (
+  weightKg: number,
+  heightCm: number,
+  gender: "male" | "female",
+) => {
   if (gender === "male") {
-    return (0.407 * weightKg) + (0.267 * heightCm) - 19.2;
+    return 0.407 * weightKg + 0.267 * heightCm - 19.2;
   } else {
-    return (0.252 * weightKg) + (0.473 * heightCm) - 48.3;
+    return 0.252 * weightKg + 0.473 * heightCm - 48.3;
   }
 };
 
 export default function LeanBodyMassCalculator() {
-  const [gender, setGender] = usePersistentState<"male" | "female">("lbm-gender", "male");
+  const [gender, setGender] = usePersistentState<"male" | "female">(
+    "lbm-gender",
+    "male",
+  );
   const [height, setHeight] = usePersistentState("lbm-height", 175);
   const [weight, setWeight] = usePersistentState("lbm-weight", 70);
 
@@ -42,7 +59,10 @@ export default function LeanBodyMassCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Lean Body Mass Calculator</CardTitle>
-            <CardDescription>Estimate your Lean Body Mass (LBM) using the Boer formula, which is based on your weight and height.</CardDescription>
+            <CardDescription>
+              Estimate your Lean Body Mass (LBM) using the Boer formula, which
+              is based on your weight and height.
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -85,19 +105,28 @@ export default function LeanBodyMassCalculator() {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader><CardTitle>About Lean Body Mass</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>About Lean Body Mass</CardTitle>
+          </CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>What is Lean Body Mass (LBM)?</AccordionTrigger>
+                <AccordionTrigger>
+                  What is Lean Body Mass (LBM)?
+                </AccordionTrigger>
                 <AccordionContent>
-                  Lean Body Mass is the total weight of your body minus all the weight due to fat mass. LBM includes the weight of your bones, muscles, organs, and water.
+                  Lean Body Mass is the total weight of your body minus all the
+                  weight due to fat mass. LBM includes the weight of your bones,
+                  muscles, organs, and water.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger>Why is LBM important?</AccordionTrigger>
                 <AccordionContent>
-                  Tracking LBM is often more useful than tracking body weight alone, as it can help you understand if you are losing fat, gaining muscle, or both. It&apos;s a key metric for athletes and those on a fitness journey.
+                  Tracking LBM is often more useful than tracking body weight
+                  alone, as it can help you understand if you are losing fat,
+                  gaining muscle, or both. It&apos;s a key metric for athletes
+                  and those on a fitness journey.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -112,7 +141,9 @@ export default function LeanBodyMassCalculator() {
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <div>
-              <p className="text-sm text-muted-foreground">Lean Body Mass (LBM)</p>
+              <p className="text-sm text-muted-foreground">
+                Lean Body Mass (LBM)
+              </p>
               <p className="text-4xl font-bold font-headline text-primary">
                 {lbm.toFixed(1)} kg
               </p>

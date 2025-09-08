@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -18,7 +23,8 @@ const calculateStats = (numbers: number[]) => {
   // Median
   const sorted = [...numbers].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
-  const median = sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+  const median =
+    sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 
   // Mode
   const frequency: { [key: number]: number } = {};
@@ -29,7 +35,7 @@ const calculateStats = (numbers: number[]) => {
       maxFreq = frequency[num];
     }
   }
-  
+
   const mode: number[] = [];
   if (maxFreq > 1) {
     for (const num in frequency) {
@@ -48,9 +54,9 @@ export default function MeanMedianModeCalculator() {
   const stats = useMemo(() => {
     const numbers = input
       .split(/[\s,]+/)
-      .filter(n => n !== "")
+      .filter((n) => n !== "")
       .map(Number)
-      .filter(n => !isNaN(n));
+      .filter((n) => !isNaN(n));
     return calculateStats(numbers);
   }, [input]);
 
@@ -59,7 +65,9 @@ export default function MeanMedianModeCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>Mean, Median & Mode Calculator</CardTitle>
-          <CardDescription>Enter numbers separated by commas or spaces.</CardDescription>
+          <CardDescription>
+            Enter numbers separated by commas or spaces.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
@@ -76,29 +84,39 @@ export default function MeanMedianModeCalculator() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader><CardTitle>Statistical Results</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>Statistical Results</CardTitle>
+        </CardHeader>
         <CardContent className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Mean</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.mean.toFixed(4)}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.mean.toFixed(4)}
+            </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Median</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.median.toFixed(4)}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.median.toFixed(4)}
+            </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Mode</p>
             <p className="text-2xl font-bold font-headline text-primary truncate">
-              {stats.mode.length > 0 ? stats.mode.join(', ') : 'N/A'}
+              {stats.mode.length > 0 ? stats.mode.join(", ") : "N/A"}
             </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Sum</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.sum.toLocaleString()}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.sum.toLocaleString()}
+            </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Count</p>
-            <p className="text-2xl font-bold font-headline text-primary">{stats.count}</p>
+            <p className="text-2xl font-bold font-headline text-primary">
+              {stats.count}
+            </p>
           </div>
         </CardContent>
       </Card>

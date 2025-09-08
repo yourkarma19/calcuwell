@@ -3,7 +3,13 @@
 import { useSearchParams } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -18,32 +24,42 @@ import { cn } from "@/lib/utils";
 
 type UnitSystem = "metric" | "imperial";
 
-export default function BMICalculator({ calculatorName }: { calculatorName: string }) {
+export default function BMICalculator({
+  calculatorName,
+}: {
+  calculatorName: string;
+}) {
   const searchParams = useSearchParams();
-  const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>("bmi-unit-system", "metric");
-  
+  const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>(
+    "bmi-unit-system",
+    "metric",
+  );
+
   const [height, setHeight] = usePersistentState("bmi-height", 175);
   const [weight, setWeight] = usePersistentState("bmi-weight", 70);
-  const [heightInches, setHeightInches] = usePersistentState("bmi-height-inches", 0);
-  
+  const [heightInches, setHeightInches] = usePersistentState(
+    "bmi-height-inches",
+    0,
+  );
+
   const [bmi, setBmi] = useState<number | null>(null);
 
   useEffect(() => {
-    const w = searchParams.get('weight');
-    const h = searchParams.get('height');
-    const u = searchParams.get('units');
+    const w = searchParams.get("weight");
+    const h = searchParams.get("height");
+    const u = searchParams.get("units");
 
-    if (u === 'metric' || u === 'imperial') setUnitSystem(u);
+    if (u === "metric" || u === "imperial") setUnitSystem(u);
     if (w) setWeight(parseFloat(w));
     if (h) setHeight(parseFloat(h));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const heightInMeters = useMemo(() => {
     if (unitSystem === "metric") {
       return height / 100;
     }
-    const totalInches = (Number(height) * 12) + Number(heightInches);
+    const totalInches = Number(height) * 12 + Number(heightInches);
     return totalInches * 0.0254;
   }, [unitSystem, height, heightInches]);
 
@@ -53,7 +69,7 @@ export default function BMICalculator({ calculatorName }: { calculatorName: stri
     }
     return weight * 0.453592;
   }, [unitSystem, weight]);
-  
+
   useEffect(() => {
     if (heightInMeters > 0 && weightInKg > 0) {
       const calculatedBmi = weightInKg / (heightInMeters * heightInMeters);
@@ -64,105 +80,114 @@ export default function BMICalculator({ calculatorName }: { calculatorName: stri
   }, [heightInMeters, weightInKg]);
 
   const getBmiCategory = (bmiValue: number | null) => {
-    if (bmiValue === null) return { category: "-", color: "text-muted-foreground" };
-    if (bmiValue < 18.5) return { category: "Underweight", color: "text-blue-500" };
-    if (bmiValue < 25) return { category: "Normal weight", color: "text-green-500" };
-    if (bmiValue < 30) return { category: "Overweight", color: "text-yellow-500" };
+    if (bmiValue === null)
+      return { category: "-", color: "text-muted-foreground" };
+    if (bmiValue < 18.5)
+      return { category: "Underweight", color: "text-blue-500" };
+    if (bmiValue < 25)
+      return { category: "Normal weight", color: "text-green-500" };
+    if (bmiValue < 30)
+      return { category: "Overweight", color: "text-yellow-500" };
     return { category: "Obesity", color: "text-red-500" };
   };
 
   const { category, color } = getBmiCategory(bmi);
-  
+
   const shareParams = {
-      weight: weight.toString(),
-      height: height.toString(),
-      units: unitSystem
-  }
+    weight: weight.toString(),
+    height: height.toString(),
+    units: unitSystem,
+  };
 
   return (
     <div className="space-y-6">
-        <Card id="bmi-inputs">
-          <CardHeader>
-            <CardTitle>Enter Your Details</CardTitle>
-             <CardDescription>Calculate your Body Mass Index (BMI) using metric or imperial units.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label>Unit System</Label>
-              <Select value={unitSystem} onValueChange={(value) => setUnitSystem(value as UnitSystem)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select unit system" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="metric">Metric (kg, cm)</SelectItem>
-                  <SelectItem value="imperial">Imperial (lbs, ft, in)</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+      <Card id="bmi-inputs">
+        <CardHeader>
+          <CardTitle>Enter Your Details</CardTitle>
+          <CardDescription>
+            Calculate your Body Mass Index (BMI) using metric or imperial units.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label>Unit System</Label>
+            <Select
+              value={unitSystem}
+              onValueChange={(value) => setUnitSystem(value as UnitSystem)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select unit system" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="metric">Metric (kg, cm)</SelectItem>
+                <SelectItem value="imperial">Imperial (lbs, ft, in)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
 
+          <div className="space-y-2">
+            <Label>Weight ({unitSystem === "metric" ? "kg" : "lbs"})</Label>
+            <Input
+              type="number"
+              value={weight}
+              onChange={(e) => setWeight(Number(e.target.value))}
+              placeholder={unitSystem === "metric" ? "e.g., 70" : "e.g., 154"}
+            />
+          </div>
+
+          {unitSystem === "metric" ? (
             <div className="space-y-2">
-              <Label>Weight ({unitSystem === "metric" ? "kg" : "lbs"})</Label>
+              <Label>Height (cm)</Label>
               <Input
                 type="number"
-                value={weight}
-                onChange={(e) => setWeight(Number(e.target.value))}
-                placeholder={unitSystem === "metric" ? "e.g., 70" : "e.g., 154"}
+                value={height}
+                onChange={(e) => setHeight(Number(e.target.value))}
+                placeholder="e.g., 175"
               />
             </div>
-
-            {unitSystem === "metric" ? (
+          ) : (
+            <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label>Height (cm)</Label>
+                <Label>Height (ft)</Label>
                 <Input
                   type="number"
                   value={height}
                   onChange={(e) => setHeight(Number(e.target.value))}
-                  placeholder="e.g., 175"
+                  placeholder="e.g., 5"
                 />
               </div>
-            ) : (
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label>Height (ft)</Label>
-                  <Input
-                    type="number"
-                    value={height}
-                    onChange={(e) => setHeight(Number(e.target.value))}
-                    placeholder="e.g., 5"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label>(in)</Label>
-                  <Input
-                    type="number"
-                    value={heightInches}
-                    onChange={(e) => setHeightInches(Number(e.target.value))}
-                    placeholder="e.g., 9"
-                  />
-                </div>
+              <div className="space-y-2">
+                <Label>(in)</Label>
+                <Input
+                  type="number"
+                  value={heightInches}
+                  onChange={(e) => setHeightInches(Number(e.target.value))}
+                  placeholder="e.g., 9"
+                />
               </div>
-            )}
-          </CardContent>
-        </Card>
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
-        <Card id="bmi-results">
-          <CardHeader>
-            <CardTitle>Your Result</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="text-sm text-muted-foreground">Your BMI is</p>
-            <p className="text-6xl font-bold font-headline text-primary my-2">
-              {bmi !== null ? bmi.toFixed(1) : "-"}
-            </p>
-            <p className={cn("text-xl font-semibold", color)}>{category}</p>
-          </CardContent>
-        </Card>
-        
-        <ExportShareControls
-            elementIds={['bmi-inputs', 'bmi-results']}
-            shareParams={shareParams}
-            calculatorName={calculatorName}
-        />
+      <Card id="bmi-results">
+        <CardHeader>
+          <CardTitle>Your Result</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className="text-sm text-muted-foreground">Your BMI is</p>
+          <p className="text-6xl font-bold font-headline text-primary my-2">
+            {bmi !== null ? bmi.toFixed(1) : "-"}
+          </p>
+          <p className={cn("text-xl font-semibold", color)}>{category}</p>
+        </CardContent>
+      </Card>
+
+      <ExportShareControls
+        elementIds={["bmi-inputs", "bmi-results"]}
+        shareParams={shareParams}
+        calculatorName={calculatorName}
+      />
     </div>
   );
 }

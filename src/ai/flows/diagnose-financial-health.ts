@@ -1,5 +1,4 @@
-
-'use server';
+"use server";
 /**
  * @fileOverview An AI agent for diagnosing financial health.
  *
@@ -8,34 +7,60 @@
  * - DiagnoseFinancialHealthOutput - The return type for the function.
  */
 
-import { ai } from '@/ai/genkit';
-import { z } from 'zod';
+import { ai } from "@/ai/genkit";
+import { z } from "zod";
 
 const DiagnoseFinancialHealthInputSchema = z.object({
-    monthlyIncome: z.number().describe("User's total monthly income after taxes."),
-    monthlySavings: z.number().describe("Amount the user saves or invests per month."),
-    monthlyDebt: z.number().describe("Total monthly payments for all debts (loans, credit cards)."),
-    financialGoal: z.string().describe("The user's primary financial goal."),
-    hasCreditCardDebt: z.boolean().describe("Whether the user has revolving credit card debt."),
+  monthlyIncome: z
+    .number()
+    .describe("User's total monthly income after taxes."),
+  monthlySavings: z
+    .number()
+    .describe("Amount the user saves or invests per month."),
+  monthlyDebt: z
+    .number()
+    .describe("Total monthly payments for all debts (loans, credit cards)."),
+  financialGoal: z.string().describe("The user's primary financial goal."),
+  hasCreditCardDebt: z
+    .boolean()
+    .describe("Whether the user has revolving credit card debt."),
 });
-export type DiagnoseFinancialHealthInput = z.infer<typeof DiagnoseFinancialHealthInputSchema>;
+export type DiagnoseFinancialHealthInput = z.infer<
+  typeof DiagnoseFinancialHealthInputSchema
+>;
 
 const DiagnoseFinancialHealthOutputSchema = z.object({
-    score: z.number().min(0).max(100).describe("A financial health score from 0 to 100."),
-    summary: z.string().describe("A brief, two-sentence summary of the user's financial situation."),
-    actionPlan: z.array(z.string()).describe("A list of 3-5 concrete, actionable steps for the user to improve their financial health, tailored to their goal."),
+  score: z
+    .number()
+    .min(0)
+    .max(100)
+    .describe("A financial health score from 0 to 100."),
+  summary: z
+    .string()
+    .describe(
+      "A brief, two-sentence summary of the user's financial situation.",
+    ),
+  actionPlan: z
+    .array(z.string())
+    .describe(
+      "A list of 3-5 concrete, actionable steps for the user to improve their financial health, tailored to their goal.",
+    ),
 });
-export type DiagnoseFinancialHealthOutput = z.infer<typeof DiagnoseFinancialHealthOutputSchema>;
+export type DiagnoseFinancialHealthOutput = z.infer<
+  typeof DiagnoseFinancialHealthOutputSchema
+>;
 
-export async function diagnoseFinancialHealth(input: DiagnoseFinancialHealthInput): Promise<DiagnoseFinancialHealthOutput> {
-    return diagnoseFinancialHealthFlow(input);
+export async function diagnoseFinancialHealth(
+  input: DiagnoseFinancialHealthInput,
+): Promise<DiagnoseFinancialHealthOutput> {
+  return diagnoseFinancialHealthFlow(input);
 }
 
 const prompt = ai.definePrompt({
-    name: 'diagnoseFinancialHealthPrompt',
-    input: { schema: DiagnoseFinancialHealthInputSchema },
-    output: { schema: DiagnoseFinancialHealthOutputSchema },
-    prompt: `You are a friendly and encouraging financial advisor. Analyze the user's financial data to provide a health score, a summary, and an action plan.
+  name: "diagnoseFinancialHealthPrompt",
+  input: { schema: DiagnoseFinancialHealthInputSchema },
+  output: { schema: DiagnoseFinancialHealthOutputSchema },
+  prompt: `You are a friendly and encouraging financial advisor. Analyze the user's financial data to provide a health score, a summary, and an action plan.
 
     User's Data:
     - Monthly Income: {{monthlyIncome}}
@@ -67,13 +92,13 @@ const prompt = ai.definePrompt({
 });
 
 const diagnoseFinancialHealthFlow = ai.defineFlow(
-    {
-        name: 'diagnoseFinancialHealthFlow',
-        inputSchema: DiagnoseFinancialHealthInputSchema,
-        outputSchema: DiagnoseFinancialHealthOutputSchema,
-    },
-    async (input: DiagnoseFinancialHealthInput) => {
-        const { output } = await prompt(input);
-        return output!;
-    }
+  {
+    name: "diagnoseFinancialHealthFlow",
+    inputSchema: DiagnoseFinancialHealthInputSchema,
+    outputSchema: DiagnoseFinancialHealthOutputSchema,
+  },
+  async (input: DiagnoseFinancialHealthInput) => {
+    const { output } = await prompt(input);
+    return output!;
+  },
 );

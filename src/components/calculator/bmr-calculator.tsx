@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo } from "react";
@@ -10,7 +9,10 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function BmrCalculator() {
   const [age, setAge] = usePersistentState("bmr-age", 25);
-  const [gender, setGender] = usePersistentState<"male" | "female">("bmr-gender", "male");
+  const [gender, setGender] = usePersistentState<"male" | "female">(
+    "bmr-gender",
+    "male",
+  );
   const [height, setHeight] = usePersistentState("bmr-height", 175);
   const [weight, setWeight] = usePersistentState("bmr-weight", 70);
 
@@ -84,13 +86,15 @@ export default function BmrCalculator() {
           </div>
         </CardContent>
       </Card>
-      
+
       <Card>
         <CardHeader>
           <CardTitle>Your BMR Result</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <p className="text-sm text-muted-foreground">Your Basal Metabolic Rate is</p>
+          <p className="text-sm text-muted-foreground">
+            Your Basal Metabolic Rate is
+          </p>
           <p className="text-6xl font-bold font-headline text-primary my-2">
             {bmr.toFixed(0)}
           </p>

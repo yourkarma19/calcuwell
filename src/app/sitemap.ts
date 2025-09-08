@@ -1,4 +1,3 @@
-
 import { MetadataRoute } from "next";
 import { metadata } from "@/app/layout";
 import { categories } from "@/lib/calculators";

@@ -1,8 +1,13 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -19,7 +24,6 @@ export default function LogarithmCalculator() {
     if (b <= 0) return "Base must be > 0";
     if (b === 1) return "Base cannot be 1";
 
-
     const logResult = Math.log(num) / Math.log(b);
     return logResult.toFixed(6);
   }, [number, base]);
@@ -30,7 +34,10 @@ export default function LogarithmCalculator() {
         <Card>
           <CardHeader>
             <CardTitle>Logarithm Calculator</CardTitle>
-            <CardDescription>Calculate the logarithm of a number to a specified base. The number and base must be positive, and the base cannot be 1.</CardDescription>
+            <CardDescription>
+              Calculate the logarithm of a number to a specified base. The
+              number and base must be positive, and the base cannot be 1.
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -65,7 +72,9 @@ export default function LogarithmCalculator() {
             <CardTitle>Result</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-muted-foreground">log<sub>{base}</sub>({number}) is:</p>
+            <p className="text-sm text-muted-foreground">
+              log<sub>{base}</sub>({number}) is:
+            </p>
             <p className="text-4xl font-bold font-headline text-primary my-2 break-words">
               {result}
             </p>

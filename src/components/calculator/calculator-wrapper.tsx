@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ChevronRight } from "lucide-react";
@@ -67,7 +66,10 @@ export default function CalculatorWrapper({
       )}
       <div className="text-center mb-12">
         <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
-          <IconWrapper iconName={calculator.iconName} className="w-12 h-12 text-primary" />
+          <IconWrapper
+            iconName={calculator.iconName}
+            className="w-12 h-12 text-primary"
+          />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           {calculator.name}

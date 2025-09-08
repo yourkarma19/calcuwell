@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -269,13 +268,7 @@ const ChartLegendContent = React.forwardRef<
     }
 >(
   (
-    {
-      className,
-      hideIcon = false,
-      payload,
-      verticalAlign = "bottom",
-      nameKey,
-    },
+    { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey },
     ref,
   ) => {
     const { config } = useChart();

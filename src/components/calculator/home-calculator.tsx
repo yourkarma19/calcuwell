@@ -1,11 +1,10 @@
-
 "use client";
 
 import React from "react";
 import BasicCalculator from "@/components/calculator/basic-calculator";
 
 function HomeCalculator() {
-    return <BasicCalculator />;
+  return <BasicCalculator />;
 }
 
 // Memoize the component to prevent re-renders when other parts of the homepage update.

@@ -1,15 +1,23 @@
-
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function BreakEvenPointCalculator() {
   const [fixedCosts, setFixedCosts] = usePersistentState("bep-fixed", 10000);
-  const [variableCost, setVariableCost] = usePersistentState("bep-variable", 20);
+  const [variableCost, setVariableCost] = usePersistentState(
+    "bep-variable",
+    20,
+  );
   const [pricePerUnit, setPricePerUnit] = usePersistentState("bep-price", 50);
 
   const { breakEvenUnits, breakEvenRevenue } = useMemo(() => {
@@ -31,27 +39,45 @@ export default function BreakEvenPointCalculator() {
   const formatCurrency = (value: number) => {
     return `₹${value.toLocaleString("en-IN", { maximumFractionDigits: 2 })}`;
   };
-  
+
   return (
     <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Business Cost Details</CardTitle>
-          <CardDescription>Enter your fixed costs, variable costs, and unit price to find your break-even point.</CardDescription>
+          <CardDescription>
+            Enter your fixed costs, variable costs, and unit price to find your
+            break-even point.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="fixed-costs">Total Fixed Costs</Label>
-            <Input id="fixed-costs" type="number" value={fixedCosts} onChange={e => setFixedCosts(Number(e.target.value))} />
+            <Input
+              id="fixed-costs"
+              type="number"
+              value={fixedCosts}
+              onChange={(e) => setFixedCosts(Number(e.target.value))}
+            />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="variable-cost">Variable Cost Per Unit</Label>
-              <Input id="variable-cost" type="number" value={variableCost} onChange={e => setVariableCost(Number(e.target.value))} />
+              <Input
+                id="variable-cost"
+                type="number"
+                value={variableCost}
+                onChange={(e) => setVariableCost(Number(e.target.value))}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="price-per-unit">Price Per Unit</Label>
-              <Input id="price-per-unit" type="number" value={pricePerUnit} onChange={e => setPricePerUnit(Number(e.target.value))} />
+              <Input
+                id="price-per-unit"
+                type="number"
+                value={pricePerUnit}
+                onChange={(e) => setPricePerUnit(Number(e.target.value))}
+              />
             </div>
           </div>
         </CardContent>
@@ -65,16 +91,25 @@ export default function BreakEvenPointCalculator() {
           <div>
             <p className="text-sm text-muted-foreground">Break-Even in Units</p>
             <p className="text-4xl font-bold font-headline text-primary">
-              {isFinite(breakEvenUnits) ? Math.ceil(breakEvenUnits).toLocaleString() : "N/A"}
+              {isFinite(breakEvenUnits)
+                ? Math.ceil(breakEvenUnits).toLocaleString()
+                : "N/A"}
             </p>
           </div>
-            <div>
-            <p className="text-sm text-muted-foreground">Break-Even in Revenue</p>
+          <div>
+            <p className="text-sm text-muted-foreground">
+              Break-Even in Revenue
+            </p>
             <p className="text-2xl font-semibold">
-              {isFinite(breakEvenRevenue) ? formatCurrency(breakEvenRevenue) : "N/A"}
+              {isFinite(breakEvenRevenue)
+                ? formatCurrency(breakEvenRevenue)
+                : "N/A"}
             </p>
           </div>
-            <p className="text-xs text-muted-foreground pt-2">This is the point at which your total revenue equals your total costs.</p>
+          <p className="text-xs text-muted-foreground pt-2">
+            This is the point at which your total revenue equals your total
+            costs.
+          </p>
         </CardContent>
       </Card>
     </div>

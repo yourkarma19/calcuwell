@@ -1,11 +1,21 @@
-
 "use client";
 
 import { AlertCircle } from "lucide-react";
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -13,11 +23,17 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 const ipToLong = (ip: string): number => {
-  return ip.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0;
+  return (
+    ip
+      .split(".")
+      .reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0) >>> 0
+  );
 };
 
 const longToIp = (long: number): string => {
-  return [ (long >>> 24), (long >> 16) & 255, (long >> 8) & 255, long & 255 ].join('.');
+  return [long >>> 24, (long >> 16) & 255, (long >> 8) & 255, long & 255].join(
+    ".",
+  );
 };
 
 interface SubnetInfo {
@@ -32,18 +48,21 @@ interface SubnetInfo {
   error: string | null;
 }
 
-
 export default function IpSubnetCalculator() {
-  const [ipAddress, setIpAddress] = usePersistentState<string>("ip-address", "192.168.1.1");
+  const [ipAddress, setIpAddress] = usePersistentState<string>(
+    "ip-address",
+    "192.168.1.1",
+  );
   const [cidr, setCidr] = usePersistentState<number>("ip-cidr", 24);
 
   const subnetInfo: SubnetInfo = useMemo(() => {
     try {
-      if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ipAddress)) throw new Error("Invalid IP Address Format");
+      if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ipAddress))
+        throw new Error("Invalid IP Address Format");
 
       const ipLong = ipToLong(ipAddress);
       const mask = -1 << (32 - cidr);
-      
+
       const networkAddress = ipLong & mask;
       const broadcastAddress = networkAddress | (~mask >>> 0);
       const firstHost = networkAddress + 1;
@@ -60,12 +79,21 @@ export default function IpSubnetCalculator() {
         totalHosts: totalHosts.toLocaleString(),
         usableHosts: usableHosts.toLocaleString(),
         wildcardMask: longToIp(~mask),
-        error: null
+        error: null,
       };
     } catch (e: unknown) {
-      return { 
-        error: (e instanceof Error ? e.message : String(e)) || "Invalid IP Address or CIDR",
-        networkAddress: "", broadcastAddress: "", subnetMask: "", firstHost: "", lastHost: "", totalHosts: "", usableHosts: "", wildcardMask: ""
+      return {
+        error:
+          (e instanceof Error ? e.message : String(e)) ||
+          "Invalid IP Address or CIDR",
+        networkAddress: "",
+        broadcastAddress: "",
+        subnetMask: "",
+        firstHost: "",
+        lastHost: "",
+        totalHosts: "",
+        usableHosts: "",
+        wildcardMask: "",
       };
     }
   }, [ipAddress, cidr]);
@@ -75,92 +103,185 @@ export default function IpSubnetCalculator() {
       <Card>
         <CardHeader>
           <CardTitle>IP Subnet Calculator</CardTitle>
-          <CardDescription>Calculate subnet details from an IP address and CIDR mask. This tool helps in network planning and understanding IP address allocation.</CardDescription>
+          <CardDescription>
+            Calculate subnet details from an IP address and CIDR mask. This tool
+            helps in network planning and understanding IP address allocation.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="ip-address">IP Address</Label>
-              <Input id="ip-address" value={ipAddress} onChange={e => setIpAddress(e.target.value)} />
+              <Input
+                id="ip-address"
+                value={ipAddress}
+                onChange={(e) => setIpAddress(e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="cidr">CIDR</Label>
               <div className="flex items-center gap-4">
-                <Slider id="cidr" value={[cidr]} onValueChange={v => setCidr(v[0])} min={0} max={32} step={1} />
-                <Input type="number" value={cidr} onChange={e => setCidr(Number(e.target.value))} className="w-24" />
+                <Slider
+                  id="cidr"
+                  value={[cidr]}
+                  onValueChange={(v) => setCidr(v[0])}
+                  min={0}
+                  max={32}
+                  step={1}
+                />
+                <Input
+                  type="number"
+                  value={cidr}
+                  onChange={(e) => setCidr(Number(e.target.value))}
+                  className="w-24"
+                />
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
-      
+
       {subnetInfo.error ? (
         <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>{subnetInfo.error}</AlertDescription>
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{subnetInfo.error}</AlertDescription>
         </Alert>
       ) : (
         <Card>
-          <CardHeader><CardTitle>Subnet Details</CardTitle></CardHeader>
+          <CardHeader>
+            <CardTitle>Subnet Details</CardTitle>
+          </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
-                <Table>
+              <Table>
                 <TableBody>
-                    <TableRow><TableCell>Network Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.networkAddress}</TableCell></TableRow>
-                    <TableRow><TableCell>Broadcast Address</TableCell><TableCell className="font-mono text-right">{subnetInfo.broadcastAddress}</TableCell></TableRow>
-                    <TableRow><TableCell>Subnet Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.subnetMask}</TableCell></TableRow>
-                    <TableRow><TableCell>Wildcard Mask</TableCell><TableCell className="font-mono text-right">{subnetInfo.wildcardMask}</TableCell></TableRow>
-                    <TableRow><TableCell>First Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.firstHost}</TableCell></TableRow>
-                    <TableRow><TableCell>Last Usable Host</TableCell><TableCell className="font-mono text-right">{subnetInfo.lastHost}</TableCell></TableRow>
-                    <TableRow><TableCell>Total Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.totalHosts}</TableCell></TableRow>
-                    <TableRow><TableCell>Usable Hosts</TableCell><TableCell className="font-mono text-right">{subnetInfo.usableHosts}</TableCell></TableRow>
+                  <TableRow>
+                    <TableCell>Network Address</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.networkAddress}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Broadcast Address</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.broadcastAddress}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Subnet Mask</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.subnetMask}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Wildcard Mask</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.wildcardMask}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>First Usable Host</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.firstHost}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Last Usable Host</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.lastHost}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Total Hosts</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.totalHosts}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Usable Hosts</TableCell>
+                    <TableCell className="font-mono text-right">
+                      {subnetInfo.usableHosts}
+                    </TableCell>
+                  </TableRow>
                 </TableBody>
-                </Table>
+              </Table>
             </div>
           </CardContent>
         </Card>
       )}
 
       <Card>
-        <CardHeader><CardTitle>About IP Subnetting</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>About IP Subnetting</CardTitle>
+        </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-            <p>The IP Subnet Calculator is a key tool for network administrators and IT students. It simplifies the task of subnetting by instantly providing information about a network segment. This helps in network planning, troubleshooting, and security.</p>
+          <p>
+            The IP Subnet Calculator is a key tool for network administrators
+            and IT students. It simplifies the task of subnetting by instantly
+            providing information about a network segment. This helps in network
+            planning, troubleshooting, and security.
+          </p>
 
-            <h3>How to Use the Calculator</h3>
-            <ol>
-                <li>Enter a valid <strong>IP Address</strong> (e.g., 192.168.1.1).</li>
-                <li>Use the slider or input box to set the <strong>CIDR</strong> mask (e.g., /24).</li>
-            </ol>
-            <p>The tool will automatically calculate and display the Network Address, Broadcast Address, Subnet Mask, and other relevant details.</p>
-            
-            <h3>Frequently Asked Questions (FAQs)</h3>
-            <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger>What is an IP Address?</AccordionTrigger>
-                    <AccordionContent>
-                        An IP (Internet Protocol) address is a unique number given to each device connected to a computer network. It identifies the device and provides its location, much like a street address.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger>What is CIDR Notation and a Subnet Mask?</AccordionTrigger>
-                    <AccordionContent>
-                        A <strong>Subnet Mask</strong> divides an IP address into two parts: the network address and the host address. <strong>CIDR notation</strong> is a short way to represent this mask. The number after the slash (e.g., /24) shows how many bits of the IP address are for the network part.
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-3">
-                    <AccordionTrigger>Network Address vs. Broadcast Address</AccordionTrigger>
-                    <AccordionContent>
-                        The <strong>Network Address</strong> is the first address in a subnet and identifies the network itself. The <strong>Broadcast Address</strong> is the last address in a subnet and sends data to all devices on that network. Neither can be assigned to a single device. This is why &quot;usable&quot; hosts are always two less than the total.
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4">
-                    <AccordionTrigger>What is a Wildcard Mask?</AccordionTrigger>
-                    <AccordionContent>
-                       A wildcard mask is a reverse subnet mask. It is often used in network access control lists (ACLs) to identify a range of IP addresses.
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              Enter a valid <strong>IP Address</strong> (e.g., 192.168.1.1).
+            </li>
+            <li>
+              Use the slider or input box to set the <strong>CIDR</strong> mask
+              (e.g., /24).
+            </li>
+          </ol>
+          <p>
+            The tool will automatically calculate and display the Network
+            Address, Broadcast Address, Subnet Mask, and other relevant details.
+          </p>
+
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is an IP Address?</AccordionTrigger>
+              <AccordionContent>
+                An IP (Internet Protocol) address is a unique number given to
+                each device connected to a computer network. It identifies the
+                device and provides its location, much like a street address.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                What is CIDR Notation and a Subnet Mask?
+              </AccordionTrigger>
+              <AccordionContent>
+                A <strong>Subnet Mask</strong> divides an IP address into two
+                parts: the network address and the host address.{" "}
+                <strong>CIDR notation</strong> is a short way to represent this
+                mask. The number after the slash (e.g., /24) shows how many bits
+                of the IP address are for the network part.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                Network Address vs. Broadcast Address
+              </AccordionTrigger>
+              <AccordionContent>
+                The <strong>Network Address</strong> is the first address in a
+                subnet and identifies the network itself. The{" "}
+                <strong>Broadcast Address</strong> is the last address in a
+                subnet and sends data to all devices on that network. Neither
+                can be assigned to a single device. This is why
+                &quot;usable&quot; hosts are always two less than the total.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>What is a Wildcard Mask?</AccordionTrigger>
+              <AccordionContent>
+                A wildcard mask is a reverse subnet mask. It is often used in
+                network access control lists (ACLs) to identify a range of IP
+                addresses.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

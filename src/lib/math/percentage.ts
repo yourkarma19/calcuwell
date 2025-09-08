@@ -5,7 +5,7 @@
  * @returns The result of the percentage calculation.
  */
 export function percentageOf(p: number, n: number): number {
-    return (p / 100) * n;
+  return (p / 100) * n;
 }
 
 /**
@@ -15,10 +15,10 @@ export function percentageOf(p: number, n: number): number {
  * @returns The percentage, or throws an error if `b` is zero.
  */
 export function isWhatPercentageOf(a: number, b: number): number {
-    if (b === 0) {
-        throw new Error("Cannot divide by zero.");
-    }
-    return (a / b) * 100;
+  if (b === 0) {
+    throw new Error("Cannot divide by zero.");
+  }
+  return (a / b) * 100;
 }
 
 /**
@@ -28,8 +28,8 @@ export function isWhatPercentageOf(a: number, b: number): number {
  * @returns The percentage change, or throws an error if `initial` is zero.
  */
 export function percentageChange(initial: number, final: number): number {
-    if (initial === 0) {
-        throw new Error("Cannot calculate percentage change from zero.");
-    }
-    return ((final - initial) / initial) * 100;
+  if (initial === 0) {
+    throw new Error("Cannot calculate percentage change from zero.");
+  }
+  return ((final - initial) / initial) * 100;
 }
