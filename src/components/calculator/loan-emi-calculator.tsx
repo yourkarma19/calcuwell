@@ -12,7 +12,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { calculateEMI, calculateEMIWithExtraPayments } from "@/lib/math/loan-emi";
 
 
-export default function LoanEMICalculator({ setChildProps = (props: Record<string, unknown>) => {}, calculatorName }: { setChildProps?: (props: Record<string, unknown>) => void, calculatorName: string }) {
+export default function LoanEMICalculator({ setChildProps = () => {}, calculatorName }: { setChildProps?: (props: Record<string, unknown>) => void, calculatorName: string }) {
   const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState("loan-principal", 500000);
   const [rate, setRate] = usePersistentState("loan-rate", 8.5);

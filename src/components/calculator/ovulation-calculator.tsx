@@ -90,7 +90,7 @@ export default function OvulationCalculator() {
               <AccordionItem value="item-4">
                 <AccordionTrigger>My cycle is irregular. Can I still use this calculator?</AccordionTrigger>
                 <AccordionContent>
-                  If your cycle is irregular, prediction can be more challenging. It's best to calculate your average cycle length over the last several months to use in the calculator. However, for irregular cycles, other methods like ovulation predictor kits may provide more reliable results. Always consult a healthcare provider for personalized advice.
+                  If your cycle is irregular, prediction can be more challenging. It&apos;s best to calculate your average cycle length over the last several months to use in the calculator. However, for irregular cycles, other methods like ovulation predictor kits may provide more reliable results. Always consult a healthcare provider for personalized advice.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

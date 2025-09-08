@@ -29,12 +29,9 @@ const jsonLd: WithContext<WebSite> = {
   url: "https://calcpro.online",
   potentialAction: {
     "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://calcpro.online/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  } as any,
+    target: "https://calcpro.online/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 };
 
 
@@ -57,7 +54,7 @@ export default function Home() {
         </section>
 
         <section id="main-calculator" className="pb-12">
-          <HomeCalculator calculatorName="Basic Calculator" />
+          <HomeCalculator />
         </section>
 
         <section id="categories" className="py-12">
