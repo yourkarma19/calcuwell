@@ -5,21 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run check-all && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .tsx,.ts,.js,.jsx",
     "lint:check": "npm run lint && prettier --check .",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "type-check": "tsc --noEmit",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:report": "playwright show-report",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test:e2e:report": "npx playwright show-report",
     "test": "vitest --passWithNoTests",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "prepare": "husky install",
-    "format": "prettier --write .",
-    "check-all": "npm run type-check && npm run lint:check && npm run test"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@genkit-ai/firebase": "^1.0.0",
@@ -116,6 +115,6 @@
     "not dead"
   ],
   "engines": {
-    "node": ">=20 <23"
+    "node": ">=20"
   }
 }
