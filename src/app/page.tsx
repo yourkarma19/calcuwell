@@ -1,4 +1,7 @@
 
+"use client";
+
+import { Suspense } from "react";
 import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
@@ -13,37 +16,17 @@ import {
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
-import type { WebSite, WithContext } from "schema-dts";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "CalcPro: Your Free Online Calculator Hub",
-  description:
-    "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
-};
-
-const jsonLd: WithContext<WebSite> = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "CalcPro",
-  url: "https://calcpro.online",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://calcpro.online/search?q={search_term_string}",
-    },
-    query: "required name=search_term_string",
-  },
-};
+// export const metadata: Metadata = {
+//   title: "CalcPro: Your Free Online Calculator Hub",
+//   description:
+//     "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
+// };
 
 export default function Home() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="container mx-auto px-4 py-8">
         <section className="text-center py-12 md:py-20">
           <h1 className="text-4xl md:text-6xl font-bold font-headline bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
@@ -164,6 +147,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-    </>
+    </Suspense>
   );
 }

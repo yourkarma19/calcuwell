@@ -1,21 +1,54 @@
+
+"use client";
+
 import { List } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
-import { IconName } from "@/lib/types";
+import { Calculator, IconName } from "@/lib/types";
+import { Suspense, useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: "Sitemap | CalcPro",
-  description:
-    "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, and more.",
-  alternates: {
-    canonical: "/sitemap",
-  },
+// export const metadata: Metadata = {
+//   title: "Sitemap | CalcPro",
+//   description:
+//     "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, and more.",
+//   alternates: {
+//     canonical: "/sitemap",
+//   },
+// };
+
+type CategoryWithCalculators = {
+  slug: string;
+  name: string;
+  iconName: IconName;
+  calculators: Omit<Calculator, "component">[];
 };
 
-export default async function SitemapPage() {
+function SitemapContent() {
+  const [categoriesWithCalculators, setCategoriesWithCalculators] = useState<
+    CategoryWithCalculators[]
+  >([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const allCategoryData = await Promise.all(
+        categories.map(async (category) => {
+          const categoryCalculators = await getCalculatorsByCategory(
+            category.slug,
+          );
+          return {
+            ...category,
+            calculators: categoryCalculators,
+          };
+        }),
+      );
+      setCategoriesWithCalculators(allCategoryData);
+    }
+    fetchData();
+  }, []);
+
   return (
     <main className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
@@ -34,43 +67,41 @@ export default async function SitemapPage() {
       </div>
 
       <div className="space-y-12">
-        {await Promise.all(
-          categories.map(async (category) => {
-            const categoryCalculators = await getCalculatorsByCategory(
-              category.slug,
-            );
-            return (
-              <section key={category.slug}>
-                <h2 className="text-3xl font-bold font-headline text-primary mb-6 flex items-center gap-3">
-                  <IconWrapper
-                    iconName={category.iconName as IconName}
-                    className="w-8 h-8"
-                  />
-                  {category.name} Calculators
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {categoryCalculators.map((calc) => {
-                    return (
-                      <li key={calc.slug}>
-                        <Link
-                          href={`/calculators/${calc.slug}`}
-                          className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors"
-                        >
-                          <IconWrapper
-                            iconName={calc.iconName as IconName}
-                            className="w-4 h-4 text-muted-foreground"
-                          />
-                          {calc.name}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            );
-          }),
-        )}
+        {categoriesWithCalculators.map((category) => (
+          <section key={category.slug}>
+            <h2 className="text-3xl font-bold font-headline text-primary mb-6 flex items-center gap-3">
+              <IconWrapper
+                iconName={category.iconName as IconName}
+                className="w-8 h-8"
+              />
+              {category.name} Calculators
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {category.calculators.map((calc) => {
+                return (
+                  <li key={calc.slug}>
+                    <Link
+                      href={`/calculators/${calc.slug}`}
+                      className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors"
+                    >
+                      <IconWrapper
+                        iconName={calc.iconName as IconName}
+                        className="w-4 h-4 text-muted-foreground"
+                      />
+                      {calc.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))}
       </div>
     </main>
   );
+}
+
+
+export default function SitemapPage() {
+  return <Suspense fallback={<div>Loading...</div>}><SitemapContent /></Suspense>
 }
