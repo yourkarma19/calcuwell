@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Delete, Heart } from "lucide-react";
@@ -65,6 +66,7 @@ const getScientificButtonLayout = (isInverse: boolean) => [
 export default function BasicCalculator() {
   const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
+  const [isNewNumber, setIsNewNumber] = useState(true);
   const [justEvaluated, setJustEvaluated] = useState(false);
   const [isCelebrating, setIsCelebrating] = useState(false);
   const [memory, setMemory] = useState(0);
@@ -99,27 +101,51 @@ export default function BasicCalculator() {
   const resetCalculator = useCallback(() => {
     setExpression("");
     setDisplayValue("0");
+    setIsNewNumber(true);
     setJustEvaluated(false);
   }, []);
 
   const handleOperator = useCallback(
     (op: string) => {
-      if (displayValue !== "Error") {
-        if (justEvaluated) {
-          setExpression(displayValue + op);
-        } else {
-          setExpression((prev) => prev + displayValue + op);
-        }
-        setDisplayValue("0");
+      if (justEvaluated) {
+        setExpression(displayValue + op);
         setJustEvaluated(false);
+      } else {
+        setExpression((prev) => prev + displayValue + op);
       }
+      setIsNewNumber(true);
     },
     [displayValue, justEvaluated],
   );
 
+  const evaluateExpression = (expr: string): string => {
+    try {
+      // Replace custom operators for evaluation
+      const sanitizedExpr = expr
+        .replace(/×/g, "*")
+        .replace(/÷/g, "/")
+        .replace(/‑/g, "-");
+
+      // Very basic safe evaluation. For a real app, use a proper parsing library.
+      if (/[^0-9+\-*/.() ]/g.test(sanitizedExpr)) {
+        return "Error";
+      }
+
+      // eslint-disable-next-line no-new-func
+      const result = new Function(`return ${sanitizedExpr}`)();
+
+      if (result === undefined || !isFinite(result)) {
+        return "Error";
+      }
+      return result.toString();
+    } catch {
+      return "Error";
+    }
+  };
+
   const handleEquals = useCallback(() => {
-    if (justEvaluated) return;
     const fullExpression = (expression + displayValue).replace(/‑/g, "-");
+
     if (fullExpression === "12082007+19112005") {
       setDisplayValue("I ❤️ You");
       setExpression("");
@@ -129,68 +155,72 @@ export default function BasicCalculator() {
       return;
     }
 
-    try {
-      const safeExpression = fullExpression.replace(/[^-()\d/*+.]/g, "");
-      // Use Function constructor for safe evaluation
-      const result = new Function("return " + safeExpression)();
-
-      if (result === undefined || !isFinite(result)) {
-        setExpression(safeExpression);
-        setDisplayValue("Error");
-      } else {
-        setExpression("");
-        setDisplayValue(result.toString());
-      }
-    } catch (error) {
-      setExpression(displayValue);
-      setDisplayValue("Error");
-    }
+    const result = evaluateExpression(fullExpression);
+    setDisplayValue(result);
+    setExpression("");
+    setIsNewNumber(true);
     setJustEvaluated(true);
-  }, [expression, displayValue, justEvaluated]);
+  }, [expression, displayValue]);
 
   const handleInput = useCallback(
     (input: string) => {
-      if (input === "AC") {
+      if (displayValue === "I ❤️ You") {
         resetCalculator();
-        return;
-      }
-
-      if (displayValue === "Error" || displayValue === "I ❤️ You") {
-        if (input === "AC") {
-          resetCalculator();
-        }
-        return;
-      }
-
-      if (justEvaluated && !isOperator(input) && input !== ".") {
-        setExpression("");
-        setDisplayValue(input);
-        setJustEvaluated(false);
         return;
       }
 
       if (isOperator(input)) {
         handleOperator(input);
-      } else if (input === "=") {
-        handleEquals();
-      } else if (input === "+/-") {
-        setDisplayValue((prev) => (parseFloat(prev) * -1).toString());
-      } else if (input === "%") {
-        setDisplayValue((prev) => (parseFloat(prev) / 100).toString());
-      } else if (input === "Backspace") {
-        setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
-      } else {
-        if (displayValue === "0" && input !== ".") {
-          setDisplayValue(input);
-        } else {
-          setDisplayValue((prev) => prev + input);
-        }
+        return;
       }
 
-      if (input !== "=") setJustEvaluated(false);
+      switch (input) {
+        case "AC":
+          resetCalculator();
+          break;
+        case "=":
+          handleEquals();
+          break;
+        case ".":
+          if (isNewNumber) {
+            setDisplayValue("0.");
+            setIsNewNumber(false);
+          } else if (!displayValue.includes(".")) {
+            setDisplayValue((prev) => prev + ".");
+          }
+          setJustEvaluated(false);
+          break;
+        case "Backspace":
+          if (justEvaluated) {
+            resetCalculator();
+          } else {
+            setDisplayValue((prev) =>
+              prev.length > 1 ? prev.slice(0, -1) : "0",
+            );
+          }
+          break;
+        case "+/-":
+          setDisplayValue((prev) => (parseFloat(prev) * -1).toString());
+          break;
+        case "%":
+          setDisplayValue((prev) => (parseFloat(prev) / 100).toString());
+          break;
+        default: // Digit input
+          if (isNewNumber) {
+            setDisplayValue(input);
+            setIsNewNumber(false);
+          } else {
+            setDisplayValue((prev) =>
+              prev === "0" ? input : prev + input,
+            );
+          }
+          setJustEvaluated(false);
+          break;
+      }
     },
     [
       displayValue,
+      isNewNumber,
       justEvaluated,
       resetCalculator,
       handleOperator,
@@ -209,7 +239,7 @@ export default function BasicCalculator() {
       const { key } = event;
 
       if (/[0-9.]/.test(key)) handleInput(key);
-      else if (isOperator(key)) handleOperator(key);
+      else if (isOperator(key)) handleInput(key);
       else if (key === "Enter" || key === "=") handleInput("=");
       else if (key === "Backspace") handleInput("Backspace");
       else if (key === "Escape") handleInput("AC");
@@ -219,13 +249,11 @@ export default function BasicCalculator() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleInput, handleOperator]);
+  }, [handleInput]);
 
   const handleScientificInput = (func: string) => {
     if (displayValue === "Error" && func !== "AC") return;
 
-    const currentDisplay =
-      displayValue === "0" || displayValue === "Error" ? "" : displayValue;
     const value = parseFloat(displayValue);
     const angleToRad = (angle: number) =>
       isRadians ? angle : angle * (Math.PI / 180);
@@ -331,7 +359,7 @@ export default function BasicCalculator() {
           setIsRadians(false);
           return;
         default:
-          setDisplayValue(currentDisplay + func);
+          setDisplayValue(func);
           return;
       }
       if (result !== undefined && isFinite(result)) {
@@ -342,6 +370,7 @@ export default function BasicCalculator() {
     } catch (e) {
       setDisplayValue("Error");
     }
+    setIsNewNumber(true);
   };
 
   const renderDisplay = () => (
@@ -394,7 +423,7 @@ export default function BasicCalculator() {
         %
       </Button>
       <Button
-        onClick={() => handleOperator("/")}
+        onClick={() => handleInput("/")}
         variant="default"
         className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
       >
@@ -422,7 +451,7 @@ export default function BasicCalculator() {
         9
       </Button>
       <Button
-        onClick={() => handleOperator("*")}
+        onClick={() => handleInput("*")}
         variant="default"
         className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
       >
@@ -450,7 +479,7 @@ export default function BasicCalculator() {
         6
       </Button>
       <Button
-        onClick={() => handleOperator("-")}
+        onClick={() => handleInput("-")}
         variant="default"
         className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
       >
@@ -478,7 +507,7 @@ export default function BasicCalculator() {
         3
       </Button>
       <Button
-        onClick={() => handleOperator("+")}
+        onClick={() => handleInput("+")}
         variant="default"
         className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
       >
@@ -584,3 +613,5 @@ export default function BasicCalculator() {
     </Card>
   );
 }
+
+    
