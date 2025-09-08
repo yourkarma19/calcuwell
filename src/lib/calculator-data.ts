@@ -1007,7 +1007,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     iconName: "Atom",
     metaDescription:
       "An easy-to-use Ohm's law calculator for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.",
-    formula: "V = I × R",
   },
   {
     slug: "resistor-color-code-calculator",

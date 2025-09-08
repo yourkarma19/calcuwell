@@ -26,6 +26,8 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
   let years = differenceInYears(endDate, startDate);
   let dateAfterYears = subYears(endDate, years);
 
+  // Correction if the start date's month/day is after the end date's month/day
+  // in their respective years
   if (dateAfterYears < startDate) {
     years -= 1;
     dateAfterYears = subYears(endDate, years);

@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
           <li>
             Users may opt out of personalized advertising by visiting Ads
             Settings. Alternatively, you can direct users to opt out of a
-            third-party vendor&apos;s use of cookies for personalized
+-party vendor&apos;s use of cookies for personalized
             advertising by visiting www.aboutads.info/choices.
           </li>
         </ul>
