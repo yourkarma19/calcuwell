@@ -1,10 +1,9 @@
 
-import { List, icons } from "lucide-react";
+import { List, icons, type LucideIcon } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@/lib/calculators";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
-import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sitemap | CalcPro",

@@ -13,7 +13,7 @@ import { calculateAge, Age } from "@/lib/math/date";
 
 
 export default function AgeCalculator({ calculatorName }: { calculatorName: string }) {
-  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => value ? new Date(value) : undefined);
+  const [dateOfBirth, setDateOfBirth] = usePersistentState<Date | undefined>('age-dob', new Date("1990-01-01"), (value) => (typeof value === "string" || typeof value === "number" || value instanceof Date) ? new Date(value) : undefined);
   const [age, setAge] = useState<Age | null>(null);
   
   const handleCalculateAge = useCallback(() => {

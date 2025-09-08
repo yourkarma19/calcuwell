@@ -31,7 +31,7 @@ const jsonLd: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}"
     },
-    "query-input": "required name=search_term_string"
+    queryInput: "required name=search_term_string"
   }
 };
 
