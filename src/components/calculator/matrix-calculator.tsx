@@ -1,7 +1,7 @@
+
 "use client";
 
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -78,19 +78,6 @@ export default function MatrixCalculator() {
                         ))}
                     </div>
                 </div>
-            </CardContent>
-        </Card>
-        <Card>
-            <CardHeader><CardTitle>Fundamentals of Matrix Operations</CardTitle></CardHeader>
-            <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger>How do you add matrices?</AccordionTrigger>
-                        <AccordionContent>
-                            To add two matrices, you add the corresponding elements. For example, the element in the first row and first column of the resulting matrix is the sum of the elements in the first row and first column of the two original matrices. The matrices must have the same dimensions.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
             </CardContent>
         </Card>
     </div>

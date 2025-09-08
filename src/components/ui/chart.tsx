@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 const THEMES = { light: "", dark: ".dark" } as const;
 
 export type ChartConfig = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [k in string]: {
     label?: React.ReactNode;
     icon?: React.ComponentType;
@@ -298,7 +299,7 @@ const ChartLegendContent = React.forwardRef<
 
           return (
             <div
-              key={item.value}
+              key={item.value as string}
               className={cn(
                 "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground",
               )}

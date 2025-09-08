@@ -1,8 +1,8 @@
+
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -73,19 +73,6 @@ export default function FuelEfficiencyConverter() {
                         </div>
                     </div>
                 </CardContent>
-            </Card>
-            <Card>
-              <CardHeader><CardTitle>Understanding Fuel Efficiency Units</CardTitle></CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>MPG vs. L/100km</AccordionTrigger>
-                    <AccordionContent>
-                      **MPG (Miles Per Gallon)** measures how many miles a car can travel on one gallon of fuel. A higher MPG is better. **L/100km (Liters per 100 kilometers)** measures how many liters of fuel a car uses to travel 100 kilometers. A lower L/100km is better.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
             </Card>
         </div>
     )

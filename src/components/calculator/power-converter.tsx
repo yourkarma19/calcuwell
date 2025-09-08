@@ -3,7 +3,6 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -82,25 +81,6 @@ export default function PowerConverter() {
               </Select>
             </div>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader><CardTitle>About Power Units</CardTitle></CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What is power?</AccordionTrigger>
-              <AccordionContent>
-                Power is the rate at which energy is transferred or converted per unit of time. The standard SI unit for power is the Watt (W), which is one joule per second.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>What is horsepower?</AccordionTrigger>
-              <AccordionContent>
-                Horsepower (hp) is a unit of power, commonly used to measure the output of engines or motors. One mechanical horsepower is equivalent to approximately 745.7 watts.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </CardContent>
       </Card>
     </div>

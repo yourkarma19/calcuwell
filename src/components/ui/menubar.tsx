@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
@@ -234,7 +235,7 @@ const MenubarShortcut = ({
     />
   )
 }
-MenubarShortcut.displayname = "MenubarShortcut"
+MenubarShortcut.displayName = "MenubarShortcut"
 
 export {
   Menubar,

@@ -193,14 +193,6 @@ export default function GpaCalculator() {
             </Form>
           </CardContent>
         </Card>
-        <Card>
-            <CardHeader><CardTitle>About GPA Calculation</CardTitle></CardHeader>
-            <CardContent className="prose dark:prose-invert max-w-none">
-                <p>A GPA (Grade Point Average) is a standard way to measure academic success. It is a number that shows your average grade, weighted by the number of credits for each course.</p>
-                <h3>How to Use This Tool</h3>
-                <p>Simply enter your courses, the grade you received, and the number of credits for each course. The calculator will then compute your GPA for you.</p>
-            </CardContent>
-        </Card>
       </div>
 
       <div className="lg:col-span-1">

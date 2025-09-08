@@ -1,7 +1,7 @@
+
 "use client";
 
 import { useMemo } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -83,25 +83,6 @@ export default function EquationSolver() {
             <h3 className="text-lg font-semibold">Solution</h3>
             <p className="text-3xl font-bold font-headline text-primary">{result}</p>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader><CardTitle>Understanding Equation Types</CardTitle></CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What is a linear equation?</AccordionTrigger>
-              <AccordionContent>
-                A linear equation is an equation for a straight line. This calculator solves for &apos;x&apos; in the form ax + b = c.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>What is a quadratic equation?</AccordionTrigger>
-              <AccordionContent>
-                A quadratic equation is a second-order polynomial equation in a single variable x with the form ax² + bx + c = 0. It can have two solutions, one solution, or no real solutions.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </CardContent>
       </Card>
     </div>
