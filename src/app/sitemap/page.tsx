@@ -1,23 +1,12 @@
-
 "use client";
 
 import { List } from "lucide-react";
-import { Metadata } from "next";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
 import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
 import { Calculator, IconName } from "@/lib/types";
 import { Suspense, useEffect, useState } from "react";
-
-// export const metadata: Metadata = {
-//   title: "Sitemap | CalcPro",
-//   description:
-//     "Explore a complete list of all our free online calculators. Browse by category to find the exact tool you need for math, finance, and more.",
-//   alternates: {
-//     canonical: "/sitemap",
-//   },
-// };
 
 type CategoryWithCalculators = {
   slug: string;
@@ -101,7 +90,10 @@ function SitemapContent() {
   );
 }
 
-
 export default function SitemapPage() {
-  return <Suspense fallback={<div>Loading...</div>}><SitemapContent /></Suspense>
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SitemapContent />
+    </Suspense>
+  );
 }

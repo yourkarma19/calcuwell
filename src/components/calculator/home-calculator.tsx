@@ -3,7 +3,7 @@
 import React from "react";
 import BasicCalculator from "@/components/calculator/basic-calculator";
 
-function HomeCalculator() {
+export function HomeCalculator() {
   return <BasicCalculator />;
 }
 

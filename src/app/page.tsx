@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Suspense } from "react";
@@ -6,7 +5,7 @@ import { ArrowRight, Zap, Target, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import CalculatorCard from "@/components/calculator/calculator-card";
-import HomeCalculator from "@/components/home-calculator";
+import { HomeCalculator } from "@/components/calculator/home-calculator";
 import {
   Card,
   CardHeader,
@@ -16,13 +15,6 @@ import {
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
-import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "CalcPro: Your Free Online Calculator Hub",
-//   description:
-//     "Your free hub for fast, accurate online calculators. Solve complex problems in finance, health, math, and more with our easy-to-use tools.",
-// };
 
 export default function Home() {
   return (

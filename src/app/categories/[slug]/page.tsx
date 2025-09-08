@@ -1,8 +1,6 @@
-
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CategoryClientPage from "@/components/calculator/category-client-page";
 import { categories } from "@/lib/calculators";
@@ -17,7 +15,9 @@ type CategoryPageProps = {
 
 export default function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = params;
-  const [calculators, setCalculators] = useState<Omit<Calculator, "component">[]>([]);
+  const [calculators, setCalculators] = useState<
+    Omit<Calculator, "component">[]
+  >([]);
   const category = categories.find((c) => c.slug === slug);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     <Suspense fallback={<div>Loading...</div>}>
       <CategoryClientPage
         name={category.name}
-        iconName={category.iconName as string}
+        iconName={category.iconName}
         description={category.description}
         calculators={calculators}
       />
