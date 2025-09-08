@@ -30,7 +30,7 @@ const jsonLd: WithContext<WebSite> = {
   potentialAction: {
     "@type": "SearchAction",
     target: "https://calcpro.online/search?q={search_term_string}",
-    "query-input": "required name=search_term_string",
+    "query": "required name=search_term_string",
   },
 };
 
