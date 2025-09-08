@@ -1,12 +1,9 @@
-"use client";
-
 import { List } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
-import { getCalculatorsByCategory } from "@/lib/server/calculator-data";
+import { loadFullCalculatorData } from "@/lib/server/calculator-data";
 import { Calculator, IconName } from "@/lib/types";
-import { Suspense, useEffect, useState } from "react";
 
 type CategoryWithCalculators = {
   slug: string;
@@ -15,28 +12,16 @@ type CategoryWithCalculators = {
   calculators: Omit<Calculator, "component">[];
 };
 
-function SitemapContent() {
-  const [categoriesWithCalculators, setCategoriesWithCalculators] = useState<
-    CategoryWithCalculators[]
-  >([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const allCategoryData = await Promise.all(
-        categories.map(async (category) => {
-          const categoryCalculators = await getCalculatorsByCategory(
-            category.slug,
-          );
-          return {
-            ...category,
-            calculators: categoryCalculators,
-          };
-        }),
-      );
-      setCategoriesWithCalculators(allCategoryData);
-    }
-    fetchData();
-  }, []);
+export default async function SitemapPage() {
+  const allCalculators = await loadFullCalculatorData();
+  const categoriesWithCalculators: CategoryWithCalculators[] = categories.map(
+    (category) => ({
+      ...category,
+      calculators: allCalculators.filter(
+        (calc) => calc.category === category.name,
+      ),
+    }),
+  );
 
   return (
     <main className="container mx-auto px-4 py-12">
@@ -49,9 +34,9 @@ function SitemapContent() {
           Welcome to the sitemap for CalcPro. Here you can find a comprehensive
           list of all our calculators, neatly organized by category. This page
           is designed to help you quickly navigate to the specific tool you
-          need, whether you&apos;re solving a complex math problem, managing
-          your finances, or exploring health metrics. Browse through the
-          sections below to discover the wide range of free tools we offer.
+          need, whether you're solving a complex math problem, managing your
+          finances, or exploring health metrics. Browse through the sections
+          below to discover the wide range of free tools we offer.
         </p>
       </div>
 
@@ -87,13 +72,5 @@ function SitemapContent() {
         ))}
       </div>
     </main>
-  );
-}
-
-export default function SitemapPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <SitemapContent />
-    </Suspense>
   );
 }
