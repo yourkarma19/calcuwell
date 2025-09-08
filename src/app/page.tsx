@@ -31,7 +31,7 @@ const jsonLd: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}"
     },
-    queryInput: "required name=search_term_string"
+    "query-input": "required name=search_term_string"
   }
 };
 
@@ -78,7 +78,7 @@ export default function Home() {
                         <LucideIcon className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <CardTitle className="font-headline group-hover:text-primary transition-colors">
+                        <CardTitle as="h3" className="font-headline group-hover:text-primary transition-colors">
                           {category.name}
                         </CardTitle>
                         <CardDescription>{category.description}</CardDescription>
