@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check-all && next build",
     "start": "next start",
     "lint": "eslint . --ext .tsx,.ts,.js,.jsx",
     "lint:check": "npm run lint && prettier --check .",
