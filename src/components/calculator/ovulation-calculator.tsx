@@ -96,10 +96,10 @@ export default function OvulationCalculator() {
             <p>
               Our **Ovulation Calculator** is a simple tool designed to help you
               predict your most fertile days based on your menstrual cycle. By
-              estimating your ovulation date, you can identify your &quot;fertile
-              window,&quot; which is the period when you have the highest chance of
-              conceiving. This calculator is a helpful first step for anyone
-              planning a pregnancy.
+              estimating your ovulation date, you can identify your
+              &quot;fertile window,&quot; which is the period when you have the
+              highest chance of conceiving. This calculator is a helpful first
+              step for anyone planning a pregnancy.
             </p>
             <h3>How to Use the Calculator</h3>
             <ol>

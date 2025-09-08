@@ -1,6 +1,7 @@
-import React from 'react';
-import * as lucideIcons from 'lucide-react';
-import type { LucideProps } from 'lucide-react';
+"use client";
+import React from "react";
+import * as lucideIcons from "lucide-react";
+import type { LucideProps } from "lucide-react";
 
 const { createReactComponent, ...icons } = lucideIcons;
 
