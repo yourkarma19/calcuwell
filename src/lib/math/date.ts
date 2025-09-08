@@ -24,11 +24,10 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
   }
 
   let years = differenceInYears(endDate, startDate);
-
-  // Check if the birthday for the current year has passed
   let dateAfterYears = subYears(endDate, years);
+
   if (dateAfterYears < startDate) {
-    years = years - 1;
+    years -= 1;
     dateAfterYears = subYears(endDate, years);
   }
 
