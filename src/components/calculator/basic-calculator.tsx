@@ -379,7 +379,8 @@ export default function BasicCalculator() {
         onClick={() => handleInput("Backspace")}
         aria-label="Backspace"
         variant="outline"
-        className="bg-secondary hover:bg-secondary/80 h-16"
+        size="icon"
+        className="bg-secondary hover:bg-secondary/80 h-16 w-full"
       >
         <Delete />
       </Button>
