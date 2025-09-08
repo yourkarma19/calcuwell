@@ -54,7 +54,7 @@ export default function Home() {
         </section>
 
         <section id="main-calculator" className="pb-12">
-          <HomeCalculator calculatorName="Home" />
+          <HomeCalculator />
         </section>
 
         <section id="categories" className="py-12">
