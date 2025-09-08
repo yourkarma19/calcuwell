@@ -1089,4 +1089,8 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
 =======
 
   
+<<<<<<< HEAD
 >>>>>>> 3312b78 (I see this error with the app, reported by NextJS, please fix it. The er)
+=======
+
+>>>>>>> 52d0ed4 (I see this error with the app, reported by NextJS, please fix it. The er)
