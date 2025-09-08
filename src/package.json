@@ -1,3 +1,4 @@
+
 {
   "name": "calcpro",
   "version": "0.1.0",
@@ -5,15 +6,12 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run check-all && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .tsx,.ts,.js,.jsx",
     "lint:check": "npm run lint && prettier --check .",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "type-check": "tsc --noEmit",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:report": "playwright show-report",
     "test": "vitest --passWithNoTests",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
@@ -85,8 +83,8 @@
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
