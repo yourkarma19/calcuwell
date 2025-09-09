@@ -1,117 +1,78 @@
-
 "use client";
 
-import { Heart } from "lucide-react";
+import { Delete } from "lucide-react";
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 
-const getScientificButtonLayout = (isInverse: boolean) => [
-  { func: "(", tooltip: "Open Parenthesis" },
-  { func: ")", tooltip: "Close Parenthesis" },
-  { func: "mc", tooltip: "Memory Clear" },
-  { func: "m+", tooltip: "Memory Add" },
-  { func: "m-", tooltip: "Memory Subtract" },
-  { func: "mr", tooltip: "Memory Recall" },
-  { func: "2nd", tooltip: "Inverse Functions", active: isInverse },
-  isInverse
-    ? { func: "x³", tooltip: "Cube" }
-    : { func: "x²", tooltip: "Square" },
-  { func: "xʸ", tooltip: "Power" },
-  isInverse
-    ? { func: "ln", tooltip: "Natural Log" }
-    : { func: "eˣ", tooltip: "e^x" },
-  { func: "10ˣ", tooltip: "10^x" },
-  { func: "x!", tooltip: "Factorial" },
-  { func: "¹/x", tooltip: "Reciprocal" },
-  isInverse
-    ? { func: "³√x", tooltip: "Cube Root" }
-    : { func: "²√x", tooltip: "Square Root" },
-  { func: "ʸ√x", tooltip: "y-th Root" },
-  isInverse
-    ? { func: "log₂", tooltip: "Log base 2" }
-    : { func: "log₁₀", tooltip: "Log base 10" },
-  { func: "e", tooltip: `Euler's Number` },
-  { func: "EE", tooltip: "Exponent" },
-  isInverse
-    ? { func: "sin⁻¹", tooltip: "Arcsine" }
-    : { func: "sin", tooltip: "Sine" },
-  isInverse
-    ? { func: "cos⁻¹", tooltip: "Arccosine" }
-    : { func: "cos", tooltip: "Cosine" },
-  isInverse
-    ? { func: "tan⁻¹", tooltip: "Arctangent" }
-    : { func: "tan", tooltip: "Tangent" },
-  isInverse
-    ? { func: "sinh⁻¹", tooltip: "Hyperbolic Arcsine" }
-    : { func: "sinh", tooltip: "Hyperbolic Sine" },
-  isInverse
-    ? { func: "cosh⁻¹", tooltip: "Hyperbolic Arccosine" }
-    : { func: "cosh", tooltip: "Hyperbolic Cosine" },
-  isInverse
-    ? { func: "tanh⁻¹", tooltip: "Hyperbolic Arctangent" }
-    : { func: "tanh", tooltip: "Hyperbolic Tangent" },
-  { func: "π", tooltip: "Pi" },
-  { func: "Rand", tooltip: "Random Number" },
+const scientificButtonsConfig = [
+  [
+    { func: "(", tooltip: "Open Parenthesis" },
+    { func: ")", tooltip: "Close Parenthesis" },
+    { func: "mc", tooltip: "Memory Clear" },
+    { func: "m+", tooltip: "Memory Add" },
+    { func: "m-", tooltip: "Memory Subtract" },
+    { func: "mr", tooltip: "Memory Recall" },
+  ],
+  [
+    { func: "2nd", tooltip: "Inverse Functions" },
+    { func: "x²", tooltip: "Square" },
+    { func: "x³", tooltip: "Cube" },
+    { func: "xʸ", tooltip: "Power" },
+    { func: "eˣ", tooltip: "e^x" },
+    { func: "10ˣ", tooltip: "10^x" },
+  ],
+  [
+    { func: "¹/x", tooltip: "Reciprocal" },
+    { func: "√", tooltip: "Square Root" },
+    { func: "³√", tooltip: "Cube Root" },
+    { func: "ʸ√", tooltip: "y-th Root of x" },
+    { func: "ln", tooltip: "Natural Log" },
+    { func: "log₁₀", tooltip: "Log base 10" },
+  ],
+  [
+    { func: "x!", tooltip: "Factorial" },
+    { func: "sin", tooltip: "Sine" },
+    { func: "cos", tooltip: "Cosine" },
+    { func: "tan", tooltip: "Tangent" },
+    { func: "e", tooltip: "Euler's Number" },
+    { func: "EE", tooltip: "Exponent" },
+  ],
+  [
+    { func: "Rad", tooltip: "Switch to Radians" },
+    { func: "sinh", tooltip: "Hyperbolic Sine" },
+    { func: "cosh", tooltip: "Hyperbolic Cosine" },
+    { func: "tanh", tooltip: "Hyperbolic Tangent" },
+    { func: "π", tooltip: "Pi" },
+    { func: "Rand", tooltip: "Random Number" },
+  ],
 ];
 
 export default function BasicCalculator() {
-  const [expression, setExpression] = useState("");
   const [displayValue, setDisplayValue] = useState("0");
+  const [expression, setExpression] = useState("");
   const [isNewNumber, setIsNewNumber] = useState(true);
   const [justEvaluated, setJustEvaluated] = useState(false);
-  const [isCelebrating, setIsCelebrating] = useState(false);
   const [memory, setMemory] = useState(0);
-  const [isRadians, setIsRadians] = useState(false);
-  const [isInverse, setIsInverse] = useState(false);
-  const [activeTab, setActiveTab] = useState("basic");
-  const [randomValue, setRandomValue] = useState(0);
-
-  useEffect(() => {
-    // Generate random number only on the client to avoid hydration issues
-    setRandomValue(Math.random());
-  }, []);
-
-  const scientificButtons = useMemo(
-    () => getScientificButtonLayout(isInverse),
-    [isInverse],
-  );
-
-  const factorial = (n: number): number => {
-    if (n < 0 || !Number.isInteger(n)) return NaN;
-    if (n === 0 || n === 1) return 1;
-    if (n > 170) return Infinity;
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-      result *= i;
-    }
-    return result;
-  };
-
-  const resetCalculator = useCallback(() => {
-    setExpression("");
-    setDisplayValue("0");
-    setIsNewNumber(true);
-    setJustEvaluated(false);
-  }, []);
+  const [isScientific, setIsScientific] = useState(false);
 
   const evaluateExpression = (expr: string): string => {
     try {
-      if (!expr) return "0";
-      // Replace custom operators for evaluation
-      const sanitizedExpr = expr.replace(/‑/g, "-").replace(/×/g, "*").replace(/÷/g, "/");
+      // Basic sanitization
+      const sanitizedExpr = expr
+        .replace(/×/g, "*")
+        .replace(/÷/g, "/")
+        .replace(/‑/g, "-");
 
-      // Super basic safe evaluation. Avoids `eval`.
-      // For a real app, use a proper parsing library like `mathjs`.
-      if (/[^0-9+\-*/.() ]/g.test(sanitizedExpr)) {
+      if (/[^0-9+\-*/(). ]/g.test(sanitizedExpr)) {
         return "Error";
       }
 
@@ -121,120 +82,110 @@ export default function BasicCalculator() {
       if (result === undefined || !isFinite(result)) {
         return "Error";
       }
-      // Format to a reasonable precision
       return parseFloat(result.toPrecision(15)).toString();
-    } catch {
+    } catch (e) {
       return "Error";
     }
   };
 
   const handleOperator = useCallback(
     (op: string) => {
+      if (displayValue === "Error") return;
+
       if (justEvaluated) {
-        setExpression(displayValue + op);
+        setExpression(displayValue + " " + op + " ");
         setJustEvaluated(false);
       } else if (isNewNumber) {
         // If the last thing typed was an operator, replace it
-        setExpression((prev) => prev.slice(0, -1) + op);
+        setExpression((prev) => prev.slice(0, -2) + op + " ");
       } else {
-        const newExpression = expression + displayValue;
-        const result = evaluateExpression(newExpression);
-        setDisplayValue(result);
-        setExpression(result + op);
+        setExpression((prev) => prev + displayValue + " " + op + " ");
       }
       setIsNewNumber(true);
     },
-    [displayValue, expression, justEvaluated, evaluateExpression],
+    [displayValue, justEvaluated, isNewNumber],
   );
 
   const handleEquals = useCallback(() => {
-    const fullExpression = (expression + displayValue);
+    if (displayValue === "Error") return;
 
-    if (fullExpression === "12082007+19112005") {
-      setDisplayValue("I ❤️ You");
-      setExpression("");
-      setIsCelebrating(true);
-      setTimeout(() => setIsCelebrating(false), 6000);
-      setJustEvaluated(true);
-      return;
-    }
-
-    const result = evaluateExpression(fullExpression);
+    const finalExpression = expression + displayValue;
+    const result = evaluateExpression(finalExpression);
     setDisplayValue(result);
     setExpression("");
-    setIsNewNumber(true);
     setJustEvaluated(true);
-  }, [expression, displayValue, evaluateExpression]);
+  }, [expression, displayValue]);
+
+  const handleNumber = (num: string) => {
+    if (justEvaluated) {
+      setDisplayValue(num);
+      setJustEvaluated(false);
+    } else if (isNewNumber) {
+      setDisplayValue(num);
+      setIsNewNumber(false);
+    } else {
+      setDisplayValue((prev) => (prev === "0" ? num : prev + num));
+    }
+  };
+
+  const handleDecimal = () => {
+    if (justEvaluated) {
+      setDisplayValue("0.");
+      setJustEvaluated(false);
+    } else if (!displayValue.includes(".")) {
+      setDisplayValue((prev) => prev + ".");
+    }
+    setIsNewNumber(false);
+  };
+
+  const handleBackspace = () => {
+    if (justEvaluated) {
+      setDisplayValue("0");
+      setJustEvaluated(false);
+      setExpression("");
+    } else {
+      setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
+    }
+  };
+
+  const clearAll = () => {
+    setDisplayValue("0");
+    setExpression("");
+    setIsNewNumber(true);
+    setJustEvaluated(false);
+  };
 
   const handleInput = useCallback(
     (input: string) => {
-      if (displayValue === "I ❤️ You") {
-        resetCalculator();
-        return;
-      }
-      if (displayValue === "Error") {
-        resetCalculator();
-        if (input === "AC") return;
-      }
-
-      const operators = ["÷", "×", "-", "+"];
+      const operators = ["÷", "×", "‑", "+"];
       if (operators.includes(input)) {
         handleOperator(input);
-        return;
-      }
-
-      switch (input) {
-        case "AC":
-          resetCalculator();
-          break;
-        case "=":
-          handleEquals();
-          break;
-        case ".":
-          if (justEvaluated) {
-            setDisplayValue("0.");
-            setJustEvaluated(false);
-          } else if (!displayValue.includes(".")) {
-            setDisplayValue((prev) => prev + ".");
-          }
-          setIsNewNumber(false);
-          break;
-        case "⌫":
-          if (justEvaluated) {
-            resetCalculator();
-          } else {
-            setDisplayValue((prev) =>
-              prev.length > 1 ? prev.slice(0, -1) : "0",
-            );
-          }
-          break;
-        case "+/-":
-          setDisplayValue((prev) => (parseFloat(prev) * -1).toString());
-          break;
-        case "%":
-          setDisplayValue((prev) => (parseFloat(prev) / 100).toString());
-          break;
-        default: // Digit input
-          if (isNewNumber) {
-            setDisplayValue(input);
-            setIsNewNumber(false);
-          } else {
-            setDisplayValue((prev) =>
-              prev === "0" ? input : prev + input,
-            );
-          }
-          setJustEvaluated(false);
-          break;
+      } else if (/[0-9]/.test(input)) {
+        handleNumber(input);
+      } else {
+        switch (input) {
+          case "=":
+            handleEquals();
+            break;
+          case ".":
+            handleDecimal();
+            break;
+          case "AC":
+            clearAll();
+            break;
+          case "⌫":
+            handleBackspace();
+            break;
+          case "+/-":
+            setDisplayValue((prev) => String(parseFloat(prev) * -1));
+            break;
+          case "%":
+            setDisplayValue((prev) => String(parseFloat(prev) / 100));
+            break;
+        }
       }
     },
-    [
-      displayValue,
-      isNewNumber,
-      justEvaluated,
-      resetCalculator,
-      handleOperator,
-      handleEquals,
-    ],
+    [handleOperator, handleEquals],
   );
 
   useEffect(() => {
@@ -242,374 +193,75 @@ export default function BasicCalculator() {
       if (
         event.target instanceof HTMLInputElement ||
         event.target instanceof HTMLTextAreaElement
-      ) {
+      )
         return;
-      }
+
       let key = event.key;
-      const operators = ["/", "*", "-", "+"];
-      
-      if (key === '/') key = '÷';
-      if (key === '*') key = '×';
+      if (key === "Enter") key = "=";
+      if (key === "Backspace") key = "⌫";
+      if (key === "Escape") key = "AC";
+      if (key === "/") key = "÷";
+      if (key === "*") key = "×";
+      if (key === "-") key = "‑";
 
-      if (/[0-9.]/.test(key)) handleInput(key);
-      else if (operators.includes(key)) handleInput(key);
-      else if (key === "Enter" || key === "=") handleInput("=");
-      else if (key === "Backspace") handleInput("⌫");
-      else if (key === "Escape") handleInput("AC");
+      const validInputs = "0123456789.+-×÷=⌫AC%+/-";
+      if (validInputs.includes(key)) {
+        event.preventDefault();
+        handleInput(key);
+      }
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleInput]);
 
-  const handleScientificInput = (func: string) => {
-    if (displayValue === "Error" && func !== "AC") return;
-
-    const value = parseFloat(displayValue);
-    const angleToRad = (angle: number) =>
-      isRadians ? angle : angle * (Math.PI / 180);
-    const radToAngle = (rad: number) =>
-      isRadians ? rad : rad * (180 / Math.PI);
-
-    try {
-      let result;
-      switch (func) {
-        case "2nd":
-          setIsInverse(!isInverse);
-          return;
-        case "x²":
-          result = Math.pow(value, 2);
-          break;
-        case "x³":
-          result = Math.pow(value, 3);
-          break;
-        case "eˣ":
-          result = Math.exp(value);
-          break;
-        case "10ˣ":
-          result = Math.pow(10, value);
-          break;
-        case "x!":
-          result = factorial(value);
-          break;
-        case "¹/x":
-          result = 1 / value;
-          break;
-        case "²√x":
-          if (value < 0) throw new Error("Invalid input");
-          result = Math.sqrt(value);
-          break;
-        case "³√x":
-          result = Math.cbrt(value);
-          break;
-        case "ln":
-          if (value <= 0) throw new Error("Invalid input");
-          result = Math.log(value);
-          break;
-        case "log₁₀":
-          if (value <= 0) throw new Error("Invalid input");
-          result = Math.log10(value);
-          break;
-        case "log₂":
-          if (value <= 0) throw new Error("Invalid input");
-          result = Math.log2(value);
-          break;
-        case "sin":
-          result = Math.sin(angleToRad(value));
-          break;
-        case "cos":
-          result = Math.cos(angleToRad(value));
-          break;
-        case "tan":
-          if (
-            isRadians
-              ? (value / Math.PI - 0.5) % 1 === 0
-              : (value / 90 - 1) % 2 === 0
-          )
-            throw new Error("Invalid input");
-          result = Math.tan(angleToRad(value));
-          break;
-        case "sin⁻¹":
-          if (value < -1 || value > 1)
-            throw new Error("Input must be between -1 and 1");
-          result = radToAngle(Math.asin(value));
-          break;
-        case "cos⁻¹":
-          if (value < -1 || value > 1)
-            throw new Error("Input must be between -1 and 1");
-          result = radToAngle(Math.acos(value));
-          break;
-        case "tan⁻¹":
-          result = radToAngle(Math.atan(value));
-          break;
-        case "e":
-          result = Math.E;
-          break;
-        case "π":
-          result = Math.PI;
-          break;
-        case "Rand":
-          result = randomValue;
-          break;
-        case "mc":
-          setMemory(0);
-          return;
-        case "m+":
-          setMemory((prev) => prev + value);
-          return;
-        case "m-":
-          setMemory((prev) => prev - value);
-          return;
-        case "mr":
-          setDisplayValue(memory.toString());
-          return;
-        case "Rad":
-          setIsRadians(true);
-          return;
-        case "deg":
-          setIsRadians(false);
-          return;
-        default:
-          setDisplayValue(func);
-          return;
-      }
-      if (result !== undefined && isFinite(result)) {
-        setDisplayValue(result.toString());
-      } else {
-        setDisplayValue("Error");
-      }
-    } catch (e) {
-      setDisplayValue("Error");
-    }
-    setIsNewNumber(true);
-  };
-
-  const renderDisplay = () => (
-    <div
-      className="h-28 p-4 bg-black/20 dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden"
-      aria-label="Calculator display"
-    >
-      <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
-        {expression}
-      </div>
-      <div className="h-2/3 w-full flex items-end justify-end">
-        <div
-          aria-live="polite"
-          className={cn(
-            "w-full text-right font-mono text-5xl text-white",
-            displayValue === "I ❤️ You" && "text-pink-500",
-          )}
-        >
-          {displayValue}
-        </div>
-      </div>
-    </div>
-  );
-
-  const btnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
-  const specialBtnClasses = `bg-neutral-600/80 hover:bg-neutral-600 text-white`;
-  const operatorBtnClasses = `bg-purple-500 hover:bg-purple-600 text-white`;
-  const numberBtnClasses = `bg-neutral-800/80 hover:bg-neutral-800 text-white`;
+  const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
+  const specialBtnClasses = "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
+  const operatorBtnClasses = "bg-primary hover:bg-primary/90 text-primary-foreground";
+  const numberBtnClasses = "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
 
   const renderBasicButtons = () => (
     <div className="grid grid-cols-4 gap-3 p-1">
-      <Button
-        onClick={() => handleInput("AC")}
-        className={cn(btnClasses, specialBtnClasses)}
-      >
-        AC
-      </Button>
-      <Button
-        onClick={() => handleInput("⌫")}
-        aria-label="Backspace"
-        className={cn(btnClasses, specialBtnClasses)}
-      >
-        ⌫
-      </Button>
-      <Button
-        onClick={() => handleInput("%")}
-        className={cn(btnClasses, specialBtnClasses)}
-      >
-        %
-      </Button>
-      <Button
-        onClick={() => handleInput("÷")}
-        className={cn(btnClasses, operatorBtnClasses)}
-      >
-        ÷
-      </Button>
-      <Button
-        onClick={() => handleInput("7")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        7
-      </Button>
-      <Button
-        onClick={() => handleInput("8")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        8
-      </Button>
-      <Button
-        onClick={() => handleInput("9")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        9
-      </Button>
-      <Button
-        onClick={() => handleInput("×")}
-        className={cn(btnClasses, operatorBtnClasses)}
-      >
-        ×
-      </Button>
-      <Button
-        onClick={() => handleInput("4")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        4
-      </Button>
-      <Button
-        onClick={() => handleInput("5")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        5
-      </Button>
-      <Button
-        onClick={() => handleInput("6")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        6
-      </Button>
-      <Button
-        onClick={() => handleInput("-")}
-        className={cn(btnClasses, operatorBtnClasses)}
-      >
-        -
-      </Button>
-      <Button
-        onClick={() => handleInput("1")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        1
-      </Button>
-      <Button
-        onClick={() => handleInput("2")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        2
-      </Button>
-      <Button
-        onClick={() => handleInput("3")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        3
-      </Button>
-      <Button
-        onClick={() => handleInput("+")}
-        className={cn(btnClasses, operatorBtnClasses)}
-      >
-        +
-      </Button>
-      <Button
-        onClick={() => handleInput("0")}
-        className={cn(btnClasses, numberBtnClasses, "col-span-2")}
-      >
-        0
-      </Button>
-      <Button
-        onClick={() => handleInput(".")}
-        className={cn(btnClasses, numberBtnClasses)}
-      >
-        .
-      </Button>
-      <Button
-        onClick={() => handleInput("=")}
-        className={cn(btnClasses, operatorBtnClasses)}
-      >
-        =
-      </Button>
-    </div>
-  );
+      <Button onClick={() => handleInput("AC")} className={cn(basicBtnClasses, specialBtnClasses)}>AC</Button>
+      <Button onClick={() => handleInput("⌫")} aria-label="Backspace" className={cn(basicBtnClasses, specialBtnClasses)}><Delete /></Button>
+      <Button onClick={() => handleInput("%")} className={cn(basicBtnClasses, specialBtnClasses)}>%</Button>
+      <Button onClick={() => handleInput("÷")} className={cn(basicBtnClasses, operatorBtnClasses)}>÷</Button>
+      
+      {["7", "8", "9"].map(num => <Button key={num} onClick={() => handleInput(num)} className={cn(basicBtnClasses, numberBtnClasses)}>{num}</Button>)}
+      <Button onClick={() => handleInput("×")} className={cn(basicBtnClasses, operatorBtnClasses)}>×</Button>
 
-  const renderScientificButtons = () => (
-    <div className="grid grid-cols-6 gap-2 p-1">
-      {scientificButtons
-        .concat(
-          isRadians
-            ? { func: "deg", tooltip: "Switch to Degrees" }
-            : { func: "Rad", tooltip: "Switch to Radians" },
-        )
-        .map(({ func, tooltip, active }) => (
-          <Tooltip key={func}>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                onClick={() => handleScientificInput(func)}
-                className={cn(
-                  "h-12 text-sm text-white",
-                  active &&
-                    "bg-primary/80 text-primary-foreground hover:bg-primary",
-                )}
-              >
-                {func}
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{tooltip}</p>
-            </TooltipContent>
-          </Tooltip>
-        ))}
+      {["4", "5", "6"].map(num => <Button key={num} onClick={() => handleInput(num)} className={cn(basicBtnClasses, numberBtnClasses)}>{num}</Button>)}
+      <Button onClick={() => handleInput("‑")} className={cn(basicBtnClasses, operatorBtnClasses)}>−</Button>
+
+      {["1", "2", "3"].map(num => <Button key={num} onClick={() => handleInput(num)} className={cn(basicBtnClasses, numberBtnClasses)}>{num}</Button>)}
+      <Button onClick={() => handleInput("+")} className={cn(basicBtnClasses, operatorBtnClasses)}>+</Button>
+      
+      <Button onClick={() => handleInput("0")} className={cn(basicBtnClasses, numberBtnClasses, "col-span-2")}>0</Button>
+      <Button onClick={() => handleInput(".")} className={cn(basicBtnClasses, numberBtnClasses)}>.</Button>
+      <Button onClick={() => handleInput("=")} className={cn(basicBtnClasses, operatorBtnClasses)}>=</Button>
     </div>
   );
 
   return (
-    <Card className="max-w-md mx-auto overflow-hidden relative shadow-2xl rounded-2xl border-neutral-800 bg-neutral-900">
-      {isCelebrating && (
-        <div className="celebrate absolute inset-0 pointer-events-none">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <Heart
-              key={i}
-              className="heart absolute"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-              }}
-            />
-          ))}
-        </div>
-      )}
-
+    <Card className="max-w-md mx-auto overflow-hidden shadow-2xl rounded-2xl border-neutral-200 dark:border-neutral-800 bg-background dark:bg-neutral-900">
       <CardContent className="p-4">
-      <h2 className="text-center text-2xl font-semibold text-white mb-4">
-        Calculator
-      </h2>
-        <Tabs
-          defaultValue="basic"
-          value={activeTab}
-          onValueChange={setActiveTab}
-          className="w-full"
-        >
-          <TabsList className="grid w-full grid-cols-2 bg-neutral-800">
-            <TabsTrigger value="basic">Basic</TabsTrigger>
-            <TabsTrigger value="sci">Sci</TabsTrigger>
-          </TabsList>
-
-          <div className="mt-4">
-            {renderDisplay()}
+        <h2 className="text-center text-2xl font-semibold text-primary mb-4">
+            Basic Calculator
+        </h2>
+        
+        <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
+          <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right" aria-label="Expression">
+            {expression}
           </div>
-          
-          <TabsContent value="basic" className="mt-4">
-            {renderBasicButtons()}
-          </TabsContent>
+          <div className="h-2/3 w-full flex items-end justify-end">
+            <div aria-live="polite" className="w-full text-right font-mono text-5xl text-foreground">
+              {displayValue}
+            </div>
+          </div>
+        </div>
 
-          <TabsContent value="sci" className="mt-4">
-            <TooltipProvider>
-              {renderScientificButtons()}
-            </TooltipProvider>
-          </TabsContent>
-        </Tabs>
+        {renderBasicButtons()}
       </CardContent>
     </Card>
   );

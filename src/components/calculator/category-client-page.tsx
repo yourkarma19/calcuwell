@@ -41,10 +41,12 @@ export default function CategoryClientPage({
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
-        <IconWrapper
-          iconName={iconName}
-          className="w-16 h-16 text-primary mx-auto mb-4"
-        />
+        <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
+          <IconWrapper
+            iconName={iconName}
+            className="w-16 h-16 text-primary"
+          />
+        </div>
         <h1 className="text-4xl font-bold font-headline text-primary">
           {name} Calculators
         </h1>
