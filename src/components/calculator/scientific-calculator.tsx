@@ -45,7 +45,21 @@ export default function ScientificCalculator() {
 
   const handleFunction = (func: string) => {
     // For functions that wrap the current number
-    if (["sqrt(", "log(", "ln(", "sin(", "cos(", "tan("].includes(func)) {
+    if (
+      [
+        "sqrt(",
+        "log(",
+        "ln(",
+        "sin(",
+        "cos(",
+        "tan(",
+        "asin(",
+        "acos(",
+        "atan(",
+        "10^",
+        "exp(",
+      ].includes(func)
+    ) {
       if (isResult) {
         setExpression(func + displayValue + ")");
         setDisplayValue(func + displayValue + ")");
@@ -111,7 +125,9 @@ export default function ScientificCalculator() {
 
       const result = evaluate(finalExpression, customFunctions);
       const formattedResult =
-        typeof result === "number" ? parseFloat(result.toPrecision(15)) : result;
+        typeof result === "number"
+          ? parseFloat(result.toPrecision(15))
+          : result;
       setDisplayValue(String(formattedResult));
       setExpression(String(formattedResult));
       setIsResult(true);
@@ -173,6 +189,24 @@ export default function ScientificCalculator() {
               tan
             </Button>
             <Button
+              onClick={() => handleFunction("asin(")}
+              className={cn(btnClasses, specialBtnClasses)}
+            >
+              sin⁻¹
+            </Button>
+            <Button
+              onClick={() => handleFunction("acos(")}
+              className={cn(btnClasses, specialBtnClasses)}
+            >
+              cos⁻¹
+            </Button>
+            <Button
+              onClick={() => handleFunction("atan(")}
+              className={cn(btnClasses, specialBtnClasses)}
+            >
+              tan⁻¹
+            </Button>
+            <Button
               onClick={() => handleFunction("log(")}
               className={cn(btnClasses, specialBtnClasses)}
             >
@@ -196,7 +230,7 @@ export default function ScientificCalculator() {
             >
               x²
             </Button>
-             <Button
+            <Button
               onClick={() => handleFunction("x^3")}
               className={cn(btnClasses, specialBtnClasses)}
             >
@@ -207,6 +241,24 @@ export default function ScientificCalculator() {
               className={cn(btnClasses, specialBtnClasses)}
             >
               xʸ
+            </Button>
+            <Button
+              onClick={() => handleFunction("10^")}
+              className={cn(btnClasses, specialBtnClasses)}
+            >
+              10ˣ
+            </Button>
+            <Button
+              onClick={() => handleFunction("exp(")}
+              className={cn(btnClasses, specialBtnClasses)}
+            >
+              eˣ
+            </Button>
+            <Button
+              onClick={() => handleOperator("mod")}
+              className={cn(btnClasses, specialBtnClasses)}
+            >
+              mod
             </Button>
             <Button
               onClick={() => handleFunction("π")}
@@ -238,7 +290,7 @@ export default function ScientificCalculator() {
             >
               )
             </Button>
-             <Button
+            <Button
               onClick={() => handleFunction("1/x")}
               className={cn(btnClasses, specialBtnClasses)}
             >
@@ -254,7 +306,10 @@ export default function ScientificCalculator() {
             >
               AC
             </Button>
-            <Button onClick={handleDelete} className={cn(btnClasses, operatorBtnClasses)}>
+            <Button
+              onClick={handleDelete}
+              className={cn(btnClasses, operatorBtnClasses)}
+            >
               <Delete />
             </Button>
             <Button
