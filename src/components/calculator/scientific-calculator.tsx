@@ -39,60 +39,36 @@ export default function ScientificCalculator() {
       setIsResult(false);
       return;
     }
-    setExpression((prev) => prev + value);
-    setDisplayValue((prev) => (prev === "0" ? value : prev + value));
+    // Don't allow multiple leading zeros
+    if (displayValue === "0" && value === "0") return;
+    // Handle starting a new number after an operator
+    if (displayValue === "0" && value !== ".") {
+      setDisplayValue(value);
+      setExpression((prev) => prev + value);
+    } else {
+      setDisplayValue((prev) => prev + value);
+      setExpression((prev) => prev + value);
+    }
   };
 
   const handleFunction = (func: string) => {
-    // For functions that wrap the current number
-    if (
-      [
-        "sqrt(",
-        "log(",
-        "ln(",
-        "sin(",
-        "cos(",
-        "tan(",
-        "asin(",
-        "acos(",
-        "atan(",
-        "10^",
-        "exp(",
-      ].includes(func)
-    ) {
-      if (isResult) {
-        setExpression(func + displayValue + ")");
-        setDisplayValue(func + displayValue + ")");
-        setIsResult(false);
-      } else {
-        setExpression((prev) => prev + func);
-        setDisplayValue((prev) => prev + func);
-      }
-    } else if (func === "x^2") {
-      setExpression((prev) => `(${prev})^2`);
-      setDisplayValue((prev) => `(${prev})^2`);
-    } else if (func === "x^3") {
-      setExpression((prev) => `(${prev})^3`);
-      setDisplayValue((prev) => `(${prev})^3`);
-    } else if (func === "1/x") {
-      setExpression((prev) => `1/(${prev})`);
-      setDisplayValue((prev) => `1/(${prev})`);
-    } else if (func === "n!") {
-      setExpression((prev) => `factorial(${prev})`);
-      setDisplayValue((prev) => `(${prev})!`);
-    } else if (func === "π" || func === "e") {
-      handleInput(func);
-    } else {
-      setExpression((prev) => prev + func);
-      setDisplayValue((prev) => prev + func);
+    if (isResult) {
+      setExpression(func + "(" + displayValue + ")");
+      setDisplayValue(func + "(" + displayValue + ")");
+      setIsResult(false);
+      return;
     }
-    setIsResult(false);
+    setExpression((prev) => prev + func);
+    setDisplayValue("0");
   };
 
   const handleOperator = (op: string) => {
-    if (expression.endsWith(" ") || expression === "") return;
-    setExpression((prev) => `${prev} ${op} `);
-    setDisplayValue("0"); // Ready for next number
+    if (isResult && displayValue !== "Error") {
+      setExpression(displayValue + ` ${op} `);
+    } else if (expression !== "" && !expression.endsWith(" ")) {
+      setExpression((prev) => `${prev} ${op} `);
+    }
+    setDisplayValue("0");
     setIsResult(false);
   };
 
@@ -115,13 +91,19 @@ export default function ScientificCalculator() {
   const handleEquals = () => {
     if (expression === "" || isResult) return;
     try {
-      const finalExpression = expression
+      // Replace user-friendly symbols with mathjs compatible ones
+      let finalExpression = expression
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
         .replace(/‑/g, "-")
         .replace(/√\(/g, "sqrt(")
-        .replace(/π/g, "pi")
-        .replace(/(\d+)!/g, "factorial($1)");
+        .replace(/π/g, "pi");
+
+      // Handle factorial
+      finalExpression = finalExpression.replace(
+        /(\d+)!/g,
+        "factorial($1)",
+      );
 
       const result = evaluate(finalExpression, customFunctions);
       const formattedResult =
@@ -137,7 +119,6 @@ export default function ScientificCalculator() {
       setIsResult(true);
     }
   };
-
   const btnClasses =
     "h-12 text-sm md:text-base rounded-lg py-2 font-semibold transition-transform duration-100 active:scale-95";
   const specialBtnClasses =
@@ -170,251 +151,54 @@ export default function ScientificCalculator() {
         <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
           {/* Scientific Functions Panel */}
           <div className="col-span-1 md:col-span-3 grid grid-cols-3 gap-2">
-            <Button
-              onClick={() => handleFunction("sin(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              sin
-            </Button>
-            <Button
-              onClick={() => handleFunction("cos(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              cos
-            </Button>
-            <Button
-              onClick={() => handleFunction("tan(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              tan
-            </Button>
-            <Button
-              onClick={() => handleFunction("asin(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              sin⁻¹
-            </Button>
-            <Button
-              onClick={() => handleFunction("acos(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              cos⁻¹
-            </Button>
-            <Button
-              onClick={() => handleFunction("atan(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              tan⁻¹
-            </Button>
-            <Button
-              onClick={() => handleFunction("log(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              log
-            </Button>
-            <Button
-              onClick={() => handleFunction("ln(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              ln
-            </Button>
-            <Button
-              onClick={() => handleFunction("√(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              √
-            </Button>
-            <Button
-              onClick={() => handleFunction("x^2")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              x²
-            </Button>
-            <Button
-              onClick={() => handleFunction("x^3")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              x³
-            </Button>
-            <Button
-              onClick={() => handleFunction("^")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              xʸ
-            </Button>
-            <Button
-              onClick={() => handleFunction("10^")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              10ˣ
-            </Button>
-            <Button
-              onClick={() => handleFunction("exp(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              eˣ
-            </Button>
-            <Button
-              onClick={() => handleOperator("mod")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              mod
-            </Button>
-            <Button
-              onClick={() => handleFunction("π")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              π
-            </Button>
-            <Button
-              onClick={() => handleFunction("e")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              e
-            </Button>
-            <Button
-              onClick={() => handleFunction("n!")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              n!
-            </Button>
-            <Button
-              onClick={() => handleFunction("(")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              (
-            </Button>
-            <Button
-              onClick={() => handleFunction(")")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              )
-            </Button>
-            <Button
-              onClick={() => handleFunction("1/x")}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              1/x
-            </Button>
+            <Button onClick={() => handleFunction("sin(")} className={cn(btnClasses, specialBtnClasses)}>sin</Button>
+            <Button onClick={() => handleFunction("cos(")} className={cn(btnClasses, specialBtnClasses)}>cos</Button>
+            <Button onClick={() => handleFunction("tan(")} className={cn(btnClasses, specialBtnClasses)}>tan</Button>
+            <Button onClick={() => handleFunction("asin(")} className={cn(btnClasses, specialBtnClasses)}>sin⁻¹</Button>
+            <Button onClick={() => handleFunction("acos(")} className={cn(btnClasses, specialBtnClasses)}>cos⁻¹</Button>
+            <Button onClick={() => handleFunction("atan(")} className={cn(btnClasses, specialBtnClasses)}>tan⁻¹</Button>
+            <Button onClick={() => handleFunction("log(")} className={cn(btnClasses, specialBtnClasses)}>log</Button>
+            <Button onClick={() => handleFunction("ln(")} className={cn(btnClasses, specialBtnClasses)}>ln</Button>
+            <Button onClick={() => handleFunction("√(")} className={cn(btnClasses, specialBtnClasses)}>√</Button>
+            <Button onClick={() => handleFunction("x^2")} className={cn(btnClasses, specialBtnClasses)}>x²</Button>
+            <Button onClick={() => handleFunction("x^3")} className={cn(btnClasses, specialBtnClasses)}>x³</Button>
+            <Button onClick={() => handleFunction("^")} className={cn(btnClasses, specialBtnClasses)}>xʸ</Button>
+            <Button onClick={() => handleFunction("10^(")} className={cn(btnClasses, specialBtnClasses)}>10ˣ</Button>
+            <Button onClick={() => handleFunction("exp(")} className={cn(btnClasses, specialBtnClasses)}>eˣ</Button>
+            <Button onClick={() => handleOperator("mod")} className={cn(btnClasses, specialBtnClasses)}>mod</Button>
+            <Button onClick={() => handleInput("π")} className={cn(btnClasses, specialBtnClasses)}>π</Button>
+            <Button onClick={() => handleInput("e")} className={cn(btnClasses, specialBtnClasses)}>e</Button>
+            <Button onClick={() => handleFunction("!")} className={cn(btnClasses, specialBtnClasses)}>n!</Button>
+            <Button onClick={() => handleInput("(")} className={cn(btnClasses, specialBtnClasses)}>(</Button>
+            <Button onClick={() => handleInput(")")} className={cn(btnClasses, specialBtnClasses)}>)</Button>
+            <Button onClick={() => handleFunction("1/(")} className={cn(btnClasses, specialBtnClasses)}>1/x</Button>
           </div>
 
           {/* Keypad Panel */}
           <div className="col-span-1 md:col-span-3 grid grid-cols-4 gap-2">
-            <Button
-              onClick={handleClear}
-              className={cn(btnClasses, operatorBtnClasses, "col-span-2")}
-            >
-              AC
-            </Button>
-            <Button
-              onClick={handleDelete}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              <Delete />
-            </Button>
-            <Button
-              onClick={() => handleOperator("÷")}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              ÷
-            </Button>
-
-            <Button
-              onClick={() => handleInput("7")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              7
-            </Button>
-            <Button
-              onClick={() => handleInput("8")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              8
-            </Button>
-            <Button
-              onClick={() => handleInput("9")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              9
-            </Button>
-            <Button
-              onClick={() => handleOperator("×")}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              ×
-            </Button>
-
-            <Button
-              onClick={() => handleInput("4")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              4
-            </Button>
-            <Button
-              onClick={() => handleInput("5")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              5
-            </Button>
-            <Button
-              onClick={() => handleInput("6")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              6
-            </Button>
-            <Button
-              onClick={() => handleOperator("‑")}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              -
-            </Button>
-
-            <Button
-              onClick={() => handleInput("1")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              1
-            </Button>
-            <Button
-              onClick={() => handleInput("2")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              2
-            </Button>
-            <Button
-              onClick={() => handleInput("3")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              3
-            </Button>
-            <Button
-              onClick={() => handleOperator("+")}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              +
-            </Button>
-
-            <Button
-              onClick={() => handleInput("0")}
-              className={cn(btnClasses, numberBtnClasses, "col-span-2")}
-            >
-              0
-            </Button>
-            <Button
-              onClick={() => handleInput(".")}
-              className={cn(btnClasses, numberBtnClasses)}
-            >
-              .
-            </Button>
-            <Button
-              onClick={handleEquals}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              =
-            </Button>
+            <Button onClick={handleClear} className={cn(btnClasses, operatorBtnClasses, "col-span-2")}>AC</Button>
+            <Button onClick={handleDelete} className={cn(btnClasses, operatorBtnClasses)}><Delete /></Button>
+            <Button onClick={() => handleOperator("÷")} className={cn(btnClasses, operatorBtnClasses)}>÷</Button>
+            <Button onClick={() => handleInput("7")} className={cn(btnClasses, numberBtnClasses)}>7</Button>
+            <Button onClick={() => handleInput("8")} className={cn(btnClasses, numberBtnClasses)}>8</Button>
+            <Button onClick={() => handleInput("9")} className={cn(btnClasses, numberBtnClasses)}>9</Button>
+            <Button onClick={() => handleOperator("×")} className={cn(btnClasses, operatorBtnClasses)}>×</Button>
+            <Button onClick={() => handleInput("4")} className={cn(btnClasses, numberBtnClasses)}>4</Button>
+            <Button onClick={() => handleInput("5")} className={cn(btnClasses, numberBtnClasses)}>5</Button>
+            <Button onClick={() => handleInput("6")} className={cn(btnClasses, numberBtnClasses)}>6</Button>
+            <Button onClick={() => handleOperator("-")} className={cn(btnClasses, operatorBtnClasses)}>-</Button>
+            <Button onClick={() => handleInput("1")} className={cn(btnClasses, numberBtnClasses)}>1</Button>
+            <Button onClick={() => handleInput("2")} className={cn(btnClasses, numberBtnClasses)}>2</Button>
+            <Button onClick={() => handleInput("3")} className={cn(btnClasses, numberBtnClasses)}>3</Button>
+            <Button onClick={() => handleOperator("+")} className={cn(btnClasses, operatorBtnClasses)}>+</Button>
+            <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses, "col-span-2")}>0</Button>
+            <Button onClick={() => handleInput(".")} className={cn(btnClasses, numberBtnClasses)}>.</Button>
+            <Button onClick={handleEquals} className={cn(btnClasses, operatorBtnClasses)}>=</Button>
           </div>
         </div>
       </CardContent>
     </Card>
   );
 }
+
+    
