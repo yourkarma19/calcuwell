@@ -141,16 +141,19 @@ export default function ScientificCalculator() {
     { display: "tan", input: "tan(" },
     { display: "log", input: "log10(" },
     { display: "ln", input: "log(" },
+
     { display: "sin⁻¹", input: "asin(" },
     { display: "cos⁻¹", input: "acos(" },
     { display: "tan⁻¹", input: "atan(" },
     { display: "log₂", input: "log2(" },
     { display: "eˣ", input: "exp(" },
+
     { display: "√", input: "sqrt(" },
     { display: "x²", input: "^2" },
     { display: "x³", input: "^3" },
     { display: "xʸ", input: "^" },
     { display: "1/x", input: "1/" },
+
     { display: "(", input: "(" },
     { display: ")", input: ")" },
     { display: "π", input: "π" },
@@ -247,7 +250,7 @@ export default function ScientificCalculator() {
           </Button>
           <Button
             onClick={() => handleOperator("+")}
-            className={cn(btnClasses, operatorBtnClasses)}
+            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
           >
             <Plus size={20} />
           </Button>
@@ -271,16 +274,10 @@ export default function ScientificCalculator() {
               {num}
             </Button>
           ))}
-          <Button
-            onClick={handleEquals}
-            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
-          >
-            =
-          </Button>
 
           <Button
             onClick={() => handleInput("0")}
-            className={cn(btnClasses, numberBtnClasses, "col-span-2")}
+            className={cn(btnClasses, numberBtnClasses)}
           >
             0
           </Button>
@@ -289,6 +286,12 @@ export default function ScientificCalculator() {
             className={cn(btnClasses, numberBtnClasses)}
           >
             .
+          </Button>
+          <Button
+            onClick={handleEquals}
+            className={cn(btnClasses, operatorBtnClasses, "col-span-2")}
+          >
+            =
           </Button>
         </div>
       </CardContent>
