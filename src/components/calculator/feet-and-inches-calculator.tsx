@@ -102,6 +102,7 @@ export default function FeetAndInchesCalculator() {
                   onChange={(e) => setFeet1(Number(e.target.value))}
                   placeholder="Feet"
                   aria-label="Measurement 1 Feet"
+                  min="0"
                 />
                 <Input
                   type="number"
@@ -109,6 +110,7 @@ export default function FeetAndInchesCalculator() {
                   onChange={(e) => setInches1(Number(e.target.value))}
                   placeholder="Inches"
                   aria-label="Measurement 1 Inches"
+                  min="0"
                 />
               </div>
             </div>
@@ -138,6 +140,7 @@ export default function FeetAndInchesCalculator() {
                   onChange={(e) => setFeet2(Number(e.target.value))}
                   placeholder="Feet / Num"
                   aria-label="Measurement 2 Feet or Scalar"
+                  min="0"
                 />
                 <Input
                   type="number"
@@ -145,6 +148,7 @@ export default function FeetAndInchesCalculator() {
                   onChange={(e) => setInches2(Number(e.target.value))}
                   placeholder="Inches / Num"
                   aria-label="Measurement 2 Inches or Scalar"
+                  min="0"
                 />
               </div>
             </div>

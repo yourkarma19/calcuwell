@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 type Difference = {
   years: number;
@@ -30,9 +31,15 @@ type Difference = {
 };
 
 export default function DateDifferenceCalculator() {
-  const [startDate, setStartDate] = useState<Date | undefined>(new Date());
-  const [endDate, setEndDate] = useState<Date | undefined>(
+  const [startDate, setStartDate] = usePersistentState<Date | undefined>(
+    "datediff-start-date",
+    new Date(),
+    (v) => (v ? new Date(v as string) : new Date()),
+  );
+  const [endDate, setEndDate] = usePersistentState<Date | undefined>(
+    "datediff-end-date",
     new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+    (v) => (v ? new Date(v as string) : new Date()),
   );
   const [difference, setDifference] = useState<Difference | null>(null);
 

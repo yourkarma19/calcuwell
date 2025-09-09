@@ -41,20 +41,24 @@ export default function TangentLineCalculator() {
 
       const yValue = f.evaluate({ x: point });
       const slope = fPrimeCompiled.evaluate({ x: point });
+      
+      if (!isFinite(yValue) || !isFinite(slope)) {
+        throw new Error("Result is not a finite number. Check function and point.");
+      }
 
       const b = yValue - slope * point;
       const sign = b < 0 ? "-" : "+";
 
-      const equation = `y = ${slope.toFixed(4)}x ${sign} ${Math.abs(b).toFixed(4)}`;
+      const equation = `y = ${slope.toFixed(4).replace(/\.?0+$/, "")}x ${sign} ${Math.abs(b).toFixed(4).replace(/\.?0+$/, "")}`;
 
       setSolution({
         equation: equation.replace(/\.0000/g, ""),
         steps: [
           `1. Original function: f(x) = ${node.toString()}`,
           `2. Derivative: f'(x) = ${fPrime.toString()}`,
-          `3. Evaluate y at x=${point}: f(${point}) = ${yValue.toFixed(4)}`,
-          `4. Evaluate slope at x=${point}: f'(${point}) = ${slope.toFixed(4)}`,
-          `5. Use point-slope form y - y₁ = m(x - x₁): y - ${yValue.toFixed(4)} = ${slope.toFixed(4)}(x - ${point})`,
+          `3. Evaluate y at x=${point}: f(${point}) = ${yValue.toFixed(4).replace(/\.?0+$/, "")}`,
+          `4. Evaluate slope at x=${point}: f'(${point}) = ${slope.toFixed(4).replace(/\.?0+$/, "")}`,
+          `5. Use point-slope form y - y₁ = m(x - x₁): y - ${yValue.toFixed(4).replace(/\.?0+$/, "")} = ${slope.toFixed(4).replace(/\.?0+$/, "")}(x - ${point})`,
           `6. Simplify to y = mx + b: ${equation}`,
         ],
       });
@@ -87,7 +91,7 @@ export default function TangentLineCalculator() {
                 value={funcStr}
                 onChange={(e) => setFuncStr(e.target.value)}
                 placeholder="e.g., x^2"
-                className="font-mono"
+                className="font-mono text-lg"
               />
             </div>
             <div className="space-y-2">
@@ -118,7 +122,7 @@ export default function TangentLineCalculator() {
           <CardHeader>
             <CardTitle>Solution</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" aria-live="polite">
             <div className="text-center">
               <p className="text-sm text-muted-foreground">
                 Tangent Line Equation
