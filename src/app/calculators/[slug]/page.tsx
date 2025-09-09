@@ -23,11 +23,15 @@ export async function generateMetadata({
     };
   }
 
+  const title =
+    calculator.seoTitle || `${calculator.name} | Free Online Calculator`;
+  const description =
+    calculator.metaDescription ||
+    `Use the free ${calculator.name} on CalcPro to solve your problem. ${calculator.description}`;
+
   return {
-    title: `${calculator.name} | CalcPro`,
-    description:
-      calculator.metaDescription ||
-      `Use the free ${calculator.name} on CalcPro. ${calculator.description}`,
+    title,
+    description,
     alternates: {
       canonical: `/calculators/${calculator.slug}`,
     },

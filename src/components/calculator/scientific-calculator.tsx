@@ -152,12 +152,12 @@ export default function ScientificCalculator() {
 
           {["4", "5", "6"].map((num) => <Button key={num} onClick={() => handleInput(num)} className={cn(btnClasses, numberBtnClasses)}>{num}</Button>)}
           <Button onClick={() => handleOperator("×")} className={cn(btnClasses, operatorBtnClasses)}><Times size={20} /></Button>
-
+          
           {["1", "2", "3"].map((num) => <Button key={num} onClick={() => handleInput(num)} className={cn(btnClasses, numberBtnClasses)}>{num}</Button>)}
           <Button onClick={() => handleOperator("−")} className={cn(btnClasses, operatorBtnClasses)}><Minus size={20} /></Button>
-          
-          <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses)}>0</Button>
+
           <Button onClick={() => handleInput(".")} className={cn(btnClasses, numberBtnClasses)}>.</Button>
+          <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses)}>0</Button>
           <Button onClick={handleEquals} className={cn(btnClasses, operatorBtnClasses, "row-span-2")}><span className="text-2xl">=</span></Button>
           <Button onClick={() => handleOperator("+")} className={cn(btnClasses, operatorBtnClasses)}><Plus size={20} /></Button>
         </div>

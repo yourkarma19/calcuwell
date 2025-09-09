@@ -106,6 +106,7 @@ export default function LoanAffordabilityCalculator({
               type="number"
               value={annualIncome}
               onChange={(e) => setAnnualIncome(Number(e.target.value))}
+              aria-label="Annual Income"
             />
           </div>
           <div className="space-y-2">
@@ -115,6 +116,7 @@ export default function LoanAffordabilityCalculator({
               type="number"
               value={monthlyDebt}
               onChange={(e) => setMonthlyDebt(Number(e.target.value))}
+              aria-label="Monthly Debt Payments"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -125,6 +127,7 @@ export default function LoanAffordabilityCalculator({
                 type="number"
                 value={interestRate}
                 onChange={(e) => setInterestRate(Number(e.target.value))}
+                aria-label="Interest Rate"
               />
             </div>
             <div className="space-y-2">
@@ -134,6 +137,7 @@ export default function LoanAffordabilityCalculator({
                 type="number"
                 value={loanTerm}
                 onChange={(e) => setLoanTerm(Number(e.target.value))}
+                aria-label="Loan Term"
               />
             </div>
           </div>
@@ -143,6 +147,7 @@ export default function LoanAffordabilityCalculator({
               <span>{dtiRatio}%</span>
             </div>
             <Slider
+              aria-label="Debt-to-Income Ratio"
               value={[dtiRatio]}
               onValueChange={(v) => setDtiRatio(v[0])}
               min={20}
