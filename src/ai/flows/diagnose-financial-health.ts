@@ -1,3 +1,4 @@
+
 "use server";
 /**
  * @fileOverview An AI agent for diagnosing financial health.
@@ -50,6 +51,12 @@ export type DiagnoseFinancialHealthOutput = z.infer<
   typeof DiagnoseFinancialHealthOutputSchema
 >;
 
+const InternalPromptInputSchema = DiagnoseFinancialHealthInputSchema.extend({
+  savingsRate: z.number(),
+  dtiRatio: z.number(),
+  score: z.number(),
+});
+
 export async function diagnoseFinancialHealth(
   input: DiagnoseFinancialHealthInput,
 ): Promise<DiagnoseFinancialHealthOutput> {
@@ -58,33 +65,28 @@ export async function diagnoseFinancialHealth(
 
 const prompt = ai.definePrompt({
   name: "diagnoseFinancialHealthPrompt",
-  input: { schema: DiagnoseFinancialHealthInputSchema },
+  input: { schema: InternalPromptInputSchema },
   output: { schema: DiagnoseFinancialHealthOutputSchema },
-  prompt: `You are a friendly and encouraging financial advisor. Analyze the user's financial data to provide a health score, a summary, and an action plan.
+  prompt: `You are a friendly and encouraging financial advisor. You have been provided with a user's financial data and a pre-calculated score. Your task is to provide a summary and an action plan.
 
-    User's Data:
+    User's Data & Pre-Calculated Ratios:
     - Monthly Income: {{monthlyIncome}}
     - Monthly Savings: {{monthlySavings}}
     - Monthly Debt Payments: {{monthlyDebt}}
     - Primary Goal: {{financialGoal}}
     - Has Credit Card Debt: {{hasCreditCardDebt}}
+    - Savings Rate: {{savingsRate}}%
+    - Debt-to-Income (DTI) Ratio: {{dtiRatio}}%
+    - Financial Health Score: {{score}}/100
 
-    Your task:
-    1.  **Calculate Ratios**:
-        - Savings Rate = (monthlySavings / monthlyIncome) * 100
-        - Debt-to-Income (DTI) Ratio = (monthlyDebt / monthlyIncome) * 100
+    Your Task:
+    1.  **Return the Score**: Use the pre-calculated score of {{score}} as the 'score' field in your output. Do not change it.
 
-    2.  **Determine the Score (0-100)**:
-        - Start with a base score of 50.
-        - Savings Rate: +2 points for every % above 15% (max 30 points). -2 points for every % below 10% (min -20 points).
-        - DTI Ratio: +1 point for every % below 20% (max 20 points). -2 points for every % above 36% (min -30 points).
-        - Credit Card Debt: If true, subtract 20 points.
-
-    3.  **Write the Summary**:
-        - Provide a concise, two-sentence summary.
+    2.  **Write the Summary**:
+        - Provide a concise, two-sentence summary based on the score and ratios.
         - Start with an encouraging tone, then state the key strength and the main area for improvement.
 
-    4.  **Create the Action Plan**:
+    3.  **Create the Action Plan**:
         - Provide 3-5 clear, actionable steps.
         - Tailor the advice to their primary financial goal. For example, if their goal is to pay off debt, prioritize steps related to that.
         - If they have credit card debt, the first step MUST be to create a plan to pay it off aggressively due to high interest rates.
@@ -98,7 +100,48 @@ const diagnoseFinancialHealthFlow = ai.defineFlow(
     outputSchema: DiagnoseFinancialHealthOutputSchema,
   },
   async (input: DiagnoseFinancialHealthInput) => {
-    const { output } = await prompt(input);
+    // Perform calculations in code, not in the prompt
+    const { monthlyIncome, monthlySavings, monthlyDebt, hasCreditCardDebt } =
+      input;
+
+    const savingsRate =
+      monthlyIncome > 0 ? (monthlySavings / monthlyIncome) * 100 : 0;
+    const dtiRatio =
+      monthlyIncome > 0 ? (monthlyDebt / monthlyIncome) * 100 : 0;
+
+    let score = 50;
+
+    // Savings Rate scoring
+    if (savingsRate > 15) {
+      score += Math.min(30, (savingsRate - 15) * 2);
+    } else if (savingsRate < 10) {
+      score -= Math.min(20, (10 - savingsRate) * 2);
+    }
+
+    // DTI Ratio scoring
+    if (dtiRatio < 20) {
+      score += Math.min(20, (20 - dtiRatio) * 1);
+    } else if (dtiRatio > 36) {
+      score -= Math.min(30, (dtiRatio - 36) * 2);
+    }
+
+    // Credit Card Debt penalty
+    if (hasCreditCardDebt) {
+      score -= 20;
+    }
+
+    // Clamp score between 0 and 100
+    score = Math.max(0, Math.min(100, Math.round(score)));
+
+    const internalInput = {
+      ...input,
+      savingsRate,
+      dtiRatio,
+      score,
+    };
+
+    const { output } = await prompt(internalInput);
     return output!;
   },
 );
+
