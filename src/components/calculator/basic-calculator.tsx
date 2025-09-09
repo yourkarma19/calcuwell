@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Delete, Heart } from "lucide-react";
@@ -396,11 +395,11 @@ export default function BasicCalculator() {
   );
 
   const renderBasicButtons = () => (
-    <div className="grid grid-cols-4 grid-rows-5 gap-2 mt-4">
+    <div className="grid grid-cols-4 grid-rows-5 gap-3 mt-4">
       <Button
         onClick={() => handleInput("AC")}
         variant="outline"
-        className="bg-accent hover:bg-accent/80 h-16 text-xl"
+        className="bg-accent hover:bg-accent/80 h-16 text-lg rounded-xl"
       >
         AC
       </Button>
@@ -410,7 +409,7 @@ export default function BasicCalculator() {
           aria-label="Backspace"
           variant="outline"
           size="icon"
-          className="bg-accent hover:bg-accent/80 h-16 w-16"
+          className="bg-accent hover:bg-accent/80 h-16 w-16 rounded-xl"
         >
           <Delete />
         </Button>
@@ -418,119 +417,119 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("%")}
         variant="outline"
-        className="bg-accent hover:bg-accent/80 h-16 text-xl"
+        className="bg-accent hover:bg-accent/80 h-16 text-lg rounded-xl"
       >
         %
       </Button>
       <Button
         onClick={() => handleInput("/")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
+        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         ÷
       </Button>
       <Button
         onClick={() => handleInput("7")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         7
       </Button>
       <Button
         onClick={() => handleInput("8")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         8
       </Button>
       <Button
         onClick={() => handleInput("9")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         9
       </Button>
       <Button
         onClick={() => handleInput("*")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
+        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         ×
       </Button>
       <Button
         onClick={() => handleInput("4")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         4
       </Button>
       <Button
         onClick={() => handleInput("5")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         5
       </Button>
       <Button
         onClick={() => handleInput("6")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         6
       </Button>
       <Button
         onClick={() => handleInput("-")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
+        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         -
       </Button>
       <Button
         onClick={() => handleInput("1")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         1
       </Button>
       <Button
         onClick={() => handleInput("2")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         2
       </Button>
       <Button
         onClick={() => handleInput("3")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         3
       </Button>
       <Button
         onClick={() => handleInput("+")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl"
+        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         +
       </Button>
       <Button
         onClick={() => handleInput("0")}
         variant="outline"
-        className="h-16 text-2xl col-span-2"
+        className="h-16 text-2xl col-span-2 rounded-xl"
       >
         0
       </Button>
       <Button
         onClick={() => handleInput(".")}
         variant="outline"
-        className="h-16 text-2xl"
+        className="h-16 text-2xl rounded-xl"
       >
         .
       </Button>
       <Button
         onClick={() => handleInput("=")}
         variant="default"
-        className="bg-primary hover:bg-primary/90 h-16 text-2xl"
+        className="bg-primary hover:bg-primary/90 h-16 text-2xl rounded-xl"
       >
         =
       </Button>
@@ -613,5 +612,3 @@ export default function BasicCalculator() {
     </Card>
   );
 }
-
-    
