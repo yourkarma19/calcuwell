@@ -1,9 +1,12 @@
 "use client";
 import React from "react";
-import * as lucideIcons from "lucide-react";
-import type { LucideProps } from "lucide-react";
+import dynamic from "next/dynamic";
+import { Calculator, type LucideProps } from "lucide-react";
 
-const icons = lucideIcons as unknown as Record<string, React.FC<LucideProps>>;
+// Dynamically load the IconLoader only on the client-side
+const IconLoader = dynamic(() => import("./IconLoader"), {
+  loading: () => <Calculator />, // Fallback icon during load
+});
 
 type IconWrapperProps = {
   iconName: string;
@@ -13,6 +16,5 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
   iconName,
   ...props
 }) => {
-  const Icon = icons[iconName] || lucideIcons.Calculator;
-  return <Icon {...props} />;
+  return <IconLoader iconName={iconName} {...props} />;
 };
