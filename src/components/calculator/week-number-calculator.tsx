@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useMemo } from "react";
 import { getWeek, format, getISOWeek, getISOWeekYear } from "date-fns";
 import CalculatorUIWrapper from "./calculator-ui-wrapper";
 import {
@@ -135,4 +136,3 @@ export default function WeekNumberCalculator({
     />
   );
 }
-
