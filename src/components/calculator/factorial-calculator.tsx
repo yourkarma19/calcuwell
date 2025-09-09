@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 const factorial = (n: number): number | string => {
   if (n < 0) return "Invalid input";
@@ -29,7 +30,7 @@ const factorial = (n: number): number | string => {
 };
 
 export default function FactorialCalculator() {
-  const [number, setNumber] = useState(10);
+  const [number, setNumber] = usePersistentState("factorial-number", 10);
 
   const result = useMemo(() => {
     const num = Number(number);
@@ -73,7 +74,7 @@ export default function FactorialCalculator() {
         <CardHeader>
           <CardTitle>Result</CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
+        <CardContent className="text-center" aria-live="polite">
           <p className="text-sm text-muted-foreground">
             The factorial of {number} is:
           </p>

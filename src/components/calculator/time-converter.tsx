@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -42,7 +42,7 @@ export default function TimeConverter() {
     "time-to",
     "minutes",
   );
-  const [value, setValue] = useState("1");
+  const [value, setValue] = usePersistentState("time-value", "1");
 
   const handleSwap = () => {
     setFromUnit(toUnit);

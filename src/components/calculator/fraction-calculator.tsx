@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -23,16 +23,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 // Helper function to find the greatest common divisor
 const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
 
 export default function FractionCalculator() {
-  const [num1, setNum1] = useState(1);
-  const [den1, setDen1] = useState(2);
-  const [num2, setNum2] = useState(3);
-  const [den2, setDen2] = useState(4);
-  const [operator, setOperator] = useState<"+" | "-" | "*" | "/">("+");
+  const [num1, setNum1] = usePersistentState("frac-num1", 1);
+  const [den1, setDen1] = usePersistentState("frac-den1", 2);
+  const [num2, setNum2] = usePersistentState("frac-num2", 3);
+  const [den2, setDen2] = usePersistentState("frac-den2", 4);
+  const [operator, setOperator] = usePersistentState<"+" | "-" | "*" | "/">(
+    "frac-op",
+    "+",
+  );
 
   const result = useMemo(() => {
     const n1 = Number(num1);
@@ -91,6 +95,7 @@ export default function FractionCalculator() {
         value={num}
         onChange={(e) => onNumChange(Number(e.target.value))}
         className="w-24 text-center"
+        aria-label={`${label} Numerator`}
       />
       <div className="h-[2px] w-full bg-foreground" />
       <Input
@@ -98,6 +103,7 @@ export default function FractionCalculator() {
         value={den}
         onChange={(e) => onDenChange(Number(e.target.value))}
         className="w-24 text-center"
+        aria-label={`${label} Denominator`}
       />
     </div>
   );
@@ -128,7 +134,10 @@ export default function FractionCalculator() {
                 value={operator}
                 onValueChange={(v: "+" | "-" | "*" | "/") => setOperator(v)}
               >
-                <SelectTrigger className="w-20 text-2xl font-bold mt-1">
+                <SelectTrigger
+                  className="w-20 text-2xl font-bold mt-1"
+                  aria-label="Select Operator"
+                >
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -148,7 +157,7 @@ export default function FractionCalculator() {
               label="Fraction 2"
             />
           </div>
-          <div className="pt-4 text-center">
+          <div className="pt-4 text-center" aria-live="polite">
             <h3 className="text-muted-foreground font-semibold">Result</h3>
             <div className="flex items-center justify-center gap-4 text-4xl font-bold">
               {result.den === 1 || result.den === "" ? (

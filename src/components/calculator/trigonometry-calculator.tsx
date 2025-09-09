@@ -92,7 +92,7 @@ export default function TrigonometryCalculator() {
                 value={trigFunction}
                 onValueChange={(v) => setTrigFunction(v as TrigFunction)}
               >
-                <SelectTrigger>
+                <SelectTrigger aria-label="Trigonometric function">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -132,7 +132,7 @@ export default function TrigonometryCalculator() {
               </RadioGroup>
             </div>
           </div>
-          <div className="pt-4 text-center">
+          <div className="pt-4 text-center" aria-live="polite">
             <h3 className="text-lg font-semibold">Result</h3>
             <p className="text-4xl font-bold font-headline text-primary break-all">
               {result}

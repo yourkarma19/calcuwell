@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -16,14 +16,15 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 // Helper function to find the greatest common divisor
 const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
 
 export default function RatioCalculator() {
-  const [valA, setValA] = useState(16);
-  const [valB, setValB] = useState(9);
-  const [valC, setValC] = useState(1920);
+  const [valA, setValA] = usePersistentState("ratio-a", 16);
+  const [valB, setValB] = usePersistentState("ratio-b", 9);
+  const [valC, setValC] = usePersistentState("ratio-c", 1920);
 
   const { simplifiedA, simplifiedB, resultD } = useMemo(() => {
     const a = Number(valA);
@@ -108,7 +109,7 @@ export default function RatioCalculator() {
         <CardHeader>
           <CardTitle>Simplified Ratio (A : B)</CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
+        <CardContent className="text-center" aria-live="polite">
           <p className="text-4xl font-bold font-headline text-primary">
             {simplifiedA} : {simplifiedB}
           </p>

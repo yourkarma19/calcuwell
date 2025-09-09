@@ -247,7 +247,6 @@ export default function ScientificCalculator() {
           >
             -
           </Button>
-
           <Button
             onClick={() => handleInput("0")}
             className={cn(btnClasses, numberBtnClasses)}
@@ -261,16 +260,17 @@ export default function ScientificCalculator() {
             .
           </Button>
           <Button
-            onClick={handleEquals}
-            className={cn(btnClasses, operatorBtnClasses, "row-span-2")}
-          >
-            =
-          </Button>
-          <Button
             onClick={() => handleOperator("+")}
             className={cn(btnClasses, operatorBtnClasses)}
           >
             +
+          </Button>
+
+          <Button
+            onClick={handleEquals}
+            className={cn(btnClasses, operatorBtnClasses, "col-span-1")}
+          >
+            =
           </Button>
         </div>
       </CardContent>
