@@ -10,7 +10,7 @@ import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function MortgageCalculator({
-  setChildProps = () => {},
+  setChildProps,
   calculatorName,
 }: {
   setChildProps?: (props: Record<string, unknown>) => void;

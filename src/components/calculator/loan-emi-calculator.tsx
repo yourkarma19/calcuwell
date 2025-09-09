@@ -14,7 +14,7 @@ import {
 } from "@/lib/math/loan-emi";
 
 export default function LoanEMICalculator({
-  setChildProps = () => {},
+  setChildProps,
   calculatorName,
 }: {
   setChildProps?: (props: Record<string, unknown>) => void;

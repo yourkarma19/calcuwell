@@ -1,19 +1,24 @@
 
 "use client";
 
+import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
-import HomeCalculator from "@/components/calculator/home-calculator";
+import BasicCalculator from "@/components/calculator/basic-calculator";
+import ScientificCalculator from "@/components/calculator/scientific-calculator";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { categories } from "@/lib/calculators";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<"basic" | "scientific">("basic");
+
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="text-center py-12 md:py-16">
@@ -27,7 +32,26 @@ export default function Home() {
       </section>
 
       <section className="pb-12 md:pb-20 flex justify-center">
-        <HomeCalculator />
+        <Card className="w-full max-w-lg mx-auto p-4 shadow-lg rounded-2xl bg-card">
+          <Tabs
+            value={activeTab}
+            onValueChange={(value) =>
+              setActiveTab(value as "basic" | "scientific")
+            }
+            className="w-full"
+          >
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="basic">Basic</TabsTrigger>
+              <TabsTrigger value="scientific">Scientific</TabsTrigger>
+            </TabsList>
+            <TabsContent value="basic" className="mt-4">
+              <BasicCalculator />
+            </TabsContent>
+            <TabsContent value="scientific" className="mt-4">
+              <ScientificCalculator />
+            </TabsContent>
+          </Tabs>
+        </Card>
       </section>
 
       <section className="py-12">
