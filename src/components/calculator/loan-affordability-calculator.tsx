@@ -99,27 +99,29 @@ export default function LoanAffordabilityCalculator({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="annual-income">Annual Income</Label>
-            <Input
-              id="annual-income"
-              type="number"
-              value={annualIncome}
-              onChange={(e) => setAnnualIncome(Number(e.target.value))}
-              aria-label="Annual Income"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="annual-income">Annual Income</Label>
+              <Input
+                id="annual-income"
+                type="number"
+                value={annualIncome}
+                onChange={(e) => setAnnualIncome(Number(e.target.value))}
+                aria-label="Annual Income"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="monthly-debt">Monthly Debt Payments</Label>
+              <Input
+                id="monthly-debt"
+                type="number"
+                value={monthlyDebt}
+                onChange={(e) => setMonthlyDebt(Number(e.target.value))}
+                aria-label="Monthly Debt Payments"
+              />
+            </div>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="monthly-debt">Monthly Debt Payments</Label>
-            <Input
-              id="monthly-debt"
-              type="number"
-              value={monthlyDebt}
-              onChange={(e) => setMonthlyDebt(Number(e.target.value))}
-              aria-label="Monthly Debt Payments"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="interest-rate">Interest Rate (%)</Label>
               <Input

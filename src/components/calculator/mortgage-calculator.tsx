@@ -128,99 +128,46 @@ export default function MortgageCalculator({
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <Label>Home Price</Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                aria-label="Home Price"
-                value={[principal]}
-                onValueChange={(v) => setPrincipal(v[0])}
-                min={10000}
-                max={2000000}
-                step={10000}
-              />
-              <Input
-                type="number"
-                value={principal}
-                onChange={(e) => setPrincipal(Number(e.target.value))}
-                className="w-32"
-                step="10000"
-              />
-            </div>
+            <Input
+              type="number"
+              value={principal}
+              onChange={(e) => setPrincipal(Number(e.target.value))}
+              step="10000"
+            />
           </div>
           <div className="space-y-2">
             <Label>Interest Rate (% p.a.)</Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                aria-label="Interest Rate"
-                value={[rate]}
-                onValueChange={(v) => setRate(v[0])}
-                min={1}
-                max={20}
-                step={0.05}
-              />
-              <Input
-                type="number"
-                value={rate}
-                onChange={(e) => setRate(Number(e.target.value))}
-                className="w-24"
-                step="0.05"
-              />
-            </div>
+            <Input
+              type="number"
+              value={rate}
+              onChange={(e) => setRate(Number(e.target.value))}
+              step="0.05"
+            />
           </div>
           <div className="space-y-2">
             <Label>Loan Term (Years)</Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                aria-label="Loan Term"
-                value={[tenure]}
-                onValueChange={(v) => setTenure(v[0])}
-                min={1}
-                max={30}
-                step={1}
-              />
-              <Input
-                type="number"
-                value={tenure}
-                onChange={(e) => setTenure(Number(e.target.value))}
-                className="w-24"
-              />
-            </div>
+            <Input
+              type="number"
+              value={tenure}
+              onChange={(e) => setTenure(Number(e.target.value))}
+            />
           </div>
-          <div className="space-y-2">
-            <Label>Annual Property Tax</Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                aria-label="Annual Property Tax"
-                value={[propertyTax]}
-                onValueChange={(v) => setPropertyTax(v[0])}
-                min={0}
-                max={20000}
-                step={100}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>Annual Property Tax</Label>
               <Input
                 type="number"
                 value={propertyTax}
                 onChange={(e) => setPropertyTax(Number(e.target.value))}
-                className="w-32"
                 step="100"
               />
             </div>
-          </div>
-          <div className="space-y-2">
-            <Label>Annual Home Insurance</Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                aria-label="Annual Home Insurance"
-                value={[homeInsurance]}
-                onValueChange={(v) => setHomeInsurance(v[0])}
-                min={0}
-                max={10000}
-                step={50}
-              />
+            <div className="space-y-2">
+              <Label>Annual Home Insurance</Label>
               <Input
                 type="number"
                 value={homeInsurance}
                 onChange={(e) => setHomeInsurance(Number(e.target.value))}
-                className="w-32"
                 step="50"
               />
             </div>

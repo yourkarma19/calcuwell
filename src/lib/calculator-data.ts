@@ -4,6 +4,17 @@ import type { Calculator } from "@/lib/types";
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, "component">[] = [
+  // New VAT/GST Calculator
+  {
+    slug: "vat-gst-calculator",
+    name: "VAT / GST Calculator",
+    description: "Calculate Value-Added Tax or Goods and Services Tax.",
+    category: "Finance",
+    iconName: "Tag",
+    metaDescription:
+      "A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate.",
+    formula: "Gross Price = Net Price * (1 + Tax Rate/100)",
+  },
   // New SIP Calculator
   {
     slug: "sip-calculator",
@@ -505,15 +516,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     iconName: "Banknote",
     metaDescription:
       "Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount & year range to see its value.",
-  },
-  {
-    slug: "vat-gst-calculator",
-    name: "VAT / GST Calculator",
-    description: "Calculate Value-Added Tax or Goods and Services Tax.",
-    category: "Finance",
-    iconName: "Tag",
-    metaDescription:
-      "A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate.",
   },
   {
     slug: "tip-calculator",

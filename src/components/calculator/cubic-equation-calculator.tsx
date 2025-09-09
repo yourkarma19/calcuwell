@@ -42,35 +42,35 @@ export default function CubicEquationCalculator() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto] gap-x-2 items-center font-mono">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
             <Input
               type="number"
               value={a}
               onChange={(e) => setA(Number(e.target.value))}
               aria-label="Coefficient a"
+              addon="x³ +"
             />
-            <span>x³ +</span>
             <Input
               type="number"
               value={b}
               onChange={(e) => setB(Number(e.target.value))}
               aria-label="Coefficient b"
+              addon="x² +"
             />
-            <span>x² +</span>
             <Input
               type="number"
               value={c}
               onChange={(e) => setC(Number(e.target.value))}
               aria-label="Coefficient c"
+              addon="x +"
             />
-            <span>x +</span>
             <Input
               type="number"
               value={d}
               onChange={(e) => setD(Number(e.target.value))}
               aria-label="Coefficient d"
+              addon="= 0"
             />
-            <span>= 0</span>
           </div>
           <Button className="w-full" onClick={handleSolve}>
             Solve

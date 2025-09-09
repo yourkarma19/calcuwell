@@ -70,7 +70,7 @@ export default function BusinessProfitMarginCalculator() {
     `₹${value.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
 
   return (
-    <div className="lg:col-span-3 space-y-6">
+    <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Business Financials</CardTitle>
@@ -132,7 +132,7 @@ export default function BusinessProfitMarginCalculator() {
             </p>
             <p className="text-lg font-semibold">{formatCurrency(netProfit)}</p>
           </div>
-          <div className="grid grid-cols-2 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
             <div className="space-y-1">
               <h3 className="text-sm font-medium text-muted-foreground">
                 Gross Margin
@@ -156,38 +156,6 @@ export default function BusinessProfitMarginCalculator() {
               </p>
             </div>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About Profit Margins</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                Gross vs. Operating vs. Net Margin
-              </AccordionTrigger>
-              <AccordionContent>
-                **Gross Margin** shows the profit after accounting for the
-                direct costs of producing goods (COGS). **Operating Margin**
-                shows the profit after COGS and operating expenses (like rent
-                and marketing) are deducted. **Net Margin** is the final profit
-                after all expenses, including interest and taxes, have been
-                paid.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>What is a good profit margin?</AccordionTrigger>
-              <AccordionContent>
-                A &quot;good&quot; profit margin varies widely by industry. A
-                10% net profit margin is often considered average, while a 20%
-                margin is considered high, and a 5% margin is low. It&apos;s
-                best to compare your margins to other businesses in your
-                specific industry.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </CardContent>
       </Card>
     </div>
