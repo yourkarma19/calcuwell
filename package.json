@@ -21,8 +21,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@genkit-ai/firebase": "^1.0.0",
-    "@genkit-ai/googleai": "^1.0.0",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -54,7 +52,6 @@
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^11.2.11",
     "fuse.js": "^7.0.0",
-    "genkit": "^1.0.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.2",
     "lucide-react": "^0.475.0",
