@@ -27,7 +27,14 @@ const blogPosts = [
     iconName: "Triangle",
     category: "Math",
   },
-  // Add future blog posts here
+  {
+    slug: "what-is-a-calculator-hide-app",
+    title: "What is a Calculator Hide App and How Do They Work?",
+    description:
+      "Learn about apps that look like calculators but are actually secret vaults for hiding photos, videos, and other apps.",
+    iconName: "Shield",
+    category: "Tech",
+  },
 ];
 
 export default function BlogIndexPage() {

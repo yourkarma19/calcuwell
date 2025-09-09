@@ -1,7 +1,13 @@
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -30,7 +36,12 @@ export default function BmrCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Enter Your Details</CardTitle>
+          <CardTitle>BMR Calculator</CardTitle>
+          <CardDescription>
+            Discover your body's baseline calorie needs with our accurate BMR
+            Calculator. Your Basal Metabolic Rate (BMR) is the number of
+            calories your body needs to function at rest.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

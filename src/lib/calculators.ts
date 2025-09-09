@@ -20,6 +20,12 @@ export const categories: Category[] = [
     iconName: "HeartPulse",
   },
   {
+    name: "Education",
+    slug: "education",
+    description: "Tools for students to help with academic calculations.",
+    iconName: "GraduationCap",
+  },
+  {
     name: "Lifestyle",
     slug: "lifestyle",
     description: "Calculators for daily life, planning, and personal use.",

@@ -4,6 +4,26 @@ import type { Calculator } from "@/lib/types";
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, "component">[] = [
+  // New CGPA Calculator
+  {
+    slug: "cgpa-calculator",
+    name: "CGPA Calculator",
+    description: "Calculate your Cumulative Grade Point Average from semester grades.",
+    category: "Education",
+    iconName: "GraduationCap",
+    metaDescription: "Accurately calculate your CGPA by entering your semester GPAs and credits. A simple tool for all students to track academic performance.",
+    formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Creditsᵢ)",
+  },
+  // New Net Calorie Calculator
+  {
+    slug: "net-calorie-calculator",
+    name: "Net Calorie Calculator",
+    description: "Find your daily calorie balance (surplus or deficit).",
+    category: "Health",
+    iconName: "Flame",
+    metaDescription: "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
+    formula: "Net Calories = Calories Consumed - Calories Burned",
+  },
   // New Time Card Calculator
   {
     slug: "time-card-calculator",
@@ -550,7 +570,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "bmr-calculator",
     name: "BMR Calculator",
-    description: "Estimate your Basal Metabolic Rate.",
+    description: "Calculate Your Basal Metabolic Rate.",
     category: "Health",
     iconName: "Scale",
     formula:
@@ -1022,7 +1042,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "gpa-calculator",
     name: "GPA Calculator",
     description: "Calculate your Grade Point Average.",
-    category: "Miscellaneous",
+    category: "Education",
     iconName: "GraduationCap",
     formula: "Σ(Grade Points * Credits) / Σ(Credits)",
     metaDescription:
