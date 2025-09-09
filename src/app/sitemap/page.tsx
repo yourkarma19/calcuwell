@@ -17,9 +17,9 @@ export default async function SitemapPage() {
   const categoriesWithCalculators: CategoryWithCalculators[] = categories.map(
     (category) => ({
       ...category,
-      calculators: allCalculators.filter(
-        (calc) => calc.category === category.name,
-      ),
+      calculators: allCalculators
+        .filter((calc) => calc.category === category.name)
+        .sort((a, b) => a.name.localeCompare(b.name)), // Alphabetize calculators within each category
     }),
   );
 
