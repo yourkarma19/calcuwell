@@ -1,11 +1,7 @@
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import type { HowTo, WithContext } from "schema-dts";
-import { useState } from "react";
-import CalculatorContent from "@/components/calculator/calculator-content";
-import CalculatorLoader from "@/components/calculator/calculator-loader";
-import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
+import CalculatorClientPage from "@/components/calculator/calculator-client-page";
 import { getCalculatorBySlug } from "@/lib/server/calculator-data";
 
 type CalculatorPageProps = {
@@ -42,11 +38,11 @@ export async function generateMetadata({
   };
 }
 
-export default function CalculatorPage({ params }: CalculatorPageProps) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const [aboutProps, setAboutProps] = useState({});
+export default async function CalculatorPage({ params }: CalculatorPageProps) {
+  const calculator = await getCalculatorBySlug(params.slug);
+  if (!calculator) {
+    notFound();
+  }
 
-  return (
-    <CalculatorLoader slug={params.slug} setAboutProps={setAboutProps} />
-  );
+  return <CalculatorClientPage calculator={calculator} />;
 }
