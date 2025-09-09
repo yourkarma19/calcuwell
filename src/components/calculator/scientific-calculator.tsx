@@ -241,13 +241,13 @@ export default function ScientificCalculator() {
           ))}
           <Button
             onClick={() => handleOperator("−")}
-            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
+            className={cn(btnClasses, operatorBtnClasses)}
           >
             <Minus size={20} />
           </Button>
           <Button
             onClick={() => handleOperator("+")}
-            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
+            className={cn(btnClasses, operatorBtnClasses)}
           >
             <Plus size={20} />
           </Button>
@@ -273,10 +273,11 @@ export default function ScientificCalculator() {
           ))}
           <Button
             onClick={handleEquals}
-            className={cn(btnClasses, operatorBtnClasses, "col-span-2")}
+            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
           >
             =
           </Button>
+
           <Button
             onClick={() => handleInput("0")}
             className={cn(btnClasses, numberBtnClasses, "col-span-2")}
