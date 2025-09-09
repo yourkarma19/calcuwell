@@ -49,7 +49,7 @@ export default function CalculatorWrapper({
   return (
     <div className="container mx-auto px-4 py-8">
       {category && (
-        <div className="mb-4 text-sm text-muted-foreground flex items-center gap-2">
+        <div className="mb-4 text-sm text-muted-foreground flex items-center gap-2 justify-center">
           <Link href="/" className="hover:text-primary">
             Home
           </Link>
