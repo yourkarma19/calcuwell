@@ -2,44 +2,17 @@
 "use client";
 
 import { Delete } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState } from "react";
+import { evaluate } from "mathjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-// Helper function to evaluate expressions safely
-const safeEval = (expr: string): number | string => {
-  try {
-    // Replace user-friendly symbols with JS Math functions
-    const sanitizedExpr = expr
-      .replace(/×/g, "*")
-      .replace(/÷/g, "/")
-      .replace(/‑/g, "-")
-      .replace(/√\((.*?)\)/g, "Math.sqrt($1)")
-      .replace(/log\((.*?)\)/g, "Math.log10($1)")
-      .replace(/ln\((.*?)\)/g, "Math.log($1)")
-      .replace(/sin\((.*?)\)/g, "Math.sin(Math.PI/180*$1)")
-      .replace(/cos\((.*?)\)/g, "Math.cos(Math.PI/180*$1)")
-      .replace(/tan\((.*?)\)/g, "Math.tan(Math.PI/180*$1)")
-      .replace(/π/g, "Math.PI")
-      .replace(/e/g, "Math.E")
-      .replace(/\^/g, "**");
-
-    // eslint-disable-next-line no-new-func
-    const result = new Function(`return ${sanitizedExpr}`)();
-    if (result === undefined || !isFinite(result)) return "Error";
-    // Return result with a high precision
-    return parseFloat(result.toPrecision(15));
-  } catch (error) {
-    return "Error";
-  }
-};
-
 // Factorial function
 const factorial = (n: number): number => {
   if (n < 0 || n !== Math.floor(n)) return NaN; // Factorial is only for non-negative integers
+  if (n > 170) return Infinity; // Prevent overflow
   if (n === 0) return 1;
-  if (n > 170) return Infinity;
   let result = 1;
   for (let i = 2; i <= n; i++) {
     result *= i;
@@ -48,229 +21,118 @@ const factorial = (n: number): number => {
 };
 
 export default function ScientificCalculator() {
-  const [displayValue, setDisplayValue] = useState("0");
   const [expression, setExpression] = useState("");
-  const [isNewNumber, setIsNewNumber] = useState(true);
-  const [justEvaluated, setJustEvaluated] = useState(false);
+  const [displayValue, setDisplayValue] = useState("0");
+  const [isResult, setIsResult] = useState(false);
 
-  const handleInput = useCallback((input: string) => {
-    const operators = ["÷", "×", "‑", "+", "^"];
-    if (operators.includes(input)) {
-      handleOperator(input);
-    } else if (/[0-9]/.test(input)) {
-      handleNumber(input);
-    } else if (input === ".") {
-      handleDecimal();
+  const handleInput = (value: string) => {
+    if (isResult) {
+      setExpression(value);
+      setDisplayValue(value);
+      setIsResult(false);
     } else {
-      switch (input) {
-        case "=":
-          handleEquals();
-          break;
-        case "AC":
-          handleClear();
-          break;
-        case "⌫":
-          handleBackspace();
-          break;
-        case "x²":
-        case "x³":
-        case "√":
-        case "∛":
-        case "log":
-        case "ln":
-        case "sin":
-        case "cos":
-        case "tan":
-        case "n!":
-        case "1/x":
-        case "%":
-        case "+/-":
-          handleUnaryOperation(input);
-          break;
-        case "π":
-        case "e":
-          handleConstant(input);
-          break;
-        default:
-          // For parenthesis and other direct inputs
-          handleDirectInput(input);
-          break;
-      }
-    }
-  }, []);
-
-  const handleDirectInput = (input: string) => {
-    if (justEvaluated) {
-      setJustEvaluated(false);
-      setDisplayValue(input);
-    } else if (isNewNumber) {
-      setDisplayValue(input);
-    } else {
-      setDisplayValue((prev) => (prev === "0" ? input : prev + input));
-    }
-    setIsNewNumber(false);
-  };
-
-  const handleNumber = (num: string) => {
-    if (justEvaluated) {
-      setDisplayValue(num);
-      setJustEvaluated(false);
-    } else if (isNewNumber) {
-      setDisplayValue(num);
-      setIsNewNumber(false);
-    } else {
-      setDisplayValue((prev) => (prev === "0" ? num : prev + num));
+      setExpression((prev) => prev + value);
+      setDisplayValue((prev) => (prev === "0" ? value : prev + value));
     }
   };
 
   const handleOperator = (op: string) => {
-    if (displayValue === "Error") return;
-
-    if (justEvaluated) {
-      setExpression(displayValue + " " + op + " ");
-      setJustEvaluated(false);
-    } else if (isNewNumber) {
-      setExpression((prev) => prev.slice(0, -2) + op + " ");
-    } else {
-      setExpression((prev) => prev + displayValue + " " + op + " ");
-    }
-    setIsNewNumber(true);
+    if (expression.endsWith(" ")) return; // Prevent multiple operators
+    setExpression((prev) => prev + ` ${op} `);
+    setDisplayValue(op);
+    setIsResult(false);
   };
-
-  const handleDecimal = () => {
-    if (justEvaluated) {
-      setDisplayValue("0.");
-      setJustEvaluated(false);
-      setIsNewNumber(false);
-    } else if (!displayValue.includes(".")) {
-      setDisplayValue((prev) => prev + ".");
-      setIsNewNumber(false);
-    }
-  };
-
-  const handleEquals = useCallback(() => {
-    if (displayValue === "Error" || isNewNumber) return;
-    const finalExpression = expression + displayValue;
-    const result = safeEval(finalExpression);
-    setDisplayValue(String(result));
-    setExpression("");
-    setJustEvaluated(true);
-    setIsNewNumber(true);
-  }, [expression, displayValue, isNewNumber]);
 
   const handleClear = () => {
-    setDisplayValue("0");
     setExpression("");
-    setIsNewNumber(true);
-    setJustEvaluated(false);
+    setDisplayValue("0");
+    setIsResult(false);
   };
 
-  const handleBackspace = () => {
-    if (justEvaluated) return;
+  const handleDelete = () => {
+    if (isResult) return;
+    setExpression((prev) => prev.slice(0, -1));
     setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
   };
 
-  const handleUnaryOperation = (op: string) => {
-    if (displayValue === "Error") return;
-    const currentVal = parseFloat(displayValue);
-    if (isNaN(currentVal)) return;
+  const handleEquals = () => {
+    try {
+      let finalExpression = expression
+        .replace(/×/g, "*")
+        .replace(/÷/g, "/")
+        .replace(/‑/g, "-")
+        .replace(/√\((.*?)\)/g, "sqrt($1)")
+        .replace(/log\((.*?)\)/g, "log10($1)")
+        .replace(/ln\((.*?)\)/g, "log($1)")
+        .replace(/(\d+)!/g, (_, n) => factorial(parseInt(n)).toString())
+        .replace(/\^/g, "**")
+        .replace(/π/g, "pi")
+        .replace(/e/g, "e");
 
-    let result: number | string | undefined;
-
-    switch (op) {
-      case "x²":
-        result = Math.pow(currentVal, 2);
-        break;
-      case "x³":
-        result = Math.pow(currentVal, 3);
-        break;
-      case "√":
-        result = currentVal >= 0 ? Math.sqrt(currentVal) : "Error";
-        break;
-      case "∛":
-        result = Math.cbrt(currentVal);
-        break;
-      case "log":
-        result = currentVal > 0 ? Math.log10(currentVal) : "Error";
-        break;
-      case "ln":
-        result = currentVal > 0 ? Math.log(currentVal) : "Error";
-        break;
-      case "sin":
-        result = Math.sin((currentVal * Math.PI) / 180); // Assuming degrees
-        break;
-      case "cos":
-        result = Math.cos((currentVal * Math.PI) / 180);
-        break;
-      case "tan":
-        result = Math.tan((currentVal * Math.PI) / 180);
-        break;
-      case "n!":
-        result = factorial(currentVal);
-        break;
-      case "1/x":
-        result = currentVal !== 0 ? 1 / currentVal : "Error";
-        break;
-      case "%":
-        result = currentVal / 100;
-        break;
-      case "+/-":
-        result = currentVal * -1;
-        break;
-      default:
-        return;
+      const result = evaluate(finalExpression);
+      setDisplayValue(String(result));
+      setExpression(String(result));
+      setIsResult(true);
+    } catch (error) {
+      setDisplayValue("Error");
+      setExpression("");
+      setIsResult(true);
     }
-    setDisplayValue(String(result));
-    setIsNewNumber(true);
-    setJustEvaluated(true);
   };
 
-  const handleConstant = (c: "π" | "e") => {
-    const value = c === "π" ? Math.PI : Math.E;
-    setDisplayValue(String(value));
-    setIsNewNumber(false);
-    setJustEvaluated(false);
-  };
+  const scientificButtons = [
+    "sin(",
+    "cos(",
+    "tan(",
+    "log(",
+    "ln(",
+    "√(",
+    "x²",
+    "x³",
+    "π",
+    "e",
+    "n!",
+    "(",
+    ")",
+    "^",
+    "1/x",
+  ];
+
+  const keypadButtons = [
+    "7",
+    "8",
+    "9",
+    "4",
+    "5",
+    "6",
+    "1",
+    "2",
+    "3",
+    "+/-",
+    "0",
+    ".",
+  ];
+
+  const operatorButtons = ["÷", "×", "‑", "+", "="];
+
+  const specialButtons = ["AC", "⌫"];
 
   const btnClasses = "h-12 text-md rounded-lg py-2 font-semibold";
-  const specialBtnClasses =
-    "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
-  const operatorBtnClasses =
-    "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
-  const numberBtnClasses =
-    "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
-
-  const scientificFunctions = [
-    { label: "sin", action: () => handleUnaryOperation("sin") },
-    { label: "cos", action: () => handleUnaryOperation("cos") },
-    { label: "tan", action: () => handleUnaryOperation("tan") },
-    { label: "log", action: () => handleUnaryOperation("log") },
-    { label: "ln", action: () => handleUnaryOperation("ln") },
-
-    { label: "(", action: () => handleDirectInput("(") },
-    { label: ")", action: () => handleDirectInput(")") },
-    { label: "√", action: () => handleUnaryOperation("√") },
-    { label: "x²", action: () => handleUnaryOperation("x²") },
-    { label: "xʸ", action: () => handleOperator("^") },
-
-    { label: "π", action: () => handleConstant("π") },
-    { label: "e", action: () => handleConstant("e") },
-    { label: "n!", action: () => handleUnaryOperation("n!") },
-    { label: "1/x", action: () => handleUnaryOperation("1/x") },
-    { label: "%", action: () => handleUnaryOperation("%") },
-  ];
+  const specialBtnClasses = "bg-muted hover:bg-muted/80";
+  const operatorBtnClasses = "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
+  const numberBtnClasses = "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800";
 
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
-          <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
-            {expression}
+          <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right" aria-label="Expression">
+            {expression || " "}
           </div>
           <div className="h-2/3 w-full flex items-end justify-end">
             <div
-              className="w-full text-right font-mono text-5xl text-foreground"
               aria-live="polite"
+              className="w-full text-right font-mono text-5xl text-foreground"
             >
               {displayValue}
             </div>
@@ -280,25 +142,19 @@ export default function ScientificCalculator() {
         <div className="grid grid-cols-6 gap-2">
           {/* Scientific Functions */}
           <div className="col-span-3 grid grid-cols-3 gap-2">
-            {scientificFunctions.map((btn) => (
-              <Button
-                key={btn.label}
-                onClick={btn.action}
-                className={cn(btnClasses, specialBtnClasses)}
-              >
-                {btn.label}
+            {scientificButtons.map((btn) => (
+              <Button key={btn} onClick={() => handleInput(btn)} className={cn(btnClasses, specialBtnClasses)}>
+                {btn}
               </Button>
             ))}
           </div>
 
-          {/* Numeric Keypad */}
+          {/* Keypad */}
           <div className="col-span-3 grid grid-cols-3 gap-2">
-            {/* Top row */}
-            <Button onClick={() => handleInput("AC")} className={cn(btnClasses, operatorBtnClasses)}>AC</Button>
-            <Button onClick={() => handleInput("⌫")} className={cn(btnClasses, operatorBtnClasses)}><Delete /></Button>
+            <Button onClick={handleClear} className={cn(btnClasses, operatorBtnClasses)}>AC</Button>
+            <Button onClick={handleDelete} className={cn(btnClasses, operatorBtnClasses)}><Delete /></Button>
             <Button onClick={() => handleOperator("÷")} className={cn(btnClasses, operatorBtnClasses)}>÷</Button>
-
-            {/* Numbers and operators */}
+            
             <Button onClick={() => handleInput("7")} className={cn(btnClasses, numberBtnClasses)}>7</Button>
             <Button onClick={() => handleInput("8")} className={cn(btnClasses, numberBtnClasses)}>8</Button>
             <Button onClick={() => handleInput("9")} className={cn(btnClasses, numberBtnClasses)}>9</Button>
@@ -308,16 +164,15 @@ export default function ScientificCalculator() {
             <Button onClick={() => handleInput("5")} className={cn(btnClasses, numberBtnClasses)}>5</Button>
             <Button onClick={() => handleInput("6")} className={cn(btnClasses, numberBtnClasses)}>6</Button>
             <Button onClick={() => handleOperator("‑")} className={cn(btnClasses, operatorBtnClasses)}>-</Button>
-
+            
             <Button onClick={() => handleInput("1")} className={cn(btnClasses, numberBtnClasses)}>1</Button>
             <Button onClick={() => handleInput("2")} className={cn(btnClasses, numberBtnClasses)}>2</Button>
             <Button onClick={() => handleInput("3")} className={cn(btnClasses, numberBtnClasses)}>3</Button>
             <Button onClick={() => handleOperator("+")} className={cn(btnClasses, operatorBtnClasses)}>+</Button>
 
-            <Button onClick={() => handleUnaryOperation("+/-")} className={cn(btnClasses, numberBtnClasses)}>+/-</Button>
-            <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses)}>0</Button>
+            <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses, "col-span-2")}>0</Button>
             <Button onClick={() => handleInput(".")} className={cn(btnClasses, numberBtnClasses)}>.</Button>
-            <Button onClick={() => handleEquals()} className={cn(btnClasses, operatorBtnClasses)}>=</Button>
+            <Button onClick={handleEquals} className={cn(btnClasses, operatorBtnClasses)}>=</Button>
           </div>
         </div>
       </CardContent>

@@ -2,7 +2,8 @@
 "use client";
 
 import { Delete } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
+import { evaluate } from "mathjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -19,8 +20,7 @@ export default function BasicCalculator() {
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
         .replace(/‑/g, "-");
-      // eslint-disable-next-line no-new-func
-      const result = new Function(`return ${sanitizedExpr}`)();
+      const result = evaluate(sanitizedExpr);
       if (result === undefined || !isFinite(result)) return "Error";
       return parseFloat(result.toPrecision(15)).toString();
     } catch (e) {
@@ -122,35 +122,7 @@ export default function BasicCalculator() {
     },
     [handleOperator, handleEquals],
   );
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        event.target instanceof HTMLInputElement ||
-        event.target instanceof HTMLTextAreaElement
-      )
-        return;
-
-      let key = event.key;
-      if (key === "Enter") key = "=";
-      if (key === "Backspace") key = "⌫";
-      if (key === "Escape") key = "AC";
-      if (key === "/") key = "÷";
-      if (key === "*") key = "×";
-      if (key === "-") key = "‑";
-
-      const validInputs = "0123456789.+-×÷=⌫AC%+/-";
-      if (validInputs.includes(key)) {
-        event.preventDefault();
-        handleInput(key);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [handleInput]);
-
+  
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
   const specialBtnClasses =
     "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
@@ -277,3 +249,4 @@ export default function BasicCalculator() {
     </Card>
   );
 }
+
