@@ -11,8 +11,12 @@ export default function HomeCalculator() {
   const [activeTab, setActiveTab] = useState<"basic" | "scientific">("basic");
 
   return (
-    <Card className="w-full max-w-lg mx-auto p-4 shadow-lg rounded-2xl">
-      <Tabs value={activeTab} onValueChange={setActiveTab as (value: string) => void} className="w-full">
+    <Card className="w-full max-w-lg mx-auto p-4 shadow-lg rounded-2xl bg-card">
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab as (value: string) => void}
+        className="w-full"
+      >
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="basic">Basic</TabsTrigger>
           <TabsTrigger value="scientific">Scientific</TabsTrigger>
@@ -27,3 +31,5 @@ export default function HomeCalculator() {
     </Card>
   );
 }
+
+    
