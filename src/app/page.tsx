@@ -1,6 +1,9 @@
 
 "use client";
 
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
 import {
   Card,
@@ -10,121 +13,46 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
-import { IconWrapper } from "@/components/IconWrapper";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <section className="text-center py-12 md:py-20">
-        <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
-          CalcPro
-        </h1>
-        <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          Your one-stop destination for fast, accurate, and easy-to-use online
-          calculators.
-        </p>
+      <section className="py-12 md:py-20 flex justify-center">
+        <HomeCalculator />
       </section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        <div className="lg:col-span-2">
-          <HomeCalculator />
-        </div>
-        <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
-          <Card>
-            <CardHeader>
-              <CardTitle>Calculator Categories</CardTitle>
-              <CardDescription>
-                Explore our wide range of tools for every need.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-              {categories.slice(0, 4).map((category) => (
-                <Link
-                  href={`/categories/${category.slug}`}
-                  key={category.slug}
-                  className="block h-full"
-                >
-                  <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
-                    <CardHeader>
-                      <CardTitle
-                        as="h3"
-                        className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors"
-                      >
-                        <IconWrapper
-                          iconName={category.iconName}
-                          className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors"
-                        />
+      <section className="py-12">
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Calculator Categories
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {categories.map((category) => (
+            <Link
+              href={`/categories/${category.slug}`}
+              key={category.slug}
+              className="block"
+            >
+              <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
+                <CardHeader className="flex flex-row items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <IconWrapper
+                      iconName={category.iconName}
+                      className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors"
+                    />
+                    <div>
+                      <CardTitle as="h3" className="font-semibold">
                         {category.name}
                       </CardTitle>
-                      <CardDescription className="pt-2">
+                      <CardDescription className="text-sm">
                         {category.description}
                       </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Why CalcPro?</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-2 rounded-full">
-                  <IconWrapper
-                    iconName="FastForward"
-                    className="h-5 w-5 text-primary"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">
-                    Fast & Accurate
-                  </h4>
-                  <p>
-                    Our calculators are built for speed and tested for accuracy
-                    to give you reliable results instantly.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-2 rounded-full">
-                  <IconWrapper
-                    iconName="ToggleLeft"
-                    className="h-5 w-5 text-primary"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">
-                    Easy to Use
-                  </h4>
-                  <p>
-                    With clean, intuitive interfaces, you can find the numbers
-                    you need without the fuss.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-2 rounded-full">
-                  <IconWrapper
-                    iconName="Smartphone"
-                    className="h-5 w-5 text-primary"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">
-                    Mobile Friendly
-                  </h4>
-                  <p>
-                    Use our tools on any device, anywhere. Our responsive design
-                    ensures a great experience.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
         </div>
       </section>
     </div>
