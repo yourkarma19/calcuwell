@@ -51,7 +51,7 @@ export default function BasicCalculator() {
       }
       setIsNewNumber(true);
     },
-    [displayValue, justEvaluated, isNewNumber, setExpression, setJustEvaluated, setIsNewNumber],
+    [displayValue, isNewNumber, justEvaluated, setExpression, setIsNewNumber, setJustEvaluated],
   );
 
   const handleEquals = useCallback(() => {
@@ -61,9 +61,9 @@ export default function BasicCalculator() {
     setDisplayValue(result);
     setExpression("");
     setJustEvaluated(true);
-  }, [expression, displayValue, isNewNumber, setDisplayValue, setExpression, setJustEvaluated]);
+  }, [displayValue, expression, isNewNumber, setDisplayValue, setExpression, setJustEvaluated]);
 
-  const handleNumber = (num: string) => {
+  const handleNumber = useCallback((num: string) => {
     if (justEvaluated) {
       setDisplayValue(num);
       setJustEvaluated(false);
@@ -73,9 +73,9 @@ export default function BasicCalculator() {
     } else {
       setDisplayValue((prev) => (prev === "0" ? num : prev + num));
     }
-  };
+  }, [isNewNumber, justEvaluated, setDisplayValue, setIsNewNumber, setJustEvaluated]);
 
-  const handleDecimal = () => {
+  const handleDecimal = useCallback(() => {
     if (justEvaluated) {
       setDisplayValue("0.");
       setJustEvaluated(false);
@@ -83,19 +83,19 @@ export default function BasicCalculator() {
       setDisplayValue((prev) => prev + ".");
     }
     setIsNewNumber(false);
-  };
+  }, [displayValue, justEvaluated, setDisplayValue, setJustEvaluated, setIsNewNumber]);
 
-  const handleBackspace = () => {
+  const handleBackspace = useCallback(() => {
     if (justEvaluated) return;
     setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
-  };
+  }, [justEvaluated, setDisplayValue]);
 
-  const clearAll = () => {
+  const clearAll = useCallback(() => {
     setDisplayValue("0");
     setExpression("");
     setIsNewNumber(true);
     setJustEvaluated(false);
-  };
+  }, [setDisplayValue, setExpression, setIsNewNumber, setJustEvaluated]);
 
   const handleInput = useCallback(
     (input: string) => {
@@ -129,7 +129,7 @@ export default function BasicCalculator() {
         }
       }
     },
-    [handleOperator, handleEquals, clearAll, displayValue, handleBackspace, handleDecimal, handleNumber],
+    [handleOperator, handleNumber, handleEquals, handleDecimal, clearAll, handleBackspace, displayValue, setDisplayValue],
   );
 
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
