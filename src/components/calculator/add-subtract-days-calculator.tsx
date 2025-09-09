@@ -13,10 +13,15 @@ import {
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function AddSubtractDaysCalculator() {
-  const [startDate, setStartDate] = useState<Date | undefined>(new Date());
-  const [days, setDays] = useState(30);
+  const [startDate, setStartDate] = usePersistentState<Date | undefined>(
+    "addsub-start-date",
+    new Date(),
+    (v) => (v ? new Date(v as string) : new Date()),
+  );
+  const [days, setDays] = usePersistentState("addsub-days", 30);
   const [resultDate, setResultDate] = useState<Date | null>(null);
 
   const handleAdd = () => {
@@ -80,7 +85,7 @@ export default function AddSubtractDaysCalculator() {
           <CardHeader>
             <CardTitle>Resulting Date</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" aria-live="polite">
             <p className="text-3xl font-bold font-headline text-primary my-2">
               {format(resultDate, "PPP")}
             </p>

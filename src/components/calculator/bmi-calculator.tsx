@@ -101,7 +101,7 @@ export default function BMICalculator({
 
   return (
     <div className="space-y-6">
-      <Card id="bmi-inputs">
+      <Card id="bmi-calculator-inputs">
         <CardHeader>
           <CardTitle>Enter Your Details</CardTitle>
           <CardDescription>
@@ -170,11 +170,11 @@ export default function BMICalculator({
         </CardContent>
       </Card>
 
-      <Card id="bmi-results">
+      <Card id="bmi-calculator-results">
         <CardHeader>
           <CardTitle>Your Result</CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
+        <CardContent className="text-center" aria-live="polite">
           <p className="text-sm text-muted-foreground">Your BMI is</p>
           <p className="text-6xl font-bold font-headline text-primary my-2">
             {bmi !== null ? bmi.toFixed(1) : "-"}
@@ -184,7 +184,7 @@ export default function BMICalculator({
       </Card>
 
       <ExportShareControls
-        elementIds={["bmi-inputs", "bmi-results"]}
+        elementIds={["bmi-calculator-inputs", "bmi-calculator-results"]}
         shareParams={shareParams}
         calculatorName={calculatorName}
       />

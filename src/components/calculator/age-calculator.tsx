@@ -44,7 +44,7 @@ export default function AgeCalculator({
 
   return (
     <div className="space-y-6">
-      <Card id="age-inputs">
+      <Card id="age-calculator-inputs">
         <CardHeader>
           <CardTitle>Enter Your Date of Birth</CardTitle>
         </CardHeader>
@@ -69,7 +69,7 @@ export default function AgeCalculator({
       </Card>
 
       {age && (
-        <Card id="age-results">
+        <Card id="age-calculator-results">
           <CardHeader>
             <CardTitle>Your Age</CardTitle>
           </CardHeader>
@@ -97,7 +97,7 @@ export default function AgeCalculator({
       )}
 
       <ExportShareControls
-        elementIds={["age-inputs", "age-results"]}
+        elementIds={["age-calculator-inputs", "age-calculator-results"]}
         shareParams={shareParams}
         calculatorName={calculatorName}
       />

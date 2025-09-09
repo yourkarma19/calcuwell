@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -10,10 +9,15 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function AsciiTextConverter() {
-  const [textInput, setTextInput] = useState("Hello World");
-  const [asciiInput, setAsciiInput] = useState(
+  const [textInput, setTextInput] = usePersistentState(
+    "ascii-text",
+    "Hello World",
+  );
+  const [asciiInput, setAsciiInput] = usePersistentState(
+    "ascii-codes",
     "72 101 108 108 111 32 87 111 114 108 100",
   );
 
@@ -32,7 +36,7 @@ export default function AsciiTextConverter() {
     setAsciiInput(ascii);
     const text = ascii
       .split(" ")
-      .filter((code) => code !== "")
+      .filter((code) => code !== "" && !isNaN(Number(code)))
       .map((code) => String.fromCharCode(Number(code)))
       .join("");
     setTextInput(text);

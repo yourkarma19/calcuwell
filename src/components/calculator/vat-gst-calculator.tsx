@@ -142,7 +142,8 @@ export default function VatGstCalculator({
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Tax Amount</span>
             <span className="font-semibold">
-              ₹{taxAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
+              ₹
+              {taxAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 })}
             </span>
           </div>
           <div className="flex justify-between text-lg font-bold border-t pt-2 mt-2">

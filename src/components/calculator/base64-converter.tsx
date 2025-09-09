@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "../ui/label";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,10 +11,14 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function Base64Converter() {
-  const [input, setInput] = useState("Hello World!");
-  const [output, setOutput] = useState("SGVsbG8gV29ybGQh");
+  const [input, setInput] = usePersistentState("b64-input", "Hello World!");
+  const [output, setOutput] = usePersistentState(
+    "b64-output",
+    "SGVsbG8gV29ybGQh",
+  );
 
   const encode = () => {
     try {

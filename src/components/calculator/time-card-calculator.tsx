@@ -122,6 +122,7 @@ export default function TimeCardCalculator() {
                     <TableCell>
                       <Input
                         type="time"
+                        aria-label={`Start time for ${dayNames[index]}`}
                         value={day.startTime}
                         onChange={(e) =>
                           handleDayChange(index, "startTime", e.target.value)
@@ -131,6 +132,7 @@ export default function TimeCardCalculator() {
                     <TableCell>
                       <Input
                         type="time"
+                        aria-label={`End time for ${dayNames[index]}`}
                         value={day.endTime}
                         onChange={(e) =>
                           handleDayChange(index, "endTime", e.target.value)
@@ -140,6 +142,7 @@ export default function TimeCardCalculator() {
                     <TableCell>
                       <Input
                         type="number"
+                        aria-label={`Break in minutes for ${dayNames[index]}`}
                         value={day.breakMinutes}
                         onChange={(e) =>
                           handleDayChange(
@@ -175,7 +178,10 @@ export default function TimeCardCalculator() {
         <CardHeader>
           <CardTitle>Summary</CardTitle>
         </CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+        <CardContent
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center"
+          aria-live="polite"
+        >
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Total Weekly Hours</p>
             <p className="text-4xl font-bold font-headline text-primary">

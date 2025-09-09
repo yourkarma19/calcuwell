@@ -11,6 +11,7 @@ import {
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 interface TimeLeft {
   days: number;
@@ -20,10 +21,16 @@ interface TimeLeft {
 }
 
 export default function CountdownTimer() {
-  const [targetDate, setTargetDate] = useState<Date | undefined>(
-    new Date(new Date().getFullYear() + 1, 0, 1), // Default to next New Year
+  const defaultTarget = new Date(new Date().getFullYear() + 1, 0, 1);
+  const [targetDate, setTargetDate] = usePersistentState<Date | undefined>(
+    "countdown-target-date",
+    defaultTarget,
+    (v) => (v ? new Date(v as string) : defaultTarget),
   );
-  const [targetTime, setTargetTime] = useState("00:00");
+  const [targetTime, setTargetTime] = usePersistentState(
+    "countdown-target-time",
+    "00:00",
+  );
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
@@ -50,11 +57,8 @@ export default function CountdownTimer() {
       });
     };
 
-    // Initial calculation
     calculateTimeLeft();
-
     const interval = setInterval(calculateTimeLeft, 1000);
-
     return () => clearInterval(interval);
   }, [targetDate, targetTime]);
 
@@ -101,7 +105,7 @@ export default function CountdownTimer() {
         <CardHeader>
           <CardTitle>Time Remaining</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent aria-live="polite">
           {timeLeft !== null ? (
             <div className="grid grid-cols-4 gap-4">
               <TimeBox value={timeLeft.days} label="Days" />

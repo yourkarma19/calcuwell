@@ -76,8 +76,13 @@ export default function TimeZoneConverter() {
     "tz-to",
     "America/New_York",
   );
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  const [time, setTime] = useState<string>(
+  const [date, setDate] = usePersistentState<Date | undefined>(
+    "tz-date",
+    new Date(),
+    (v) => (v ? new Date(v as string) : new Date()),
+  );
+  const [time, setTime] = usePersistentState<string>(
+    "tz-time",
     new Date().toTimeString().slice(0, 5),
   );
 

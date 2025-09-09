@@ -12,11 +12,18 @@ import {
 } from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function WorkingDaysCalculator() {
-  const [startDate, setStartDate] = useState<Date | undefined>(new Date());
-  const [endDate, setEndDate] = useState<Date | undefined>(
+  const [startDate, setStartDate] = usePersistentState<Date | undefined>(
+    "wd-start-date",
+    new Date(),
+    (v) => (v ? new Date(v as string) : new Date()),
+  );
+  const [endDate, setEndDate] = usePersistentState<Date | undefined>(
+    "wd-end-date",
     new Date(new Date().setDate(new Date().getDate() + 30)),
+    (v) => (v ? new Date(v as string) : new Date()),
   );
   const [workingDays, setWorkingDays] = useState<number | null>(null);
 
@@ -70,7 +77,7 @@ export default function WorkingDaysCalculator() {
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" aria-live="polite">
             <p className="text-sm text-muted-foreground">Total Working Days</p>
             <p className="text-6xl font-bold font-headline text-primary my-2">
               {workingDays}
