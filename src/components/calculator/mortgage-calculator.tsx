@@ -130,6 +130,7 @@ export default function MortgageCalculator({
             <Label>Home Price</Label>
             <div className="flex items-center gap-4">
               <Slider
+                aria-label="Home Price"
                 value={[principal]}
                 onValueChange={(v) => setPrincipal(v[0])}
                 min={10000}
@@ -149,6 +150,7 @@ export default function MortgageCalculator({
             <Label>Interest Rate (% p.a.)</Label>
             <div className="flex items-center gap-4">
               <Slider
+                aria-label="Interest Rate"
                 value={[rate]}
                 onValueChange={(v) => setRate(v[0])}
                 min={1}
@@ -168,6 +170,7 @@ export default function MortgageCalculator({
             <Label>Loan Term (Years)</Label>
             <div className="flex items-center gap-4">
               <Slider
+                aria-label="Loan Term"
                 value={[tenure]}
                 onValueChange={(v) => setTenure(v[0])}
                 min={1}
@@ -186,6 +189,7 @@ export default function MortgageCalculator({
             <Label>Annual Property Tax</Label>
             <div className="flex items-center gap-4">
               <Slider
+                aria-label="Annual Property Tax"
                 value={[propertyTax]}
                 onValueChange={(v) => setPropertyTax(v[0])}
                 min={0}
@@ -205,6 +209,7 @@ export default function MortgageCalculator({
             <Label>Annual Home Insurance</Label>
             <div className="flex items-center gap-4">
               <Slider
+                aria-label="Annual Home Insurance"
                 value={[homeInsurance]}
                 onValueChange={(v) => setHomeInsurance(v[0])}
                 min={0}

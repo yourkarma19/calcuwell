@@ -109,6 +109,7 @@ export default function VatGstCalculator({
             <div className="flex items-center gap-4">
               <Slider
                 id="tax-rate"
+                aria-label="Tax Rate"
                 value={[taxRate]}
                 onValueChange={(v) => setTaxRate(v[0])}
                 min={0}

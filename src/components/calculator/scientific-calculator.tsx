@@ -128,7 +128,7 @@ export default function ScientificCalculator() {
           </div>
         </div>
 
-        {/* Scientific Functions Grid */}
+        {/* Scientific Functions Grid 4x4 */}
         <div className="grid grid-cols-5 md:grid-cols-4 gap-2 mb-2">
           {scientificButtons.map((btn) => (
             <Button key={btn.display} onClick={() => handleFunction(btn.input)} className={cn(btnClasses, functionBtnClasses)}>
@@ -156,9 +156,9 @@ export default function ScientificCalculator() {
           {["1", "2", "3"].map((num) => <Button key={num} onClick={() => handleInput(num)} className={cn(btnClasses, numberBtnClasses)}>{num}</Button>)}
           <Button onClick={() => handleOperator("−")} className={cn(btnClasses, operatorBtnClasses)}><Minus size={20} /></Button>
           
-          <Button onClick={() => handleInput(".")} className={cn(btnClasses, numberBtnClasses)}>.</Button>
           <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses)}>0</Button>
-          <Button onClick={handleEquals} className={cn(btnClasses, operatorBtnClasses)}>=</Button>
+          <Button onClick={() => handleInput(".")} className={cn(btnClasses, numberBtnClasses)}>.</Button>
+          <Button onClick={handleEquals} className={cn(btnClasses, operatorBtnClasses, "row-span-2")}><span className="text-2xl">=</span></Button>
           <Button onClick={() => handleOperator("+")} className={cn(btnClasses, operatorBtnClasses)}><Plus size={20} /></Button>
         </div>
       </CardContent>

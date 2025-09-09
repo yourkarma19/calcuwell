@@ -38,6 +38,8 @@ export default function Footer() {
           <a
             href="mailto:gridguruu@gmail.com"
             className="text-primary hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             gridguruu@gmail.com
           </a>
