@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Delete, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -107,7 +107,7 @@ export default function BasicCalculator() {
     try {
       if (!expr) return "0";
       // Replace custom operators for evaluation
-      const sanitizedExpr = expr.replace(/‑/g, "-");
+      const sanitizedExpr = expr.replace(/‑/g, "-").replace(/×/g, "*").replace(/÷/g, "/");
 
       // Super basic safe evaluation. Avoids `eval`.
       // For a real app, use a proper parsing library like `mathjs`.
@@ -148,7 +148,7 @@ export default function BasicCalculator() {
   );
 
   const handleEquals = useCallback(() => {
-    const fullExpression = (expression + displayValue).replace(/‑/g, "-");
+    const fullExpression = (expression + displayValue);
 
     if (fullExpression === "12082007+19112005") {
       setDisplayValue("I ❤️ You");
@@ -177,7 +177,7 @@ export default function BasicCalculator() {
         if (input === "AC") return;
       }
 
-      const operators = ["/", "*", "-", "+"];
+      const operators = ["÷", "×", "-", "+"];
       if (operators.includes(input)) {
         handleOperator(input);
         return;
@@ -199,7 +199,7 @@ export default function BasicCalculator() {
           }
           setIsNewNumber(false);
           break;
-        case "Backspace":
+        case "⌫":
           if (justEvaluated) {
             resetCalculator();
           } else {
@@ -245,13 +245,16 @@ export default function BasicCalculator() {
       ) {
         return;
       }
-      const { key } = event;
+      let key = event.key;
       const operators = ["/", "*", "-", "+"];
+      
+      if (key === '/') key = '÷';
+      if (key === '*') key = '×';
 
       if (/[0-9.]/.test(key)) handleInput(key);
       else if (operators.includes(key)) handleInput(key);
       else if (key === "Enter" || key === "=") handleInput("=");
-      else if (key === "Backspace") handleInput("Backspace");
+      else if (key === "Backspace") handleInput("⌫");
       else if (key === "Escape") handleInput("AC");
     };
 
@@ -385,7 +388,7 @@ export default function BasicCalculator() {
 
   const renderDisplay = () => (
     <div
-      className="h-28 p-4 bg-muted/50 dark:bg-neutral-800 border-b border-border/10 rounded-t-xl flex flex-col justify-end items-end overflow-hidden"
+      className="h-28 p-4 bg-black/20 dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden"
       aria-label="Calculator display"
     >
       <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
@@ -395,7 +398,7 @@ export default function BasicCalculator() {
         <div
           aria-live="polite"
           className={cn(
-            "w-full text-right font-mono text-5xl",
+            "w-full text-right font-mono text-5xl text-white",
             displayValue === "I ❤️ You" && "text-pink-500",
           )}
         >
@@ -405,29 +408,26 @@ export default function BasicCalculator() {
     </div>
   );
 
-  const btnClasses =
-    "p-4 rounded-xl text-white text-lg font-semibold shadow-[0_4px_0_#444] active:shadow-[0_2px_0_#444] active:translate-y-[2px] transition-all duration-150 h-16 text-xl";
-  const specialBtnClasses = `bg-purple-500 hover:bg-purple-600 shadow-[0_4px_0_#4b2d7f] active:shadow-[0_2px_0_#4b2d7f]`;
-  const operatorBtnClasses = `bg-primary hover:bg-primary/90 shadow-[0_4px_0_hsl(var(--primary-foreground))] active:shadow-[0_2px_0_hsl(var(--primary-foreground))]`;
-  const numberBtnClasses = `bg-neutral-700 hover:bg-neutral-600`;
+  const btnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
+  const specialBtnClasses = `bg-neutral-600/80 hover:bg-neutral-600 text-white`;
+  const operatorBtnClasses = `bg-purple-500 hover:bg-purple-600 text-white`;
+  const numberBtnClasses = `bg-neutral-800/80 hover:bg-neutral-800 text-white`;
 
   const renderBasicButtons = () => (
-    <div className="grid grid-cols-4 gap-3 p-4">
+    <div className="grid grid-cols-4 gap-3 p-1">
       <Button
         onClick={() => handleInput("AC")}
         className={cn(btnClasses, specialBtnClasses)}
       >
         AC
       </Button>
-      <div className="flex items-center justify-center">
-        <Button
-          onClick={() => handleInput("Backspace")}
-          aria-label="Backspace"
-          className={cn(btnClasses, specialBtnClasses)}
-        >
-          <Delete />
-        </Button>
-      </div>
+      <Button
+        onClick={() => handleInput("⌫")}
+        aria-label="Backspace"
+        className={cn(btnClasses, specialBtnClasses)}
+      >
+        ⌫
+      </Button>
       <Button
         onClick={() => handleInput("%")}
         className={cn(btnClasses, specialBtnClasses)}
@@ -435,7 +435,7 @@ export default function BasicCalculator() {
         %
       </Button>
       <Button
-        onClick={() => handleInput("/")}
+        onClick={() => handleInput("÷")}
         className={cn(btnClasses, operatorBtnClasses)}
       >
         ÷
@@ -459,7 +459,7 @@ export default function BasicCalculator() {
         9
       </Button>
       <Button
-        onClick={() => handleInput("*")}
+        onClick={() => handleInput("×")}
         className={cn(btnClasses, operatorBtnClasses)}
       >
         ×
@@ -526,10 +526,7 @@ export default function BasicCalculator() {
       </Button>
       <Button
         onClick={() => handleInput("=")}
-        className={cn(
-          btnClasses,
-          "bg-purple-600 hover:bg-purple-700 shadow-[0_4px_0_#4b2d7f] active:shadow-[0_2px_0_#4b2d7f]",
-        )}
+        className={cn(btnClasses, operatorBtnClasses)}
       >
         =
       </Button>
@@ -537,7 +534,7 @@ export default function BasicCalculator() {
   );
 
   const renderScientificButtons = () => (
-    <div className="grid grid-cols-6 gap-2 p-4">
+    <div className="grid grid-cols-6 gap-2 p-1">
       {scientificButtons
         .concat(
           isRadians
@@ -548,10 +545,10 @@ export default function BasicCalculator() {
           <Tooltip key={func}>
             <TooltipTrigger asChild>
               <Button
-                variant="outline"
+                variant="ghost"
                 onClick={() => handleScientificInput(func)}
                 className={cn(
-                  "h-12 text-sm",
+                  "h-12 text-sm text-white",
                   active &&
                     "bg-primary/80 text-primary-foreground hover:bg-primary",
                 )}
@@ -568,7 +565,7 @@ export default function BasicCalculator() {
   );
 
   return (
-    <Card className="max-w-md mx-auto overflow-hidden relative shadow-2xl rounded-2xl border border-border/10 bg-muted/20 dark:bg-neutral-900">
+    <Card className="max-w-md mx-auto overflow-hidden relative shadow-2xl rounded-2xl border-neutral-800 bg-neutral-900">
       {isCelebrating && (
         <div className="celebrate absolute inset-0 pointer-events-none">
           {Array.from({ length: 10 }).map((_, i) => (
@@ -584,25 +581,30 @@ export default function BasicCalculator() {
         </div>
       )}
 
-      <CardContent className="p-1">
+      <CardContent className="p-4">
+      <h2 className="text-center text-2xl font-semibold text-white mb-4">
+        Calculator
+      </h2>
         <Tabs
           defaultValue="basic"
           value={activeTab}
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-2 bg-neutral-800">
             <TabsTrigger value="basic">Basic</TabsTrigger>
-            <TabsTrigger value="sci">Scientific</TabsTrigger>
+            <TabsTrigger value="sci">Sci</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="basic" className="mt-2">
+          <div className="mt-4">
             {renderDisplay()}
+          </div>
+          
+          <TabsContent value="basic" className="mt-4">
             {renderBasicButtons()}
           </TabsContent>
 
-          <TabsContent value="sci" className="mt-2">
-            {renderDisplay()}
+          <TabsContent value="sci" className="mt-4">
             <TooltipProvider>
               {renderScientificButtons()}
             </TooltipProvider>
