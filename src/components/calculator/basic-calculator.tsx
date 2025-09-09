@@ -154,14 +154,14 @@ export default function BasicCalculator() {
         <div className="grid grid-cols-4 gap-3 p-1">
           <Button
             onClick={() => handleInput("AC")}
-            className={cn(basicBtnClasses, specialBtnClasses)}
+            className={cn(basicBtnClasses, "bg-red-500 hover:bg-red-600 text-white")}
           >
             AC
           </Button>
           <Button
             onClick={() => handleInput("⌫")}
             aria-label="Backspace"
-            className={cn(basicBtnClasses, specialBtnClasses)}
+            className={cn(basicBtnClasses, "bg-yellow-500 hover:bg-yellow-600 text-white")}
           >
             <Delete />
           </Button>
