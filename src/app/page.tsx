@@ -1,3 +1,4 @@
+
 "use client";
 
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -30,16 +31,14 @@ export default function Home() {
           <HomeCalculator />
         </div>
         <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
-          <section>
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold font-headline text-primary">
-                Calculator Categories
-              </h2>
-              <p className="mt-2 text-muted-foreground">
+          <Card>
+            <CardHeader>
+              <CardTitle>Calculator Categories</CardTitle>
+              <CardDescription>
                 Explore our wide range of tools for every need.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
               {categories.slice(0, 4).map((category) => (
                 <Link
                   href={`/categories/${category.slug}`}
@@ -48,7 +47,10 @@ export default function Home() {
                 >
                   <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                     <CardHeader>
-                      <CardTitle as="h3" className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors">
+                      <CardTitle
+                        as="h3"
+                        className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors"
+                      >
                         <IconWrapper
                           iconName={category.iconName}
                           className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors"
@@ -62,8 +64,8 @@ export default function Home() {
                   </Card>
                 </Link>
               ))}
-            </div>
-          </section>
+            </CardContent>
+          </Card>
 
           <Card>
             <CardHeader>
