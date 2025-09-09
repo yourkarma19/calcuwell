@@ -17,7 +17,17 @@ import { categories } from "@/lib/calculators";
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <section className="py-12 md:py-20 flex justify-center">
+      <section className="text-center py-12 md:py-16">
+        <h1 className="text-5xl md:text-6xl font-bold font-headline text-primary mb-4">
+          CalcPro
+        </h1>
+        <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+          Your one-stop destination for fast, accurate, and easy-to-use online
+          calculators.
+        </p>
+      </section>
+
+      <section className="pb-12 md:pb-20 flex justify-center">
         <HomeCalculator />
       </section>
 
