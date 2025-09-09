@@ -1074,5 +1074,3 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Get a rough estimate of your carbon footprint based on your daily commute, energy use, and diet. Understand your environmental impact.",
   },
 ];
-
-    
