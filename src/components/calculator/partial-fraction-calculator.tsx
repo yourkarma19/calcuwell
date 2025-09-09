@@ -17,7 +17,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function PartialFractionCalculator() {
   const [expression, setExpression] = usePersistentState(
-    "tangent-func",
+    "partial-fraction-expr",
     "(x^2 + 1) / (x^3 - x^2 + 2x - 2)",
   );
   const [result, setResult] = useState<string | null>(null);
@@ -81,7 +81,7 @@ export default function PartialFractionCalculator() {
           <CardHeader>
             <CardTitle>Result</CardTitle>
           </CardHeader>
-          <CardContent className="text-center">
+          <CardContent className="text-center" aria-live="polite">
             <p className="text-sm text-muted-foreground">
               Decomposed Expression
             </p>

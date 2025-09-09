@@ -1,18 +1,27 @@
-
 "use client";
 
 import { Delete } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { evaluate } from "mathjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
 
 export default function BasicCalculator() {
-  const [displayValue, setDisplayValue] = useState("0");
-  const [expression, setExpression] = useState("");
-  const [isNewNumber, setIsNewNumber] = useState(true);
-  const [justEvaluated, setJustEvaluated] = useState(false);
+  const [displayValue, setDisplayValue] = usePersistentState(
+    "basic-display",
+    "0",
+  );
+  const [expression, setExpression] = usePersistentState("basic-expr", "");
+  const [isNewNumber, setIsNewNumber] = usePersistentState(
+    "basic-isNewNum",
+    true,
+  );
+  const [justEvaluated, setJustEvaluated] = usePersistentState(
+    "basic-justEval",
+    false,
+  );
 
   const evaluateExpression = (expr: string): string => {
     try {
@@ -42,7 +51,7 @@ export default function BasicCalculator() {
       }
       setIsNewNumber(true);
     },
-    [displayValue, justEvaluated, isNewNumber],
+    [displayValue, justEvaluated, isNewNumber, setExpression, setJustEvaluated, setIsNewNumber],
   );
 
   const handleEquals = useCallback(() => {
@@ -52,7 +61,7 @@ export default function BasicCalculator() {
     setDisplayValue(result);
     setExpression("");
     setJustEvaluated(true);
-  }, [expression, displayValue, isNewNumber]);
+  }, [expression, displayValue, isNewNumber, setDisplayValue, setExpression, setJustEvaluated]);
 
   const handleNumber = (num: string) => {
     if (justEvaluated) {
@@ -122,7 +131,7 @@ export default function BasicCalculator() {
     },
     [handleOperator, handleEquals],
   );
-  
+
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
   const specialBtnClasses =
     "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
@@ -154,14 +163,20 @@ export default function BasicCalculator() {
         <div className="grid grid-cols-4 gap-3 p-1">
           <Button
             onClick={() => handleInput("AC")}
-            className={cn(basicBtnClasses, "bg-red-500 hover:bg-red-600 text-white")}
+            className={cn(
+              basicBtnClasses,
+              "bg-red-500 hover:bg-red-600 text-white",
+            )}
           >
             AC
           </Button>
           <Button
             onClick={() => handleInput("⌫")}
             aria-label="Backspace"
-            className={cn(basicBtnClasses, "bg-yellow-500 hover:bg-yellow-600 text-white")}
+            className={cn(
+              basicBtnClasses,
+              "bg-yellow-500 hover:bg-yellow-600 text-white",
+            )}
           >
             <Delete />
           </Button>
@@ -249,4 +264,3 @@ export default function BasicCalculator() {
     </Card>
   );
 }
-

@@ -41,9 +41,11 @@ export default function TangentLineCalculator() {
 
       const yValue = f.evaluate({ x: point });
       const slope = fPrimeCompiled.evaluate({ x: point });
-      
+
       if (!isFinite(yValue) || !isFinite(slope)) {
-        throw new Error("Result is not a finite number. Check function and point.");
+        throw new Error(
+          "Result is not a finite number. Check function and point.",
+        );
       }
 
       const b = yValue - slope * point;
