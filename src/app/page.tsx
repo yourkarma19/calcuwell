@@ -31,7 +31,7 @@ export default function Home() {
           <HomeCalculator />
         </div>
         <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
-          <section className="py-16">
+          <section>
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold font-headline text-primary">
                 Calculator Categories
