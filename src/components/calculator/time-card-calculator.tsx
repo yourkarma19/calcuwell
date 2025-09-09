@@ -142,6 +142,7 @@ export default function TimeCardCalculator() {
                     <TableCell>
                       <Input
                         type="number"
+                        min="0"
                         aria-label={`Break in minutes for ${dayNames[index]}`}
                         value={day.breakMinutes}
                         onChange={(e) =>
@@ -167,6 +168,7 @@ export default function TimeCardCalculator() {
             <Input
               id="hourly-rate"
               type="number"
+              min="0"
               value={hourlyRate}
               onChange={(e) => setHourlyRate(Number(e.target.value))}
               className="w-32"
