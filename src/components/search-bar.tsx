@@ -79,7 +79,7 @@ export function SearchBar() {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="w-full justify-between text-muted-foreground md:w-64"
+          className="w-full justify-between text-muted-foreground"
         >
           <span>Search calculators...</span>
           <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">

@@ -17,10 +17,13 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="flex items-center justify-end space-x-2">
-          <div className="w-full md:w-auto">
+        <div className="flex-1 flex justify-center px-4 md:px-8">
+          <div className="w-full max-w-md">
             <SearchBar />
           </div>
+        </div>
+
+        <div className="flex items-center justify-end">
           <ThemeToggle />
         </div>
       </div>
