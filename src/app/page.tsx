@@ -1,4 +1,3 @@
-
 "use client";
 
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -45,10 +44,11 @@ export default function Home() {
                 <Link
                   href={`/categories/${category.slug}`}
                   key={category.slug}
+                  className="block h-full"
                 >
                   <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors">
+                      <CardTitle as="h3" className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors">
                         <IconWrapper
                           iconName={category.iconName}
                           className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors"
