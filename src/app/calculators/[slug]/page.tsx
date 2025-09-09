@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { HowTo, WithContext } from "schema-dts";
+import dynamic from "next/dynamic";
 import CalculatorContent from "@/components/calculator/calculator-content";
-import CalculatorLoader from "@/components/calculator/calculator-loader";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import { getCalculatorBySlug } from "@/lib/server/calculator-data";
+import PlaceholderCalculator from "@/components/calculator/placeholder-calculator";
 
 type CalculatorPageProps = {
   params: {
@@ -69,17 +70,24 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     ],
   };
 
+  const CalculatorComponent = dynamic(
+    () =>
+      import(`@/components/calculator/${params.slug}`).catch(() => notFound),
+    {
+      loading: () => <PlaceholderCalculator />,
+      ssr: false, // Ensure component is client-side only for stability
+    },
+  );
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <CalculatorWrapper
-        calculator={calculator}
-        sidebar={<CalculatorContent slug={params.slug} />}
-      >
-        <CalculatorLoader slug={params.slug} calculatorName={calculator.name} />
+      <CalculatorWrapper calculator={calculator}>
+        <CalculatorComponent calculatorName={calculator.name} />
+        <CalculatorContent slug={params.slug} />
       </CalculatorWrapper>
     </>
   );
