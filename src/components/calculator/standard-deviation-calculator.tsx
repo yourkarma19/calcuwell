@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import {
   Card,
   CardContent,
@@ -10,13 +10,31 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 const calculateStandardDeviation = (numbers: number[]) => {
-  if (numbers.length < 2) {
-    return { populationStdDev: 0, sampleStdDev: 0, mean: 0, variance: 0 };
+  if (numbers.length === 0) {
+    return {
+      populationStdDev: 0,
+      sampleStdDev: 0,
+      mean: 0,
+      variance: 0,
+      count: 0,
+    };
   }
 
   const mean = numbers.reduce((acc, val) => acc + val, 0) / numbers.length;
+
+  if (numbers.length < 2) {
+    return {
+      populationStdDev: 0,
+      sampleStdDev: 0, // Sample SD is undefined for n<2
+      mean,
+      variance: 0,
+      count: numbers.length,
+    };
+  }
+
   const variance = numbers.reduce(
     (acc, val) => acc + Math.pow(val - mean, 2),
     0,
@@ -30,16 +48,20 @@ const calculateStandardDeviation = (numbers: number[]) => {
     sampleStdDev,
     mean,
     variance: variance / numbers.length,
+    count: numbers.length,
   };
 };
 
 export default function StandardDeviationCalculator() {
-  const [input, setInput] = useState("1, 2, 3, 4, 5, 6, 7, 8, 9, 10");
+  const [input, setInput] = usePersistentState(
+    "stddev-input",
+    "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+  );
 
   const stats = useMemo(() => {
     const numbers = input
       .split(/[\s,]+/)
-      .filter((n) => n !== "")
+      .filter((n) => n.trim() !== "")
       .map(Number)
       .filter((n) => !isNaN(n));
     return calculateStandardDeviation(numbers);
@@ -72,7 +94,10 @@ export default function StandardDeviationCalculator() {
         <CardHeader>
           <CardTitle>Results</CardTitle>
         </CardHeader>
-        <CardContent className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <CardContent
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+          aria-live="polite"
+        >
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">
               Population Std Dev (σ)
@@ -94,9 +119,9 @@ export default function StandardDeviationCalculator() {
             </p>
           </div>
           <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Variance (σ²)</p>
+            <p className="text-sm text-muted-foreground">Count</p>
             <p className="text-2xl font-bold font-headline text-primary">
-              {stats.variance.toFixed(4)}
+              {stats.count}
             </p>
           </div>
         </CardContent>

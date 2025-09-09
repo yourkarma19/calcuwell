@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import {
   Card,
   CardContent,
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import usePersistentState from "@/hooks/use-persistent-state";
 
 const calculateStats = (numbers: number[]) => {
   if (numbers.length === 0) {
@@ -49,12 +50,15 @@ const calculateStats = (numbers: number[]) => {
 };
 
 export default function MeanMedianModeCalculator() {
-  const [input, setInput] = useState("1, 2, 3, 4, 5, 5, 6, 7, 8, 9");
+  const [input, setInput] = usePersistentState(
+    "mmm-input",
+    "1, 2, 3, 4, 5, 5, 6, 7, 8, 9",
+  );
 
   const stats = useMemo(() => {
     const numbers = input
       .split(/[\s,]+/)
-      .filter((n) => n !== "")
+      .filter((n) => n.trim() !== "")
       .map(Number)
       .filter((n) => !isNaN(n));
     return calculateStats(numbers);
@@ -87,7 +91,10 @@ export default function MeanMedianModeCalculator() {
         <CardHeader>
           <CardTitle>Statistical Results</CardTitle>
         </CardHeader>
-        <CardContent className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+        <CardContent
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center"
+          aria-live="polite"
+        >
           <div className="bg-muted p-4 rounded-lg">
             <p className="text-sm text-muted-foreground">Mean</p>
             <p className="text-2xl font-bold font-headline text-primary">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { AlertCircle } from "lucide-react";
 
 // Helper function to find the greatest common divisor
 const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
@@ -38,41 +40,50 @@ export default function FractionCalculator() {
     "+",
   );
 
-  const result = useMemo(() => {
+  const { result, error } = useMemo(() => {
     const n1 = Number(num1);
     const d1 = Number(den1);
     const n2 = Number(num2);
     const d2 = Number(den2);
 
-    if (d1 === 0 || d2 === 0) return { num: "Invalid", den: "Denominator" };
+    if (d1 === 0 || d2 === 0) {
+      return { result: null, error: "Denominator cannot be zero." };
+    }
 
     let resN: number, resD: number;
 
     switch (operator) {
-      case "+": {
+      case "+":
         [resN, resD] = [n1 * d2 + n2 * d1, d1 * d2];
         break;
-      }
-      case "-": {
+      case "-":
         [resN, resD] = [n1 * d2 - n2 * d1, d1 * d2];
         break;
-      }
-      case "*": {
+      case "*":
         [resN, resD] = [n1 * n2, d1 * d2];
         break;
-      }
-      case "/": {
+      case "/":
+        if (n2 === 0) {
+          return { result: null, error: "Cannot divide by zero." };
+        }
         [resN, resD] = [n1 * d2, d1 * n2];
         break;
-      }
       default:
-        return { num: "Error", den: "" };
+        return { result: null, error: "Invalid operator." };
     }
 
-    if (resD === 0) return { num: "Cannot divide", den: "by zero" };
+    if (resD === 0) {
+      return { result: null, error: "Result has a zero denominator." };
+    }
 
     const commonDivisor = gcd(Math.abs(resN), Math.abs(resD));
-    return { num: resN / commonDivisor, den: resD / commonDivisor };
+    const simplifiedNum = resN / commonDivisor;
+    const simplifiedDen = resD / commonDivisor;
+
+    return {
+      result: { num: simplifiedNum, den: simplifiedDen },
+      error: null,
+    };
   }, [num1, den1, num2, den2, operator]);
 
   const FractionInput = ({
@@ -157,21 +168,32 @@ export default function FractionCalculator() {
               label="Fraction 2"
             />
           </div>
+          {error && (
+            <Alert variant="destructive" className="mt-4">
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
           <div className="pt-4 text-center" aria-live="polite">
             <h3 className="text-muted-foreground font-semibold">Result</h3>
             <div className="flex items-center justify-center gap-4 text-4xl font-bold">
-              {result.den === 1 || result.den === "" ? (
-                <p className="text-primary font-headline">{result.num}</p>
-              ) : (
-                <div className="inline-flex flex-col items-center">
-                  <span className="text-primary font-headline">
-                    {result.num}
-                  </span>
-                  <div className="h-[3px] w-full bg-primary" />
-                  <span className="text-primary font-headline">
-                    {result.den}
-                  </span>
-                </div>
+              {result && (
+                <>
+                  {result.den === 1 || result.den === 0 ? (
+                    <p className="text-primary font-headline">{result.num}</p>
+                  ) : (
+                    <div className="inline-flex flex-col items-center">
+                      <span className="text-primary font-headline">
+                        {result.num}
+                      </span>
+                      <div className="h-[3px] w-full bg-primary" />
+                      <span className="text-primary font-headline">
+                        {result.den}
+                      </span>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </div>

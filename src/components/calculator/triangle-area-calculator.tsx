@@ -42,6 +42,14 @@ export default function TriangleAreaCalculator() {
       p = 0,
       err = null;
 
+    if (
+      (formula === "base-height" && (base <= 0 || height <= 0)) ||
+      (formula === "sss" && (sideA <= 0 || sideB <= 0 || sideC <= 0)) ||
+      (formula === "sas" && (sideA <= 0 || sideB <= 0 || angleC <= 0))
+    ) {
+      return { area: 0, perimeter: 0, error: "All inputs must be positive." };
+    }
+
     if (formula === "base-height") {
       a = (base * height) / 2;
       p = NaN; // Perimeter cannot be determined from base and height alone
@@ -113,6 +121,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Base</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={base}
                   onChange={(e) => setBase(Number(e.target.value))}
                 />
@@ -121,6 +130,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Height</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={height}
                   onChange={(e) => setHeight(Number(e.target.value))}
                 />
@@ -134,6 +144,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Side A</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideA}
                   onChange={(e) => setSideA(Number(e.target.value))}
                 />
@@ -142,6 +153,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Side B</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideB}
                   onChange={(e) => setSideB(Number(e.target.value))}
                 />
@@ -150,6 +162,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Side C</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideC}
                   onChange={(e) => setSideC(Number(e.target.value))}
                 />
@@ -163,6 +176,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Side A</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideA}
                   onChange={(e) => setSideA(Number(e.target.value))}
                 />
@@ -171,6 +185,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Side B</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideB}
                   onChange={(e) => setSideB(Number(e.target.value))}
                 />
@@ -179,6 +194,7 @@ export default function TriangleAreaCalculator() {
                 <Label>Angle (deg)</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={angleC}
                   onChange={(e) => setAngleC(Number(e.target.value))}
                 />
@@ -198,7 +214,10 @@ export default function TriangleAreaCalculator() {
         <CardHeader>
           <CardTitle>Results</CardTitle>
         </CardHeader>
-        <CardContent className="text-center space-y-4">
+        <CardContent
+          className="text-center space-y-4"
+          aria-live="polite"
+        >
           <div>
             <p className="text-sm text-muted-foreground">Area</p>
             <p className="text-4xl font-bold font-headline text-primary">

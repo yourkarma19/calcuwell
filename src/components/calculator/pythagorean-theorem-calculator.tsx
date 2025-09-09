@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useEffect } from "react";
+import { useMemo } from "react";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import {
   Card,
   CardContent,
@@ -12,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { AlertCircle } from "lucide-react";
 
 export default function PythagoreanTheoremCalculator() {
   const [solveFor, setSolveFor] = usePersistentState<"a" | "b" | "c">(
@@ -26,17 +28,18 @@ export default function PythagoreanTheoremCalculator() {
     "pythagorean-sideB",
     4,
   );
-  const [sideC, setSideC] = usePersistentState<number | "">(
-    "pythagorean-sideC",
-    5,
-  );
+  const [sideC, setSideC] = usePersistentState<number | "">("", "");
 
   const { result, error } = useMemo(() => {
     const a = Number(sideA);
     const b = Number(sideB);
     const c = Number(sideC);
 
-    if (a < 0 || b < 0 || c < 0) {
+    if (
+      (solveFor !== "a" && a < 0) ||
+      (solveFor !== "b" && b < 0) ||
+      (solveFor !== "c" && c < 0)
+    ) {
       return { result: null, error: "Side lengths cannot be negative." };
     }
 
@@ -65,49 +68,36 @@ export default function PythagoreanTheoremCalculator() {
     return { result: null, error: null };
   }, [solveFor, sideA, sideB, sideC]);
 
-  // Clear the solved-for field when the mode changes
-  useEffect(() => {
-    if (solveFor === "a") setSideA("");
-    if (solveFor === "b") setSideB("");
-    if (solveFor === "c") setSideC("");
-  }, [solveFor, setSideA, setSideB, setSideC]);
-
   const handleInputChange = (
     setter: (value: number | "") => void,
     value: string,
   ) => {
-    if (value === "") {
-      setter("");
-    } else {
-      setter(Number(value));
-    }
+    setter(value === "" ? "" : Number(value));
   };
 
   const getInputProps = (side: "a" | "b" | "c") => {
     let value: number | "", setter: (value: number | "") => void;
-    if (side === "a") {
-      [value, setter] = [sideA, setSideA];
-    } else if (side === "b") {
-      [value, setter] = [sideB, setSideB];
-    } else {
-      [value, setter] = [sideC, setSideC];
-    }
+    if (side === "a") [value, setter] = [sideA, setSideA];
+    else if (side === "b") [value, setter] = [sideB, setSideB];
+    else [value, setter] = [sideC, setSideC];
 
-    if (side === solveFor) {
-      return {
-        value: result !== null && isFinite(result) ? result.toFixed(4) : "",
-        readOnly: true,
-        className: "font-bold text-primary bg-primary/10 border-primary/20",
-        placeholder: "Result",
-        "aria-label": `Side ${side} (calculated)`,
-      };
-    }
+    const isReadOnly = side === solveFor;
 
     return {
-      value,
+      value: isReadOnly
+        ? result !== null && isFinite(result)
+          ? result.toFixed(4)
+          : ""
+        : value,
+      readOnly: isReadOnly,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
         handleInputChange(setter, e.target.value),
+      className: isReadOnly
+        ? "font-bold text-primary bg-primary/10 border-primary/20"
+        : "",
+      placeholder: isReadOnly ? "Result" : `Enter side ${side}`,
       "aria-label": `Side ${side}`,
+      min: "0",
     };
   };
 
@@ -126,7 +116,12 @@ export default function PythagoreanTheoremCalculator() {
             <Label>Solve for which side?</Label>
             <RadioGroup
               value={solveFor}
-              onValueChange={(v: string) => setSolveFor(v as "a" | "b" | "c")}
+              onValueChange={(v: string) => {
+                setSideA("");
+                setSideB("");
+                setSideC("");
+                setSolveFor(v as "a" | "b" | "c");
+              }}
               className="flex space-x-4 pt-2"
             >
               <div className="flex items-center space-x-2">
@@ -157,25 +152,30 @@ export default function PythagoreanTheoremCalculator() {
               <Input id="sideC" type="number" {...getInputProps("c")} />
             </div>
           </div>
+          {error && (
+            <Alert variant="destructive" className="mt-4">
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
         </CardContent>
       </Card>
-
       <Card>
         <CardHeader>
           <CardTitle>Result</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
           <p className="text-sm text-muted-foreground">
-            The length of the missing side is:
+            The length of side &apos;{solveFor}&apos; is:
           </p>
-          <p className="text-5xl font-bold font-headline text-primary my-2">
-            {error ? (
-              <span className="text-destructive text-xl">{error}</span>
-            ) : result !== null && isFinite(result) ? (
-              result.toFixed(4)
-            ) : (
-              "Enter values"
-            )}
+          <p
+            className="text-5xl font-bold font-headline text-primary my-2"
+            aria-live="polite"
+          >
+            {result !== null && isFinite(result)
+              ? result.toFixed(4)
+              : "Enter values"}
           </p>
         </CardContent>
       </Card>
