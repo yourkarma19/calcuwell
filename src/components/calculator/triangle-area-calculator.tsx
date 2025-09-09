@@ -116,7 +116,7 @@ export default function TriangleAreaCalculator() {
           </div>
 
           {formula === "base-height" && (
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Base</Label>
                 <Input
@@ -139,7 +139,7 @@ export default function TriangleAreaCalculator() {
           )}
 
           {formula === "sss" && (
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <Label>Side A</Label>
                 <Input
@@ -171,7 +171,7 @@ export default function TriangleAreaCalculator() {
           )}
 
           {formula === "sas" && (
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <Label>Side A</Label>
                 <Input

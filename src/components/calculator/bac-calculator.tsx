@@ -99,7 +99,7 @@ export default function BacCalculator() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="weight">Body Weight (kg)</Label>
               <Input
@@ -127,7 +127,7 @@ export default function BacCalculator() {
               </RadioGroup>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="drinks">Standard Drinks Consumed</Label>
               <Input

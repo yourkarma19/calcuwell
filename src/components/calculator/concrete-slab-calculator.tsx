@@ -83,7 +83,7 @@ export default function ConcreteSlabCalculator() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Project Shape</Label>
               <Select value={shape} onValueChange={(v) => setShape(v as Shape)}>
@@ -114,7 +114,7 @@ export default function ConcreteSlabCalculator() {
           </div>
 
           {(shape === "slab" || shape === "footer") && (
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <Label>Length ({unit})</Label>
                 <Input
@@ -143,7 +143,7 @@ export default function ConcreteSlabCalculator() {
           )}
 
           {shape === "post" && (
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Diameter ({unit})</Label>
                 <Input
