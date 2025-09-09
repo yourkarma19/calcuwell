@@ -75,6 +75,23 @@ export default function PythagoreanTheoremCalculator() {
     setter(value === "" ? "" : Number(value));
   };
 
+  const handleSolveForChange = (v: "a" | "b" | "c") => {
+    setSolveFor(v);
+    if (v === "a") {
+      setSideB(4);
+      setSideC(5);
+      setSideA("");
+    } else if (v === "b") {
+      setSideA(3);
+      setSideC(5);
+      setSideB("");
+    } else {
+      setSideA(3);
+      setSideB(4);
+      setSideC("");
+    }
+  };
+
   const getInputProps = (side: "a" | "b" | "c") => {
     let value: number | "", setter: (value: number | "") => void;
     if (side === "a") [value, setter] = [sideA, setSideA];
@@ -117,10 +134,7 @@ export default function PythagoreanTheoremCalculator() {
             <RadioGroup
               value={solveFor}
               onValueChange={(v: string) => {
-                setSideA("");
-                setSideB("");
-                setSideC("");
-                setSolveFor(v as "a" | "b" | "c");
+                handleSolveForChange(v as "a" | "b" | "c");
               }}
               className="flex space-x-4 pt-2"
             >

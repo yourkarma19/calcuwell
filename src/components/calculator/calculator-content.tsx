@@ -31,6 +31,7 @@ export default function CalculatorContent({
       import(`@/components/calculator/about/${slug}`).catch(() => () => null),
     {
       loading: () => <ContentLoader />,
+      ssr: false, // Ensure this component is client-side only
     },
   );
 
