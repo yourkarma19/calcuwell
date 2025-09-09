@@ -99,17 +99,11 @@
     "vitest": "^3.2.4"
   },
   "browserslist": [
-    "chrome >= 64",
-    "edge >= 79",
-    "firefox >= 67",
-    "safari >= 12",
-    "ios_saf >= 12",
-    "not ie < 11",
-    "not dead"
+    "> 0.5%",
+    "not dead",
+    "not op_mini all"
   ],
   "engines": {
     "node": ">=20"
   }
 }
-
-    
