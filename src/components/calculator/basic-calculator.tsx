@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Delete, Heart } from "lucide-react";
@@ -84,8 +85,6 @@ export default function BasicCalculator() {
     [isInverse],
   );
 
-  const isOperator = (btn: string) => ["/", "*", "-", "+"].includes(btn);
-
   const factorial = (n: number): number => {
     if (n < 0 || !Number.isInteger(n)) return NaN;
     if (n === 0 || n === 1) return 1;
@@ -109,23 +108,28 @@ export default function BasicCalculator() {
       if (justEvaluated) {
         setExpression(displayValue + op);
         setJustEvaluated(false);
+      } else if (isNewNumber) {
+        // If the last thing typed was an operator, replace it
+        setExpression((prev) => prev.slice(0, -1) + op);
       } else {
-        setExpression((prev) => prev + displayValue + op);
+        const newExpression = expression + displayValue;
+        const result = evaluateExpression(newExpression);
+        setDisplayValue(result);
+        setExpression(result + op);
       }
       setIsNewNumber(true);
     },
-    [displayValue, justEvaluated],
+    [displayValue, expression, justEvaluated],
   );
 
   const evaluateExpression = (expr: string): string => {
     try {
+      if (!expr) return "0";
       // Replace custom operators for evaluation
-      const sanitizedExpr = expr
-        .replace(/×/g, "*")
-        .replace(/÷/g, "/")
-        .replace(/‑/g, "-");
+      const sanitizedExpr = expr.replace(/‑/g, "-");
 
-      // Very basic safe evaluation. For a real app, use a proper parsing library.
+      // Super basic safe evaluation. Avoids `eval`.
+      // For a real app, use a proper parsing library like `mathjs`.
       if (/[^0-9+\-*/.() ]/g.test(sanitizedExpr)) {
         return "Error";
       }
@@ -136,7 +140,8 @@ export default function BasicCalculator() {
       if (result === undefined || !isFinite(result)) {
         return "Error";
       }
-      return result.toString();
+      // Format to a reasonable precision
+      return parseFloat(result.toPrecision(15)).toString();
     } catch {
       return "Error";
     }
@@ -167,8 +172,13 @@ export default function BasicCalculator() {
         resetCalculator();
         return;
       }
+      if (displayValue === "Error") {
+        resetCalculator();
+        if (input === "AC") return;
+      }
 
-      if (isOperator(input)) {
+      const operators = ["/", "*", "-", "+"];
+      if (operators.includes(input)) {
         handleOperator(input);
         return;
       }
@@ -181,13 +191,13 @@ export default function BasicCalculator() {
           handleEquals();
           break;
         case ".":
-          if (isNewNumber) {
+          if (justEvaluated) {
             setDisplayValue("0.");
-            setIsNewNumber(false);
+            setJustEvaluated(false);
           } else if (!displayValue.includes(".")) {
             setDisplayValue((prev) => prev + ".");
           }
-          setJustEvaluated(false);
+          setIsNewNumber(false);
           break;
         case "Backspace":
           if (justEvaluated) {
@@ -236,9 +246,10 @@ export default function BasicCalculator() {
         return;
       }
       const { key } = event;
+      const operators = ["/", "*", "-", "+"];
 
       if (/[0-9.]/.test(key)) handleInput(key);
-      else if (isOperator(key)) handleInput(key);
+      else if (operators.includes(key)) handleInput(key);
       else if (key === "Enter" || key === "=") handleInput("=");
       else if (key === "Backspace") handleInput("Backspace");
       else if (key === "Escape") handleInput("AC");
@@ -374,17 +385,17 @@ export default function BasicCalculator() {
 
   const renderDisplay = () => (
     <div
-      className="h-28 p-4 bg-background border rounded-md flex flex-col justify-end items-end overflow-hidden"
+      className="h-28 p-4 bg-muted/50 dark:bg-neutral-800 border-b border-border/10 rounded-t-xl flex flex-col justify-end items-end overflow-hidden"
       aria-label="Calculator display"
     >
       <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
-        {expression || (activeTab === "sci" ? "Scientific Mode" : " ")}
+        {expression}
       </div>
       <div className="h-2/3 w-full flex items-end justify-end">
         <div
           aria-live="polite"
           className={cn(
-            "w-full text-right font-mono fluid-display-font",
+            "w-full text-right font-mono text-5xl",
             displayValue === "I ❤️ You" && "text-pink-500",
           )}
         >
@@ -395,11 +406,11 @@ export default function BasicCalculator() {
   );
 
   const renderBasicButtons = () => (
-    <div className="grid grid-cols-4 grid-rows-5 gap-3 mt-4">
+    <div className="grid grid-cols-4 gap-3 p-4">
       <Button
         onClick={() => handleInput("AC")}
         variant="outline"
-        className="bg-accent hover:bg-accent/80 h-16 text-lg rounded-xl"
+        className="bg-accent/80 hover:bg-accent/90 text-accent-foreground h-16 text-xl rounded-xl"
       >
         AC
       </Button>
@@ -409,7 +420,7 @@ export default function BasicCalculator() {
           aria-label="Backspace"
           variant="outline"
           size="icon"
-          className="bg-accent hover:bg-accent/80 h-16 w-16 rounded-xl"
+          className="bg-accent/80 hover:bg-accent/90 text-accent-foreground h-16 w-16 text-xl rounded-xl"
         >
           <Delete />
         </Button>
@@ -417,14 +428,14 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("%")}
         variant="outline"
-        className="bg-accent hover:bg-accent/80 h-16 text-lg rounded-xl"
+        className="bg-accent/80 hover:bg-accent/90 text-accent-foreground h-16 text-xl rounded-xl"
       >
         %
       </Button>
       <Button
         onClick={() => handleInput("/")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
+        className="bg-primary/90 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         ÷
       </Button>
@@ -452,7 +463,7 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("*")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
+        className="bg-primary/90 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         ×
       </Button>
@@ -480,7 +491,7 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("-")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
+        className="bg-primary/90 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         -
       </Button>
@@ -508,7 +519,7 @@ export default function BasicCalculator() {
       <Button
         onClick={() => handleInput("+")}
         variant="default"
-        className="bg-primary/80 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
+        className="bg-primary/90 hover:bg-primary text-primary-foreground h-16 text-2xl rounded-xl"
       >
         +
       </Button>
@@ -537,7 +548,7 @@ export default function BasicCalculator() {
   );
 
   const renderScientificButtons = () => (
-    <div className="grid grid-cols-6 gap-2 mt-4">
+    <div className="grid grid-cols-6 gap-2 p-4">
       {scientificButtons
         .concat(
           isRadians
@@ -568,7 +579,7 @@ export default function BasicCalculator() {
   );
 
   return (
-    <Card className="max-w-md mx-auto overflow-hidden relative shadow-2xl">
+    <Card className="max-w-md mx-auto overflow-hidden relative shadow-2xl rounded-2xl border border-border/10 bg-muted/20 dark:bg-neutral-900">
       {isCelebrating && (
         <div className="celebrate absolute inset-0 pointer-events-none">
           {Array.from({ length: 10 }).map((_, i) => (
@@ -584,7 +595,7 @@ export default function BasicCalculator() {
         </div>
       )}
 
-      <CardContent className="p-4">
+      <CardContent className="p-1">
         <Tabs
           defaultValue="basic"
           value={activeTab}
@@ -596,12 +607,12 @@ export default function BasicCalculator() {
             <TabsTrigger value="sci">Scientific</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="basic" className="mt-4">
+          <TabsContent value="basic" className="mt-2">
             {renderDisplay()}
             {renderBasicButtons()}
           </TabsContent>
 
-          <TabsContent value="sci" className="mt-4">
+          <TabsContent value="sci" className="mt-2">
             {renderDisplay()}
             <TooltipProvider>
               {renderScientificButtons()}
