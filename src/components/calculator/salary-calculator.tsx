@@ -74,7 +74,7 @@ export default function SalaryCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Salary &amp; Deductions</CardTitle>
+          <CardTitle>Salary & Deductions</CardTitle>
           <CardDescription>
             Calculate your take-home pay by providing your gross salary and any
             applicable deductions.

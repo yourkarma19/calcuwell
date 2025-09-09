@@ -78,7 +78,7 @@ export default function Vo2MaxCalculator() {
           </div>
           <p className="text-xs text-muted-foreground pt-2">
             Disclaimer: This is a non-exercise estimation and may not be as
-            accurate as a clinical test. It&apos;s for informational purposes
+            accurate as a clinical test. It's for informational purposes
             only.
           </p>
         </CardContent>

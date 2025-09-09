@@ -84,7 +84,7 @@ export default function EquationSolver() {
           </Select>
 
           {mode === "linear" && (
-            <div className="grid grid-cols-3 gap-2 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 items-center">
               <Input
                 type="number"
                 value={la}
@@ -106,7 +106,7 @@ export default function EquationSolver() {
           )}
 
           {mode === "quadratic" && (
-            <div className="grid grid-cols-3 gap-2 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 items-center">
               <Input
                 type="number"
                 value={qa}
