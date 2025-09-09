@@ -7,7 +7,6 @@ import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -64,6 +63,17 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="py-12 text-center">
+        <h2 className="text-3xl font-bold mb-4">Why CalcPro?</h2>
+        <p className="max-w-3xl mx-auto text-muted-foreground">
+          CalcPro offers a comprehensive suite of free online calculators
+          designed to be fast, accurate, and easy to use. From solving complex
+          mathematical problems to managing your personal finances and health,
+          our tools provide reliable results to help you make informed decisions
+          instantly.
+        </p>
       </section>
     </div>
   );

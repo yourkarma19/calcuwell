@@ -160,8 +160,8 @@ export default function BasicCalculator() {
     "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
 
   return (
-    <Card className="w-full max-w-sm mx-auto overflow-hidden shadow-2xl rounded-2xl border-neutral-200 dark:border-neutral-800 bg-background dark:bg-neutral-900/50">
-      <CardContent className="p-4">
+    <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
+      <CardContent className="p-1">
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
           <div
             className="text-xl text-muted-foreground h-1/3 truncate w-full text-right"
