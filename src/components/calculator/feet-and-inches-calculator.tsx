@@ -38,10 +38,10 @@ export default function FeetAndInchesCalculator({
     "feet-op",
     "add",
   );
-  const [result, setResult] = usePersistentState<{
+  const [result, setResult] = useState<{
     feet: number;
     inches: number;
-  } | null>("feet-result", null);
+  } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const toTotalInches = (feet: number, inches: number) => feet * 12 + inches;
