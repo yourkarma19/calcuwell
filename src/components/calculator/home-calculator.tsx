@@ -1,8 +1,8 @@
 
 "use client";
 
-import React, { useState, useCallback } from "react";
-import { Delete, Eraser } from "lucide-react";
+import React, { useState, useCallback, useEffect } from "react";
+import { Delete } from "lucide-react";
 import {
   TooltipProvider,
   Tooltip,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 // Button configurations
@@ -63,6 +63,9 @@ function HomeCalculator() {
   const [expression, setExpression] = useState("");
   const [isNewNumber, setIsNewNumber] = useState(true);
   const [justEvaluated, setJustEvaluated] = useState(false);
+  const [memory, setMemory] = useState(0);
+  const [isRadians, setIsRadians] = useState(false);
+  const [is2nd, setIs2nd] = useState(false);
 
   const evaluateExpression = (expr: string): string => {
     try {
@@ -120,10 +123,11 @@ function HomeCalculator() {
     if (justEvaluated) {
       setDisplayValue("0.");
       setJustEvaluated(false);
+      setIsNewNumber(false);
     } else if (!displayValue.includes(".")) {
       setDisplayValue((prev) => prev + ".");
+      setIsNewNumber(false);
     }
-    setIsNewNumber(false);
   };
 
   const handleBackspace = () => {
@@ -136,6 +140,120 @@ function HomeCalculator() {
     setExpression("");
     setIsNewNumber(true);
     setJustEvaluated(false);
+  };
+
+  const factorial = (n: number) => {
+    if (n < 0 || !Number.isInteger(n)) return NaN;
+    if (n === 0) return 1;
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+      result *= i;
+    }
+    return result;
+  };
+
+  const handleScientificFunction = (func: string) => {
+    const value = parseFloat(displayValue);
+    if (isNaN(value)) return;
+    let result: number | undefined;
+
+    const degToRad = (deg: number) => (deg * Math.PI) / 180;
+    const radToDeg = (rad: number) => (rad * 180) / Math.PI;
+
+    const angle = isRadians ? value : degToRad(value);
+
+    switch (func) {
+      case "x²":
+        result = value * value;
+        break;
+      case "x³":
+        result = value * value * value;
+        break;
+      case "¹/x":
+        result = 1 / value;
+        break;
+      case "√":
+        result = Math.sqrt(value);
+        break;
+      case "³√":
+        result = Math.cbrt(value);
+        break;
+      case "sin":
+        result = is2nd ? radToDeg(Math.asin(value)) : Math.sin(angle);
+        break;
+      case "cos":
+        result = is2nd ? radToDeg(Math.acos(value)) : Math.cos(angle);
+        break;
+      case "tan":
+        result = is2nd ? radToDeg(Math.atan(value)) : Math.tan(angle);
+        break;
+      case "ln":
+        result = is2nd ? Math.exp(value) : Math.log(value);
+        break;
+      case "log₁₀":
+        result = is2nd ? Math.pow(10, value) : Math.log10(value);
+        break;
+      case "x!":
+        result = factorial(value);
+        break;
+      case "eˣ":
+        result = Math.exp(value);
+        break;
+      case "10ˣ":
+        result = Math.pow(10, value);
+        break;
+      case "sinh":
+        result = is2nd ? Math.asinh(value) : Math.sinh(value);
+        break;
+      case "cosh":
+        result = is2nd ? Math.acosh(value) : Math.cosh(value);
+        break;
+      case "tanh":
+        result = is2nd ? Math.atanh(value) : Math.tanh(value);
+        break;
+      case "π":
+        setDisplayValue(Math.PI.toString());
+        setIsNewNumber(false);
+        return;
+      case "e":
+        setDisplayValue(Math.E.toString());
+        setIsNewNumber(false);
+        return;
+      case "Rand":
+        setDisplayValue(Math.random().toString());
+        setIsNewNumber(false);
+        return;
+      case "EE":
+        // This usually starts exponent entry, not implemented as a post-fix op
+        break;
+      case "mc":
+        setMemory(0);
+        break;
+      case "mr":
+        setDisplayValue(memory.toString());
+        setIsNewNumber(false);
+        break;
+      case "m+":
+        setMemory((prev) => prev + value);
+        break;
+      case "m-":
+        setMemory((prev) => prev - value);
+        break;
+      case "2nd":
+        setIs2nd(!is2nd);
+        return;
+      case "Rad":
+        setIsRadians(!isRadians);
+        return;
+      default:
+        break;
+    }
+    if (result !== undefined && isFinite(result)) {
+      setDisplayValue(result.toString());
+      setIsNewNumber(true);
+    } else if (result !== undefined) {
+      setDisplayValue("Error");
+    }
   };
 
   const handleInput = useCallback(
@@ -160,18 +278,46 @@ function HomeCalculator() {
             handleBackspace();
             break;
           case "+/-":
-            if (displayValue !== "0") {
+            if (displayValue !== "0" && displayValue !== "Error") {
               setDisplayValue((prev) => String(parseFloat(prev) * -1));
             }
             break;
           case "%":
-            setDisplayValue((prev) => String(parseFloat(prev) / 100));
+            if (displayValue !== "Error") {
+              setDisplayValue((prev) => String(parseFloat(prev) / 100));
+            }
             break;
         }
       }
     },
-    [handleOperator, handleEquals],
+    [handleOperator, handleEquals, displayValue],
   );
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.target instanceof HTMLInputElement ||
+        event.target instanceof HTMLTextAreaElement
+      )
+        return;
+
+      event.preventDefault();
+      let key = event.key;
+
+      if (key === "Enter") key = "=";
+      if (key === "Backspace") key = "⌫";
+      if (key === "Escape") key = "AC";
+      if (key === "/") key = "÷";
+      if (key === "*") key = "×";
+      if (key === "-") key = "‑";
+
+      if (/[0-9]/.test(key)) handleInput(key);
+      if ("+-×÷.=⌫AC%".includes(key)) handleInput(key);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleInput]);
 
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
   const specialBtnClasses =
@@ -287,9 +433,7 @@ function HomeCalculator() {
               <Button
                 variant="outline"
                 className="h-12 text-sm rounded-lg"
-                onClick={() => {
-                  /* Scientific logic to be implemented */
-                }}
+                onClick={() => handleScientificFunction(btn.func)}
               >
                 {btn.func}
               </Button>

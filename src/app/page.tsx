@@ -30,7 +30,41 @@ export default function Home() {
         <div className="lg:col-span-2">
           <HomeCalculator />
         </div>
-        <div className="space-y-6">
+        <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
+          <section className="py-16">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold font-headline text-primary">
+                Calculator Categories
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                Explore our wide range of tools for every need.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+              {categories.slice(0, 4).map((category) => (
+                <Link
+                  href={`/categories/${category.slug}`}
+                  key={category.slug}
+                >
+                  <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors">
+                        <IconWrapper
+                          iconName={category.iconName}
+                          className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors"
+                        />
+                        {category.name}
+                      </CardTitle>
+                      <CardDescription className="pt-2">
+                        {category.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           <Card>
             <CardHeader>
               <CardTitle>Why CalcPro?</CardTitle>
@@ -89,37 +123,6 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold font-headline text-primary">
-            Calculator Categories
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Explore our wide range of tools for every need.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {categories.map((category) => (
-            <Link href={`/categories/${category.slug}`} key={category.slug}>
-              <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors">
-                    <IconWrapper
-                      iconName={category.iconName}
-                      className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors"
-                    />
-                    {category.name}
-                  </CardTitle>
-                  <CardDescription className="pt-2">
-                    {category.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
         </div>
       </section>
     </div>
