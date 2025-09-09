@@ -1,3 +1,4 @@
+
 "use server";
 
 import type Fuse from "fuse.js";
@@ -17,8 +18,12 @@ async function initializeSearch() {
 
   calculators = await loadFullCalculatorData();
   fuse = new FuseJs(calculators, {
-    keys: ["name", "category", "tags"],
-    threshold: 0.3,
+    keys: [
+      { name: "name", weight: 0.7 },
+      { name: "tags", weight: 0.3 },
+    ],
+    threshold: 0.4,
+    includeScore: true,
   });
 }
 

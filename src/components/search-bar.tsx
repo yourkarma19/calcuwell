@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -19,6 +20,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { type Calculator } from "@/lib/types";
+import { Search } from "lucide-react";
 
 type SearchResult = Omit<Calculator, "component">;
 
@@ -28,32 +30,39 @@ export function SearchBar() {
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (!isOpen) {
+      setSearch("");
+    }
+  }, [isOpen]);
 
   // Debounce search input
   React.useEffect(() => {
+    if (search.length === 0) {
+      setResults([]);
+      if (isOpen) {
+        setIsLoading(true);
+        searchCalculators("").then((initialResults) => {
+          setResults(initialResults || []);
+          setIsLoading(false);
+        });
+      }
+      return;
+    }
+
     setIsLoading(true);
     const debounceTimeout = setTimeout(async () => {
       const searchResults = await searchCalculators(search);
-      setResults(searchResults || []); // Ensure results is always an array
+      setResults(searchResults || []);
       setIsLoading(false);
-    }, 300); // 300ms debounce delay
+    }, 200);
 
     return () => clearTimeout(debounceTimeout);
-  }, [search]);
+  }, [search, isOpen]);
 
-  // Pre-fetch initial results when opening
-  React.useEffect(() => {
-    if (isOpen && search === "") {
-      const fetchInitial = async () => {
-        setIsLoading(true);
-        const initialResults = await searchCalculators("");
-        setResults(initialResults || []); // Ensure results is always an array
-        setIsLoading(false);
-      };
-      fetchInitial();
-    }
-  }, [isOpen, search]);
-
+  // Keyboard shortcut to open search
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -90,43 +99,45 @@ export function SearchBar() {
       <PopoverContent
         className="w-[var(--radix-popover-trigger-width)] p-0"
         align="start"
+        onOpenAutoFocus={() => inputRef.current?.focus()}
       >
         <Command shouldFilter={false}>
-          <CommandInput
-            value={search}
-            onValueChange={setSearch}
-            placeholder="Type to search..."
-          />
+          <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+            <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+            <CommandInput
+              ref={inputRef}
+              value={search}
+              onValueChange={setSearch}
+              placeholder="Type to search..."
+              className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
+            />
+          </div>
           <CommandList>
-            {isLoading && (
-              <CommandEmpty>Loading search results...</CommandEmpty>
-            )}
-            {!isLoading && results.length === 0 && (
+            {isLoading && <CommandEmpty>Loading search results...</CommandEmpty>}
+            {!isLoading && results.length === 0 && search.length > 0 && (
               <CommandEmpty>
                 No results found for &quot;{search}&quot;.
               </CommandEmpty>
             )}
             <CommandGroup>
-              {results.map((calc) => {
-                return (
-                  <CommandItem
-                    key={calc.slug}
-                    onSelect={() => runCommand(calc.slug)}
-                    className="flex items-center gap-3 cursor-pointer"
-                  >
-                    <IconWrapper
-                      iconName={calc.iconName}
-                      className="w-4 h-4 text-muted-foreground"
-                    />
-                    <div className="flex flex-col">
-                      <span>{calc.name}</span>
-                      <span className="text-xs text-muted-foreground">
-                        {calc.category}
-                      </span>
-                    </div>
-                  </CommandItem>
-                );
-              })}
+              {results.map((calc) => (
+                <CommandItem
+                  key={calc.slug}
+                  onSelect={() => runCommand(calc.slug)}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
+                  <IconWrapper
+                    iconName={calc.iconName}
+                    className="w-4 h-4 text-muted-foreground"
+                  />
+                  <div className="flex flex-col">
+                    <span>{calc.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {calc.category}
+                    </span>
+                  </div>
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </Command>
