@@ -240,16 +240,16 @@ export default function ScientificCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleOperator("−")}
+            onClick={() => handleOperator("+")}
             className={cn(btnClasses, operatorBtnClasses)}
           >
-            <Minus size={20} />
+            <Plus size={20} />
           </Button>
           <Button
-            onClick={() => handleInput(".")}
+            onClick={() => handleInput("0")}
             className={cn(btnClasses, numberBtnClasses)}
           >
-            .
+            0
           </Button>
 
           {["4", "5", "6"].map((num) => (
@@ -262,16 +262,16 @@ export default function ScientificCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleOperator("+")}
+            onClick={() => handleOperator("−")}
             className={cn(btnClasses, operatorBtnClasses)}
           >
-            <Plus size={20} />
+            <Minus size={20} />
           </Button>
           <Button
-            onClick={() => handleInput("0")}
+            onClick={() => handleInput(".")}
             className={cn(btnClasses, numberBtnClasses)}
           >
-            0
+            .
           </Button>
 
           {["1", "2", "3"].map((num) => (
