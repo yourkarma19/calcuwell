@@ -71,8 +71,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   };
 
   const CalculatorComponent = dynamic(
-    () =>
-      import(`@/components/calculator/${params.slug}`).catch(() => notFound),
+    () => import(`@/components/calculator/${params.slug}`).catch(() => notFound()),
     {
       loading: () => <PlaceholderCalculator />,
       ssr: false, // Ensure component is client-side only for stability
@@ -85,9 +84,11 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <CalculatorWrapper calculator={calculator}>
+      <CalculatorWrapper
+        calculator={calculator}
+        sidebar={<CalculatorContent slug={params.slug} />}
+      >
         <CalculatorComponent calculatorName={calculator.name} />
-        <CalculatorContent slug={params.slug} />
       </CalculatorWrapper>
     </>
   );
