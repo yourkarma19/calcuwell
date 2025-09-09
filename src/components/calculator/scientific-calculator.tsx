@@ -240,16 +240,16 @@ export default function ScientificCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleOperator("+")}
-            className={cn(btnClasses, operatorBtnClasses)}
+            onClick={() => handleOperator("−")}
+            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
           >
-            <Plus size={20} />
+            <Minus size={20} />
           </Button>
           <Button
-            onClick={() => handleInput("0")}
-            className={cn(btnClasses, numberBtnClasses)}
+            onClick={() => handleOperator("+")}
+            className={cn(btnClasses, operatorBtnClasses, "row-span-2 h-auto")}
           >
-            0
+            <Plus size={20} />
           </Button>
 
           {["4", "5", "6"].map((num) => (
@@ -261,18 +261,6 @@ export default function ScientificCalculator() {
               {num}
             </Button>
           ))}
-          <Button
-            onClick={() => handleOperator("−")}
-            className={cn(btnClasses, operatorBtnClasses)}
-          >
-            <Minus size={20} />
-          </Button>
-          <Button
-            onClick={() => handleInput(".")}
-            className={cn(btnClasses, numberBtnClasses)}
-          >
-            .
-          </Button>
 
           {["1", "2", "3"].map((num) => (
             <Button
@@ -288,6 +276,18 @@ export default function ScientificCalculator() {
             className={cn(btnClasses, operatorBtnClasses, "col-span-2")}
           >
             =
+          </Button>
+          <Button
+            onClick={() => handleInput("0")}
+            className={cn(btnClasses, numberBtnClasses, "col-span-2")}
+          >
+            0
+          </Button>
+          <Button
+            onClick={() => handleInput(".")}
+            className={cn(btnClasses, numberBtnClasses)}
+          >
+            .
           </Button>
         </div>
       </CardContent>
