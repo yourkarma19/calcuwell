@@ -129,7 +129,7 @@ export default function BasicCalculator() {
         }
       }
     },
-    [handleOperator, handleEquals],
+    [handleOperator, handleEquals, clearAll, displayValue, handleBackspace, handleDecimal, handleNumber],
   );
 
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";

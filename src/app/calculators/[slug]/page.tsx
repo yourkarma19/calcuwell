@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { type JSONSchema7 } from "json-schema";
 import type { HowTo, WithContext } from "schema-dts";
 import CalculatorContent from "@/components/calculator/calculator-content";
 import CalculatorLoader from "@/components/calculator/calculator-loader";

@@ -1,7 +1,6 @@
 "use client";
 
 import { Delete, Divide, Minus, Plus, X as Times } from "lucide-react";
-import { useState } from "react";
 import { evaluate } from "mathjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
