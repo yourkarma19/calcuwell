@@ -36,10 +36,21 @@ export default function ScientificCalculator() {
     }
   };
 
+  const handleFunction = (func: string) => {
+    if (isResult) {
+      setExpression(func);
+      setDisplayValue(func);
+      setIsResult(false);
+    } else {
+      setExpression((prev) => prev + func);
+      setDisplayValue((prev) => prev + func);
+    }
+  };
+
   const handleOperator = (op: string) => {
-    if (expression.endsWith(" ")) return; // Prevent multiple operators
-    setExpression((prev) => prev + ` ${op} `);
-    setDisplayValue(op);
+    if (expression.endsWith(" ") || expression === "") return;
+    setExpression((prev) => `${prev} ${op} `);
+    setDisplayValue("0");
     setIsResult(false);
   };
 
@@ -56,18 +67,22 @@ export default function ScientificCalculator() {
   };
 
   const handleEquals = () => {
+    if (expression === "" || isResult) return;
     try {
+      // Replace custom symbols with mathjs compatible ones
       let finalExpression = expression
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
         .replace(/‑/g, "-")
-        .replace(/√\((.*?)\)/g, "sqrt($1)")
-        .replace(/log\((.*?)\)/g, "log10($1)")
-        .replace(/ln\((.*?)\)/g, "log($1)")
-        .replace(/(\d+)!/g, (_, n) => factorial(parseInt(n)).toString())
-        .replace(/\^/g, "**")
-        .replace(/π/g, "pi")
-        .replace(/e/g, "e");
+        .replace(/√\(/g, "sqrt(")
+        .replace(/log\(/g, "log10(")
+        .replace(/ln\(/g, "log(")
+        .replace(/(\d+)!/g, (_, n) => `factorial(${n})`)
+        .replace(/π/g, "(pi)")
+        .replace(/e/g, "(e)");
+      
+      // Handle x^y
+      finalExpression = finalExpression.replace(/\^/g, "**");
 
       const result = evaluate(finalExpression);
       setDisplayValue(String(result));
@@ -81,47 +96,18 @@ export default function ScientificCalculator() {
   };
 
   const scientificButtons = [
-    "sin(",
-    "cos(",
-    "tan(",
-    "log(",
-    "ln(",
-    "√(",
-    "x²",
-    "x³",
-    "π",
-    "e",
-    "n!",
-    "(",
-    ")",
-    "^",
-    "1/x",
+    "sin(", "cos(", "tan(", 
+    "log(", "ln(", 
+    "√(", "x²", "x³",
+    "π", "e", "n!",
+    "(", ")", "^", "1/x",
   ];
-
-  const keypadButtons = [
-    "7",
-    "8",
-    "9",
-    "4",
-    "5",
-    "6",
-    "1",
-    "2",
-    "3",
-    "+/-",
-    "0",
-    ".",
-  ];
-
-  const operatorButtons = ["÷", "×", "‑", "+", "="];
-
-  const specialButtons = ["AC", "⌫"];
 
   const btnClasses = "h-12 text-md rounded-lg py-2 font-semibold";
-  const specialBtnClasses = "bg-muted hover:bg-muted/80";
+  const specialBtnClasses = "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
   const operatorBtnClasses = "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
-  const numberBtnClasses = "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800";
-
+  const numberBtnClasses = "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
+  
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
@@ -140,18 +126,18 @@ export default function ScientificCalculator() {
         </div>
 
         <div className="grid grid-cols-6 gap-2">
-          {/* Scientific Functions */}
+          {/* Scientific Functions Panel */}
           <div className="col-span-3 grid grid-cols-3 gap-2">
-            {scientificButtons.map((btn) => (
-              <Button key={btn} onClick={() => handleInput(btn)} className={cn(btnClasses, specialBtnClasses)}>
+             {scientificButtons.map((btn) => (
+              <Button key={btn} onClick={() => handleFunction(btn)} className={cn(btnClasses, specialBtnClasses)}>
                 {btn}
               </Button>
             ))}
           </div>
 
-          {/* Keypad */}
-          <div className="col-span-3 grid grid-cols-3 gap-2">
-            <Button onClick={handleClear} className={cn(btnClasses, operatorBtnClasses)}>AC</Button>
+          {/* Keypad Panel */}
+          <div className="col-span-3 grid grid-cols-4 gap-2">
+            <Button onClick={handleClear} className={cn(btnClasses, operatorBtnClasses, "col-span-2")}>AC</Button>
             <Button onClick={handleDelete} className={cn(btnClasses, operatorBtnClasses)}><Delete /></Button>
             <Button onClick={() => handleOperator("÷")} className={cn(btnClasses, operatorBtnClasses)}>÷</Button>
             
@@ -159,7 +145,7 @@ export default function ScientificCalculator() {
             <Button onClick={() => handleInput("8")} className={cn(btnClasses, numberBtnClasses)}>8</Button>
             <Button onClick={() => handleInput("9")} className={cn(btnClasses, numberBtnClasses)}>9</Button>
             <Button onClick={() => handleOperator("×")} className={cn(btnClasses, operatorBtnClasses)}>×</Button>
-
+            
             <Button onClick={() => handleInput("4")} className={cn(btnClasses, numberBtnClasses)}>4</Button>
             <Button onClick={() => handleInput("5")} className={cn(btnClasses, numberBtnClasses)}>5</Button>
             <Button onClick={() => handleInput("6")} className={cn(btnClasses, numberBtnClasses)}>6</Button>
