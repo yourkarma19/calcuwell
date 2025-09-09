@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Delete, Divide, Minus, Plus, X as Times } from "lucide-react";
@@ -149,10 +150,7 @@ export default function ScientificCalculator() {
       <CardContent className="p-1">
         {/* Display */}
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
-          <div
-            className="text-xl text-muted-foreground h-1/3 truncate w-full text-right"
-            aria-label="Expression"
-          >
+          <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
             {expression || " "}
           </div>
           <div className="h-2/3 w-full flex items-end justify-end">
