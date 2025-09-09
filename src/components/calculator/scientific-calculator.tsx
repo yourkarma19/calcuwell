@@ -22,9 +22,10 @@ const factorial = (n: number): number => {
   return result;
 };
 
-// Register the factorial function with mathjs
+// Register custom functions with mathjs
 const customFunctions = {
   factorial,
+  log2: (x: number) => Math.log2(x),
 };
 
 export default function ScientificCalculator() {
@@ -35,7 +36,7 @@ export default function ScientificCalculator() {
 
   const handleInput = (value: string) => {
     if (isResult) {
-      if (/[0-9.]/.test(value)) {
+      if (/[0-9.]/.test(value) || value === "π" || value === "e") {
         setExpression(value);
         setDisplayValue(value);
       } else {
@@ -45,25 +46,28 @@ export default function ScientificCalculator() {
       setIsResult(false);
       return;
     }
-
+    // Don't append if the current display is 0 and the new value is not a decimal point
+    const newDisplay =
+      displayValue === "0" && value !== "." ? value : displayValue + value;
+    setDisplayValue(newDisplay);
     setExpression((prev) => prev + value);
-    setDisplayValue((prev) =>
-      prev === "0" && value !== "." ? value : prev + value,
-    );
   };
 
   const handleOperator = (op: string) => {
-    setExpression((prev) => {
-      // Check if last part of expression is an operator
-      if (/\s[+\-×÷]\s$/.test(prev)) {
-        // Replace the last operator
-        return prev.slice(0, -3) + ` ${op} `;
-      }
-      // Otherwise, just append the new operator
-      return `${prev} ${op} `;
-    });
-    setIsResult(false);
-    setDisplayValue("0");
+    // If there's already a result, use it as the start of the new expression
+    if (isResult) {
+      setExpression(displayValue + ` ${op} `);
+      setIsResult(false);
+    } else {
+      setExpression((prev) => {
+        // Prevent adding multiple operators in a row
+        if (/\s[+\-×÷]\s$/.test(prev)) {
+          return prev.slice(0, -3) + ` ${op} `;
+        }
+        return `${prev} ${op} `;
+      });
+    }
+    setDisplayValue("0"); // Reset display for the next number
   };
 
   const handleClear = () => {
@@ -79,14 +83,9 @@ export default function ScientificCalculator() {
   };
 
   const handleFunction = (func: string) => {
-    if (isResult) {
-      setExpression(func);
-      setDisplayValue(func);
-      setIsResult(false);
-    } else {
-      setExpression((prev) => prev + func);
-      setDisplayValue((prev) => (prev === "0" ? func : prev + func));
-    }
+    setExpression((prev) => prev + func);
+    setDisplayValue("0");
+    setIsResult(false);
   };
 
   const handleEquals = () => {
@@ -96,22 +95,21 @@ export default function ScientificCalculator() {
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
         .replace(/−/g, "-")
-        .replace(/√\(/g, "sqrt(")
-        .replace(/π/g, "pi");
+        .replace(/√/g, "sqrt")
+        .replace(/π/g, "pi")
+        .replace(/(\d+)!/g, "factorial($1)")
+        .replace(/sin⁻¹/g, "asin")
+        .replace(/cos⁻¹/g, "acos")
+        .replace(/tan⁻¹/g, "atan")
+        .replace(/10\^/g, "10^")
+        .replace(/log₂/g, "log2");
 
-      // Handle trig functions with deg/rad
-      const trigFuncs = ["sin", "cos", "tan", "asin", "acos", "atan"];
-      trigFuncs.forEach((func) => {
-        const regex = new RegExp(`${func}\\(`, "g");
-        if (!isRadians) {
-          finalExpression = finalExpression.replace(
-            regex,
-            `${func}(degToRad(`,
-          );
-        }
-      });
-
-      finalExpression = finalExpression.replace(/(\d+)!/g, "factorial($1)");
+      if (!isRadians) {
+        finalExpression = finalExpression.replace(
+          /(sin|cos|tan)\(([^)]+)\)/g,
+          (match, func, angle) => `${func}(${angle} deg)`,
+        );
+      }
 
       const result = evaluate(finalExpression, customFunctions);
       const formattedResult =
@@ -129,8 +127,8 @@ export default function ScientificCalculator() {
   };
 
   const btnClasses =
-    "h-12 text-sm md:text-base rounded-lg py-2 font-semibold transition-transform duration-100 active:scale-95";
-  const specialBtnClasses =
+    "h-10 text-sm md:text-base rounded-lg py-2 font-semibold transition-transform duration-100 active:scale-95";
+  const functionBtnClasses =
     "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
   const operatorBtnClasses =
     "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
@@ -143,20 +141,25 @@ export default function ScientificCalculator() {
     { display: "tan", input: "tan(" },
     { display: "log", input: "log10(" },
     { display: "ln", input: "log(" },
+    { display: "sin⁻¹", input: "asin(" },
+    { display: "cos⁻¹", input: "acos(" },
+    { display: "tan⁻¹", input: "atan(" },
+    { display: "log₂", input: "log2(" },
+    { display: "eˣ", input: "e^" },
     { display: "√", input: "sqrt(" },
     { display: "x²", input: "^2" },
     { display: "x³", input: "^3" },
     { display: "xʸ", input: "^" },
     { display: "1/x", input: "1/" },
+    { display: "(", input: "(" },
+    { display: ")", input: ")" },
     { display: "π", input: "π" },
     { display: "e", input: "e" },
     { display: "n!", input: "!" },
-    { display: "(", input: "(" },
-    { display: ")", input: ")" },
   ];
 
   return (
-    <Card className="w-full max-w-md mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
+    <Card className="w-full max-w-xl mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
           <div
@@ -175,54 +178,47 @@ export default function ScientificCalculator() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          {/* Scientific Functions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          {/* Scientific Functions Panel */}
           <div className="grid grid-cols-5 gap-2">
-            <Button
-              onClick={() => setIsRadians(!isRadians)}
-              className={cn(btnClasses, specialBtnClasses)}
-            >
-              {isRadians ? "Rad" : "Deg"}
-            </Button>
-            {scientificButtons.slice(0, 4).map((btn) => (
+            {scientificButtons.map((btn) => (
               <Button
                 key={btn.display}
                 onClick={() => handleFunction(btn.input)}
-                className={cn(btnClasses, specialBtnClasses)}
-              >
-                {btn.display}
-              </Button>
-            ))}
-            {scientificButtons.slice(5).map((btn) => (
-              <Button
-                key={btn.display}
-                onClick={() => handleFunction(btn.input)}
-                className={cn(btnClasses, specialBtnClasses)}
+                className={cn(btnClasses, functionBtnClasses)}
               >
                 {btn.display}
               </Button>
             ))}
           </div>
 
-          {/* Numpad and Operators */}
+          {/* Keypad Panel */}
           <div className="grid grid-cols-4 gap-2">
             <Button
+              onClick={() => setIsRadians(!isRadians)}
+              className={cn(btnClasses, functionBtnClasses)}
+            >
+              {isRadians ? "Rad" : "Deg"}
+            </Button>
+            <Button
               onClick={handleClear}
-              className={cn(btnClasses, operatorBtnClasses, "bg-red-500 hover:bg-red-600")}
+              className={cn(
+                btnClasses,
+                operatorBtnClasses,
+                "bg-red-500 hover:bg-red-600",
+              )}
             >
               AC
             </Button>
             <Button
               onClick={handleDelete}
-              className={cn(btnClasses, operatorBtnClasses, "bg-yellow-500 hover:bg-yellow-600")}
+              className={cn(
+                btnClasses,
+                operatorBtnClasses,
+                "bg-yellow-500 hover:bg-yellow-600",
+              )}
             >
               <Delete />
-            </Button>
-            <Button
-              onClick={() => handleOperator("%")}
-              className={cn(btnClasses, operatorBtnClasses)}
-            >
-              mod
             </Button>
             <Button
               onClick={() => handleOperator("÷")}
@@ -230,6 +226,7 @@ export default function ScientificCalculator() {
             >
               <Divide size={20} />
             </Button>
+
             <Button
               onClick={() => handleInput("7")}
               className={cn(btnClasses, numberBtnClasses)}
@@ -254,6 +251,7 @@ export default function ScientificCalculator() {
             >
               <Times size={20} />
             </Button>
+
             <Button
               onClick={() => handleInput("4")}
               className={cn(btnClasses, numberBtnClasses)}
@@ -278,6 +276,7 @@ export default function ScientificCalculator() {
             >
               <Minus size={20} />
             </Button>
+
             <Button
               onClick={() => handleInput("1")}
               className={cn(btnClasses, numberBtnClasses)}
@@ -302,6 +301,7 @@ export default function ScientificCalculator() {
             >
               <Plus size={20} />
             </Button>
+
             <Button
               onClick={() => handleInput("0")}
               className={cn(btnClasses, numberBtnClasses, "col-span-2")}
