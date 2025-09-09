@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useSearchParams } from "next/navigation";
@@ -12,12 +13,13 @@ import {
   calculateEMI,
   calculateEMIWithExtraPayments,
 } from "@/lib/math/loan-emi";
+import { formatCurrency } from "@/lib/utils";
 
 export default function LoanEMICalculator({
-  setChildProps,
+  setAboutProps,
   calculatorName,
 }: {
-  setChildProps?: (props: Record<string, unknown>) => void;
+  setAboutProps: (props: Record<string, unknown>) => void;
   calculatorName: string;
 }) {
   const searchParams = useSearchParams();
@@ -51,10 +53,8 @@ export default function LoanEMICalculator({
   }, [principal, rate, tenure]);
 
   useEffect(() => {
-    if (setChildProps) {
-      setChildProps({ principal, totalInterest });
-    }
-  }, [principal, totalInterest, setChildProps]);
+    setAboutProps({ principal, totalInterest });
+  }, [principal, totalInterest, setAboutProps]);
 
   const { newTotalMonths, interestSaved, timeSaved } = useMemo(() => {
     if (extraMonthlyPayment > 0 || extraYearlyPayment > 0) {
@@ -73,10 +73,6 @@ export default function LoanEMICalculator({
       timeSaved: { years: 0, months: 0 },
     };
   }, [principal, rate, tenure, extraMonthlyPayment, extraYearlyPayment]);
-
-  const formatCurrency = (value: number) => {
-    return `₹${value.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
-  };
 
   const formatTime = (totalMonths: number) => {
     const years = Math.floor(totalMonths / 12);

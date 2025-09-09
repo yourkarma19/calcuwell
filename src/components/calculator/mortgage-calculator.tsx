@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useSearchParams } from "next/navigation";
@@ -8,12 +9,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { formatCurrency } from "@/lib/utils";
 
 export default function MortgageCalculator({
-  setChildProps,
+  setAboutProps,
   calculatorName,
 }: {
-  setChildProps?: (props: Record<string, unknown>) => void;
+  setAboutProps: (props: Record<string, unknown>) => void;
   calculatorName: string;
 }) {
   const searchParams = useSearchParams();
@@ -93,22 +95,20 @@ export default function MortgageCalculator({
   }, [principal, rate, tenure, propertyTax, homeInsurance]);
 
   useEffect(() => {
-    if (setChildProps) {
-      setChildProps({
-        principal,
-        totalInterest,
-        propertyTax,
-        homeInsurance,
-        tenure,
-      });
-    }
+    setAboutProps({
+      principal,
+      totalInterest,
+      propertyTax,
+      homeInsurance,
+      tenure,
+    });
   }, [
     principal,
     totalInterest,
     propertyTax,
     homeInsurance,
     tenure,
-    setChildProps,
+    setAboutProps,
   ]);
 
   const shareParams = {
@@ -184,38 +184,24 @@ export default function MortgageCalculator({
               Total Monthly Payment
             </p>
             <p className="text-4xl font-bold font-headline text-primary">
-              ₹{" "}
-              {monthlyPayment.toLocaleString("en-IN", {
-                maximumFractionDigits: 0,
-              })}
+              {formatCurrency(monthlyPayment)}
             </p>
           </div>
           <div className="space-y-2 text-sm text-left border-t pt-2">
             <div className="flex justify-between">
               <p className="text-muted-foreground">Principal & Interest</p>
               <p className="font-semibold">
-                ₹{" "}
-                {principalAndInterest.toLocaleString("en-IN", {
-                  maximumFractionDigits: 0,
-                })}
+                {formatCurrency(principalAndInterest)}
               </p>
             </div>
             <div className="flex justify-between">
               <p className="text-muted-foreground">Property Tax</p>
-              <p className="font-semibold">
-                ₹{" "}
-                {monthlyTaxes.toLocaleString("en-IN", {
-                  maximumFractionDigits: 0,
-                })}
-              </p>
+              <p className="font-semibold">{formatCurrency(monthlyTaxes)}</p>
             </div>
             <div className="flex justify-between">
               <p className="text-muted-foreground">Home Insurance</p>
               <p className="font-semibold">
-                ₹{" "}
-                {monthlyInsurance.toLocaleString("en-IN", {
-                  maximumFractionDigits: 0,
-                })}
+                {formatCurrency(monthlyInsurance)}
               </p>
             </div>
           </div>
@@ -225,19 +211,13 @@ export default function MortgageCalculator({
                 Total Interest Paid:
               </span>
               <span className="font-semibold">
-                ₹{" "}
-                {totalInterest.toLocaleString("en-IN", {
-                  maximumFractionDigits: 0,
-                })}
+                {formatCurrency(totalInterest)}
               </span>
             </div>
             <div className="flex justify-between font-bold">
               <span className="text-muted-foreground">Total Payment:</span>
               <span className="font-semibold">
-                ₹{" "}
-                {totalPayable.toLocaleString("en-IN", {
-                  maximumFractionDigits: 0,
-                })}
+                {formatCurrency(totalPayable)}
               </span>
             </div>
           </div>

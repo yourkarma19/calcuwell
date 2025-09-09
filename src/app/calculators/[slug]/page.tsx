@@ -1,11 +1,12 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { HowTo, WithContext } from "schema-dts";
-import dynamic from "next/dynamic";
+import { useState } from "react";
 import CalculatorContent from "@/components/calculator/calculator-content";
+import CalculatorLoader from "@/components/calculator/calculator-loader";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import { getCalculatorBySlug } from "@/lib/server/calculator-data";
-import PlaceholderCalculator from "@/components/calculator/placeholder-calculator";
 
 type CalculatorPageProps = {
   params: {
@@ -41,55 +42,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function CalculatorPage({ params }: CalculatorPageProps) {
-  const calculator = await getCalculatorBySlug(params.slug);
-
-  if (!calculator) {
-    notFound();
-  }
-
-  // Basic HowTo schema for calculators
-  const howToSchema: WithContext<HowTo> = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: `How to use the ${calculator.name}`,
-    description: calculator.description,
-    step: [
-      {
-        "@type": "HowToStep",
-        name: "Enter Inputs",
-        text: `Enter your values into the designated fields for the ${calculator.name}.`,
-        url: `https://calcpro.online/calculators/${calculator.slug}#${calculator.slug}-inputs`,
-      },
-      {
-        "@type": "HowToStep",
-        name: "View Results",
-        text: "The calculated results will be displayed automatically.",
-        url: `https://calcpro.online/calculators/${calculator.slug}#${calculator.slug}-results`,
-      },
-    ],
-  };
-
-  const CalculatorComponent = dynamic(
-    () => import(`@/components/calculator/${params.slug}`).catch(() => notFound()),
-    {
-      loading: () => <PlaceholderCalculator />,
-      ssr: false, // Ensure component is client-side only for stability
-    },
-  );
+export default function CalculatorPage({ params }: CalculatorPageProps) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const [aboutProps, setAboutProps] = useState({});
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <CalculatorWrapper
-        calculator={calculator}
-        sidebar={<CalculatorContent slug={params.slug} />}
-      >
-        <CalculatorComponent calculatorName={calculator.name} />
-      </CalculatorWrapper>
-    </>
+    <CalculatorLoader slug={params.slug} setAboutProps={setAboutProps} />
   );
 }
