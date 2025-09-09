@@ -1,7 +1,7 @@
+
 "use client";
 
 import HomeCalculator from "@/components/calculator/home-calculator";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -38,29 +38,53 @@ export default function Home() {
             <CardContent className="space-y-4 text-sm text-muted-foreground">
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-2 rounded-full">
-                  <IconWrapper iconName="FastForward" className="h-5 w-5 text-primary" />
+                  <IconWrapper
+                    iconName="FastForward"
+                    className="h-5 w-5 text-primary"
+                  />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Fast & Accurate</h4>
-                  <p>Our calculators are built for speed and tested for accuracy to give you reliable results instantly.</p>
+                  <h4 className="font-semibold text-foreground">
+                    Fast & Accurate
+                  </h4>
+                  <p>
+                    Our calculators are built for speed and tested for accuracy
+                    to give you reliable results instantly.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-2 rounded-full">
-                  <IconWrapper iconName="ToggleLeft" className="h-5 w-5 text-primary" />
+                  <IconWrapper
+                    iconName="ToggleLeft"
+                    className="h-5 w-5 text-primary"
+                  />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Easy to Use</h4>
-                  <p>With clean, intuitive interfaces, you can find the numbers you need without the fuss.</p>
+                  <h4 className="font-semibold text-foreground">
+                    Easy to Use
+                  </h4>
+                  <p>
+                    With clean, intuitive interfaces, you can find the numbers
+                    you need without the fuss.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-2 rounded-full">
-                  <IconWrapper iconName="Smartphone" className="h-5 w-5 text-primary" />
+                  <IconWrapper
+                    iconName="Smartphone"
+                    className="h-5 w-5 text-primary"
+                  />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Mobile Friendly</h4>
-                  <p>Use our tools on any device, anywhere. Our responsive design ensures a great experience.</p>
+                  <h4 className="font-semibold text-foreground">
+                    Mobile Friendly
+                  </h4>
+                  <p>
+                    Use our tools on any device, anywhere. Our responsive design
+                    ensures a great experience.
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -70,19 +94,28 @@ export default function Home() {
 
       <section className="py-16">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold font-headline text-primary">Calculator Categories</h2>
-          <p className="mt-2 text-muted-foreground">Explore our wide range of tools for every need.</p>
+          <h2 className="text-3xl font-bold font-headline text-primary">
+            Calculator Categories
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Explore our wide range of tools for every need.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {categories.map((category) => (
             <Link href={`/categories/${category.slug}`} key={category.slug}>
               <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 font-headline group-hover:text-primary transition-colors">
-                    <IconWrapper iconName={category.iconName} className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors" />
+                    <IconWrapper
+                      iconName={category.iconName}
+                      className="w-6 h-6 text-primary/80 group-hover:text-primary transition-colors"
+                    />
                     {category.name}
                   </CardTitle>
-                  <CardDescription className="pt-2">{category.description}</CardDescription>
+                  <CardDescription className="pt-2">
+                    {category.description}
+                  </CardDescription>
                 </CardHeader>
               </Card>
             </Link>
