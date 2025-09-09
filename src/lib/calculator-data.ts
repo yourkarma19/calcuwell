@@ -4,15 +4,29 @@ import type { Calculator } from "@/lib/types";
 // that don't need the full calculator list immediately.
 
 export const calculatorsData: Omit<Calculator, "component">[] = [
+  // New SIP Calculator
+  {
+    slug: "sip-calculator",
+    name: "SIP Calculator",
+    description:
+      "Calculate the future value of your Systematic Investment Plan (SIP).",
+    category: "Finance",
+    iconName: "TrendingUp",
+    metaDescription:
+      "Estimate the future value of your SIP investments. Enter your monthly investment, expected return rate, and tenure to see how your money can grow.",
+    formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
+  },
   // New CGPA Calculator
   {
     slug: "cgpa-calculator",
     name: "CGPA Calculator",
-    description: "Calculate your Cumulative Grade Point Average from semester grades.",
+    description:
+      "Calculate your Cumulative Grade Point Average from semester grades.",
     category: "Education",
     iconName: "GraduationCap",
-    metaDescription: "Accurately calculate your CGPA by entering your semester GPAs and credits. A simple tool for all students to track academic performance.",
-    formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Creditsᵢ)",
+    metaDescription:
+      "Accurately calculate your CGPA by entering your semester GPAs and credits. A simple tool for all students to track academic performance.",
+    formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Total Creditsᵢ)",
   },
   // New Net Calorie Calculator
   {
@@ -21,7 +35,8 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find your daily calorie balance (surplus or deficit).",
     category: "Health",
     iconName: "Flame",
-    metaDescription: "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
+    metaDescription:
+      "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
     formula: "Net Calories = Calories Consumed - Calories Burned",
   },
   // New Time Card Calculator
