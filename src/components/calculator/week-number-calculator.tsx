@@ -1,6 +1,7 @@
+
 "use client";
 
-import { getWeek, format, getISOWeek, getYear } from "date-fns";
+import { getWeek, format, getISOWeek, getISOWeekYear } from "date-fns";
 import CalculatorUIWrapper from "./calculator-ui-wrapper";
 import {
   Card,
@@ -28,17 +29,27 @@ export default function WeekNumberCalculator({
     "sunday" | "monday" | "iso"
   >("weeknum-def", "iso");
 
-  const weekNumber = useMemo(() => {
-    if (!selectedDate) return null;
+  const { weekNumber, yearForWeek } = useMemo(() => {
+    if (!selectedDate) return { weekNumber: null, yearForWeek: null };
+
+    let week, year;
 
     switch (weekDefinition) {
       case "sunday":
-        return getWeek(selectedDate, { weekStartsOn: 0 }); // Sunday
+        week = getWeek(selectedDate, { weekStartsOn: 0 });
+        year = selectedDate.getFullYear();
+        break;
       case "monday":
-        return getWeek(selectedDate, { weekStartsOn: 1 }); // Monday
+        week = getWeek(selectedDate, { weekStartsOn: 1 });
+        year = selectedDate.getFullYear();
+        break;
       case "iso":
-        return getISOWeek(selectedDate);
+      default:
+        week = getISOWeek(selectedDate);
+        year = getISOWeekYear(selectedDate);
+        break;
     }
+    return { weekNumber: week, yearForWeek: year };
   }, [selectedDate, weekDefinition]);
 
   const shareParams = {
@@ -71,7 +82,7 @@ export default function WeekNumberCalculator({
             onValueChange={(v) =>
               setWeekDefinition(v as "sunday" | "monday" | "iso")
             }
-            className="flex items-center space-x-4 pt-2"
+            className="flex flex-col sm:flex-row sm:items-center gap-2 sm:space-x-4 pt-2"
           >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="iso" id="iso" />
@@ -105,9 +116,7 @@ export default function WeekNumberCalculator({
             <p className="text-6xl font-bold font-headline text-primary my-2">
               Week {weekNumber}
             </p>
-            <p className="text-lg text-muted-foreground">
-              of {getYear(selectedDate)}
-            </p>
+            <p className="text-lg text-muted-foreground">of {yearForWeek}</p>
           </>
         ) : (
           <p className="text-muted-foreground">Select a date.</p>
@@ -126,3 +135,4 @@ export default function WeekNumberCalculator({
     />
   );
 }
+
