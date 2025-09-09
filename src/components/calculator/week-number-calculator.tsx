@@ -1,7 +1,7 @@
 "use client";
 
 import { getWeek, format, getISOWeek, getYear } from "date-fns";
-import { useState, useMemo } from "react";
+import CalculatorUIWrapper from "./calculator-ui-wrapper";
 import {
   Card,
   CardContent,
@@ -12,14 +12,21 @@ import {
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function WeekNumberCalculator() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+export default function WeekNumberCalculator({
+  calculatorName,
+}: {
+  calculatorName: string;
+}) {
+  const [selectedDate, setSelectedDate] = usePersistentState<Date | undefined>(
+    "weeknum-date",
     new Date(),
+    (v) => (v ? new Date(v as string) : new Date()),
   );
-  const [weekDefinition, setWeekDefinition] = useState<
+  const [weekDefinition, setWeekDefinition] = usePersistentState<
     "sunday" | "monday" | "iso"
-  >("iso");
+  >("weeknum-def", "iso");
 
   const weekNumber = useMemo(() => {
     if (!selectedDate) return null;
@@ -34,73 +41,88 @@ export default function WeekNumberCalculator() {
     }
   }, [selectedDate, weekDefinition]);
 
-  return (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Week Number Calculator</CardTitle>
-          <CardDescription>
-            Find the week number for any given date according to different
-            international standards.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label>Select Date</Label>
-            <DatePicker
-              date={selectedDate}
-              setDate={setSelectedDate}
-              disabled={() => false}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label>Week Definition</Label>
-            <RadioGroup
-              value={weekDefinition}
-              onValueChange={(v) =>
-                setWeekDefinition(v as "sunday" | "monday" | "iso")
-              }
-              className="flex items-center space-x-4 pt-2"
-            >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="iso" id="iso" />
-                <Label htmlFor="iso">ISO 8601</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="sunday" id="sunday" />
-                <Label htmlFor="sunday">Starts on Sunday</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="monday" id="monday" />
-                <Label htmlFor="monday">Starts on Monday</Label>
-              </div>
-            </RadioGroup>
-          </div>
-        </CardContent>
-      </Card>
+  const shareParams = {
+    date: selectedDate?.toISOString().split("T")[0] || "",
+    def: weekDefinition,
+  };
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Result</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center">
-          {selectedDate ? (
-            <>
-              <p className="text-sm text-muted-foreground">
-                {format(selectedDate, "PPP")} is in
-              </p>
-              <p className="text-6xl font-bold font-headline text-primary my-2">
-                Week {weekNumber}
-              </p>
-              <p className="text-lg text-muted-foreground">
-                of {getYear(selectedDate)}
-              </p>
-            </>
-          ) : (
-            <p className="text-muted-foreground">Select a date.</p>
-          )}
-        </CardContent>
-      </Card>
-    </div>
+  const inputCard = (
+    <Card id="weeknum-inputs">
+      <CardHeader>
+        <CardTitle>Week Number Calculator</CardTitle>
+        <CardDescription>
+          Find the week number for any given date according to different
+          international standards.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label>Select Date</Label>
+          <DatePicker
+            date={selectedDate}
+            setDate={setSelectedDate}
+            disabled={() => false}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label>Week Definition</Label>
+          <RadioGroup
+            value={weekDefinition}
+            onValueChange={(v) =>
+              setWeekDefinition(v as "sunday" | "monday" | "iso")
+            }
+            className="flex items-center space-x-4 pt-2"
+          >
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="iso" id="iso" />
+              <Label htmlFor="iso">ISO 8601</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="sunday" id="sunday" />
+              <Label htmlFor="sunday">Starts on Sunday</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="monday" id="monday" />
+              <Label htmlFor="monday">Starts on Monday</Label>
+            </div>
+          </RadioGroup>
+        </div>
+      </CardContent>
+    </Card>
+  );
+
+  const resultsCard = (
+    <Card id="weeknum-results">
+      <CardHeader>
+        <CardTitle>Result</CardTitle>
+      </CardHeader>
+      <CardContent className="text-center" aria-live="polite">
+        {selectedDate ? (
+          <>
+            <p className="text-sm text-muted-foreground">
+              {format(selectedDate, "PPP")} is in
+            </p>
+            <p className="text-6xl font-bold font-headline text-primary my-2">
+              Week {weekNumber}
+            </p>
+            <p className="text-lg text-muted-foreground">
+              of {getYear(selectedDate)}
+            </p>
+          </>
+        ) : (
+          <p className="text-muted-foreground">Select a date.</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+
+  return (
+    <CalculatorUIWrapper
+      inputCard={inputCard}
+      resultsCard={resultsCard}
+      shareParams={shareParams}
+      elementIds={["weeknum-inputs", "weeknum-results"]}
+      calculatorName={calculatorName}
+    />
   );
 }

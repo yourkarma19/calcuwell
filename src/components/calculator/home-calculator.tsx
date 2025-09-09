@@ -3,8 +3,8 @@
 import { useState } from "react";
 import BasicCalculator from "@/components/calculator/basic-calculator";
 import ScientificCalculator from "@/components/calculator/scientific-calculator";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function HomeCalculator() {
   const [activeTab, setActiveTab] = useState<"basic" | "scientific">("basic");

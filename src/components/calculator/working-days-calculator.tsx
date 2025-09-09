@@ -1,7 +1,7 @@
 "use client";
 
 import { differenceInBusinessDays } from "date-fns";
-import { useState } from "react";
+import CalculatorUIWrapper from "./calculator-ui-wrapper";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,7 +14,11 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 
-export default function WorkingDaysCalculator() {
+export default function WorkingDaysCalculator({
+  calculatorName,
+}: {
+  calculatorName: string;
+}) {
   const [startDate, setStartDate] = usePersistentState<Date | undefined>(
     "wd-start-date",
     new Date(),
@@ -25,66 +29,83 @@ export default function WorkingDaysCalculator() {
     new Date(new Date().setDate(new Date().getDate() + 30)),
     (v) => (v ? new Date(v as string) : new Date()),
   );
-  const [workingDays, setWorkingDays] = useState<number | null>(null);
+  const [workingDays, setWorkingDays] = usePersistentState<number | null>(
+    "wd-days",
+    null,
+  );
 
   const handleCalculate = () => {
     if (startDate && endDate) {
+      if (endDate < startDate) {
+        setWorkingDays(0);
+        return;
+      }
       setWorkingDays(differenceInBusinessDays(endDate, startDate));
     }
   };
 
-  return (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Calculate Working Days</CardTitle>
-          <CardDescription>
-            Calculate the number of business days between two dates. This
-            calculation excludes weekends but not public holidays.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label>Start Date</Label>
-              <DatePicker
-                date={startDate}
-                setDate={setStartDate}
-                disabled={() => false}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label>End Date</Label>
-              <DatePicker
-                date={endDate}
-                setDate={setEndDate}
-                disabled={() => false}
-              />
-            </div>
+  const shareParams = {
+    start: startDate?.toISOString().split("T")[0] || "",
+    end: endDate?.toISOString().split("T")[0] || "",
+  };
+
+  const inputCard = (
+    <Card id="working-days-inputs">
+      <CardHeader>
+        <CardTitle>Calculate Working Days</CardTitle>
+        <CardDescription>
+          Calculate the number of business days between two dates. This
+          calculation excludes weekends but not public holidays.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label>Start Date</Label>
+            <DatePicker
+              date={startDate}
+              setDate={setStartDate}
+              disabled={() => false}
+            />
           </div>
-          <Button onClick={handleCalculate} className="w-full">
-            Calculate Working Days
-          </Button>
-          <p className="text-xs text-muted-foreground">
-            This calculation excludes weekends (Saturdays and Sundays). It does
-            not account for public holidays.
+          <div className="space-y-2">
+            <Label>End Date</Label>
+            <DatePicker
+              date={endDate}
+              setDate={setEndDate}
+              disabled={() => false}
+            />
+          </div>
+        </div>
+        <Button onClick={handleCalculate} className="w-full">
+          Calculate Working Days
+        </Button>
+      </CardContent>
+    </Card>
+  );
+
+  const resultsCard =
+    workingDays !== null ? (
+      <Card id="working-days-results">
+        <CardHeader>
+          <CardTitle>Result</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center" aria-live="polite">
+          <p className="text-sm text-muted-foreground">Total Working Days</p>
+          <p className="text-6xl font-bold font-headline text-primary my-2">
+            {workingDays}
           </p>
         </CardContent>
       </Card>
+    ) : null;
 
-      {workingDays !== null && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Result</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center" aria-live="polite">
-            <p className="text-sm text-muted-foreground">Total Working Days</p>
-            <p className="text-6xl font-bold font-headline text-primary my-2">
-              {workingDays}
-            </p>
-          </CardContent>
-        </Card>
-      )}
-    </div>
+  return (
+    <CalculatorUIWrapper
+      inputCard={inputCard}
+      resultsCard={resultsCard}
+      shareParams={shareParams}
+      elementIds={["working-days-inputs", "working-days-results"]}
+      calculatorName={calculatorName}
+    />
   );
 }
