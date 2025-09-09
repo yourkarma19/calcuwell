@@ -17,6 +17,7 @@ export default function CalculatorLoader({
     () => import(`@/components/calculator/${slug}`),
     {
       loading: () => <PlaceholderCalculator />,
+      ssr: false, // Ensure component is client-side only
     },
   );
 
