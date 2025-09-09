@@ -219,7 +219,7 @@ export default function ScientificCalculator() {
   const specialBtnClasses =
     "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
   const operatorBtnClasses =
-    "bg-primary hover:bg-primary/90 text-primary-foreground";
+    "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
   const numberBtnClasses =
     "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
 
@@ -241,37 +241,40 @@ export default function ScientificCalculator() {
         </div>
 
         <div className="grid grid-cols-6 gap-2 p-1">
+          {/* Scientific Functions */}
           <Button onClick={() => handleUnaryOperation('sin')} className={cn(btnClasses, specialBtnClasses)}>sin</Button>
           <Button onClick={() => handleUnaryOperation('cos')} className={cn(btnClasses, specialBtnClasses)}>cos</Button>
           <Button onClick={() => handleUnaryOperation('tan')} className={cn(btnClasses, specialBtnClasses)}>tan</Button>
           <Button onClick={() => handleUnaryOperation('log')} className={cn(btnClasses, specialBtnClasses)}>log</Button>
-          <Button onClick={() => handleUnaryOperation('ln')} className={cn(btnClasses, specialBtnClasses)}>ln</Button>
+
           <Button onClick={() => handleInput("AC")} className={cn(btnClasses, specialBtnClasses)}>AC</Button>
+          <Button onClick={() => handleInput("⌫")} aria-label="Backspace" className={cn(btnClasses, specialBtnClasses)}><Delete /></Button>
 
           <Button onClick={() => handleUnaryOperation("√")} className={cn(btnClasses, specialBtnClasses)}>√</Button>
           <Button onClick={() => handleUnaryOperation("x²")} className={cn(btnClasses, specialBtnClasses)}>x²</Button>
           <Button onClick={() => handleUnaryOperation("x³")} className={cn(btnClasses, specialBtnClasses)}>x³</Button>
           <Button onClick={() => handleUnaryOperation("∛")} className={cn(btnClasses, specialBtnClasses)}>∛</Button>
-          <Button onClick={() => handleInput("⌫")} aria-label="Backspace" className={cn(btnClasses, specialBtnClasses, "col-span-2")}><Delete /></Button>
-
-          <Button onClick={() => handleConstant("π")} className={cn(btnClasses, specialBtnClasses)}>π</Button>
-          <Button onClick={() => handleConstant("e")} className={cn(btnClasses, specialBtnClasses)}>e</Button>
-          <Button onClick={() => handleUnaryOperation("n!")} className={cn(btnClasses, specialBtnClasses)}>n!</Button>
-          <Button onClick={() => handleUnaryOperation("1/x")} className={cn(btnClasses, specialBtnClasses)}>1/x</Button>
+          
           <Button onClick={() => handleInput("7")} className={cn(btnClasses, numberBtnClasses)}>7</Button>
           <Button onClick={() => handleInput("8")} className={cn(btnClasses, numberBtnClasses)}>8</Button>
           <Button onClick={() => handleInput("9")} className={cn(btnClasses, numberBtnClasses)}>9</Button>
           <Button onClick={() => handleOperator("÷")} className={cn(btnClasses, operatorBtnClasses)}>÷</Button>
+          
+          <Button onClick={() => handleConstant("π")} className={cn(btnClasses, specialBtnClasses)}>π</Button>
+          <Button onClick={() => handleConstant("e")} className={cn(btnClasses, specialBtnClasses)}>e</Button>
+          <Button onClick={() => handleUnaryOperation("n!")} className={cn(btnClasses, specialBtnClasses)}>n!</Button>
+          <Button onClick={() => handleUnaryOperation("1/x")} className={cn(btnClasses, specialBtnClasses)}>1/x</Button>
 
-          <Button className={cn(btnClasses, specialBtnClasses)}>(</Button>
-          <Button className={cn(btnClasses, specialBtnClasses)}>)</Button>
           <Button onClick={() => handleInput("4")} className={cn(btnClasses, numberBtnClasses)}>4</Button>
           <Button onClick={() => handleInput("5")} className={cn(btnClasses, numberBtnClasses)}>5</Button>
           <Button onClick={() => handleInput("6")} className={cn(btnClasses, numberBtnClasses)}>6</Button>
           <Button onClick={() => handleOperator("×")} className={cn(btnClasses, operatorBtnClasses)}>×</Button>
 
+          <Button className={cn(btnClasses, specialBtnClasses)}>(</Button>
+          <Button className={cn(btnClasses, specialBtnClasses)}>)</Button>
           <Button onClick={() => handleUnaryOperation("+/-")} className={cn(btnClasses, specialBtnClasses)}>+/-</Button>
           <Button onClick={() => handleUnaryOperation("%")} className={cn(btnClasses, specialBtnClasses)}>%</Button>
+
           <Button onClick={() => handleInput("1")} className={cn(btnClasses, numberBtnClasses)}>1</Button>
           <Button onClick={() => handleInput("2")} className={cn(btnClasses, numberBtnClasses)}>2</Button>
           <Button onClick={() => handleInput("3")} className={cn(btnClasses, numberBtnClasses)}>3</Button>
@@ -279,10 +282,12 @@ export default function ScientificCalculator() {
 
           <Button onClick={() => handleInput("0")} className={cn(btnClasses, numberBtnClasses, "col-span-2")}>0</Button>
           <Button onClick={() => handleInput(".")} className={cn(btnClasses, numberBtnClasses)}>.</Button>
-          <Button onClick={() => handleEquals()} className={cn(btnClasses, operatorBtnClasses)}>=</Button>
+          <Button onClick={() => handleEquals()} className={cn(btnClasses, operatorBtnClasses, "col-span-2")}>=</Button>
           <Button onClick={() => handleOperator("+")} className={cn(btnClasses, operatorBtnClasses)}>+</Button>
         </div>
       </CardContent>
     </Card>
   );
 }
+
+    
