@@ -2,8 +2,6 @@ import {
   differenceInYears,
   differenceInMonths,
   differenceInDays,
-  subYears,
-  subMonths,
 } from "date-fns";
 
 export interface Age {
@@ -24,27 +22,35 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
   }
 
   let years = differenceInYears(endDate, startDate);
-  let months = differenceInMonths(endDate, startDate) % 12;
-  
-  // Adjust months and years
-  let tempDate = new Date(startDate);
-  tempDate.setFullYear(startDate.getFullYear() + years);
-  tempDate.setMonth(startDate.getMonth() + months);
-  
-  if(tempDate > endDate) {
-    months--;
-    if (months < 0) {
-      months = 11;
-      years--;
-    }
+  let months = differenceInMonths(endDate, startDate);
+  let days = differenceInDays(endDate, startDate);
+
+  const originalStartDay = startDate.getDate();
+  const endDay = endDate.getDate();
+
+  // Adjust for the day of the month
+  if (endDay < originalStartDay) {
+    days -= 1; // Correct for the partial month
   }
+  
+  // Create a date representing the same day in the end month
+  const tempDate = new Date(endDate);
+  tempDate.setDate(originalStartDay);
 
-  // Recalculate tempDate for days calculation
-  tempDate = new Date(startDate);
-  tempDate.setFullYear(startDate.getFullYear() + years);
-  tempDate.setMonth(startDate.getMonth() + months);
+  // If the end date is before this temp date in the same month, we haven't completed a full month
+  if(endDate < tempDate) {
+    months -= 1;
+  }
+  
+  years = Math.floor(months / 12);
+  months = months % 12;
 
-  const days = differenceInDays(endDate, tempDate);
+  // Recalculate days based on the final years and months
+  const adjustedStartDate = new Date(startDate);
+  adjustedStartDate.setFullYear(startDate.getFullYear() + years);
+  adjustedStartDate.setMonth(startDate.getMonth() + months);
+
+  days = differenceInDays(endDate, adjustedStartDate);
 
   return { years, months, days };
 }
