@@ -1,3 +1,4 @@
+
 "use client";
 
 import { RefreshCw } from "lucide-react";
@@ -47,11 +48,11 @@ export default function TypingSpeedCalculator() {
   }, [startTime, endTime, text]);
 
   const accuracy = useMemo(() => {
-    if (!isTestFinished && !isTestActive) return 100;
-    const totalChars = text.length;
-    if (totalChars === 0) return 100;
-    return Math.max(0, ((userInput.length - errors) / userInput.length) * 100);
-  }, [isTestActive, isTestFinished, userInput, errors, text]);
+    if (!isTestActive && !isTestFinished) return 100;
+    const totalTyped = userInput.length;
+    if (totalTyped === 0) return 100;
+    return Math.max(0, ((totalTyped - errors) / totalTyped) * 100);
+  }, [isTestActive, isTestFinished, userInput, errors]);
 
   const startTest = () => {
     const newText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
@@ -173,7 +174,7 @@ export default function TypingSpeedCalculator() {
           <p>
             The <strong>Typing Speed Calculator</strong> is an interactive tool
             designed to measure your typing proficiency in Words Per Minute
-            (WPM). It&apos;s perfect for anyone looking to improve their typing
+            (WPM). It's perfect for anyone looking to improve their typing
             skills, from students and administrative professionals to writers
             and developers. By practicing regularly, you can increase your speed
             and accuracy, boosting your productivity in any task that involves
@@ -244,7 +245,7 @@ export default function TypingSpeedCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 Yes, for most practical purposes, accuracy is more important. A
-                high WPM is useless if it&apos;s full of errors that you have to
+                high WPM is useless if it's full of errors that you have to
                 go back and correct. Correcting mistakes takes more time than
                 typing carefully in the first place. Focus on achieving over 95%
                 accuracy before pushing for higher speeds.
