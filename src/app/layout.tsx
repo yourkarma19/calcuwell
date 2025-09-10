@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Footer from "@/components/layout/footer";
@@ -67,8 +68,6 @@ export default function RootLayout({
           rel="preload"
           href="/_next/static/css/app/layout.css"
           as="style"
-          // @ts-expect-error `onLoad` is a valid attribute
-          onLoad="this.onload=null;this.rel='stylesheet'"
         />
         <noscript>
           <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
