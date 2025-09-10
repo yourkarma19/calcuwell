@@ -76,12 +76,11 @@ export default function ScientificCalculator() {
   const handleFunction = (func: string) => {
     if (isResult) {
       setExpression(`${func}${displayValue})`);
-      setDisplayValue(`${func}${displayValue})`);
       setIsResult(false);
     } else {
       setExpression((prev) => prev + func);
-      setDisplayValue("0");
     }
+    setDisplayValue("0");
   };
 
   const handleEquals = () => {
@@ -124,10 +123,13 @@ export default function ScientificCalculator() {
 
   const btnClasses =
     "h-12 md:h-14 text-sm md:text-base rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
-  const functionBtnClasses = "bg-muted hover:bg-accent text-foreground";
+  const functionBtnClasses = "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
   const operatorBtnClasses =
     "bg-secondary hover:bg-secondary/80 text-secondary-foreground text-xl";
-  const numberBtnClasses = "bg-card hover:bg-muted/50 text-card-foreground";
+  const numberBtnClasses = "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
+  const specialBtnClasses =
+  "bg-muted hover:bg-accent text-foreground";
+
 
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
@@ -253,7 +255,7 @@ export default function ScientificCalculator() {
           {/* Controls */}
           <Button
             onClick={() => setIsRadians(!isRadians)}
-            className={cn(btnClasses, functionBtnClasses)}
+            className={cn(btnClasses, specialBtnClasses)}
           >
             {isRadians ? "Rad" : "Deg"}
           </Button>

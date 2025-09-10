@@ -149,8 +149,7 @@ export default function BasicCalculator() {
     "bg-muted hover:bg-accent text-foreground";
   const operatorBtnClasses =
     "bg-secondary hover:bg-secondary/80 text-secondary-foreground";
-  const numberBtnClasses =
-    "bg-card hover:bg-muted/50 text-card-foreground";
+  const numberBtnClasses = "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
 
   return (
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
