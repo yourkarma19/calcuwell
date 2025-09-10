@@ -90,21 +90,6 @@
   .dark .card {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-  .fluid-display-font {
-    font-size: clamp(1.5rem, 10vw - 1rem, 3rem);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
 }
 
 @keyframes rise {
