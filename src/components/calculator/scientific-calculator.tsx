@@ -75,12 +75,10 @@ export default function ScientificCalculator() {
 
   const handleFunction = (func: string) => {
     if (isResult) {
-      // If the last action was getting a result, wrap the result with the function
       setExpression(`${func}${displayValue})`);
       setDisplayValue(`${func}${displayValue})`);
       setIsResult(false);
     } else {
-      // Otherwise, just append the function
       setExpression((prev) => prev + func);
       setDisplayValue("0");
     }
@@ -132,25 +130,6 @@ export default function ScientificCalculator() {
     "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
   const numberBtnClasses =
     "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
-
-  const scientificButtons = [
-    { display: "sin", input: "sin(" },
-    { display: "cos", input: "cos(" },
-    { display: "tan", input: "tan(" },
-    { display: "log", input: "log10(" },
-    { display: "ln", input: "log(" },
-    { display: "sin⁻¹", input: "asin(" },
-    { display: "cos⁻¹", input: "acos(" },
-    { display: "tan⁻¹", input: "atan(" },
-    { display: "√", input: "sqrt(" },
-    { display: "x²", input: "^2" },
-    { display: "x³", input: "^3" },
-    { display: "xʸ", input: "^" },
-    { display: "π", input: "π" },
-    { display: "e", input: "e" },
-    { display: "n!", input: "!" },
-    { display: "eˣ", input: "exp(" },
-  ];
 
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
