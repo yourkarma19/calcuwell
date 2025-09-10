@@ -61,14 +61,19 @@ export default function BasicCalculator() {
     const result = evaluateExpression(finalExpression);
     setDisplayValue(result);
     setExpression("");
+    setIsNewNumber(true);
     setJustEvaluated(true);
-  }, [displayValue, expression, isNewNumber, setDisplayValue, setExpression, setJustEvaluated]);
+  }, [displayValue, expression, isNewNumber, setDisplayValue, setExpression, setIsNewNumber, setJustEvaluated]);
 
   const handleNumber = useCallback((num: string) => {
     if (justEvaluated) {
       setDisplayValue(num);
       setJustEvaluated(false);
-    } else if (isNewNumber) {
+      setIsNewNumber(false);
+      return;
+    }
+    
+    if (isNewNumber) {
       setDisplayValue(num);
       setIsNewNumber(false);
     } else {
@@ -80,11 +85,17 @@ export default function BasicCalculator() {
     if (justEvaluated) {
       setDisplayValue("0.");
       setJustEvaluated(false);
+      setIsNewNumber(false);
+      return;
+    }
+    
+    if (isNewNumber) {
+      setDisplayValue("0.");
+      setIsNewNumber(false);
     } else if (!displayValue.includes(".")) {
       setDisplayValue((prev) => prev + ".");
     }
-    setIsNewNumber(false);
-  }, [displayValue, justEvaluated, setDisplayValue, setJustEvaluated, setIsNewNumber]);
+  }, [displayValue, justEvaluated, isNewNumber, setDisplayValue, setJustEvaluated, setIsNewNumber]);
 
   const handleBackspace = useCallback(() => {
     if (justEvaluated) return;

@@ -24,18 +24,27 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
   }
 
   let years = differenceInYears(endDate, startDate);
-  let dateAfterYears = subYears(endDate, years);
-
-  // Correction if the start date's month/day is after the end date's month/day
-  // in their respective years
-  if (dateAfterYears < startDate) {
-    years -= 1;
-    dateAfterYears = subYears(endDate, years);
+  let months = differenceInMonths(endDate, startDate) % 12;
+  
+  // Adjust months and years
+  let tempDate = new Date(startDate);
+  tempDate.setFullYear(startDate.getFullYear() + years);
+  tempDate.setMonth(startDate.getMonth() + months);
+  
+  if(tempDate > endDate) {
+    months--;
+    if (months < 0) {
+      months = 11;
+      years--;
+    }
   }
 
-  const months = differenceInMonths(dateAfterYears, startDate);
-  const dateAfterMonths = subMonths(dateAfterYears, months);
-  const days = differenceInDays(dateAfterMonths, startDate);
+  // Recalculate tempDate for days calculation
+  tempDate = new Date(startDate);
+  tempDate.setFullYear(startDate.getFullYear() + years);
+  tempDate.setMonth(startDate.getMonth() + months);
+
+  const days = differenceInDays(endDate, tempDate);
 
   return { years, months, days };
 }
