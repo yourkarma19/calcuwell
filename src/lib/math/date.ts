@@ -2,6 +2,7 @@ import {
   differenceInYears,
   differenceInMonths,
   differenceInDays,
+  add,
 } from "date-fns";
 
 export interface Age {
@@ -21,36 +22,19 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
     return { years: 0, months: 0, days: 0 };
   }
 
-  let years = differenceInYears(endDate, startDate);
-  let months = differenceInMonths(endDate, startDate);
-  let days = differenceInDays(endDate, startDate);
+  const years = differenceInYears(endDate, startDate);
 
-  const originalStartDay = startDate.getDate();
-  const endDay = endDate.getDate();
+  const anniversaryThisYear = add(startDate, { years: years });
+  let months = differenceInMonths(endDate, anniversaryThisYear);
 
-  // Adjust for the day of the month
-  if (endDay < originalStartDay) {
-    days -= 1; // Correct for the partial month
-  }
+  const monthAnniversary = add(anniversaryThisYear, { months: months });
+  let days = differenceInDays(endDate, monthAnniversary);
   
-  // Create a date representing the same day in the end month
-  const tempDate = new Date(endDate);
-  tempDate.setDate(originalStartDay);
-
-  // If the end date is before this temp date in the same month, we haven't completed a full month
-  if(endDate < tempDate) {
-    months -= 1;
+  if (days < 0) {
+    months -=1;
+    const previousMonthAnniversary = add(anniversaryThisYear, { months: months });
+    days = differenceInDays(endDate, previousMonthAnniversary);
   }
-  
-  years = Math.floor(months / 12);
-  months = months % 12;
-
-  // Recalculate days based on the final years and months
-  const adjustedStartDate = new Date(startDate);
-  adjustedStartDate.setFullYear(startDate.getFullYear() + years);
-  adjustedStartDate.setMonth(startDate.getMonth() + months);
-
-  days = differenceInDays(endDate, adjustedStartDate);
 
   return { years, months, days };
 }
