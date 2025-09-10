@@ -123,13 +123,13 @@ export default function ScientificCalculator() {
 
   const btnClasses =
     "h-12 md:h-14 text-sm md:text-base rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
-  const functionBtnClasses = "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
+  const functionBtnClasses =
+    "bg-muted/50 hover:bg-muted dark:bg-muted/20 dark:hover:bg-muted/40";
   const operatorBtnClasses =
     "bg-secondary hover:bg-secondary/80 text-secondary-foreground text-xl";
-  const numberBtnClasses = "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
-  const specialBtnClasses =
-  "bg-muted hover:bg-accent text-foreground";
-
+  const numberBtnClasses =
+    "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
+  const specialBtnClasses = "bg-muted hover:bg-accent text-foreground";
 
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
@@ -267,10 +267,7 @@ export default function ScientificCalculator() {
           </Button>
           <Button
             onClick={handleDelete}
-            className={cn(
-              btnClasses,
-              specialBtnClasses
-            )}
+            className={cn(btnClasses, specialBtnClasses)}
           >
             <Delete />
           </Button>
