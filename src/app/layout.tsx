@@ -61,6 +61,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = btoa(crypto.randomUUID());
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -73,6 +74,7 @@ export default function RootLayout({
           <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
         </noscript>
         <script
+          nonce={nonce}
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1952235305826490"
           crossOrigin="anonymous"
