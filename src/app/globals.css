@@ -4,55 +4,55 @@
 
 @layer base {
   :root {
-    --background: 240 10% 98%;
+    --background: 240 25% 96%; /* #F0F0F5 */
     --foreground: 240 5% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 5% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 5% 3.9%;
-    --primary: 259 89% 55%; /* Darker Indigo for better contrast on light backgrounds */
+    --primary: 250 27% 57%; /* #756AB6 */
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 5% 90%;
-    --secondary-foreground: 240 5% 10%;
+    --secondary: 276 11% 63%; /* #A69CAC - used for accents */
+    --secondary-foreground: 0 0% 98%;
     --muted: 240 5% 90%;
-    --muted-foreground: 240 5% 35%; /* Darker muted text */
-    --accent: 240 5% 90%;
+    --muted-foreground: 240 5% 45%; /* Darkened for better readability */
+    --accent: 276 11% 85%; /* Lighter version of secondary for hovers */
     --accent-foreground: 240 5% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 259 89% 55%;
+    --ring: 250 27% 57%;
     --radius: 0.75rem;
-    --chart-1: 259 89% 55%;
-    --chart-2: 173 58% 39%;
+    --chart-1: 250 27% 57%;
+    --chart-2: 276 11% 63%;
     --chart-3: 35 92% 56%;
     --chart-4: 217 91% 60%;
     --chart-5: 342 91% 55%;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240 4% 10%;
     --foreground: 0 0% 98%;
-    --card: 240 4% 10%;
+    --card: 240 4% 12%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 259 89% 75%; /* Lighter Indigo for better contrast on dark backgrounds */
+    --primary: 250 27% 67%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4% 15%;
+    --secondary: 276 11% 53%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 4% 15%;
-    --muted-foreground: 240 4% 75%; /* Lighter muted text */
-    --accent: 240 4% 15%;
+    --muted-foreground: 240 4% 75%;
+    --accent: 276 11% 43%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 4% 15%;
-    --input: 240 4% 15%;
-    --ring: 259 89% 75%;
-    --chart-1: 259 89% 75%;
-    --chart-2: 173 58% 39%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 250 27% 67%;
+    --chart-1: 250 27% 67%;
+    --chart-2: 276 11% 63%;
     --chart-3: 35 92% 56%;
     --chart-4: 217 91% 60%;
     --chart-5: 342 91% 55%;
@@ -68,7 +68,17 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
-    line-height: 1.6;
+    line-height: 1.7;
+  }
+  .prose {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-headline;
+    }
   }
   .dark .prose {
     h1,
@@ -86,6 +96,10 @@
   .card {
     background-color: hsl(var(--card));
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
   .dark .card {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

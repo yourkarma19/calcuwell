@@ -93,7 +93,7 @@ export default function ScientificCalculator() {
         .replace(/−/g, "-")
         .replace(/√/g, "sqrt")
         .replace(/π/g, "pi")
-        .replace(/(\d+)!/g, "factorial($1)")
+        .replace(/(\d+\.?\d*)!/g, "factorial($1)")
         .replace(/sin⁻¹/g, "asin")
         .replace(/cos⁻¹/g, "acos")
         .replace(/tan⁻¹/g, "atan")
@@ -124,12 +124,10 @@ export default function ScientificCalculator() {
 
   const btnClasses =
     "h-12 md:h-14 text-sm md:text-base rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
-  const functionBtnClasses =
-    "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
+  const functionBtnClasses = "bg-muted hover:bg-accent text-foreground";
   const operatorBtnClasses =
-    "bg-primary hover:bg-primary/90 text-primary-foreground text-xl";
-  const numberBtnClasses =
-    "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
+    "bg-secondary hover:bg-secondary/80 text-secondary-foreground text-xl";
+  const numberBtnClasses = "bg-card hover:bg-muted/50 text-card-foreground";
 
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
@@ -261,7 +259,7 @@ export default function ScientificCalculator() {
           </Button>
           <Button
             onClick={handleClear}
-            className={cn(btnClasses, "bg-red-500 hover:bg-red-600 text-white")}
+            className={cn(btnClasses, specialBtnClasses)}
           >
             AC
           </Button>
@@ -269,7 +267,7 @@ export default function ScientificCalculator() {
             onClick={handleDelete}
             className={cn(
               btnClasses,
-              "bg-yellow-500 hover:bg-yellow-600 text-white",
+              specialBtnClasses
             )}
           >
             <Delete />

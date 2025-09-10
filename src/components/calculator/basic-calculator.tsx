@@ -146,11 +146,11 @@ export default function BasicCalculator() {
 
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
   const specialBtnClasses =
-    "bg-neutral-300 dark:bg-neutral-700/80 hover:bg-neutral-400/80 dark:hover:bg-neutral-700 text-black dark:text-white";
+    "bg-muted hover:bg-accent text-foreground";
   const operatorBtnClasses =
-    "bg-primary hover:bg-primary/90 text-primary-foreground";
+    "bg-secondary hover:bg-secondary/80 text-secondary-foreground";
   const numberBtnClasses =
-    "bg-neutral-200 dark:bg-neutral-800/80 hover:bg-neutral-300/80 dark:hover:bg-neutral-800 text-black dark:text-white";
+    "bg-card hover:bg-muted/50 text-card-foreground";
 
   return (
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
@@ -174,7 +174,7 @@ export default function BasicCalculator() {
             onClick={() => handleInput("AC")}
             className={cn(
               basicBtnClasses,
-              "bg-red-500 hover:bg-red-600 text-white",
+              specialBtnClasses,
             )}
           >
             AC
@@ -184,7 +184,7 @@ export default function BasicCalculator() {
             aria-label="Backspace"
             className={cn(
               basicBtnClasses,
-              "bg-yellow-500 hover:bg-yellow-600 text-white",
+              specialBtnClasses,
             )}
           >
             <Delete />
