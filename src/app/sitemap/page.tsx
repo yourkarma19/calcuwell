@@ -1,10 +1,19 @@
-
+import { Metadata } from "next";
 import { List } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
 import { loadFullCalculatorData } from "@/lib/server/calculator-data";
 import { Calculator, IconName } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: "Sitemap | CalcPro",
+  description:
+    "Explore a complete list of all our free online calculators, organized by category. Find tools for math, finance, health, and more.",
+  alternates: {
+    canonical: "/sitemap",
+  },
+};
 
 type CategoryWithCalculators = {
   slug: string;

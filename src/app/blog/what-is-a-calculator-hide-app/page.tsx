@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Article, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "What is a Calculator Hide App and How Do They Work? | CalcPro",
@@ -10,9 +11,37 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd: WithContext<Article> = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "What is a Calculator Hide App and How Do They Work?",
+  author: {
+    "@type": "Organization",
+    name: "CalcPro",
+    url: "https://calcpro.online",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "CalcPro",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://calcpro.online/icon.png",
+    },
+  },
+  datePublished: "2024-01-01",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://calcpro.online/blog/what-is-a-calculator-hide-app",
+  },
+};
+
 export default function CalculatorHideAppBlogPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="prose dark:prose-invert max-w-none">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">

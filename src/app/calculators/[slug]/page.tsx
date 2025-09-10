@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CalculatorClientPage from "@/components/calculator/calculator-client-page";
@@ -24,7 +23,7 @@ export async function generateMetadata({
 
   const title =
     calculator.seoTitle ||
-    `${calculator.name} | Free Online Calculator | CalcPro`;
+    `${calculator.name} Calculator | Free Online Tool | CalcPro`;
   const description =
     calculator.metaDescription ||
     `Use the free ${calculator.name} on CalcPro to solve your problem. ${calculator.description}`;
