@@ -167,7 +167,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("AC")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             AC
           </Button>
@@ -175,21 +175,21 @@ export default function BasicCalculator() {
             onClick={() => handleInput("⌫")}
             aria-label="Backspace"
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             <Delete />
           </Button>
           <Button
             onClick={() => handleInput("%")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             %
           </Button>
           <Button
             onClick={() => handleInput("÷")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             ÷
           </Button>
@@ -207,7 +207,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("×")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             ×
           </Button>
@@ -225,7 +225,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("‑")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             -
           </Button>
@@ -243,7 +243,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("+")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "text-primary")}
           >
             +
           </Button>
@@ -265,7 +265,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("=")}
             variant="ghost"
-            className={cn(basicBtnClasses)}
+            className={cn(basicBtnClasses, "bg-primary text-primary-foreground hover:bg-primary/90")}
           >
             =
           </Button>
