@@ -79,14 +79,16 @@ export default function CalculatorWrapper({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <main className="lg:col-span-2 space-y-8">{children}</main>
-        <aside className="space-y-8">
-          <div className="sticky top-24">
+      <div className="max-w-4xl mx-auto">
+        <main className="space-y-8">
+          {children}
+          <div className="pt-8">
             {sidebar}
-            <EmbedCalculator slug={calculator.slug} />
+            <div className="mt-8">
+              <EmbedCalculator slug={calculator.slug} />
+            </div>
           </div>
-        </aside>
+        </main>
       </div>
     </div>
   );
