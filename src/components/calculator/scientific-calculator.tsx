@@ -36,8 +36,8 @@ export default function ScientificCalculator() {
 
   const handleInput = (value: string) => {
     if (isResult) {
-      setExpression(/[0-9.]/.test(value) ? value : displayValue + value);
-      setDisplayValue(/[0-9.]/.test(value) ? value : displayValue + value);
+      setExpression(value);
+      setDisplayValue(value);
       setIsResult(false);
       return;
     }
@@ -74,9 +74,16 @@ export default function ScientificCalculator() {
   };
 
   const handleFunction = (func: string) => {
-    setExpression((prev) => prev + func);
-    setDisplayValue("0");
-    setIsResult(false);
+    if (isResult) {
+      // If the last action was getting a result, wrap the result with the function
+      setExpression(`${func}${displayValue})`);
+      setDisplayValue(`${func}${displayValue})`);
+      setIsResult(false);
+    } else {
+      // Otherwise, just append the function
+      setExpression((prev) => prev + func);
+      setDisplayValue("0");
+    }
   };
 
   const handleEquals = () => {
