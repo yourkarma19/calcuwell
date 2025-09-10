@@ -1,3 +1,4 @@
+
 "use client";
 
 import { rationalize } from "mathjs";
@@ -28,11 +29,16 @@ export default function PartialFractionCalculator() {
       setError(null);
       const simplified = rationalize(expression, {}, true);
 
-      if (!simplified || !simplified.expression) {
-        throw new Error("Could not simplify the expression.");
+      if (!simplified) {
+        throw new Error("Could not process the expression.");
       }
 
-      setResult(simplified.expression.toString());
+      // If the expression is already simplified, rationalize returns null for expression
+      if (simplified.expression === null) {
+        setResult(simplified.toString());
+      } else {
+        setResult(simplified.expression.toString());
+      }
     } catch (e: unknown) {
       setError(
         (e instanceof Error ? e.message : String(e)) ||
