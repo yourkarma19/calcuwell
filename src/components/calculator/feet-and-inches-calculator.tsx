@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AlertCircle } from "lucide-react";
@@ -54,6 +55,7 @@ export default function FeetAndInchesCalculator({
 
   const handleCalculate = () => {
     setError(null);
+    setResult(null); // Clear previous result on new calculation
     const f1 = Number(feet1);
     const i1 = Number(inches1);
     const f2 = Number(feet2);
@@ -61,20 +63,20 @@ export default function FeetAndInchesCalculator({
 
     if (f1 < 0 || i1 < 0 || f2 < 0 || i2 < 0) {
       setError("Measurements cannot be negative.");
-      setResult(null);
       return;
     }
 
     const totalInches1 = toTotalInches(f1, i1);
-    const totalInches2 = toTotalInches(f2, i2);
     let resultInches = 0;
 
     switch (operation) {
       case "add": {
+        const totalInches2 = toTotalInches(f2, i2);
         resultInches = totalInches1 + totalInches2;
         break;
       }
       case "subtract": {
+        const totalInches2 = toTotalInches(f2, i2);
         resultInches = totalInches1 - totalInches2;
         break;
       }
@@ -87,7 +89,6 @@ export default function FeetAndInchesCalculator({
         const divisor = f2 + i2 / 12;
         if (divisor === 0) {
           setError("Cannot divide by zero.");
-          setResult(null);
           return;
         }
         resultInches = totalInches1 / divisor;
