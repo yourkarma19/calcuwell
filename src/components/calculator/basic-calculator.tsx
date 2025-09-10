@@ -145,12 +145,7 @@ export default function BasicCalculator() {
   );
 
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
-  const specialBtnClasses =
-    "bg-muted hover:bg-accent text-foreground";
-  const operatorBtnClasses =
-    "bg-secondary hover:bg-secondary/80 text-secondary-foreground";
-  const numberBtnClasses = "bg-muted/30 hover:shadow-sm shadow-md transition-shadow duration-200";
-
+  
   return (
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
@@ -171,32 +166,30 @@ export default function BasicCalculator() {
         <div className="grid grid-cols-4 gap-3 p-1">
           <Button
             onClick={() => handleInput("AC")}
-            className={cn(
-              basicBtnClasses,
-              specialBtnClasses,
-            )}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             AC
           </Button>
           <Button
             onClick={() => handleInput("⌫")}
             aria-label="Backspace"
-            className={cn(
-              basicBtnClasses,
-              specialBtnClasses,
-            )}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             <Delete />
           </Button>
           <Button
             onClick={() => handleInput("%")}
-            className={cn(basicBtnClasses, specialBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             %
           </Button>
           <Button
             onClick={() => handleInput("÷")}
-            className={cn(basicBtnClasses, operatorBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             ÷
           </Button>
@@ -205,14 +198,16 @@ export default function BasicCalculator() {
             <Button
               key={num}
               onClick={() => handleInput(num)}
-              className={cn(basicBtnClasses, numberBtnClasses)}
+              variant="ghost"
+              className={cn(basicBtnClasses)}
             >
               {num}
             </Button>
           ))}
           <Button
             onClick={() => handleInput("×")}
-            className={cn(basicBtnClasses, operatorBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             ×
           </Button>
@@ -221,14 +216,16 @@ export default function BasicCalculator() {
             <Button
               key={num}
               onClick={() => handleInput(num)}
-              className={cn(basicBtnClasses, numberBtnClasses)}
+              variant="ghost"
+              className={cn(basicBtnClasses)}
             >
               {num}
             </Button>
           ))}
           <Button
             onClick={() => handleInput("‑")}
-            className={cn(basicBtnClasses, operatorBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             -
           </Button>
@@ -237,33 +234,38 @@ export default function BasicCalculator() {
             <Button
               key={num}
               onClick={() => handleInput(num)}
-              className={cn(basicBtnClasses, numberBtnClasses)}
+              variant="ghost"
+              className={cn(basicBtnClasses)}
             >
               {num}
             </Button>
           ))}
           <Button
             onClick={() => handleInput("+")}
-            className={cn(basicBtnClasses, operatorBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             +
           </Button>
 
           <Button
             onClick={() => handleInput("0")}
-            className={cn(basicBtnClasses, numberBtnClasses, "col-span-2")}
+            variant="ghost"
+            className={cn(basicBtnClasses, "col-span-2")}
           >
             0
           </Button>
           <Button
             onClick={() => handleInput(".")}
-            className={cn(basicBtnClasses, numberBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             .
           </Button>
           <Button
             onClick={() => handleInput("=")}
-            className={cn(basicBtnClasses, operatorBtnClasses)}
+            variant="ghost"
+            className={cn(basicBtnClasses)}
           >
             =
           </Button>
