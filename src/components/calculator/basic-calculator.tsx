@@ -167,7 +167,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("AC")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             AC
           </Button>
@@ -175,21 +175,21 @@ export default function BasicCalculator() {
             onClick={() => handleInput("⌫")}
             aria-label="Backspace"
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             <Delete />
           </Button>
           <Button
             onClick={() => handleInput("%")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             %
           </Button>
           <Button
             onClick={() => handleInput("÷")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             ÷
           </Button>
@@ -207,7 +207,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("×")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             ×
           </Button>
@@ -225,7 +225,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("‑")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             -
           </Button>
@@ -243,7 +243,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("+")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary")}
+            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             +
           </Button>

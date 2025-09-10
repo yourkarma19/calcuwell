@@ -148,28 +148,28 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleFunction("sin(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             sin
           </Button>
           <Button
             onClick={() => handleFunction("cos(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             cos
           </Button>
           <Button
             onClick={() => handleFunction("tan(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             tan
           </Button>
           <Button
             onClick={() => handleFunction("log10(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             log
           </Button>
@@ -177,28 +177,28 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleFunction("asin(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             sin⁻¹
           </Button>
           <Button
             onClick={() => handleFunction("acos(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             cos⁻¹
           </Button>
           <Button
             onClick={() => handleFunction("atan(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             tan⁻¹
           </Button>
           <Button
             onClick={() => handleFunction("log(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             ln
           </Button>
@@ -206,28 +206,28 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleFunction("sqrt(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             √
           </Button>
           <Button
             onClick={() => handleInput("^2")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             x²
           </Button>
           <Button
             onClick={() => handleInput("^3")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             x³
           </Button>
           <Button
             onClick={() => handleInput("^")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             xʸ
           </Button>
@@ -235,28 +235,28 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleInput("π")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             π
           </Button>
           <Button
             onClick={() => handleInput("e")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             e
           </Button>
           <Button
             onClick={() => handleInput("!")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             n!
           </Button>
           <Button
             onClick={() => handleFunction("exp(")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             eˣ
           </Button>
@@ -265,28 +265,28 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => setIsRadians(!isRadians)}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             {isRadians ? "Rad" : "Deg"}
           </Button>
           <Button
             onClick={handleClear}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             AC
           </Button>
           <Button
             onClick={handleDelete}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             <Delete />
           </Button>
           <Button
             onClick={() => handleOperator("÷")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             <Divide size={20} />
           </Button>
@@ -307,7 +307,7 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleOperator("×")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             <Times size={20} />
           </Button>
@@ -325,7 +325,7 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleOperator("−")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             <Minus size={20} />
           </Button>
@@ -343,7 +343,7 @@ export default function ScientificCalculator() {
           <Button
             onClick={() => handleOperator("+")}
             variant="ghost"
-            className={cn(btnClasses, "text-primary")}
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             <Plus size={20} />
           </Button>
