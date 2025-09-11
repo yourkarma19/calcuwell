@@ -36,29 +36,27 @@ export default function ScientificCalculator() {
 
   const handleInput = (value: string) => {
     if (isResult) {
-      setExpression(value);
       setDisplayValue(value);
+      setExpression(value);
       setIsResult(false);
       return;
     }
-    setDisplayValue(
-      displayValue === "0" && value !== "." ? value : displayValue + value,
-    );
-    setExpression((prev) => prev + value);
+    
+    // If display is "0" and input is not ".", replace "0"
+    if (displayValue === "0" && value !== ".") {
+      setDisplayValue(value);
+      setExpression(prev => prev + value);
+    } else {
+      setDisplayValue(prev => prev + value);
+      setExpression(prev => prev + value);
+    }
   };
 
   const handleOperator = (op: string) => {
-    if (isResult) {
-      setExpression(displayValue + ` ${op} `);
-      setIsResult(false);
-    } else {
-      setExpression((prev) =>
-        /\s[+\-×÷]\s$/.test(prev)
-          ? prev.slice(0, -3) + ` ${op} `
-          : `${prev} ${op} `,
-      );
-    }
-    // Do not reset display value here, allow chaining
+    if (displayValue === "Error") return;
+    setExpression((prev) => `${prev} ${op} `);
+    setDisplayValue("0");
+    setIsResult(false);
   };
 
   const handleClear = () => {
@@ -74,7 +72,14 @@ export default function ScientificCalculator() {
   };
 
   const handleFunction = (func: string) => {
-    setExpression((prev) => prev + func);
+    if(isResult) {
+      setExpression(func);
+      setDisplayValue(func);
+      setIsResult(false);
+    } else {
+      setExpression((prev) => prev + func);
+      setDisplayValue((prev) => (prev === '0' ? func : prev + func));
+    }
   };
 
   const handleEquals = () => {
