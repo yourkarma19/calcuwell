@@ -14,9 +14,10 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
 
 function formatOperand(operand: string | null) {
   if (operand == null) return "";
+  if (operand.includes("Error")) return "Error";
   const [integer, decimal] = operand.split(".");
-  if (decimal == null) return INTEGER_FORMATTER.format(parseInt(integer));
-  return `${INTEGER_FORMATTER.format(parseInt(integer))}.${decimal}`;
+  if (decimal == null) return INTEGER_FORMATTER.format(parseInt(integer, 10));
+  return `${INTEGER_FORMATTER.format(parseInt(integer, 10))}.${decimal}`;
 }
 
 export default function BasicCalculator() {
@@ -57,66 +58,74 @@ export default function BasicCalculator() {
 
     setCurrentOperand((prev) => (prev || "") + digit);
   };
-  
-  const evaluateCalculation = () => {
+
+  const calculate = (): string | null => {
     if (operation == null || currentOperand == null || previousOperand == null) {
-        return null;
+      return null;
     }
+
     const prev = parseFloat(previousOperand);
     const current = parseFloat(currentOperand);
     if (isNaN(prev) || isNaN(current)) return null;
-    
+
     try {
-        const result = evaluate(`${prev} ${operation} ${current}`);
-        return result.toString();
-    } catch {
-        return "Error";
+      const result = evaluate(`${prev} ${operation} ${current}`);
+      return result.toString();
+    } catch (e) {
+      console.error("Calculation Error:", e);
+      return "Error";
     }
   };
 
+  const handleEvaluate = () => {
+    const result = calculate();
+    if (result === null) return;
+
+    setCurrentOperand(result);
+    setPreviousOperand(null);
+    setOperation(null);
+    setOverwrite(true);
+  };
+
   const chooseOperation = (op: string) => {
-      if (currentOperand == null && previousOperand == null) return;
+    if (currentOperand == null && previousOperand == null) {
+      return;
+    }
 
-      if (currentOperand == null) {
-          setOperation(op);
-          return;
-      }
+    if (currentOperand == null) {
+      setOperation(op);
+      return;
+    }
 
-      if (previousOperand == null) {
-          setOperation(op);
-          setPreviousOperand(currentOperand);
-          setCurrentOperand(null);
-          return;
-      }
+    if (previousOperand != null) {
+      const result = calculate();
+      if (result === null) return;
 
-      const result = evaluateCalculation();
       setPreviousOperand(result);
       setCurrentOperand(null);
       setOperation(op);
+      setOverwrite(true);
+      return;
+    }
+
+    setPreviousOperand(currentOperand);
+    setCurrentOperand(null);
+    setOperation(op);
+    setOverwrite(true);
   };
 
-  const evaluateState = () => {
-      const result = evaluateCalculation();
-      if (result == null) return;
-      
-      setCurrentOperand(result);
-      setPreviousOperand(null);
-      setOperation(null);
-      setOverwrite(true);
-  };
-  
   const handlePercent = () => {
     if (currentOperand == null) return;
     const value = parseFloat(currentOperand) / 100;
     setCurrentOperand(value.toString());
   };
-  
+
   const displayExpression = () => {
     if (operation != null && previousOperand != null) {
       return `${formatOperand(previousOperand)} ${operation}`;
     }
     return "";
-  }
+  };
 
   const basicBtnClasses =
     "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
@@ -125,7 +134,7 @@ export default function BasicCalculator() {
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
-           <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
+          <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
             {displayExpression()}
           </div>
           <div
@@ -239,7 +248,7 @@ export default function BasicCalculator() {
             .
           </Button>
           <Button
-            onClick={evaluateState}
+            onClick={handleEvaluate}
             className={cn(
               basicBtnClasses,
               "bg-primary text-primary-foreground hover:bg-primary/90",

@@ -19,15 +19,15 @@ export default function ScientificCalculator() {
       return;
     }
     if (expression === "0" && "123456789(".includes(value)) {
-        setExpression(value);
+      setExpression(value);
     } else {
-        setExpression(prev => prev + value);
+      setExpression((prev) => prev + value);
     }
   };
-  
+
   const handleFunction = (func: string) => {
-     handleInput(`${func}(`);
-  }
+    handleInput(`${func}(`);
+  };
 
   const clear = () => {
     setExpression("0");
@@ -46,7 +46,7 @@ export default function ScientificCalculator() {
   const calculateResult = () => {
     try {
       const evalResult = evaluate(expression);
-      if (typeof evalResult !== 'number' || !isFinite(evalResult)) {
+      if (typeof evalResult !== "number" || !isFinite(evalResult)) {
         setResult("Error");
       } else {
         setResult(evalResult.toString());
@@ -67,40 +67,185 @@ export default function ScientificCalculator() {
             {result ? expression : ""}
           </div>
           <div className="h-2/3 w-full flex items-end justify-end">
-            <div className="w-full text-right font-mono text-4xl sm:text-5xl text-foreground">
+            <div
+              className="w-full text-right font-mono text-4xl sm:text-5xl text-foreground"
+              aria-live="polite"
+            >
               {result || expression}
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-5 gap-2">
-            <Button onClick={() => handleFunction("sin")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>sin</Button>
-            <Button onClick={() => handleFunction("cos")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>cos</Button>
-            <Button onClick={() => handleInput("(")} variant="ghost" className={cn(btnClasses)}> ( </Button>
-            <Button onClick={() => handleInput(")")} variant="ghost" className={cn(btnClasses)}> ) </Button>
-            <Button onClick={deleteDigit} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}><Delete /></Button>
-            
-            <Button onClick={() => handleInput("7")} variant="ghost" className={cn(btnClasses)}>7</Button>
-            <Button onClick={() => handleInput("8")} variant="ghost" className={cn(btnClasses)}>8</Button>
-            <Button onClick={() => handleInput("9")} variant="ghost" className={cn(btnClasses)}>9</Button>
-            <Button onClick={() => handleInput("/")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>÷</Button>
-            <Button onClick={clear} variant="ghost" className={cn(btnClasses, "text-destructive hover:bg-destructive/10")}>AC</Button>
+          <Button
+            onClick={() => handleFunction("sin")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            sin
+          </Button>
+          <Button
+            onClick={() => handleFunction("cos")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            cos
+          </Button>
+          <Button
+            onClick={() => handleInput("(")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            {" "}
+            ({" "}
+          </Button>
+          <Button
+            onClick={() => handleInput(")")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            {" "}
+            ){" "}
+          </Button>
+          <Button
+            onClick={deleteDigit}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            <Delete />
+          </Button>
 
-            <Button onClick={() => handleInput("4")} variant="ghost" className={cn(btnClasses)}>4</Button>
-            <Button onClick={() => handleInput("5")} variant="ghost" className={cn(btnClasses)}>5</Button>
-            <Button onClick={() => handleInput("6")} variant="ghost" className={cn(btnClasses)}>6</Button>
-            <Button onClick={() => handleInput("*")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>×</Button>
-            <Button onClick={() => handleInput("-")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>-</Button>
+          <Button
+            onClick={() => handleInput("7")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            7
+          </Button>
+          <Button
+            onClick={() => handleInput("8")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            8
+          </Button>
+          <Button
+            onClick={() => handleInput("9")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            9
+          </Button>
+          <Button
+            onClick={() => handleInput("/")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            ÷
+          </Button>
+          <Button
+            onClick={clear}
+            variant="ghost"
+            className={cn(btnClasses, "text-destructive hover:bg-destructive/10")}
+          >
+            AC
+          </Button>
 
-            <Button onClick={() => handleInput("1")} variant="ghost" className={cn(btnClasses)}>1</Button>
-            <Button onClick={() => handleInput("2")} variant="ghost" className={cn(btnClasses)}>2</Button>
-            <Button onClick={() => handleInput("3")} variant="ghost" className={cn(btnClasses)}>3</Button>
-            <Button onClick={() => handleInput("+")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>+</Button>
-            <Button onClick={calculateResult} className={cn(btnClasses, "bg-primary text-primary-foreground hover:bg-primary/90 row-span-2 h-auto")}>=</Button>
-            
-            <Button onClick={() => handleInput("0")} variant="ghost" className={cn(btnClasses, "col-span-2")}>0</Button>
-            <Button onClick={() => handleInput(".")} variant="ghost" className={cn(btnClasses)}>.</Button>
-            <Button onClick={() => handleInput("^")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>^</Button>
+          <Button
+            onClick={() => handleInput("4")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            4
+          </Button>
+          <Button
+            onClick={() => handleInput("5")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            5
+          </Button>
+          <Button
+            onClick={() => handleInput("6")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            6
+          </Button>
+          <Button
+            onClick={() => handleInput("*")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            ×
+          </Button>
+          <Button
+            onClick={() => handleInput("-")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            -
+          </Button>
+
+          <Button
+            onClick={() => handleInput("1")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            1
+          </Button>
+          <Button
+            onClick={() => handleInput("2")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            2
+          </Button>
+          <Button
+            onClick={() => handleInput("3")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            3
+          </Button>
+          <Button
+            onClick={() => handleInput("+")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            +
+          </Button>
+          <Button
+            onClick={calculateResult}
+            className={cn(
+              btnClasses,
+              "bg-primary text-primary-foreground hover:bg-primary/90 row-span-2 h-auto",
+            )}
+          >
+            =
+          </Button>
+
+          <Button
+            onClick={() => handleInput("0")}
+            variant="ghost"
+            className={cn(btnClasses, "col-span-2")}
+          >
+            0
+          </Button>
+          <Button
+            onClick={() => handleInput(".")}
+            variant="ghost"
+            className={cn(btnClasses)}
+          >
+            .
+          </Button>
+          <Button
+            onClick={() => handleInput("^")}
+            variant="ghost"
+            className={cn(btnClasses, "text-primary hover:bg-primary/10")}
+          >
+            ^
+          </Button>
         </div>
       </CardContent>
     </Card>
