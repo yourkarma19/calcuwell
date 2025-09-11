@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ArrowRightLeft } from "lucide-react";
@@ -51,11 +52,12 @@ export default function BinaryConverter() {
   const handleSwap = () => {
     setFromSystem(toSystem);
     setToSystem(fromSystem);
+    setValue(convertedValue === "Invalid input" ? "" : convertedValue);
   };
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
-    if (validationPatterns[fromSystem].test(newValue)) {
+    if (validationPatterns[fromSystem].test(newValue) || newValue === "") {
       setValue(newValue);
     }
   };

@@ -1,141 +1,99 @@
+
 "use client";
 
 import { Delete } from "lucide-react";
 import { evaluate } from "mathjs";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export default function BasicCalculator() {
   const [displayValue, setDisplayValue] = useState("0");
-  const [firstOperand, setFirstOperand] = useState<number | null>(null);
-  const [operator, setOperator] = useState<string | null>(null);
-  const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
-
-  const calculate = (
-    operand1: number,
-    operand2: number,
-    op: string,
-  ): number => {
-    switch (op) {
-      case "+":
-        return operand1 + operand2;
-      case "−":
-        return operand1 - operand2;
-      case "×":
-        return operand1 * operand2;
-      case "÷":
-        return operand1 / operand2;
-      default:
-        return operand2;
-    }
-  };
-
-  const handleNumber = useCallback(
-    (num: string) => {
-      if (waitingForSecondOperand) {
-        setDisplayValue(num);
-        setWaitingForSecondOperand(false);
-      } else {
-        setDisplayValue(displayValue === "0" ? num : displayValue + num);
-      }
-    },
-    [displayValue, waitingForSecondOperand],
-  );
-
-  const handleOperator = useCallback(
-    (nextOperator: string) => {
-      const inputValue = parseFloat(displayValue);
-
-      if (firstOperand === null) {
-        setFirstOperand(inputValue);
-      } else if (operator) {
-        const result = calculate(firstOperand, inputValue, operator);
-        setDisplayValue(String(result));
-        setFirstOperand(result);
-      }
-
-      setWaitingForSecondOperand(true);
-      setOperator(nextOperator);
-    },
-    [displayValue, firstOperand, operator],
-  );
-
-  const handleEquals = useCallback(() => {
-    const inputValue = parseFloat(displayValue);
-    if (operator && firstOperand !== null) {
-      const result = calculate(firstOperand, inputValue, operator);
-      setDisplayValue(String(result));
-      setFirstOperand(null);
-      setOperator(null);
-      setWaitingForSecondOperand(true);
-    }
-  }, [displayValue, firstOperand, operator]);
-
-  const handleDecimal = useCallback(() => {
-    if (waitingForSecondOperand) {
-      setDisplayValue("0.");
-      setWaitingForSecondOperand(false);
-      return;
-    }
-    if (!displayValue.includes(".")) {
-      setDisplayValue(displayValue + ".");
-    }
-  }, [displayValue, waitingForSecondOperand]);
+  const [expression, setExpression] = useState("");
+  const [justEvaluated, setJustEvaluated] = useState(false);
 
   const handleClear = () => {
     setDisplayValue("0");
-    setFirstOperand(null);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
+    setExpression("");
+    setJustEvaluated(false);
   };
 
   const handleBackspace = () => {
-    if (waitingForSecondOperand) return;
-    setDisplayValue(displayValue.length > 1 ? displayValue.slice(0, -1) : "0");
+    if (justEvaluated) {
+      handleClear();
+      return;
+    }
+    setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
+    setExpression((prev) => (prev.length > 1 ? prev.slice(0, -1) : ""));
   };
 
-  const handleToggleSign = () => {
-    setDisplayValue((prev) => String(parseFloat(prev) * -1));
+  const handleNumber = (num: string) => {
+    if (justEvaluated) {
+      setDisplayValue(num);
+      setExpression(num);
+      setJustEvaluated(false);
+    } else {
+      setDisplayValue((prev) => (prev === "0" ? num : prev + num));
+      setExpression((prev) => prev + num);
+    }
+  };
+
+  const handleDecimal = () => {
+    if (justEvaluated) {
+      setDisplayValue("0.");
+      setExpression("0.");
+      setJustEvaluated(false);
+      return;
+    }
+    if (!displayValue.includes(".")) {
+      setDisplayValue((prev) => prev + ".");
+      setExpression((prev) => prev + ".");
+    }
+  };
+
+  const handleOperator = (op: string) => {
+    setJustEvaluated(false);
+    setExpression((prev) => {
+      const lastChar = prev.trim().slice(-1);
+      if (['+', '−', '×', '÷'].includes(lastChar)) {
+        return prev.slice(0, -1) + op;
+      }
+      return `${prev} ${op} `;
+    });
+    // Reset display for next number
+    setDisplayValue("0");
+  };
+
+  const handleEquals = () => {
+    if (!expression || justEvaluated) return;
+    try {
+      const finalExpression = expression.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-");
+      const result = evaluate(finalExpression);
+      const resultStr = parseFloat(result.toPrecision(15)).toString();
+      setDisplayValue(resultStr);
+      setExpression(resultStr);
+      setJustEvaluated(true);
+    } catch (e) {
+      setDisplayValue("Error");
+      setExpression("Error");
+    }
   };
 
   const handlePercent = () => {
-    setDisplayValue((prev) => String(parseFloat(prev) / 100));
+    if (displayValue !== "0") {
+      const percentValue = parseFloat(displayValue) / 100;
+      setDisplayValue(percentValue.toString());
+      // This is tricky in a simple expression builder.
+      // We'll just apply it to the last number.
+      setExpression((prev) => {
+        const parts = prev.split(" ");
+        parts[parts.length - 1] = percentValue.toString();
+        return parts.join(" ");
+      });
+    }
   };
-
-  const handleInput = useCallback(
-    (value: string) => {
-      if (["+", "−", "×", "÷"].includes(value)) {
-        handleOperator(value);
-      } else if (value === "=") {
-        handleEquals();
-      } else if (value === ".") {
-        handleDecimal();
-      } else if (value === "AC") {
-        handleClear();
-      } else if (value === "⌫") {
-        handleBackspace();
-      } else if (value === "+/-") {
-        handleToggleSign();
-      } else if (value === "%") {
-        handlePercent();
-      } else {
-        handleNumber(value);
-      }
-    },
-    [
-      handleNumber,
-      handleOperator,
-      handleEquals,
-      handleDecimal,
-      handleClear,
-      handleBackspace,
-      handleToggleSign,
-      handlePercent,
-    ],
-  );
-
+  
   const basicBtnClasses =
     "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
 
@@ -143,6 +101,9 @@ export default function BasicCalculator() {
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
+           <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
+            {expression || " "}
+          </div>
           <div
             aria-live="polite"
             className="w-full text-right font-mono text-5xl text-foreground"
@@ -153,7 +114,7 @@ export default function BasicCalculator() {
 
         <div className="grid grid-cols-4 gap-3 p-1">
           <Button
-            onClick={() => handleInput("AC")}
+            onClick={handleClear}
             variant="ghost"
             className={cn(
               basicBtnClasses,
@@ -163,7 +124,7 @@ export default function BasicCalculator() {
             AC
           </Button>
           <Button
-            onClick={() => handleInput("⌫")}
+            onClick={handleBackspace}
             aria-label="Backspace"
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
@@ -171,14 +132,14 @@ export default function BasicCalculator() {
             <Delete />
           </Button>
           <Button
-            onClick={() => handleInput("%")}
+            onClick={handlePercent}
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
             %
           </Button>
           <Button
-            onClick={() => handleInput("÷")}
+            onClick={() => handleOperator("÷")}
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
@@ -188,7 +149,7 @@ export default function BasicCalculator() {
           {["7", "8", "9"].map((num) => (
             <Button
               key={num}
-              onClick={() => handleInput(num)}
+              onClick={() => handleNumber(num)}
               variant="ghost"
               className={cn(basicBtnClasses)}
             >
@@ -196,7 +157,7 @@ export default function BasicCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleInput("×")}
+            onClick={() => handleOperator("×")}
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
@@ -206,7 +167,7 @@ export default function BasicCalculator() {
           {["4", "5", "6"].map((num) => (
             <Button
               key={num}
-              onClick={() => handleInput(num)}
+              onClick={() => handleNumber(num)}
               variant="ghost"
               className={cn(basicBtnClasses)}
             >
@@ -214,7 +175,7 @@ export default function BasicCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleInput("−")}
+            onClick={() => handleOperator("−")}
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
@@ -224,7 +185,7 @@ export default function BasicCalculator() {
           {["1", "2", "3"].map((num) => (
             <Button
               key={num}
-              onClick={() => handleInput(num)}
+              onClick={() => handleNumber(num)}
               variant="ghost"
               className={cn(basicBtnClasses)}
             >
@@ -232,7 +193,7 @@ export default function BasicCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleInput("+")}
+            onClick={() => handleOperator("+")}
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
@@ -240,14 +201,14 @@ export default function BasicCalculator() {
           </Button>
 
           <Button
-            onClick={() => handleInput("0")}
+            onClick={() => handleNumber("0")}
             variant="ghost"
             className={cn(basicBtnClasses, "col-span-2")}
           >
             0
           </Button>
           <Button
-            onClick={() => handleInput(".")}
+            onClick={handleDecimal}
             variant="ghost"
             className={cn(basicBtnClasses)}
           >
