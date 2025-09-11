@@ -1,3 +1,4 @@
+
 import {
   differenceInYears,
   differenceInMonths,
@@ -23,24 +24,25 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
   }
 
   let years = differenceInYears(endDate, startDate);
-  let months = differenceInMonths(endDate, startDate) % 12;
-
-  // To get the accurate day difference, we need to find the "anniversary" date in the end month
-  let anniversary = add(startDate, { years, months });
-
-  let days = differenceInDays(endDate, anniversary);
-
-  // If the days are negative, it means we haven't reached the anniversary day in the month yet.
-  // So, we need to go back one month and recalculate the days.
-  if (days < 0) {
-    months = months - 1;
-    if (months < 0) {
-      months = 11;
-      years = years - 1;
-    }
-    anniversary = add(startDate, { years, months });
-    days = differenceInDays(endDate, anniversary);
+  
+  // Calculate the anniversary date for the current year
+  let anniversary = add(startDate, { years });
+  if (anniversary > endDate) {
+    years--;
+    anniversary = add(startDate, { years });
   }
 
+  // Calculate months from the last anniversary
+  let months = differenceInMonths(endDate, anniversary);
+  
+  // Add the months to the anniversary to get the anniversary for the current month
+  let monthAnniversary = add(anniversary, { months });
+  if (monthAnniversary > endDate) {
+    months--;
+    monthAnniversary = add(anniversary, { months });
+  }
+
+  const days = differenceInDays(endDate, monthAnniversary);
+  
   return { years, months, days };
 }

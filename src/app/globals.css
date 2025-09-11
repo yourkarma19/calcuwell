@@ -5,58 +5,58 @@
 
 @layer base {
   :root {
-    --background: 240 25% 96%; /* #F0F0F5 */
-    --foreground: 240 5% 3.9%;
+    --background: 240 25% 98%; /* Lighter, less saturated background */
+    --foreground: 240 5% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 240 5% 3.9%;
+    --card-foreground: 240 5% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 5% 3.9%;
-    --primary: 269 87% 43%; /* #6612cc */
+    --popover-foreground: 240 5% 15%;
+    --primary: 262 65% 55%; /* A slightly softer, more modern primary */
     --primary-foreground: 0 0% 98%;
-    --secondary: 276 11% 63%; /* #A69CAC - used for accents */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 5% 90%;
-    --muted-foreground: 240 5% 45%; /* Darkened for better readability */
-    --accent: 240 5% 90%;
-    --accent-foreground: 240 5% 10%;
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 5% 10%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 262 75% 94%; /* A light, vibrant accent for hover states */
+    --accent-foreground: 262 65% 35%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 269 87% 43%;
+    --border: 240 6% 88%;
+    --input: 240 6% 92%;
+    --ring: 262 65% 55%;
     --radius: 0.75rem;
-    --chart-1: 269 87% 43%;
-    --chart-2: 276 11% 63%;
+    --chart-1: 262 65% 55%;
+    --chart-2: 300 50% 50%;
     --chart-3: 35 92% 56%;
     --chart-4: 217 91% 60%;
     --chart-5: 342 91% 55%;
   }
 
   .dark {
-    --background: 240 4% 6%;
+    --background: 240 4% 8%;
     --foreground: 0 0% 98%;
-    --card: 240 4% 9%;
+    --card: 240 4% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 4% 6%;
+    --popover: 240 4% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 269 87% 65%;
+    --primary: 262 75% 70%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 276 11% 53%;
+    --secondary: 240 4% 18%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 4% 12%;
+    --muted: 240 4% 15%;
     --muted-foreground: 240 4% 75%;
-    --accent: 240 4% 12%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 262 75% 20%;
+    --accent-foreground: 262 75% 90%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 4% 15%;
-    --input: 240 4% 15%;
-    --ring: 269 87% 65%;
-    --chart-1: 269 87% 65%;
-    --chart-2: 276 11% 63%;
-    --chart-3: 35 92% 56%;
-    --chart-4: 217 91% 60%;
-    --chart-5: 342 91% 55%;
+    --border: 240 4% 20%;
+    --input: 240 4% 18%;
+    --ring: 262 75% 70%;
+    --chart-1: 262 75% 70%;
+    --chart-2: 300 60% 70%;
+    --chart-3: 35 92% 66%;
+    --chart-4: 217 91% 70%;
+    --chart-5: 342 91% 65%;
   }
 }
 
@@ -72,13 +72,13 @@
     line-height: 1.6;
   }
   h1 {
-    @apply text-4xl md:text-5xl font-bold font-headline;
+    @apply text-3xl md:text-5xl font-bold font-headline tracking-tight;
   }
   h2 {
-    @apply text-3xl font-bold font-headline;
+    @apply text-2xl md:text-3xl font-bold font-headline tracking-tight;
   }
   h3 {
-     @apply text-2xl font-semibold font-headline;
+     @apply text-xl md:text-2xl font-semibold font-headline tracking-tight;
   }
   p {
     @apply text-base;
@@ -108,8 +108,8 @@
 @layer components {
   .card {
     background-color: hsl(var(--card));
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid hsl(var(--border));
     transition:
       border-color 0.3s ease,
       box-shadow 0.3s ease;

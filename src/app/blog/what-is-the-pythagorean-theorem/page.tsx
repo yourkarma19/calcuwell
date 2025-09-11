@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,7 +80,7 @@ export default function PythagoreanTheoremBlogPage() {
 
         <div className="my-6 flex justify-center">
           <Image
-            src="https://picsum.photos/400/300"
+            src="https://picsum.photos/seed/pythagoras/400/300"
             alt="Diagram of a right-angled triangle showing sides a, b, and hypotenuse c, illustrating the Pythagorean theorem."
             width={400}
             height={300}

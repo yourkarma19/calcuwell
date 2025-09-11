@@ -22,10 +22,10 @@ const HomeCalculator = dynamic(
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center px-4">
+    <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full text-center py-16 md:py-24">
-        <div className="container mx-auto">
+      <section className="w-full text-center py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
           <h1 className="text-primary mb-4">
             CalcPro
           </h1>
@@ -37,19 +37,19 @@ export default function Home() {
       </section>
 
       {/* Main Calculator Section */}
-      <section className="w-full max-w-5xl pb-16 md:pb-24">
-         <Card className="shadow-2xl">
+      <section className="w-full max-w-5xl px-4 py-16 md:py-24">
+         <Card className="shadow-xl">
             <HomeCalculator />
         </Card>
       </section>
 
       {/* Categories Section */}
-      <section className="w-full bg-muted/50 py-16 md:py-24">
-        <div className="container mx-auto">
+      <section className="w-full bg-muted/30 py-16 md:py-24">
+        <div className="container mx-auto px-4">
           <h2 className="text-center mb-12">
             Calculator Categories
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {categories.map((category) => (
               <Link
                 href={`/categories/${category.slug}`}
@@ -64,7 +64,7 @@ export default function Home() {
                         className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors"
                       />
                       <div>
-                        <CardTitle as="h3" className="font-semibold text-lg mb-1">
+                        <CardTitle as="h3" className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
                           {category.name}
                         </CardTitle>
                         <CardDescription className="text-sm line-clamp-2">
@@ -83,7 +83,7 @@ export default function Home() {
       
       {/* Why CalcPro Section */}
       <section className="w-full text-center py-16 md:py-24">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <h2 className="mb-4">Why CalcPro?</h2>
           <p className="max-w-3xl mx-auto text-muted-foreground text-lg">
             CalcPro offers a comprehensive suite of free online calculators

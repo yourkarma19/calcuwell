@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { headers } from 'next/headers';
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "CalcPro",
     images: [
       {
-        url: "https://calcpro.online/og-image.png", // It's recommended to create and add an actual OG image
+        url: "https://calcpro.online/og-image.png",
         width: 1200,
         height: 630,
         alt: "CalcPro Logo and Calculator Montage",
@@ -50,9 +51,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CalcPro: Your Free Online Calculator Hub",
     description:
-      "Fast, accurate online calculators for finance, health, math, and more.",
-    // creator: '@yourtwitterhandle', // Optional: Add your Twitter handle
-    images: ["https://calcpro.online/og-image.png"], // Must be an absolute URL
+      "Fast, accurate online calculators for finance, health, and more.",
+    images: ["https://calcpro.online/og-image.png"],
   },
 };
 
@@ -61,7 +61,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const nonce = btoa(crypto.randomUUID());
+  const nonce = headers().get('x-nonce') || '';
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
