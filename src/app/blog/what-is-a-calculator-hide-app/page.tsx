@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Article, WithContext } from "schema-dts";
@@ -55,9 +56,9 @@ export default function CalculatorHideAppBlogPage() {
         <p>
           Have you ever seen a normal-looking calculator app on a phone that is
           actually a secret vault for hiding photos, videos, or other apps?
-          This is a 'calculator hide app,' and here's everything you need to
-          know about them. This article will cover what these apps are, how they
-          work, their safety, and some popular options available.
+          This is a &apos;calculator hide app,&apos; and here&apos;s everything you need
+          to know about them. This article will cover what these apps are, how
+          they work, their safety, and some popular options available.
         </p>
 
         <Card className="my-8">
