@@ -97,7 +97,7 @@ export function SearchBar() {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="w-[var(--radix-popover-trigger-width)] p-0"
+        className="w-[var(--radix-popover-trigger-width)] p-0 border-0 shadow-lg"
         align="start"
         onOpenAutoFocus={() => inputRef.current?.focus()}
       >
