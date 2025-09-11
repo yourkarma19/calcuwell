@@ -32,7 +32,7 @@ export default function AboutCgpaCalculator() {
             achieved in that semester.
           </li>
           <li>
-            Click the "Add Semester" button for each additional semester you have
+            Click the &quot;Add Semester&quot; button for each additional semester you have
             completed.
           </li>
           <li>Fill in the credits and GPA/SGPA for each of those semesters.</li>
@@ -53,7 +53,7 @@ export default function AboutCgpaCalculator() {
         </p>
 
         <h3>Example Calculation</h3>
-        <p>Let's say a student has the following grades:</p>
+        <p>Let&apos;s say a student has the following grades:</p>
         <ul>
           <li>Semester 1: 20 Credits, 8.5 SGPA</li>
           <li>Semester 2: 22 Credits, 9.0 SGPA</li>
@@ -63,7 +63,7 @@ export default function AboutCgpaCalculator() {
           <br />
           Which is: `(170 + 198) / 42 = 368 / 42 = 8.76`
           <br />
-          The student's CGPA after two semesters is <strong>8.76</strong>.
+          The student&apos;s CGPA after two semesters is <strong>8.76</strong>.
         </p>
 
         <h2>Why is Your CGPA Important?</h2>
@@ -113,9 +113,9 @@ export default function AboutCgpaCalculator() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq3">
-            <AccordionTrigger>What is considered a "good" CGPA?</AccordionTrigger>
+            <AccordionTrigger>What is considered a &quot;good&quot; CGPA?</AccordionTrigger>
             <AccordionContent>
-              What constitutes a "good" CGPA can be subjective and depends on the
+              What constitutes a &quot;good&quot; CGPA can be subjective and depends on the
               field of study and your future goals. Generally, on a 10-point
               scale, a CGPA of 8.0 or above is considered very good and is often
               a minimum requirement for many top companies and universities. A

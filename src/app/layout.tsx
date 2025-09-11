@@ -65,14 +65,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          href="/_next/static/css/app/layout.css"
-          as="style"
-        />
-        <noscript>
-          <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
-        </noscript>
         <script
           nonce={nonce}
           async

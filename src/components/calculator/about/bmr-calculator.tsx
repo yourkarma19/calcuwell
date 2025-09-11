@@ -73,7 +73,7 @@ export default function AboutBmrCalculator() {
           </AccordionItem>
         </Accordion>
 
-        <h2 className="mt-6">BMR vs. TDEE - What's the Difference?</h2>
+        <h2 className="mt-6">BMR vs. TDEE - What&apos;s the Difference?</h2>
         <p>
           This is a crucial concept. BMR is your baseline, but to understand
           your total daily calorie needs, you need to know your TDEE.
