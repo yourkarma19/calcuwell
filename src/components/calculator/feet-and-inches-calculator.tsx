@@ -1,4 +1,3 @@
-
 "use client";
 
 import { AlertCircle } from "lucide-react";
@@ -22,7 +21,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import usePersistentState from "@/hooks/use-persistent-state";
 
 type Operation = "add" | "subtract" | "multiply" | "divide";
 
@@ -31,14 +29,11 @@ export default function FeetAndInchesCalculator({
 }: {
   calculatorName: string;
 }) {
-  const [feet1, setFeet1] = usePersistentState("feet1", 5);
-  const [inches1, setInches1] = usePersistentState("inches1", 7);
-  const [feet2, setFeet2] = usePersistentState("feet2", 2);
-  const [inches2, setInches2] = usePersistentState("inches2", 10);
-  const [operation, setOperation] = usePersistentState<Operation>(
-    "feet-op",
-    "add",
-  );
+  const [feet1, setFeet1] = useState(5);
+  const [inches1, setInches1] = useState(7);
+  const [feet2, setFeet2] = useState(2);
+  const [inches2, setInches2] = useState(10);
+  const [operation, setOperation] = useState<Operation>("add");
   const [result, setResult] = useState<{
     feet: number;
     inches: number;

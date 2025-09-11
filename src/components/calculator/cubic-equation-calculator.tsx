@@ -1,6 +1,6 @@
 "use client";
 
-import { format, type Complex } from "mathjs";
+import { complex, type Complex } from "mathjs";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,14 +11,13 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import usePersistentState from "@/hooks/use-persistent-state";
 import { solveCubic } from "@/lib/math/equations";
 
 export default function CubicEquationCalculator() {
-  const [a, setA] = usePersistentState("cubic-a", 1);
-  const [b, setB] = usePersistentState("cubic-b", -6);
-  const [c, setC] = usePersistentState("cubic-c", 11);
-  const [d, setD] = usePersistentState("cubic-d", -6);
+  const [a, setA] = useState(1);
+  const [b, setB] = useState(-6);
+  const [c, setC] = useState(11);
+  const [d, setD] = useState(-6);
   const [solution, setSolution] = useState<Complex[] | null>(null);
 
   const handleSolve = () => {
@@ -27,9 +26,12 @@ export default function CubicEquationCalculator() {
 
   const formatRoot = (root: Complex) => {
     if (Math.abs(root.im) < 1e-10) {
-      return format(root.re, { precision: 4 });
+      return root.re.toFixed(4).replace(/\.?0+$/, "");
     }
-    return format(root, { precision: 4 });
+    const realPart = root.re.toFixed(4).replace(/\.?0+$/, "");
+    const imagPart = Math.abs(root.im).toFixed(4).replace(/\.?0+$/, "");
+    const sign = root.im > 0 ? "+" : "-";
+    return `${realPart} ${sign} ${imagPart}i`;
   };
 
   return (

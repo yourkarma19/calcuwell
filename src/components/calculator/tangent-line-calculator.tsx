@@ -19,11 +19,10 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function TangentLineCalculator() {
-  const [funcStr, setFuncStr] = usePersistentState("tangent-func", "x^2");
-  const [point, setPoint] = usePersistentState("tangent-point", 2);
+  const [funcStr, setFuncStr] = useState("x^2");
+  const [point, setPoint] = useState(2);
   const [solution, setSolution] = useState<{
     equation: string;
     steps: string[];
