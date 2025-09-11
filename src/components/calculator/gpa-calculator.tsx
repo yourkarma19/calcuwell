@@ -117,138 +117,133 @@ export default function GpaCalculator() {
   };
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>GPA Calculator</CardTitle>
-            <CardDescription>
-              Enter your courses, grades, and credit hours to calculate your
-              Grade Point Average.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-4"
-              >
-                <div className="space-y-2">
-                  <div className="hidden md:grid md:grid-cols-[1fr_140px_110px_auto] gap-2 items-center mb-2">
-                    <Label>Course Name (Optional)</Label>
-                    <Label>Grade</Label>
-                    <Label>Credits</Label>
-                    <span className="w-8"></span>
-                  </div>
-                  {fields.map((field, index) => (
-                    <div
-                      key={field.id}
-                      className="grid grid-cols-1 md:grid-cols-[1fr_140px_110px_auto] items-start gap-2 p-2 border rounded-lg"
-                    >
-                      <FormField
-                        control={form.control}
-                        name={`courses.${index}.name`}
-                        render={({ field }) => (
-                          <FormItem className="md:space-y-0">
-                            <Label className="md:hidden mb-1">
-                              Course Name (Optional)
-                            </Label>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                placeholder="e.g. Intro to Physics"
-                              />
-                            </FormControl>
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name={`courses.${index}.grade`}
-                        render={({ field }) => (
-                          <FormItem className="md:space-y-0">
-                            <Label className="md:hidden mb-1">Grade</Label>
-                            <Select
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger aria-label="Course grade">
-                                  <SelectValue placeholder="Grade" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {Object.keys(gradePoints).map((grade) => (
-                                  <SelectItem key={grade} value={grade}>
-                                    {grade}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name={`courses.${index}.credits`}
-                        render={({ field }) => (
-                          <FormItem className="md:space-y-0">
-                            <Label className="md:hidden mb-1">Credits</Label>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                type="number"
-                                placeholder="Credits"
-                                step="0.1"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => remove(index)}
-                        className="text-red-500 hover:text-red-700 self-center justify-self-end md:justify-self-center"
-                        aria-label={`Remove course ${index + 1}`}
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  ))}
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>GPA Calculator</CardTitle>
+          <CardDescription>
+            Enter your courses, grades, and credit hours to calculate your
+            Grade Point Average.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="hidden md:grid md:grid-cols-[1fr_140px_110px_auto] gap-2 items-center mb-2">
+                  <Label>Course Name (Optional)</Label>
+                  <Label>Grade</Label>
+                  <Label>Credits</Label>
+                  <span className="w-8"></span>
                 </div>
-
-                <div className="flex justify-between mt-4">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => append({ name: "", grade: "A", credits: 3 })}
+                {fields.map((field, index) => (
+                  <div
+                    key={field.id}
+                    className="grid grid-cols-1 md:grid-cols-[1fr_140px_110px_auto] items-start gap-2 p-2 border rounded-lg"
                   >
-                    <Plus className="mr-2" /> Add Course
-                  </Button>
-                  <Button type="submit">Calculate GPA</Button>
-                </div>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-      </div>
+                    <FormField
+                      control={form.control}
+                      name={`courses.${index}.name`}
+                      render={({ field }) => (
+                        <FormItem className="md:space-y-0">
+                          <Label className="md:hidden mb-1">
+                            Course Name (Optional)
+                          </Label>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="e.g. Intro to Physics"
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name={`courses.${index}.grade`}
+                      render={({ field }) => (
+                        <FormItem className="md:space-y-0">
+                          <Label className="md:hidden mb-1">Grade</Label>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger aria-label="Course grade">
+                                <SelectValue placeholder="Grade" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {Object.keys(gradePoints).map((grade) => (
+                                <SelectItem key={grade} value={grade}>
+                                  {grade}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name={`courses.${index}.credits`}
+                      render={({ field }) => (
+                        <FormItem className="md:space-y-0">
+                          <Label className="md:hidden mb-1">Credits</Label>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              type="number"
+                              placeholder="Credits"
+                              step="0.1"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => remove(index)}
+                      className="text-red-500 hover:text-red-700 self-center justify-self-end md:justify-self-center"
+                      aria-label={`Remove course ${index + 1}`}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
 
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Your GPA</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center" aria-live="polite">
-            <p className="text-6xl font-bold font-headline text-primary my-2">
-              {gpa !== null ? gpa.toFixed(2) : "-"}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+              <div className="flex justify-between mt-4">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => append({ name: "", grade: "A", credits: 3 })}
+                >
+                  <Plus className="mr-2" /> Add Course
+                </Button>
+                <Button type="submit">Calculate GPA</Button>
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Your GPA</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center" aria-live="polite">
+          <p className="text-6xl font-bold font-headline text-primary my-2">
+            {gpa !== null ? gpa.toFixed(2) : "-"}
+          </p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

@@ -87,92 +87,87 @@ export default function CgpaCalculator() {
   }, [watchedSemesters, form]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>CGPA Calculator (For All Semesters)</CardTitle>
-            <CardDescription>
-              Quickly and accurately calculate your CGPA. Simply enter your
-              semester-wise SGPA and credits to get your result instantly.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form className="space-y-4">
-                <div className="space-y-2">
-                  {fields.map((field, index) => (
-                    <div
-                      key={field.id}
-                      className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] items-start gap-2 p-3 border rounded-lg"
-                    >
-                      <FormField
-                        control={form.control}
-                        name={`semesters.${index}.credits`}
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Credits (Semester {index + 1})</FormLabel>
-                            <FormControl>
-                              <Input {...field} type="number" placeholder="20" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name={`semesters.${index}.sgpa`}
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>SGPA (Semester {index + 1})</FormLabel>
-                            <FormControl>
-                              <Input {...field} type="number" placeholder="8.5" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => remove(index)}
-                        className="text-red-500 hover:text-red-700 self-center mt-7"
-                        aria-label={`Remove semester ${index + 1}`}
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-start mt-4">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => append({ credits: 20, sgpa: 8.0 })}
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>CGPA Calculator</CardTitle>
+          <CardDescription>
+            Enter your semester-wise SGPA and credits to get your result
+            instantly.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form className="space-y-4">
+              <div className="space-y-2">
+                {fields.map((field, index) => (
+                  <div
+                    key={field.id}
+                    className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] items-start gap-2 p-3 border rounded-lg"
                   >
-                    <Plus className="mr-2 h-4 w-4" /> Add Semester
-                  </Button>
-                </div>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-      </div>
+                    <FormField
+                      control={form.control}
+                      name={`semesters.${index}.credits`}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Credits (Semester {index + 1})</FormLabel>
+                          <FormControl>
+                            <Input {...field} type="number" placeholder="20" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name={`semesters.${index}.sgpa`}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>SGPA (Semester {index + 1})</FormLabel>
+                          <FormControl>
+                            <Input {...field} type="number" placeholder="8.5" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => remove(index)}
+                      className="text-red-500 hover:text-red-700 self-center mt-7"
+                      aria-label={`Remove semester ${index + 1}`}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
 
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Your CGPA</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center" aria-live="polite">
-            <p className="text-6xl font-bold font-headline text-primary my-2">
-              {cgpa !== null ? cgpa.toFixed(2) : "-"}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+              <div className="flex justify-start mt-4">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => append({ credits: 20, sgpa: 8.0 })}
+                >
+                  <Plus className="mr-2 h-4 w-4" /> Add Semester
+                </Button>
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Your CGPA</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center" aria-live="polite">
+          <p className="text-6xl font-bold font-headline text-primary my-2">
+            {cgpa !== null ? cgpa.toFixed(2) : "-"}
+          </p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

@@ -54,109 +54,76 @@ export default function LeanBodyMassCalculator() {
   }, [gender, height, weight]);
 
   return (
-    <>
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Lean Body Mass Calculator</CardTitle>
-            <CardDescription>
-              Estimate your Lean Body Mass (LBM) using the Boer formula, which
-              is based on your weight and height.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Lean Body Mass Calculator</CardTitle>
+          <CardDescription>
+            Estimate your Lean Body Mass (LBM) using the Boer formula, which is
+            based on your weight and height.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label>Gender</Label>
+            <RadioGroup
+              value={gender}
+              onValueChange={(val) => setGender(val as "male" | "female")}
+              className="flex items-center space-x-4 pt-2"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="male" id="male" />
+                <Label htmlFor="male">Male</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="female" id="female" />
+                <Label htmlFor="female">Female</Label>
+              </div>
+            </RadioGroup>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Gender</Label>
-              <RadioGroup
-                value={gender}
-                onValueChange={(val) => setGender(val as "male" | "female")}
-                className="flex items-center space-x-4 pt-2"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="male" id="male" />
-                  <Label htmlFor="male">Male</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="female" id="female" />
-                  <Label htmlFor="female">Female</Label>
-                </div>
-              </RadioGroup>
+              <Label htmlFor="weight">Weight (kg)</Label>
+              <Input
+                id="weight"
+                type="number"
+                value={weight}
+                onChange={(e) => setWeight(Number(e.target.value))}
+              />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="weight">Weight (kg)</Label>
-                <Input
-                  id="weight"
-                  type="number"
-                  value={weight}
-                  onChange={(e) => setWeight(Number(e.target.value))}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="height">Height (cm)</Label>
-                <Input
-                  id="height"
-                  type="number"
-                  value={height}
-                  onChange={(e) => setHeight(Number(e.target.value))}
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="height">Height (cm)</Label>
+              <Input
+                id="height"
+                type="number"
+                value={height}
+                onChange={(e) => setHeight(Number(e.target.value))}
+              />
             </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>About Lean Body Mass</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  What is Lean Body Mass (LBM)?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Lean Body Mass is the total weight of your body minus all the
-                  weight due to fat mass. LBM includes the weight of your bones,
-                  muscles, organs, and water.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Why is LBM important?</AccordionTrigger>
-                <AccordionContent>
-                  Tracking LBM is often more useful than tracking body weight
-                  alone, as it can help you understand if you are losing fat,
-                  gaining muscle, or both. It&apos;s a key metric for athletes
-                  and those on a fitness journey.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="lg:col-span-1">
-        <Card className="sticky top-24">
-          <CardHeader>
-            <CardTitle>Your Results</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <div>
-              <p className="text-sm text-muted-foreground">
-                Lean Body Mass (LBM)
-              </p>
-              <p className="text-4xl font-bold font-headline text-primary">
-                {lbm.toFixed(1)} kg
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Est. Body Fat</p>
-              <p className="text-2xl font-semibold">
-                {bodyFatPercentage.toFixed(1)}%
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Your Results</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4">
+          <div>
+            <p className="text-sm text-muted-foreground">
+              Lean Body Mass (LBM)
+            </p>
+            <p className="text-4xl font-bold font-headline text-primary">
+              {lbm.toFixed(1)} kg
+            </p>
+          </div>
+          <div>
+            <p className="text-sm text-muted-foreground">Est. Body Fat</p>
+            <p className="text-2xl font-semibold">
+              {bodyFatPercentage.toFixed(1)}%
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
