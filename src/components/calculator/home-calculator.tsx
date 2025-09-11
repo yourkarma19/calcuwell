@@ -1,16 +1,16 @@
+
 "use client";
 
 import { useState } from "react";
 import BasicCalculator from "@/components/calculator/basic-calculator";
 import ScientificCalculator from "@/components/calculator/scientific-calculator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Card } from "@/components/ui/card";
 
 export default function HomeCalculator() {
   const [activeTab, setActiveTab] = useState<"basic" | "scientific">("basic");
 
   return (
-    <Card className="w-full max-w-lg mx-auto p-4 shadow-lg rounded-2xl bg-card">
+    <div className="w-full max-w-lg mx-auto p-2 sm:p-4 rounded-2xl">
       <Tabs
         value={activeTab}
         onValueChange={(value) => setActiveTab(value as "basic" | "scientific")}
@@ -27,6 +27,6 @@ export default function HomeCalculator() {
           <ScientificCalculator />
         </TabsContent>
       </Tabs>
-    </Card>
+    </div>
   );
 }

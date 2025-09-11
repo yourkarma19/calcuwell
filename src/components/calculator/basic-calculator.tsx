@@ -144,7 +144,7 @@ export default function BasicCalculator() {
     [handleOperator, handleNumber, handleEquals, handleDecimal, clearAll, handleBackspace, displayValue, setDisplayValue],
   );
 
-  const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold";
+  const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
   
   return (
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
@@ -167,7 +167,7 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("AC")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            className={cn(basicBtnClasses, "text-destructive hover:bg-destructive/10")}
           >
             AC
           </Button>
