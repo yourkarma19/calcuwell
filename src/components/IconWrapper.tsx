@@ -1,24 +1,17 @@
 "use client";
 
-import React from "react";
 import dynamic from "next/dynamic";
-import { Calculator, type LucideProps } from "lucide-react";
+import { type LucideProps } from "lucide-react";
+import React from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
-// The IconLoader is now responsible for the dynamic import,
-// ensuring it only runs on the client.
-const IconLoader = dynamic(
-  () => import("@/components/calculator/IconLoader"),
-  {
-    loading: () => <Calculator />, // Fallback icon
-  },
-);
+const IconLoader = dynamic(() => import("./calculator/IconLoader"), {
+  loading: () => <Skeleton className="w-6 h-6" />,
+});
 
-// The IconWrapper is simplified to pass the icon name to the loader.
-const IconWrapper = ({
+export const IconWrapper = ({
   iconName,
   ...props
 }: { iconName: string } & LucideProps) => {
   return <IconLoader iconName={iconName} {...props} />;
 };
-
-export { IconWrapper };

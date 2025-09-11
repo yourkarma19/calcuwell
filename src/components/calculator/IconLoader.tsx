@@ -13,11 +13,10 @@ const IconLoader = ({
   const LucideIcon = dynamic(
     () =>
       import("lucide-react").then((mod) => {
-        const Icon = mod[iconName as keyof typeof mod] as React.FC<
-          LucideProps
-        >;
-        // If the icon is found, return it. Otherwise, return the fallback.
-        return Icon || mod.Calculator;
+        // Fallback to Calculator if the icon doesn't exist
+        const IconComponent =
+          mod[iconName as keyof typeof mod] || mod.Calculator;
+        return IconComponent;
       }),
     {
       // Show a placeholder while the icon is loading.
