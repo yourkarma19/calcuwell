@@ -1,9 +1,8 @@
 
 import { ChevronRight } from "lucide-react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
-import PlaceholderCalculator from "@/components/calculator/placeholder-calculator";
+import HomeCalculator from "@/components/calculator/home-calculator";
 import {
   Card,
   CardDescription,
@@ -11,14 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
-
-const HomeCalculator = dynamic(
-  () => import("@/components/calculator/home-calculator"),
-  {
-    ssr: false,
-    loading: () => <PlaceholderCalculator />,
-  },
-);
 
 export default function Home() {
   return (
