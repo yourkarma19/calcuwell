@@ -1,15 +1,24 @@
 
 import { ChevronRight } from "lucide-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
-import HomeCalculator from "@/components/calculator/home-calculator";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { categories } from "@/lib/calculators";
+
+const HomeCalculator = dynamic(
+  () => import("@/components/calculator/home-calculator"),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="w-full max-w-lg h-[600px] mx-auto" />,
+  },
+);
 
 export default function Home() {
   return (
