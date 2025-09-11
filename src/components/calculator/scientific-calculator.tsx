@@ -2,7 +2,7 @@
 "use client";
 
 import { Delete } from "lucide-react";
-import { evaluate, factorial } from "mathjs";
+import { evaluate } from "mathjs";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
