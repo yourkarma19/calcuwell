@@ -58,7 +58,7 @@ export default function ScientificCalculator() {
           : `${prev} ${op} `,
       );
     }
-    setDisplayValue("0");
+    // Do not reset display value here, allow chaining
   };
 
   const handleClear = () => {
@@ -74,13 +74,7 @@ export default function ScientificCalculator() {
   };
 
   const handleFunction = (func: string) => {
-    if (isResult) {
-      setExpression(`${func}${displayValue})`);
-      setIsResult(false);
-    } else {
-      setExpression((prev) => prev + func);
-    }
-    setDisplayValue("0");
+    setExpression((prev) => prev + func);
   };
 
   const handleEquals = () => {

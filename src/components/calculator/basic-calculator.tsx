@@ -15,21 +15,19 @@ export default function BasicCalculator() {
     "0",
   );
   const [expression, setExpression] = usePersistentState("basic-expr", "");
-  const [isNewNumber, setIsNewNumber] = usePersistentState(
-    "basic-isNewNum",
-    true,
-  );
   const [justEvaluated, setJustEvaluated] = usePersistentState(
     "basic-justEval",
     false,
   );
+
+  const isOperator = (char: string) => ["+", "−", "×", "÷"].includes(char);
 
   const evaluateExpression = (expr: string): string => {
     try {
       const sanitizedExpr = expr
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
-        .replace(/‑/g, "-");
+        .replace(/−/g, "-");
       const result = evaluate(sanitizedExpr);
       if (result === undefined || !isFinite(result)) return "Error";
       return parseFloat(result.toPrecision(15)).toString();
@@ -43,59 +41,55 @@ export default function BasicCalculator() {
       if (displayValue === "Error") return;
 
       if (justEvaluated) {
-        setExpression(displayValue + " " + op + " ");
+        setExpression(displayValue + " " + op);
         setJustEvaluated(false);
-      } else if (isNewNumber) {
-        setExpression((prev) => prev.slice(0, -2) + op + " ");
       } else {
-        setExpression((prev) => prev + displayValue + " " + op + " ");
+        // If last char of expression is an operator, replace it.
+        if (isOperator(expression.trim().slice(-1))) {
+          setExpression((prev) => prev.trim().slice(0, -1) + op);
+        } else {
+          setExpression((prev) => (prev ? `${prev} ${displayValue} ${op}` : `${displayValue} ${op}`));
+        }
       }
-      setIsNewNumber(true);
+      setDisplayValue("0");
     },
-    [displayValue, isNewNumber, justEvaluated, setExpression, setIsNewNumber, setJustEvaluated],
+    [displayValue, expression, justEvaluated, setExpression, setJustEvaluated, setDisplayValue],
   );
 
   const handleEquals = useCallback(() => {
-    if (displayValue === "Error" || isNewNumber) return;
-    const finalExpression = expression + displayValue;
+    if (displayValue === "Error" || !expression) return;
+    
+    // Prevent evaluating if the last thing was an operator
+    if (isOperator(expression.trim().slice(-1))) return;
+
+    const finalExpression = expression + " " + displayValue;
     const result = evaluateExpression(finalExpression);
     setDisplayValue(result);
     setExpression("");
-    setIsNewNumber(true);
     setJustEvaluated(true);
-  }, [displayValue, expression, isNewNumber, setDisplayValue, setExpression, setIsNewNumber, setJustEvaluated]);
+  }, [displayValue, expression, setDisplayValue, setExpression, setJustEvaluated]);
 
   const handleNumber = useCallback((num: string) => {
     if (justEvaluated) {
       setDisplayValue(num);
       setJustEvaluated(false);
-      setIsNewNumber(false);
       return;
     }
     
-    if (isNewNumber) {
-      setDisplayValue(num);
-      setIsNewNumber(false);
-    } else {
-      setDisplayValue((prev) => (prev === "0" ? num : prev + num));
-    }
-  }, [isNewNumber, justEvaluated, setDisplayValue, setIsNewNumber, setJustEvaluated]);
-
+    setDisplayValue((prev) => (prev === "0" ? num : prev + num));
+  }, [justEvaluated, setDisplayValue, setJustEvaluated]);
+  
   const handleDecimal = useCallback(() => {
     if (justEvaluated) {
       setDisplayValue("0.");
       setJustEvaluated(false);
-      setIsNewNumber(false);
       return;
     }
     
-    if (isNewNumber) {
-      setDisplayValue("0.");
-      setIsNewNumber(false);
-    } else if (!displayValue.includes(".")) {
+    if (!displayValue.includes(".")) {
       setDisplayValue((prev) => prev + ".");
     }
-  }, [displayValue, justEvaluated, isNewNumber, setDisplayValue, setJustEvaluated, setIsNewNumber]);
+  }, [displayValue, justEvaluated, setDisplayValue, setJustEvaluated]);
 
   const handleBackspace = useCallback(() => {
     if (justEvaluated) return;
@@ -105,13 +99,12 @@ export default function BasicCalculator() {
   const clearAll = useCallback(() => {
     setDisplayValue("0");
     setExpression("");
-    setIsNewNumber(true);
     setJustEvaluated(false);
-  }, [setDisplayValue, setExpression, setIsNewNumber, setJustEvaluated]);
+  }, [setDisplayValue, setExpression, setJustEvaluated]);
 
   const handleInput = useCallback(
     (input: string) => {
-      const operators = ["÷", "×", "‑", "+"];
+      const operators = ["÷", "×", "−", "+"];
       if (operators.includes(input)) {
         handleOperator(input);
       } else if (/[0-9]/.test(input)) {
@@ -137,11 +130,12 @@ export default function BasicCalculator() {
             break;
           case "%":
             setDisplayValue((prev) => String(parseFloat(prev) / 100));
+            setJustEvaluated(true);
             break;
         }
       }
     },
-    [handleOperator, handleNumber, handleEquals, handleDecimal, clearAll, handleBackspace, displayValue, setDisplayValue],
+    [handleOperator, handleNumber, handleEquals, handleDecimal, clearAll, handleBackspace, displayValue, setDisplayValue, setJustEvaluated],
   );
 
   const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
@@ -223,7 +217,7 @@ export default function BasicCalculator() {
             </Button>
           ))}
           <Button
-            onClick={() => handleInput("‑")}
+            onClick={() => handleInput("−")}
             variant="ghost"
             className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
           >
@@ -263,8 +257,7 @@ export default function BasicCalculator() {
             .
           </Button>
           <Button
-            onClick={() => handleInput("=")}
-            variant="ghost"
+            onClick={handleEquals}
             className={cn(basicBtnClasses, "bg-primary text-primary-foreground hover:bg-primary/90")}
           >
             =
