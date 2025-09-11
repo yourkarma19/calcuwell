@@ -1,7 +1,7 @@
 
 import { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
-import type { Article, WithContext } from "schema-dts";
+import type { Article, WithContext, FAQPage } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "What is a Calculator Hide App and How Do They Work? | CalcPro",
@@ -36,12 +36,48 @@ const jsonLd: WithContext<Article> = {
   },
 };
 
+const faqJsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a Calculator Hide App?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A calculator hide app is a decoy application designed for privacy. On the surface, it looks and functions exactly like a standard calculator. However, when you enter a secret passcode into the calculator, it unlocks a hidden, password-protected folder for files.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are Calculator Hide Apps Safe?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The safety of these apps depends on the one you choose. Reputable apps from official app stores are generally safe, but untrusted apps could contain malware. It's important to check reviews and permissions. Forgetting your passcode can also lead to losing access to your files.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do calculator hide apps work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "They use a disguised user interface. The calculator part is fully functional to avoid suspicion. When a specific sequence of numbers (your secret passcode) is entered, the app switches its interface to reveal a hidden vault where files can be stored securely.",
+      },
+    },
+  ],
+};
+
+
 export default function CalculatorHideAppBlogPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <article className="prose dark:prose-invert max-w-none">
         <div className="text-center mb-8">
