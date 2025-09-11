@@ -13,16 +13,25 @@ export default function ScientificCalculator() {
   const [result, setResult] = useState("");
 
   const handleInput = (value: string) => {
-    if (result) {
+    // FIXED: If there is a result, pressing a number or '(' starts a new expression
+    if (result && "0123456789(".includes(value)) {
       setExpression(value);
       setResult("");
       return;
     }
+    // If there is a result and user presses an operator, use the result to continue calculation
+    if (result && "+-*/^".includes(value)) {
+        setExpression(result + value);
+        setResult("");
+        return;
+    }
+
     if (expression === "0" && "123456789(".includes(value)) {
       setExpression(value);
     } else {
       setExpression((prev) => prev + value);
     }
+    setResult(""); // Clear previous result when typing new things
   };
 
   const handleFunction = (func: string) => {
@@ -35,15 +44,17 @@ export default function ScientificCalculator() {
   };
 
   const deleteDigit = () => {
+    setResult(""); // Clear result on delete
     if (expression.length === 1) {
       setExpression("0");
     } else {
       setExpression(expression.slice(0, -1));
     }
-    setResult("");
   };
 
   const calculateResult = () => {
+    // Prevent calculation on empty or erroneous expressions
+    if (expression === "Error" || expression === "0") return;
     try {
       const evalResult = evaluate(expression);
       if (typeof evalResult !== "number" || !isFinite(evalResult)) {
@@ -63,15 +74,17 @@ export default function ScientificCalculator() {
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
         <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
+          {/* IMPROVED: Always show the full expression for clarity */}
           <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
-            {result ? expression : ""}
+            {expression}
           </div>
           <div className="h-2/3 w-full flex items-end justify-end">
             <div
               className="w-full text-right font-mono text-4xl sm:text-5xl text-foreground"
               aria-live="polite"
             >
-              {result || expression}
+              {/* Show result if it exists, otherwise show nothing */}
+              {result}
             </div>
           </div>
         </div>
@@ -96,16 +109,14 @@ export default function ScientificCalculator() {
             variant="ghost"
             className={cn(btnClasses)}
           >
-            {" "}
-            ({" "}
+            (
           </Button>
           <Button
             onClick={() => handleInput(")")}
             variant="ghost"
             className={cn(btnClasses)}
           >
-            {" "}
-            ){" "}
+            )
           </Button>
           <Button
             onClick={deleteDigit}

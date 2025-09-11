@@ -12,10 +12,12 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
   maximumFractionDigits: 0,
 });
 
+// FIXED: This function is now safe and will not crash
 function formatOperand(operand: string | null) {
   if (operand == null) return "";
   if (operand.includes("Error")) return "Error";
   const [integer, decimal] = operand.split(".");
+  if (isNaN(parseInt(integer, 10))) return ""; // Gracefully handle invalid numbers
   if (decimal == null) return INTEGER_FORMATTER.format(parseInt(integer, 10));
   return `${INTEGER_FORMATTER.format(parseInt(integer, 10))}.${decimal}`;
 }
@@ -70,6 +72,7 @@ export default function BasicCalculator() {
 
     try {
       const result = evaluate(`${prev} ${operation} ${current}`);
+      if (!isFinite(result)) return "Error";
       return result.toString();
     } catch (e) {
       console.error("Calculation Error:", e);
@@ -88,9 +91,8 @@ export default function BasicCalculator() {
   };
 
   const chooseOperation = (op: string) => {
-    if (currentOperand == null && previousOperand == null) {
-      return;
-    }
+    if (currentOperand === "Error") clear();
+    if (currentOperand == null && previousOperand == null) return;
 
     if (currentOperand == null) {
       setOperation(op);
