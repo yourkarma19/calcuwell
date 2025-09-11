@@ -1,9 +1,10 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X, Plus } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import {
   Form,
@@ -29,7 +30,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import usePersistentState from "@/hooks/use-persistent-state";
 
 const gradePoints: { [key: string]: number } = {
   A: 4.0,
@@ -67,54 +67,52 @@ type FormValues = z.infer<typeof formSchema>;
 export default function GpaCalculator() {
   const [gpa, setGpa] = useState<number | null>(null);
 
-  const [defaultCourses, setDefaultCourses] = usePersistentState<
-    FormValues["courses"]
-  >("gpa-courses", [{ name: "Example Course", grade: "A", credits: 3 }]);
-
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      courses: defaultCourses,
+      courses: [{ name: "Example Course", grade: "A", credits: 3 }],
     },
     mode: "onChange",
   });
-
-  useEffect(() => {
-    form.reset({ courses: defaultCourses });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultCourses]);
 
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: "courses",
   });
 
-  const watchedCourses = form.watch("courses");
+  const watchedCourses = useWatch({
+    control: form.control,
+    name: "courses",
+  });
 
   useEffect(() => {
-    if (watchedCourses.length > 0) {
-      setDefaultCourses(watchedCourses);
-    }
-  }, [watchedCourses, setDefaultCourses]);
-
-  const onSubmit = (data: FormValues) => {
-    let totalPoints = 0;
-    let totalCredits = 0;
-
-    data.courses.forEach((course) => {
-      const credits = Number(course.credits);
-      if (credits > 0 && gradePoints[course.grade] !== undefined) {
-        totalPoints += gradePoints[course.grade] * credits;
-        totalCredits += credits;
+    const calculateGpa = () => {
+      if (!watchedCourses || form.formState.isValid === false) {
+        setGpa(null);
+        return;
       }
-    });
 
-    if (totalCredits > 0) {
-      setGpa(totalPoints / totalCredits);
-    } else {
-      setGpa(null);
-    }
-  };
+      let totalPoints = 0;
+      let totalCredits = 0;
+
+      watchedCourses.forEach((course) => {
+        const credits = Number(course.credits);
+        const gradeValue = gradePoints[course.grade];
+
+        if (credits > 0 && gradeValue !== undefined) {
+          totalPoints += gradeValue * credits;
+          totalCredits += credits;
+        }
+      });
+
+      if (totalCredits > 0) {
+        setGpa(totalPoints / totalCredits);
+      } else {
+        setGpa(null);
+      }
+    };
+    calculateGpa();
+  }, [watchedCourses, form.formState.isValid]);
 
   return (
     <div className="space-y-6">
@@ -123,15 +121,12 @@ export default function GpaCalculator() {
           <CardTitle>GPA Calculator</CardTitle>
           <CardDescription>
             Enter your courses, grades, and credit hours to calculate your
-            Grade Point Average.
+            Grade Point Average. The GPA will update automatically.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4"
-            >
+            <form className="space-y-4">
               <div className="space-y-2">
                 <div className="hidden md:grid md:grid-cols-[1fr_140px_110px_auto] gap-2 items-center mb-2">
                   <Label>Course Name (Optional)</Label>
@@ -220,7 +215,7 @@ export default function GpaCalculator() {
                 ))}
               </div>
 
-              <div className="flex justify-between mt-4">
+              <div className="flex justify-start mt-4">
                 <Button
                   type="button"
                   variant="outline"
@@ -228,7 +223,6 @@ export default function GpaCalculator() {
                 >
                   <Plus className="mr-2" /> Add Course
                 </Button>
-                <Button type="submit">Calculate GPA</Button>
               </div>
             </form>
           </Form>
