@@ -57,40 +57,52 @@ export default function BasicCalculator() {
 
     setCurrentOperand((prev) => (prev || "") + digit);
   };
+  
+  const evaluateCalculation = () => {
+    if (operation == null || currentOperand == null || previousOperand == null) {
+        return null;
+    }
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(current)) return null;
+    
+    try {
+        const result = evaluate(`${prev} ${operation} ${current}`);
+        return result.toString();
+    } catch {
+        return "Error";
+    }
+  };
 
   const chooseOperation = (op: string) => {
-    if (currentOperand == null && previousOperand == null) return;
+      if (currentOperand == null && previousOperand == null) return;
 
-    if (previousOperand != null) {
-      evaluateState();
-    }
-    
-    setOperation(op);
-    setPreviousOperand(currentOperand);
-    setCurrentOperand(null);
-    setOverwrite(true);
+      if (currentOperand == null) {
+          setOperation(op);
+          return;
+      }
+
+      if (previousOperand == null) {
+          setOperation(op);
+          setPreviousOperand(currentOperand);
+          setCurrentOperand(null);
+          return;
+      }
+
+      const result = evaluateCalculation();
+      setPreviousOperand(result);
+      setCurrentOperand(null);
+      setOperation(op);
   };
 
   const evaluateState = () => {
-    if (operation == null || currentOperand == null || previousOperand == null) {
-      return;
-    }
-
-    const prev = parseFloat(previousOperand);
-    const current = parseFloat(currentOperand);
-    if (isNaN(prev) || isNaN(current)) return;
-    
-    let result;
-    try {
-      result = evaluate(`${prev} ${operation} ${current}`);
-    } catch {
-      result = "Error";
-    }
-
-    setCurrentOperand(result.toString());
-    setPreviousOperand(null);
-    setOperation(null);
-    setOverwrite(true);
+      const result = evaluateCalculation();
+      if (result == null) return;
+      
+      setCurrentOperand(result);
+      setPreviousOperand(null);
+      setOperation(null);
+      setOverwrite(true);
   };
   
   const handlePercent = () => {
