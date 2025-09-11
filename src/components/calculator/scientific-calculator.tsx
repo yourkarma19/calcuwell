@@ -2,15 +2,15 @@
 "use client";
 
 import { Delete, Divide, Minus, Plus, X as Times } from "lucide-react";
+import { useState, useMemo } from "react";
 import { evaluate } from "mathjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
 
-// Factorial function
 const factorial = (n: number): number => {
-  if (n < 0 || n !== Math.floor(n))
+  if (n < 0 || !Number.isInteger(n))
     throw new Error("Factorial is only for non-negative integers.");
   if (n > 170) throw new Error("Factorial overflow.");
   if (n === 0) return 1;
@@ -19,61 +19,22 @@ const factorial = (n: number): number => {
   return result;
 };
 
-// Custom functions for mathjs
 const customFunctions = {
   factorial,
   log2: (x: number) => Math.log2(x),
 };
 
 export default function ScientificCalculator() {
+  const [displayValue, setDisplayValue] = usePersistentState("sci-display", "0");
   const [expression, setExpression] = usePersistentState("sci-expr", "");
-  const [displayValue, setDisplayValue] = usePersistentState(
-    "sci-display",
-    "0",
-  );
-  const [isResult, setIsResult] = usePersistentState("sci-isResult", false);
+  const [justEvaluated, setJustEvaluated] = usePersistentState("sci-justEval", false);
   const [isRadians, setIsRadians] = usePersistentState("sci-isRadians", true);
 
-  const handleInput = (value: string) => {
-    if (isResult) {
-      setExpression(value);
-      setDisplayValue(value);
-      setIsResult(false);
-      return;
-    }
-    
-    setExpression(prev => prev + value);
-    setDisplayValue(prev => (prev === '0' && value !== '.' ? value : prev + value));
-  };
+  const isOperator = (char: string) => ["+", "−", "×", "÷"].includes(char);
 
-  const handleOperator = (op: string) => {
-    if (displayValue === "Error") return;
-    setExpression((prev) => `${prev} ${op} `);
-    setDisplayValue("0");
-    setIsResult(false);
-  };
-
-  const handleClear = () => {
-    setExpression("");
-    setDisplayValue("0");
-    setIsResult(false);
-  };
-
-  const handleDelete = () => {
-    if (isResult) return;
-    setExpression((prev) => prev.slice(0, -1));
-    setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
-  };
-
-  const handleFunction = (func: string) => {
-    setExpression((prev) => prev + func);
-    setDisplayValue("0");
-  };
-
-  const handleEquals = () => {
-    if (expression === "" || isResult) return;
+  const evaluateExpression = (expr: string): string => {
     try {
-      let finalExpression = expression
+      let finalExpression = expr
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
         .replace(/−/g, "-")
@@ -89,25 +50,89 @@ export default function ScientificCalculator() {
       if (!isRadians) {
         finalExpression = finalExpression.replace(
           /(sin|cos|tan)\(([^)]+)\)/g,
-          (_match, func, angle) => `${func}(${angle} deg)`,
+          (_match, func, angle) => `${func}(${angle} deg)`
         );
       }
 
       const result = evaluate(finalExpression, customFunctions);
-      const formattedResult =
-        typeof result === "number"
-          ? parseFloat(result.toPrecision(15))
-          : result;
-      setDisplayValue(String(formattedResult));
-      setExpression(String(formattedResult));
-      setIsResult(true);
-    } catch (error) {
-      setDisplayValue("Error");
-      setExpression("");
-      setIsResult(true);
+      if (result === undefined || !isFinite(result)) return "Error";
+      return parseFloat(result.toPrecision(15)).toString();
+    } catch (e) {
+      return "Error";
     }
   };
 
+  const handleInput = (value: string) => {
+    if (displayValue === "Error") {
+      handleClear();
+      return;
+    }
+    
+    if (justEvaluated) {
+      setDisplayValue(value);
+      setExpression(value);
+      setJustEvaluated(false);
+      return;
+    }
+
+    if (isOperator(expression.slice(-1))) {
+      setDisplayValue(value);
+    } else {
+      setDisplayValue(prev => (prev === '0' && value !== '.' ? value : prev + value));
+    }
+    setExpression(prev => prev + value);
+  };
+  
+  const handleOperator = (op: string) => {
+    if (displayValue === "Error") return;
+
+    if (justEvaluated) {
+      setExpression(displayValue + ` ${op} `);
+      setJustEvaluated(false);
+    } else {
+      const trimmedExpression = expression.trim();
+      if (isOperator(trimmedExpression.slice(-1))) {
+        setExpression(trimmedExpression.slice(0, -1) + op + " ");
+      } else {
+        setExpression(prev => `${prev} ${op} `);
+      }
+    }
+  };
+
+  const handleFunction = (func: string) => {
+    if (displayValue === "Error") return;
+    
+    const trimmedExpression = expression.trim();
+    if (isOperator(trimmedExpression.slice(-1))) {
+      setExpression(trimmedExpression.slice(0, -1) + func);
+    } else {
+      setExpression((prev) => prev + func);
+    }
+    
+    setJustEvaluated(false);
+  };
+
+  const handleEquals = () => {
+    if (displayValue === "Error" || expression === "") return;
+
+    const result = evaluateExpression(expression);
+    setDisplayValue(result);
+    setExpression(result);
+    setJustEvaluated(true);
+  };
+
+  const handleClear = () => {
+    setDisplayValue("0");
+    setExpression("");
+    setJustEvaluated(false);
+  };
+
+  const handleDelete = () => {
+    if (justEvaluated) return;
+    setExpression((prev) => prev.slice(0, -1));
+    setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
+  };
+  
   const btnClasses =
     "h-12 md:h-14 text-sm md:text-base rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
 
