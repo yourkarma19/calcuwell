@@ -1,10 +1,5 @@
 
-import {
-  differenceInYears,
-  differenceInMonths,
-  differenceInDays,
-  add,
-} from "date-fns";
+import { differenceInDays, differenceInMonths, differenceInYears } from "date-fns";
 
 export interface Age {
   years: number;
@@ -23,26 +18,20 @@ export function calculateAge(endDate: Date, startDate: Date): Age {
     return { years: 0, months: 0, days: 0 };
   }
 
-  let years = differenceInYears(endDate, startDate);
-  
-  // Calculate the anniversary date for the current year
-  let anniversary = add(startDate, { years });
-  if (anniversary > endDate) {
-    years--;
-    anniversary = add(startDate, { years });
-  }
+  let years = endDate.getFullYear() - startDate.getFullYear();
+  let months = endDate.getMonth() - startDate.getMonth();
+  let days = endDate.getDate() - startDate.getDate();
 
-  // Calculate months from the last anniversary
-  let months = differenceInMonths(endDate, anniversary);
-  
-  // Add the months to the anniversary to get the anniversary for the current month
-  let monthAnniversary = add(anniversary, { months });
-  if (monthAnniversary > endDate) {
+  if (days < 0) {
     months--;
-    monthAnniversary = add(anniversary, { months });
+    const prevMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0);
+    days += prevMonth.getDate();
   }
 
-  const days = differenceInDays(endDate, monthAnniversary);
-  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
   return { years, months, days };
 }
