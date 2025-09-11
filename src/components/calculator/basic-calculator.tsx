@@ -116,8 +116,7 @@ export default function BasicCalculator() {
 
   const handleInput = useCallback(
     (input: string) => {
-      if (displayValue === "Error") {
-        clearAll();
+      if (displayValue === "Error" && input !== "AC") {
         return;
       }
 
