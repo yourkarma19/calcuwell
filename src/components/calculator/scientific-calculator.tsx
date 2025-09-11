@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Delete, Sigma } from "lucide-react";
+import { Delete } from "lucide-react";
 import { evaluate, factorial } from "mathjs";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
