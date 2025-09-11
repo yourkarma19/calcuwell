@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -7,7 +6,7 @@ import ScientificCalculator from "@/components/calculator/scientific-calculator"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export default function HomeCalculator() {
-  const [activeTab, setActiveTab] = useState<"basic" | "scientific">("basic");
+  const [activeTab, setActiveTab] = useState("basic");
 
   return (
     <div className="w-full max-w-lg mx-auto p-2 sm:p-4 rounded-2xl">

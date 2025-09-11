@@ -1,38 +1,17 @@
-
 "use client";
 
 import { Delete, Divide, Minus, Plus, X as Times } from "lucide-react";
-import { evaluate } from "mathjs";
+import { evaluate, factorial } from "mathjs";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
 
-const factorial = (n: number): number => {
-  if (n < 0 || !Number.isInteger(n))
-    throw new Error("Factorial is only for non-negative integers.");
-  if (n > 170) throw new Error("Factorial overflow.");
-  if (n === 0) return 1;
-  let result = 1;
-  for (let i = 2; i <= n; i++) result *= i;
-  return result;
-};
-
-const customFunctions = {
-  factorial,
-};
-
 export default function ScientificCalculator() {
-  const [expression, setExpression] = usePersistentState("sci-expr", "");
-  const [displayValue, setDisplayValue] = usePersistentState(
-    "sci-display",
-    "0",
-  );
+  const [displayValue, setDisplayValue] = useState("0");
+  const [expression, setExpression] = useState("");
   const [isRadians, setIsRadians] = usePersistentState("sci-isRadians", true);
-  const [justEvaluated, setJustEvaluated] = usePersistentState(
-    "sci-justEval",
-    false,
-  );
 
   const evaluateExpression = (expr: string): string => {
     try {
@@ -42,26 +21,43 @@ export default function ScientificCalculator() {
         .replace(/−/g, "-")
         .replace(/√/g, "sqrt")
         .replace(/π/g, "pi")
-        .replace(/(\d+\.?\d*)!/g, "factorial($1)")
-        .replace(/sin⁻¹/g, "asin")
-        .replace(/cos⁻¹/g, "acos")
-        .replace(/tan⁻¹/g, "atan")
-        .replace(/10\^x/g, "10^")
-        .replace(/log₂/g, "log2")
         .replace(/E/g, "e");
 
+      // Handle factorial
+      finalExpression = finalExpression.replace(/(\d+)!/g, "factorial($1)");
+
+      // Handle inverse trig functions
+      finalExpression = finalExpression
+        .replace(/sin⁻¹/g, "asin")
+        .replace(/cos⁻¹/g, "acos")
+        .replace(/tan⁻¹/g, "atan");
+
+      // Handle 10^x
+      finalExpression = finalExpression.replace(/10\^/g, "10^");
+      
+      // Handle log base 2
+       finalExpression = finalExpression.replace(/log₂\(([^)]+)\)/g, 'log($1, 2)');
+
+      // Handle trig functions in degrees
       if (!isRadians) {
         finalExpression = finalExpression.replace(
           /(sin|cos|tan)\(([^)]+)\)/g,
-          (_match, func, angle) => `${func}(${angle} deg)`,
+          (match, func, angle) => {
+            // Check if angle is already in degrees
+            if (angle.includes("deg")) {
+              return match;
+            }
+            return `${func}(${angle} deg)`;
+          }
         );
       }
 
-      const result = evaluate(finalExpression, customFunctions);
+      const result = evaluate(finalExpression, { factorial });
 
       if (result === undefined || !isFinite(result)) return "Error";
       return parseFloat(result.toPrecision(15)).toString();
     } catch (e) {
+      console.error(e);
       return "Error";
     }
   };
@@ -69,70 +65,40 @@ export default function ScientificCalculator() {
   const handleClear = () => {
     setDisplayValue("0");
     setExpression("");
-    setJustEvaluated(false);
   };
 
   const handleInput = (value: string) => {
     if (displayValue === "Error") {
       handleClear();
-      return;
     }
-
-    if (justEvaluated) {
-      setExpression(value);
-      setDisplayValue(value);
-      setJustEvaluated(false);
-      return;
-    }
-
     setExpression((prev) => prev + value);
-    if (
-      displayValue === "0" ||
-      ["+", "-", "×", "÷"].some((op) => expression.endsWith(` ${op} `))
-    ) {
-      setDisplayValue(value);
-    } else {
-      setDisplayValue((prev) => prev + value);
-    }
+    setDisplayValue((prev) => (prev === "0" && value !== "." ? value : prev + value));
   };
-
+  
   const handleOperator = (op: string) => {
-    if (displayValue === "Error") return;
-
     setExpression((prev) => `${prev} ${op} `);
-    setDisplayValue("0");
-    setJustEvaluated(false);
   };
-
+  
   const handleFunction = (func: string) => {
-    if (displayValue === "Error") return;
-
-    if (justEvaluated) {
-      setExpression(`${func}(${displayValue})`);
-      setJustEvaluated(false);
-    } else {
-      setExpression((prev) => `${prev}${func}(`);
-    }
-    setDisplayValue("0");
+     setExpression((prev) => prev + `${func}(`);
   };
 
   const handleEquals = () => {
-    if (displayValue === "Error" || expression === "") return;
-
+    if (expression === "") return;
     const result = evaluateExpression(expression);
     setDisplayValue(result);
     setExpression(result);
-    setJustEvaluated(true);
   };
 
   const handleDelete = () => {
-    if (justEvaluated) {
+    if (expression === displayValue) {
       handleClear();
       return;
     }
     setExpression((prev) => prev.slice(0, -1));
     setDisplayValue((prev) => (prev.length > 1 ? prev.slice(0, -1) : "0"));
   };
+
 
   const btnClasses =
     "h-12 md:h-14 text-sm md:text-base rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
@@ -192,21 +158,21 @@ export default function ScientificCalculator() {
           </Button>
 
           <Button
-            onClick={() => handleFunction("asin")}
+            onClick={() => handleFunction("sin⁻¹")}
             variant="ghost"
             className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             sin⁻¹
           </Button>
           <Button
-            onClick={() => handleFunction("acos")}
+            onClick={() => handleFunction("cos⁻¹")}
             variant="ghost"
             className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
             cos⁻¹
           </Button>
           <Button
-            onClick={() => handleFunction("atan")}
+            onClick={() => handleFunction("tan⁻¹")}
             variant="ghost"
             className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
@@ -231,7 +197,7 @@ export default function ScientificCalculator() {
           </Button>
 
           <Button
-            onClick={() => handleFunction("sqrt")}
+            onClick={() => handleFunction("√")}
             variant="ghost"
             className={cn(btnClasses, "text-primary hover:bg-primary/10")}
           >
