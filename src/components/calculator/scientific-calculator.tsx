@@ -36,20 +36,14 @@ export default function ScientificCalculator() {
 
   const handleInput = (value: string) => {
     if (isResult) {
-      setDisplayValue(value);
       setExpression(value);
+      setDisplayValue(value);
       setIsResult(false);
       return;
     }
     
-    // If display is "0" and input is not ".", replace "0"
-    if (displayValue === "0" && value !== ".") {
-      setDisplayValue(value);
-      setExpression(prev => prev + value);
-    } else {
-      setDisplayValue(prev => prev + value);
-      setExpression(prev => prev + value);
-    }
+    setExpression(prev => prev + value);
+    setDisplayValue(prev => (prev === '0' && value !== '.' ? value : prev + value));
   };
 
   const handleOperator = (op: string) => {
@@ -72,14 +66,8 @@ export default function ScientificCalculator() {
   };
 
   const handleFunction = (func: string) => {
-    if(isResult) {
-      setExpression(func);
-      setDisplayValue(func);
-      setIsResult(false);
-    } else {
-      setExpression((prev) => prev + func);
-      setDisplayValue((prev) => (prev === '0' ? func : prev + func));
-    }
+    setExpression((prev) => prev + func);
+    setDisplayValue("0");
   };
 
   const handleEquals = () => {
@@ -379,7 +367,10 @@ export default function ScientificCalculator() {
           <Button
             onClick={handleEquals}
             variant="ghost"
-            className={cn(btnClasses, "col-span-4 bg-primary text-primary-foreground hover:bg-primary/90")}
+            className={cn(
+              btnClasses,
+              "col-span-4 bg-primary text-primary-foreground hover:bg-primary/90",
+            )}
           >
             =
           </Button>

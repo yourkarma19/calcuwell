@@ -44,22 +44,29 @@ export default function BasicCalculator() {
         setExpression(displayValue + " " + op);
         setJustEvaluated(false);
       } else {
-        // If last char of expression is an operator, replace it.
-        if (isOperator(expression.trim().slice(-1))) {
-          setExpression((prev) => prev.trim().slice(0, -1) + op);
+        const trimmedExpression = expression.trim();
+        if (isOperator(trimmedExpression.slice(-1))) {
+          setExpression(trimmedExpression.slice(0, -1) + op);
         } else {
-          setExpression((prev) => (prev ? `${prev} ${displayValue} ${op}` : `${displayValue} ${op}`));
+          setExpression((prev) =>
+            prev ? `${prev} ${displayValue} ${op}` : `${displayValue} ${op}`,
+          );
         }
       }
       setDisplayValue("0");
     },
-    [displayValue, expression, justEvaluated, setExpression, setJustEvaluated, setDisplayValue],
+    [
+      displayValue,
+      expression,
+      justEvaluated,
+      setExpression,
+      setJustEvaluated,
+      setDisplayValue,
+    ],
   );
 
   const handleEquals = useCallback(() => {
     if (displayValue === "Error" || !expression) return;
-    
-    // Prevent evaluating if the last thing was an operator
     if (isOperator(expression.trim().slice(-1))) return;
 
     const finalExpression = expression + " " + displayValue;
@@ -69,27 +76,32 @@ export default function BasicCalculator() {
     setJustEvaluated(true);
   }, [displayValue, expression, setDisplayValue, setExpression, setJustEvaluated]);
 
-  const handleNumber = useCallback((num: string) => {
-    if (justEvaluated) {
-      setDisplayValue(num);
-      setJustEvaluated(false);
-      return;
-    }
-    
-    setDisplayValue((prev) => (prev === "0" ? num : prev + num));
-  }, [justEvaluated, setDisplayValue, setJustEvaluated]);
-  
+  const handleNumber = useCallback(
+    (num: string) => {
+      if (justEvaluated) {
+        setDisplayValue(num);
+        setExpression("");
+        setJustEvaluated(false);
+        return;
+      }
+
+      setDisplayValue((prev) => (prev === "0" ? num : prev + num));
+    },
+    [justEvaluated, setDisplayValue, setExpression, setJustEvaluated],
+  );
+
   const handleDecimal = useCallback(() => {
     if (justEvaluated) {
       setDisplayValue("0.");
+      setExpression("");
       setJustEvaluated(false);
       return;
     }
-    
+
     if (!displayValue.includes(".")) {
       setDisplayValue((prev) => prev + ".");
     }
-  }, [displayValue, justEvaluated, setDisplayValue, setJustEvaluated]);
+  }, [displayValue, justEvaluated, setDisplayValue, setExpression, setJustEvaluated]);
 
   const handleBackspace = useCallback(() => {
     if (justEvaluated) return;
@@ -104,8 +116,12 @@ export default function BasicCalculator() {
 
   const handleInput = useCallback(
     (input: string) => {
-      const operators = ["÷", "×", "−", "+"];
-      if (operators.includes(input)) {
+      if (displayValue === "Error") {
+        clearAll();
+        return;
+      }
+
+      if (isOperator(input)) {
         handleOperator(input);
       } else if (/[0-9]/.test(input)) {
         handleNumber(input);
@@ -135,11 +151,22 @@ export default function BasicCalculator() {
         }
       }
     },
-    [handleOperator, handleNumber, handleEquals, handleDecimal, clearAll, handleBackspace, displayValue, setDisplayValue, setJustEvaluated],
+    [
+      handleOperator,
+      handleNumber,
+      handleEquals,
+      handleDecimal,
+      clearAll,
+      handleBackspace,
+      displayValue,
+      setDisplayValue,
+      setJustEvaluated,
+    ],
   );
 
-  const basicBtnClasses = "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
-  
+  const basicBtnClasses =
+    "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
+
   return (
     <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
@@ -161,7 +188,10 @@ export default function BasicCalculator() {
           <Button
             onClick={() => handleInput("AC")}
             variant="ghost"
-            className={cn(basicBtnClasses, "text-destructive hover:bg-destructive/10")}
+            className={cn(
+              basicBtnClasses,
+              "text-destructive hover:bg-destructive/10",
+            )}
           >
             AC
           </Button>
@@ -258,7 +288,10 @@ export default function BasicCalculator() {
           </Button>
           <Button
             onClick={handleEquals}
-            className={cn(basicBtnClasses, "bg-primary text-primary-foreground hover:bg-primary/90")}
+            className={cn(
+              basicBtnClasses,
+              "bg-primary text-primary-foreground hover:bg-primary/90",
+            )}
           >
             =
           </Button>
