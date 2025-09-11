@@ -9,7 +9,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://picsum.photos; font-src 'self' data:; connect-src 'self' vitals.vercel-insights.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'nonce-{{NEXT_NONCE}}' https://www.googletagmanager.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://picsum.photos; font-src 'self' data:; connect-src 'self' vitals.vercel-insights.com; frame-src 'self' https://googleads.g.doubleclick.net;"
