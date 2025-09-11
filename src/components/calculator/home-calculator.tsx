@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -12,7 +13,7 @@ export default function HomeCalculator() {
     <div className="w-full max-w-lg mx-auto p-2 sm:p-4 rounded-2xl">
       <Tabs
         value={activeTab}
-        onValueChange={(value) => setActiveTab(value as "basic" | "scientific")}
+        onValueChange={setActiveTab}
         className="w-full"
       >
         <TabsList className="grid w-full grid-cols-2">
