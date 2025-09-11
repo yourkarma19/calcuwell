@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Delete } from "lucide-react";
@@ -145,7 +146,7 @@ export default function ScientificCalculator() {
           <Button onClick={() => handleInput("^")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>xʸ</Button>
           <Button onClick={() => handleConstant("π")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>π</Button>
           <Button onClick={() => handleConstant("e")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>e</Button>
-          <Button onClick={() => handleFunction("n!")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>n!</Button>
+          <Button onClick={() => handleFunction("!")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>n!</Button>
           
           {/* Row 4 */}
           <Button onClick={() => handleInput("e^")} variant="ghost" className={cn(btnClasses, "text-primary hover:bg-primary/10")}>eˣ</Button>
