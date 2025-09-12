@@ -34,13 +34,13 @@ export default function AboutBeamDeflectionCalculator() {
           </li>
           <li>
             Enter the <strong>Modulus of Elasticity (E)</strong> for the
-            beam&apos;s material in Gigapascals (GPa). This value represents the
-            material&apos;s stiffness. For example, steel is around 200 GPa.
+            beam's material in Gigapascals (GPa). This value represents the
+            material's stiffness. For example, steel is around 200 GPa.
           </li>
           <li>
             Enter the <strong>Area Moment of Inertia (I)</strong> of the
-            beam&apos;s cross-section in meters to the fourth power (m⁴). This
-            value represents the beam&apos;s resistance to bending due to its
+            beam's cross-section in meters to the fourth power (m⁴). This
+            value represents the beam's resistance to bending due to its
             shape.
           </li>
         </ol>

@@ -3,6 +3,12 @@
 import { parse, simplify } from "mathjs";
 import { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -68,8 +74,8 @@ export default function PartialFractionCalculator() {
         <CardHeader>
           <CardTitle>Partial Fraction Calculator</CardTitle>
           <CardDescription>
-            Decompose rational functions. Enter the numerator and the
-            denominator.
+            Decompose rational functions into simpler fractions. Enter the
+            numerator and the denominator.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

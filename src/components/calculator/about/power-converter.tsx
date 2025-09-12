@@ -24,7 +24,7 @@ export default function AboutPowerConverter() {
         <h3>How to Use the Converter</h3>
         <ol>
           <li>
-            Enter the value you want to convert in the &quot;From&quot; field.
+            Enter the value you want to convert in the "From" field.
           </li>
           <li>Select the unit you are converting from.</li>
           <li>Select the unit you want to convert to.</li>
@@ -57,7 +57,7 @@ export default function AboutPowerConverter() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              Power vs. Energy: What&apos;s the difference?
+              Power vs. Energy: What's the difference?
             </AccordionTrigger>
             <AccordionContent>
               Power and energy are related but distinct concepts. **Energy** is

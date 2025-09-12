@@ -19,7 +19,7 @@ export default function AboutCapacitorChargeCalculator() {
           This calculator helps you understand what happens in a simple RC
           circuit, which is a circuit with a resistor and a capacitor. When you
           apply voltage, the capacitor starts to store energy, or
-          &quot;charge.&quot; This tool shows you how much charge it has and the
+          "charge." This tool shows you how much charge it has and the
           current flowing at any given time.
         </p>
         <h2>How to Use It</h2>
@@ -44,7 +44,7 @@ export default function AboutCapacitorChargeCalculator() {
             <AccordionTrigger>What is the time constant (τ)?</AccordionTrigger>
             <AccordionContent>
               The time constant (tau, or τ) tells you how quickly the capacitor
-              charges. It&apos;s calculated by multiplying the resistance by the
+              charges. It's calculated by multiplying the resistance by the
               capacitance (τ = R × C). After one time constant, the capacitor is
               about 63.2% charged. It is considered fully charged after about
               five time constants.

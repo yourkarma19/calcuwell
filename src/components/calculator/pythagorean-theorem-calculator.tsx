@@ -181,7 +181,7 @@ export default function PythagoreanTheoremCalculator() {
         </CardHeader>
         <CardContent className="text-center">
           <p className="text-sm text-muted-foreground">
-            The length of side &apos;{solveFor}&apos; is:
+            The length of side '{solveFor}' is:
           </p>
           <p
             className="text-5xl font-bold font-headline text-primary my-2"

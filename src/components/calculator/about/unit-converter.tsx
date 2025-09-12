@@ -28,7 +28,7 @@ export default function AboutUnitConverter() {
             Temperature).
           </li>
           <li>
-            Enter the value you wish to convert in the &quot;From&quot; field.
+            Enter the value you wish to convert in the "From" field.
           </li>
           <li>
             Select the starting unit and the target unit from the dropdown

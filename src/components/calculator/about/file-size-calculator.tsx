@@ -11,7 +11,7 @@ export default function AboutFileSizeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About File Size &amp; Bitrate</CardTitle>
+        <CardTitle>About File Size & Bitrate</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
@@ -32,7 +32,7 @@ export default function AboutFileSizeCalculator() {
             <AccordionContent>
               Bitrate is the amount of data used to represent one second of
               audio or video. A higher bitrate generally results in better
-              quality and a larger file size. It&apos;s often measured in
+              quality and a larger file size. It's often measured in
               kilobits per second (kbit/s) or megabits per second (mbit/s).
             </AccordionContent>
           </AccordionItem>
