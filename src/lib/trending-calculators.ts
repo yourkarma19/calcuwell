@@ -22,11 +22,4 @@ export const trendingCalculators: Omit<Calculator, "component">[] = [
     category: "Date & Time",
     iconName: "CalendarClock",
   },
-  {
-    slug: "percentage-calculator",
-    name: "Percentage Calculator",
-    description: "Calculate percentages, increases, and decreases.",
-    category: "Math",
-    iconName: "Percent",
-  },
 ];
