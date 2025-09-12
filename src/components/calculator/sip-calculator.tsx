@@ -235,7 +235,7 @@ export default function SipCalculator() {
           <h2>The Formula Behind SIP Return Calculation</h2>
           <p>The future value of a SIP is calculated using the formula:</p>
           <p className="font-mono bg-muted p-2 rounded-md text-center my-2">
-            FV = P × ({[1 + i]^n - 1} / i) × (1 + i)
+            {'FV = P × ({[1 + i]^n - 1} / i) × (1 + i)'}
           </p>
           <ul>
             <li>
