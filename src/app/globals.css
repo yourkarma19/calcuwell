@@ -10,51 +10,51 @@
     --card-foreground: 220 15% 25%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 25%;
-    --primary: 217 91% 60%;
+    --primary: 255 70% 60%;
     --primary-foreground: 0 0% 98%;
     --secondary: 220 15% 90%;
     --secondary-foreground: 220 15% 25%;
     --muted: 220 15% 94%;
     --muted-foreground: 220 10% 45%;
-    --accent: 220 20% 85%;
-    --accent-foreground: 220 15% 15%;
+    --accent: 255 70% 90%;
+    --accent-foreground: 255 15% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 15% 88%;
     --input: 220 15% 92%;
-    --ring: 217 91% 60%;
-    --chart-1: 217 91% 60%;
-    --chart-2: 217 80% 70%;
-    --chart-3: 217 70% 80%;
-    --chart-4: 217 60% 90%;
-    --chart-5: 217 50% 95%;
+    --ring: 255 70% 60%;
+    --chart-1: 255 70% 60%;
+    --chart-2: 255 80% 70%;
+    --chart-3: 255 70% 80%;
+    --chart-4: 255 60% 90%;
+    --chart-5: 255 50% 95%;
   }
 
   .dark {
-    --background: 220 15% 10%;
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 220 15% 13%;
+    --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: 220 15% 5%;
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 217 80% 70%;
+    --primary: 255 70% 70%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 220 15% 20%;
+    --secondary: 240 5% 15%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 220 15% 16%;
-    --muted-foreground: 220 10% 65%;
-    --accent: 220 20% 30%;
+    --muted: 240 5% 10%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 255 70% 30%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 25%;
-    --input: 220 15% 20%;
-    --ring: 217 80% 70%;
-    --chart-1: 217 80% 70%;
-    --chart-2: 217 70% 60%;
-    --chart-3: 217 60% 50%;
-    --chart-4: 217 50% 40%;
-    --chart-5: 217 40% 30%;
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 255 70% 70%;
+    --chart-1: 255 70% 70%;
+    --chart-2: 255 60% 60%;
+    --chart-3: 255 50% 50%;
+    --chart-4: 255 40% 40%;
+    --chart-5: 255 30% 30%;
   }
 }
 
@@ -67,85 +67,13 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
-    line-height: 1.6;
   }
-  h1 {
-    @apply text-4xl md:text-5xl font-bold font-headline tracking-tight;
-  }
-  h2 {
-    @apply text-3xl md:text-4xl font-bold font-headline tracking-tight;
-  }
-  h3 {
-    @apply text-2xl md:text-3xl font-semibold font-headline tracking-tight;
-  }
-  p {
-    @apply text-base;
-  }
-  .prose {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply font-headline;
-    }
-  }
-  .dark .prose {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: hsl(var(--foreground));
-    }
-  }
-}
-
-@layer components {
-  .card {
-    background-color: hsl(var(--card));
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border: 1px solid hsl(var(--border));
-    transition:
-      border-color 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  .dark .card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-}
-
-@media print {
-  header,
-  footer,
-  .no-print {
-    display: none !important;
-  }
-  main {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  .container {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-  .lg\:col-span-2 {
-    grid-column: span 3 / span 3;
-  }
-  .lg\:col-span-1 {
-    display: none;
-  }
-  .sticky {
-    position: static;
-  }
-  .card {
-    box-shadow: none;
-    border: 1px solid #e2e8f0;
-  }
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline;
   }
 }
