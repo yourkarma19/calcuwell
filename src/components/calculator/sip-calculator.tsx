@@ -301,7 +301,7 @@ export default function SipCalculator() {
             market price is low and fewer units when the price is high. Over
             time, this averages out your purchase cost and can lead to better
             returns compared to a single lumpsum investment, especially in a
-`volatile market.
+            volatile market.
           </p>
 
           <h2>Frequently Asked Questions about SIPs</h2>

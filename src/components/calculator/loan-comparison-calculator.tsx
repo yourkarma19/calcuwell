@@ -1,7 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
+import ExportShareControls from "./export-share-controls";
 import { Skeleton } from "../ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -64,7 +65,11 @@ const LoanComparisonResults = dynamic(
   },
 );
 
-export default function LoanComparisonCalculator() {
+export default function LoanComparisonCalculator({
+  calculatorName,
+}: {
+  calculatorName: string;
+}) {
   const [principalA, setPrincipalA] = usePersistentState(
     "lcomp-principalA",
     500000,
@@ -98,9 +103,18 @@ export default function LoanComparisonCalculator() {
     }
   };
 
+  const shareParams = {
+    pA: principalA.toString(),
+    rA: rateA.toString(),
+    tA: tenureA.toString(),
+    pB: principalB.toString(),
+    rB: rateB.toString(),
+    tB: tenureB.toString(),
+  };
+
   return (
-    <div className="lg:col-span-3 space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="space-y-6">
+      <div id="loan-inputs" className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card id="loanA">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -192,7 +206,14 @@ export default function LoanComparisonCalculator() {
       </div>
 
       {showResults && (
-        <LoanComparisonResults resultsA={resultsA} resultsB={resultsB} />
+        <>
+          <LoanComparisonResults resultsA={resultsA} resultsB={resultsB} />
+          <ExportShareControls
+            elementIds={["loan-inputs", "results-container"]}
+            shareParams={shareParams}
+            calculatorName={calculatorName}
+          />
+        </>
       )}
     </div>
   );

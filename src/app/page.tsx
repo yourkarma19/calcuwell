@@ -134,7 +134,6 @@ export default function Home() {
             designed to be fast, accurate, and easy to use. From solving complex
             mathematical problems to managing your personal finances and health,
             our tools provide reliable results to help you make informed
-
             decisions instantly.
           </p>
         </div>
