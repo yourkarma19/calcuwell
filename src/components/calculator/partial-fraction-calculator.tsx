@@ -1,3 +1,4 @@
+
 "use client";
 
 import { parse, simplify } from "mathjs";
