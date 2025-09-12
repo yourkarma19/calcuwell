@@ -11,6 +11,7 @@ import EmbedCalculator from "./embed-calculator";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { categories } from "@/lib/calculators";
 import type { Calculator } from "@/lib/types";
+import { format } from "date-fns";
 
 interface CalculatorWrapperProps {
   children: ReactNode;
@@ -78,6 +79,11 @@ export default function CalculatorWrapper({
         <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
           {calculator.description}
         </p>
+        {calculator.lastUpdated && (
+          <p className="text-xs text-muted-foreground mt-4">
+            Last Updated: {format(new Date(calculator.lastUpdated), "MMMM d, yyyy")}
+          </p>
+        )}
       </div>
 
       <div className="max-w-4xl mx-auto">

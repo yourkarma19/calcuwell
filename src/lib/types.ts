@@ -14,6 +14,7 @@ export interface Calculator {
   formula?: string;
   seoTitle?: string;
   metaDescription?: string;
+  lastUpdated?: string;
 }
 
 export interface Category {
