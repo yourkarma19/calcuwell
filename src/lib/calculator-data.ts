@@ -94,7 +94,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the perceived temperature based on wind speed.",
     category: "Miscellaneous",
     iconName: "Wind",
-    seoTitle: "Wind Chill 'Feels Like' Calculator | CalcPro",
+    seoTitle: "Wind Chill 'Feels Like' Temperature Calculator | CalcPro",
     metaDescription:
       "Calculate wind chill temperature based on air temp & wind speed. Find out how cold it really feels & understand the risk of frostbite.",
     formula:
@@ -110,7 +110,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Math",
     iconName: "Sigma",
     formula: "ax³ + bx² + cx + d = 0",
-    seoTitle: "Cubic Equation Solver with Roots | CalcPro",
+    seoTitle: "Cubic Equation Solver with All Roots | CalcPro",
     metaDescription:
       "Solve any cubic equation instantly. Our calculator finds all real & complex roots & shows the steps using the cubic formula. Free & accurate.",
     lastUpdated: "2024-07-31",
@@ -124,7 +124,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Geometry & Engineering",
     iconName: "Triangle",
     formula: "Law of Cosines & Law of Sines",
-    seoTitle: "Triangle Angle Calculator (SSS, SAS) | CalcPro",
+    seoTitle: "Triangle Angle Finder (SSS, SAS) | CalcPro",
     metaDescription:
       "Calculate unknown angles in any triangle. Enter side lengths and/or angles to find missing values using the Law of Sines & Cosines.",
     lastUpdated: "2024-07-31",
@@ -138,7 +138,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Math",
     iconName: "Sigma",
     formula: "y - f(a) = f'(a)(x - a)",
-    seoTitle: "Tangent Line Calculator with Steps | CalcPro",
+    seoTitle: "Tangent Line Equation Calculator | CalcPro",
     metaDescription:
       "Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.",
     lastUpdated: "2024-07-31",
@@ -151,7 +151,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Conversions",
     iconName: "Percent",
     formula: "(Numerator / Denominator) * 100",
-    seoTitle: "Fraction to Percentage Converter | CalcPro",
+    seoTitle: "Fraction to Percentage Converter Tool | CalcPro",
     metaDescription:
       "Quickly convert any fraction to a percentage with our free online tool. Shows you the calculation steps and the final answer instantly.",
     lastUpdated: "2024-07-31",
@@ -164,7 +164,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find the x and y-intercepts of any linear equation with a step-by-step breakdown.",
     category: "Math",
     iconName: "Sigma",
-    seoTitle: "X and Y Intercept Calculator | CalcPro",
+    seoTitle: "X and Y Intercept Finder with Steps | CalcPro",
     metaDescription:
       "A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results & see step-by-step calculations.",
     formula: "Set x=0 for y-intercept, set y=0 for x-intercept.",
@@ -190,7 +190,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Add, subtract, multiply, and divide feet and inches.",
     category: "Conversions",
     iconName: "Ruler",
-    seoTitle: "Feet and Inches Calculator | CalcPro",
+    seoTitle: "Feet and Inches Arithmetic Calculator | CalcPro",
     metaDescription:
       "An online calculator to add, subtract, multiply, & divide feet and inches. Perfect for construction & DIY projects. Get instant results.",
     lastUpdated: "2024-07-31",
@@ -203,7 +203,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Geometry & Engineering",
     iconName: "Atom",
     formula: "Power (P) = Voltage (V) × Current (I)",
-    seoTitle: "Voltage to Watts (V to W) Converter | CalcPro",
+    seoTitle: "Voltage to Watts (Amps to Watts) Converter | CalcPro",
     metaDescription:
       "Instantly convert Volts & Amps to Watts using our free online calculator. Understand the power formula (P=VI) with examples and explanations.",
     lastUpdated: "2024-07-31",
@@ -216,7 +216,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Math",
     iconName: "Sigma",
     formula: "f(x) = P(x) / Q(x)",
-    seoTitle: "Partial Fraction Decomposition Tool | CalcPro",
+    seoTitle: "Partial Fraction Decomposition Calculator | CalcPro",
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your math homework.",
     lastUpdated: "2024-07-31",
@@ -229,7 +229,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate the total cost of your wedding.",
     category: "Lifestyle",
     iconName: "Heart",
-    seoTitle: "Wedding Budget Planner & Calculator | CalcPro",
+    seoTitle: "Wedding Budget Planner & Cost Estimator | CalcPro",
     metaDescription:
       "Plan your dream wedding with our free budget calculator. Estimate costs for the venue, catering, and photography to stay on budget.",
     formula: "Total = Venue + (Catering × Guests) + Photography + Dress + ...",
@@ -241,7 +241,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your pet's age in human years.",
     category: "Lifestyle",
     iconName: "Dog",
-    seoTitle: "Pet Age Calculator (Dog & Cat Years) | CalcPro",
+    seoTitle: "Pet Age to Human Years Calculator | CalcPro",
     metaDescription:
       "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
     lastUpdated: "2024-07-31",
@@ -252,7 +252,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate the monthly and yearly costs of owning a pet.",
     category: "Lifestyle",
     iconName: "Dog",
-    seoTitle: "Pet Care Cost Calculator (Dog & Cat) | CalcPro",
+    seoTitle: "Annual Pet Care Cost Estimator | CalcPro",
     metaDescription:
       "Estimate the annual and monthly costs of pet ownership. Our calculator helps you budget for food, vet care, grooming, and other expenses.",
     lastUpdated: "2024-07-31",
@@ -263,7 +263,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Plan how to pay off your credit card debt.",
     category: "Finance",
     iconName: "CreditCard",
-    seoTitle: "Credit Card Payoff Calculator & Plan | CalcPro",
+    seoTitle: "Credit Card Payoff & Debt Calculator | CalcPro",
     metaDescription:
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
@@ -277,7 +277,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Perform basic arithmetic operations.",
     category: "Math",
     iconName: "Calculator",
-    seoTitle: "Online Basic & Scientific Calculator | CalcPro",
+    seoTitle: "Free Online Basic & Scientific Calculator | CalcPro",
     metaDescription:
       "A simple and fast online calculator for everyday arithmetic. Perform addition, subtraction, multiplication, and division with ease.",
     lastUpdated: "2024-07-31",
@@ -288,7 +288,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate percentages, increases, and decreases.",
     category: "Math",
     iconName: "Percent",
-    seoTitle: "Percentage Calculator (Increase/Decrease) | CalcPro",
+    seoTitle: "Online Percentage Calculator (Increase/Decrease) | CalcPro",
     metaDescription:
       "Easily calculate percentages with our free tool. Find the percentage of a number, percent increase/decrease, & other common problems.",
     lastUpdated: "2024-07-31",
@@ -299,7 +299,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Add, subtract, multiply, and divide fractions.",
     category: "Math",
     iconName: "Pi",
-    seoTitle: "Fraction Calculator (Add, Subtract) | CalcPro",
+    seoTitle: "Fraction Calculator (+, -, ×, ÷) with Steps | CalcPro",
     metaDescription:
       "Our free fraction calculator makes math easy. Add, subtract, multiply, and divide proper and improper fractions with step-by-step results.",
     lastUpdated: "2024-07-31",
@@ -321,7 +321,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Simplify and work with ratios.",
     category: "Math",
     iconName: "Scale",
-    seoTitle: "Ratio Calculator & Simplifier | CalcPro",
+    seoTitle: "Ratio Simplifier & Proportion Calculator | CalcPro",
     metaDescription:
       "Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for students.",
     lastUpdated: "2024-07-31",
@@ -332,7 +332,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Solve proportions and find missing values.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Proportion Calculator (Solve for X) | CalcPro",
+    seoTitle: "Online Proportion Calculator (Solve for X) | CalcPro",
     metaDescription:
       "An easy-to-use proportion calculator to help you solve for the missing value in a proportion using cross-multiplication. Includes examples.",
     lastUpdated: "2024-07-31",
@@ -343,7 +343,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the average, middle, and most frequent values.",
     category: "Math",
     iconName: "Sigma",
-    seoTitle: "Mean, Median & Mode Calculator | CalcPro",
+    seoTitle: "Mean, Median & Mode Calculator for Datasets | CalcPro",
     metaDescription:
       "Quickly find the mean, median, mode, and range of any data set. Our calculator helps you understand the central tendency of your data.",
     lastUpdated: "2024-07-31",
@@ -354,7 +354,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the standard deviation of a data set.",
     category: "Math",
     iconName: "Sigma",
-    seoTitle: "Standard Deviation Calculator | CalcPro",
+    seoTitle: "Standard Deviation Calculator (Sample & Pop) | CalcPro",
     metaDescription:
       "Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with our tool.",
     lastUpdated: "2024-07-31",
@@ -365,7 +365,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the probability of events.",
     category: "Math",
     iconName: "Beaker",
-    seoTitle: "Probability Calculator for Events | CalcPro",
+    seoTitle: "Probability Calculator for Independent Events | CalcPro",
     metaDescription:
       "Calculate the probability of single and multiple events with our easy-to-use tool. Perfect for solving problems and understanding chance.",
     lastUpdated: "2024-07-31",
@@ -376,7 +376,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate permutations and combinations.",
     category: "Math",
     iconName: "Sigma",
-    seoTitle: "Permutation & Combination Calculator | CalcPro",
+    seoTitle: "Permutation & Combination Calculator (nPr, nCr) | CalcPro",
     metaDescription:
       "Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability with this essential tool.",
     lastUpdated: "2024-07-31",
@@ -388,7 +388,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Math",
     iconName: "Variable",
     formula: "n!",
-    seoTitle: "Factorial Calculator (n!) | CalcPro",
+    seoTitle: "Factorial Calculator (n!) for Large Numbers | CalcPro",
     metaDescription:
       "Our online factorial calculator finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.",
     lastUpdated: "2024-07-31",
@@ -399,7 +399,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the Least Common Multiple and Greatest Common Divisor.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "LCM & GCD Calculator | CalcPro",
+    seoTitle: "LCM & GCD Finder for Multiple Numbers | CalcPro",
     metaDescription:
       "Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. A tool for number theory.",
     lastUpdated: "2024-07-31",
@@ -432,7 +432,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate logarithms with different bases.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Logarithm (Log) & Natural Log (ln) Calc | CalcPro",
+    seoTitle: "Logarithm (Log & ln) Calculator with Base | CalcPro",
     metaDescription:
       "An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs and natural logs (ln).",
     lastUpdated: "2024-07-31",
@@ -443,7 +443,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Solve linear and quadratic equations.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Equation Solver (Linear, Quadratic) | CalcPro",
+    seoTitle: "Equation Solver (Linear & Quadratic) | CalcPro",
     metaDescription:
       "Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and the formulas used.",
     lastUpdated: "2024-07-31",
@@ -454,7 +454,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Perform matrix operations.",
     category: "Math",
     iconName: "Pi",
-    seoTitle: "Matrix Calculator (2x2 Add/Subtract) | CalcPro",
+    seoTitle: "2x2 Matrix Addition & Subtraction Calculator | CalcPro",
     metaDescription:
       "A simple matrix calculator for performing addition and subtraction on 2x2 matrices. Enter the matrix values to get an instant result.",
     lastUpdated: "2024-07-31",
@@ -465,7 +465,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Perform calculations with complex numbers.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Complex Number Calculator | CalcPro",
+    seoTitle: "Complex Number Arithmetic Calculator | CalcPro",
     metaDescription:
       "Perform arithmetic on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.",
     lastUpdated: "2024-07-31",
@@ -476,7 +476,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between Roman numerals and numbers.",
     category: "Math",
     iconName: "ArrowRightLeft",
-    seoTitle: "Roman Numeral Converter | CalcPro",
+    seoTitle: "Roman Numeral Date & Number Converter | CalcPro",
     metaDescription:
       "A fast and accurate Roman numeral converter. Translate numbers to Roman numerals and back for values between 1 and 3,999.",
     lastUpdated: "2024-07-31",
@@ -489,7 +489,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your Equated Monthly Installment.",
     category: "Finance",
     iconName: "Landmark",
-    seoTitle: "Loan EMI Calculator with Prepayment | CalcPro",
+    seoTitle: "Loan EMI Calculator with Prepayment Options | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans.",
@@ -501,7 +501,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Compare two loans side-by-side.",
     category: "Finance",
     iconName: "Scale",
-    seoTitle: "Loan Comparison Calculator | CalcPro",
+    seoTitle: "Side-by-Side Loan Comparison Calculator | CalcPro",
     metaDescription:
       "Compare two loans instantly. Our calculator shows the EMI and total cost side-by-side to help you choose the cheapest option.",
     lastUpdated: "2024-07-31",
@@ -512,7 +512,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your monthly mortgage payments.",
     category: "Finance",
     iconName: "House",
-    seoTitle: "Mortgage Calculator with PITI | CalcPro",
+    seoTitle: "Mortgage Payment Calculator with PITI | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
@@ -524,7 +524,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your car loan payments.",
     category: "Finance",
     iconName: "Car",
-    seoTitle: "Car Loan EMI Calculator | CalcPro",
+    seoTitle: "Car Loan EMI & Payment Calculator | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy.",
@@ -537,7 +537,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Finance",
     iconName: "PiggyBank",
     formula: "P * R * T / 100",
-    seoTitle: "Simple Interest Calculator | CalcPro",
+    seoTitle: "Simple Interest Calculator (Formula P*R*T) | CalcPro",
     metaDescription:
       "Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula and explains how it works.",
     lastUpdated: "2024-07-31",
@@ -549,7 +549,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Finance",
     iconName: "PiggyBank",
     formula: "A = P(1 + r/n)^(nt)",
-    seoTitle: "Compound Interest Calculator | CalcPro",
+    seoTitle: "Compound Interest Investment Calculator | CalcPro",
     metaDescription:
       "See how your savings can grow with compound interest. Our calculator projects your investment growth over time with this tool.",
     lastUpdated: "2024-07-31",
@@ -560,7 +560,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Plan your savings goals and growth.",
     category: "Finance",
     iconName: "PiggyBank",
-    seoTitle: "Savings Goal & Growth Calculator | CalcPro",
+    seoTitle: "Savings Goal & Growth Projection Calculator | CalcPro",
     metaDescription:
       "Project the future value of your savings with our easy calculator. See how deposits, contributions, and interest rates impact your growth.",
     lastUpdated: "2024-07-31",
@@ -571,7 +571,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your retirement savings needs.",
     category: "Finance",
     iconName: "PiggyBank",
-    seoTitle: "Retirement Savings Calculator | CalcPro",
+    seoTitle: "Retirement Savings & Pension Calculator | CalcPro",
     metaDescription:
       "Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.",
     lastUpdated: "2024-07-31",
@@ -582,7 +582,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the return on your investments.",
     category: "Finance",
     iconName: "AreaChart",
-    seoTitle: "Return on Investment (ROI) Calculator | CalcPro",
+    seoTitle: "Return on Investment (ROI) Profit Calculator | CalcPro",
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
@@ -593,7 +593,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate profits or losses from stock trades.",
     category: "Finance",
     iconName: "AreaChart",
-    seoTitle: "Stock Profit & Loss Calculator | CalcPro",
+    seoTitle: "Stock Profit & Loss ROI Calculator | CalcPro",
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI).",
     lastUpdated: "2024-07-31",
@@ -604,7 +604,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between different currencies with mock rates.",
     category: "Finance",
     iconName: "Globe",
-    seoTitle: "Online Currency Converter | CalcPro",
+    seoTitle: "Live Currency & Foreign Exchange Rate Converter | CalcPro",
     metaDescription:
       "A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.",
     lastUpdated: "2024-07-31",
@@ -615,7 +615,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "See how inflation affects purchasing power.",
     category: "Finance",
     iconName: "Banknote",
-    seoTitle: "Inflation Calculator | CalcPro",
+    seoTitle: "Historical Inflation & Purchasing Power Calculator | CalcPro",
     metaDescription:
       "Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount & year range to see its value.",
     lastUpdated: "2024-07-31",
@@ -626,7 +626,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate tips for services.",
     category: "Finance",
     iconName: "Wallet",
-    seoTitle: "Tip Calculator & Bill Splitter | CalcPro",
+    seoTitle: "Tip Calculator & Bill Splitter App | CalcPro",
     metaDescription:
       "A quick and easy tip calculator. Determine the tip amount for any bill and split the total cost among any number of people.",
     lastUpdated: "2024-07-31",
@@ -637,7 +637,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the final price after a discount.",
     category: "Finance",
     iconName: "Tag",
-    seoTitle: "Discount & Sale Price Calculator | CalcPro",
+    seoTitle: "Discount & Sale Price Off Calculator | CalcPro",
     metaDescription:
       "Easily calculate the final price after a discount. Enter the original price & discount percentage to find out how much you will pay and save.",
     lastUpdated: "2024-07-31",
@@ -648,7 +648,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your take-home salary.",
     category: "Finance",
     iconName: "Briefcase",
-    seoTitle: "Take-Home Salary Calculator | CalcPro",
+    seoTitle: "Take-Home Pay & Net Salary Calculator | CalcPro",
     metaDescription:
       "Estimate your take-home pay by entering your gross salary and tax/deduction rates. See a breakdown of your net income for better budgeting.",
     lastUpdated: "2024-07-31",
@@ -659,7 +659,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your overtime pay.",
     category: "Finance",
     iconName: "Clock",
-    seoTitle: "Overtime Pay Calculator | CalcPro",
+    seoTitle: "Overtime Pay Rate Calculator | CalcPro",
     metaDescription:
       "Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete weekly earnings.",
     lastUpdated: "2024-07-31",
@@ -670,7 +670,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the point where revenue equals costs.",
     category: "Finance",
     iconName: "Briefcase",
-    seoTitle: "Break-Even Point Calculator | CalcPro",
+    seoTitle: "Business Break-Even Point Analysis Calculator | CalcPro",
     metaDescription:
       "Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.",
     lastUpdated: "2024-07-31",
@@ -681,7 +681,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the profit margin for your business.",
     category: "Finance",
     iconName: "Briefcase",
-    seoTitle: "Business Profit Margin Calculator | CalcPro",
+    seoTitle: "Business Gross & Net Profit Margin Calculator | CalcPro",
     metaDescription:
       "Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.",
     lastUpdated: "2024-07-31",
@@ -694,7 +694,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your Body Mass Index.",
     category: "Health",
     iconName: "HeartPulse",
-    seoTitle: "BMI Calculator (Metric & Imperial) | CalcPro",
+    seoTitle: "BMI Calculator for Adults (Metric & Imperial) | CalcPro",
     formula: "weight (kg) / (height (m) * height (m))",
     tags: ["health", "fitness", "weight", "body mass index"],
     metaDescription:
@@ -720,7 +720,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your daily calorie needs.",
     category: "Health",
     iconName: "HeartPulse",
-    seoTitle: "Daily Calorie Needs Calculator | CalcPro",
+    seoTitle: "Daily Maintenance Calorie Calculator | CalcPro",
     metaDescription:
       "Estimate the calories you need daily to maintain your weight, based on your age, gender, height, weight, and activity level.",
     lastUpdated: "2024-07-31",
@@ -732,7 +732,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Health",
     iconName: "Scale",
     formula: "Robinson Formula (1983)",
-    seoTitle: "Ideal Weight Calculator | CalcPro",
+    seoTitle: "Ideal Body Weight Calculator (Robinson Formula) | CalcPro",
     metaDescription:
       "Determine your ideal body weight based on height and gender using the Robinson formula. A useful tool for setting fitness goals.",
     lastUpdated: "2024-07-31",
@@ -744,7 +744,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Health",
     iconName: "Percent",
     formula: "U.S. Navy Method",
-    seoTitle: "Body Fat Percentage Calculator (US Navy) | CalcPro",
+    seoTitle: "Body Fat Percentage Estimator (US Navy) | CalcPro",
     metaDescription:
       "Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment of health than BMI alone.",
     lastUpdated: "2024-07-31",
@@ -755,7 +755,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your lean body mass.",
     category: "Health",
     iconName: "Bone",
-    seoTitle: "Lean Body Mass (LBM) Calculator | CalcPro",
+    seoTitle: "Lean Body Mass (LBM) & Fat-Free Mass Calc | CalcPro",
     metaDescription:
       "Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle and bone.",
     lastUpdated: "2024-07-31",
@@ -766,7 +766,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your waist-to-hip ratio.",
     category: "Health",
     iconName: "Ruler",
-    seoTitle: "Waist-to-Hip Ratio (WHR) Calculator | CalcPro",
+    seoTitle: "Waist-to-Hip Ratio (WHR) Health Risk Calc | CalcPro",
     metaDescription:
       "Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.",
     lastUpdated: "2024-07-31",
@@ -778,7 +778,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Health",
     iconName: "Baby",
     formula: "Naegele's rule",
-    seoTitle: "Pregnancy Due Date Calculator | CalcPro",
+    seoTitle: "Pregnancy Due Date & Conception Calculator | CalcPro",
     metaDescription:
       "Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Learn about due date methods.",
     lastUpdated: "2024-07-31",
@@ -789,7 +789,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your most fertile days.",
     category: "Health",
     iconName: "CalendarClock",
-    seoTitle: "Ovulation & Fertile Window Calculator | CalcPro",
+    seoTitle: "Ovulation & Fertile Window Prediction | CalcPro",
     metaDescription:
       "Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days.",
     lastUpdated: "2024-07-31",
@@ -800,7 +800,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your daily water intake needs.",
     category: "Health",
     iconName: "Droplets",
-    seoTitle: "Daily Water Intake Calculator | CalcPro",
+    seoTitle: "Daily Water Intake Needs Calculator | CalcPro",
     metaDescription:
       "Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated with our personalized calculator.",
     lastUpdated: "2024-07-31",
@@ -811,7 +811,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your target heart rate zones.",
     category: "Health",
     iconName: "HeartPulse",
-    seoTitle: "Target Heart Rate Zone Calculator | CalcPro",
+    seoTitle: "Training & Target Heart Rate Zone Calculator | CalcPro",
     metaDescription:
       "Determine your target heart rate zones for exercise. Use our calculator to find your optimal zones for fat burning, cardio, and performance.",
     lastUpdated: "2024-07-31",
@@ -822,7 +822,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your maximum oxygen uptake.",
     category: "Health",
     iconName: "Wind",
-    seoTitle: "VO₂ Max Fitness Level Calculator | CalcPro",
+    seoTitle: "VO₂ Max Fitness Level Estimator | CalcPro",
     metaDescription:
       "Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate.",
     lastUpdated: "2024-07-31",
@@ -846,7 +846,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert length, weight, temperature, etc.",
     category: "Conversions",
     iconName: "Ruler",
-    seoTitle: "Universal Unit Converter | CalcPro",
+    seoTitle: "Online Universal Unit Converter Tool | CalcPro",
     metaDescription:
       "A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.",
     lastUpdated: "2024-07-31",
@@ -857,7 +857,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between KB, MB, GB, TB, and more.",
     category: "Conversions",
     iconName: "Database",
-    seoTitle: "Data Storage Converter (KB, MB, GB) | CalcPro",
+    seoTitle: "Data Storage Size Converter (KB, MB, GB) | CalcPro",
     metaDescription:
       "Convert between digital data storage units, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).",
     lastUpdated: "2024-07-31",
@@ -868,7 +868,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between bps, Kbps, Mbps, and more.",
     category: "Conversions",
     iconName: "Shuffle",
-    seoTitle: "Data Transfer Rate Converter | CalcPro",
+    seoTitle: "Data Transfer & Internet Speed Converter | CalcPro",
     metaDescription:
       "Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed & file downloads.",
     lastUpdated: "2024-07-31",
@@ -879,7 +879,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between seconds, minutes, hours, and days.",
     category: "Conversions",
     iconName: "Clock",
-    seoTitle: "Time Unit Converter | CalcPro",
+    seoTitle: "Time Measurement Unit Converter | CalcPro",
     metaDescription:
       "A simple and fast time converter for various units of time, including seconds, minutes, hours, days, weeks, and years (approximate).",
     lastUpdated: "2024-07-31",
@@ -890,7 +890,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between joules, calories, kWh, and more.",
     category: "Conversions",
     iconName: "Atom",
-    seoTitle: "Energy Unit Converter | CalcPro",
+    seoTitle: "Energy Unit Conversion Calculator | CalcPro",
     metaDescription:
       "Convert between different units of energy, such as Joules, Kilojoules, calories, Kilocalories (kcal), and Kilowatt-hours (kWh).",
     lastUpdated: "2024-07-31",
@@ -901,7 +901,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between Pa, bar, psi, and more.",
     category: "Conversions",
     iconName: "Cloud",
-    seoTitle: "Pressure Unit Converter | CalcPro",
+    seoTitle: "Pressure Unit Converter (Pa, Bar, PSI) | CalcPro",
     metaDescription:
       "Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and psi.",
     lastUpdated: "2024-07-31",
@@ -912,7 +912,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between watts, hp, kW, and more.",
     category: "Conversions",
     iconName: "Wind",
-    seoTitle: "Power Unit Converter (Watts, HP) | CalcPro",
+    seoTitle: "Power Unit Converter (Watts, HP, kW) | CalcPro",
     metaDescription:
       "A tool for converting between different units of power, such as watts (W), kilowatts (kW), and horsepower (hp).",
     lastUpdated: "2024-07-31",
@@ -923,7 +923,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between degrees and radians.",
     category: "Conversions",
     iconName: "Ruler",
-    seoTitle: "Angle Converter (Degrees & Radians) | CalcPro",
+    seoTitle: "Angle Unit Converter (Degrees to Radians) | CalcPro",
     metaDescription:
       "Quickly convert angles between degrees and radians. An essential tool for students and professionals in math, physics, and engineering.",
     lastUpdated: "2024-07-31",
@@ -934,7 +934,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between mpg and L/100km.",
     category: "Conversions",
     iconName: "Car",
-    seoTitle: "Fuel Efficiency Converter | CalcPro",
+    seoTitle: "Fuel Efficiency Converter (MPG to L/100km) | CalcPro",
     metaDescription:
       "Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicles.",
     lastUpdated: "2024-07-31",
@@ -947,7 +947,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate age from date of birth.",
     category: "Date & Time",
     iconName: "CalendarClock",
-    seoTitle: "Age Calculator (Years, Months, Days) | CalcPro",
+    seoTitle: "Age Calculator: Find Age in Years, Months, Days | CalcPro",
     formula: "Current Date - Date of Birth",
     metaDescription:
       "Find your exact age in years, months, and days with our online age calculator. Simply enter your date of birth to get your age.",
@@ -960,7 +960,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Date & Time",
     iconName: "CalendarDays",
     formula: "endDate - startDate",
-    seoTitle: "Date Difference Calculator | CalcPro",
+    seoTitle: "Date Difference & Days Between Dates Calculator | CalcPro",
     metaDescription:
       "Calculate the exact number of years, months, weeks, & days between any two dates. Perfect for finding the duration of projects and events.",
     lastUpdated: "2024-07-31",
@@ -971,7 +971,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Count down to a specific date and time.",
     category: "Date & Time",
     iconName: "Timer",
-    seoTitle: "Online Countdown Timer | CalcPro",
+    seoTitle: "Online Countdown Clock & Timer | CalcPro",
     metaDescription:
       "Set a countdown to any date & time. Our online timer will track the days, hours, minutes, and seconds remaining until your event.",
     lastUpdated: "2024-07-31",
@@ -982,7 +982,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert time between different time zones.",
     category: "Date & Time",
     iconName: "Globe",
-    seoTitle: "Time Zone Converter | CalcPro",
+    seoTitle: "World Time Zone Converter | CalcPro",
     metaDescription:
       "Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.",
     lastUpdated: "2024-07-31",
@@ -993,7 +993,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate time differences between cities.",
     category: "Date & Time",
     iconName: "Globe",
-    seoTitle: "World Clock & Time Zone Converter | CalcPro",
+    seoTitle: "World Clock for Major Cities | CalcPro",
     metaDescription:
       "View the current local time in major cities across the globe. Our world clock is an easy way to check time differences and plan calls.",
     lastUpdated: "2024-07-31",
@@ -1004,7 +1004,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate business days between two dates.",
     category: "Date & Time",
     iconName: "Briefcase",
-    seoTitle: "Working & Business Days Calculator | CalcPro",
+    seoTitle: "Working & Business Days Counter | CalcPro",
     metaDescription:
       "Calculate the number of working days (business days) between two dates. This tool excludes weekends to give you an accurate count.",
     lastUpdated: "2024-07-31",
@@ -1015,7 +1015,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the week number for a given date.",
     category: "Date & Time",
     iconName: "CalendarDays",
-    seoTitle: "Week Number Calculator (ISO 8601) | CalcPro",
+    seoTitle: "Week of the Year Calculator (ISO 8601) | CalcPro",
     metaDescription:
       "Quickly find the week number for any date using different standards, including ISO 8601. An essential tool for weekly scheduling.",
     lastUpdated: "2024-07-31",
@@ -1026,7 +1026,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Add or subtract days from a date.",
     category: "Date & Time",
     iconName: "CalendarClock",
-    seoTitle: "Add or Subtract Days from a Date | CalcPro",
+    seoTitle: "Add or Subtract Days from Date Calculator | CalcPro",
     metaDescription:
       "Find a future or past date by adding or subtracting days from a start date. Perfect for calculating deadlines, follow-ups, and events.",
     lastUpdated: "2024-07-31",
@@ -1037,7 +1037,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the next business day.",
     category: "Date & Time",
     iconName: "Briefcase",
-    seoTitle: "Business Day Calculator | CalcPro",
+    seoTitle: "Next Business Day Calculator | CalcPro",
     metaDescription:
       "Calculate a future date by adding or subtracting business days, automatically skipping weekends to ensure accuracy for deadlines.",
     lastUpdated: "2024-07-31",
@@ -1051,7 +1051,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Programming",
     iconName: "Binary",
     formula: "parseInt(num, fromBase).toString(toBase)",
-    seoTitle: "Binary, Decimal, Hex & Octal Converter | CalcPro",
+    seoTitle: "Binary, Hex, Octal & Decimal Converter | CalcPro",
     metaDescription:
       "A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.",
     lastUpdated: "2024-07-31",
@@ -1062,7 +1062,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between ASCII codes and text.",
     category: "Programming",
     iconName: "ArrowRightLeft",
-    seoTitle: "ASCII to Text Converter | CalcPro",
+    seoTitle: "ASCII to Text / Text to ASCII Converter | CalcPro",
     metaDescription:
       "Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with encoding.",
     lastUpdated: "2024-07-31",
@@ -1073,7 +1073,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Encode and decode Base64 strings.",
     category: "Programming",
     iconName: "Binary",
-    seoTitle: "Base64 Encoder & Decoder | CalcPro",
+    seoTitle: "Online Base64 Encoder & Decoder Tool | CalcPro",
     metaDescription:
       "A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 text.",
     lastUpdated: "2024-07-31",
@@ -1088,7 +1088,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Calculate IP subnet details from an IP and CIDR mask. Find network addresses, broadcast addresses, subnet masks, and usable hosts.",
     formula: "Network Address = IP Address & Subnet Mask",
     lastUpdated: "2024-07-31",
-    seoTitle: "IP Subnet Calculator | CalcPro",
+    seoTitle: "IPv4 Subnet Calculator with CIDR | CalcPro",
   },
   {
     slug: "crc-hash-generator",
@@ -1096,7 +1096,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Generate a CRC-32 checksum for your text input.",
     category: "Programming",
     iconName: "Hash",
-    seoTitle: "CRC-32 Hash & Checksum Generator | CalcPro",
+    seoTitle: "CRC-32 Checksum Hash Generator | CalcPro",
     metaDescription:
       "Generate a CRC-32 hash (checksum) for any string or text input. Our free online tool helps you verify data integrity quickly.",
     lastUpdated: "2024-07-31",
@@ -1107,7 +1107,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate file size from bitrate and duration.",
     category: "Programming",
     iconName: "FileBox",
-    seoTitle: "File Size Calculator (Bitrate) | CalcPro",
+    seoTitle: "File Size & Bitrate Calculator | CalcPro",
     metaDescription:
       "Estimate the size of a file based on its duration and bitrate. Useful for video & audio files to plan for storage or bandwidth.",
     lastUpdated: "2024-07-31",
@@ -1118,7 +1118,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between HEX, RGB, and HSL color codes.",
     category: "Programming",
     iconName: "Palette",
-    seoTitle: "Color Code Converter (HEX, RGB, HSL) | CalcPro",
+    seoTitle: "HEX, RGB & HSL Color Code Converter | CalcPro",
     metaDescription:
       "A simple tool for web designers & developers to convert between HEX, RGB, and HSL color formats in real-time.",
     lastUpdated: "2024-07-31",
@@ -1131,7 +1131,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the area and circumference of a circle.",
     category: "Geometry & Engineering",
     iconName: "Circle",
-    seoTitle: "Circle Calculator (Area, Circumference) | CalcPro",
+    seoTitle: "Circle Area & Circumference Calculator | CalcPro",
     metaDescription:
       "A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.",
     lastUpdated: "2024-07-31",
@@ -1142,7 +1142,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the area and perimeter of a triangle.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
-    seoTitle: "Triangle Area & Perimeter Calculator | CalcPro",
+    seoTitle: "Triangle Area & Perimeter Calculator Tool | CalcPro",
     metaDescription:
       "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
     lastUpdated: "2024-07-31",
@@ -1165,7 +1165,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the volume of a cylinder.",
     category: "Geometry & Engineering",
     iconName: "Beaker",
-    seoTitle: "Cylinder Volume & Surface Area Calc | CalcPro",
+    seoTitle: "Cylinder Volume & Surface Area Calculator | CalcPro",
     metaDescription:
       "Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height.",
     lastUpdated: "2024-07-31",
@@ -1176,7 +1176,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the volume and surface area of a sphere.",
     category: "Geometry & Engineering",
     iconName: "Globe",
-    seoTitle: "Sphere Volume & Surface Area Calc | CalcPro",
+    seoTitle: "Sphere Volume & Surface Area Calculator | CalcPro",
     metaDescription:
       "Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas.",
     lastUpdated: "2024-07-31",
@@ -1187,7 +1187,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the volume of a cone.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
-    seoTitle: "Cone Volume & Surface Area Calculator | CalcPro",
+    seoTitle: "Cone Volume, Slant Height & Surface Area Calc | CalcPro",
     metaDescription:
       "Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results.",
     lastUpdated: "2024-07-31",
@@ -1201,7 +1201,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     formula: "a² + b² = c²",
     metaDescription:
       "Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Finds the hypotenuse or other sides.",
-    seoTitle: "Pythagorean Theorem Calculator | CalcPro",
+    seoTitle: "Pythagorean Theorem Side Calculator | CalcPro",
     lastUpdated: "2024-07-31",
   },
   {
@@ -1210,7 +1210,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate sin, cos, tan, and more.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
-    seoTitle: "Trigonometry Calculator (Sin, Cos, Tan) | CalcPro",
+    seoTitle: "Trigonometry Function Calculator (Sin, Cos) | CalcPro",
     metaDescription:
       "A free trig calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.",
     lastUpdated: "2024-07-31",
@@ -1221,7 +1221,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the deflection of beams.",
     category: "Geometry & Engineering",
     iconName: "Ruler",
-    seoTitle: "Beam Deflection Calculator | CalcPro",
+    seoTitle: "Cantilever Beam Deflection Calculator | CalcPro",
     metaDescription:
       "A simple calculator to find the maximum deflection of a cantilever beam with a point load at the end. For structural engineers.",
     lastUpdated: "2024-07-31",
@@ -1232,7 +1232,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate torque from force and distance.",
     category: "Geometry & Engineering",
     iconName: "Wind",
-    seoTitle: "Torque Calculator (Force & Distance) | CalcPro",
+    seoTitle: "Torque Calculator (Force x Distance) | CalcPro",
     metaDescription:
       "Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering.",
     lastUpdated: "2024-07-31",
@@ -1254,7 +1254,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Decode 4-band resistor color codes.",
     category: "Geometry & Engineering",
     iconName: "Palette",
-    seoTitle: "Resistor Color Code Calculator | CalcPro",
+    seoTitle: "4-Band Resistor Color Code Decoder | CalcPro",
     metaDescription:
       "Decode 4-band resistor color codes with our tool. Select the colors for each band to instantly find the resistance value and tolerance.",
     lastUpdated: "2024-07-31",
@@ -1265,7 +1265,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate capacitor charge and discharge times.",
     category: "Geometry & Engineering",
     iconName: "Atom",
-    seoTitle: "Capacitor Charge (RC Circuit) Calc | CalcPro",
+    seoTitle: "Capacitor Charge & RC Circuit Calculator | CalcPro",
     metaDescription:
       "Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. For electronics.",
     lastUpdated: "2024-07-31",
@@ -1279,7 +1279,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Education",
     iconName: "GraduationCap",
     formula: "Σ(Grade Points * Credits) / Σ(Credits)",
-    seoTitle: "GPA Calculator | CalcPro",
+    seoTitle: "College & High School GPA Calculator | CalcPro",
     metaDescription:
       "Calculate your GPA quickly and easily. Enter your courses, credits, and grades to find your Grade Point Average on a 4.0 scale.",
     lastUpdated: "2024-07-31",
@@ -1290,7 +1290,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your grade percentage.",
     category: "Miscellaneous",
     iconName: "Percent",
-    seoTitle: "Grade Percentage Calculator | CalcPro",
+    seoTitle: "Test & Assignment Grade Percentage Calculator | CalcPro",
     metaDescription:
       "Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.",
     lastUpdated: "2024-07-31",
@@ -1301,7 +1301,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate the time it takes to read a text.",
     category: "Miscellaneous",
     iconName: "Book",
-    seoTitle: "Reading Time Calculator | CalcPro",
+    seoTitle: "Reading Time & Word Count Calculator | CalcPro",
     metaDescription:
       "Estimate how long it will take to read any text. Paste your content & adjust the Words Per Minute (WPM) for a personalized reading time.",
     lastUpdated: "2024-07-31",
@@ -1312,7 +1312,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Measure your words per minute typing speed.",
     category: "Miscellaneous",
     iconName: "Keyboard",
-    seoTitle: "Typing Speed Test (WPM) | CalcPro",
+    seoTitle: "Typing Speed Test (WPM) & Accuracy Check | CalcPro",
     metaDescription:
       "Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts & get instant results.",
     lastUpdated: "2024-07-31",
@@ -1323,7 +1323,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate how much loan you can afford.",
     category: "Miscellaneous",
     iconName: "Landmark",
-    seoTitle: "Loan Affordability Calculator | CalcPro",
+    seoTitle: "How Much Loan Can I Afford Calculator | CalcPro",
     metaDescription:
       "Estimate how much you can afford to borrow based on your income, monthly debts, and desired loan terms. For home or car loan planning.",
     lastUpdated: "2024-07-31",
@@ -1334,7 +1334,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your environmental impact.",
     category: "Miscellaneous",
     iconName: "Footprints",
-    seoTitle: "Carbon Footprint Calculator | CalcPro",
+    seoTitle: "Personal Carbon Footprint Calculator | CalcPro",
     metaDescription:
       "Get a rough estimate of your carbon footprint based on your daily commute, energy use, and diet. Understand your environmental impact.",
     lastUpdated: "2024-07-31",
