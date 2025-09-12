@@ -81,7 +81,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the bags of concrete needed for a slab, footer, or posts.",
     category: "Geometry & Engineering",
     iconName: "Calculator",
-    seoTitle: "Concrete Slab & Bag Calculator | CalcPro",
+    seoTitle: "Concrete Volume & Bag Calculator | CalcPro",
     metaDescription:
       "Estimate the volume & number of concrete bags for your project. Works for slabs, footers, & round post holes. Get an instant, free estimate.",
     formula: "Volume = Length × Width × Thickness",
@@ -190,7 +190,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Add, subtract, multiply, and divide feet and inches.",
     category: "Conversions",
     iconName: "Ruler",
-    seoTitle: "Feet and Inches Calculator (Add, Subtract) | CalcPro",
+    seoTitle: "Feet and Inches Calculator | CalcPro",
     metaDescription:
       "An online calculator to add, subtract, multiply, & divide feet and inches. Perfect for construction & DIY projects. Get instant results.",
     lastUpdated: "2024-07-31",
@@ -216,7 +216,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Math",
     iconName: "Sigma",
     formula: "f(x) = P(x) / Q(x)",
-    seoTitle: "Partial Fraction Decomposition Calculator | CalcPro",
+    seoTitle: "Partial Fraction Decomposition Tool | CalcPro",
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your math homework.",
     lastUpdated: "2024-07-31",
@@ -263,7 +263,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Plan how to pay off your credit card debt.",
     category: "Finance",
     iconName: "CreditCard",
-    seoTitle: "Credit Card Payoff Calculator | CalcPro",
+    seoTitle: "Credit Card Payoff Calculator & Plan | CalcPro",
     metaDescription:
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
@@ -277,7 +277,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Perform basic arithmetic operations.",
     category: "Math",
     iconName: "Calculator",
-    seoTitle: "Free Online Basic & Scientific Calculator | CalcPro",
+    seoTitle: "Online Basic & Scientific Calculator | CalcPro",
     metaDescription:
       "A simple and fast online calculator for everyday arithmetic. Perform addition, subtraction, multiplication, and division with ease.",
     lastUpdated: "2024-07-31",
@@ -288,7 +288,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate percentages, increases, and decreases.",
     category: "Math",
     iconName: "Percent",
-    seoTitle: "Online Percentage Calculator | CalcPro",
+    seoTitle: "Percentage Calculator (Increase/Decrease) | CalcPro",
     metaDescription:
       "Easily calculate percentages with our free tool. Find the percentage of a number, percent increase/decrease, & other common problems.",
     lastUpdated: "2024-07-31",
@@ -299,7 +299,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Add, subtract, multiply, and divide fractions.",
     category: "Math",
     iconName: "Pi",
-    seoTitle: "Fraction Calculator (Add, Subtract, etc.) | CalcPro",
+    seoTitle: "Fraction Calculator (Add, Subtract) | CalcPro",
     metaDescription:
       "Our free fraction calculator makes math easy. Add, subtract, multiply, and divide proper and improper fractions with step-by-step results.",
     lastUpdated: "2024-07-31",
@@ -310,7 +310,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Work with mixed numbers and fractions.",
     category: "Math",
     iconName: "Pi",
-    seoTitle: "Mixed Number Fraction Calculator | CalcPro",
+    seoTitle: "Mixed Number Calculator & Converter | CalcPro",
     metaDescription:
       "A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.",
     lastUpdated: "2024-07-31",
@@ -354,7 +354,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the standard deviation of a data set.",
     category: "Math",
     iconName: "Sigma",
-    seoTitle: "Standard Deviation Calculator (Sample & Pop) | CalcPro",
+    seoTitle: "Standard Deviation Calculator | CalcPro",
     metaDescription:
       "Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with our tool.",
     lastUpdated: "2024-07-31",
@@ -365,7 +365,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the probability of events.",
     category: "Math",
     iconName: "Beaker",
-    seoTitle: "Probability Calculator | CalcPro",
+    seoTitle: "Probability Calculator for Events | CalcPro",
     metaDescription:
       "Calculate the probability of single and multiple events with our easy-to-use tool. Perfect for solving problems and understanding chance.",
     lastUpdated: "2024-07-31",
@@ -432,7 +432,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate logarithms with different bases.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Logarithm Calculator (Log & Natural Log) | CalcPro",
+    seoTitle: "Logarithm (Log) & Natural Log (ln) Calc | CalcPro",
     metaDescription:
       "An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs and natural logs (ln).",
     lastUpdated: "2024-07-31",
@@ -443,7 +443,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Solve linear and quadratic equations.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Equation Solver (Linear & Quadratic) | CalcPro",
+    seoTitle: "Equation Solver (Linear, Quadratic) | CalcPro",
     metaDescription:
       "Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and the formulas used.",
     lastUpdated: "2024-07-31",
@@ -454,7 +454,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Perform matrix operations.",
     category: "Math",
     iconName: "Pi",
-    seoTitle: "2x2 Matrix Calculator (Add & Subtract) | CalcPro",
+    seoTitle: "Matrix Calculator (2x2 Add/Subtract) | CalcPro",
     metaDescription:
       "A simple matrix calculator for performing addition and subtraction on 2x2 matrices. Enter the matrix values to get an instant result.",
     lastUpdated: "2024-07-31",
@@ -512,7 +512,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your monthly mortgage payments.",
     category: "Finance",
     iconName: "House",
-    seoTitle: "Mortgage Calculator with PITI & Amortization | CalcPro",
+    seoTitle: "Mortgage Calculator with PITI | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
@@ -604,7 +604,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between different currencies with mock rates.",
     category: "Finance",
     iconName: "Globe",
-    seoTitle: "Online Currency Converter (Mock Rates) | CalcPro",
+    seoTitle: "Online Currency Converter | CalcPro",
     metaDescription:
       "A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.",
     lastUpdated: "2024-07-31",
@@ -615,7 +615,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "See how inflation affects purchasing power.",
     category: "Finance",
     iconName: "Banknote",
-    seoTitle: "Historical Inflation Calculator | CalcPro",
+    seoTitle: "Inflation Calculator | CalcPro",
     metaDescription:
       "Use our inflation calculator to see how the purchasing power of money has changed over time. Enter an amount & year range to see its value.",
     lastUpdated: "2024-07-31",
@@ -670,7 +670,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the point where revenue equals costs.",
     category: "Finance",
     iconName: "Briefcase",
-    seoTitle: "Break-Even Point Calculator for Business | CalcPro",
+    seoTitle: "Break-Even Point Calculator | CalcPro",
     metaDescription:
       "Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.",
     lastUpdated: "2024-07-31",
@@ -822,7 +822,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your maximum oxygen uptake.",
     category: "Health",
     iconName: "Wind",
-    seoTitle: "VO2 Max Calculator (Fitness Level) | CalcPro",
+    seoTitle: "VO₂ Max Fitness Level Calculator | CalcPro",
     metaDescription:
       "Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate.",
     lastUpdated: "2024-07-31",
@@ -857,7 +857,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between KB, MB, GB, TB, and more.",
     category: "Conversions",
     iconName: "Database",
-    seoTitle: "Data Storage Converter (KB, MB, GB, TB) | CalcPro",
+    seoTitle: "Data Storage Converter (KB, MB, GB) | CalcPro",
     metaDescription:
       "Convert between digital data storage units, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).",
     lastUpdated: "2024-07-31",
@@ -868,7 +868,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between bps, Kbps, Mbps, and more.",
     category: "Conversions",
     iconName: "Shuffle",
-    seoTitle: "Data Transfer Rate Converter (Mbps/MBs) | CalcPro",
+    seoTitle: "Data Transfer Rate Converter | CalcPro",
     metaDescription:
       "Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed & file downloads.",
     lastUpdated: "2024-07-31",
@@ -912,7 +912,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between watts, hp, kW, and more.",
     category: "Conversions",
     iconName: "Wind",
-    seoTitle: "Power Unit Converter | CalcPro",
+    seoTitle: "Power Unit Converter (Watts, HP) | CalcPro",
     metaDescription:
       "A tool for converting between different units of power, such as watts (W), kilowatts (kW), and horsepower (hp).",
     lastUpdated: "2024-07-31",
@@ -934,7 +934,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between mpg and L/100km.",
     category: "Conversions",
     iconName: "Car",
-    seoTitle: "Fuel Efficiency Converter (MPG to L/100km) | CalcPro",
+    seoTitle: "Fuel Efficiency Converter | CalcPro",
     metaDescription:
       "Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicles.",
     lastUpdated: "2024-07-31",
@@ -1107,7 +1107,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate file size from bitrate and duration.",
     category: "Programming",
     iconName: "FileBox",
-    seoTitle: "File Size Calculator | CalcPro",
+    seoTitle: "File Size Calculator (Bitrate) | CalcPro",
     metaDescription:
       "Estimate the size of a file based on its duration and bitrate. Useful for video & audio files to plan for storage or bandwidth.",
     lastUpdated: "2024-07-31",
@@ -1165,7 +1165,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the volume of a cylinder.",
     category: "Geometry & Engineering",
     iconName: "Beaker",
-    seoTitle: "Cylinder Volume & Surface Area Calculator | CalcPro",
+    seoTitle: "Cylinder Volume & Surface Area Calc | CalcPro",
     metaDescription:
       "Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height.",
     lastUpdated: "2024-07-31",
@@ -1176,7 +1176,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate the volume and surface area of a sphere.",
     category: "Geometry & Engineering",
     iconName: "Globe",
-    seoTitle: "Sphere Volume & Surface Area Calculator | CalcPro",
+    seoTitle: "Sphere Volume & Surface Area Calc | CalcPro",
     metaDescription:
       "Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas.",
     lastUpdated: "2024-07-31",
@@ -1254,7 +1254,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Decode 4-band resistor color codes.",
     category: "Geometry & Engineering",
     iconName: "Palette",
-    seoTitle: "Resistor Color Code Calculator (4-Band) | CalcPro",
+    seoTitle: "Resistor Color Code Calculator | CalcPro",
     metaDescription:
       "Decode 4-band resistor color codes with our tool. Select the colors for each band to instantly find the resistance value and tolerance.",
     lastUpdated: "2024-07-31",
@@ -1265,7 +1265,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate capacitor charge and discharge times.",
     category: "Geometry & Engineering",
     iconName: "Atom",
-    seoTitle: "Capacitor Charging (RC Circuit) Calculator | CalcPro",
+    seoTitle: "Capacitor Charge (RC Circuit) Calc | CalcPro",
     metaDescription:
       "Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. For electronics.",
     lastUpdated: "2024-07-31",
@@ -1312,7 +1312,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Measure your words per minute typing speed.",
     category: "Miscellaneous",
     iconName: "Keyboard",
-    seoTitle: "Typing Speed Test (WPM Calculator) | CalcPro",
+    seoTitle: "Typing Speed Test (WPM) | CalcPro",
     metaDescription:
       "Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts & get instant results.",
     lastUpdated: "2024-07-31",
@@ -1347,5 +1347,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
 
 
 
+
+    
 
     
