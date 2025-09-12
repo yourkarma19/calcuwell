@@ -55,8 +55,8 @@ export default function CategoryClientPage({
         <h1 className="text-4xl font-bold font-headline text-primary">
           {name} Calculators
         </h1>
-        <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
-          {description}
+        <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          Welcome to our suite of {name.toLowerCase()} calculators. Each tool is designed to provide quick and accurate solutions. Whether you're a student, professional, or just curious, our calculators are here to help you solve problems and make informed decisions.
         </p>
       </div>
 
