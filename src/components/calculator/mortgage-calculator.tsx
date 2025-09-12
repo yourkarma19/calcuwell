@@ -1,14 +1,27 @@
 
 "use client";
 
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
+import { Skeleton } from "../ui/skeleton";
 import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
+
+const MortgageBreakdownChart = dynamic(
+  () =>
+    import("@/components/charts/mortgage-breakdown-chart").then(
+      (mod) => mod.MortgageBreakdownChart,
+    ),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="w-full h-[25rem]" />,
+  },
+);
 
 export default function MortgageCalculator({
   setAboutProps,
@@ -188,7 +201,7 @@ export default function MortgageCalculator({
           </div>
           <div className="space-y-2 text-sm text-left border-t pt-2">
             <div className="flex justify-between">
-              <p className="text-muted-foreground">Principal &amp; Interest</p>
+              <p className="text-muted-foreground">Principal & Interest</p>
               <p className="font-semibold">
                 {formatCurrency(principalAndInterest)}
               </p>

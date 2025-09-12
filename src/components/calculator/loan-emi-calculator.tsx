@@ -1,9 +1,11 @@
 
 "use client";
 
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
+import { Skeleton } from "../ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,6 +16,17 @@ import {
   calculateEMIWithExtraPayments,
 } from "@/lib/math/loan-emi";
 import { formatCurrency } from "@/lib/utils";
+
+const LoanBreakdownChart = dynamic(
+  () =>
+    import("@/components/charts/loan-breakdown-chart").then(
+      (mod) => mod.LoanBreakdownChart,
+    ),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="w-full h-[25rem]" />,
+  },
+);
 
 export default function LoanEMICalculator({
   setAboutProps,
