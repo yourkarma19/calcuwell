@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -12,13 +13,31 @@ import {
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import { ChevronRight } from 'lucide-react';
-import type { WebSite, WithContext } from "schema-dts";
+import type { WebSite, WithContext, SoftwareApplication, ItemList } from "schema-dts";
+
+const trendingSchema: SoftwareApplication[] = trendingCalculators.map(calc => ({
+  "@type": "SoftwareApplication",
+  name: calc.name,
+  applicationCategory: `${calc.category}Application`,
+  operatingSystem: "Web",
+  url: `https://calcpro.online/calculators/${calc.slug}`,
+  description: calc.description,
+}));
+
+const categoriesSchema: ItemList[] = categories.map(cat => ({
+  "@type": "ItemList",
+  name: `${cat.name} Calculators`,
+  description: cat.description,
+  url: `https://calcpro.online/categories/${cat.slug}`,
+}));
+
 
 const websiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "CalcPro",
   url: "https://calcpro.online",
+  description: "CalcPro is your one-stop destination for fast, accurate, and easy-to-use online calculators. Solve finance, health, and math problems instantly.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -27,6 +46,10 @@ const websiteSchema: WithContext<WebSite> = {
     },
     "query-input": "required name=search_term_string",
   },
+  hasPart: [
+    ...trendingSchema,
+    ...categoriesSchema,
+  ]
 };
 
 export default function Home() {
