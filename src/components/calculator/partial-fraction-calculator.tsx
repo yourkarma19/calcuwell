@@ -60,10 +60,11 @@ export default function PartialFractionCalculator() {
       }
       setResult(decomposed);
     } catch (e: unknown) {
-      setError(
-        (e instanceof Error ? e.message : String(e)) ||
-          "Failed to parse or decompose the expression.",
-      );
+      if (e instanceof Error) {
+        setError(e.message || "Failed to parse function.");
+      } else {
+        setError("An unknown error occurred.");
+      }
       setResult(null);
     }
   };

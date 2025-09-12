@@ -11,7 +11,7 @@ export default function AboutEnergyConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Energy Units</CardTitle>
+        <CardTitle as="h2">About Energy Units</CardTitle>
       </CardHeader>
       <CardContent>
         <p>

@@ -11,7 +11,7 @@ export default function AboutBasicCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Calculator</CardTitle>
+        <CardTitle as="h2">About the Calculator</CardTitle>
         <CardDescription>
           This versatile calculator includes both basic arithmetic and advanced
           scientific functions to suit all your needs.
