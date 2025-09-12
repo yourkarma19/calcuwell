@@ -46,3 +46,5 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
 
   return <CalculatorClientPage calculator={calculator} />;
 }
+
+    

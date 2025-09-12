@@ -1340,3 +1340,5 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
 ];
 
     
+
+    

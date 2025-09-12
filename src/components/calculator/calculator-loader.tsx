@@ -25,3 +25,5 @@ export default function CalculatorLoader({
   // Pass all props through to the loaded component
   return <CalculatorComponent {...props} />;
 }
+
+    
