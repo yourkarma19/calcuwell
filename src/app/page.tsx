@@ -43,7 +43,7 @@ const websiteSchema: WithContext<WebSite> = {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate": "https://calcpro.online/search?q={search_term_string}",
+      "urlTemplate": "https://calcpro.online/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -157,6 +157,7 @@ export default function Home() {
             designed to be fast, accurate, and easy to use. From solving complex
             mathematical problems to managing your personal finances and health,
             our tools provide reliable results to help you make informed
+
             decisions instantly.
           </p>
         </div>

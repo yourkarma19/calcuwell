@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between CGPA and SGPA?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "SGPA (Semester Grade Point Average) measures your academic performance for a single semester. CGPA (Cumulative Grade Point Average) is the average of all your SGPAs over all semesters, weighted by the number of credits in each semester.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I convert CGPA to a percentage?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The conversion formula can vary by university. A common method for a 10-point scale is: Percentage = CGPA * 9.5. However, you should always check with your specific university for their official conversion formula.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is considered a 'good' CGPA?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "On a 10-point scale, a CGPA of 8.0 or above is generally considered very good and is often a minimum requirement for many top companies and universities. A CGPA of 9.0 or above is typically considered excellent.",
+      },
+    },
+  ],
+};
 
 export default function AboutCgpaCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutCgpaCalculator() {
         <CardTitle>About the CGPA Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <h2>What is CGPA?</h2>
         <p>
           CGPA stands for <strong>Cumulative Grade Point Average</strong>. It is

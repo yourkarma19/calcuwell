@@ -8,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the Pythagorean Theorem?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Pythagorean theorem states that for any right-angled triangle, the square of the length of the hypotenuse (c) is equal to the sum of the squares of the other two sides (a and b). The formula is written as: a² + b² = c².",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a Hypotenuse?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The hypotenuse is the longest side of a right-angled triangle. It is always the side opposite the 90-degree angle. In the formula a² + b² = c², 'c' represents the hypotenuse.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are some real-world uses of the Pythagorean Theorem?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The theorem is used in many real-world applications, such as architecture (ensuring corners are square), navigation (calculating the shortest distance), and video game design for calculating distances.",
+      },
+    },
+  ],
+};
 
 export default function AboutPythagoreanTheoremCalculator() {
   return (
@@ -17,6 +49,10 @@ export default function AboutPythagoreanTheoremCalculator() {
           <CardTitle as="h2">About the Pythagorean Theorem</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             This calculator helps you find the length of a missing side of a
             right-angled triangle using the Pythagorean theorem. This famous

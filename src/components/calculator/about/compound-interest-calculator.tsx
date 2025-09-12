@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the formula for compound interest?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula to calculate the future value (A) of an investment is: A = P(1 + r/n)^(nt), where P is the principal, r is the annual interest rate, n is the number of compounding periods per year, and t is the number of years.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does compounding frequency affect my savings?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The more frequently interest is compounded, the more you will earn. Interest compounded monthly will result in a slightly higher total amount than interest compounded annually at the same rate because you start earning interest on your interest sooner.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between simple and compound interest?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Simple interest is calculated only on the original principal amount. Compound interest is calculated on the principal and also on the accumulated interest from previous periods, leading to exponential growth over time.",
+      },
+    },
+  ],
+};
 
 export default function AboutCompoundInterestCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutCompoundInterestCalculator() {
         <CardTitle as="h2">Understanding Compound Interest</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Compound Interest Calculator</strong> demonstrates one of
           the most powerful concepts in finance: how your money can grow

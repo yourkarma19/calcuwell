@@ -16,6 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import type { FAQPage, WithContext } from "schema-dts";
 
 const bmiCategories = [
   { range: "< 18.5", category: "Underweight" },
@@ -23,6 +24,37 @@ const bmiCategories = [
   { range: "25.0 - 29.9", category: "Overweight" },
   { range: "30.0+", category: "Obesity" },
 ];
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a healthy BMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "According to the World Health Organization (WHO), a healthy BMI for most adults is between 18.5 and 24.9. A BMI below 18.5 is considered underweight, 25.0 to 29.9 is overweight, and 30.0 or higher is categorized as obesity.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is BMI calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula for BMI is your weight in kilograms divided by the square of your height in meters (`kg/m²`). For imperial units, the formula is `(weight in lbs / (height in inches)²) * 703`.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the limitations of BMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "BMI is a useful screening tool, but it does not differentiate between fat and muscle mass. Very muscular people may have a high BMI but low body fat. It should be used as a general indicator, and a healthcare provider should be consulted for a complete health assessment.",
+      },
+    },
+  ],
+};
 
 export default function AboutBMICalculator() {
   return (
@@ -32,6 +64,10 @@ export default function AboutBMICalculator() {
           <CardTitle as="h2">About the BMI Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             The <strong>Body Mass Index (BMI)</strong> is a widely used measure
             to gauge whether your weight is healthy in proportion to your

@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is my age calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This tool calculates the total number of full years that have passed since you were born. It then calculates the remaining months and days to give you a precise age. The calculation correctly handles the different number of days in each month.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this tool account for leap years?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The age calculation is based on the actual number of days in each month and year, which automatically includes leap years. This provides an accurate age, even for those born in a leap year.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is chronological age?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Chronological age is the exact amount of time that has passed from your birth to the present day. This is different from biological age, which refers to how healthy your body is relative to its actual age.",
+      },
+    },
+  ],
+};
 
 export default function AboutAgeCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutAgeCalculator() {
         <CardTitle as="h2">About the Age Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Age Calculator determines your exact age from your date of birth.
           It breaks down your age into years, months, and days. This tool is

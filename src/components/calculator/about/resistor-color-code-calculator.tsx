@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How to Read a 4-Band Resistor?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hold the resistor with the tolerance band (gold or silver) on the right. The first two bands are the first two digits of the resistance value. The third band is the multiplier (a power of 10). The fourth band is the tolerance.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Tolerance in a Resistor?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tolerance indicates how accurate a resistor's value is. For example, a 100 Ω resistor with a 5% tolerance could have a real value between 95 Ω and 105 Ω. A smaller tolerance means the resistor is more precise.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What if there are 5 or 6 bands on the resistor?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A 5-band resistor adds a third digit for more precision (first three bands are digits). A 6-band resistor adds a final band that indicates the temperature coefficient, which describes how the resistance changes with temperature.",
+      },
+    },
+  ],
+};
 
 export default function AboutResistorColorCodeCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutResistorColorCodeCalculator() {
         <CardTitle>About the Resistor Color Code Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Resistor Color Code Calculator</strong> helps you figure
           out the value of a resistor by reading its colored bands. This is a
