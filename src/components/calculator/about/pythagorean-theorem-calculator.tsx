@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -42,45 +43,57 @@ const jsonLd: WithContext<FAQPage> = {
 
 export default function AboutPythagoreanTheoremCalculator() {
   return (
-    <div className="space-y-6">
-      <Card>
+    <Card>
         <CardHeader>
-          <CardTitle as="h2">About the Pythagorean Theorem</CardTitle>
+          <CardTitle as="h2">The Ultimate Guide to the Pythagorean Theorem</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
-          <script
+           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
-          <p>
-            This calculator helps you find the length of a missing side of a
-            right-angled triangle using the Pythagorean theorem. This famous
-            formula is a key part of geometry and has many practical uses.
-          </p>
+        <p>
+            The Pythagorean Theorem is one of the most famous and fundamental principles in all of mathematics, forming the bedrock of geometry and trigonometry. This calculator is designed to be a comprehensive tool for students, carpenters, engineers, and anyone who needs to quickly find the missing side of a right-angled triangle. By providing any two side lengths, our tool instantly computes the third, saving you time and ensuring accuracy in your calculations.
+        </p>
 
-          <h3>How to Use the Pythagorean Theorem Calculator</h3>
-          <ol>
+        <h2 className="text-2xl font-bold font-headline text-primary mt-8">How to Use Our Pythagorean Theorem Calculator</h2>
+        <p>
+            Our calculator is designed for simplicity and speed. Follow these steps to get your answer instantly:
+        </p>
+        <ol>
             <li>
-              Select which side you need to solve for (side 'a', side
-              'b', or hypotenuse 'c').
+                <strong>Select the Missing Side:</strong> First, determine which side of the triangle you need to calculate. The calculator allows you to solve for Side 'a', Side 'b', or the Hypotenuse 'c'. The hypotenuse is always the side opposite the right angle and is the longest side of the triangle.
             </li>
-            <li>Enter the lengths of the two sides that you know.</li>
             <li>
-              The calculator will instantly show the length of the missing side.
+                <strong>Enter the Known Side Lengths:</strong> Input the lengths of the two sides you already know into their respective fields. Ensure you are entering positive numbers.
             </li>
-          </ol>
-          <p>
-            Remember that the hypotenuse 'c' must always be the
-            longest side. The calculator will show an error if this is not true.
-          </p>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle as="h3">Pythagorean Theorem FAQs</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
+            <li>
+                <strong>View the Result:</strong> The calculator will automatically compute and display the length of the missing side. Our tool also validates the input; for example, it will show an error if you enter a value for side 'a' or 'b' that is longer than the hypotenuse 'c', as this is geometrically impossible.
+            </li>
+        </ol>
+
+        <h2 className="text-2xl font-bold font-headline text-primary mt-8">The Pythagorean Theorem Formula Explained</h2>
+        <p>
+            The theorem is elegantly simple yet incredibly powerful. It states that for any right-angled triangle, the square of the length of the hypotenuse (side 'c') is equal to the sum of the squares of the other two sides (sides 'a' and 'b').
+        </p>
+        <p className="font-mono bg-muted p-4 rounded-md text-center text-xl">
+            a² + b² = c²
+        </p>
+        <p>
+            From this core formula, we can derive the formulas to solve for any of the sides:
+        </p>
+        <ul>
+            <li>To find the <strong>hypotenuse (c)</strong>: c = √(a² + b²)</li>
+            <li>To find <strong>side a</strong>: a = √(c² - b²)</li>
+            <li>To find <strong>side b</strong>: b = √(c² - a²)</li>
+        </ul>
+        <p>
+            These are the exact formulas our calculator uses to provide you with accurate results for your geometric problems.
+        </p>
+
+
+        <h2 className="text-2xl font-bold font-headline text-primary mt-8">Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-semibold">
                 What is the Pythagorean Theorem?
@@ -141,8 +154,7 @@ export default function AboutPythagoreanTheoremCalculator() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </CardContent>
-      </Card>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

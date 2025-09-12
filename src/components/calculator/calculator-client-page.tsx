@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -18,14 +19,6 @@ const CalculatorLoader = dynamic(
   },
 );
 
-const AboutComponentLoader = dynamic(
-  () => import("@/components/calculator/calculator-content"),
-  {
-    loading: () => <PlaceholderCalculator />,
-    ssr: false,
-  },
-);
-
 export default function CalculatorClientPage({
   calculator,
 }: CalculatorClientPageProps) {
@@ -33,14 +26,11 @@ export default function CalculatorClientPage({
 
   return (
     <CalculatorWrapper calculator={calculator}>
-      <div className="space-y-8">
         <CalculatorLoader
           slug={calculator.slug}
           setAboutProps={setAboutProps}
           calculatorName={calculator.name}
         />
-        <AboutComponentLoader slug={calculator.slug} {...aboutProps} />
-      </div>
     </CalculatorWrapper>
   );
 }
