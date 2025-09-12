@@ -12,7 +12,7 @@ import {
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import { ChevronRight } from "lucide-react";
-import type { WebSite, WithContext, SoftwareApplication, ItemList } from "schema-dts";
+import type { WebSite, WithContext, SoftwareApplication, WebPage } from "schema-dts";
 
 const trendingSchema: SoftwareApplication[] = trendingCalculators.map(calc => ({
   "@type": "SoftwareApplication",
@@ -23,8 +23,8 @@ const trendingSchema: SoftwareApplication[] = trendingCalculators.map(calc => ({
   description: calc.description,
 }));
 
-const categoriesSchema: ItemList[] = categories.map(cat => ({
-  "@type": "ItemList",
+const categoriesSchema: WebPage[] = categories.map(cat => ({
+  "@type": "WebPage",
   name: `${cat.name} Calculators`,
   description: cat.description,
   url: `https://calcpro.online/categories/${cat.slug}`,
@@ -43,7 +43,7 @@ const websiteSchema: WithContext<WebSite> = {
       "@type": "EntryPoint",
       "urlTemplate": "https://calcpro.online/search?q={search_term_string}",
     },
-    "query-input": "required name=search_term_string",
+    "query": "required name=search_term_string",
   },
   hasPart: [
     ...trendingSchema,
