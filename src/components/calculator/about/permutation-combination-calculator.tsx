@@ -45,7 +45,7 @@ export default function AboutPermutationCombinationCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Permutations &amp; Combinations</CardTitle>
+        <CardTitle as="h2">About Permutations &amp; Combinations</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -60,7 +60,7 @@ export default function AboutPermutationCombinationCalculator() {
           instantly calculates both, helping you solve complex problems quickly.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Permutation and Combination Calculator</h3>
         <ol>
           <li>
             Enter the **Total number of items (n)**, which is the size of the
@@ -76,7 +76,7 @@ export default function AboutPermutationCombinationCalculator() {
           permutations (nPr) and combinations (nCr).
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Permutation & Combination FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">
@@ -98,9 +98,9 @@ export default function AboutPermutationCombinationCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                **Permutation Example:** Picking a 3-digit lock code from digits
-                0-9 without repetition. The order `1-2-3` is different from
-                `3-2-1`. This is a permutation.
+                **Permutation Example:** Picking a 3-digit lock code from
+                digits 0-9 without repetition. The order `1-2-3` is different
+                from `3-2-1`. This is a permutation.
               </p>
               <p>
                 **Combination Example:** Picking three friends from a group of

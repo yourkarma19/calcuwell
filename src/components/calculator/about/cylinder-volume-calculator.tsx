@@ -62,7 +62,7 @@ export default function AboutCylinderVolumeCalculator() {
           amount of material needed to construct a cylindrical object.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Cylinder Calculator</h3>
         <ol>
           <li>
             Enter the <strong>Radius</strong> of the cylinder&apos;s circular
@@ -77,7 +77,7 @@ export default function AboutCylinderVolumeCalculator() {
           volume, total surface area, lateral area, and base area.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Cylinder Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

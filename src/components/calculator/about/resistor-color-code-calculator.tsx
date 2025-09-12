@@ -58,7 +58,7 @@ export default function AboutResistorColorCodeCalculator() {
           resistor&apos;s resistance value without needing to use a multimeter.
           This calculator is for common 4-band resistors.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Resistor Color Code Calculator</h3>
         <ol>
           <li>
             Hold the resistor with the gold or silver band (the tolerance band)
@@ -72,7 +72,7 @@ export default function AboutResistorColorCodeCalculator() {
           The calculator will instantly show the resistor&apos;s value in Ohms
           (Ω) and its tolerance.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Resistor Color Code FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>How to Read a 4-Band Resistor</AccordionTrigger>

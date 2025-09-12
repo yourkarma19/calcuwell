@@ -58,7 +58,7 @@ export default function AboutWeddingBudgetCalculator() {
           total expenses and see where your money is going. This is the first
           step to a stress-free wedding planning experience.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Wedding Budget Calculator</h3>
         <ol>
           <li>
             Start by setting the **Number of Guests** you plan to invite. This
@@ -77,7 +77,7 @@ export default function AboutWeddingBudgetCalculator() {
           The calculator will instantly update the total estimated cost and show
           a visual breakdown in the pie chart.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Wedding Budget FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

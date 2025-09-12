@@ -44,7 +44,7 @@ export default function AboutLcmGcdCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About LCM &amp; GCD</CardTitle>
+        <CardTitle as="h2">About LCM &amp; GCD</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -58,7 +58,7 @@ export default function AboutLcmGcdCalculator() {
           or more positive integers. This is useful for students learning about
           number properties and for solving a variety of mathematical problems.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the LCM & GCD Calculator</h3>
         <ol>
           <li>Enter at least two positive integers into the input boxes.</li>
           <li>
@@ -70,7 +70,7 @@ export default function AboutLcmGcdCalculator() {
           The calculator will instantly display the GCD and LCM for the entire
           set of numbers you have entered.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>LCM & GCD FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

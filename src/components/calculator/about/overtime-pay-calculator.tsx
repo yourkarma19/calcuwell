@@ -58,7 +58,7 @@ export default function AboutOvertimePayCalculator() {
           your company's policy, giving you an accurate estimate of your
           gross pay.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Overtime Pay Calculator</h3>
         <ol>
           <li>Enter your **Hourly Rate** of pay.</li>
           <li>Input the number of **Regular Hours** you worked.</li>
@@ -72,7 +72,7 @@ export default function AboutOvertimePayCalculator() {
           The calculator will instantly break down your pay into regular and
           overtime earnings and show you the total pay for the period.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Overtime Pay FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

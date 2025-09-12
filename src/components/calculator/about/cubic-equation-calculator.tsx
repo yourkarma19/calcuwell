@@ -60,7 +60,7 @@ export default function AboutCubicEquationCalculator() {
           calculus, as well as for engineers and scientists who encounter such
           equations in their work.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Cubic Equation Calculator</h3>
         <ol>
           <li>
             Enter the coefficients `a`, `b`, `c`, and `d` for your equation into
@@ -72,7 +72,7 @@ export default function AboutCubicEquationCalculator() {
             `x₂`, `x₃`).
           </li>
         </ol>
-        <h3>Understanding the Solution</h3>
+        <h3>Cubic Equation FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

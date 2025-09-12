@@ -63,7 +63,7 @@ export default function AboutBacCalculator() {
           </strong>
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the BAC Calculator</h3>
         <ol>
           <li>
             Enter your <strong>Body Weight</strong> in kilograms.
@@ -86,7 +86,7 @@ export default function AboutBacCalculator() {
           general description of the potential effects.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>BAC Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

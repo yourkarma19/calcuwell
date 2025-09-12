@@ -60,14 +60,14 @@ export default function AboutStandardDeviationCalculator() {
           for any type of dataset.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Standard Deviation Calculator</h3>
         <p>
           Enter your dataset into the text box. The numbers can be separated by
           commas, spaces, or line breaks. The calculator will automatically
           compute the standard deviation, variance, and mean of your data.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Standard Deviation FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">

@@ -52,7 +52,7 @@ export default function AboutExponentPowerCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Exponents &amp; Powers</CardTitle>
+        <CardTitle as="h2">About Exponents &amp; Powers</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -68,7 +68,7 @@ export default function AboutExponentPowerCalculator() {
           scaling).
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Exponent & Power Calculator</h3>
         <ol>
           <li>
             Enter the <strong>Base (x)</strong>, which is the number being
@@ -84,7 +84,7 @@ export default function AboutExponentPowerCalculator() {
           power of `y` (x^y).
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Exponent & Power FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What does an exponent mean?</AccordionTrigger>

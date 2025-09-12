@@ -44,7 +44,7 @@ export default function AboutInvestmentReturnCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Return on Investment (ROI)</CardTitle>
+        <CardTitle as="h2">About Return on Investment (ROI)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -59,7 +59,7 @@ export default function AboutInvestmentReturnCalculator() {
           to evaluate the performance of an investment, whether it&apos;s
           stocks, real estate, or a business venture.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the ROI Calculator</h3>
         <ol>
           <li>
             Enter the **Initial Investment** amount. This is the total cost you
@@ -74,7 +74,7 @@ export default function AboutInvestmentReturnCalculator() {
           The calculator will instantly display the net profit or loss and the
           ROI as a percentage.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>ROI FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is the formula for ROI?</AccordionTrigger>

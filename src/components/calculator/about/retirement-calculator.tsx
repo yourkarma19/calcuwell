@@ -68,7 +68,7 @@ export default function AboutRetirementCalculator() {
           today to ensure a comfortable and secure retirement tomorrow.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Retirement Calculator</h3>
         <ol>
           <li>
             Enter your <strong>Current Age</strong> and your desired{" "}
@@ -92,7 +92,7 @@ export default function AboutRetirementCalculator() {
           savings goal, and whether you are on track to meet it.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Retirement Planning FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

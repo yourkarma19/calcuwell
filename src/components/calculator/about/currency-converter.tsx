@@ -57,7 +57,7 @@ export default function AboutCurrencyConverter() {
           convert one currency to another using mock exchange rates. This tool
           helps you understand the true cost of items in your local currency.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Currency Converter</h3>
         <ol>
           <li>
             Enter the <strong>Amount</strong> you wish to convert in the first
@@ -74,7 +74,7 @@ export default function AboutCurrencyConverter() {
           The converted amount will be displayed instantly. Use the swap button
           to quickly reverse the currencies.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Currency Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is an exchange rate?</AccordionTrigger>

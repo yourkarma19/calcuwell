@@ -60,7 +60,7 @@ export default function AboutWorkingDaysCalculator() {
           Sundays) to give you a realistic timeline for work-related tasks.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Working Days Calculator</h3>
         <ol>
           <li>
             Select a <strong>Start Date</strong> and an{" "}
@@ -76,7 +76,7 @@ export default function AboutWorkingDaysCalculator() {
           days in that period.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Working Days FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>Why are working days important?</AccordionTrigger>

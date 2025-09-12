@@ -59,7 +59,7 @@ export default function AboutStockProfitLossCalculator() {
           This gives you a true picture of your net profit or loss and your
           return on investment (ROI).
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Stock Profit/Loss Calculator</h3>
         <ol>
           <li>
             Enter the **Buy Price per Share** and the **Sell Price per Share**.
@@ -74,7 +74,7 @@ export default function AboutStockProfitLossCalculator() {
           The calculator will instantly display the total profit or loss, the
           total cost and proceeds, and the final ROI for the trade.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Stock Profit/Loss FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

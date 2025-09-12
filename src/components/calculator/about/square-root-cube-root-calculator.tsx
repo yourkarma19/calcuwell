@@ -68,14 +68,14 @@ export default function AboutSquareRootCubeRootCalculator() {
           negative inputs, correctly identifying real and imaginary roots.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Root Calculator</h3>
         <p>
           Simply enter a number into the input field. The calculator will
           instantly compute and display both the square root and the cube root
           of the number.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Root Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a square root?</AccordionTrigger>

@@ -68,7 +68,7 @@ export default function AboutHeartRateZoneCalculator() {
           performance. This tool uses the Karvonen formula for a more accurate,
           personalized result.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Heart Rate Zone Calculator</h3>
         <ol>
           <li>Enter your **Age** in years.</li>
           <li>
@@ -80,7 +80,7 @@ export default function AboutHeartRateZoneCalculator() {
           The calculator will instantly display your five training zones and
           your estimated maximum heart rate.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Heart Rate Zone FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What are heart rate zones?</AccordionTrigger>

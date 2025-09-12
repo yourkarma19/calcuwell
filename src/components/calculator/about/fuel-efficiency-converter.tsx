@@ -52,7 +52,7 @@ export default function AboutFuelEfficiencyConverter() {
           manufacturers use different standards, this tool makes it easy to
           compare vehicles on a level playing field.
         </p>
-        <h3>How to Use the Converter</h3>
+        <h3>How to Use the Fuel Efficiency Converter</h3>
         <ol>
           <li>Enter a value in the first input box.</li>
           <li>
@@ -64,7 +64,7 @@ export default function AboutFuelEfficiencyConverter() {
             around).
           </li>
         </ol>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Fuel Efficiency FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

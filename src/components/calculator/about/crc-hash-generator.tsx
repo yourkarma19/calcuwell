@@ -57,12 +57,12 @@ export default function AboutCrcHashGenerator() {
           It&apos;s a fast and easy way to check if data has been accidentally
           changed or corrupted during transfer or storage.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the CRC-32 Hash Generator</h3>
         <p>
           Just type or paste any text into the input box. The calculator will
           instantly generate the 32-bit CRC hash for that text below.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>CRC-32 Hash FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

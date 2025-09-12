@@ -60,7 +60,7 @@ export default function AboutColorConverter() {
           tool helps you find the perfect shade and ensures consistency across
           your projects.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Color Code Converter</h3>
         <ol>
           <li>
             Enter a color value in any of the three formats (HEX, RGB, or HSL).
@@ -78,7 +78,7 @@ export default function AboutColorConverter() {
           and find the exact code you need for your CSS, design software, or
           other digital media.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Color Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

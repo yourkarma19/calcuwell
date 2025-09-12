@@ -59,7 +59,7 @@ export default function AboutPetAgeCalculator() {
           modern and widely accepted method to give you a better understanding
           of your pet&apos;s life stage.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Pet Age Calculator</h3>
         <ol>
           <li>
             Select the <strong>Pet Type</strong> (Dog or Cat).
@@ -73,7 +73,7 @@ export default function AboutPetAgeCalculator() {
           years, helping you better appreciate their current needs and life
           stage.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Pet Age FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

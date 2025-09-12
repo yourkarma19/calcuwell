@@ -67,7 +67,7 @@ export default function AboutOvulationCalculator() {
           conceiving. This calculator is a helpful first step for anyone
           planning a pregnancy.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Ovulation Calculator</h3>
         <ol>
           <li>
             Select the **First Day of Your Last Menstrual Period** from the
@@ -82,7 +82,7 @@ export default function AboutOvulationCalculator() {
           The calculator will instantly estimate your next ovulation date and
           highlight your most fertile window.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Ovulation & Fertility FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is ovulation?</AccordionTrigger>

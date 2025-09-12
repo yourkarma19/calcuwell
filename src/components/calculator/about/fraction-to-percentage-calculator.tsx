@@ -34,7 +34,7 @@ export default function AboutFractionToPercentageCalculator() {
             discounts. The concept is straightforward: a percentage is simply a
             fraction with a denominator of 100.
           </p>
-          <h3>How to Use the Calculator</h3>
+          <h3>How to Use the Fraction to Percentage Calculator</h3>
           <ol>
             <li>Enter the **Numerator** (the top number of the fraction).</li>
             <li>
@@ -44,7 +44,7 @@ export default function AboutFractionToPercentageCalculator() {
               The calculator will instantly show the result as a percentage.
             </li>
           </ol>
-          <h3>The Formula</h3>
+          <h3>The Conversion Formula</h3>
           <p>The conversion is done using a simple formula:</p>
           <p className="font-mono bg-muted p-2 rounded-md text-center">
             Percentage = (Numerator / Denominator) × 100

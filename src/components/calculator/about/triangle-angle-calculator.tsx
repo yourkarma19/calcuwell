@@ -50,7 +50,7 @@ export default function AboutTriangleAngleCalculator() {
           of Cosines and the Law of Sines, which are fundamental principles in
           trigonometry.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Triangle Angle Calculator</h3>
         <ol>
           <li>
             Select the type of information you have from the dropdown menu
@@ -59,7 +59,7 @@ export default function AboutTriangleAngleCalculator() {
           <li>Enter the known values for the sides and/or angles.</li>
           <li>The calculator will instantly compute the unknown angles.</li>
         </ol>
-        <h3>Understanding the Formulas</h3>
+        <h3>Triangle Angle FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

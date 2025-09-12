@@ -57,7 +57,7 @@ export default function AboutCalorieNeedsCalculator() {
           should eat per day to maintain your current weight. It uses the
           Mifflin-St Jeor equation, a widely accepted formula.
         </p>
-        <h3>How to Use This Calorie Needs Tool</h3>
+        <h3>How to Use the Calorie Needs Calculator</h3>
         <p>
           To find your daily calorie needs, enter your age, gender, height,
           weight, and activity level. The calculator will then show an estimate

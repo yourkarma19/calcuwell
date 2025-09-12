@@ -58,7 +58,7 @@ export default function AboutSalaryCalculator() {
           essential for budgeting, financial planning, and evaluating job
           offers.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Salary Calculator</h3>
         <ol>
           <li>
             Enter your **Gross Salary** and select whether it's an annual
@@ -76,7 +76,7 @@ export default function AboutSalaryCalculator() {
           The calculator will instantly show you your net take-home pay for the
           selected period, as well as an annual summary.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Salary FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

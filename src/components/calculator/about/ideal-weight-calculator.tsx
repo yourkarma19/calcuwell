@@ -44,7 +44,7 @@ export default function AboutIdealWeightCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Ideal Weight</CardTitle>
+        <CardTitle as="h2">About Ideal Weight</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -59,7 +59,7 @@ export default function AboutIdealWeightCalculator() {
           method, to give you a reference point for your health and fitness
           goals.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Ideal Weight Calculator</h3>
         <ol>
           <li>Select your **Gender**.</li>
           <li>Enter your **Height** in centimeters.</li>
@@ -68,7 +68,7 @@ export default function AboutIdealWeightCalculator() {
           The calculator will instantly display your estimated ideal weight and
           a healthy weight range.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Ideal Weight FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

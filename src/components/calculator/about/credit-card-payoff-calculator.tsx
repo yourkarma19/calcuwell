@@ -58,7 +58,7 @@ export default function AboutCreditCardPayoffCalculator() {
           pay, highlighting the true cost of carrying debt. This tool is
           essential for creating a debt-reduction strategy.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Credit Card Payoff Calculator</h3>
         <ol>
           <li>Enter your current **Card Balance**.</li>
           <li>Input your card's annual interest rate (**APR**).</li>
@@ -68,7 +68,7 @@ export default function AboutCreditCardPayoffCalculator() {
           The calculator will instantly show you how many months it will take to
           be debt-free and the total interest you will have paid.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Credit Card Payoff FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

@@ -17,7 +17,7 @@ export default function AboutPetCareCostCalculator() {
           you&apos;re financially prepared to give your furry friend the best
           care possible.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Pet Care Cost Calculator</h3>
         <ol>
           <li>Start by selecting your **Pet Type**.</li>
           <li>Enter your estimated **Monthly Food Cost**.</li>

@@ -58,7 +58,7 @@ export default function AboutTimeConverter() {
           planning a timeline, or just curious, this calculator simplifies
           time-related conversions from seconds to years.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Time Converter</h3>
         <ol>
           <li>
             Enter the numeric value you want to convert in the &quot;From&quot;
@@ -73,7 +73,7 @@ export default function AboutTimeConverter() {
           The converted time will be displayed automatically. You can use the
           swap button to quickly reverse the conversion direction.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Time Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

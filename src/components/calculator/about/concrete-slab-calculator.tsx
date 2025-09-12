@@ -1,3 +1,4 @@
+
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -19,7 +20,7 @@ export default function AboutConcreteSlabCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Concrete Calculator</CardTitle>
+        <CardTitle as="h2">About the Concrete Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
@@ -28,7 +29,7 @@ export default function AboutConcreteSlabCalculator() {
           essential tool for any DIY or professional construction project,
           ensuring you purchase the right amount of material without waste.
         </p>
-        <h3>How to Use It</h3>
+        <h3>How to Use the Concrete Calculator</h3>
         <ol>
           <li>
             Select your **Project Shape** (Slab, Footer, or round Post Hole).

@@ -44,7 +44,7 @@ export default function AboutFactorialCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Factorial Calculator</CardTitle>
+        <CardTitle as="h2">About the Factorial Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -59,7 +59,7 @@ export default function AboutFactorialCalculator() {
           mathematicians.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Factorial Calculator</h3>
         <p>Using the tool is simple:</p>
         <ol>
           <li>
@@ -72,7 +72,7 @@ export default function AboutFactorialCalculator() {
           errors (around 170!).
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Factorial FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

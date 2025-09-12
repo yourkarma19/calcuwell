@@ -50,7 +50,7 @@ export default function AboutPressureConverter() {
           of an object per unit area. This calculator allows you to quickly
           convert between various metric and imperial units of pressure.
         </p>
-        <h3>How to Use the Converter</h3>
+        <h3>How to Use the Pressure Converter</h3>
         <ol>
           <li>
             Enter the value you wish to convert in the &quot;From&quot; field.
@@ -62,7 +62,7 @@ export default function AboutPressureConverter() {
           The result will be calculated and displayed instantly. Use the swap
           button to reverse the direction of the conversion.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Pressure Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

@@ -44,7 +44,7 @@ export default function AboutLeanBodyMassCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Lean Body Mass (LBM)</CardTitle>
+        <CardTitle as="h2">About Lean Body Mass (LBM)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -59,7 +59,7 @@ export default function AboutLeanBodyMassCalculator() {
           formula, a widely recognized estimation method based on weight and
           height.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the LBM Calculator</h3>
         <ol>
           <li>Select your **Gender**.</li>
           <li>Enter your **Weight** in kilograms (kg).</li>
@@ -69,7 +69,7 @@ export default function AboutLeanBodyMassCalculator() {
           The calculator will instantly estimate your LBM and provide an
           estimated body fat percentage derived from it.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>LBM FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

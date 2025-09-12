@@ -60,7 +60,7 @@ export default function AboutTypingSpeedCalculator() {
           accuracy, boosting your productivity in any task that involves typing.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Typing Speed Calculator</h3>
         <ol>
           <li>Click on the text area to begin the test.</li>
           <li>
@@ -81,7 +81,7 @@ export default function AboutTypingSpeedCalculator() {
           </li>
         </ol>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Typing Speed FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

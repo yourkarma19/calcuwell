@@ -44,7 +44,7 @@ export default function AboutProportionCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Proportions</CardTitle>
+        <CardTitle as="h2">About Proportions</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -59,7 +59,7 @@ export default function AboutProportionCalculator() {
           students, cooks, engineers, and anyone who needs to scale quantities.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Proportion Calculator</h3>
         <ol>
           <li>
             Enter any three known values into the boxes for A, B, C, and D.
@@ -78,7 +78,7 @@ export default function AboutProportionCalculator() {
           answer.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Proportion Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">

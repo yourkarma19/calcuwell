@@ -60,7 +60,7 @@ export default function AboutBreakEvenPointCalculator() {
           setting prices, managing costs, and making informed business
           decisions.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Break-Even Point Calculator</h3>
         <ol>
           <li>
             Enter your **Total Fixed Costs**. These are expenses that do not
@@ -76,7 +76,7 @@ export default function AboutBreakEvenPointCalculator() {
           The calculator will instantly show you the number of units you need to
           sell and the total revenue required to break even.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Break-Even Point FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

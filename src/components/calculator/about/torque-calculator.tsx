@@ -59,7 +59,7 @@ export default function AboutTorqueCalculator() {
           perpendicularly to a lever arm.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Torque Calculator</h3>
         <ol>
           <li>
             Enter the amount of <strong>Force</strong> being applied in Newtons
@@ -76,7 +76,7 @@ export default function AboutTorqueCalculator() {
           Newton-meters (Nm).
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Torque Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is the formula for Torque?</AccordionTrigger>

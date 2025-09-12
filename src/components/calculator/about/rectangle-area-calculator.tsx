@@ -68,14 +68,14 @@ export default function AboutRectangleAreaCalculator() {
           for area and perimeter.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Rectangle Calculator</h3>
         <p>
           Simply enter the <strong>length</strong> and <strong>width</strong> of
           the rectangle into the designated fields. The calculator will
           automatically compute the area and perimeter.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Rectangle Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

@@ -8,7 +8,7 @@ export default function AboutInterceptCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle as="h2">What Are Intercepts?</CardTitle>
+          <CardTitle as="h2">What Are X and Y Intercepts?</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <p>

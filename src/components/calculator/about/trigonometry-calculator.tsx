@@ -61,7 +61,7 @@ export default function AboutTrigonometryCalculator() {
           arctan) for any angle, specified in either degrees or radians.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Trigonometry Calculator</h3>
         <ol>
           <li>
             Select the trigonometric **Function** you want to use from the
@@ -75,7 +75,7 @@ export default function AboutTrigonometryCalculator() {
         </ol>
         <p>The result of the calculation is displayed instantly.</p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Trigonometry FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

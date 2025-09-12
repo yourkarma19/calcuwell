@@ -44,7 +44,7 @@ export default function AboutPercentageCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Percentage Calculator</CardTitle>
+        <CardTitle as="h2">About the Percentage Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -82,7 +82,7 @@ export default function AboutPercentageCalculator() {
           </li>
         </ol>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Percentage Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">

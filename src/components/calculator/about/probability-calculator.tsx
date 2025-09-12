@@ -44,7 +44,7 @@ export default function AboutProbabilityCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Probability Calculator</CardTitle>
+        <CardTitle as="h2">About the Probability Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -60,7 +60,7 @@ export default function AboutProbabilityCalculator() {
           happening.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Probability Calculator</h3>
         <ol>
           <li>
             Select the **Mode**: choose between &quot;Single Event&quot; or
@@ -80,7 +80,7 @@ export default function AboutProbabilityCalculator() {
           &quot;A or B.&quot;
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Probability FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

@@ -61,7 +61,7 @@ export default function AboutMixedNumberCalculator() {
           is a fundamental skill in mathematics, bridging the gap between whole
           quantities and fractional parts.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Mixed Number Calculator</h3>
         <ol>
           <li>
             Enter the <strong>whole number</strong> part of your mixed number.
@@ -80,7 +80,7 @@ export default function AboutMixedNumberCalculator() {
           calculations. This is the first step required before performing
           operations like multiplication or division on mixed numbers.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Mixed Number FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What Are Mixed Numbers?</AccordionTrigger>

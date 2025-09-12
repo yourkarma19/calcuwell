@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -11,7 +12,7 @@ export default function AboutFileSizeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About File Size & Bitrate</CardTitle>
+        <CardTitle as="h2">About File Size & Bitrate</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
@@ -20,7 +21,7 @@ export default function AboutFileSizeCalculator() {
           (bitrate). This allows you to plan for storage space or data usage
           when downloading or creating media.
         </p>
-        <h3>How to Use It</h3>
+        <h3>How to Use the File Size Calculator</h3>
         <ol>
           <li>Enter the **Duration** of the file (e.g., 3 minutes).</li>
           <li>Enter the **Bitrate** of the file (e.g., 128 kbit/s).</li>

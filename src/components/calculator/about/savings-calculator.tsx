@@ -45,7 +45,7 @@ export default function AboutSavingsCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Savings Growth Calculator</CardTitle>
+        <CardTitle as="h2">About the Savings Growth Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -61,7 +61,7 @@ export default function AboutSavingsCalculator() {
           long-term goals like retirement, a home down payment, or a
           child's education.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Savings Calculator</h3>
         <ol>
           <li>
             Enter your **Initial Amount** (what you're starting with).
@@ -77,7 +77,7 @@ export default function AboutSavingsCalculator() {
           The calculator will instantly show the future value of your savings
           and a breakdown of your contributions versus the interest earned.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Savings Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

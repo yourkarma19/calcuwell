@@ -59,7 +59,7 @@ export default function AboutConeVolumeCalculator() {
           students and professionals who need quick and accurate calculations.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Cone Calculator</h3>
         <ol>
           <li>
             Enter the <strong>Radius</strong> of the cone&apos;s circular base.
@@ -74,7 +74,7 @@ export default function AboutConeVolumeCalculator() {
           total surface area of the cone.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Cone Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

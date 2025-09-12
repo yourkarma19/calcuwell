@@ -44,7 +44,7 @@ export default function AboutRatioCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Ratios</CardTitle>
+        <CardTitle as="h2">About Ratios</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -61,7 +61,7 @@ export default function AboutRatioCalculator() {
           proportions regularly.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Ratio Calculator</h3>
         <ol>
           <li>
             Enter the values for <strong>A</strong>, <strong>B</strong>, and{" "}
@@ -80,7 +80,7 @@ export default function AboutRatioCalculator() {
           while maintaining its aspect ratio.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Ratio Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

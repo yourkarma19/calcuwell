@@ -56,7 +56,7 @@ export default function AboutGpaCalculator() {
           success. It's a number that shows your average grade, weighted by
           the number of credits for each course.
         </p>
-        <h3>How to Use This GPA Tool</h3>
+        <h3>How to Use This GPA Calculator</h3>
         <p>
           Simply enter your courses, the grade you received, and the number of
           credits for each course. The calculator will then compute your GPA for

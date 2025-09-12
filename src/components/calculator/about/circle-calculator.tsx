@@ -60,7 +60,7 @@ export default function AboutCircleCalculator() {
           shapes.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Circle Calculator</h3>
         <ol>
           <li>
             Select the **Input Type** that corresponds to the measurement you
@@ -73,7 +73,7 @@ export default function AboutCircleCalculator() {
           four properties of the circle.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Circle Formulas FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Pi (π)?</AccordionTrigger>

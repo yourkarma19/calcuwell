@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -11,7 +12,7 @@ export default function AboutInflationCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Inflation Calculator</CardTitle>
+        <CardTitle as="h2">About the Inflation Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
@@ -21,7 +22,7 @@ export default function AboutInflationCalculator() {
           different years. This is essential for historical analysis, financial
           planning, and understanding the real value of money.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Inflation Calculator</h3>
         <ol>
           <li>Enter the **Amount** of money you want to analyze.</li>
           <li>Select a **Start Year** and an **End Year**.</li>
@@ -31,7 +32,7 @@ export default function AboutInflationCalculator() {
           the end year, accounting for the cumulative inflation between those
           two periods.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Inflation Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is inflation?</AccordionTrigger>

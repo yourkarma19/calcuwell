@@ -59,7 +59,7 @@ export default function AboutCountdownTimer() {
           personal milestones, holidays, or important deadlines.
         </p>
 
-        <h3>How to Use the Timer</h3>
+        <h3>How to Use the Countdown Timer</h3>
         <ol>
           <li>
             Use the calendar to select the <strong>Target Date</strong> of your
@@ -74,7 +74,7 @@ export default function AboutCountdownTimer() {
           must remain open for the timer to continue running.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Countdown Timer FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>How does the timer work?</AccordionTrigger>

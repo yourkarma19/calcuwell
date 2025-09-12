@@ -60,7 +60,7 @@ export default function AboutRomanNumeralConverter() {
           between 1 and 3,999.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Roman Numeral Converter</h3>
         <ol>
           <li>
             Enter either a <strong>Number</strong> (e.g., 2024) or a{" "}
@@ -77,7 +77,7 @@ export default function AboutRomanNumeralConverter() {
         </ol>
         <p>The calculator validates input in real-time to ensure accuracy.</p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Roman Numeral FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>How do Roman numerals work?</AccordionTrigger>

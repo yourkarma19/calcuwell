@@ -96,7 +96,7 @@ export default function AboutBMICalculator() {
             </li>
           </ol>
 
-          <h3>Frequently Asked Questions (FAQs)</h3>
+          <h3>BMI Calculator FAQs</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-semibold">

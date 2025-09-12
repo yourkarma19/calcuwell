@@ -58,7 +58,7 @@ export default function AboutBusinessDayCalculator() {
           of working days, automatically ignoring weekends (Saturdays and
           Sundays) to give you a realistic date for business-related tasks.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Business Day Calculator</h3>
         <ol>
           <li>
             Select the <strong>Start Date</strong> from which you want to
@@ -74,7 +74,7 @@ export default function AboutBusinessDayCalculator() {
           This is perfect for calculating project deadlines, shipping estimates,
           and contract timelines.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Business Day Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

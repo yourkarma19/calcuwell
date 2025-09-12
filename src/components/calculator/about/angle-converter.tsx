@@ -60,7 +60,7 @@ export default function AboutAngleConverter() {
           to prevent errors in technical work.
         </p>
 
-        <h3>How to Use the Converter</h3>
+        <h3>How to Use the Angle Converter</h3>
         <p>
           Enter a value in either the &quot;Degrees&quot; or &quot;Radians&quot;
           field. The other field will update automatically with the converted
@@ -68,7 +68,7 @@ export default function AboutAngleConverter() {
           conversion.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Angle Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What are degrees and radians?</AccordionTrigger>

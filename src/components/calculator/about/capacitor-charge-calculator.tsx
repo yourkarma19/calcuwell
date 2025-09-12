@@ -58,14 +58,14 @@ export default function AboutCapacitorChargeCalculator() {
           "charge." This tool shows you how much charge it has and the
           current flowing at any given time.
         </p>
-        <h3>How to Use It</h3>
+        <h3>How to Use the Capacitor Charge Calculator</h3>
         <p>
           Enter the voltage of your power source, the resistance, the
           capacitance, and the amount of time that has passed since the circuit
           was turned on. The calculator will do the rest.
         </p>
 
-        <h3>Frequently Asked Questions</h3>
+        <h3>RC Circuit FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is an RC circuit?</AccordionTrigger>

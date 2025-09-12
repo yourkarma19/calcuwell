@@ -60,7 +60,7 @@ export default function AboutWaterIntakeCalculator() {
           solid baseline for your hydration goals.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Water Intake Calculator</h3>
         <ol>
           <li>Enter your **Age** in years.</li>
           <li>Enter your **Weight** in kilograms.</li>
@@ -73,7 +73,7 @@ export default function AboutWaterIntakeCalculator() {
           liters.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Water Intake FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

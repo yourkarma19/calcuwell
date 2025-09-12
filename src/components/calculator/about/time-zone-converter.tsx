@@ -36,7 +36,7 @@ export default function AboutTimeZoneConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Time Zones</CardTitle>
+        <CardTitle as="h2">About Time Zones</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,7 +52,7 @@ export default function AboutTimeZoneConverter() {
           just staying in touch with friends and family abroad.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Time Zone Converter</h3>
         <ol>
           <li>
             In the &quot;From&quot; section, select your starting time zone,
@@ -65,7 +65,7 @@ export default function AboutTimeZoneConverter() {
           <li>The converted date and time will be displayed instantly.</li>
         </ol>
 
-        <h3>Frequently Asked Questions</h3>
+        <h3>Time Zone FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is UTC?</AccordionTrigger>

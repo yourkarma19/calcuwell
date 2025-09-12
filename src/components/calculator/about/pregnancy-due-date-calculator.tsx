@@ -59,7 +59,7 @@ export default function AboutPregnancyDueDateCalculator() {
           timeline. It's a great starting point for expectant parents
           planning for their new arrival.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Due Date Calculator</h3>
         <ol>
           <li>
             First, select your **Calculation Method**. You can choose between
@@ -69,7 +69,7 @@ export default function AboutPregnancyDueDateCalculator() {
           <li>Enter the appropriate date using the calendar.</li>
         </ol>
         <p>The calculator will instantly display your estimated due date.</p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Due Date FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

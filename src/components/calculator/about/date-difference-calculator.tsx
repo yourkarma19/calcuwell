@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -11,7 +12,7 @@ export default function AboutDateDifferenceCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Date Difference Calculator</CardTitle>
+        <CardTitle as="h2">About the Date Difference Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
@@ -20,7 +21,7 @@ export default function AboutDateDifferenceCalculator() {
           calculating an age, or checking the time between historical events,
           this tool gives you a full breakdown in several units.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Date Difference Calculator</h3>
         <ol>
           <li>
             Choose a **Start Date** and an **End Date** from the calendars.
@@ -31,7 +32,7 @@ export default function AboutDateDifferenceCalculator() {
           The results will show the total duration in years, months, weeks,
           days, hours, and minutes.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Date Difference FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

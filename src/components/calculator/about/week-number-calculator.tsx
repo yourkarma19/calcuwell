@@ -45,7 +45,7 @@ export default function AboutWeekNumberCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Week Number Calculation</CardTitle>
+        <CardTitle as="h2">About Week Number Calculation</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -59,7 +59,7 @@ export default function AboutWeekNumberCalculator() {
           organized by week number.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Week Number Calculator</h3>
         <ol>
           <li>
             Select the **Date** for which you want to find the week number.
@@ -71,7 +71,7 @@ export default function AboutWeekNumberCalculator() {
           date and year.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Week Number FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is the ISO 8601 standard?</AccordionTrigger>

@@ -58,7 +58,7 @@ export default function AboutTipCalculator() {
           quickly and accurately figure out what everyone owes without any
           hassle.
         </p>
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Tip Calculator</h3>
         <ol>
           <li>Enter the total **Bill Amount**.</li>
           <li>
@@ -74,7 +74,7 @@ export default function AboutTipCalculator() {
           The calculator will instantly display the tip amount, the total bill
           including the tip, and the amount each person should pay.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Tip Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

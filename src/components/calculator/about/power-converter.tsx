@@ -58,7 +58,7 @@ export default function AboutPowerConverter() {
           calculator allows for quick and accurate conversion between various
           common units, such as watts, kilowatts, and horsepower.
         </p>
-        <h3>How to Use the Converter</h3>
+        <h3>How to Use the Power Converter</h3>
         <ol>
           <li>
             Enter the value you want to convert in the "From" field.
@@ -70,7 +70,7 @@ export default function AboutPowerConverter() {
           The converted value will be displayed instantly. Use the swap button
           to easily reverse the units.
         </p>
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Power Conversion FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a Watt?</AccordionTrigger>

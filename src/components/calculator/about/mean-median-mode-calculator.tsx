@@ -45,7 +45,7 @@ export default function AboutMeanMedianModeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Understanding Mean, Median, and Mode</CardTitle>
+        <CardTitle as="h2">Understanding Mean, Median, and Mode</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -62,7 +62,7 @@ export default function AboutMeanMedianModeCalculator() {
           of your data.
         </p>
 
-        <h3>How to Use the Calculator</h3>
+        <h3>How to Use the Mean, Median, and Mode Calculator</h3>
         <p>
           Simply enter your set of numbers into the text box. You can separate
           the numbers with commas, spaces, or line breaks. The calculator will
@@ -70,7 +70,7 @@ export default function AboutMeanMedianModeCalculator() {
           and count in real-time.
         </p>
 
-        <h3>Frequently Asked Questions (FAQs)</h3>
+        <h3>Mean, Median, and Mode FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">

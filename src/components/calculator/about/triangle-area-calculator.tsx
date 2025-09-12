@@ -36,7 +36,7 @@ export default function AboutTriangleAreaCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Triangle Area Calculation</CardTitle>
+        <CardTitle as="h2">About Triangle Area Calculation</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -49,7 +49,7 @@ export default function AboutTriangleAreaCalculator() {
           the base and height, all three sides (SSS), or two sides and the angle
           between them (SAS), this calculator can help you find the solution.
         </p>
-        <h3>How It Works</h3>
+        <h3>How the Triangle Area Calculator Works</h3>
         <p>The calculator uses the standard formula for each method:</p>
         <ul>
           <li>
@@ -65,7 +65,7 @@ export default function AboutTriangleAreaCalculator() {
           </li>
         </ul>
 
-        <h3>Frequently Asked Questions</h3>
+        <h3>Triangle Area FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Heron's formula?</AccordionTrigger>
