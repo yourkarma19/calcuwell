@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you calculate a percentage manually?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To find the percentage of a number, convert the percentage to a decimal by dividing it by 100, then multiply it by the number. For example, to find 25% of 200, you would calculate 0.25 * 200, which equals 50.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you calculate percentage change?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To calculate the percentage change, subtract the old value from the new value, then divide that result by the old value. Finally, multiply by 100. The formula is: ((New Value - Old Value) / Old Value) * 100.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you calculate a reverse percentage?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To find the original amount before a percentage was added, you can use the formula: Original Amount = Final Amount / (1 + (Percentage / 100)). For example, if an item costs ₹110 after a 10% tax, the original price was 110 / (1 + 0.10) = 100.",
+      },
+    },
+  ],
+};
 
 export default function AboutPercentageCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutPercentageCalculator() {
         <CardTitle>About the Percentage Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Percentage Calculator is a versatile tool designed to solve a
           variety of percentage-related problems that we encounter in daily

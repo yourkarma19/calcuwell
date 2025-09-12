@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you add fractions with different denominators?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To add fractions with different denominators, you must first find a common denominator. This is a number that both denominators can divide into. Once both fractions have the same denominator, you can add their numerators. For example, to add 1/2 + 1/4, you convert 1/2 to 2/4. Then, you add the numerators: 2/4 + 1/4 = 3/4.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you simplify a fraction?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To simplify a fraction, you find the largest number that divides both the numerator and the denominator evenly. This is called the Greatest Common Divisor (GCD). You then divide both the top and bottom numbers by the GCD. For example, for the fraction 12/16, the GCD is 4. Dividing both parts by 4 gives you the simplified fraction 3/4.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between a proper and improper fraction?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A proper fraction is one where the top number is smaller than the bottom number (e.g., 3/4). An improper fraction is one where the top number is larger than or equal to the bottom number (e.g., 5/4).",
+      },
+    },
+  ],
+};
 
 export default function AboutFractionCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutFractionCalculator() {
         <CardTitle>About Fraction Calculations</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Fraction Calculator is designed to simplify math with fractions.
           It provides instant and accurate results for adding, subtracting,

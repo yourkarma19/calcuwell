@@ -8,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is ASCII?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ASCII (American Standard Code for Information Interchange) is a system that gives a unique number to each letter, digit, and symbol. For example, the capital letter 'A' is 65. This allows computers to store and handle text as numbers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is ASCII important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ASCII was one of the first systems that let different computers share text information. While modern systems use newer codes like UTF-8, ASCII is still a basic concept in computing, and the first 128 characters of UTF-8 are the same as ASCII.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is an ASCII code?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An ASCII code is the number for a character. For example, the text 'Hello' is represented by the ASCII codes 72 101 108 108 111. Each number matches a specific character.",
+      },
+    },
+  ],
+};
 
 export default function AboutAsciiTextConverter() {
   return (
@@ -16,6 +48,10 @@ export default function AboutAsciiTextConverter() {
         <CardTitle as="h2">About the ASCII &amp; Text Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our ASCII to Text Converter is a simple tool for developers, data
           analysts, and students. It lets you quickly convert between plain text

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a Ratio? A Simple Explanation with Examples",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A ratio compares two quantities. For example, if there are 8 girls and 12 boys, the ratio of girls to boys is 8:12. This can be simplified to 2:3 by dividing both numbers by their greatest common divisor (4).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How to Simplify a Ratio",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To simplify a ratio, you find the largest number that both parts of the ratio can be divided by without a remainder (the Greatest Common Divisor). For the ratio 12:18, the GCD is 6. Dividing both parts by 6 gives the simplified ratio 2:3.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Understanding Aspect Ratios in Screens (e.g., 16:9 vs 4:3)",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Aspect ratio describes the relationship between the width and height of a screen. A 16:9 ratio, common for modern TVs, means for every 16 units of width, there are 9 units of height. An older, squarish TV used a 4:3 aspect ratio.",
+      },
+    },
+  ],
+};
 
 export default function AboutRatioCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutRatioCalculator() {
         <CardTitle>About Ratios</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our <strong>Ratio Calculator</strong> is a versatile tool designed to
           simplify ratios and solve for missing values in a proportion. Ratios

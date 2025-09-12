@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are degrees and radians?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Degrees (°) are the most common unit for measuring angles, with a full circle containing 360°. Radians (rad) are the standard unit in mathematics, with a full circle containing 2π radians. One radian is the angle where the arc length equals the radius.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why do mathematicians prefer radians?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Radians are preferred in higher-level mathematics because they simplify many important formulas in calculus and trigonometry, creating more natural and elegant equations.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the conversion formula?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The conversion is based on 180° = π radians. To convert degrees to radians: Radians = Degrees × (π / 180). To convert radians to degrees: Degrees = Radians × (180 / π).",
+      },
+    },
+  ],
+};
 
 export default function AboutAngleConverter() {
   return (
@@ -14,6 +47,10 @@ export default function AboutAngleConverter() {
         <CardTitle>About the Angle Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Angle Converter is a simple yet essential tool for students,
           engineers, and scientists who need to switch between the two most

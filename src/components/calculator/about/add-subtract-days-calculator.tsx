@@ -7,6 +7,30 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does the date calculator work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This tool simply adds or subtracts the number of days you enter from a given start date. It automatically handles all month and year changes, including leap years, so you get an accurate result every time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is this tool used for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It is perfect for many planning tasks, such as scheduling appointments (e.g., a 60-day follow-up), setting project deadlines (e.g., finding the date 90 days from today), planning events or tracking personal goals, and calculating return periods or warranty expiration dates.",
+      },
+    },
+  ],
+};
 
 export default function AboutAddSubtractDaysCalculator() {
   return (
@@ -15,6 +39,10 @@ export default function AboutAddSubtractDaysCalculator() {
         <CardTitle as="h2">About the Date Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Add/Subtract Days Calculator is a simple tool to find a future or
           past date. It is great for setting a deadline, scheduling a follow-up,

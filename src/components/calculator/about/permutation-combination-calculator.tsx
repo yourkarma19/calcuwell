@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -7,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Permutation vs. Combination: What's the Difference?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use a Permutation when the order of selection is important (e.g., arranging books on a shelf, 1st/2nd/3rd place winners). Use a Combination when the order of selection does not matter (e.g., picking a team, choosing pizza toppings).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the formulas for nPr and nCr?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Permutation (nPr): n! / (n-r)! Combination (nCr): n! / (r! * (n-r)!)",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a factorial (!)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A factorial is the product of all positive integers up to that number (e.g., 5! = 5×4×3×2×1). They represent the total number of ways to arrange a set of items.",
+      },
+    },
+  ],
+};
 
 export default function AboutPermutationCombinationCalculator() {
   return (
@@ -15,6 +48,10 @@ export default function AboutPermutationCombinationCalculator() {
         <CardTitle>About Permutations &amp; Combinations</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The **Permutation and Combination Calculator** is a tool used in
           combinatorics and probability to figure out the number of ways a

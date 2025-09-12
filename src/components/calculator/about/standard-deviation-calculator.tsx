@@ -1,4 +1,6 @@
+
 "use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Standard Deviation, in Simple Terms?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Standard deviation is a measure of how spread out numbers are from their average (mean). A low standard deviation means the numbers are very close to the average, indicating consistency. A high standard deviation means the numbers are spread out over a wider range, indicating variability.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What's the Difference Between Sample and Population Standard Deviation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use Population standard deviation (σ) when your data represents the entire group you are interested in. Use Sample standard deviation (s) when your data is a smaller sample of a larger population. The sample formula uses n-1 in the denominator for a better, unbiased estimate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is standard deviation important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's crucial in many fields. In finance, it measures the volatility of an investment. In manufacturing, it's used for quality control to ensure products are consistent. In science, it helps determine if the results of an experiment are statistically significant.",
+      },
+    },
+  ],
+};
 
 export default function AboutStandardDeviationCalculator() {
   return (
@@ -14,6 +48,10 @@ export default function AboutStandardDeviationCalculator() {
         <CardTitle>About Standard Deviation</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our <strong>Standard Deviation Calculator</strong> is a powerful
           statistical tool that measures the amount of variation or dispersion

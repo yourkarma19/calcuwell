@@ -1,4 +1,6 @@
+
 "use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Mean vs. Median vs. Mode: What's the Difference?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The mean is the arithmetic average of all numbers. The median is the middle value when the data is sorted. The mode is the number that appears most frequently in the set.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "When should I use mean vs. median?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use the mean for data that is symmetrically distributed without extreme outliers. Use the median for skewed data, such as income levels or house prices, because it isn't affected by a few extremely high or low values.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What if there is no mode?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If no number in the dataset repeats, then there is no mode. A dataset can also have more than one mode (bimodal or multimodal) if multiple numbers appear with the same highest frequency.",
+      },
+    },
+  ],
+};
 
 export default function AboutMeanMedianModeCalculator() {
   return (
@@ -14,6 +48,10 @@ export default function AboutMeanMedianModeCalculator() {
         <CardTitle>Understanding Mean, Median, and Mode</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our <strong>Mean, Median, and Mode Calculator</strong> is a
           fundamental statistical tool that helps you understand the center of a

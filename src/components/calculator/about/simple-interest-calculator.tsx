@@ -1,5 +1,6 @@
 
 "use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the formula for simple interest?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula is I = P × R × T, where I is the interest, P is the principal, R is the annual interest rate in decimal form, and T is the time period in years.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the main difference between simple and compound interest?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Simple interest is calculated only on the original principal amount. Compound interest is calculated on the principal and also on the accumulated interest from previous periods, leading to exponential growth over time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "When is simple interest typically used?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Simple interest is most commonly used for short-term loans or financial products. For example, car loans and some personal loans often use simple interest.",
+      },
+    },
+  ],
+};
 
 export default function AboutSimpleInterestCalculator() {
   return (
@@ -15,6 +48,10 @@ export default function AboutSimpleInterestCalculator() {
         <CardTitle as="h2">Understanding Simple Interest</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Simple Interest Calculator</strong> provides a
           straightforward way to determine the interest earned on a principal

@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -7,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a standard drink?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A standard drink in most countries contains approximately 14 grams of pure alcohol. This is equivalent to a 12-ounce (355 ml) beer with 5% alcohol, a 5-ounce (150 ml) glass of wine with 12% alcohol, or a 1.5-ounce (44 ml) shot of 80-proof (40%) distilled spirits.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is this BAC calculator only an estimate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Many individual factors can affect your BAC that this calculator does not account for. These include your metabolism, whether you've eaten recently, your body fat percentage, and any medications you may be taking. The only way to know your true BAC is with a calibrated breathalyzer or blood test.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does gender affect BAC?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "On average, women have a higher percentage of body fat and less body water than men of the same weight. Since alcohol is water-soluble, it becomes more concentrated in a woman's body, leading to a higher BAC from the same amount of alcohol.",
+      },
+    },
+  ],
+};
 
 export default function AboutBacCalculator() {
   return (
@@ -15,6 +48,10 @@ export default function AboutBacCalculator() {
         <CardTitle>About Blood Alcohol Content (BAC)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Blood Alcohol Content (BAC) calculator provides an{" "}
           <strong>estimate</strong> of your blood alcohol level based on the

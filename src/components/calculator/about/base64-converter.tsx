@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Base64 and why is it used?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Base64 is an encoding system that turns binary data into a set of 64 ASCII characters. This makes it safe for use in text-based systems like email (MIME) or for embedding data directly into HTML or CSS files. It prevents data from being changed or corrupted during transfer.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Base64 a form of encryption?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, Base64 is an encoding, not an encryption. It's a way to represent data, not secure it. Anyone can decode a Base64 string back to its original form, so it offers no privacy. For security, you should use an encryption algorithm like AES.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a Data URI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Data URI lets you embed small files, like images, directly into a web page's HTML or CSS code using Base64 encoded data. This can reduce the number of HTTP requests a browser needs to make and speed up page load times for very small files.",
+      },
+    },
+  ],
+};
 
 export default function AboutBase64Converter() {
   return (
@@ -15,6 +47,10 @@ export default function AboutBase64Converter() {
         <CardTitle as="h2">About the Base64 Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Base64 Converter is a key tool for web developers and anyone
           working with data. It allows you to encode data (like images or files)
