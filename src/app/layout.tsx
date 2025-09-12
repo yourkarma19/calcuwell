@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { headers } from "next/headers";
@@ -122,7 +123,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1952235305826490"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           nonce={nonce}
         />
       </body>
