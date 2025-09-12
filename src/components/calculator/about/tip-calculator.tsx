@@ -52,27 +52,19 @@ export default function AboutTipCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our Tip Calculator is a simple and convenient tool for calculating the
-          gratuity on a service bill and splitting the total cost among a group
-          of people. It takes the guesswork out of dining out, ensuring you can
-          quickly and accurately figure out what everyone owes without any
-          hassle.
+          Our Tip Calculator is a simple tool for calculating the gratuity on a
+          service bill and splitting the total cost among a group of people. It
+          takes the guesswork out of dining out.
         </p>
         <h3>How to Use the Tip Calculator</h3>
         <ol>
           <li>Enter the total **Bill Amount**.</li>
-          <li>
-            Use the slider to select the **Tip Percentage** you'd like to
-            leave.
-          </li>
-          <li>
-            Adjust the slider for the **Number of People** to split the bill
-            with.
-          </li>
+          <li>Use the slider to select the **Tip Percentage**.</li>
+          <li>Adjust the slider for the **Number of People**.</li>
         </ol>
         <p>
-          The calculator will instantly display the tip amount, the total bill
-          including the tip, and the amount each person should pay.
+          The calculator will instantly display the tip amount, the total bill,
+          and the amount each person should pay.
         </p>
         <h3>Tip Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -81,10 +73,10 @@ export default function AboutTipCalculator() {
               What is a standard tip percentage?
             </AccordionTrigger>
             <AccordionContent>
-              Tipping customs vary by country and service type. In the United
-              States, for example, a standard tip for restaurant service is
-              typically between 15% and 20% of the pre-tax bill. 15% is often
-              considered average, while 20% or more is for excellent service.
+              Tipping customs vary by country. In the United States, a standard
+              tip for restaurant service is typically between 15% and 20% of
+              the pre-tax bill. 15% is often considered average, while 20% or
+              more is for excellent service.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,19 +86,17 @@ export default function AboutTipCalculator() {
             <AccordionContent>
               It is customary to calculate the tip based on the subtotal of the
               bill, before sales tax is added. However, some people prefer to
-              tip on the total amount for simplicity. This calculator calculates
-              the tip based on the bill amount you enter.
+              tip on the total amount for simplicity.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              How does the &quot;split the bill&quot; feature work?
+              How does the "split the bill" feature work?
             </AccordionTrigger>
             <AccordionContent>
               The calculator first adds the tip amount to the total bill. It
               then divides that new total evenly by the number of people you
-              specify. This gives you the exact amount each person needs to
-              contribute to cover their share of the bill and the tip.
+              specify. This gives you the exact amount each person needs to pay.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

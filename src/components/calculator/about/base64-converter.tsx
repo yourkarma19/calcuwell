@@ -53,13 +53,12 @@ export default function AboutBase64Converter() {
         />
         <p>
           The Base64 Converter is a key tool for web developers. It lets you
-          encode data (like images) into a safe, text-based format. This format
-          can be sent reliably over systems designed for text. You can also
-          decode Base64 strings back to their original form.
+          encode data into a safe, text-based format. You can also decode
+          Base64 strings back to their original form.
         </p>
         <h3>How to Use the Base64 Converter</h3>
         <ol>
-          <li>Enter the text you want to convert into the top input box.</li>
+          <li>Enter text into the top input box.</li>
           <li>
             Click <strong>"Encode"</strong> to turn it into a Base64 string.
           </li>
@@ -75,9 +74,8 @@ export default function AboutBase64Converter() {
             <AccordionTrigger>What is Base64 used for?</AccordionTrigger>
             <AccordionContent>
               Base64 is a system that turns binary data into simple text. This
-              is useful for sending data over systems that are built to handle
-              only text, like email attachments. It prevents data from getting
-              corrupted during transfer.
+              is useful for sending data over systems that only handle text,
+              like email attachments. It prevents data from getting corrupted.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -92,10 +90,9 @@ export default function AboutBase64Converter() {
             <AccordionTrigger>What is a Data URI?</AccordionTrigger>
             <AccordionContent>
               A Data URI lets you embed small files, like images, directly into
-              a web page's HTML or CSS code. The file's data is encoded using
-              Base64. This can reduce the number of HTTP requests a browser
-              needs to make, which can help speed up page load times for very
-              small files.
+              a web page's code. The file's data is encoded using Base64. This
+              can reduce the number of HTTP requests a browser needs to make,
+              which can speed up page load times for small files.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

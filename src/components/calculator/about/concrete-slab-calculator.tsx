@@ -26,8 +26,7 @@ export default function AboutConcreteSlabCalculator() {
         <p>
           This calculator helps you estimate the amount of concrete needed for
           your project. It also tells you how many pre-mixed concrete bags to
-          buy. It's a key tool for any DIY or professional construction project.
-          It helps you buy the right amount of material without waste.
+          buy. This helps you buy the right amount of material without waste.
         </p>
         <h3>How to Use the Concrete Calculator</h3>
         <ol>

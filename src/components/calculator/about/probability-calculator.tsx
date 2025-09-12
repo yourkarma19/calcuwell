@@ -53,74 +53,60 @@ export default function AboutProbabilityCalculator() {
         />
         <p>
           The **Probability Calculator** provides a simple way to compute the
-          likelihood of different outcomes. Probability is a fundamental concept
-          in mathematics and statistics that helps us quantify uncertainty. This
-          tool allows you to calculate the probability of a single event (and
-          its opposite) or the combined probability of two independent events
-          happening.
+          likelihood of different outcomes. Probability helps us quantify
+          uncertainty. This tool allows you to calculate the probability of a
+          single event or the combined probability of two independent events.
         </p>
 
         <h3>How to Use the Probability Calculator</h3>
         <ol>
           <li>
-            Select the **Mode**: choose between &quot;Single Event&quot; or
-            &quot;Two Independent Events&quot;.
+            Select the **Mode**: choose between "Single Event" or "Two
+            Independent Events".
           </li>
-          <li>
-            Enter the probability for **Event A** (a number between 0 and 1).
-          </li>
-          <li>
-            If you chose &quot;Two Independent Events&quot;, also enter the
-            probability for **Event B**.
-          </li>
+          <li>Enter the probability for **Event A** (a number from 0 to 1).</li>
+          <li>If needed, enter the probability for **Event B**.</li>
         </ol>
         <p>
-          The calculator will instantly display the relevant probabilities, such
-          as the probability of &quot;not A,&quot; &quot;A and B,&quot; and
-          &quot;A or B.&quot;
+          The calculator will instantly display the relevant probabilities.
         </p>
 
         <h3>Probability FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              The Basic Formula for Probability Explained
+              The Basic Formula for Probability
             </AccordionTrigger>
             <AccordionContent>
-              Probability is calculated by dividing the number of desired
-              outcomes by the total number of possible outcomes. For example,
-              the probability of rolling a 4 on a six-sided die is 1 (favorable
-              outcome) divided by 6 (total outcomes), which is 1/6 or
-              approximately 0.167.
+              Probability is the number of desired outcomes divided by the total
+              number of possible outcomes. For example, the probability of
+              rolling a 4 on a six-sided die is 1/6.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              What do &apos;P(A and B)&apos; and &apos;P(A or B)&apos; mean?
+              What do 'P(A and B)' and 'P(A or B)' mean?
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                **P(A and B)** is the probability that both independent events A
-                and B occur. It&apos;s calculated by multiplying their
-                individual probabilities: `P(A) * P(B)`.
+                **P(A and B)** is the probability that both events occur. It's
+                calculated by multiplying their probabilities: `P(A) * P(B)`.
               </p>
               <p>
-                **P(A or B)** is the probability that either event A, event B,
-                or both events occur. It&apos;s calculated with the formula:
-                `P(A) + P(B) - P(A and B)`.
+                **P(A or B)** is the probability that either A or B (or both)
+                occur. It's calculated as: `P(A) + P(B) - P(A and B)`.
               </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              Understanding Independent and Dependent Events
+              Independent and Dependent Events
             </AccordionTrigger>
             <AccordionContent>
-              An **independent event** is one where the outcome is not affected
-              by previous events (e.g., a coin flip). A **dependent event** is
-              one where the outcome is influenced by a previous event (e.g.,
-              drawing a card from a deck without replacement). This calculator
-              deals with independent events.
+              An **independent event** is not affected by previous events (e.g.,
+              a coin flip). A **dependent event** is influenced by a previous
+              event (e.g., drawing a card from a deck without replacement). This
+              calculator deals with independent events.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
@@ -128,10 +114,8 @@ export default function AboutProbabilityCalculator() {
               What is the probability of an impossible event?
             </AccordionTrigger>
             <AccordionContent>
-              The probability of an event that can never happen is 0. For
-              example, the probability of rolling a 7 on a standard six-sided
-              die is 0. Conversely, the probability of an event that is certain
-              to happen is 1.
+              The probability of an event that can never happen is 0. The
+              probability of an event that is certain to happen is 1.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

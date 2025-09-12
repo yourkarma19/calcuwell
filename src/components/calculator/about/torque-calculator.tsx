@@ -44,7 +44,7 @@ export default function AboutTorqueCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Torque</CardTitle>
+        <CardTitle as="h2">About the Torque Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,23 +52,19 @@ export default function AboutTorqueCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Torque Calculator is a fundamental tool in physics and engineering
-          used to calculate the rotational force, or torque. Torque is the
-          measure of how much a force acting on an object causes that object to
-          rotate. This calculator simplifies the calculation for a force applied
-          perpendicularly to a lever arm.
+          The Torque Calculator is a tool used to calculate the rotational
+          force, or torque. Torque is the measure of how much a force acting on
+          an object causes that object to rotate. This calculator simplifies the
+          calculation for a force applied perpendicularly to a lever arm.
         </p>
 
         <h3>How to Use the Torque Calculator</h3>
         <ol>
+          <li>Enter the amount of <strong>Force</strong> applied in Newtons (N).</li>
           <li>
-            Enter the amount of <strong>Force</strong> being applied in Newtons
-            (N).
-          </li>
-          <li>
-            Enter the <strong>Distance</strong> from the axis of rotation (the
-            pivot point) to the point where the force is applied. This is also
-            known as the lever arm, measured in meters (m).
+            Enter the <strong>Distance</strong> from the pivot point to where
+            the force is applied. This is also known as the lever arm, measured
+            in meters (m).
           </li>
         </ol>
         <p>
@@ -86,8 +82,7 @@ export default function AboutTorqueCalculator() {
               <p className="font-mono bg-muted p-2 rounded-md text-center my-2">
                 τ = F × r
               </p>
-              Where `F` is the applied force and `r` is the distance from the
-              pivot point.
+              Where `F` is the force and `r` is the distance from the pivot.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -95,11 +90,10 @@ export default function AboutTorqueCalculator() {
               What if the force is not perpendicular?
             </AccordionTrigger>
             <AccordionContent>
-              If the force is applied at an angle (θ) to the lever arm, the
-              formula becomes `τ = F × r × sin(θ)`. The `sin(θ)` term accounts
-              for the fact that only the component of the force perpendicular to
-              the lever arm contributes to the torque. This calculator assumes a
-              perpendicular force (sin(90°) = 1).
+              If the force is applied at an angle (θ), the formula becomes `τ = F
+              × r × sin(θ)`. The `sin(θ)` term accounts for the part of the force
+              that is perpendicular to the lever arm. This calculator assumes
+              a perpendicular force.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -110,13 +104,8 @@ export default function AboutTorqueCalculator() {
               Torque is present in many everyday situations:
               <ul className="list-disc pl-5 mt-2">
                 <li>Using a wrench to tighten a bolt.</li>
-                <li>
-                  Opening a door by pushing on the handle (the hinge is the
-                  pivot).
-                </li>
-                <li>
-                  A car engine's crankshaft rotating to power the wheels.
-                </li>
+                <li>Opening a door by pushing on the handle.</li>
+                <li>A car engine's crankshaft rotating.</li>
                 <li>Pedaling a bicycle.</li>
               </ul>
             </AccordionContent>

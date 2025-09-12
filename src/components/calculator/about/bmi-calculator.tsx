@@ -71,16 +71,14 @@ export default function AboutBMICalculator() {
           <p>
             The <strong>Body Mass Index (BMI)</strong> is a measure to check
             if your weight is healthy for your height. It's a simple screening
-            tool that can spot potential weight-related health issues. Our
-            calculator makes it easy to find your BMI using either metric or
-            imperial units.
+            tool that can spot potential weight-related health issues.
           </p>
 
           <h3>How to Use the BMI Calculator</h3>
           <ol>
             <li>
-              Select your units (<strong>Metric</strong> for kg & cm or{" "}
-              <strong>Imperial</strong> for lbs & ft/in).
+              Select your units (<strong>Metric</strong> or{" "}
+              <strong>Imperial</strong>).
             </li>
             <li>
               Enter your current <strong>Weight</strong>.
@@ -99,11 +97,10 @@ export default function AboutBMICalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  According to the World Health Organization (WHO), a healthy
-                  BMI for most adults is between <strong>18.5 and 24.9</strong>.
-                  A BMI below 18.5 is underweight, 25.0 to 29.9 is overweight,
-                  and 30.0 or higher is obesity. You can see the full range in
-                  the BMI Categories table.
+                  According to the WHO, a healthy BMI for most adults is between{" "}
+                  <strong>18.5 and 24.9</strong>. A BMI below 18.5 is
+                  underweight, 25.0 to 29.9 is overweight, and 30.0 or higher
+                  is obesity.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -127,10 +124,9 @@ export default function AboutBMICalculator() {
                 <p>
                   BMI is a useful screening tool, but it doesn't separate fat
                   from muscle. Very muscular people (like athletes) might have a
-                  high BMI but still be healthy. It can also be less accurate
-                  for some ethnic groups, pregnant women, or the elderly. You
-                  should use it as a general guide and talk to a healthcare
-                  provider for a full health check.
+                  high BMI but still be healthy. You should use it as a general
+                  guide and talk to a healthcare provider for a full health
+                  check.
                 </p>
                 <p>
                   For a closer look at your body composition, try our{" "}

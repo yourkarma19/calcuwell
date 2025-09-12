@@ -86,18 +86,15 @@ export default function AboutBusinessProfitMarginCalculator() {
             <AccordionContent>
               <p>
                 <strong>Gross Margin</strong> shows the profit on each sale
-                after accounting for direct costs (COGS). It measures
-                production efficiency.
+                after accounting for direct costs (COGS).
               </p>
               <p>
-                <strong>Operating Margin</strong> shows the profit a company
-                makes from its main business operations, after all operating
-                expenses are deducted.
+                <strong>Operating Margin</strong> shows the profit from its
+                main business operations, after all operating expenses.
               </p>
               <p>
                 <strong>Net Margin</strong> is the "bottom line." It's the
-                final profit after all expenses, including interest and taxes,
-                have been paid.
+                final profit after all expenses, including interest and taxes.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -107,20 +104,18 @@ export default function AboutBusinessProfitMarginCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Looking at all three margins tells a complete story. A company
-              might have a high gross margin (meaning it's efficient at making
-              its product) but a low net margin (meaning its other costs are
-              too high). Comparing these margins over time gives you valuable
-              insights.
+              might have a high gross margin but a low net margin (meaning its
+              other costs are too high). Comparing these margins over time gives
+              you valuable insights.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>What is a good profit margin?</AccordionTrigger>
             <AccordionContent>
-              A "good" profit margin varies a lot by industry. A software
-              company will have a very different margin than a retail store. As
-              a general rule, a net profit margin of 10% is average, 20% is
-              high, and 5% is low. It's best to compare your margins to others in
-              your industry.
+              A "good" profit margin varies a lot by industry. As a general
+              rule, a net profit margin of 10% is average, 20% is high, and 5%
+              is low. It's best to compare your margins to others in your
+              industry.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -52,24 +52,17 @@ export default function AboutFactorialCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Factorial Calculator is a tool for finding the factorial of any
-          non-negative integer. A factorial, shown by an exclamation mark (!),
-          is a key idea in probability. This calculator simplifies a long manual
-          calculation. It gives instant and accurate results for students and
-          mathematicians.
+          The Factorial Calculator finds the factorial of any non-negative
+          integer. A factorial, shown by an exclamation mark (!), is a key idea
+          in probability. This calculator gives instant and accurate results.
         </p>
 
         <h3>How to Use the Factorial Calculator</h3>
-        <p>Using the tool is simple:</p>
-        <ol>
-          <li>
-            Enter a non-negative integer (0 or greater) into the input box.
-          </li>
-        </ol>
         <p>
-          The calculator will instantly show the factorial of that number.
+          Enter a non-negative integer (0 or greater) into the input box. The
+          calculator will instantly show the factorial of that number.
           Factorials grow very quickly, so the calculator has a limit to prevent
-          errors (around 170!).
+          errors.
         </p>
 
         <h3>Factorial FAQs</h3>
@@ -80,27 +73,27 @@ export default function AboutFactorialCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The exclamation mark shows a factorial. The factorial of a
-              non-negative integer &apos;n&apos;, written as n!, is the product
-              of all positive integers less than or equal to n. For example, 5!
-              = 5 × 4 × 3 × 2 × 1 = 120.
+              non-negative integer 'n', written as n!, is the product of all
+              positive integers up to n. For example, 5! = 5 × 4 × 3 × 2 × 1 =
+              120.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              How to Calculate a Factorial Manually
+              How do you calculate a factorial?
             </AccordionTrigger>
             <AccordionContent>
               To calculate a factorial, multiply the number by every positive
-              whole number smaller than it. For example, to find the factorial
-              of 4 (4!), you would compute 4 × 3 × 2 × 1, which equals 24.
+              whole number smaller than it. For example, to find 4!, you would
+              compute 4 × 3 × 2 × 1, which equals 24.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>What is Zero Factorial (0!)?</AccordionTrigger>
             <AccordionContent>
-              By definition, 0! is equal to 1. This is a rule that makes many
-              math formulas work correctly. It represents the single way to
-              arrange zero objects, which is to do nothing.
+              By definition, 0! is equal to 1. This rule makes many math
+              formulas work correctly. It represents the single way to arrange
+              zero objects (by doing nothing).
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
@@ -109,8 +102,8 @@ export default function AboutFactorialCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Factorials are key in probability. They are used to calculate the
-              number of possible ways to arrange a set of items. For example,
-              finding the number of ways a group of people can stand in a line.
+              number of possible ways to arrange a set of items, like finding
+              the number of ways a group of people can stand in a line.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

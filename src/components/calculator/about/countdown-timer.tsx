@@ -52,11 +52,10 @@ export default function AboutCountdownTimer() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Countdown Timer is a tool to track the time remaining until a
-          specific future event. It continuously updates to show the number of
-          days, hours, minutes, and seconds left, providing a dynamic and
-          real-time countdown. It&apos;s perfect for building anticipation for
-          personal milestones, holidays, or important deadlines.
+          The Countdown Timer tracks the time remaining until a specific event.
+          It shows the days, hours, minutes, and seconds left in real-time.
+          It's perfect for building anticipation for personal milestones,
+          holidays, or important deadlines.
         </p>
 
         <h3>How to Use the Countdown Timer</h3>
@@ -70,8 +69,8 @@ export default function AboutCountdownTimer() {
           </li>
         </ol>
         <p>
-          The countdown will begin immediately and update every second. The page
-          must remain open for the timer to continue running.
+          The countdown will begin immediately. The page must remain open for
+          the timer to continue running.
         </p>
 
         <h3>Countdown Timer FAQs</h3>
@@ -79,10 +78,9 @@ export default function AboutCountdownTimer() {
           <AccordionItem value="item-1">
             <AccordionTrigger>How does the timer work?</AccordionTrigger>
             <AccordionContent>
-              The timer works by calculating the total number of seconds between
-              the current time and the future target time you set. It then uses
-              a JavaScript interval that runs every second to recalculate the
-              remaining time and update the display.
+              The timer calculates the seconds between now and the target time.
+              It then uses a script that runs every second to recalculate and
+              display the remaining time.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -90,9 +88,8 @@ export default function AboutCountdownTimer() {
               What happens when the countdown reaches zero?
             </AccordionTrigger>
             <AccordionContent>
-              Once the target date and time are reached, the timer will stop at
-              zero. It will no longer show negative values. You can then set a
-              new countdown for another event.
+              Once the target time is reached, the timer will stop at zero. You
+              can then set a new countdown for another event.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -100,10 +97,9 @@ export default function AboutCountdownTimer() {
               Does the timer account for time zones?
             </AccordionTrigger>
             <AccordionContent>
-              The timer operates based on your local device&apos;s time. When
-              you set a target date and time, it is set in your current time
-              zone. If you share your countdown with someone in a different time
-              zone, they will see the countdown relative to their own local
+              The timer uses your local device's time. When you set a target
+              date and time, it is set in your current time zone. If you share
+              it, others will see the countdown relative to their own local
               time.
             </AccordionContent>
           </AccordionItem>

@@ -44,7 +44,7 @@ export default function AboutPregnancyDueDateCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Your Due Date</CardTitle>
+        <CardTitle as="h2">About the Due Date Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,19 +52,15 @@ export default function AboutPregnancyDueDateCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our **Pregnancy Due Date Calculator** is an easy-to-use tool that
-          provides an estimated due date for your baby. By providing either the
-          date of your last menstrual period (LMP) or your date of conception,
-          this calculator helps you get a better idea of your pregnancy
-          timeline. It's a great starting point for expectant parents
-          planning for their new arrival.
+          Our **Pregnancy Due Date Calculator** gives you an estimated due date
+          for your baby. By providing either the date of your last menstrual
+          period (LMP) or your date of conception, this calculator helps you get
+          a better idea of your pregnancy timeline.
         </p>
         <h3>How to Use the Due Date Calculator</h3>
         <ol>
           <li>
-            First, select your **Calculation Method**. You can choose between
-            using the first day of your last menstrual period (LMP) or the date
-            of conception.
+            First, select your **Calculation Method** (LMP or conception date).
           </li>
           <li>Enter the appropriate date using the calendar.</li>
         </ol>
@@ -76,10 +72,9 @@ export default function AboutPregnancyDueDateCalculator() {
               How is the due date calculated from the LMP?
             </AccordionTrigger>
             <AccordionContent>
-              The most common method is **Naegele's rule**. This rule
-              calculates the due date by adding 280 days (or 40 weeks) to the
-              first day of your last menstrual period. This assumes a standard
-              28-day menstrual cycle.
+              The most common method is **Naegele's rule**. This rule calculates
+              the due date by adding 280 days (40 weeks) to the first day of
+              your last menstrual period. This assumes a standard 28-day cycle.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -89,8 +84,7 @@ export default function AboutPregnancyDueDateCalculator() {
             <AccordionContent>
               If you know the exact date of conception, the calculation is more
               direct. The estimated due date is calculated by adding 266 days
-              (or 38 weeks) to the conception date. This is the average length
-              of a human pregnancy from conception to birth.
+              (38 weeks) to the conception date.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -98,12 +92,9 @@ export default function AboutPregnancyDueDateCalculator() {
               How accurate is this due date calculator?
             </AccordionTrigger>
             <AccordionContent>
-              This calculator provides an estimate, and it's important to
-              remember that only about 5% of babies are born on their exact due
-              date. It's a valuable tool for planning, but your doctor will
-              provide the most accurate due date based on an ultrasound
-              measurement. An early ultrasound is the best method for dating a
-              pregnancy.
+              This calculator provides an estimate. Only about 5% of babies are
+              born on their exact due date. Your doctor will provide the most
+              accurate due date based on an ultrasound measurement.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -71,7 +71,7 @@ export default function AboutBodyFatPercentageCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle as="h2">About the Body Fat Percentage Calculator</CardTitle>
+          <CardTitle as="h2">About the Body Fat Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <script
@@ -82,8 +82,7 @@ export default function AboutBodyFatPercentageCalculator() {
             The Body Fat Percentage Calculator gives a better look at your body
             composition than weight or BMI alone. It helps you track your
             fitness progress more accurately by estimating the amount of fat in
-            your body. This tool uses the U.S. Navy method, a common formula
-            based on body measurements.
+            your body. This tool uses the U.S. Navy method.
           </p>
 
           <h3>How to Use the Body Fat Calculator</h3>
@@ -114,10 +113,10 @@ export default function AboutBodyFatPercentageCalculator() {
                 Why is body fat percentage better than BMI?
               </AccordionTrigger>
               <AccordionContent>
-                Body fat percentage directly measures fat, while BMI is a more
-                general measure. BMI can be misleading for muscular people, who
-                may be called "overweight" even if they are healthy. Body fat
-                gives a clearer picture of your body composition.
+                Body fat percentage directly measures fat, while BMI is more
+                general. BMI can be misleading for muscular people, who may be
+                called "overweight" even if they are healthy. Body fat gives a
+                clearer picture of your body composition.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -126,9 +125,9 @@ export default function AboutBodyFatPercentageCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 This method uses body measurements to estimate body density.
-                It's a convenient and cheap way to estimate body fat without
-                special tools. However, it's not as accurate as clinical methods
-                like DEXA scans.
+                It's a convenient way to estimate body fat without special
+                tools. However, it's not as accurate as clinical methods like
+                DEXA scans.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">

@@ -61,18 +61,16 @@ export default function AboutSquareRootCubeRootCalculator() {
         />
         <p>
           The <strong>Square & Cube Root Calculator</strong> is a simple tool
-          for performing two fundamental mathematical operations. It helps you
-          quickly find the square root and cube root of any number, which is
+          for finding the square root and cube root of any number. This is
           useful in a wide range of applications, from basic algebra to complex
-          engineering problems. This calculator handles both positive and
-          negative inputs, correctly identifying real and imaginary roots.
+          engineering problems.
         </p>
 
         <h3>How to Use the Root Calculator</h3>
         <p>
           Simply enter a number into the input field. The calculator will
-          instantly compute and display both the square root and the cube root
-          of the number.
+          instantly display both the square root and the cube root of the
+          number.
         </p>
 
         <h3>Root Calculator FAQs</h3>
@@ -82,7 +80,7 @@ export default function AboutSquareRootCubeRootCalculator() {
             <AccordionContent>
               A square root of a number is a value that, when multiplied by
               itself, gives the original number. For example, the square root of
-              9 is 3, because 3 × 3 = 9. The symbol for square root is √.
+              9 is 3, because 3 × 3 = 9.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -90,7 +88,7 @@ export default function AboutSquareRootCubeRootCalculator() {
             <AccordionContent>
               A cube root of a number is a value that, when multiplied by itself
               three times, gives the original number. For example, the cube root
-              of 27 is 3, because 3 × 3 × 3 = 27. The symbol is ∛.
+              of 27 is 3, because 3 × 3 × 3 = 27.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -98,17 +96,15 @@ export default function AboutSquareRootCubeRootCalculator() {
               What about the root of a negative number?
             </AccordionTrigger>
             <AccordionContent>
-              You can find the real cube root of a negative number. For example,
-              the cube root of -8 is -2, because (-2) × (-2) × (-2) = -8.
-              However, you cannot find a real square root for a negative number.
-              The square root of a negative number is an &quot;imaginary
-              number,&quot; which this calculator indicates with the symbol
-              'i'.
+              You can find the real cube root of a negative number (e.g., the
+              cube root of -8 is -2). However, the square root of a negative
+              number is an "imaginary number," which this calculator indicates
+              with the symbol 'i'.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              What is a &quot;perfect square&quot;?
+              What is a "perfect square"?
             </AccordionTrigger>
             <AccordionContent>
               A perfect square is an integer that is the square of another

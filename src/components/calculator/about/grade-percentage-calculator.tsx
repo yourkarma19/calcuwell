@@ -54,7 +54,7 @@ export default function AboutGradePercentageCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle as="h2">About Grade Calculation</CardTitle>
+          <CardTitle as="h2">About the Grade Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <script
@@ -62,12 +62,10 @@ export default function AboutGradePercentageCalculator() {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
           <p>
-            This simple tool helps you quickly calculate the percentage score of
-            a test, quiz, or assignment. By entering the points you earned and
-            the total points possible, you can instantly see your performance as
-            a percentage and its corresponding letter grade based on a standard
-            scale. It's a great way for students to track their progress
-            and understand their grades.
+            This simple tool helps you quickly calculate the percentage score
+            of a test, quiz, or assignment. By entering your points and the
+            total points, you can instantly see your performance as a percentage
+            and its letter grade.
           </p>
           <h3>How to Use This Grade Calculator</h3>
           <ol>
@@ -91,10 +89,9 @@ export default function AboutGradePercentageCalculator() {
                 How is the percentage calculated?
               </AccordionTrigger>
               <AccordionContent>
-                The formula to calculate a grade percentage is a simple and
-                fundamental one: `Percentage = (Points Earned / Total Possible
-                Points) * 100`. This calculation gives you the proportion of
-                points you received out of the total available.
+                The formula to calculate a grade percentage is: `Percentage =
+                (Points Earned / Total Possible Points) * 100`. This shows the
+                proportion of points you received.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -102,9 +99,8 @@ export default function AboutGradePercentageCalculator() {
                 What is a standard grading scale?
               </AccordionTrigger>
               <AccordionContent>
-                A standard grading scale is a system used to convert percentage
-                scores into letter grades. While this can vary between schools,
-                a very common scale used in the United States is:
+                A standard grading scale converts percentages into letter
+                grades. A very common scale is:
                 <ul className="list-disc pl-5 mt-2">
                   <li>90% and above: A</li>
                   <li>80% - 89%: B</li>
@@ -112,8 +108,7 @@ export default function AboutGradePercentageCalculator() {
                   <li>60% - 69%: D</li>
                   <li>Below 60%: F</li>
                 </ul>
-                This calculator uses this standard scale to assign a letter
-                grade.
+                This calculator uses this standard scale.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

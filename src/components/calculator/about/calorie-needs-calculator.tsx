@@ -19,7 +19,7 @@ const jsonLd: WithContext<FAQPage> = {
       name: "What are maintenance calories?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Maintenance calories are the calories you need to eat each day to maintain your current weight. This calculator estimates that value by finding your Basal Metabolic Rate (BMR) and multiplying it by an activity level factor.",
+        text: "Maintenance calories are the calories you need to eat each day to maintain your current weight. This calculator estimates that value by find your Basal Metabolic Rate (BMR) and multiplying it by an activity level factor.",
       },
     },
     {
@@ -59,19 +59,19 @@ export default function AboutCalorieNeedsCalculator() {
         </p>
         <h3>How to Use the Calorie Needs Calculator</h3>
         <p>
-          To find your daily calorie needs, enter your age, gender, height,
-          weight, and activity level. The calculator will then estimate the
-          calories you need to consume to keep your weight the same.
+          Enter your age, gender, height, weight, and activity level. The
+          calculator will then estimate the calories you need to consume to keep
+          your weight the same.
         </p>
         <h3>Calorie Needs FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What are maintenance calories?</AccordionTrigger>
             <AccordionContent>
-              Maintenance calories are the calories you need to eat each day to
-              keep your current weight. This calculator estimates that value by
-              first finding your Basal Metabolic Rate (BMR) and then multiplying
-              it by an activity level.
+              Maintenance calories are the calories you need each day to keep
+              your current weight. This calculator finds this value by
+              estimating your Basal Metabolic Rate (BMR) and multiplying it by
+              an activity level.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,10 +94,9 @@ export default function AboutCalorieNeedsCalculator() {
               How do I use this for weight loss or gain?
             </AccordionTrigger>
             <AccordionContent>
-              This result is for maintaining your weight. To lose weight, you
-              need to eat fewer calories than this number. To gain weight, you
-              need to eat more. For personal advice, you should talk to a
-              doctor or nutritionist.
+              This result is for maintaining your weight. To lose weight, eat
+              fewer calories than this number. To gain weight, eat more. For
+              personal advice, you should talk to a doctor or nutritionist.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

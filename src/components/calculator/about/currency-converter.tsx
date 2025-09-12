@@ -53,16 +53,13 @@ export default function AboutCurrencyConverter() {
         />
         <p>
           Our Currency Converter is a key tool for anyone dealing with
-          international money, travel, or online shopping. It makes it easy to
-          convert one currency to another using mock exchange rates. This tool
-          helps you understand the true cost of items in your local currency.
+          international money. It makes it easy to convert one currency to
+          another using mock exchange rates. This tool helps you understand the
+          cost of items in your local currency.
         </p>
         <h3>How to Use the Currency Converter</h3>
         <ol>
-          <li>
-            Enter the <strong>Amount</strong> you wish to convert in the first
-            field.
-          </li>
+          <li>Enter the <strong>Amount</strong> you wish to convert.</li>
           <li>
             Select the currency you are converting <strong>from</strong>.
           </li>
@@ -87,10 +84,9 @@ export default function AboutCurrencyConverter() {
           <AccordionItem value="item-2">
             <AccordionTrigger>Why do exchange rates change?</AccordionTrigger>
             <AccordionContent>
-              Exchange rates change all the time because of many economic and
-              political factors. These include inflation, interest rates, trade
-              balances, and economic performance. This constant movement is why
-              financial markets for currencies are always active.
+              Exchange rates change all the time due to economic and political
+              factors. These include inflation, interest rates, and trade
+              balances.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -101,16 +97,16 @@ export default function AboutCurrencyConverter() {
               The exchange rates in this calculator are for demonstration
               purposes only. They are not real-time market values. You should
               not use them for actual financial trades. For real trades, always
-              check with a bank or a verified currency exchange service.
+              check with a bank or verified exchange service.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>What is a currency pair?</AccordionTrigger>
             <AccordionContent>
               A currency pair shows the value of one currency against another.
-              The first currency is the &quot;base&quot; and the second is the
-              &quot;quote.&quot; For example, in the pair EUR/USD = 1.08, one
-              Euro is worth 1.08 US Dollars.
+              The first currency is the "base" and the second is the
+              "quote." For example, in EUR/USD = 1.08, one Euro is worth 1.08 US
+              Dollars.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

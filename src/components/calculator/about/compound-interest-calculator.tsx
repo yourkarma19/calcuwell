@@ -52,11 +52,10 @@ export default function AboutCompoundInterestCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The <strong>Compound Interest Calculator</strong> shows one of the most
-          powerful ideas in finance: how your money can grow faster over time.
-          By reinvesting the interest you earn, your investment gets larger.
-          This leads to even more interest in the next period. This "interest
-          on interest" effect can significantly boost your savings.
+          The <strong>Compound Interest Calculator</strong> shows how your money
+          can grow faster over time. By reinvesting the interest you earn, your
+          investment gets larger. This "interest on interest" effect can
+          significantly boost your savings.
         </p>
 
         <h3>How to Use the Compound Interest Calculator</h3>
@@ -70,8 +69,8 @@ export default function AboutCompoundInterestCalculator() {
           </li>
         </ol>
         <p>
-          The results will show the total future value of your investment and
-          the total interest earned.
+          The results will show the total future value and the total interest
+          earned.
         </p>
 
         <h3>Compound Interest FAQs</h3>
@@ -93,7 +92,7 @@ export default function AboutCompoundInterestCalculator() {
                   <strong>P</strong> = the principal amount
                 </li>
                 <li>
-                  <strong>r</strong> = the annual interest rate (in decimal)
+                  <strong>r</strong> = the annual interest rate (as a decimal)
                 </li>
                 <li>
                   <strong>n</strong> = the number of times interest is
@@ -112,9 +111,8 @@ export default function AboutCompoundInterestCalculator() {
             <AccordionContent>
               <p>
                 The more often interest is compounded, the more you will earn.
-                For example, interest compounded monthly will result in a
-                slightly higher total than interest compounded annually. This is
-                because you start earning interest on your interest sooner.
+                For example, monthly compounding will result in a slightly
+                higher total than annual compounding.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -125,10 +123,9 @@ export default function AboutCompoundInterestCalculator() {
             <AccordionContent>
               <p>
                 <strong>Simple interest</strong> is calculated only on the
-                original principal amount. <strong>Compound interest</strong> is
+                original principal. <strong>Compound interest</strong> is
                 calculated on the principal plus the interest that has already
-                been earned. This means your investment grows at an
-                accelerating rate.
+                been earned. This means your investment grows faster.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -139,10 +136,9 @@ export default function AboutCompoundInterestCalculator() {
             <AccordionContent>
               <p>
                 Time is the most important factor for compound interest. The
-                longer your money is invested, the more compounding periods it
-                goes through. Someone who starts saving a small amount in their
-                20s can easily end up with more than someone who saves a larger
-                amount starting in their 40s.
+                longer your money is invested, the more it can grow. Someone who
+                starts saving a small amount early can easily end up with more
+                than someone who saves a larger amount starting later in life.
               </p>
             </AccordionContent>
           </AccordionItem>

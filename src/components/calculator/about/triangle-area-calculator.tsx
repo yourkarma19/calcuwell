@@ -36,7 +36,7 @@ export default function AboutTriangleAreaCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Triangle Area Calculation</CardTitle>
+        <CardTitle as="h2">About the Triangle Area Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -46,10 +46,10 @@ export default function AboutTriangleAreaCalculator() {
         <p>
           Our Triangle Area Calculator is a versatile tool for finding the area
           of a triangle using different sets of known values. Whether you know
-          the base and height, all three sides (SSS), or two sides and the angle
-          between them (SAS), this calculator can help you find the solution.
+          the base and height, all three sides, or two sides and an angle, this
+          calculator can help you find the solution.
         </p>
-        <h3>How the Triangle Area Calculator Works</h3>
+        <h3>How the Calculator Works</h3>
         <p>The calculator uses the standard formula for each method:</p>
         <ul>
           <li>
@@ -57,7 +57,7 @@ export default function AboutTriangleAreaCalculator() {
           </li>
           <li>
             <strong>Three Sides (Heron's Formula):</strong> `Area =
-            √[s(s-a)(s-b)(s-c)]`, where `s` is the semi-perimeter.
+            √[s(s-a)(s-b)(s-c)]`, where `s` is half the perimeter.
           </li>
           <li>
             <strong>Two Sides and an Included Angle (SAS):</strong> `Area = 0.5
@@ -70,10 +70,9 @@ export default function AboutTriangleAreaCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Heron's formula?</AccordionTrigger>
             <AccordionContent>
-              Heron's formula allows you to calculate the area of a
-              triangle when you only know the lengths of the three sides. It is
-              named after Hero of Alexandria, a Greek mathematician and
-              engineer.
+              Heron's formula allows you to calculate the area of a triangle
+              when you only know the lengths of the three sides. It is named
+              after Hero of Alexandria, a Greek mathematician.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -84,8 +83,7 @@ export default function AboutTriangleAreaCalculator() {
               For any triangle, the sum of the lengths of any two sides must be
               greater than the length of the third side. If this condition
               isn't met, the sides cannot form a closed triangle. Our
-              calculator checks for this when you use the &quot;Three Sides
-              (SSS)&quot; method.
+              calculator checks for this.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -53,10 +53,10 @@ export default function AboutColorConverter() {
         />
         <p>
           Our <strong>Color Code Converter</strong> is a key tool for web
-          designers, developers, and digital artists. It easily translates
-          colors between three common web formats: <strong>HEX</strong>,{" "}
-          <strong>RGB</strong>, and <strong>HSL</strong>. This tool helps you
-          find the perfect shade and ensures consistency across your projects.
+          designers and developers. It easily translates colors between common
+          web formats: <strong>HEX</strong>, <strong>RGB</strong>, and{" "}
+          <strong>HSL</strong>. This tool helps you find the perfect shade and
+          ensures consistency.
         </p>
         <h3>How to Use the Color Code Converter</h3>
         <ol>
@@ -64,12 +64,10 @@ export default function AboutColorConverter() {
             Enter a color value in any of the three formats (HEX, RGB, or HSL).
           </li>
           <li>
-            As you type, the other two formats will update instantly to show the
+            As you type, the other formats will update instantly to show the
             same color.
           </li>
-          <li>
-            Use the color preview to see your selected color in real-time.
-          </li>
+          <li>Use the color preview to see your selected color.</li>
         </ol>
         <p>
           This makes it easy to experiment with colors and find the exact code
@@ -83,18 +81,18 @@ export default function AboutColorConverter() {
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                <strong>HEX (Hexadecimal)</strong> is a six-digit code (e.g.,
-                `#FF5733`) common in web design.
+                <strong>HEX</strong> is a six-digit code (e.g., `#FF5733`) common
+                in web design.
               </p>
               <p className="mb-2">
-                <strong>RGB (Red, Green, Blue)</strong> is how digital screens
-                create color by combining red, green, and blue light. Each
-                value ranges from 0 to 255.
+                <strong>RGB</strong> is how digital screens create color by
+                combining red, green, and blue light. Each value is from 0 to
+                255.
               </p>
               <p>
-                <strong>HSL (Hue, Saturation, Lightness)</strong> is a more
-                human-friendly way to represent color. Hue is the color itself,
-                Saturation is its intensity, and Lightness is its brightness.
+                <strong>HSL</strong> is a more human-friendly way to represent
+                color. Hue is the color itself, Saturation is its intensity,
+                and Lightness is its brightness.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -103,10 +101,9 @@ export default function AboutColorConverter() {
               Why are there different color models?
             </AccordionTrigger>
             <AccordionContent>
-              Different models are suited for different tasks. RGB is how
-              screens work. HEX is a shorter way to write RGB values. HSL is
-              often preferred by designers because it’s easier to adjust
-              lightness and saturation to create color variations.
+              Different models are good for different tasks. RGB is how screens
+              work. HEX is a shorter way to write RGB values. HSL is often
+              preferred by designers because it’s easier to adjust.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -116,8 +113,7 @@ export default function AboutColorConverter() {
             <AccordionContent>
               The 'A' stands for Alpha, which controls the opacity of the color.
               An alpha value of 1 is fully opaque, while 0 is fully
-              transparent. This is used in CSS to create semi-transparent
-              effects.
+              transparent. This is used in CSS for semi-transparent effects.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

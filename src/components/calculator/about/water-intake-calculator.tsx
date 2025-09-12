@@ -44,7 +44,7 @@ export default function AboutWaterIntakeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Daily Water Intake</CardTitle>
+        <CardTitle as="h2">About the Daily Water Intake Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -54,10 +54,9 @@ export default function AboutWaterIntakeCalculator() {
         <p>
           The Daily Water Intake Calculator provides a personalized
           recommendation for your daily fluid needs. Proper hydration is
-          essential for nearly every bodily function, including regulating
-          temperature, lubricating joints, and removing waste. This tool uses
-          common formulas based on age, weight, and activity level to give you a
-          solid baseline for your hydration goals.
+          essential for nearly every bodily function. This tool uses common
+          formulas based on age, weight, and activity level to give you a
+          baseline for your hydration goals.
         </p>
 
         <h3>How to Use the Water Intake Calculator</h3>
@@ -81,11 +80,9 @@ export default function AboutWaterIntakeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               No, this is a general guideline. Your individual needs can vary
-              based on factors like the climate you live in, your overall
-              health, and specific medical conditions. It's a great
+              based on climate, health, and other factors. It's a great
               starting point, but the best indicator is to drink when you feel
-              thirsty and monitor the color of your urine (it should be light
-              yellow).
+              thirsty.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,10 +91,9 @@ export default function AboutWaterIntakeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               This estimate is for total fluid intake. You get about 20% of your
-              daily water from solid foods, especially fruits and vegetables.
-              Other beverages like milk, juice, and herbal tea also count
-              towards your total. However, water is the best source of hydration
-              as it is calorie-free.
+              daily water from solid foods. Other beverages like milk and juice
+              also count towards your total. However, water is the best source
+              of hydration.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -105,9 +101,8 @@ export default function AboutWaterIntakeCalculator() {
             <AccordionContent>
               Adequate hydration is critical for physical and mental
               performance. Even mild dehydration can lead to fatigue, headaches,
-              reduced concentration, and impaired physical coordination. Proper
-              fluid intake supports nutrient transport, waste removal, and
-              overall cellular health.
+              and reduced concentration. Proper fluid intake supports overall
+              cellular health.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

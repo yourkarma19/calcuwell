@@ -52,10 +52,9 @@ export default function AboutCarLoanCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our <strong>Car Loan Calculator</strong> is a vital tool for anyone
-          planning to finance a vehicle. It helps you understand the true cost
-          of a car loan by calculating your monthly payment (EMI). By using this
-          tool, you can budget effectively, compare different loan offers, and
+          Our <strong>Car Loan Calculator</strong> helps you understand the
+          true cost of a car loan by calculating your monthly payment (EMI).
+          This helps you budget effectively, compare different loan offers, and
           make a smart decision before you buy.
         </p>
 
@@ -64,18 +63,16 @@ export default function AboutCarLoanCalculator() {
           <li>Enter the total <strong>Car Price</strong>.</li>
           <li>
             Input your <strong>Down Payment</strong> and the{" "}
-            <strong>Trade-in Value</strong> of your old vehicle, if you have
-            one.
+            <strong>Trade-in Value</strong> of your old vehicle.
           </li>
           <li>
             Adjust the <strong>Interest Rate</strong> and{" "}
-            <strong>Loan Tenure</strong> (in years) to match the loan offer you
-            have.
+            <strong>Loan Tenure</strong> (in years).
           </li>
         </ol>
         <p>
           The calculator will instantly show your monthly payment and how the
-          total cost is divided between the loan amount and the interest paid.
+          total cost is divided between the loan amount and interest paid.
         </p>
 
         <h3>Car Loan FAQs</h3>
@@ -99,22 +96,21 @@ export default function AboutCarLoanCalculator() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>How can I lower my car loan EMI?</AccordionTrigger>
+            <AccordionTrigger>How can I lower my EMI?</AccordionTrigger>
             <AccordionContent>
-              You can lower your EMI by making a larger down payment. Choosing a
-              longer loan term also lowers the monthly payment, but you will
-              usually pay more in total interest.
+              You can lower your EMI by making a larger down payment. A longer
+              loan term also lowers the monthly payment, but you will usually
+              pay more in total interest.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              What other costs should I think about?
+              What other costs should I consider?
             </AccordionTrigger>
             <AccordionContent>
               Besides the loan, remember to budget for ongoing costs like
               insurance, fuel, and maintenance. These are not included in the
-              loan calculation but are a big part of the total cost of owning a
-              car.
+              loan calculation but are a big part of owning a car.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

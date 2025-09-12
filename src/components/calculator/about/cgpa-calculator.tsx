@@ -62,11 +62,9 @@ export default function AboutCgpaCalculator() {
         <p>Follow these simple steps to calculate your CGPA:</p>
         <ol>
           <li>Enter the credits and SGPA for your first semester.</li>
-          <li>
-            Click "Add Semester" for each additional semester you've completed.
-          </li>
+          <li>Click "Add Semester" for each additional semester.</li>
           <li>Fill in the credits and SGPA for each of those semesters.</li>
-          <li>Your cumulative GPA will appear instantly at the top.</li>
+          <li>Your cumulative GPA will appear instantly.</li>
         </ol>
 
         <h3>The CGPA Formula</h3>
@@ -80,41 +78,11 @@ export default function AboutCgpaCalculator() {
           credits you've taken.
         </p>
 
-        <h4>Example Calculation</h4>
-        <p>Let's say a student has these grades:</p>
-        <ul>
-          <li>Semester 1: 20 Credits, 8.5 SGPA</li>
-          <li>Semester 2: 22 Credits, 9.0 SGPA</li>
-        </ul>
-        <p>
-          The calculation is: `((20 * 8.5) + (22 * 9.0)) / (20 + 22)`
-          <br />
-          This equals: `(170 + 198) / 42 = 368 / 42 = 8.76`
-          <br />
-          The student's CGPA is <strong>8.76</strong>.
-        </p>
-
         <h3>Why Your CGPA is Important</h3>
         <p>
           Your CGPA is a key measure of your academic performance. It's often
-          used by:
-        </p>
-        <ul>
-          <li>
-            <strong>Universities:</strong> For admission into postgraduate
-            programs.
-          </li>
-          <li>
-            <strong>Employers:</strong> As a screening criterion for jobs,
-            especially for fresh graduates.
-          </li>
-          <li>
-            <strong>Scholarship Committees:</strong> To decide eligibility for
-            financial aid.
-          </li>
-        </ul>
-        <p>
-          A good CGPA is important for future academic and career
+          used by universities for admissions and by employers for job
+          screening. A good CGPA is important for future academic and career
           opportunities.
         </p>
         <h3>CGPA FAQs</h3>
@@ -124,18 +92,17 @@ export default function AboutCgpaCalculator() {
               What's the difference between CGPA and SGPA?
             </AccordionTrigger>
             <AccordionContent>
-              <strong>SGPA (Semester Grade Point Average)</strong> is your
-              average grade for a single semester.{" "}
-              <strong>CGPA (Cumulative Grade Point Average)</strong> is the
-              average of all your SGPAs over all semesters, weighted by credits.
+              <strong>SGPA</strong> is your average grade for one semester.{" "}
+              <strong>CGPA</strong> is the average of all your SGPAs over all
+              semesters, weighted by credits.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq2">
             <AccordionTrigger>How do I convert CGPA to a percentage?</AccordionTrigger>
             <AccordionContent>
               The formula can vary by university. A common method is:
-              `Percentage = CGPA * 9.5`. However, you should always check with
-              your university for their official formula.
+              `Percentage = CGPA * 9.5`. However, always check with your
+              university for their official formula.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq3">
@@ -143,7 +110,7 @@ export default function AboutCgpaCalculator() {
             <AccordionContent>
               This can be subjective. Generally, on a 10-point scale, a CGPA of
               8.0 or above is very good. A CGPA of 9.0 or above is usually
-              considered excellent.
+              excellent.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

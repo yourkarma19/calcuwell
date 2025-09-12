@@ -44,7 +44,7 @@ export default function AboutMixedNumberCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Mixed Numbers</CardTitle>
+        <CardTitle as="h2">About the Mixed Number Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,47 +52,29 @@ export default function AboutMixedNumberCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our Mixed Number Calculator is a specialized tool designed to simplify
-          arithmetic involving mixed numbers. A mixed number is a combination of
-          a whole number and a proper fraction, which is a common way to express
-          quantities in everyday life, like in recipes or measurements. This
+          Our Mixed Number Calculator helps you work with mixed numbers. A
+          mixed number is a whole number and a proper fraction combined. This
           calculator helps you convert them and will soon handle operations like
-          addition and subtraction. Understanding how to work with mixed numbers
-          is a fundamental skill in mathematics, bridging the gap between whole
-          quantities and fractional parts.
+          addition and subtraction.
         </p>
         <h3>How to Use the Mixed Number Calculator</h3>
         <ol>
-          <li>
-            Enter the <strong>whole number</strong> part of your mixed number.
-          </li>
-          <li>
-            Enter the <strong>numerator</strong> (the top part of the fraction).
-          </li>
-          <li>
-            Enter the <strong>denominator</strong> (the bottom part of the
-            fraction).
-          </li>
+          <li>Enter the <strong>whole number</strong> part.</li>
+          <li>Enter the <strong>numerator</strong> (the top part).</li>
+          <li>Enter the <strong>denominator</strong> (the bottom part).</li>
         </ol>
         <p>
           The calculator will instantly convert your mixed number into an
-          improper fraction, which is often easier to work with for more complex
-          calculations. This is the first step required before performing
-          operations like multiplication or division on mixed numbers.
+          improper fraction.
         </p>
         <h3>Mixed Number FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What Are Mixed Numbers?</AccordionTrigger>
             <AccordionContent>
-              A mixed number is a whole number combined with a proper fraction.
-              It&apos;s a way of representing a value greater than one. For
-              example, if you have 2 full pizzas and a half pizza, you would
-              write it as 2 ½. This is often more intuitive to understand in
-              daily life than its improper fraction equivalent, which would be
-              5/2. They are used extensively in cooking, construction, and other
-              hands-on fields where precise measurements that are not whole
-              units are common.
+              A mixed number is a whole number with a proper fraction. For
+              example, 2 ½. This is often more intuitive than its improper
+              fraction equivalent, 5/2.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -100,39 +82,27 @@ export default function AboutMixedNumberCalculator() {
               How do you convert a mixed number to an improper fraction?
             </AccordionTrigger>
             <AccordionContent>
-              To convert a mixed number to an improper fraction, you multiply
-              the whole number by the denominator and then add the numerator.
-              This result becomes the new numerator, and the denominator stays
-              the same. For example, for 2 ½, you calculate (2 * 2) + 1 = 5, so
-              the improper fraction is 5/2. This process effectively combines
-              the whole parts into the fraction, expressing the total value as a
-              single fraction.
+              Multiply the whole number by the denominator and add the
+              numerator. This result becomes the new numerator. For example, for
+              2 ½, calculate (2 * 2) + 1 = 5. The improper fraction is 5/2.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              How to Add and Subtract Mixed Numbers (The Easy Way)
+              How do you add and subtract mixed numbers?
             </AccordionTrigger>
             <AccordionContent>
-              The easiest and most reliable way to add or subtract mixed numbers
-              is to first convert them all into improper fractions. Once you
-              have two improper fractions, you find a common denominator for
-              both. After they share a common denominator, you can perform the
-              addition or subtraction on the numerators. Finally, you can
-              convert the resulting improper fraction back to a mixed number if
-              needed. This method avoids potential errors when borrowing from
-              the whole number in subtraction.
+              The easiest way is to first convert them to improper fractions.
+              Once you have two improper fractions, find a common denominator.
+              Then you can add or subtract the numerators.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>What is an improper fraction?</AccordionTrigger>
             <AccordionContent>
-              An improper fraction is a fraction where the numerator (the top
-              number) is greater than or equal to the denominator (the bottom
-              number). For example, 5/4 or 3/3 are improper fractions. They
-              represent a value of 1 or more. They can always be converted into
-              a mixed number or a whole number, which often makes them easier to
-              interpret in a real-world context.
+              An improper fraction is a fraction where the top number is larger
+              than or equal to the bottom number (e.g., 5/4). They represent a
+              value of 1 or more.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

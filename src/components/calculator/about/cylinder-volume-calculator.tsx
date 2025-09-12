@@ -53,28 +53,24 @@ export default function AboutCylinderVolumeCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The <strong>Cylinder Calculator</strong> is a versatile tool for
-          students, engineers, and DIY enthusiasts who need to determine the
-          geometric properties of a cylinder. By simply providing the radius and
-          height, you can instantly find the volume (the space it can hold) and
-          the surface area (the total area of its exterior). This is useful for
-          everything from calculating the capacity of a tank to estimating the
-          amount of material needed to construct a cylindrical object.
+          The <strong>Cylinder Calculator</strong> is a tool for finding the
+          geometric properties of a cylinder. Simply provide the radius and
+          height to instantly find the volume and surface area. This is useful
+          for calculating a tank's capacity or the material needed to build a
+          cylindrical object.
         </p>
 
         <h3>How to Use the Cylinder Calculator</h3>
         <ol>
           <li>
-            Enter the <strong>Radius</strong> of the cylinder&apos;s circular
-            base.
+            Enter the <strong>Radius</strong> of the cylinder's circular base.
           </li>
           <li>
             Enter the <strong>Height</strong> of the cylinder.
           </li>
         </ol>
         <p>
-          The calculator will automatically display the cylinder&apos;s
-          volume, total surface area, lateral area, and base area.
+          The calculator will automatically display the volume and surface areas.
         </p>
 
         <h3>Cylinder Calculator FAQs</h3>
@@ -84,10 +80,8 @@ export default function AboutCylinderVolumeCalculator() {
               How is the volume of a cylinder calculated?
             </AccordionTrigger>
             <AccordionContent>
-              The volume of a cylinder is found by multiplying the area of its
-              circular base by its height. The formula is `Volume = π * r² * h`,
-              where &apos;r&apos; is the radius of the base and &apos;h&apos; is
-              the height. This tells you the total capacity of the cylinder.
+              The volume is found by multiplying the area of its circular base
+              by its height. The formula is `Volume = π * r² * h`.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -96,11 +90,9 @@ export default function AboutCylinderVolumeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The <strong>lateral surface area</strong> is the area of the
-              curved side of the cylinder (imagine the label on a can).
-              It&apos;s calculated as `2 * π * r * h`. The{" "}
+              curved side of the cylinder (like a can's label). The{" "}
               <strong>total surface area</strong> is the lateral area plus the
-              area of the two circular bases at the top and bottom, calculated
-              as `2 * π * r * h + 2 * π * r²`.
+              area of the two circular bases at the top and bottom.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -108,11 +100,9 @@ export default function AboutCylinderVolumeCalculator() {
               What are some real-world applications?
             </AccordionTrigger>
             <AccordionContent>
-              Cylinder calculations are essential in many fields. Engineers use
-              them to design pipes, tanks, and pillars. In manufacturing, they
-              are used to determine the volume of cans and containers. They are
-              also fundamental in physics for problems involving fluid dynamics
-              and pressure.
+              Engineers use these calculations to design pipes and tanks.
+              Manufacturers use them to find the volume of cans. They are also
+              used in physics for problems involving fluid dynamics.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

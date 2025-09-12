@@ -54,17 +54,14 @@ export default function AboutAgeCalculator() {
         <p>
           The Age Calculator finds your exact age from your date of birth. It
           shows your age in years, months, and days. This tool is useful for
-          filling out forms, planning events, or if you're just curious about
-          your precise age.
+          filling out forms or if you're just curious about your precise age.
         </p>
 
         <h3>How to Use the Age Calculator</h3>
         <ol>
           <li>Select your date of birth using the calendar.</li>
           <li>Click the "Calculate Age" button to see the result.</li>
-          <li>
-            Your age will appear, showing the total years, months, and days.
-          </li>
+          <li>Your age will appear in years, months, and days.</li>
         </ol>
 
         <h3>Age Calculator FAQs</h3>
@@ -75,10 +72,9 @@ export default function AboutAgeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                This tool finds the number of full years that have passed since
-                your birthday. It then finds the leftover months and days to give
-                you a precise age. The calculation works correctly even with
-                months of different lengths.
+                This tool finds the number of full years passed since your
+                birthday. It then finds the leftover months and days. This
+                gives you a precise age.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -89,8 +85,8 @@ export default function AboutAgeCalculator() {
             <AccordionContent>
               <p>
                 Yes. The age calculation uses the real number of days in each
-                month and year, so leap years are included automatically. This
-                gives you an accurate age, even for people born in a leap year.
+                month and year. Leap years are included automatically. This gives
+                you an accurate age, even for people born in a leap year.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -100,10 +96,9 @@ export default function AboutAgeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                Chronological age is simply the amount of time that has passed
-                from your birth to today. It's different from biological age,
-                which is about how healthy your body is compared to its actual
-                age.
+                Chronological age is simply how old you are in years, months,
+                and days. It's different from biological age, which measures
+                your body's health compared to its actual age.
               </p>
             </AccordionContent>
           </AccordionItem>

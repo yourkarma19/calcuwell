@@ -55,8 +55,8 @@ export default function AboutBacCalculator() {
         <p>
           The Blood Alcohol Content (BAC) calculator gives you an{" "}
           <strong>estimate</strong> of your blood alcohol level. It uses the
-          Widmark formula. It is a helpful tool to understand how alcohol
-          affects you.{" "}
+          Widmark formula. It's a helpful tool to understand how alcohol affects
+          you.{" "}
           <strong>
             Never use this tool to decide if it is safe to drive.
           </strong>
@@ -65,11 +65,10 @@ export default function AboutBacCalculator() {
         <h3>How to Use the BAC Calculator</h3>
         <ol>
           <li>
-            Enter your <strong>Body Weight</strong> in kilograms.
+            Enter your <strong>Body Weight</strong>.
           </li>
           <li>
-            Select your biological <strong>Gender</strong>, as it affects how
-            alcohol is processed.
+            Select your biological <strong>Gender</strong>.
           </li>
           <li>
             Input the number of <strong>Standard Drinks</strong> you have
@@ -92,9 +91,9 @@ export default function AboutBacCalculator() {
               What is a "standard drink"?
             </AccordionTrigger>
             <AccordionContent>
-              A standard drink usually contains 14 grams of pure alcohol. This
-              is about one 12-ounce (355 ml) beer, one 5-ounce (150 ml) glass of
-              wine, or one 1.5-ounce (44 ml) shot of liquor.
+              A standard drink usually has about 14 grams of pure alcohol. This
+              is about one 12-ounce beer, one 5-ounce glass of wine, or one
+              1.5-ounce shot of liquor.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -102,20 +101,19 @@ export default function AboutBacCalculator() {
               Why is this calculator only an estimate?
             </AccordionTrigger>
             <AccordionContent>
-              Your actual BAC can be affected by many things this calculator
-              can't account for. This includes your metabolism, if you've eaten
-              recently, your body fat percentage, and any medications you're
-              taking. Only a breathalyzer or blood test can give you a true BAC
-              reading.
+              Your actual BAC can be affected by many things. This includes
+              your metabolism, recent meals, body fat percentage, and
+              medications. Only a breathalyzer or blood test can give you a true
+              BAC reading.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>How does gender affect BAC?</AccordionTrigger>
             <AccordionContent>
-              Women often have a higher percentage of body fat and less body
-              water than men of the same weight. Because alcohol dissolves in
-              water, it becomes more concentrated in a woman's body. This leads
-              to a higher BAC from the same amount of alcohol.
+              Women often have more body fat and less body water than men of the
+              same weight. Alcohol dissolves in water, so it becomes more
+              concentrated in a woman's body. This leads to a higher BAC from
+              the same amount of alcohol.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

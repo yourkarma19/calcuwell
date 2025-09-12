@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -77,31 +78,25 @@ export default function AboutMortgageCalculator({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
           <p>
-            Our **Mortgage Calculator** is a comprehensive tool designed to help
-            prospective homebuyers understand the full cost of their home loan.
-            It goes beyond a simple EMI calculation by incorporating key
-            expenses like property taxes and home insurance, providing a
-            realistic estimate of your total monthly housing payment. This
-            empowers you to budget accurately and make informed decisions during
-            the home-buying process.
+            Our **Mortgage Calculator** helps you understand the full cost of a
+            home loan. It includes key expenses like property taxes and home
+            insurance. This provides a realistic estimate of your total monthly
+            housing payment and empowers you to budget accurately.
           </p>
 
           <h3>How to Use the Mortgage Calculator</h3>
           <ol>
             <li>Enter the **Home Price** you are considering.</li>
-            <li>Input the estimated annual **Interest Rate** from a lender.</li>
-            <li>
-              Select the **Loan Term** in years (e.g., 15, 20, or 30 years).
-            </li>
+            <li>Input the estimated annual **Interest Rate**.</li>
+            <li>Select the **Loan Term** in years (e.g., 15 or 30 years).</li>
             <li>
               Provide your estimated **Annual Property Tax** and **Home
-              Insurance** costs for the area.
+              Insurance** costs.
             </li>
           </ol>
           <p>
             The calculator will instantly break down your monthly payment into
-            principal, interest, tax, and insurance (PITI) and show you the
-            total cost of the loan over its lifetime.
+            principal, interest, tax, and insurance (PITI).
           </p>
 
           <h3>Mortgage FAQs</h3>
@@ -110,35 +105,28 @@ export default function AboutMortgageCalculator({
               <AccordionTrigger>What is PITI?</AccordionTrigger>
               <AccordionContent>
                 PITI stands for Principal, Interest, Taxes, and Insurance. These
-                are the four main components of a monthly mortgage payment.
-                Principal is the amount that goes towards paying down your loan
-                balance, while Interest is the cost of borrowing. Taxes and
-                Insurance are often collected by the lender and paid on your
-                behalf from an escrow account.
+                are the four main parts of a monthly mortgage payment. Principal
+                pays down your loan balance, while Interest is the cost of
+                borrowing.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>
-                Why is it important to include taxes and insurance?
+                Why include taxes and insurance?
               </AccordionTrigger>
               <AccordionContent>
                 Property taxes and homeowners insurance are significant ongoing
-                costs of homeownership. Forgetting to include them in your
-                budget can lead to a payment that is much higher than you
-                expected. This calculator includes them to give you a more
-                complete picture of your financial commitment.
+                costs. Forgetting to include them can lead to a much higher
+                payment than you expected.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>What is loan amortization?</AccordionTrigger>
               <AccordionContent>
-                Amortization is the process of paying off a loan over time with
-                regular payments. In the early years of a mortgage, a larger
-                portion of your payment goes towards interest. As you continue
-                to make payments, more of your money goes towards paying down
-                the principal balance. The amortization chart visualizes how
-                much of your total payment goes to principal versus interest and
-                other costs over the life of the loan.
+                Amortization is paying off a loan over time with regular
+                payments. In the early years of a mortgage, a larger portion of
+                your payment goes towards interest. Later, more goes toward
+                the principal.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
@@ -146,12 +134,9 @@ export default function AboutMortgageCalculator({
                 How can I lower my mortgage payment?
               </AccordionTrigger>
               <AccordionContent>
-                There are several ways to lower your payment: 1) Make a larger
-                down payment to reduce the principal. 2) Choose a longer loan
-                term (e.g., 30 years instead of 15), but be aware this means
-                paying more interest over time. 3) Shop around for the best
-                possible interest rate, as even a small difference can have a
-                big impact. 4) Improve your credit score before applying.
+                You can make a larger down payment, choose a longer loan term
+                (but you'll pay more interest), or shop around for the best
+                interest rate. Improving your credit score also helps.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

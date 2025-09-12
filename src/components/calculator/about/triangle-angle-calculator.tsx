@@ -36,7 +36,7 @@ export default function AboutTriangleAngleCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">How to Find Triangle Angles</CardTitle>
+        <CardTitle as="h2">About the Triangle Angle Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -44,11 +44,9 @@ export default function AboutTriangleAngleCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          This calculator is a powerful tool for any geometry or trigonometry
-          student. It allows you to find the unknown angles of a triangle based
-          on the information you have. The two primary methods used are the Law
-          of Cosines and the Law of Sines, which are fundamental principles in
-          trigonometry.
+          This calculator finds the unknown angles of a triangle based on the
+          information you have. The two main methods used are the Law of Cosines
+          and the Law of Sines.
         </p>
         <h3>How to Use the Triangle Angle Calculator</h3>
         <ol>
@@ -69,9 +67,7 @@ export default function AboutTriangleAngleCalculator() {
               The Law of Cosines relates the lengths of the sides of a triangle
               to the cosine of one of its angles. The formula is: `c² = a² + b²
               - 2ab cos(C)`. This can be rearranged to solve for an angle if you
-              know all three sides. For example, to find angle C, the formula
-              becomes: `C = arccos((a² + b² - c²) / 2ab)`. It is the primary
-              tool used when you are given three sides (SSS).
+              know all three sides.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -79,9 +75,8 @@ export default function AboutTriangleAngleCalculator() {
             <AccordionContent>
               The Law of Sines relates the sides of a triangle to the sines of
               their opposite angles. The formula is: `a/sin(A) = b/sin(B) =
-              c/sin(C)`. This law is particularly useful when you know two
-              angles and one side (AAS or ASA), or two sides and a non-included
-              angle (SSA).
+              c/sin(C)`. This law is useful when you know two angles and one side
+              (AAS or ASA), or two sides and a non-included angle (SSA).
             </AccordionContent>
           </AccordionItem>
         </Accordion>

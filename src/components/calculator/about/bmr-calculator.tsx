@@ -90,9 +90,9 @@ export default function AboutBmrCalculator() {
         <h3>What is BMR?</h3>
         <p>
           Your <strong>Basal Metabolic Rate (BMR)</strong> is the number of
-          calories your body needs to perform its most basic functions. Think
-          of it as the energy your body would burn if you just stayed in bed all
-          day. It supports breathing, circulation, and cell production.
+          calories your body needs to perform basic functions. Think of it as
+          the energy your body would burn if you just stayed in bed all day. It
+          supports breathing, circulation, and cell production.
         </p>
 
         <h3>BMR Formulas Explained</h3>
@@ -107,8 +107,8 @@ export default function AboutBmrCalculator() {
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>
-                      The Mifflin-St Jeor equation is considered the most
-                      accurate BMR formula by modern research.
+                      This formula is considered the most accurate for
+                      calculating BMR.
                     </p>
                   </TooltipContent>
                 </Tooltip>
@@ -116,8 +116,8 @@ export default function AboutBmrCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                The Mifflin-St Jeor equation is a more modern and accurate
-                formula for calculating BMR. It is the one our calculator uses.
+                The Mifflin-St Jeor equation is a modern and accurate formula
+                for calculating BMR.
               </p>
               <p className="font-mono bg-muted p-2 rounded-md">
                 For men: 10 × weight (kg) + 6.25 × height (cm) - 5 × age (y) + 5
@@ -132,10 +132,9 @@ export default function AboutBmrCalculator() {
             <AccordionTrigger>Harris-Benedict Equation</AccordionTrigger>
             <AccordionContent>
               <p>
-                The original Harris-Benedict equation is one of the earliest
-                formulas used to calculate BMR. It was published in 1919 and
-                revised in 1984. While still used, it's considered slightly less
-                accurate than the Mifflin-St Jeor equation.
+                This is one of the earliest formulas for BMR, published in
+                1919. While still used, it's considered slightly less accurate
+                than the Mifflin-St Jeor equation.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -144,7 +143,7 @@ export default function AboutBmrCalculator() {
         <h3 className="mt-6">BMR vs. TDEE</h3>
         <p>
           BMR is your baseline calorie burn. To understand your total daily
-          calorie needs, you need to know your TDEE.
+          calorie needs, you need your TDEE.
         </p>
         <ul>
           <li>
@@ -176,22 +175,19 @@ export default function AboutBmrCalculator() {
           </TableBody>
         </Table>
 
-        <h3 className="mt-6">How to Use Your BMR for Fitness Goals</h3>
+        <h3 className="mt-6">How to Use Your BMR</h3>
         <p>
           Your TDEE is the key number for managing your weight. To lose weight,
           you need to eat fewer calories than your TDEE. To gain weight, you
-          need to eat more. Knowing your BMR is the first step in understanding
-          your personal energy needs.
-        </p>
-        <p>
-          To calculate your total daily calorie needs, use our{" "}
+          need to eat more. Knowing your BMR is the first step to understanding
+          your energy needs. Use our{" "}
           <Link
             href="/calculators/net-calorie-calculator"
             className="text-primary hover:underline"
           >
             Net Calorie Calculator
-          </Link>
-          .
+          </Link>{" "}
+          to find your total daily needs.
         </p>
       </CardContent>
     </Card>

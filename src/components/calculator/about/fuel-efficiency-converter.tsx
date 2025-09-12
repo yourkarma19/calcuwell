@@ -36,7 +36,7 @@ export default function AboutFuelEfficiencyConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Fuel Efficiency</CardTitle>
+        <CardTitle as="h2">About the Fuel Efficiency Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -44,13 +44,11 @@ export default function AboutFuelEfficiencyConverter() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Fuel Efficiency Converter is a practical tool for car owners,
-          travelers, and anyone interested in automotive metrics. It helps you
-          translate between the two most common ways of measuring a
-          vehicle's fuel economy: **Miles per Gallon (MPG)** and **Liters
-          per 100 kilometers (L/100km)**. Since different countries and
-          manufacturers use different standards, this tool makes it easy to
-          compare vehicles on a level playing field.
+          The Fuel Efficiency Converter helps you translate between the two most
+          common ways of measuring a vehicle's fuel economy:{" "}
+          <strong>Miles per Gallon (MPG)</strong> and <strong>Liters per 100
+          kilometers (L/100km)</strong>. This makes it easy to compare vehicles
+          from different countries.
         </p>
         <h3>How to Use the Fuel Efficiency Converter</h3>
         <ol>
@@ -58,11 +56,7 @@ export default function AboutFuelEfficiencyConverter() {
           <li>
             The converted value will appear automatically in the second box.
           </li>
-          <li>
-            Use the **Swap button** to instantly reverse the conversion
-            direction (e.g., switch from MPG to L/100km to the other way
-            around).
-          </li>
+          <li>Use the **Swap button** to reverse the conversion.</li>
         </ol>
         <h3>Fuel Efficiency FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -72,36 +66,26 @@ export default function AboutFuelEfficiencyConverter() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                The main difference is that one measures distance per unit of
-                fuel, while the other measures fuel per unit of distance. This
-                means they have an inverse relationship.
-              </p>
-              <p>
                 <strong>MPG (Miles Per Gallon):</strong> This unit is common in
-                the United States. It tells you how far a vehicle can travel on
-                a single gallon of fuel. For MPG, a **higher number is better**,
-                as it means the car is more efficient.
+                the United States. It tells you how far a car can go on one
+                gallon of fuel. For MPG, a **higher number is better**.
               </p>
               <p>
                 <strong>L/100km (Liters per 100 kilometers):</strong> This unit
-                is standard in Europe, Canada, and many other parts of the
-                world. It tells you how many liters of fuel a car consumes to
-                travel 100 kilometers. For L/100km, a **lower number is
-                better**.
+                is standard in Europe and many other parts of the world. It
+                tells you how many liters of fuel a car uses to travel 100
+                kilometers. For L/100km, a **lower number is better**.
               </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              Why is my car's real-world MPG different from the advertised
-              rating?
+              Why is my car's real-world MPG different from its rating?
             </AccordionTrigger>
             <AccordionContent>
-              Official fuel economy ratings are achieved in specific, controlled
-              laboratory conditions. Real-world fuel efficiency can be affected
-              by many factors, including your driving style (e.g., aggressive
-              acceleration), road conditions (city vs. highway), tire pressure,
-              vehicle load, and weather.
+              Official ratings are achieved in lab conditions. Real-world fuel
+              efficiency is affected by your driving style, road conditions,
+              tire pressure, and vehicle load.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

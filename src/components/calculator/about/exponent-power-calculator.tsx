@@ -52,7 +52,7 @@ export default function AboutExponentPowerCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Exponents &amp; Powers</CardTitle>
+        <CardTitle as="h2">About Exponents & Powers</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -60,12 +60,10 @@ export default function AboutExponentPowerCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The <strong>Exponent &amp; Power Calculator</strong> is a fundamental
-          mathematical tool that helps you compute the result of a number raised
-          to a certain power. This operation, known as exponentiation, is
-          essential in many fields, including finance (for compound interest),
-          science (for exponential growth), and computer science (for data
-          scaling).
+          The <strong>Exponent & Power Calculator</strong> helps you compute
+          the result of a number raised to a certain power. This operation,
+          called exponentiation, is essential in many fields, including
+          finance, science, and computer science.
         </p>
 
         <h3>How to Use the Exponent & Power Calculator</h3>
@@ -81,7 +79,7 @@ export default function AboutExponentPowerCalculator() {
         </ol>
         <p>
           The calculator will instantly display the result of `x` raised to the
-          power of `y` (x^y).
+          power of `y`.
         </p>
 
         <h3>Exponent & Power FAQs</h3>
@@ -89,10 +87,10 @@ export default function AboutExponentPowerCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What does an exponent mean?</AccordionTrigger>
             <AccordionContent>
-              An exponent indicates how many times to multiply a number (the
-              base) by itself. For example, in the expression 2⁴, the base is 2
-              and the exponent is 4. This means you multiply 2 by itself four
-              times: 2 × 2 × 2 × 2 = 16.
+              An exponent shows how many times to multiply a number (the base)
+              by itself. For example, in 2⁴, the base is 2 and the exponent is
+              4. This means you multiply 2 by itself four times: 2 × 2 × 2 × 2 =
+              16.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -118,8 +116,7 @@ export default function AboutExponentPowerCalculator() {
             <AccordionTrigger>What is an exponent of zero?</AccordionTrigger>
             <AccordionContent>
               Any non-zero number raised to the power of zero is equal to 1. For
-              example, 5⁰ = 1. This rule is a fundamental property of exponents
-              that ensures mathematical consistency.
+              example, 5⁰ = 1. This rule is a basic property of exponents.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

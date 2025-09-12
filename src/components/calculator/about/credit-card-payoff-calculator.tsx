@@ -52,11 +52,9 @@ export default function AboutCreditCardPayoffCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Credit Card Payoff Calculator helps you understand how long it
-          will take to pay off your credit card balance based on your current
-          monthly payment. It also reveals the total amount of interest you will
-          pay, highlighting the true cost of carrying debt. This tool is
-          essential for creating a debt-reduction strategy.
+          The Credit Card Payoff Calculator helps you see how long it will take
+          to pay off your credit card balance. It also shows the total interest
+          you will pay. This is a key tool for creating a debt-reduction plan.
         </p>
         <h3>How to Use the Credit Card Payoff Calculator</h3>
         <ol>
@@ -77,19 +75,18 @@ export default function AboutCreditCardPayoffCalculator() {
             <AccordionContent>
               Credit card interest is compounded, meaning you pay interest on
               your interest. Because APRs are typically high, making only the
-              minimum payment can result in a very long payoff period and a
-              large amount of total interest paid.
+              minimum payment can lead to a very long payoff time and a large
+              amount of total interest paid.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              What happens if my payment is too low?
+              What if my payment is too low?
             </AccordionTrigger>
             <AccordionContent>
-              If your monthly payment is less than or equal to the interest that
-              accrues each month, you will never pay off the debt. The
-              calculator will show an error in this case, indicating you need to
-              increase your payment.
+              If your monthly payment is less than the monthly interest, you
+              will never pay off the debt. The calculator will show an error if
+              this happens, telling you to increase your payment.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -97,11 +94,10 @@ export default function AboutCreditCardPayoffCalculator() {
               How can I pay off my debt faster?
             </AccordionTrigger>
             <AccordionContent>
-              The most effective way is to pay more than the minimum payment
-              each month. Even small extra payments can significantly reduce the
-              time and total interest. You can also look into balance transfer
-              cards with a 0% introductory APR or debt consolidation loans to
-              lower your interest rate.
+              The best way is to pay more than the minimum payment each month.
+              Even small extra payments can greatly reduce the time and total
+              interest. You can also look into balance transfer cards or debt
+              consolidation loans to lower your interest rate.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

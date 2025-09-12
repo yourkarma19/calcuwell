@@ -52,37 +52,31 @@ export default function AboutTimeCardCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Time Card Calculator is an essential tool for employees and
-          employers to accurately track work hours and calculate gross pay for a
-          pay period. It simplifies the process of adding up daily hours and
-          subtracting break times, reducing errors and ensuring fair
-          compensation.
+          The Time Card Calculator helps employees and employers track work
+          hours and calculate gross pay. It simplifies adding up daily hours
+          and subtracting break times, reducing errors and ensuring fair pay.
         </p>
         <h3>How to Use the Time Card Calculator</h3>
         <ol>
           <li>
-            For each day of the week, enter your **Start Time** and **End Time**
-            using the time pickers.
+            For each day, enter your **Start Time** and **End Time**.
           </li>
-          <li>
-            Enter the total duration of your unpaid **Break** in minutes for
-            each day.
-          </li>
-          <li>Enter your **Hourly Rate** of pay at the bottom.</li>
+          <li>Enter the total duration of your unpaid **Break** in minutes.</li>
+          <li>Enter your **Hourly Rate** of pay.</li>
         </ol>
         <p>
           The calculator will instantly update the total weekly hours and your
-          total gross pay in the summary section.
+          total gross pay.
         </p>
         <h3>Time Card Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Gross Pay?</AccordionTrigger>
             <AccordionContent>
-              Gross pay is the total amount of money you earn before any
-              deductions are subtracted. This calculator computes your gross
-              pay. Your actual take-home pay (net pay) will be lower after
-              taxes, insurance, and other deductions are taken out.
+              Gross pay is the total amount you earn before any deductions are
+              subtracted. This calculator computes your gross pay. Your actual
+              take-home pay (net pay) will be lower after taxes and other
+              deductions are taken out.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -103,8 +97,7 @@ export default function AboutTimeCardCalculator() {
             <AccordionContent>
               No, this is a basic time card calculator and does not
               automatically calculate overtime pay. To calculate overtime, you
-              would need to manually separate your regular hours from your
-              overtime hours and use our{" "}
+              would need to separate your regular and overtime hours and use our{" "}
               <a
                 href="/calculators/overtime-pay-calculator"
                 className="text-primary hover:underline"

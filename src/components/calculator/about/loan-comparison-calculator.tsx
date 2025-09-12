@@ -45,7 +45,7 @@ export default function AboutLoanComparisonCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle as="h2">How to Choose the Right Loan?</CardTitle>
+          <CardTitle as="h2">About the Loan Comparison Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <script
@@ -54,10 +54,9 @@ export default function AboutLoanComparisonCalculator() {
           />
           <p>
             Choosing the right loan can save you thousands. Our Loan Comparison
-            Calculator is a tool designed to help you make an informed decision
-            by putting two loan offers side-by-side. By showing the differences
-            in monthly payments, total interest, and overall cost, you can
-            easily see the best financial option.
+            Calculator helps you make an informed decision by putting two loan
+            offers side-by-side. It shows the differences in monthly payments,
+            total interest, and overall cost.
           </p>
         </CardContent>
       </Card>
@@ -71,10 +70,10 @@ export default function AboutLoanComparisonCalculator() {
           <ol>
             <li>
               Enter the **Loan Amount**, **Interest Rate**, and **Tenure** for
-              &quot;Loan Option A&quot;.
+              "Loan Option A".
             </li>
-            <li>Do the same for &quot;Loan Option B&quot;.</li>
-            <li>Click the **&quot;Compare Loans&quot;** button.</li>
+            <li>Do the same for "Loan Option B".</li>
+            <li>Click the **"Compare Loans"** button.</li>
           </ol>
           <p>
             The tool will generate a clear verdict, a detailed table, and a
@@ -98,8 +97,7 @@ export default function AboutLoanComparisonCalculator() {
                   Not always. A lower EMI is easier on your monthly budget, but
                   it often comes with a longer loan term. This means you could
                   pay much more in total interest. This tool helps you see that
-                  trade-off. The best choice balances what you can afford each
-                  month with the lowest total cost.
+                  trade-off.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -109,10 +107,9 @@ export default function AboutLoanComparisonCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  A lot. Even a small difference of 0.5% in the interest rate
-                  can lead to large savings over a long term, especially for big
-                  loans like a home loan. Use this tool to see the exact
-                  difference in total interest paid between two rates.
+                  A lot. Even a small difference of 0.5% can lead to large
+                  savings over a long term, especially for big loans like a
+                  home loan. Use this tool to see the exact difference.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -122,10 +119,10 @@ export default function AboutLoanComparisonCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  Besides the interest rate, consider other loan costs like
+                  Besides the interest rate, consider other costs like
                   processing fees and prepayment penalties. Also, check the
-                  lender&apos;s reputation for customer service. Sometimes a
-                  slightly higher EMI is worth it for better terms or service.
+                  lender's reputation. Sometimes a slightly higher EMI is worth
+                  it for better terms or service.
                 </p>
               </AccordionContent>
             </AccordionItem>

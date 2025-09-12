@@ -53,10 +53,9 @@ export default function AboutBreakEvenPointCalculator() {
         />
         <p>
           The Break-Even Point (BEP) Calculator is a key tool for business
-          owners and finance students. It helps you find the point where your
-          total revenue equals your total costs. At this point, you are not
-          making a profit, but you are not losing money either. Understanding
-          this is vital for setting prices and managing costs.
+          owners. It helps you find the point where your total revenue equals
+          your total costs. At this point, you are not making a profit, but you
+          are not losing money either.
         </p>
         <h3>How to Use the Break-Even Point Calculator</h3>
         <ol>
@@ -71,8 +70,8 @@ export default function AboutBreakEvenPointCalculator() {
           <li>Enter the **Price Per Unit** you sell your product for.</li>
         </ol>
         <p>
-          The calculator will show you how many units you need to sell and the
-          total revenue needed to break even.
+          The calculator will show you how many units you need to sell to break
+          even.
         </p>
         <h3>Break-Even Point FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -92,15 +91,13 @@ export default function AboutBreakEvenPointCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The contribution margin is the money from each sale that's left
-              over to cover your fixed costs. It's found by subtracting the
-              Variable Cost Per Unit from the Price Per Unit. A higher margin
-              means you break even faster.
+              to cover your fixed costs. It's found by subtracting the Variable
+              Cost Per Unit from the Price Per Unit. A higher margin means you
+              break even faster.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>
-              Why is this analysis important?
-            </AccordionTrigger>
+            <AccordionTrigger>Why is this analysis important?</AccordionTrigger>
             <AccordionContent>
               Break-even analysis helps you set sales goals, decide on a
               pricing strategy, and see how cost changes will affect your

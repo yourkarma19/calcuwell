@@ -52,12 +52,10 @@ export default function AboutPercentageCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Percentage Calculator is a versatile tool designed to solve a
-          variety of percentage-related problems that we encounter in daily
-          life. Whether you&apos;re calculating a discount, figuring out a tip,
-          or analyzing a statistical change, this calculator provides instant
-          and accurate results. It simplifies complex calculations and helps you
-          make informed decisions quickly.
+          The Percentage Calculator is a versatile tool to solve a variety of
+          percentage problems. Whether you're calculating a discount, a tip, or
+          analyzing a statistical change, this calculator provides instant and
+          accurate results.
         </p>
 
         <h3>How to Use the Percentage Calculator</h3>
@@ -68,8 +66,7 @@ export default function AboutPercentageCalculator() {
         <ol>
           <li>
             <strong>What is X% of Y?</strong> – Use this to find a specific
-            percentage of a number. Enter the percentage in the first box and
-            the total amount in the second.
+            percentage of a number.
           </li>
           <li>
             <strong>X is what percent of Y?</strong> – Use this to determine
@@ -91,9 +88,8 @@ export default function AboutPercentageCalculator() {
             <AccordionContent>
               <p>
                 To find the percentage of a number, convert the percentage to a
-                decimal by dividing it by 100, then multiply it by the number.
-                For example, to find 25% of 200, you would calculate `0.25 *
-                200`, which equals 50.
+                decimal (divide by 100), then multiply it by the number. For
+                example, 25% of 200 is `0.25 * 200`, which equals 50.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -103,10 +99,9 @@ export default function AboutPercentageCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                To calculate the percentage change, subtract the old value from
-                the new value, then divide that result by the old value.
-                Finally, multiply by 100. The formula is: `((New Value - Old
-                Value) / Old Value) * 100`.
+                Subtract the old value from the new value, then divide by the
+                old value. Finally, multiply by 100. The formula is: `((New -
+                Old) / Old) * 100`.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -120,7 +115,6 @@ export default function AboutPercentageCalculator() {
                 <li>Calculating a 15% tip on a restaurant bill.</li>
                 <li>Figuring out a 30% discount on a sale item.</li>
                 <li>Determining the sales tax on a purchase.</li>
-                <li>Analyzing the percentage increase in your salary.</li>
               </ul>
             </AccordionContent>
           </AccordionItem>
@@ -130,10 +124,10 @@ export default function AboutPercentageCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                To find the original amount before a percentage was added, you
-                can use the formula: `Original Amount = Final Amount / (1 +
-                (Percentage / 100))`. For example, if an item costs ₹110 after a
-                10% tax, the original price was `110 / (1 + 0.10) = 100`.
+                To find the original amount before a percentage was added, use
+                the formula: `Original Amount = Final Amount / (1 + (Percentage
+                / 100))`. For example, if an item costs ₹110 after a 10% tax,
+                the original price was `110 / 1.10 = 100`.
               </p>
             </AccordionContent>
           </AccordionItem>

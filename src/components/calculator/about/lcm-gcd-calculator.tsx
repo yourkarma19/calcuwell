@@ -44,7 +44,7 @@ export default function AboutLcmGcdCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About LCM &amp; GCD</CardTitle>
+        <CardTitle as="h2">About the LCM & GCD Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,23 +52,21 @@ export default function AboutLcmGcdCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our **LCM &amp; GCD Calculator** is a fundamental tool for number
-          theory and mathematics. It allows you to quickly find the Least Common
-          Multiple (LCM) and the Greatest Common Divisor (GCD) for a set of two
-          or more positive integers. This is useful for students learning about
-          number properties and for solving a variety of mathematical problems.
+          Our **LCM & GCD Calculator** is a tool for number theory. It
+          lets you quickly find the Least Common Multiple (LCM) and the Greatest
+          Common Divisor (GCD) for a set of two or more positive integers.
         </p>
         <h3>How to Use the LCM & GCD Calculator</h3>
         <ol>
           <li>Enter at least two positive integers into the input boxes.</li>
           <li>
-            If you need to analyze more numbers, click the **&quot;Add
-            Number&quot;** button.
+            If you need to analyze more numbers, click the **"Add Number"**
+            button.
           </li>
         </ol>
         <p>
-          The calculator will instantly display the GCD and LCM for the entire
-          set of numbers you have entered.
+          The calculator will instantly display the GCD and LCM for the numbers
+          you have entered.
         </p>
         <h3>LCM & GCD FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -77,11 +75,9 @@ export default function AboutLcmGcdCalculator() {
               What is the Greatest Common Divisor (GCD)?
             </AccordionTrigger>
             <AccordionContent>
-              The Greatest Common Divisor (also known as the Greatest Common
-              Factor) is the largest positive integer that divides each of the
-              integers in a set without leaving a remainder. For example, the
-              GCD of 12 and 18 is 6, because 6 is the largest number that
-              divides both 12 and 18 evenly.
+              The GCD is the largest positive integer that divides each of the
+              integers in a set without a remainder. For example, the GCD of 12
+              and 18 is 6.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -89,30 +85,23 @@ export default function AboutLcmGcdCalculator() {
               What is the Least Common Multiple (LCM)?
             </AccordionTrigger>
             <AccordionContent>
-              The Least Common Multiple is the smallest positive integer that is
-              a multiple of every integer in a set. For example, the LCM of 12
-              and 18 is 36, because 36 is the smallest number that both 12 and
-              18 can divide into.
+              The LCM is the smallest positive integer that is a multiple of
+              every integer in a set. For example, the LCM of 12 and 18 is 36.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
             <AccordionContent>
-              For any two positive integers &apos;a&apos; and &apos;b&apos;,
-              there is a beautiful relationship: `a * b = GCD(a, b) * LCM(a,
-              b)`. This means the product of two numbers is equal to the product
-              of their GCD and LCM. This relationship is often used to calculate
-              the LCM once the GCD is known.
+              For any two positive integers 'a' and 'b', their product is equal
+              to the product of their GCD and LCM: `a * b = GCD(a, b) * LCM(a,
+              b)`.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>Practical Uses</AccordionTrigger>
             <AccordionContent>
-              GCD is most commonly used to simplify fractions to their lowest
-              terms. LCM is essential when adding or subtracting fractions with
-              different denominators, as it helps find the least common
-              denominator. Both are fundamental concepts in number theory and
-              cryptography.
+              GCD is used to simplify fractions. LCM is used when adding or
+              subtracting fractions to find the least common denominator.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

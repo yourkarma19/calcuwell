@@ -79,7 +79,7 @@ export default function AboutCapacitorChargeCalculator() {
             <AccordionTrigger>What is the time constant (τ)?</AccordionTrigger>
             <AccordionContent>
               The time constant (tau, or τ) shows how quickly the capacitor
-              charges. You can find it by multiplying the resistance by the
+              charges. You find it by multiplying the resistance by the
               capacitance (τ = R × C). After one time constant, the capacitor is
               about 63.2% charged. It's considered full after about five time
               constants.
@@ -92,8 +92,7 @@ export default function AboutCapacitorChargeCalculator() {
             <AccordionContent>
               When you first turn on the circuit, the current is highest because
               the capacitor is empty. As the capacitor charges, the current
-              gets lower and lower, finally reaching zero when the capacitor is
-              full.
+              gets lower, finally reaching zero when the capacitor is full.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

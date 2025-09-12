@@ -52,60 +52,48 @@ export default function AboutPetAgeCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The **Pet Age Calculator** is a fun and easy way to translate your
-          dog&apos;s or cat&apos;s age into equivalent human years. While the
-          old &quot;7 dog years to 1 human year&quot; rule is a popular myth,
-          the aging process for our pets is more complex. This tool uses a more
-          modern and widely accepted method to give you a better understanding
-          of your pet&apos;s life stage.
+          The **Pet Age Calculator** is a fun way to translate your pet's age
+          into human years. While the old "7 dog years to 1 human year" rule is
+          a myth, this tool uses a more modern method to give you a better
+          understanding of your pet's life stage.
         </p>
         <h3>How to Use the Pet Age Calculator</h3>
         <ol>
-          <li>
-            Select the <strong>Pet Type</strong> (Dog or Cat).
-          </li>
-          <li>
-            Enter your pet&apos;s current <strong>Age</strong> in years.
-          </li>
+          <li>Select the <strong>Pet Type</strong> (Dog or Cat).</li>
+          <li>Enter your pet's current <strong>Age</strong> in years.</li>
         </ol>
         <p>
-          The calculator will instantly show you their estimated age in human
-          years, helping you better appreciate their current needs and life
-          stage.
+          The calculator will instantly show their estimated age in human
+          years.
         </p>
         <h3>Pet Age FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              Is the &quot;7 dog years to 1 human year&quot; rule true?
+              Is the "7 dog years to 1 human year" rule true?
             </AccordionTrigger>
             <AccordionContent>
-              The 7:1 ratio is a common myth. In reality, dogs and cats mature
-              much faster in their first two years than humans do. This
-              calculator uses a more widely accepted method where the first year
-              equals about 15 human years, the second year adds another 9, and
-              every subsequent year adds 4-5 years.
+              No, it's a common myth. Dogs and cats mature much faster in their
+              first two years. This calculator uses a method where the first
+              year equals about 15 human years, the second adds 9, and every
+              year after adds 4-5 years.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>Does breed or size matter?</AccordionTrigger>
             <AccordionContent>
-              Yes, significantly. Smaller dog breeds tend to live longer and
-              mature slower than large breeds. For example, a 7-year-old Great
-              Dane is much &quot;older&quot; in human years than a 7-year-old
-              Chihuahua. This calculator provides a general estimate for an
-              average-sized pet, but breed-specific charts can offer more
-              accuracy.
+              Yes, a lot. Smaller dog breeds tend to live longer and mature
+              slower than large breeds. This calculator provides a general
+              estimate for an average-sized pet.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              How can I tell my pet&apos;s age if they were a rescue?
+              How can I tell my pet's age if they were a rescue?
             </AccordionTrigger>
             <AccordionContent>
-              A veterinarian is the best person to help estimate a pet&apos;s
-              age. They look at factors like the condition of the teeth, coat,
-              eyes, and overall physical health to make an educated guess.
+              A veterinarian is the best person to help. They look at the
+              condition of the teeth, coat, and eyes to make an educated guess.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

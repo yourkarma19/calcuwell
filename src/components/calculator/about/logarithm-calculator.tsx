@@ -52,11 +52,10 @@ export default function AboutLogarithmCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Logarithm Calculator helps you find the logarithm of a number to a
+          The Logarithm Calculator finds the logarithm of a number to a
           specified base. Logarithms are the inverse of exponents. They answer
-          the question: &quot;To what power must we raise a base to get another
-          number?&quot; This tool is helpful for anyone working with exponential
-          functions.
+          the question: "To what power must we raise a base to get another
+          number?"
         </p>
 
         <h3>How to Use the Logarithm Calculator</h3>
@@ -81,24 +80,24 @@ export default function AboutLogarithmCalculator() {
             <AccordionContent>
               A logarithm is the power to which a number (the base) must be
               raised to produce another number. For example, the logarithm of
-              100 to base 10 is 2. This is because 10² equals 100.
+              100 to base 10 is 2, because 10² equals 100.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>Common Log vs. Natural Log</AccordionTrigger>
             <AccordionContent>
-              The <strong>common logarithm (log)</strong> uses base 10 and is
-              common in science. The <strong>natural logarithm (ln)</strong>{" "}
-              uses base *e* (about 2.718) and is important in math, physics, and
-              finance for describing continuous growth.
+              The <strong>common logarithm (log)</strong> uses base 10. The{" "}
+              <strong>natural logarithm (ln)</strong> uses base *e* (about
+              2.718). The natural log is important in math, physics, and finance
+              for describing continuous growth.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>Why can&apos;t the base be 1?</AccordionTrigger>
+            <AccordionTrigger>Why can't the base be 1?</AccordionTrigger>
             <AccordionContent>
               A base of 1 is not allowed because 1 raised to any power is always
-              1. This means you could never produce any other number, making the
-              operation undefined for most values.
+              1. This means you could never produce any other number, so the
+              operation would be undefined.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
@@ -106,11 +105,10 @@ export default function AboutLogarithmCalculator() {
               What is the Change of Base Formula?
             </AccordionTrigger>
             <AccordionContent>
-              Most calculators have buttons only for common log (base 10) and
-              natural log (base e). To find a logarithm with a different base,
-              you can use the change of base formula: `logb(x) = logc(x) /
-              logc(b)`. Our calculator uses this formula internally for its
-              calculations.
+              Most calculators only have buttons for common log (base 10) and
+              natural log (base e). To find a log with a different base, you
+              can use the change of base formula: `logb(x) = logc(x) /
+              logc(b)`. Our calculator uses this formula for you.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

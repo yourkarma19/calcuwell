@@ -54,8 +54,8 @@ export default function AboutCarbonFootprintCalculator() {
         <p>
           The Carbon Footprint Calculator gives a simple estimate of the
           greenhouse gas emissions from your daily activities. It helps you see
-          your environmental impact by looking at three key areas:
-          transportation, household energy, and diet.
+          your environmental impact by looking at transportation, household
+          energy, and diet.
         </p>
 
         <h3>How to Use the Carbon Footprint Calculator</h3>
@@ -66,8 +66,7 @@ export default function AboutCarbonFootprintCalculator() {
           </li>
           <li>
             **Household Energy:** Input your average monthly electricity usage
-            in kilowatt-hours (kWh). You can usually find this on your utility
-            bill.
+            in kilowatt-hours (kWh). You can find this on your utility bill.
           </li>
           <li>
             **Diet:** Choose the dietary pattern that best matches your own.
@@ -94,9 +93,8 @@ export default function AboutCarbonFootprintCalculator() {
             <AccordionContent>
               Finding a precise carbon footprint is very complex. The actual
               impact depends on many factors. These include your local power
-              grid's energy sources, your car's fuel efficiency, and the supply
-              chains of your food. This tool uses averages to provide a general
-              but useful estimate.
+              grid's energy sources and your car's fuel efficiency. This tool
+              uses averages to provide a general estimate.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -105,10 +103,9 @@ export default function AboutCarbonFootprintCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               There are many ways to reduce your footprint. For transport, try
-              using public transit, cycling, or walking. At home, reduce energy
-              use with efficient appliances and by turning off lights. As for
-              diet, eating less red meat, like beef and lamb, can significantly
-              lower your food-related emissions.
+              using public transit, cycling, or walking. At home, use less
+              energy with efficient appliances. As for diet, eating less red
+              meat can significantly lower your food-related emissions.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

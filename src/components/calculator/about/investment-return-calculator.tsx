@@ -44,7 +44,7 @@ export default function AboutInvestmentReturnCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Return on Investment (ROI)</CardTitle>
+        <CardTitle as="h2">About the Return on Investment (ROI) Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,12 +52,10 @@ export default function AboutInvestmentReturnCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Return on Investment (ROI) Calculator is a fundamental financial
-          tool that measures the profitability of an investment. It helps you
-          understand how much money you have made or lost in relation to your
-          initial cost. This simple calculation is one of the most popular ways
-          to evaluate the performance of an investment, whether it&apos;s
-          stocks, real estate, or a business venture.
+          The Return on Investment (ROI) Calculator measures the profitability
+          of an investment. It helps you understand how much money you have made
+          or lost in relation to your initial cost. This is one of the most
+          popular ways to evaluate an investment's performance.
         </p>
         <h3>How to Use the ROI Calculator</h3>
         <ol>
@@ -66,7 +64,7 @@ export default function AboutInvestmentReturnCalculator() {
             paid.
           </li>
           <li>
-            Enter the **Final Value** of the investment. This is what it&apos;s
+            Enter the **Final Value** of the investment. This is what it's
             worth now, or what you sold it for.
           </li>
         </ol>
@@ -81,17 +79,16 @@ export default function AboutInvestmentReturnCalculator() {
             <AccordionContent>
               The formula for Return on Investment is: `ROI = ( (Final Value -
               Initial Investment) / Initial Investment ) * 100`. The result is
-              expressed as a percentage.
+              a percentage.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>What is a good ROI?</AccordionTrigger>
             <AccordionContent>
-              A &quot;good&quot; ROI depends heavily on the type of investment
-              and its associated risk. For example, a 7-10% annual ROI is often
-              considered a good average for the stock market. A high-risk
-              startup investment would need a much higher potential ROI to be
-              considered worthwhile.
+              A "good" ROI depends on the type of investment and its risk. A
+              7-10% annual ROI is often considered a good average for the stock
+              market. A high-risk investment would need a much higher potential
+              ROI to be worthwhile.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -99,11 +96,10 @@ export default function AboutInvestmentReturnCalculator() {
               What are the limitations of ROI?
             </AccordionTrigger>
             <AccordionContent>
-              ROI is a simple and effective metric, but it has one major
-              limitation: it doesn&apos;t account for the holding period of an
+              ROI is simple, but it doesn't account for the holding period of an
               investment. An ROI of 20% over one year is much better than an ROI
               of 20% over ten years. For comparing investments over different
-              timeframes, it&apos;s often better to look at the annualized ROI.
+              timeframes, it's better to look at the annualized ROI.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

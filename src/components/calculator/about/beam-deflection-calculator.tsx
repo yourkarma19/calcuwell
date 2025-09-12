@@ -46,29 +46,26 @@ export default function AboutBeamDeflectionCalculator() {
         <p>
           The Beam Deflection Calculator is an engineering tool. It finds the
           maximum displacement of a simple cantilever beam with a point load. A
-          cantilever beam is supported only at one end. This calculation is key
-          for engineers to ensure a beam can safely support its load without
+          cantilever beam is only supported at one end. This calculation is key
+          for engineers to make sure a beam can safely support its load without
           bending too much.
         </p>
 
         <h3>How to Use the Beam Deflection Calculator</h3>
         <ol>
           <li>
-            Enter the <strong>Load (P)</strong> in Newtons applied to the end
-            of the beam.
+            Enter the <strong>Load (P)</strong> in Newtons.
           </li>
           <li>
             Enter the total <strong>Length (L)</strong> of the beam in meters.
           </li>
           <li>
-            Enter the <strong>Modulus of Elasticity (E)</strong> for the
-            beam's material in Gigapascals (GPa). This value shows the
-            material's stiffness. Steel is around 200 GPa.
+            Enter the <strong>Modulus of Elasticity (E)</strong> in
+            Gigapascals (GPa). This value shows the material's stiffness.
           </li>
           <li>
-            Enter the <strong>Area Moment of Inertia (I)</strong> of the
-            beam's cross-section. This value shows the beam's resistance to
-            bending.
+            Enter the <strong>Area Moment of Inertia (I)</strong>. This value
+            shows the beam's resistance to bending.
           </li>
         </ol>
         <p>
@@ -98,9 +95,9 @@ export default function AboutBeamDeflectionCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Understanding beam deflection is critical for safety. Too much
-              deflection can cause structural failure or damage finishes like
-              drywall. Engineers use this calculation to choose the right beam
-              size and material for a given load.
+              deflection can cause structural failure or damage. Engineers use
+              this calculation to choose the right beam size and material for a
+              given load.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

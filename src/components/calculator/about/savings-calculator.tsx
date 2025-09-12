@@ -53,29 +53,21 @@ export default function AboutSavingsCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Savings Growth Calculator is a powerful financial tool that helps
-          you visualize how your savings can grow over time. By factoring in
-          your initial deposit, regular contributions, and the power of compound
-          interest, this calculator provides a clear projection of your
-          financial future. It's an essential tool for anyone planning for
-          long-term goals like retirement, a home down payment, or a
-          child's education.
+          The Savings Growth Calculator helps you visualize how your savings
+          can grow over time. By factoring in your initial deposit, regular
+          contributions, and compound interest, this calculator provides a clear
+          projection of your financial future.
         </p>
         <h3>How to Use the Savings Calculator</h3>
         <ol>
-          <li>
-            Enter your **Initial Amount** (what you're starting with).
-          </li>
+          <li>Enter your **Initial Amount**.</li>
           <li>Set your planned **Monthly Contribution**.</li>
-          <li>
-            Input the estimated **Annual Interest Rate** you expect your savings
-            to earn.
-          </li>
+          <li>Input the estimated **Annual Interest Rate**.</li>
           <li>Choose your **Investment Duration** in years.</li>
         </ol>
         <p>
           The calculator will instantly show the future value of your savings
-          and a breakdown of your contributions versus the interest earned.
+          and a breakdown of your contributions versus interest earned.
         </p>
         <h3>Savings Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -84,12 +76,10 @@ export default function AboutSavingsCalculator() {
               How does compound interest work?
             </AccordionTrigger>
             <AccordionContent>
-              Compound interest is &quot;interest on interest.&quot; It means
-              that the interest you earn is added back to your principal, and
-              then you earn interest on the new, larger amount. This causes your
-              savings to grow at an accelerating rate over time. The more
-              frequently interest is compounded (e.g., monthly vs. annually),
-              the faster your money grows. Our{" "}
+              Compound interest is "interest on interest." The interest you
+              earn is added to your principal, and then you earn interest on
+              the new, larger amount. This causes your savings to grow faster
+              over time. Our{" "}
               <Link
                 href="/calculators/compound-interest-calculator"
                 className="text-primary hover:underline"
@@ -105,10 +95,8 @@ export default function AboutSavingsCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Consistent, regular contributions are the engine of your savings
-              plan. Even small monthly deposits add up to a significant amount
-              over many years. This strategy, known as dollar-cost averaging,
-              helps you build wealth steadily and reduces the risk of market
-              timing.
+              plan. Even small monthly deposits add up to a large amount over
+              many years. This strategy helps you build wealth steadily.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -116,12 +104,11 @@ export default function AboutSavingsCalculator() {
               What is a realistic interest rate to assume?
             </AccordionTrigger>
             <AccordionContent>
-              A realistic rate depends on where you are saving or investing your
-              money. A high-yield savings account might offer 1-3%, while a
-              diversified stock market portfolio has historically returned an
-              average of 7-10% annually over the long term, though with higher
-              risk. It's often wise to use a conservative estimate for
-              planning.
+              A realistic rate depends on where you are investing. A high-yield
+              savings account might offer 1-3%, while a stock market portfolio
+              has historically returned an average of 7-10% annually over the
+              long term, though with higher risk. It's often wise to use a
+              conservative estimate.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

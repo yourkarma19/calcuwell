@@ -53,16 +53,15 @@ export default function AboutComplexNumberCalculator() {
         />
         <p>
           This calculator helps you work with complex numbers. They are a key
-          part of math and engineering, used to solve problems that regular
-          numbers can't. This tool lets you easily add, subtract, multiply, and
-          divide them.
+          part of math and engineering. This tool lets you easily add,
+          subtract, multiply, and divide them.
         </p>
 
         <h3>How to Use the Complex Number Calculator</h3>
         <p>
           A complex number has two parts: a real part and an imaginary part.
-          Enter both parts for the two numbers you want to use. Then, select the
-          operation you want to perform.
+          Enter both parts for the two numbers you want to use. Then, select
+          the operation you want to perform.
         </p>
 
         <h3>Complex Number FAQs</h3>
@@ -72,8 +71,7 @@ export default function AboutComplexNumberCalculator() {
             <AccordionContent>
               A complex number has the form `a + bi`. The 'a' is the "real"
               part, and the 'b' is the "imaginary" part. They are used in many
-              areas of science and engineering, like electronics and signal
-              processing.
+              areas of science and engineering.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

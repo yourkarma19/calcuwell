@@ -44,7 +44,7 @@ export default function AboutIdealWeightCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Ideal Weight</CardTitle>
+        <CardTitle as="h2">About the Ideal Weight Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,12 +52,10 @@ export default function AboutIdealWeightCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Ideal Weight Calculator provides an estimate of a healthy body
-          weight based on your height and gender. It&apos;s important to
-          remember that &quot;ideal weight&quot; is a general guideline, not a
-          strict rule. This tool uses the Robinson formula, a commonly cited
-          method, to give you a reference point for your health and fitness
-          goals.
+          The Ideal Weight Calculator estimates a healthy body weight based on
+          your height and gender. It's important to remember that this is a
+          general guideline, not a strict rule. This tool uses the Robinson
+          formula to give you a reference point for your fitness goals.
         </p>
         <h3>How to Use the Ideal Weight Calculator</h3>
         <ol>
@@ -75,11 +73,9 @@ export default function AboutIdealWeightCalculator() {
               What is &quot;ideal weight&quot;?
             </AccordionTrigger>
             <AccordionContent>
-              Ideal weight is a concept used to estimate a healthy weight range
-              for a person of a certain height. It does not account for
-              individual differences in body composition (like muscle vs. fat),
-              bone density, or frame size. Therefore, it should be used as a
-              general guide, not a definitive goal.
+              Ideal weight is a guideline for a healthy weight range based on
+              height. It doesn't account for individual differences like muscle
+              vs. fat. Use it as a general guide, not a strict goal.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -87,22 +83,20 @@ export default function AboutIdealWeightCalculator() {
               Which formula does this calculator use?
             </AccordionTrigger>
             <AccordionContent>
-              This calculator uses the **Robinson Formula (1983)**, which is a
-              popular and simple method for estimating ideal body weight. Other
-              formulas, like the Miller, Devine, and Hamwi formulas, exist and
-              may produce slightly different results. No single formula is
-              perfect for everyone.
+              This calculator uses the **Robinson Formula (1983)**, a popular
+              method for estimating ideal body weight. Other formulas exist and
+              may give slightly different results. No single formula is perfect
+              for everyone.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Is this better than BMI?</AccordionTrigger>
             <AccordionContent>
-              Ideal weight and BMI are two different tools. BMI (Body Mass
-              Index) assesses if your weight is healthy for your height but
-              doesn&apos;t provide a specific target weight. The ideal weight
-              calculation gives you a target number to aim for, but it&apos;s
-              less comprehensive than BMI. Both are useful screening tools, but
-              neither tells the whole story of your health.
+              Ideal weight and BMI are different tools. BMI checks if your
+              weight is healthy for your height but doesn't give a target. The
+              ideal weight calculation gives a target number but is less
+              complete. Both are useful screening tools, but neither tells the
+              whole story.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -52,10 +52,9 @@ export default function AboutCircleCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Circle Calculator is a tool for finding a circle's properties from
-          a single measurement. Whether you know the radius, diameter,
-          circumference, or area, this calculator can instantly find the other
-          three values. It's a key tool for students, designers, and engineers.
+          The Circle Calculator finds a circle's properties from a single
+          measurement. Whether you know the radius, diameter, circumference, or
+          area, this calculator can instantly find the other three values.
         </p>
 
         <h3>How to Use the Circle Calculator</h3>
@@ -101,8 +100,7 @@ export default function AboutCircleCalculator() {
               The <strong>radius (r)</strong> is the distance from the center
               of the circle to any point on its edge. The{" "}
               <strong>diameter (d)</strong> is the distance across the circle,
-              passing through the center. The diameter is always twice as long
-              as the radius.
+              passing through the center. The diameter is always twice the radius.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

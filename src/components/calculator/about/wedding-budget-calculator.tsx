@@ -44,7 +44,7 @@ export default function AboutWeddingBudgetCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">How to Plan Your Wedding Budget</CardTitle>
+        <CardTitle as="h2">About the Wedding Budget Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,25 +52,21 @@ export default function AboutWeddingBudgetCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our **Wedding Budget Calculator** is designed to help you plan and
-          manage the financial aspect of your special day. By breaking down the
-          costs into key categories, you can get a realistic estimate of your
-          total expenses and see where your money is going. This is the first
-          step to a stress-free wedding planning experience.
+          Our **Wedding Budget Calculator** helps you plan and manage the
+          financial side of your special day. By breaking down the costs into
+          key categories, you can get a realistic estimate of your total
+          expenses and see where your money is going.
         </p>
         <h3>How to Use the Wedding Budget Calculator</h3>
         <ol>
-          <li>
-            Start by setting the **Number of Guests** you plan to invite. This
-            is the biggest factor affecting your costs.
-          </li>
+          <li>Start by setting the **Number of Guests**.</li>
           <li>
             Enter your estimated costs for each category, such as the **Venue**,
-            **Catering**, **Photography**, and **Decor**.
+            **Catering**, and **Photography**.
           </li>
           <li>
-            Use the &quot;Miscellaneous&quot; field to account for other
-            expenses like invitations, entertainment, or wedding rings.
+            Use the "Miscellaneous" field to account for other expenses like
+            invitations or entertainment.
           </li>
         </ol>
         <p>
@@ -85,9 +81,9 @@ export default function AboutWeddingBudgetCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Typically, the venue and catering are the largest parts of a
-              wedding budget, often accounting for 50% or more of the total
-              cost. The number of guests you invite has a direct impact on this,
-              as catering is usually priced per person.
+              wedding budget, often 50% or more of the total cost. The number of
+              guests has a direct impact on this, as catering is usually
+              priced per person.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -98,8 +94,7 @@ export default function AboutWeddingBudgetCalculator() {
               There are many ways to save! Consider having your wedding on a
               weekday or during the off-season. Trimming the guest list is the
               most effective way to cut costs. You can also explore DIY options
-              for decorations or choose a less formal catering style, like a
-              buffet instead of a plated dinner.
+              for decorations.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -107,10 +102,9 @@ export default function AboutWeddingBudgetCalculator() {
               How much should we budget for unexpected costs?
             </AccordionTrigger>
             <AccordionContent>
-              It's wise to set aside about 5-10% of your total budget as a
-              contingency fund. This will help you cover any unexpected expenses
-              that arise without adding stress. The &quot;Miscellaneous&quot;
-              category in our calculator can be used for this.
+              It's wise to set aside 5-10% of your total budget as a contingency
+              fund. This will help you cover any unexpected expenses that arise
+              without adding stress.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

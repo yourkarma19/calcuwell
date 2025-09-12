@@ -16,10 +16,10 @@ export default function AboutFileSizeCalculator() {
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
-          This tool helps you estimate the size of a digital file, particularly
-          useful for video or audio, based on its length (duration) and quality
-          (bitrate). This allows you to plan for storage space or data usage
-          when downloading or creating media.
+          This tool helps you estimate the size of a digital file, like a video
+          or audio file. It bases the estimate on its length (duration) and
+          quality (bitrate). This allows you to plan for storage space or data
+          usage when downloading or creating media.
         </p>
         <h3>How to Use the File Size Calculator</h3>
         <ol>
@@ -34,17 +34,15 @@ export default function AboutFileSizeCalculator() {
               Bitrate is the amount of data used to represent one second of
               audio or video. A higher bitrate generally results in better
               quality and a larger file size. It's often measured in
-              kilobits per second (kbit/s) or megabits per second (mbit/s).
+              kilobits per second (kbit/s).
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>How is file size calculated?</AccordionTrigger>
             <AccordionContent>
-              The formula is straightforward: `File Size = Bitrate × Duration`.
-              The key is to ensure the units are consistent. For example, if you
-              have a bitrate in kilobits per second, you must convert it to
-              bytes and multiply by the total duration in seconds to get the
-              file size in bytes.
+              The formula is simple: `File Size = Bitrate × Duration`. The key is
+              to make sure the units are consistent. This calculator handles
+              the unit conversions for you.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

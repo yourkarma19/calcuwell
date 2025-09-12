@@ -44,7 +44,7 @@ export default function AboutLoanAffordabilityCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Loan Affordability</CardTitle>
+        <CardTitle as="h2">About the Loan Affordability Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,37 +52,31 @@ export default function AboutLoanAffordabilityCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Loan Affordability Calculator is a crucial first step for any
-          prospective borrower. It helps you determine how much you can
-          realistically borrow for a home, car, or personal expense. By
-          analyzing your income and existing financial commitments, this tool
-          provides a clear estimate of the maximum loan amount you can likely
-          manage. This empowers you to set realistic goals and approach lenders
-          with confidence.
+          The Loan Affordability Calculator helps you determine how much you can
+          realistically borrow. By analyzing your income and existing debts,
+          this tool provides an estimate of the maximum loan amount you can
+          likely manage. This helps you set realistic goals.
         </p>
 
         <h3>How to Use the Loan Affordability Calculator</h3>
         <ol>
-          <li>
-            Enter your total gross <strong>Annual Income</strong>.
-          </li>
+          <li>Enter your total gross <strong>Annual Income</strong>.</li>
           <li>
             Provide your total <strong>Monthly Debt Payments</strong> (e.g.,
-            credit card bills, other existing loans).
+            credit card bills, other loans).
           </li>
           <li>
             Input the estimated <strong>Interest Rate</strong> and{" "}
-            <strong>Loan Term</strong> for the new loan you are considering.
+            <strong>Loan Term</strong> for the new loan.
           </li>
           <li>
             Adjust the <strong>Debt-to-Income (DTI) Ratio</strong> slider. 43%
-            is a common maximum that many lenders allow, but a lower ratio is
-            generally better.
+            is a common maximum that lenders allow.
           </li>
         </ol>
         <p>
           The calculator will instantly show you the maximum loan you can likely
-          afford and what your estimated monthly payment would be.
+          afford and your estimated monthly payment.
         </p>
 
         <h3>Loan Affordability FAQs</h3>
@@ -93,20 +87,17 @@ export default function AboutLoanAffordabilityCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Your DTI ratio is the percentage of your gross monthly income that
-              goes toward paying your monthly debt payments. Lenders use it as a
-              key metric to measure your ability to manage payments and repay
-              debts. A lower DTI ratio indicates a healthy balance between your
-              debt and income.
+              goes toward monthly debt payments. Lenders use it to measure your
+              ability to manage payments. A lower DTI ratio is better.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>How can I improve my DTI?</AccordionTrigger>
             <AccordionContent>
-              There are two main ways to improve your DTI ratio: increase your
-              income or reduce your monthly debt. To reduce debt, focus on
-              paying down existing loans or credit card balances. It is also
-              wise to avoid taking on new debt right before you apply for a
-              major loan like a mortgage.
+              There are two main ways: increase your income or reduce your
+              monthly debt. To reduce debt, focus on paying down existing loans.
+              It's also wise to avoid taking on new debt right before applying
+              for a major loan.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -114,9 +105,7 @@ export default function AboutLoanAffordabilityCalculator() {
             <AccordionContent>
               No, this is an estimation tool for informational purposes only.
               The actual loan amount you qualify for may vary based on your
-              credit score, employment history, and the specific policies of the
-              lender. This tool should be used as a starting point for your
-              financial planning.
+              credit score, employment history, and lender policies.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -11,7 +12,7 @@ export default function AboutEnergyConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Energy Units</CardTitle>
+        <CardTitle as="h2">About the Energy Converter</CardTitle>
       </CardHeader>
       <CardContent>
         <p>
@@ -25,8 +26,8 @@ export default function AboutEnergyConverter() {
             <AccordionTrigger>Joule vs. Calorie</AccordionTrigger>
             <AccordionContent>
               The <strong>Joule (J)</strong> is the standard SI unit of energy.
-              A <strong>calorie (cal)</strong> is an older unit, often used in
-              chemistry. The "calorie" on food labels is actually a{" "}
+              A <strong>calorie (cal)</strong> is an older unit. The "calorie"
+              on food labels is actually a{" "}
               <strong>kilocalorie (kcal)</strong>. One kcal is equal to 1,000
               calories.
             </AccordionContent>
@@ -34,9 +35,9 @@ export default function AboutEnergyConverter() {
           <AccordionItem value="item-2">
             <AccordionTrigger>What is a Kilowatt-hour (kWh)?</AccordionTrigger>
             <AccordionContent>
-              A Kilowatt-hour is a unit of energy. It is commonly used by
-              utility companies to bill for electricity. It is the energy used
-              by a 1,000-watt appliance running for one hour.
+              A Kilowatt-hour is a unit of energy. It is often used by utility
+              companies to bill for electricity. It is the energy used by a
+              1,000-watt appliance running for one hour.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

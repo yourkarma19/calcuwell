@@ -55,8 +55,7 @@ export default function AboutAngleConverter() {
           The Angle Converter is a simple tool for students, engineers, and
           scientists. It helps you switch between the two most common units for
           angles: <strong>degrees</strong> and <strong>radians</strong>. This tool
-          gives you instant, accurate conversions and helps prevent errors in
-          your work.
+          gives you instant and accurate conversions.
         </p>
 
         <h3>How to Use the Angle Converter</h3>
@@ -73,14 +72,13 @@ export default function AboutAngleConverter() {
             <AccordionContent>
               <p>
                 <strong>Degrees (°)</strong> are the common unit for measuring
-                angles, with a full circle having 360°. Each degree is just
-                1/360th of a full turn.
+                angles. A full circle has 360°. Each degree is just 1/360th of a
+                full turn.
               </p>
               <p>
                 <strong>Radians (rad)</strong> are the standard unit in math and
                 physics. A full circle has 2π radians. One radian is the angle
-                at the center of a circle where the arc's length equals the
-                circle's radius.
+                where the arc's length equals the circle's radius.
               </p>
             </AccordionContent>
           </AccordionItem>

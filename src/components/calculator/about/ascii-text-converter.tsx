@@ -55,8 +55,7 @@ export default function AboutAsciiTextConverter() {
         <p>
           Our ASCII to Text Converter is a simple tool for developers, data
           analysts, and students. It lets you quickly convert plain text into
-          its ASCII value, and back again. This is useful for debugging data,
-          understanding character codes, or for school work.
+          its ASCII value, and back again.
         </p>
         <h3>How to Use the ASCII Converter</h3>
         <p>The converter works both ways at the same time:</p>
@@ -78,9 +77,8 @@ export default function AboutAsciiTextConverter() {
             <AccordionTrigger>What is ASCII?</AccordionTrigger>
             <AccordionContent>
               ASCII is a system that gives a unique number to each letter,
-              digit, and symbol. For example, the capital letter 'A' is 65, and
-              'B' is 66. This lets computers store and work with text as
-              numbers.
+              digit, and symbol. For example, 'A' is 65, and 'B' is 66. This lets
+              computers store and work with text as numbers.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

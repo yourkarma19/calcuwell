@@ -48,8 +48,7 @@ export default function AboutBinaryConverter() {
           Our <strong>Number System Converter</strong> is a key tool for
           programmers, computer science students, and IT professionals. It lets
           you quickly convert between the four most common number systems in
-          computing: binary (base-2), decimal (base-10), hexadecimal (base-16),
-          and octal (base-8).
+          computing: binary, decimal, hexadecimal, and octal.
         </p>
         <h3>How to Use the Number System Converter</h3>
         <ol>
@@ -59,8 +58,7 @@ export default function AboutBinaryConverter() {
         </ol>
         <p>
           The result will appear instantly. The calculator checks your input to
-          make sure it is valid for the selected base (e.g., binary only
-          accepts 0s and 1s).
+          make sure it is valid for the selected base.
         </p>
         <h3>Number System FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -89,13 +87,13 @@ export default function AboutBinaryConverter() {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              Why is hexadecimal used so much in programming?
+              Why is hexadecimal used in programming?
             </AccordionTrigger>
             <AccordionContent>
               Hexadecimal is popular because it's a human-friendly way to show
-              long binary values. For example, the binary `11111111` is much
-              easier to read as `FF` in hexadecimal. It's often used for memory
-              addresses and color codes (e.g., `#FF0000` for red).
+              long binary values. For example, `11111111` is easier to read as
+              `FF`. It's often used for memory addresses and color codes (e.g.,
+              `#FF0000` for red).
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -45,7 +45,7 @@ export default function AboutSimpleInterestCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">Understanding Simple Interest</CardTitle>
+        <CardTitle as="h2">About the Simple Interest Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -55,24 +55,15 @@ export default function AboutSimpleInterestCalculator() {
         <p>
           The <strong>Simple Interest Calculator</strong> provides a
           straightforward way to determine the interest earned on a principal
-          amount over a specific period. Unlike compound interest, simple
-          interest is calculated only on the initial amount (the principal) and
-          does not include interest on previously earned interest. It's
-          often used for short-term loans or investments.
+          amount. Unlike compound interest, simple interest is calculated only
+          on the initial amount (the principal).
         </p>
 
         <h3>How to Use the Simple Interest Calculator</h3>
         <ol>
-          <li>
-            Enter the <strong>Principal Amount</strong> (the initial sum of
-            money).
-          </li>
-          <li>
-            Set the annual <strong>Interest Rate</strong> (as a percentage).
-          </li>
-          <li>
-            Define the <strong>Tenure</strong> in years.
-          </li>
+          <li>Enter the <strong>Principal Amount</strong>.</li>
+          <li>Set the annual <strong>Interest Rate</strong>.</li>
+          <li>Define the <strong>Tenure</strong> in years.</li>
         </ol>
         <p>
           The results will instantly show the total interest earned and the
@@ -95,17 +86,13 @@ export default function AboutSimpleInterestCalculator() {
                   <strong>P</strong> is the principal amount.
                 </li>
                 <li>
-                  <strong>R</strong> is the annual interest rate in decimal form
+                  <strong>R</strong> is the annual interest rate as a decimal
                   (e.g., 5% = 0.05).
                 </li>
                 <li>
                   <strong>T</strong> is the time period in years.
                 </li>
               </ul>
-              <p>
-                This calculator uses the rate as a percentage, so the formula is
-                `(P * R * T) / 100`.
-              </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -114,13 +101,10 @@ export default function AboutSimpleInterestCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                Simple interest is calculated solely on the original principal
-                amount, so you earn the same amount of interest each year. In
-                contrast, compound interest is calculated on both the principal
-                and the accumulated interest from previous periods. This
-                &quot;interest on interest&quot; effect means compound interest
-                leads to much faster growth over time, especially for long-term
-                investments.
+                Simple interest is calculated only on the original principal.
+                In contrast, compound interest is calculated on both the
+                principal and the accumulated interest. This means compound
+                interest leads to much faster growth over time.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -130,11 +114,9 @@ export default function AboutSimpleInterestCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                Simple interest is most commonly used for short-term loans or
-                financial products. For example, car loans and some personal
-                loans often use simple interest. It's less common for
-                long-term savings or investment accounts, where compound
-                interest is the standard because it provides better returns.
+                Simple interest is most common for short-term loans. For
+                example, car loans and some personal loans often use simple
+                interest.
               </p>
             </AccordionContent>
           </AccordionItem>

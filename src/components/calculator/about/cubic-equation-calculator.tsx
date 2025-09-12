@@ -52,21 +52,15 @@ export default function AboutCubicEquationCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          This tool is designed to solve any cubic equation, which is a
-          third-degree polynomial equation of the form `ax³ + bx² + cx + d = 0`.
-          Solving cubic equations can be complex, and this calculator simplifies
-          the process by finding all three roots, which can be real or complex
-          numbers. It is an invaluable resource for students in algebra and
-          calculus, as well as for engineers and scientists who encounter such
-          equations in their work.
+          This tool solves any cubic equation of the form `ax³ + bx² + cx + d =
+          0`. It finds all three roots, which can be real or complex numbers. It
+          is a useful resource for students in algebra and calculus, as well as
+          for engineers and scientists.
         </p>
         <h3>How to Use the Cubic Equation Calculator</h3>
         <ol>
-          <li>
-            Enter the coefficients `a`, `b`, `c`, and `d` for your equation into
-            the respective input boxes.
-          </li>
-          <li>Click the &quot;Solve&quot; button.</li>
+          <li>Enter the coefficients `a`, `b`, `c`, and `d`.</li>
+          <li>Click the "Solve" button.</li>
           <li>
             The calculator will display the three roots of the equation (`x₁`,
             `x₂`, `x₃`).
@@ -76,25 +70,22 @@ export default function AboutCubicEquationCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What are the &quot;roots&quot; of an equation?
+              What are the "roots" of an equation?
             </AccordionTrigger>
             <AccordionContent>
-              The roots of an equation are the values of the variable (in this
-              case, `x`) that make the equation true. For a cubic equation,
-              there are always three roots. These roots can be all real numbers,
-              or one real number and two complex conjugate numbers.
+              The roots are the values of `x` that make the equation true. A
+              cubic equation always has three roots. These can be all real
+              numbers, or one real number and two complex numbers.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>What is the discriminant?</AccordionTrigger>
             <AccordionContent>
-              The discriminant is a value calculated from the coefficients of
-              the polynomial. Its sign determines the nature of the roots. For a
-              cubic equation, if the discriminant is positive, there is one real
-              root and two complex roots. If it&apos;s zero, there are three
-              real roots with at least two being equal. If it&apos;s negative,
-              there are three distinct real roots. Our calculator shows the
-              discriminant in the &quot;Show Work&quot; section.
+              The discriminant is a value calculated from the coefficients. Its
+              sign determines the nature of the roots. If positive, there is
+              one real and two complex roots. If zero, there are three real
+              roots with at least two being equal. If negative, there are three
+              distinct real roots.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -102,11 +93,9 @@ export default function AboutCubicEquationCalculator() {
               Why are cubic equations important?
             </AccordionTrigger>
             <AccordionContent>
-              Cubic equations appear in many areas of science and engineering.
-              They are used to model various physical phenomena, such as the
-              volume of materials, thermodynamic properties, and fluid dynamics.
-              In mathematics, they are a fundamental part of algebra and
-              calculus.
+              Cubic equations are used in many areas of science and
+              engineering. They model physical phenomena, such as the volume of
+              materials, thermodynamic properties, and fluid dynamics.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

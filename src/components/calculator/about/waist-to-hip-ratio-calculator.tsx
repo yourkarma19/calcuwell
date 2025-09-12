@@ -66,7 +66,7 @@ export default function AboutWaistToHipRatioCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle as="h2">About the Waist-to-Hip Ratio</CardTitle>
+          <CardTitle as="h2">About the Waist-to-Hip Ratio Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <script
@@ -75,10 +75,9 @@ export default function AboutWaistToHipRatioCalculator() {
           />
           <p>
             The Waist-to-Hip Ratio (WHR) is a simple measurement used to check
-            for fat distribution. It can give you a general idea of your risk
-            for certain health problems. This calculator quickly finds your WHR
-            and tells you what risk category you fall into based on guidelines
-            from the World Health Organization (WHO).
+            for fat distribution. It can give you an idea of your risk for
+            certain health problems. This calculator quickly finds your WHR and
+            tells you what risk category you fall into.
           </p>
           <h3>How to Use the WHR Calculator</h3>
           <p>
@@ -92,38 +91,36 @@ export default function AboutWaistToHipRatioCalculator() {
             </li>
             <li>**Hip:** Measure at the widest part of your buttocks.</li>
           </ul>
-          <h3>Waist-to-Hip Ratio FAQs</h3>
+          <h3>WHR FAQs</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>Why is WHR important?</AccordionTrigger>
               <AccordionContent>
                 WHR is a simple way to see where you store body fat. People who
-                store more fat around their waist (an &quot;apple&quot; shape)
-                may have a higher risk of health issues like heart disease and
-                type 2 diabetes than those who store fat in their hips and
-                thighs (a &quot;pear&quot; shape).
+                store more fat around their waist ("apple" shape) may have a
+                higher risk of health issues like heart disease and type 2
+                diabetes than those who store fat in their hips ("pear"
+                shape).
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>Is WHR better than BMI?</AccordionTrigger>
               <AccordionContent>
-                WHR and BMI (Body Mass Index) measure different things. BMI is a
-                general measure of weight relative to height, while WHR tells
-                you about body shape and fat distribution. Both can be useful,
-                but WHR can sometimes give a better idea of cardiovascular risk
-                than BMI alone.
+                WHR and BMI measure different things. BMI is a general measure
+                of weight to height, while WHR tells you about body shape and
+                fat distribution. WHR can sometimes give a better idea of
+                cardiovascular risk than BMI alone.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                What do the risk categories mean?
+                What do the health risk categories mean?
               </AccordionTrigger>
               <AccordionContent>
-                The risk categories (Low, Moderate, High) tell you your general
+                The risk categories (Low, Moderate, High) indicate your general
                 level of risk for developing certain health conditions. If you
                 are in the moderate or high-risk category, it may be a good idea
-                to talk to a doctor about steps you can take to improve your
-                health.
+                to talk to a doctor.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

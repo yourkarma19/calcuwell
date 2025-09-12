@@ -16,17 +16,17 @@ export default function AboutDateDifferenceCalculator() {
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
-          Our Date Difference Calculator is an essential tool to find the exact
-          time between two dates. Whether you&apos;re tracking a project,
-          calculating an age, or checking the time between historical events,
-          this tool gives you a full breakdown in several units.
+          Our Date Difference Calculator finds the exact time between two dates.
+          It's useful for tracking projects, calculating ages, or checking the
+          time between events. This tool gives you a full breakdown in several
+          units.
         </p>
         <h3>How to Use the Date Difference Calculator</h3>
         <ol>
           <li>
             Choose a **Start Date** and an **End Date** from the calendars.
           </li>
-          <li>Click the **&quot;Calculate Difference&quot;** button.</li>
+          <li>Click the **"Calculate Difference"** button.</li>
         </ol>
         <p>
           The results will show the total duration in years, months, weeks,
@@ -40,10 +40,10 @@ export default function AboutDateDifferenceCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               This calculator shows the total duration between two dates,
-              expressed separately in different units. For example, it will show
-              the total number of months and, separately, the total number of
-              days. It does not provide a combined &quot;X years, Y months, and
-              Z days&quot; result like our age calculator.
+              expressed separately in different units. For example, it will
+              show the total number of months and, separately, the total number
+              of days. It does not provide a combined "X years, Y months, and Z
+              days" result like our age calculator.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

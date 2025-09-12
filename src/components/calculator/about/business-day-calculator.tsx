@@ -52,11 +52,10 @@ export default function AboutBusinessDayCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The <strong>Business Day Calculator</strong> is a tool for anyone
-          who needs to plan around a standard workweek. It lets you find a
-          future or past date by adding or subtracting a number of working
-          days. The calculator automatically ignores weekends (Saturdays and
-          Sundays) to give you a realistic date for business tasks.
+          The <strong>Business Day Calculator</strong> helps you plan around a
+          standard workweek. It lets you find a future or past date by adding or
+          subtracting a number of working days. The calculator automatically
+          ignores weekends (Saturdays and Sundays).
         </p>
         <h3>How to Use the Business Day Calculator</h3>
         <ol>
@@ -78,9 +77,8 @@ export default function AboutBusinessDayCalculator() {
               What's the difference between a day and a business day?
             </AccordionTrigger>
             <AccordionContent>
-              A regular day can be any day of the week. A business day is a
-              typical workday, usually Monday through Friday. This calculator
-              skips weekends automatically.
+              A business day is a typical workday, usually Monday through
+              Friday. This calculator skips weekends automatically.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -97,8 +95,7 @@ export default function AboutBusinessDayCalculator() {
             <AccordionContent>
               No. The calculator does not account for public holidays because
               they vary by country and region. For the most accurate result, you
-              will need to add extra days for any holidays that fall in your
-              date range.
+              will need to add extra days for any holidays in your date range.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

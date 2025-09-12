@@ -52,25 +52,24 @@ export default function AboutPartialFractionCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Partial fraction decomposition is a technique in algebra used to break
-          down a complex rational function (a fraction of two polynomials) into
-          a sum of simpler fractions. This process makes the expression much
-          easier to work with, especially for operations in calculus like
-          integration.
+          Partial fraction decomposition is a technique used to break down a
+          complex rational function (a fraction of two polynomials) into a sum
+          of simpler fractions. This process makes the expression much easier to
+          work with, especially for operations in calculus.
         </p>
 
         <h3>When is This Used?</h3>
         <ul>
           <li>
-            <strong>Integral Calculus:</strong> This is the most common
-            application. Integrating a complex rational function can be very
-            difficult, but integrating the sum of its simpler partial fractions
-            is often straightforward.
+            <strong>Integral Calculus:</strong> This is the most common use.
+            Integrating a complex function can be very difficult, but
+            integrating the sum of its simpler partial fractions is often
+            straightforward.
           </li>
           <li>
             <strong>Laplace Transforms:</strong> In engineering and physics,
             this method is used to find the inverse Laplace transform, which is
-            crucial for solving linear ordinary differential equations.
+            crucial for solving linear differential equations.
           </li>
         </ul>
 
@@ -83,8 +82,7 @@ export default function AboutPartialFractionCalculator() {
             <AccordionContent>
               If the denominator has a repeated factor like `(x-a)²`, the
               decomposition must include a term for each power. For example,
-              `A/(x-a) + B/(x-a)²`. Our calculator handles these cases
-              automatically.
+              `A/(x-a) + B/(x-a)²`. Our calculator handles these cases.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -105,7 +103,7 @@ export default function AboutPartialFractionCalculator() {
             <AccordionContent>
               Yes, absolutely. Our tool is designed to help you verify your work
               and understand the steps involved in reaching the correct
-              solution. It's a great way to learn and build confidence.
+              solution.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
