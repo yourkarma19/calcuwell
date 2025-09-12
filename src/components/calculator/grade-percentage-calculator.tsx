@@ -40,7 +40,7 @@ export default function GradePercentageCalculator() {
   const letterGrade = getLetterGrade(percentage);
 
   return (
-    <div className="lg:col-span-3 space-y-6">
+    <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Calculate Your Grade</CardTitle>
@@ -93,24 +93,6 @@ export default function GradePercentageCalculator() {
               (Based on a standard scale)
             </p>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About Grade Calculation</CardTitle>
-        </CardHeader>
-        <CardContent className="prose dark:prose-invert max-w-none">
-          <p>
-            This tool helps you quickly find your grade on a test or assignment.
-            Just enter the points you earned and the total points possible. The
-            calculator will show your percentage and a letter grade based on a
-            standard scale.
-          </p>
-          <h3>How to Use This Tool</h3>
-          <p>
-            Enter the number of points you earned and the total points possible.
-            The calculator will instantly show your grade.
-          </p>
         </CardContent>
       </Card>
     </div>

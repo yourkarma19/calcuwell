@@ -190,7 +190,7 @@ export default function PercentageCalculator() {
   };
 
   return (
-    <div className="lg:col-span-3 space-y-6">
+    <div className="space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>Percentage Calculator</CardTitle>
@@ -253,43 +253,6 @@ export default function PercentageCalculator() {
               </p>
             )}
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About the Percentage Calculator</CardTitle>
-        </CardHeader>
-        <CardContent className="prose dark:prose-invert max-w-none">
-          <p>
-            The Percentage Calculator is a versatile tool designed to solve a
-            variety of percentage-related problems that we encounter in daily
-            life. Whether you are calculating a discount, figuring out a tip, or
-            analyzing a statistical change, this calculator provides instant and
-            accurate results. It simplifies complex calculations and helps you
-            make informed decisions quickly.
-          </p>
-
-          <h3>How to Use the Percentage Calculator</h3>
-          <p>
-            This tool offers three distinct calculation modes. Simply select the
-            one that matches your needs:
-          </p>
-          <ol>
-            <li>
-              <strong>What is X% of Y?</strong> – Use this to find a specific
-              percentage of a number. Enter the percentage in the first box and
-              the total amount in the second.
-            </li>
-            <li>
-              <strong>X is what percent of Y?</strong> – Use this to determine
-              what percentage one number represents of another.
-            </li>
-            <li>
-              <strong>Percentage change from X to Y</strong> – Use this to find
-              the percentage increase or decrease from an original value to a
-              new value.
-            </li>
-          </ol>
         </CardContent>
       </Card>
     </div>

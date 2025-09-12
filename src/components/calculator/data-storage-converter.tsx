@@ -2,12 +2,6 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -69,148 +63,76 @@ export default function DataStorageConverter() {
   }, [value, fromUnit, toUnit]);
 
   return (
-    <div className="lg:col-span-3 space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Data Storage Converter</CardTitle>
-          <CardDescription>
-            Convert between different units of digital data storage, from bits
-            to petabytes.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <div className="w-full space-y-2">
-              <Label htmlFor="from-value">From</Label>
-              <Input
-                id="from-value"
-                type="number"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-              />
-              <Select
-                value={fromUnit}
-                onValueChange={(v) => setFromUnit(v as Unit)}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {Object.keys(units).map((unit) => (
-                    <SelectItem key={unit} value={unit} className="capitalize">
-                      {unit}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="shrink-0 mt-4 md:mt-7"
-              onClick={handleSwap}
+    <Card>
+      <CardHeader>
+        <CardTitle>Data Storage Converter</CardTitle>
+        <CardDescription>
+          Convert between different units of digital data storage, from bits to
+          petabytes.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <div className="w-full space-y-2">
+            <Label htmlFor="from-value">From</Label>
+            <Input
+              id="from-value"
+              type="number"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <Select
+              value={fromUnit}
+              onValueChange={(v) => setFromUnit(v as Unit)}
             >
-              <ArrowRightLeft className="w-5 h-5 text-primary" />
-            </Button>
-
-            <div className="w-full space-y-2">
-              <Label htmlFor="to-value">To</Label>
-              <Input
-                id="to-value"
-                value={convertedValue}
-                readOnly
-                className="font-bold text-primary bg-primary/10 border-primary/20"
-              />
-              <Select
-                value={toUnit}
-                onValueChange={(v) => setToUnit(v as Unit)}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {Object.keys(units).map((unit) => (
-                    <SelectItem key={unit} value={unit} className="capitalize">
-                      {unit}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.keys(units).map((unit) => (
+                  <SelectItem key={unit} value={unit} className="capitalize">
+                    {unit}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About the Data Storage Converter</CardTitle>
-        </CardHeader>
-        <CardContent className="prose dark:prose-invert max-w-none">
-          <p>
-            Our Data Storage Converter is a key tool for anyone who works with
-            digital files. This includes software developers, IT professionals,
-            and casual computer users. It helps you quickly convert between
-            different units of digital information, such as bits, bytes,
-            kilobytes (KB), megabytes (MB), and gigabytes (GB). This makes it
-            easy to understand file sizes, disk space, and data limits.
-          </p>
-          <h3>How to Use the Calculator</h3>
-          <ol>
-            <li>
-              Enter the data size you want to convert in the &quot;From&quot;
-              field.
-            </li>
-            <li>Select the starting unit (e.g., Megabyte).</li>
-            <li>
-              Select the target unit you want to convert to (e.g., Gigabyte).
-            </li>
-          </ol>
-          <p>
-            The new value will be instantly calculated and displayed in the
-            &quot;To&quot; field.
-          </p>
-          <h3>Frequently Asked Questions (FAQs)</h3>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                What&apos;s the difference between a Bit and a Byte?
-              </AccordionTrigger>
-              <AccordionContent>
-                A <strong>bit</strong> is the most basic unit of data in
-                computing. It represents a single binary value of either 0 or 1.
-                A <strong>byte</strong> is a group of 8 bits. Bytes are the
-                standard unit used to measure file sizes because one byte can
-                represent one character of text.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                Why is a Kilobyte 1024 Bytes, not 1000?
-              </AccordionTrigger>
-              <AccordionContent>
-                Computers use a binary (base-2) system. Data storage units are
-                based on powers of 2. `2^10` is 1024, which is very close to
-                1000. This became the standard for computer memory and storage.
-                So, 1 Kilobyte = 1024 Bytes, 1 Megabyte = 1024 Kilobytes, and so
-                on.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                What is the difference between KB and KiB?
-              </AccordionTrigger>
-              <AccordionContent>
-                To reduce confusion, official standards bodies created binary
-                prefixes. A <strong>kilobyte (KB)</strong> is now technically
-                1000 bytes. A <strong>kibibyte (KiB)</strong> is 1024 bytes. But
-                in common use, &quot;kilobyte&quot; is still widely understood
-                to mean 1024 bytes. This is why a 1 TB hard drive appears as
-                about 931 GB in your operating system.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </CardContent>
-      </Card>
-    </div>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="shrink-0 mt-4 md:mt-7"
+            onClick={handleSwap}
+          >
+            <ArrowRightLeft className="w-5 h-5 text-primary" />
+          </Button>
+
+          <div className="w-full space-y-2">
+            <Label htmlFor="to-value">To</Label>
+            <Input
+              id="to-value"
+              value={convertedValue}
+              readOnly
+              className="font-bold text-primary bg-primary/10 border-primary/20"
+            />
+            <Select
+              value={toUnit}
+              onValueChange={(v) => setToUnit(v as Unit)}
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.keys(units).map((unit) => (
+                  <SelectItem key={unit} value={unit} className="capitalize">
+                    {unit}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

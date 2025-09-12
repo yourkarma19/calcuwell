@@ -2,12 +2,6 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -119,142 +113,74 @@ export default function CurrencyConverter() {
   }, [amount, toCurrency, rates]);
 
   return (
-    <div className="lg:col-span-3 space-y-4">
-      <Card>
-        <CardHeader>
-          <CardTitle>Currency Converter</CardTitle>
-          <CardDescription>
-            Convert amounts between different currencies. Enter an amount,
-            select your currencies, and see the result.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <div className="w-full space-y-2">
-              <Label htmlFor="from-amount">Amount</Label>
-              <Input
-                id="from-amount"
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-              />
-              <Select
-                value={fromCurrency}
-                onValueChange={(v) => setFromCurrency(v as Currency)}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {Object.entries(currencies).map(([code, name]) => (
-                    <SelectItem key={code} value={code}>
-                      {code} - {name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="shrink-0 mt-4 md:mt-7"
-              onClick={handleSwap}
+    <Card>
+      <CardHeader>
+        <CardTitle>Currency Converter</CardTitle>
+        <CardDescription>
+          Convert amounts between different currencies. Enter an amount, select
+          your currencies, and see the result.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <div className="w-full space-y-2">
+            <Label htmlFor="from-amount">Amount</Label>
+            <Input
+              id="from-amount"
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
+            <Select
+              value={fromCurrency}
+              onValueChange={(v) => setFromCurrency(v as Currency)}
             >
-              <ArrowRightLeft className="w-5 h-5 text-primary" />
-            </Button>
-            <div className="w-full space-y-2">
-              <Label htmlFor="to-amount">Converted Amount</Label>
-              <Input
-                id="to-amount"
-                value={convertedAmount}
-                readOnly
-                className="font-bold text-primary bg-primary/10 border-primary/20"
-              />
-              <Select
-                value={toCurrency}
-                onValueChange={(v) => setToCurrency(v as Currency)}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {Object.entries(currencies).map(([code, name]) => (
-                    <SelectItem key={code} value={code}>
-                      {code} - {name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(currencies).map(([code, name]) => (
+                  <SelectItem key={code} value={code}>
+                    {code} - {name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About the Currency Converter</CardTitle>
-        </CardHeader>
-        <CardContent className="prose dark:prose-invert max-w-none">
-          <p>
-            Our Currency Converter is a key tool for anyone dealing with
-            international money, travel, or online shopping. It makes it easy to
-            convert one currency to another using mock exchange rates. This tool
-            helps you understand the true cost of items in your local currency.
-          </p>
-          <h3>How to Use the Calculator</h3>
-          <ol>
-            <li>
-              Enter the **Amount** you wish to convert in the first field.
-            </li>
-            <li>Select the currency you are converting **from**.</li>
-            <li>Select the currency you want to convert **to**.</li>
-          </ol>
-          <p>
-            The converted amount will be displayed instantly. Use the swap
-            button to quickly reverse the currencies.
-          </p>
-          <h3>Frequently Asked Questions (FAQs)</h3>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What is an exchange rate?</AccordionTrigger>
-              <AccordionContent>
-                An exchange rate is the value of one currency when converting to
-                another. For example, if the USD to INR exchange rate is 83, it
-                means 1 US Dollar is worth 83 Indian Rupees.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Why do exchange rates change?</AccordionTrigger>
-              <AccordionContent>
-                Exchange rates change all the time because of many economic and
-                political factors. These include inflation, interest rates,
-                trade balances, and economic performance. This constant movement
-                is why financial markets for currencies are always active.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                What does &quot;mock data&quot; mean?
-              </AccordionTrigger>
-              <AccordionContent>
-                The exchange rates in this calculator are for demonstration
-                purposes only. They are not real-time market values. You should
-                not use them for actual financial trades. For real trades,
-                always check with a bank or a verified currency exchange
-                service.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>What is a currency pair?</AccordionTrigger>
-              <AccordionContent>
-                A currency pair shows the value of one currency against another.
-                The first currency is the &quot;base&quot; and the second is the
-                &quot;quote.&quot; For example, in the pair EUR/USD = 1.08, one
-                Euro is worth 1.08 US Dollars.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </CardContent>
-      </Card>
-    </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="shrink-0 mt-4 md:mt-7"
+            onClick={handleSwap}
+          >
+            <ArrowRightLeft className="w-5 h-5 text-primary" />
+          </Button>
+          <div className="w-full space-y-2">
+            <Label htmlFor="to-amount">Converted Amount</Label>
+            <Input
+              id="to-amount"
+              value={convertedAmount}
+              readOnly
+              className="font-bold text-primary bg-primary/10 border-primary/20"
+            />
+            <Select
+              value={toCurrency}
+              onValueChange={(v) => setToCurrency(v as Currency)}
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(currencies).map(([code, name]) => (
+                  <SelectItem key={code} value={code}>
+                    {code} - {name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
