@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is an EMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An Equated Monthly Installment (EMI) is the fixed payment amount a borrower makes to a lender each month. It includes both the principal amount and the interest on the loan, ensuring the loan is fully paid off over the specified tenure.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I lower my car loan EMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can lower your EMI by making a larger down payment, which reduces the principal loan amount. Choosing a longer loan tenure will also lower the monthly payment, but be aware that this usually means you will pay more in total interest.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What other costs should I consider when buying a car?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Beyond the loan, remember to budget for ongoing car ownership costs such as insurance, fuel, regular maintenance, and potential repairs. These are not included in the loan calculation but are a significant part of the total cost of owning a car.",
+      },
+    },
+  ],
+};
 
 export default function AboutCarLoanCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutCarLoanCalculator() {
         <CardTitle as="h2">Car Loan Fundamentals</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our <strong>Car Loan Calculator</strong> is an essential tool for
           anyone planning to finance a vehicle. It helps you understand the true

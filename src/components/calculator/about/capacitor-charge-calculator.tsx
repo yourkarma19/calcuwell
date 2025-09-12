@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is an RC circuit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An RC circuit is a basic electronic circuit made of a Resistor (R) and a Capacitor (C). These circuits are often used as timers or filters because the capacitor takes a predictable amount of time to charge and discharge through the resistor.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the time constant (τ)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The time constant (tau, or τ) tells you how quickly the capacitor charges. It's calculated as τ = R × C. After one time constant, the capacitor is about 63.2% charged. It's considered fully charged after five time constants.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does current change over time in an RC circuit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "When the circuit is first turned on, the current is at its highest because the capacitor is empty. As the capacitor charges, the current decreases, eventually reaching zero when the capacitor is full.",
+      },
+    },
+  ],
+};
 
 export default function AboutCapacitorChargeCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutCapacitorChargeCalculator() {
         <CardTitle as="h2">About RC Circuits</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           This calculator helps you understand what happens in a simple RC
           circuit, which is a circuit with a resistor and a capacitor. When you

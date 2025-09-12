@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -7,6 +8,30 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the different number systems?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Decimal (Base-10): The system we use every day, with digits 0-9. Binary (Base-2): The fundamental language of computers, using only digits 0 and 1. Hexadecimal (Base-16): Uses digits 0-9 and letters A-F. It's a more compact way to represent binary data. Octal (Base-8): Uses digits 0-7.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is hexadecimal used in programming?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hexadecimal is widely used because it's a human-friendly way to represent long binary values. For example, the binary value `11111111` is much easier to read as `FF` in hexadecimal. It's commonly used for memory addresses and color codes.",
+      },
+    },
+  ],
+};
 
 export default function AboutBinaryConverter() {
   return (
@@ -15,6 +40,10 @@ export default function AboutBinaryConverter() {
         <CardTitle as="h2">About Number System Conversions</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our <strong>Binary &amp; Number System Converter</strong> is an
           essential tool for programmers, computer science students, and

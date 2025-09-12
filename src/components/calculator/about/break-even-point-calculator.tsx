@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the formula for the break-even point?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula for the break-even point in units is: Break-Even Units = Fixed Costs / (Price Per Unit - Variable Cost Per Unit). The denominator is known as the contribution margin per unit.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the contribution margin?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The contribution margin is the revenue from each sale left over to cover fixed costs. It's calculated as Price Per Unit - Variable Cost Per Unit. A higher margin means you break even faster.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is break-even analysis important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Break-even analysis helps you set realistic sales goals, determine a pricing strategy, and understand how changes in costs will affect profitability. It's a fundamental part of a solid business plan.",
+      },
+    },
+  ],
+};
 
 export default function AboutBreakEvenPointCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutBreakEvenPointCalculator() {
         <CardTitle>About the Break-Even Point Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Break-Even Point (BEP) Calculator is an essential tool for
           business owners, entrepreneurs, and students of finance. It helps you

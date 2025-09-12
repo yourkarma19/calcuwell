@@ -16,6 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import type { FAQPage, WithContext } from "schema-dts";
 
 const bodyFatCategories = {
   women: [
@@ -34,6 +35,37 @@ const bodyFatCategories = {
   ],
 };
 
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is body fat percentage better than BMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Body fat percentage directly measures fat mass, while BMI is a general measure that can be misleading for muscular people. Body fat percentage gives a clearer picture of your body composition.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the U.S. Navy method work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This method uses body measurements to estimate body density. It's a convenient way to estimate body fat without special equipment, though it's not as accurate as clinical methods like DEXA scans.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I measure myself correctly?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use a flexible tape measure. Measure the neck just below the Adam's apple, the waist at the narrowest point (usually above the navel), and the hips at the widest point.",
+      },
+    },
+  ],
+};
+
 export default function AboutBodyFatPercentageCalculator() {
   return (
     <div className="space-y-6">
@@ -42,6 +74,10 @@ export default function AboutBodyFatPercentageCalculator() {
           <CardTitle as="h2">About Body Fat Percentage</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             The Body Fat Percentage Calculator gives a better look at your body
             composition than weight or BMI alone. By estimating the amount of

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between Gross, Operating, and Net Margin?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Gross Margin shows profit on each sale after direct costs (COGS). Operating Margin shows profit from core operations after all expenses. Net Margin is the final 'bottom line' profit after all expenses, including taxes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is looking at all three profit margins important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Analyzing all three margins tells a complete story. A company might have a high gross margin (efficient production) but a low net margin (high operating costs). Comparing these margins over time provides valuable insights into financial health.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a good profit margin?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A 'good' profit margin varies widely by industry. A net profit margin of 10% is often considered average, 20% is high, and 5% is low. It's most useful to compare your margins to industry benchmarks.",
+      },
+    },
+  ],
+};
 
 export default function AboutBusinessProfitMarginCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutBusinessProfitMarginCalculator() {
         <CardTitle>About Profit Margins</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Profit Margin Calculator is a vital financial tool for business
           owners, managers, and investors. It breaks down a company&apos;s

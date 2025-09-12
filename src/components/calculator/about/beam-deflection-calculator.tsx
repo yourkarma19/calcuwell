@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,30 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the formula used for beam deflection?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For a simple cantilever beam with a point load at the free end, the formula for maximum deflection is: Deflection = (P * L³) / (3 * E * I). Where P is the load, L is the length, E is the Modulus of Elasticity, and I is the Area Moment of Inertia.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is beam deflection calculation important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Understanding beam deflection is critical in structural engineering for safety and functionality. Excessive deflection can lead to structural failure or damage to attached finishes. Engineers use this calculation to select the appropriate beam size and material for a given span and load.",
+      },
+    },
+  ],
+};
 
 export default function AboutBeamDeflectionCalculator() {
   return (
@@ -14,6 +39,10 @@ export default function AboutBeamDeflectionCalculator() {
         <CardTitle>About Beam Deflection</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Beam Deflection Calculator is an engineering tool used to
           determine the maximum displacement of a simple cantilever beam under a

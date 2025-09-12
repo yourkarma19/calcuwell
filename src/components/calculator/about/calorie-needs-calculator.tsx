@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -7,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are maintenance calories?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Maintenance calories are the calories you need to eat each day to maintain your current weight. This calculator estimates that value by finding your Basal Metabolic Rate (BMR) and multiplying it by an activity level factor.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is BMR (Basal Metabolic Rate)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform its most basic functions while at rest, like breathing and circulation. It's the baseline for your total daily calorie needs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I use this calculator for weight loss or gain?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This result is for weight maintenance. To lose weight, you need to eat fewer calories (a caloric deficit). To gain weight or muscle, you need to eat more (a caloric surplus). For specific advice, consult a healthcare or nutrition professional.",
+      },
+    },
+  ],
+};
 
 export default function AboutCalorieNeedsCalculator() {
   return (
@@ -15,6 +48,10 @@ export default function AboutCalorieNeedsCalculator() {
         <CardTitle as="h2">About Daily Calorie Needs</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Daily Calorie Needs calculator estimates how many calories you
           should eat per day to maintain your current weight. It uses the
