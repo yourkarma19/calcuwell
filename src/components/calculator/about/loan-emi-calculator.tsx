@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -161,10 +162,12 @@ export default function AboutLoanEMICalculator({
             <CardTitle as="h3">Loan Breakdown</CardTitle>
           </CardHeader>
           <CardContent>
-            <LoanBreakdownChart
-              principal={principal}
-              totalInterest={totalInterest}
-            />
+            <div className="w-full h-[250px]">
+              <LoanBreakdownChart
+                principal={principal}
+                totalInterest={totalInterest}
+              />
+            </div>
           </CardContent>
         </Card>
       )}

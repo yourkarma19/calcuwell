@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -164,13 +165,15 @@ export default function AboutMortgageCalculator({
             <CardTitle as="h3">Loan Cost Breakdown</CardTitle>
           </CardHeader>
           <CardContent>
-            <MortgageBreakdownChart
-              principal={principal}
-              totalInterest={totalInterest}
-              propertyTax={propertyTax}
-              homeInsurance={homeInsurance}
-              tenure={tenure}
-            />
+            <div className="w-full h-[250px]">
+              <MortgageBreakdownChart
+                principal={principal}
+                totalInterest={totalInterest}
+                propertyTax={propertyTax}
+                homeInsurance={homeInsurance}
+                tenure={tenure}
+              />
+            </div>
           </CardContent>
         </Card>
       )}
