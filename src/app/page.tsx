@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 import { ChevronRight } from 'lucide-react';
+import type { WebSite, WithContext } from "schema-dts";
 
 const popularTools = [
   {
@@ -33,9 +34,28 @@ const popularTools = [
   },
 ];
 
+const websiteSchema: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "CalcPro",
+  url: "https://calcpro.online",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate": "https://calcpro.online/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Hero Section */}
       <section className="w-full text-center py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">

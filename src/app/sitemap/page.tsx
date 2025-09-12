@@ -1,6 +1,8 @@
+
 import { Metadata } from "next";
 import { List } from "lucide-react";
 import Link from "next/link";
+import type { BreadcrumbList, WithContext } from "schema-dts";
 import { IconWrapper } from "@/components/IconWrapper";
 import { categories } from "@/lib/calculators";
 import { loadFullCalculatorData } from "@/lib/server/calculator-data";
@@ -22,6 +24,25 @@ type CategoryWithCalculators = {
   calculators: Omit<Calculator, "component">[];
 };
 
+const breadcrumbSchema: WithContext<BreadcrumbList> = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://calcpro.online",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Sitemap",
+      item: "https://calcpro.online/sitemap",
+    },
+  ],
+};
+
 export default async function SitemapPage() {
   const allCalculators = await loadFullCalculatorData();
   const categoriesWithCalculators: CategoryWithCalculators[] = categories.map(
@@ -35,6 +56,10 @@ export default async function SitemapPage() {
 
   return (
     <main className="container mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="text-center mb-12">
         <List className="w-16 h-16 text-primary mx-auto mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
@@ -44,7 +69,7 @@ export default async function SitemapPage() {
           Welcome to the sitemap for CalcPro. Here you can find a comprehensive
           list of all our calculators, neatly organized by category. This page
           is designed to help you quickly navigate to the specific tool you
-          need, whether you&apos;re solving a complex math problem, managing
+          need, whether you're solving a complex math problem, managing
           your finances, or exploring health metrics. Browse through the
           sections below to discover the wide range of free tools we offer.
         </p>

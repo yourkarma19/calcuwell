@@ -1,5 +1,7 @@
+
 import { Metadata } from "next";
 import Image from "next/image";
+import type { Organization, Person, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "About CalcPro | Our Mission & Story",
@@ -10,9 +12,45 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema: WithContext<Organization> = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CalcPro",
+  url: "https://calcpro.online",
+  logo: "https://calcpro.online/icon.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "gridguruu@gmail.com",
+    contactType: "Customer Support",
+  },
+};
+
+const personSchema: WithContext<Person> = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Alex Doe",
+  jobTitle: "Founder",
+  description:
+    "With a background in software development and a passion for making complex financial and health topics accessible, Alex created CalcPro to empower users to make informed decisions.",
+  url: "https://calcpro.online/about",
+  image: "https://picsum.photos/seed/founder/150/150",
+  worksFor: {
+    "@type": "Organization",
+    name: "CalcPro",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-12 max-w-4xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           About CalcPro
