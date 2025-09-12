@@ -87,17 +87,19 @@ export default function WorkingDaysCalculator({
 
   const resultsCard =
     workingDays !== null ? (
-      <Card id="working-days-results">
-        <CardHeader>
-          <CardTitle>Result</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center" aria-live="polite">
-          <p className="text-sm text-muted-foreground">Total Working Days</p>
-          <p className="text-6xl font-bold font-headline text-primary my-2">
-            {workingDays}
-          </p>
-        </CardContent>
-      </Card>
+      <div role="status" aria-live="polite">
+        <Card id="working-days-results">
+          <CardHeader>
+            <CardTitle>Result</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="text-sm text-muted-foreground">Total Working Days</p>
+            <p className="text-6xl font-bold font-headline text-primary my-2">
+              {workingDays}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
     ) : null;
 
   return (

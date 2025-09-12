@@ -122,44 +122,46 @@ export default function DateDifferenceCalculator({
   );
 
   const resultsCard = difference ? (
-    <Card id="date-diff-results">
-      <CardHeader>
-        <CardTitle>Result</CardTitle>
-        <CardDescription>
-          The total difference between the selected dates is:
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-2" aria-live="polite">
-          <ul className="list-disc list-inside space-y-2 text-lg">
-            <li>
-              <span className="font-bold">{difference.years}</span> years
-            </li>
-            <li>
-              <span className="font-bold">{difference.months}</span> months
-            </li>
-            <li>
-              <span className="font-bold">{difference.weeks}</span> weeks
-            </li>
-            <li>
-              <span className="font-bold">{difference.days}</span> days
-            </li>
-            <li>
-              <span className="font-bold">
-                {difference.hours.toLocaleString()}
-              </span>{" "}
-              hours
-            </li>
-            <li>
-              <span className="font-bold">
-                {difference.minutes.toLocaleString()}
-              </span>{" "}
-              minutes
-            </li>
-          </ul>
-        </div>
-      </CardContent>
-    </Card>
+    <div role="status" aria-live="polite">
+      <Card id="date-diff-results">
+        <CardHeader>
+          <CardTitle>Result</CardTitle>
+          <CardDescription>
+            The total difference between the selected dates is:
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <ul className="list-disc list-inside space-y-2 text-lg">
+              <li>
+                <span className="font-bold">{difference.years}</span> years
+              </li>
+              <li>
+                <span className="font-bold">{difference.months}</span> months
+              </li>
+              <li>
+                <span className="font-bold">{difference.weeks}</span> weeks
+              </li>
+              <li>
+                <span className="font-bold">{difference.days}</span> days
+              </li>
+              <li>
+                <span className="font-bold">
+                  {difference.hours.toLocaleString()}
+                </span>{" "}
+                hours
+              </li>
+              <li>
+                <span className="font-bold">
+                  {difference.minutes.toLocaleString()}
+                </span>{" "}
+                minutes
+              </li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   ) : null;
 
   return (

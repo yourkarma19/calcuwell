@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -176,28 +177,29 @@ export default function TimeCardCalculator() {
           </div>
         </CardContent>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Summary</CardTitle>
-        </CardHeader>
-        <CardContent
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center"
-          aria-live="polite"
-        >
-          <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Total Weekly Hours</p>
-            <p className="text-4xl font-bold font-headline text-primary">
-              {totals.totalHours.toFixed(2)}
-            </p>
-          </div>
-          <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Total Gross Pay</p>
-            <p className="text-4xl font-bold font-headline text-primary">
-              ₹{totals.grossPay.toFixed(2)}
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <div role="status" aria-live="polite">
+        <Card>
+          <CardHeader>
+            <CardTitle>Summary</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+            <div className="bg-muted p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                Total Weekly Hours
+              </p>
+              <p className="text-4xl font-bold font-headline text-primary">
+                {totals.totalHours.toFixed(2)}
+              </p>
+            </div>
+            <div className="bg-muted p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">Total Gross Pay</p>
+              <p className="text-4xl font-bold font-headline text-primary">
+                ₹{totals.grossPay.toFixed(2)}
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

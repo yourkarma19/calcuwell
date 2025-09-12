@@ -104,26 +104,28 @@ export default function WeekNumberCalculator({
   );
 
   const resultsCard = (
-    <Card id="weeknum-results">
-      <CardHeader>
-        <CardTitle>Result</CardTitle>
-      </CardHeader>
-      <CardContent className="text-center" aria-live="polite">
-        {selectedDate ? (
-          <>
-            <p className="text-sm text-muted-foreground">
-              {format(selectedDate, "PPP")} is in
-            </p>
-            <p className="text-6xl font-bold font-headline text-primary my-2">
-              Week {weekNumber}
-            </p>
-            <p className="text-lg text-muted-foreground">of {yearForWeek}</p>
-          </>
-        ) : (
-          <p className="text-muted-foreground">Select a date.</p>
-        )}
-      </CardContent>
-    </Card>
+    <div role="status" aria-live="polite">
+      <Card id="weeknum-results">
+        <CardHeader>
+          <CardTitle>Result</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          {selectedDate ? (
+            <>
+              <p className="text-sm text-muted-foreground">
+                {format(selectedDate, "PPP")} is in
+              </p>
+              <p className="text-6xl font-bold font-headline text-primary my-2">
+                Week {weekNumber}
+              </p>
+              <p className="text-lg text-muted-foreground">of {yearForWeek}</p>
+            </>
+          ) : (
+            <p className="text-muted-foreground">Select a date.</p>
+          )}
+        </CardContent>
+      </Card>
+    </div>
   );
 
   return (

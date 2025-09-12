@@ -1,8 +1,15 @@
 
 "use client";
 
+import Link from "next/link";
 import { useMemo } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -176,24 +183,23 @@ export default function PythagoreanTheoremCalculator() {
           )}
         </CardContent>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Result</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center">
-          <p className="text-sm text-muted-foreground">
-            The length of side '{solveFor}' is:
-          </p>
-          <p
-            className="text-5xl font-bold font-headline text-primary my-2"
-            aria-live="polite"
-          >
-            {result !== null && isFinite(result)
-              ? result.toFixed(4)
-              : "Enter values"}
-          </p>
-        </CardContent>
-      </Card>
+      <div role="status" aria-live="polite">
+        <Card>
+          <CardHeader>
+            <CardTitle>Result</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="text-sm text-muted-foreground">
+              The length of side '{solveFor}' is:
+            </p>
+            <p className="text-5xl font-bold font-headline text-primary my-2">
+              {result !== null && isFinite(result)
+                ? result.toFixed(4)
+                : "Enter values"}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

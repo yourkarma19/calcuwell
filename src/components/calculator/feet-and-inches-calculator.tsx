@@ -194,34 +194,36 @@ export default function FeetAndInchesCalculator({
   );
 
   const resultsCard = result ? (
-    <Card id="feet-inches-results">
-      <CardHeader>
-        <CardTitle>Result</CardTitle>
-      </CardHeader>
-      <CardContent className="text-center space-y-4" aria-live="polite">
-        <p className="text-4xl font-bold font-headline text-primary">
-          {result.feet.toFixed(0)} feet {result.inches.toFixed(2)} inches
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm pt-4 border-t">
-          <div>
-            <p className="font-semibold text-muted-foreground">
-              In Total Inches
-            </p>
-            <p>{resultInTotalInches.toFixed(2)} inches</p>
+    <div role="status" aria-live="polite">
+      <Card id="feet-inches-results">
+        <CardHeader>
+          <CardTitle>Result</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4">
+          <p className="text-4xl font-bold font-headline text-primary">
+            {result.feet.toFixed(0)} feet {result.inches.toFixed(2)} inches
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm pt-4 border-t">
+            <div>
+              <p className="font-semibold text-muted-foreground">
+                In Total Inches
+              </p>
+              <p>{resultInTotalInches.toFixed(2)} inches</p>
+            </div>
+            <div>
+              <p className="font-semibold text-muted-foreground">
+                In Decimal Feet
+              </p>
+              <p>{resultInDecimalFeet.toFixed(2)} feet</p>
+            </div>
+            <div>
+              <p className="font-semibold text-muted-foreground">In Metric</p>
+              <p>{resultInMeters.toFixed(2)} meters</p>
+            </div>
           </div>
-          <div>
-            <p className="font-semibold text-muted-foreground">
-              In Decimal Feet
-            </p>
-            <p>{resultInDecimalFeet.toFixed(2)} feet</p>
-          </div>
-          <div>
-            <p className="font-semibold text-muted-foreground">In Metric</p>
-            <p>{resultInMeters.toFixed(2)} meters</p>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   ) : null;
 
   return (
