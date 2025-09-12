@@ -1,5 +1,5 @@
+
 "use client";
-import { ChevronRight, HeartPulse, House, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -10,24 +10,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
+import { HeartPulse, House, TrendingUp, ChevronRight } from 'lucide-react';
 
 const popularTools = [
   {
     name: "Mortgage Calculator",
     slug: "mortgage-calculator",
-    icon: <House className="w-8 h-8 text-primary" />,
+    icon: "House",
     description: "Estimate your monthly mortgage payments.",
   },
   {
     name: "BMI Calculator",
     slug: "bmi-calculator",
-    icon: <HeartPulse className="w-8 h-8 text-primary" />,
+    icon: "HeartPulse",
     description: "Check your Body Mass Index for a health snapshot.",
   },
   {
     name: "SIP Calculator",
     slug: "sip-calculator",
-    icon: <TrendingUp className="w-8 h-8 text-primary" />,
+    icon: "TrendingUp",
     description: "Project the growth of your investments.",
   },
 ];
@@ -69,7 +70,9 @@ export default function Home() {
                 className="block"
               >
                 <Card className="h-full text-center hover:shadow-xl hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1.5 transform p-6">
-                  <div className="flex justify-center mb-4">{tool.icon}</div>
+                  <div className="flex justify-center mb-4">
+                     <IconWrapper iconName={tool.icon} className="w-8 h-8 text-primary"/>
+                  </div>
                   <CardTitle
                     as="h3"
                     className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors"
@@ -134,6 +137,7 @@ export default function Home() {
             designed to be fast, accurate, and easy to use. From solving complex
             mathematical problems to managing your personal finances and health,
             our tools provide reliable results to help you make informed
+
             decisions instantly.
           </p>
         </div>
@@ -141,3 +145,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

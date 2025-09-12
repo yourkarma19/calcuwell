@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -133,3 +134,5 @@ export default function AboutCompoundInterestCalculator() {
     </Card>
   );
 }
+
+    

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Delete } from "lucide-react";
@@ -11,7 +12,6 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
   maximumFractionDigits: 0,
 });
 
-// FIXED: This function is now safe and will not crash
 function formatOperand(operand: string | null) {
   if (operand == null) return "";
   if (operand.includes("Error")) return "Error";
@@ -266,3 +266,5 @@ export default function BasicCalculator() {
     </Card>
   );
 }
+
+    
