@@ -1,4 +1,9 @@
-import { ChevronRight } from "lucide-react";
+import {
+  ChevronRight,
+  House,
+  HeartPulse,
+  TrendingUp,
+} from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -10,6 +15,27 @@ import {
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 
+const popularTools = [
+  {
+    name: "Mortgage Calculator",
+    slug: "mortgage-calculator",
+    icon: <House className="w-8 h-8 text-primary" />,
+    description: "Estimate your monthly mortgage payments.",
+  },
+  {
+    name: "BMI Calculator",
+    slug: "bmi-calculator",
+    icon: <HeartPulse className="w-8 h-8 text-primary" />,
+    description: "Check your Body Mass Index for a health snapshot.",
+  },
+  {
+    name: "SIP Calculator",
+    slug: "sip-calculator",
+    icon: <TrendingUp className="w-8 h-8 text-primary" />,
+    description: "Project the growth of your investments.",
+  },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -18,8 +44,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h1 className="text-primary mb-4">CalcPro</h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
-            Your one-stop destination for fast, accurate, and easy-to-use online
-            calculators.
+            Instant, Accurate Answers for Your Financial, Health, and
+            Educational Questions.
           </p>
         </div>
       </section>
@@ -29,6 +55,35 @@ export default function Home() {
         <Card className="shadow-xl">
           <HomeCalculator />
         </Card>
+      </section>
+
+      {/* Popular Tools Section */}
+      <section className="w-full py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-center mb-12">Explore Our Most Popular Tools</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {popularTools.map((tool) => (
+              <Link
+                href={`/calculators/${tool.slug}`}
+                key={tool.slug}
+                className="block"
+              >
+                <Card className="h-full text-center hover:shadow-xl hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1.5 transform p-6">
+                  <div className="flex justify-center mb-4">{tool.icon}</div>
+                  <CardTitle
+                    as="h3"
+                    className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors"
+                  >
+                    {tool.name}
+                  </CardTitle>
+                  <CardDescription className="text-sm">
+                    {tool.description}
+                  </CardDescription>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Categories Section */}

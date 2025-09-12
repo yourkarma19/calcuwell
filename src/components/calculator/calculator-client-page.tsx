@@ -18,7 +18,7 @@ export default function CalculatorClientPage({
   return (
     <CalculatorWrapper
       calculator={calculator}
-      sidebar={<CalculatorContent slug={calculator.slug} {...aboutProps} />}
+      sidebar={<CalculatorContent slug={`about/${calculator.slug}`} {...aboutProps} />}
     >
       <CalculatorLoader
         slug={calculator.slug}

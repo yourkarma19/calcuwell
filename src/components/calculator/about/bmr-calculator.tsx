@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Info } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -15,6 +16,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const activityFactors = [
   { level: "Sedentary (little or no exercise)", multiplier: 1.2 },
@@ -55,7 +62,22 @@ export default function AboutBmrCalculator() {
         <h2>BMR Formulas Explained</h2>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Mifflin-St Jeor Equation</AccordionTrigger>
+            <AccordionTrigger>
+              Mifflin-St Jeor Equation{" "}
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Info className="w-4 h-4 ml-2 text-muted-foreground" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>
+                      The Mifflin-St Jeor equation is considered the most
+                      accurate BMR formula by modern research.
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </AccordionTrigger>
             <AccordionContent>
               <p>
                 The Mifflin-St Jeor equation is considered the more modern and
@@ -85,7 +107,7 @@ export default function AboutBmrCalculator() {
           </AccordionItem>
         </Accordion>
 
-        <h2 className="mt-6">BMR vs. TDEE - What&apos;s the Difference?</h2>
+        <h2 className="mt-6">BMR vs. TDEE - What's the Difference?</h2>
         <p>
           This is a crucial concept. BMR is your baseline, but to understand
           your total daily calorie needs, you need to know your TDEE.
