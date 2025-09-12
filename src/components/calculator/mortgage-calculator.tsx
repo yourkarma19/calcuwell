@@ -188,7 +188,7 @@ export default function MortgageCalculator({
           </div>
           <div className="space-y-2 text-sm text-left border-t pt-2">
             <div className="flex justify-between">
-              <p className="text-muted-foreground">Principal & Interest</p>
+              <p className="text-muted-foreground">Principal &amp; Interest</p>
               <p className="font-semibold">
                 {formatCurrency(principalAndInterest)}
               </p>

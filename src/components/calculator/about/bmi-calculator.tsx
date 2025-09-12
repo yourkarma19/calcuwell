@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -44,8 +45,8 @@ export default function AboutBMICalculator() {
           <ol>
             <li>
               Select your preferred unit system (<strong>Metric</strong> for
-              kilograms &amp; centimeters or <strong>Imperial</strong> for
-              pounds &amp; feet/inches).
+              kilograms & centimeters or <strong>Imperial</strong> for
+              pounds & feet/inches).
             </li>
             <li>
               Enter your current <strong>Weight</strong>.
