@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -16,7 +15,6 @@ import {
   calculateEMIWithExtraPayments,
 } from "@/lib/math/loan-emi";
 import { formatCurrency } from "@/lib/utils";
-import PlaceholderCalculator from "./placeholder-calculator";
 
 const LoanBreakdownChart = dynamic(
   () => import("@/components/charts/loan-breakdown-chart"),

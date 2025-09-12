@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -11,7 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
-import PlaceholderCalculator from "./placeholder-calculator";
 
 const MortgageBreakdownChart = dynamic(
   () => import("@/components/charts/mortgage-breakdown-chart"),
