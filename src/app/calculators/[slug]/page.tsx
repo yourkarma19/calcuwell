@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CalculatorClientPage from "@/components/calculator/calculator-client-page";
@@ -68,7 +69,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     offers: {
       "@type": "Offer",
       price: "0",
-      priceCurrency: "INR",
     },
   };
 
