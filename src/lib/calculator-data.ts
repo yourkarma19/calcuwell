@@ -138,7 +138,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     category: "Math",
     iconName: "Sigma",
     formula: "y - f(a) = f'(a)(x - a)",
-    seoTitle: "Tangent Line Equation Calculator | CalcPro",
+    seoTitle: "Tangent Line Equation Calculator with Steps | CalcPro",
     metaDescription:
       "Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.",
     lastUpdated: "2024-07-31",
@@ -241,7 +241,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your pet's age in human years.",
     category: "Lifestyle",
     iconName: "Dog",
-    seoTitle: "Pet Age to Human Years Calculator | CalcPro",
+    seoTitle: "Pet Age to Human Years Calculator (Dog & Cat) | CalcPro",
     metaDescription:
       "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
     lastUpdated: "2024-07-31",
@@ -410,7 +410,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate square roots and cube roots.",
     category: "Math",
     iconName: "Variable",
-    seoTitle: "Square Root & Cube Root Calculator | CalcPro",
+    seoTitle: "Square Root & Cube Root Finder | CalcPro",
     metaDescription:
       "A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast and easy to use.",
     lastUpdated: "2024-07-31",
@@ -512,7 +512,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your monthly mortgage payments.",
     category: "Finance",
     iconName: "House",
-    seoTitle: "Mortgage Payment Calculator with PITI | CalcPro",
+    seoTitle: "Mortgage Calculator with Amortization | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
@@ -604,7 +604,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Convert between different currencies with mock rates.",
     category: "Finance",
     iconName: "Globe",
-    seoTitle: "Live Currency & Foreign Exchange Rate Converter | CalcPro",
+    seoTitle: "Currency & Foreign Exchange Rate Converter | CalcPro",
     metaDescription:
       "A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.",
     lastUpdated: "2024-07-31",
@@ -1037,7 +1037,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Find the next business day.",
     category: "Date & Time",
     iconName: "Briefcase",
-    seoTitle: "Next Business Day Calculator | CalcPro",
+    seoTitle: "Next Business Day & Date Calculator | CalcPro",
     metaDescription:
       "Calculate a future date by adding or subtracting business days, automatically skipping weekends to ensure accuracy for deadlines.",
     lastUpdated: "2024-07-31",
@@ -1201,7 +1201,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     formula: "a² + b² = c²",
     metaDescription:
       "Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Finds the hypotenuse or other sides.",
-    seoTitle: "Pythagorean Theorem Side Calculator | CalcPro",
+    seoTitle: "Pythagorean Theorem Side Calculator (a² + b² = c²) | CalcPro",
     lastUpdated: "2024-07-31",
   },
   {
@@ -1210,7 +1210,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate sin, cos, tan, and more.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
-    seoTitle: "Trigonometry Function Calculator (Sin, Cos) | CalcPro",
+    seoTitle: "Trigonometry Function Calculator (Sin, Cos, Tan) | CalcPro",
     metaDescription:
       "A free trig calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.",
     lastUpdated: "2024-07-31",
