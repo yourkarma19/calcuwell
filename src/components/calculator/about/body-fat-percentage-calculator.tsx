@@ -39,7 +39,7 @@ export default function AboutBodyFatPercentageCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>About Body Fat Percentage</CardTitle>
+          <CardTitle as="h2">About Body Fat Percentage</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <p>
@@ -113,11 +113,11 @@ export default function AboutBodyFatPercentageCalculator() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Body Fat Percentage Categories</CardTitle>
+          <CardTitle as="h3">Body Fat Percentage Categories</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h3 className="font-semibold mb-2">Women</h3>
+            <h4 className="font-semibold mb-2">Women</h4>
             <Table>
               <TableHeader>
                 <TableRow>
@@ -136,7 +136,7 @@ export default function AboutBodyFatPercentageCalculator() {
             </Table>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">Men</h3>
+            <h4 className="font-semibold mb-2">Men</h4>
             <Table>
               <TableHeader>
                 <TableRow>

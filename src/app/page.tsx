@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
-import { HeartPulse, House, TrendingUp, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const popularTools = [
   {
