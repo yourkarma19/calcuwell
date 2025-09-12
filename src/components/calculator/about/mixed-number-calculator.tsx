@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a mixed number?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A mixed number is a whole number combined with a proper fraction. It's a way of representing a value greater than one. For example, 2 ½.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you convert a mixed number to an improper fraction?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To convert a mixed number to an improper fraction, you multiply the whole number by the denominator and then add the numerator. This result becomes the new numerator, and the denominator stays the same. For example, for 2 ½, you calculate (2 * 2) + 1 = 5, so the improper fraction is 5/2.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is an improper fraction?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An improper fraction is a fraction where the numerator is greater than or equal to the denominator (e.g., 5/4). They represent a value of 1 or more and can be converted into mixed numbers.",
+      },
+    },
+  ],
+};
 
 export default function AboutMixedNumberCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutMixedNumberCalculator() {
         <CardTitle>About Mixed Numbers</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Mixed Number Calculator is a specialized tool designed to simplify
           arithmetic involving mixed numbers. A mixed number is a combination of

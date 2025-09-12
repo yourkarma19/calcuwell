@@ -7,10 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Should I always choose the loan with the lower EMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not always. A lower EMI is easier on your monthly budget, but it often comes with a longer loan term, which means you could pay much more in total interest. This tool helps you see that trade-off.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does the interest rate really matter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A lot. Even a small difference of 0.5% in the interest rate can lead to large savings over a long term, especially for big loans like a home loan. Use this tool to see the exact difference in total interest paid between two rates.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What other factors should I consider besides interest rate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Besides the interest rate, consider other loan costs like processing fees and prepayment penalties. Also, check the lender's reputation for customer service. Sometimes a slightly higher EMI is worth it for better terms or service.",
+      },
+    },
+  ],
+};
 
 export default function AboutLoanComparisonCalculator() {
   return (
     <div className="space-y-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">How to Choose the Right Loan?</CardTitle>

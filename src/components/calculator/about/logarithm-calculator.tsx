@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a logarithm?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A logarithm is the power to which a number (the base) must be raised to produce another number. For example, the logarithm of 100 to base 10 is 2, because 10² equals 100.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between Common Log and Natural Log?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The common logarithm (log) uses base 10 and is common in science. The natural logarithm (ln) uses base e (about 2.718) and is important in math, physics, and finance for describing continuous growth.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why can't the base of a logarithm be 1?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A base of 1 is not allowed because 1 raised to any power is always 1. This means you could never produce any other number, making the operation undefined for most values.",
+      },
+    },
+  ],
+};
 
 export default function AboutLogarithmCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutLogarithmCalculator() {
         <CardTitle as="h2">About the Logarithm Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Logarithm Calculator helps you find the logarithm of a number to a
           specified base. Logarithms are the inverse of exponents. They answer

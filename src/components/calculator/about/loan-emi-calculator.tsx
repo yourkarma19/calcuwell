@@ -10,11 +10,43 @@ import {
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import type { FAQPage, WithContext } from "schema-dts";
 
 interface AboutLoanEMICalculatorProps {
   principal: number;
   totalInterest: number;
 }
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the formula for calculating EMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula used to calculate EMI is: EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ - 1), where P is the Principal, r is the monthly interest rate, and n is the number of monthly installments.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I reduce my EMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can reduce your EMI by choosing a longer tenure, but this means you pay more in total interest. The best ways to lower your loan burden are to make a larger down payment, find a lower interest rate, or make prepayments.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why should I use an EMI Calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It helps you plan your budget, avoid financial stress by choosing an EMI you can afford, compare loans from different banks, and understand the real cost of borrowing money over time.",
+      },
+    },
+  ],
+};
 
 const LoanBreakdownChart = dynamic(
   () =>
@@ -33,6 +65,10 @@ export default function AboutLoanEMICalculator({
 }: AboutLoanEMICalculatorProps) {
   return (
     <div className="space-y-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">About the EMI Calculator</CardTitle>
