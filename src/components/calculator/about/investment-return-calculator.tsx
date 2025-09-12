@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the formula for ROI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula for Return on Investment is: ROI = ( (Final Value - Initial Investment) / Initial Investment ) * 100. The result is expressed as a percentage.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a good ROI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A 'good' ROI depends on the type of investment and risk. A 7-10% annual ROI is often considered a good average for the stock market. A high-risk investment would need a much higher potential ROI to be worthwhile.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the limitations of ROI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ROI doesn't account for the holding period. An ROI of 20% over one year is much better than 20% over ten years. For comparing investments over different timeframes, it's better to look at annualized ROI.",
+      },
+    },
+  ],
+};
 
 export default function AboutInvestmentReturnCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutInvestmentReturnCalculator() {
         <CardTitle>About Return on Investment (ROI)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Return on Investment (ROI) Calculator is a fundamental financial
           tool that measures the profitability of an investment. It helps you

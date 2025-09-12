@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is Lean Body Mass (LBM) an important health metric?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tracking LBM is more useful than body weight alone because it differentiates between fat loss and muscle loss. Preserving muscle is crucial for a healthy metabolism and overall strength.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is LBM different from BMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "BMI is a simple ratio of weight to height and cannot distinguish between fat and muscle. LBM specifically measures your non-fat mass, providing a clearer picture of your body composition.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How accurate is this LBM estimate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This calculator uses the Boer formula, which provides a reliable estimate for most people. However, for precise measurements, a clinical method like a DEXA scan is required. This tool is best used for tracking progress over time.",
+      },
+    },
+  ],
+};
 
 export default function AboutLeanBodyMassCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutLeanBodyMassCalculator() {
         <CardTitle>About Lean Body Mass (LBM)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Lean Body Mass (LBM) Calculator estimates the total weight of your
           body minus all the weight from fat mass. LBM is a crucial component of

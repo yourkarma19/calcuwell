@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Ohm's Law?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ohm's Law states that the voltage across a component is equal to the current flowing through it multiplied by its resistance. The formula is V = I × R.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I remember the Ohm's Law formulas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use a triangle. Cover the value you want (V, I, or R), and the other two show the calculation: V = I × R, I = V / R, R = V / I.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Power (P) and how does it relate to Ohm's Law?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Power (in Watts) is the rate of energy use. It's related to Ohm's Law by formulas like P = V × I. Our calculator can also solve for power.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is Ohm's Law important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's essential for designing and troubleshooting circuits, helping engineers choose the right parts and manage current safely.",
+      },
+    },
+  ],
+};
 
 export default function AboutOhmsLawCalculator() {
   return (
@@ -14,6 +55,10 @@ export default function AboutOhmsLawCalculator() {
         <CardTitle>About the Ohm&apos;s Law Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The **Ohm&apos;s Law Calculator** is a vital tool for anyone working
           with electronics, from students to engineers. It helps you find the
