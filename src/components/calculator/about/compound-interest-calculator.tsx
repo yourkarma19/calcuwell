@@ -136,7 +136,7 @@ export default function AboutCompoundInterestCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger className="font-semibold">
-              Simple vs. Compound Interest: What&apos;s the real difference?
+              Simple vs. Compound Interest: What's the real difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>

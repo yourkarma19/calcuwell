@@ -58,8 +58,8 @@ export default function AboutPythagoreanTheoremCalculator() {
           <h3>How to Use the Pythagorean Theorem Calculator</h3>
           <ol>
             <li>
-              Select which side you need to solve for (side &apos;a&apos;, side
-              &apos;b&apos;, or hypotenuse &apos;c&apos;).
+              Select which side you need to solve for (side 'a', side
+              'b', or hypotenuse 'c').
             </li>
             <li>Enter the lengths of the two sides that you know.</li>
             <li>
@@ -67,7 +67,7 @@ export default function AboutPythagoreanTheoremCalculator() {
             </li>
           </ol>
           <p>
-            Remember that the hypotenuse &apos;c&apos; must always be the
+            Remember that the hypotenuse 'c' must always be the
             longest side. The calculator will show an error if this is not true.
           </p>
         </CardContent>
@@ -91,9 +91,9 @@ export default function AboutPythagoreanTheoremCalculator() {
                   The Pythagorean theorem is a fundamental principle of
                   Euclidean geometry. It states that for any right-angled
                   triangle, the square of the length of the hypotenuse (the side
-                  opposite the right angle, denoted as &apos;c&apos;) is equal
+                  opposite the right angle, denoted as 'c') is equal
                   to the sum of the squares of the other two sides (denoted as
-                  &apos;a&apos; and &apos;b&apos;). The formula is written as:{" "}
+                  'a' and 'b'). The formula is written as:{" "}
                   <strong>a² + b² = c²</strong>.
                 </p>
               </AccordionContent>
@@ -106,7 +106,7 @@ export default function AboutPythagoreanTheoremCalculator() {
                 <p>
                   The hypotenuse is the longest side of a right-angled triangle.
                   It is always the side opposite the 90-degree angle. In the
-                  formula a² + b² = c², &apos;c&apos; represents the hypotenuse.
+                  formula a² + b² = c², 'c' represents the hypotenuse.
                 </p>
               </AccordionContent>
             </AccordionItem>
