@@ -1,3 +1,4 @@
+
 "use client";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -46,7 +47,7 @@ export default function AboutInterceptCalculator() {
           </p>
           <div className="my-4 flex justify-center">
             <Image
-              src="https://picsum.photos/500/350"
+              src="https://picsum.photos/seed/intercepts/500/350"
               alt="A graph showing the x and y intercepts of a line on a coordinate plane."
               width={500}
               height={350}

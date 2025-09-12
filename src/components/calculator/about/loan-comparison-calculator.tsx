@@ -43,15 +43,15 @@ const jsonLd: WithContext<FAQPage> = {
 export default function AboutLoanComparisonCalculator() {
   return (
     <div className="space-y-6">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">How to Choose the Right Loan?</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             Choosing the right loan can save you thousands. Our Loan Comparison
             Calculator is a tool designed to help you make an informed decision

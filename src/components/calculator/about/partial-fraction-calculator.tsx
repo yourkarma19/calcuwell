@@ -51,7 +51,6 @@ export default function AboutPartialFractionCalculator() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <h3>What is Partial Fraction Decomposition?</h3>
         <p>
           Partial fraction decomposition is a technique in algebra used to break
           down a complex rational function (a fraction of two polynomials) into

@@ -69,10 +69,6 @@ const jsonLd: WithContext<FAQPage> = {
 export default function AboutDecimalToInchesCalculator() {
   return (
     <div className="space-y-6">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">
@@ -80,6 +76,10 @@ export default function AboutDecimalToInchesCalculator() {
           </CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             To convert a decimal to an inch fraction, you can follow these
             simple steps:

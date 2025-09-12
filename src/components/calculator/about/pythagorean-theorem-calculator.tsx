@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -43,15 +44,15 @@ const jsonLd: WithContext<FAQPage> = {
 export default function AboutPythagoreanTheoremCalculator() {
   return (
     <div className="space-y-6">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">About the Pythagorean Theorem</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             This calculator helps you find the length of a missing side of a
             right-angled triangle using the Pythagorean theorem. This famous
@@ -80,7 +81,6 @@ export default function AboutPythagoreanTheoremCalculator() {
           <CardTitle as="h3">Pythagorean Theorem FAQs</CardTitle>
         </CardHeader>
         <CardContent>
-          
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-semibold">

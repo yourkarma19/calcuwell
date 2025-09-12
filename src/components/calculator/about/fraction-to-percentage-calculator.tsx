@@ -1,3 +1,4 @@
+
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -23,7 +24,7 @@ export default function AboutFractionToPercentageCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Converting Fractions to Percentages</CardTitle>
+          <CardTitle as="h2">Converting Fractions to Percentages</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <p>
@@ -58,7 +59,7 @@ export default function AboutFractionToPercentageCalculator() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Common Fraction to Percentage Conversions</CardTitle>
+          <CardTitle as="h3">Common Fraction to Percentage Conversions</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>

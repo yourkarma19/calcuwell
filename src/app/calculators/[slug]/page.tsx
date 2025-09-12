@@ -28,13 +28,17 @@ export async function generateMetadata({
     `${calculator.name} Calculator | Free Online Tool | CalcPro`;
   const description =
     calculator.metaDescription ||
-    `Use the free ${calculator.name} on CalcPro to solve your problem. ${calculator.description}`;
+    `Use CalcPro's free ${calculator.name} to solve your problem. ${calculator.description}`;
 
   return {
     title,
     description,
     alternates: {
       canonical: `/calculators/${calculator.slug}`,
+    },
+    openGraph: {
+      title: `${calculator.name} | CalcPro`,
+      description: description,
     },
   };
 }
@@ -52,11 +56,12 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     description: calculator.metaDescription || calculator.description,
     url: `https://calcpro.online/calculators/${calculator.slug}`,
     applicationCategory: "Utilities",
+    operatingSystem: "Any",
     offers: {
       "@type": "Offer",
       price: "0",
+      priceCurrency: "INR",
     },
-    operatingSystem: "Any",
   };
 
   return (
