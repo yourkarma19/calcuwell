@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a Tangent Line?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A tangent line is a straight line that 'just touches' a curve at a single point and has the same direction (slope) as the curve at that point. The slope of the tangent line is equal to the derivative of the function evaluated at that same point.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is the tangent line found?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The process involves finding the derivative of the function f'(x), evaluating it at the given point to find the slope, finding the y-coordinate of the point, and then using the point-slope formula y - y₁ = m(x - x₁) to find the equation of the line.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is the tangent line important in calculus?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Finding the tangent line is a fundamental application of derivatives. The tangent line provides a linear approximation of a function's behavior near a specific point, which is crucial in physics, engineering, and economics.",
+      },
+    },
+  ],
+};
 
 export default function AboutTangentLineCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutTangentLineCalculator() {
         <CardTitle as="h2">About the Tangent Line Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           This calculator is designed for calculus students to find the equation
           of a line that is tangent to a function at a specific point. The

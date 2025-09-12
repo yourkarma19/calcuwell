@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a matrix?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A matrix is a rectangular grid of numbers arranged in rows and columns. A 2x2 matrix has two rows and two columns.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you add or subtract matrices?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To add or subtract two matrices, they must have the same dimensions. The operation is performed element-wise, meaning you add or subtract the elements in the same position in each matrix.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What about matrix multiplication?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Matrix multiplication is more complex and involves a 'dot product' of rows and columns. It is a key operation in linear algebra for transformations and solving systems of equations.",
+      },
+    },
+  ],
+};
 
 export default function AboutMatrixCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutMatrixCalculator() {
         <CardTitle>Fundamentals of Matrix Operations</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The **Matrix Calculator** is a tool designed to help you perform basic
           arithmetic operations on matrices. Matrices are rectangular arrays of

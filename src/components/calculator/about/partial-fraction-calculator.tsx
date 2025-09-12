@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Partial Fraction Decomposition?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Partial fraction decomposition is a technique in algebra used to break down a complex rational function (a fraction of two polynomials) into a sum of simpler fractions. This process makes the expression much easier to work with, especially for operations in calculus like integration.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What about repeated linear factors in the denominator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If the denominator has a repeated factor like (x-a)², the decomposition must include a term for each power, such as A/(x-a) + B/(x-a)². Our calculator handles these cases automatically.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the calculator handle irreducible quadratic factors?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For factors that cannot be broken down further, like (x² + 1), the corresponding partial fraction has a linear numerator, such as (Ax + B) / (x² + 1). The calculator correctly sets up and solves for these coefficients.",
+      },
+    },
+  ],
+};
 
 export default function AboutPartialFractionCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutPartialFractionCalculator() {
         <CardTitle as="h2">About Partial Fraction Decomposition</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <h3>What is Partial Fraction Decomposition?</h3>
         <p>
           Partial fraction decomposition is a technique in algebra used to break

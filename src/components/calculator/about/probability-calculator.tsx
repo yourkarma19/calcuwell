@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is probability calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Probability is calculated by dividing the number of desired outcomes by the total number of possible outcomes. For example, the probability of rolling a 4 on a six-sided die is 1/6.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What do 'P(A and B)' and 'P(A or B)' mean for independent events?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "P(A and B) is the probability that both events A and B occur, calculated by multiplying their probabilities: P(A) * P(B). P(A or B) is the probability that either A or B (or both) occur, calculated as P(A) + P(B) - P(A and B).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between independent and dependent events?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An independent event is one where the outcome is not affected by previous events (e.g., a coin flip). A dependent event is one where the outcome is influenced by a previous event (e.g., drawing a card from a deck without replacement). This calculator deals with independent events.",
+      },
+    },
+  ],
+};
 
 export default function AboutProbabilityCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutProbabilityCalculator() {
         <CardTitle>About the Probability Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The **Probability Calculator** provides a simple way to compute the
           likelihood of different outcomes. Probability is a fundamental concept

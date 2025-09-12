@@ -23,6 +23,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import type { FAQPage, WithContext } from "schema-dts";
 
 const activityFactors = [
   { level: "Sedentary (little or no exercise)", multiplier: 1.2 },
@@ -44,6 +45,37 @@ const activityFactors = [
   },
 ];
 
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is BMR (Basal Metabolic Rate)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Your Basal Metabolic Rate (BMR) is the number of calories your body needs to accomplish its most basic, life-sustaining functions, like breathing and circulation, while at complete rest.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between BMR and TDEE?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "BMR is the calories burned at rest. TDEE (Total Daily Energy Expenditure) is the total calories you burn in a day, including all activities. TDEE is calculated by multiplying your BMR by an activity factor.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which BMR formula is most accurate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Mifflin-St Jeor equation is considered the most accurate BMR formula by modern research, which is why it is the default for this calculator. The Harris-Benedict equation is an older, slightly less accurate alternative.",
+      },
+    },
+  ],
+};
+
 export default function AboutBmrCalculator() {
   return (
     <Card>
@@ -51,6 +83,10 @@ export default function AboutBmrCalculator() {
         <CardTitle>About Basal Metabolic Rate (BMR)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <h2>What is BMR? A Simple Explanation</h2>
         <p>
           Your <strong>Basal Metabolic Rate (BMR)</strong> is the number of
