@@ -45,7 +45,7 @@ export default function AboutDataTransferRateConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Data Transfer Rate Converter</CardTitle>
+        <CardTitle as="h2">About the Data Transfer Rate Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

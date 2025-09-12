@@ -36,7 +36,7 @@ export default function AboutFuelEfficiencyConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Fuel Efficiency</CardTitle>
+        <CardTitle as="h2">About Fuel Efficiency</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

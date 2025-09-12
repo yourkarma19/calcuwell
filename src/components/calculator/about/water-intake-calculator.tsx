@@ -44,7 +44,7 @@ export default function AboutWaterIntakeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Daily Water Intake</CardTitle>
+        <CardTitle as="h2">About Daily Water Intake</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

@@ -44,7 +44,7 @@ export default function AboutOvertimePayCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Overtime Pay Calculator</CardTitle>
+        <CardTitle as="h2">About the Overtime Pay Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

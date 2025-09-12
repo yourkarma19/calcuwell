@@ -7,7 +7,24 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import type { FAQPage, WithContext } from "schema-dts";
+
+const conversionChart = [
+  { fraction: "1/2", percentage: "50%" },
+  { fraction: "1/3", percentage: "33.33%" },
+  { fraction: "1/4", percentage: "25%" },
+  { fraction: "1/5", percentage: "20%" },
+  { fraction: "1/8", percentage: "12.5%" },
+  { fraction: "3/4", percentage: "75%" },
+];
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
@@ -35,15 +52,15 @@ const jsonLd: WithContext<FAQPage> = {
 export default function AboutGradePercentageCalculator() {
   return (
     <div className="space-y-6">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">About Grade Calculation</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             This simple tool helps you quickly calculate the percentage score of
             a test, quiz, or assignment. By entering the points you earned and
