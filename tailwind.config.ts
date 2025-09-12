@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss";
+const type { Config } = require("tailwindcss");
 
-export default {
+module.exports = {
   darkMode: ["class"],
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
@@ -90,21 +90,21 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-       typography: ({ theme }: { theme: (path: string) => string }) => ({
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
             h1: {
               fontFamily: theme('fontFamily.headline'),
             },
             h2: {
-               fontFamily: theme('fontFamily.headline'),
+              fontFamily: theme('fontFamily.headline'),
             },
             h3: {
-               fontFamily: theme('fontFamily.headline'),
+              fontFamily: theme('fontFamily.headline'),
             },
-          }
-        }
-      })
+          },
+        },
+      }),
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
