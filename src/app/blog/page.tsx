@@ -50,8 +50,8 @@ export default function BlogIndexPage() {
           Welcome to the CalcPro Blog, your resource for deep dives and simple
           explanations for the concepts behind our calculators. Our goal is to
           demystify the formulas and ideas that power our tools, making them
-          accessible to everyone. Whether you&apos;re a student, a professional,
-          or just curious, our articles provide valuable context and real-world
+          accessible to everyone. Whether you're a student, a professional, or
+          just curious, our articles provide valuable context and real-world
           examples.
         </p>
       </div>
@@ -60,7 +60,7 @@ export default function BlogIndexPage() {
         <h2 id="blog-posts-heading" className="sr-only">
           Blog Posts
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post) => (
             <Link
               key={post.slug}
@@ -71,7 +71,7 @@ export default function BlogIndexPage() {
                 <CardHeader>
                   <CardTitle
                     as="h3"
-                    className="font-headline group-hover:text-primary transition-colors"
+                    className="text-2xl font-semibold font-headline group-hover:text-primary transition-colors"
                   >
                     {post.title}
                   </CardTitle>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -56,7 +57,7 @@ export default function CategoryClientPage({
           {name} Calculators
         </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Welcome to our suite of {name.toLowerCase()} calculators. Each tool is designed to provide quick and accurate solutions. Whether you're a student, professional, or just curious, our calculators are here to help you solve problems and make informed decisions.
+          {description}
         </p>
       </div>
 
@@ -91,7 +92,7 @@ export default function CategoryClientPage({
                       />
                     </div>
                     <div>
-                      <CardTitle className="font-headline group-hover:text-primary transition-colors">
+                      <CardTitle as="h3" className="text-lg font-semibold font-headline group-hover:text-primary transition-colors">
                         {calculator.name}
                       </CardTitle>
                       <CardDescription>{calculator.description}</CardDescription>

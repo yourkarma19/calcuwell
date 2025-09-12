@@ -62,9 +62,7 @@ export default async function SitemapPage() {
       />
       <div className="text-center mb-12">
         <List className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
-          Sitemap
-        </h1>
+        <h1>Sitemap</h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
           Welcome to the sitemap for CalcPro. Here you can find a comprehensive
           list of all our calculators, neatly organized by category. This page

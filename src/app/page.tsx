@@ -151,7 +151,7 @@ export default function Home() {
       {/* Why CalcPro Section */}
       <section className="w-full text-center py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="mb-4">Why CalcPro?</h2>
+          <h2>Why CalcPro?</h2>
           <p className="max-w-3xl mx-auto text-muted-foreground text-lg">
             CalcPro offers a comprehensive suite of free online calculators
             designed to be fast, accurate, and easy to use. From solving complex
