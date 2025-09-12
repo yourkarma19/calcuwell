@@ -1,8 +1,8 @@
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CalculatorClientPage from "@/components/calculator/calculator-client-page";
 import { getCalculatorBySlug } from "@/lib/server/calculator-data";
+import type { SoftwareApplication, WithContext } from "schema-dts";
 
 type CalculatorPageProps = {
   params: {
@@ -44,7 +44,29 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     notFound();
   }
 
-  return <CalculatorClientPage calculator={calculator} />;
-}
+  const softwareApplicationSchema: WithContext<SoftwareApplication> = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: calculator.name,
+    description: calculator.metaDescription || calculator.description,
+    url: `https://calcpro.online/calculators/${calculator.slug}`,
+    applicationCategory: "Utilities",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+    },
+    operatingSystem: "Any",
+  };
 
-    
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationSchema),
+        }}
+      />
+      <CalculatorClientPage calculator={calculator} />
+    </>
+  );
+}
