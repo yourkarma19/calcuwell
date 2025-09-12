@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -9,29 +10,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
+import { trendingCalculators } from "@/lib/trending-calculators";
 import { ChevronRight } from 'lucide-react';
 import type { WebSite, WithContext } from "schema-dts";
-
-const popularTools = [
-  {
-    name: "Mortgage Calculator",
-    slug: "mortgage-calculator",
-    icon: "House",
-    description: "Estimate your monthly mortgage payments.",
-  },
-  {
-    name: "BMI Calculator",
-    slug: "bmi-calculator",
-    icon: "HeartPulse",
-    description: "Check your Body Mass Index for a health snapshot.",
-  },
-  {
-    name: "SIP Calculator",
-    slug: "sip-calculator",
-    icon: "TrendingUp",
-    description: "Project the growth of your investments.",
-  },
-];
 
 const websiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
@@ -77,12 +58,12 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* Popular Tools Section */}
+      {/* Trending Tools Section */}
       <section className="w-full py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-center mb-12">Explore Our Most Popular Tools</h2>
+          <h2 className="text-center mb-12">🔥 Trending Calculators</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {popularTools.map((tool) => (
+            {trendingCalculators.map((tool) => (
               <Link
                 href={`/calculators/${tool.slug}`}
                 key={tool.slug}
@@ -90,7 +71,7 @@ export default function Home() {
               >
                 <Card className="h-full text-center hover:shadow-xl hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1.5 transform p-6">
                   <div className="flex justify-center mb-4">
-                     <IconWrapper iconName={tool.icon} className="w-8 h-8 text-primary"/>
+                     <IconWrapper iconName={tool.iconName} className="w-8 h-8 text-primary"/>
                   </div>
                   <CardTitle
                     as="h3"
@@ -111,7 +92,7 @@ export default function Home() {
       {/* Categories Section */}
       <section className="w-full bg-muted/30 py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-center mb-12">Calculator Categories</h2>
+          <h2 className="text-center mb-12">📂 Calculator Categories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {categories.map((category) => (
               <Link
