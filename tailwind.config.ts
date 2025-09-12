@@ -91,23 +91,11 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-    typography: ({ theme }: { theme: (path: string) => string }) => ({
-      DEFAULT: {
-        css: {
-          h1: {
-            fontFamily: theme('fontFamily.headline'),
-          },
-          h2: {
-            fontFamily: theme('fontFamily.headline'),
-          },
-          h3: {
-            fontFamily: theme('fontFamily.headline'),
-          },
-        },
-      },
-    }),
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 };
 
 export default config;
