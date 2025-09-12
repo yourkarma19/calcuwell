@@ -92,7 +92,7 @@ export default function CategoryClientPage({
                       />
                     </div>
                     <div>
-                      <CardTitle as="h3" className="text-lg font-semibold font-headline group-hover:text-primary transition-colors">
+                      <CardTitle className="text-lg font-semibold font-headline group-hover:text-primary transition-colors">
                         {calculator.name}
                       </CardTitle>
                       <CardDescription>{calculator.description}</CardDescription>
