@@ -69,20 +69,18 @@ export default function AboutBMICalculator() {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
           <p>
-            The <strong>Body Mass Index (BMI)</strong> is a widely used measure
-            to gauge whether your weight is healthy in proportion to your
-            height. It's a simple screening tool that can help identify
-            potential weight-related health issues for adults. Our calculator
-            makes it easy to find your BMI using either metric or imperial
-            units.
+            The <strong>Body Mass Index (BMI)</strong> is a measure to check
+            if your weight is healthy for your height. It's a simple screening
+            tool that can spot potential weight-related health issues. Our
+            calculator makes it easy to find your BMI using either metric or
+            imperial units.
           </p>
 
           <h3>How to Use the BMI Calculator</h3>
           <ol>
             <li>
-              Select your preferred unit system (<strong>Metric</strong> for
-              kilograms & centimeters or <strong>Imperial</strong> for
-              pounds & feet/inches).
+              Select your units (<strong>Metric</strong> for kg & cm or{" "}
+              <strong>Imperial</strong> for lbs & ft/in).
             </li>
             <li>
               Enter your current <strong>Weight</strong>.
@@ -90,10 +88,7 @@ export default function AboutBMICalculator() {
             <li>
               Enter your <strong>Height</strong>.
             </li>
-            <li>
-              Your BMI result and corresponding weight category will be shown
-              automatically.
-            </li>
+            <li>Your BMI result will be shown automatically.</li>
           </ol>
 
           <h3>BMI Calculator FAQs</h3>
@@ -106,9 +101,9 @@ export default function AboutBMICalculator() {
                 <p>
                   According to the World Health Organization (WHO), a healthy
                   BMI for most adults is between <strong>18.5 and 24.9</strong>.
-                  A BMI below 18.5 is considered underweight, 25.0 to 29.9 is
-                  overweight, and 30.0 or higher is categorized as obesity. You
-                  can see the full range in the BMI Categories table.
+                  A BMI below 18.5 is underweight, 25.0 to 29.9 is overweight,
+                  and 30.0 or higher is obesity. You can see the full range in
+                  the BMI Categories table.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -118,32 +113,27 @@ export default function AboutBMICalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  The formula for BMI is your weight in kilograms divided by the
-                  square of your height in meters (`kg/m²`). For imperial units,
-                  the formula is `(weight in lbs / (height in inches)²) * 703`.
-                  Our calculator handles these conversions for you
-                  automatically.
+                  The formula for BMI is your weight (kg) divided by the square
+                  of your height (m). For imperial units, the formula is `(lbs /
+                  inches²) * 703`. Our calculator does the math for you.
                 </p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger className="font-semibold">
-                What are the limitations of BMI?
+                What are the limits of BMI?
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  While BMI is a useful population-level indicator, it has
-                  limitations for individuals. It does not differentiate between
-                  fat and muscle mass. For example, very muscular people (like
-                  athletes) may have a high BMI due to muscle weight and still
-                  have very low body fat. It may also be less accurate for
-                  certain ethnic groups, pregnant women, or the elderly. It
-                  should be used as a general screening tool, and a healthcare
-                  provider should be consulted for a complete health assessment.
+                  BMI is a useful screening tool, but it doesn't separate fat
+                  from muscle. Very muscular people (like athletes) might have a
+                  high BMI but still be healthy. It can also be less accurate
+                  for some ethnic groups, pregnant women, or the elderly. You
+                  should use it as a general guide and talk to a healthcare
+                  provider for a full health check.
                 </p>
                 <p>
-                  For a more detailed look at your body composition, consider
-                  using our{" "}
+                  For a closer look at your body composition, try our{" "}
                   <Link
                     href="/calculators/body-fat-percentage-calculator"
                     className="text-primary hover:underline"
@@ -187,8 +177,8 @@ export default function AboutBMICalculator() {
             </TableBody>
           </Table>
           <p className="text-xs text-muted-foreground mt-2">
-            Note: BMI is a screening tool and does not diagnose body fatness or
-            health. Consult a healthcare provider for a complete assessment.
+            Note: BMI is a screening tool and does not diagnose health. Consult
+            a healthcare provider for a complete assessment.
           </p>
         </CardContent>
       </Card>

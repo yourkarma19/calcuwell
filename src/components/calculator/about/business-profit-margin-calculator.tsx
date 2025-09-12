@@ -44,7 +44,7 @@ export default function AboutBusinessProfitMarginCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About Profit Margins</CardTitle>
+        <CardTitle as="h2">About the Profit Margin Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,80 +52,75 @@ export default function AboutBusinessProfitMarginCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Profit Margin Calculator is a vital financial tool for business
-          owners, managers, and investors. It breaks down a company&apos;s
-          profitability into three key metrics: Gross, Operating, and Net Profit
-          Margins. Understanding these margins helps you assess the financial
-          health, operational efficiency, and overall performance of a business.
+          The Profit Margin Calculator is a key financial tool for business
+          owners, managers, and investors. It breaks down a company's profit
+          into three important types: Gross, Operating, and Net Profit Margins.
+          Understanding these margins helps you check the financial health and
+          efficiency of a business.
         </p>
 
         <h3>How to Use the Profit Margin Calculator</h3>
         <ol>
-          <li>Enter your **Total Revenue** for the period.</li>
+          <li>Enter your **Total Revenue**.</li>
           <li>
-            Input your **Cost of Goods Sold (COGS)**, which are the direct costs
-            of producing your products or services.
+            Input your **Cost of Goods Sold (COGS)**. These are the direct
+            costs of making your products.
           </li>
           <li>
-            Enter your total **Operating Expenses**, which include costs not
-            directly related to production, like rent, salaries, and marketing.
+            Enter your total **Operating Expenses**. This includes costs not
+            directly related to production, like rent and salaries.
           </li>
           <li>Provide the applicable **Tax Rate** as a percentage.</li>
         </ol>
         <p>
-          The calculator will instantly display the three profit margins and
-          their corresponding profit amounts.
+          The calculator will instantly show the three profit margins and their
+          profit amounts.
         </p>
 
         <h3>Profit Margin FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What is the difference between Gross, Operating, and Net Margin?
+              What's the difference between Gross, Operating, and Net Margin?
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                <strong>Gross Margin</strong> shows how much profit is made on
-                each sale after accounting for the direct costs of the product
-                (COGS). It measures production efficiency.
+                <strong>Gross Margin</strong> shows the profit on each sale
+                after accounting for direct costs (COGS). It measures
+                production efficiency.
               </p>
               <p>
                 <strong>Operating Margin</strong> shows the profit a company
-                makes from its core business operations, after both COGS and
-                operating expenses are deducted. It measures overall operational
-                efficiency.
+                makes from its main business operations, after all operating
+                expenses are deducted.
               </p>
               <p>
-                <strong>Net Margin</strong> is the &quot;bottom line.&quot;
-                It&apos;s the final profit after all expenses, including
-                interest and taxes, have been paid. It represents the
-                company&apos;s overall profitability.
+                <strong>Net Margin</strong> is the "bottom line." It's the
+                final profit after all expenses, including interest and taxes,
+                have been paid.
               </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              Why is looking at all three margins important?
+              Why look at all three margins?
             </AccordionTrigger>
             <AccordionContent>
-              Analyzing all three margins tells a complete story. A company
-              might have a high gross margin (meaning it&apos;s efficient at
-              making its product) but a low net margin (meaning its operating
-              costs or taxes are too high). Comparing these margins over time or
-              against industry competitors provides valuable insights into a
-              company&apos;s financial health.
+              Looking at all three margins tells a complete story. A company
+              might have a high gross margin (meaning it's efficient at making
+              its product) but a low net margin (meaning its other costs are
+              too high). Comparing these margins over time gives you valuable
+              insights.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>What is a good profit margin?</AccordionTrigger>
             <AccordionContent>
-              A &quot;good&quot; profit margin varies widely by industry. For
-              example, a software company might have a very high gross margin
-              (over 80%) because its COGS is low, while a retail store will have
-              a much lower margin. A net profit margin of 10% is often
-              considered average, 20% is considered high, and 5% is low.
-              It&apos;s most useful to compare your margins to industry
-              benchmarks.
+              A "good" profit margin varies a lot by industry. A software
+              company will have a very different margin than a retail store. As
+              a general rule, a net profit margin of 10% is average, 20% is
+              high, and 5% is low. It's best to compare your margins to others in
+              your industry.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

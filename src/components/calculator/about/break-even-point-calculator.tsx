@@ -52,29 +52,27 @@ export default function AboutBreakEvenPointCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Break-Even Point (BEP) Calculator is an essential tool for
-          business owners, entrepreneurs, and students of finance. It helps you
-          determine the point at which your total revenue equals your total
-          costs, meaning your business is not making a profit but is also not
-          losing money. Understanding your break-even point is critical for
-          setting prices, managing costs, and making informed business
-          decisions.
+          The Break-Even Point (BEP) Calculator is a key tool for business
+          owners and finance students. It helps you find the point where your
+          total revenue equals your total costs. At this point, you are not
+          making a profit, but you are not losing money either. Understanding
+          this is vital for setting prices and managing costs.
         </p>
         <h3>How to Use the Break-Even Point Calculator</h3>
         <ol>
           <li>
             Enter your **Total Fixed Costs**. These are expenses that do not
-            change with the number of units sold (e.g., rent, salaries).
+            change with sales (e.g., rent, salaries).
           </li>
           <li>
-            Enter your **Variable Cost Per Unit**. This is the cost to produce
-            one single item (e.g., materials, direct labor).
+            Enter your **Variable Cost Per Unit**. This is the cost to make one
+            item (e.g., materials).
           </li>
-          <li>Enter the **Price Per Unit** at which you sell your product.</li>
+          <li>Enter the **Price Per Unit** you sell your product for.</li>
         </ol>
         <p>
-          The calculator will instantly show you the number of units you need to
-          sell and the total revenue required to break even.
+          The calculator will show you how many units you need to sell and the
+          total revenue needed to break even.
         </p>
         <h3>Break-Even Point FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -83,10 +81,9 @@ export default function AboutBreakEvenPointCalculator() {
               What is the formula for the break-even point?
             </AccordionTrigger>
             <AccordionContent>
-              The formula for the break-even point in units is: `Break-Even
-              Units = Fixed Costs / (Price Per Unit - Variable Cost Per Unit)`.
-              The denominator of this formula is known as the contribution
-              margin per unit.
+              The formula is: `Break-Even Units = Fixed Costs / (Price Per Unit
+              - Variable Cost Per Unit)`. The bottom part of the formula is
+              known as the contribution margin.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,19 +91,20 @@ export default function AboutBreakEvenPointCalculator() {
               What is the contribution margin?
             </AccordionTrigger>
             <AccordionContent>
-              The contribution margin is the amount of revenue from each sale
-              that is left over to cover your fixed costs. It&apos;s calculated
-              as `Price Per Unit - Variable Cost Per Unit`. A higher
-              contribution margin means you break even faster.
+              The contribution margin is the money from each sale that's left
+              over to cover your fixed costs. It's found by subtracting the
+              Variable Cost Per Unit from the Price Per Unit. A higher margin
+              means you break even faster.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>Why is this analysis important?</AccordionTrigger>
+            <AccordionTrigger>
+              Why is this analysis important?
+            </AccordionTrigger>
             <AccordionContent>
-              Break-even analysis helps you set realistic sales goals, determine
-              a pricing strategy, and understand how changes in costs will
-              affect your profitability. It is a fundamental part of a solid
-              business plan.
+              Break-even analysis helps you set sales goals, decide on a
+              pricing strategy, and see how cost changes will affect your
+              profit. It's a basic part of a solid business plan.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

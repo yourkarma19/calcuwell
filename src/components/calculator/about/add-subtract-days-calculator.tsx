@@ -45,9 +45,8 @@ export default function AboutAddSubtractDaysCalculator() {
         />
         <p>
           Our Add/Subtract Days Calculator is a simple tool to find a future or
-          past date. It is great for setting a deadline, scheduling a follow-up,
-          or finding a warranty period. This tool avoids the need to count days
-          manually on a calendar.
+          past date. It helps you set deadlines, schedule follow-ups, or check
+          warranty periods without counting days on a calendar.
         </p>
         <h3>How to Use the Date Calculator</h3>
         <ol>
@@ -58,26 +57,25 @@ export default function AboutAddSubtractDaysCalculator() {
             Enter the number of <strong>Days to Add/Subtract</strong>.
           </li>
           <li>
-            Click either the <strong>&quot;Add Days&quot;</strong> or{" "}
-            <strong>&quot;Subtract Days&quot;</strong> button.
+            Click either the <strong>"Add Days"</strong> or{" "}
+            <strong>"Subtract Days"</strong> button.
           </li>
         </ol>
-        <p>The resulting date will be shown instantly in the results card.</p>
+        <p>The new date will show up instantly in the results card.</p>
         <h3>Date Calculator FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>How does this calculator work?</AccordionTrigger>
             <AccordionContent>
-              This tool simply adds or subtracts the number of days you enter
-              from a given start date. It automatically handles all month and
-              year changes, including leap years, so you get an accurate result
-              every time.
+              This tool adds or subtracts the days you enter from a start date.
+              It automatically handles month, year, and leap year changes to give
+              you an accurate result.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>What is this tool used for?</AccordionTrigger>
             <AccordionContent>
-              It is perfect for many planning tasks, such as:
+              It is great for many planning tasks, such as:
               <ul className="list-disc pl-5 mt-2">
                 <li>Scheduling appointments (e.g., a 60-day follow-up).</li>
                 <li>

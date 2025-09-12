@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Card,
@@ -13,15 +14,15 @@ export default function AboutBasicCalculator() {
       <CardHeader>
         <CardTitle as="h2">About the Calculator</CardTitle>
         <CardDescription>
-          This versatile calculator includes both basic arithmetic and advanced
-          scientific functions to suit all your needs.
+          This calculator includes both basic math and advanced scientific
+          functions to suit all your needs.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          Use the tabs to switch between the basic and scientific modes. The
-          scientific mode includes trigonometric functions, logarithms, and
-          more.
+          Use the tabs to switch between the "Basic" and "Scientific" modes.
+          The scientific mode lets you work with trigonometric functions,
+          logarithms, and more.
         </p>
       </CardContent>
     </Card>

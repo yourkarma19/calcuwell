@@ -24,10 +24,10 @@ export default function AboutConcreteSlabCalculator() {
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
-          This calculator helps you estimate the volume of concrete needed for
-          your project and how many pre-mixed concrete bags to buy. It&apos;s an
-          essential tool for any DIY or professional construction project,
-          ensuring you purchase the right amount of material without waste.
+          This calculator helps you estimate the amount of concrete needed for
+          your project. It also tells you how many pre-mixed concrete bags to
+          buy. It's a key tool for any DIY or professional construction project.
+          It helps you buy the right amount of material without waste.
         </p>
         <h3>How to Use the Concrete Calculator</h3>
         <ol>
@@ -36,17 +36,17 @@ export default function AboutConcreteSlabCalculator() {
           </li>
           <li>Choose your preferred **Units** of measurement.</li>
           <li>Enter the dimensions for your project.</li>
-          <li>Select the **Concrete Bag Weight** you plan to purchase.</li>
+          <li>Select the **Concrete Bag Weight** you plan to buy.</li>
         </ol>
         <p>
-          The calculator will instantly provide the total volume of concrete
-          needed (in cubic yards) and the number of bags to buy.
+          The calculator will instantly show the total volume of concrete
+          needed and the number of bags to buy.
         </p>
 
         <h3>Concrete Bag Yields</h3>
         <p>
-          The amount of concrete a bag yields depends on its weight. Here are
-          some common estimates:
+          The amount of concrete a bag gives you depends on its weight. Here
+          are some common estimates:
         </p>
         <Table>
           <TableHeader>
@@ -65,8 +65,8 @@ export default function AboutConcreteSlabCalculator() {
           </TableBody>
         </Table>
         <p className="text-xs text-muted-foreground mt-2">
-          Note: Yields can vary slightly by manufacturer. Always check the
-          information on the bag.
+          Note: Yields can vary by brand. Always check the information on the
+          bag.
         </p>
       </CardContent>
     </Card>

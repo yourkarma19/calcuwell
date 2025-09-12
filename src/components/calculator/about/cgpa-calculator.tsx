@@ -53,114 +53,97 @@ export default function AboutCgpaCalculator() {
         />
         <h3>What is CGPA?</h3>
         <p>
-          CGPA stands for <strong>Cumulative Grade Point Average</strong>. It is
-          a weighted average of the grades you have received in all semesters up
-          to the current point. It provides a comprehensive measure of your
-          academic performance throughout your entire course.
+          CGPA stands for <strong>Cumulative Grade Point Average</strong>. It's
+          the weighted average of your grades from all semesters. It gives a full
+          picture of your academic performance.
         </p>
 
         <h3>How to Use the CGPA Calculator</h3>
-        <p>To calculate your CGPA with our tool, follow these simple steps:</p>
+        <p>Follow these simple steps to calculate your CGPA:</p>
         <ol>
+          <li>Enter the credits and SGPA for your first semester.</li>
           <li>
-            Enter the credits for your first semester and the GPA/SGPA you
-            achieved in that semester.
+            Click "Add Semester" for each additional semester you've completed.
           </li>
-          <li>
-            Click the &quot;Add Semester&quot; button for each additional
-            semester you have completed.
-          </li>
-          <li>Fill in the credits and GPA/SGPA for each of those semesters.</li>
-          <li>
-            The calculator will instantly display your cumulative GPA at the
-            top.
-          </li>
+          <li>Fill in the credits and SGPA for each of those semesters.</li>
+          <li>Your cumulative GPA will appear instantly at the top.</li>
         </ol>
 
-        <h3>The Formula for Calculating CGPA</h3>
+        <h3>The CGPA Formula</h3>
         <p>The CGPA is calculated using the following formula:</p>
         <p className="font-mono bg-muted p-2 rounded-md text-center my-2">
           CGPA = Σ (Semester Credits × Semester SGPA) / Σ (Total Credits)
         </p>
         <p>
-          In simpler terms, you multiply the credits of each semester by the
-          SGPA of that semester, sum up all these values, and then divide by the
-          total number of credits you have taken.
+          In simple terms: for each semester, multiply the credits by the SGPA.
+          Add all these results together. Then, divide by the total number of
+          credits you've taken.
         </p>
 
         <h4>Example Calculation</h4>
-        <p>Let&apos;s say a student has the following grades:</p>
+        <p>Let's say a student has these grades:</p>
         <ul>
           <li>Semester 1: 20 Credits, 8.5 SGPA</li>
           <li>Semester 2: 22 Credits, 9.0 SGPA</li>
         </ul>
         <p>
-          The calculation would be: `((20 * 8.5) + (22 * 9.0)) / (20 + 22)`
+          The calculation is: `((20 * 8.5) + (22 * 9.0)) / (20 + 22)`
           <br />
-          Which is: `(170 + 198) / 42 = 368 / 42 = 8.76`
+          This equals: `(170 + 198) / 42 = 368 / 42 = 8.76`
           <br />
-          The student&apos;s CGPA after two semesters is <strong>8.76</strong>.
+          The student's CGPA is <strong>8.76</strong>.
         </p>
 
-        <h3>Why is Your CGPA Important?</h3>
+        <h3>Why Your CGPA is Important</h3>
         <p>
-          Your CGPA is a key indicator of your academic performance and is often
+          Your CGPA is a key measure of your academic performance. It's often
           used by:
         </p>
         <ul>
           <li>
-            <strong>Universities:</strong> For admissions into postgraduate
+            <strong>Universities:</strong> For admission into postgraduate
             programs.
           </li>
           <li>
-            <strong>Employers:</strong> As a screening criterion for job
-            applications, especially for fresh graduates.
+            <strong>Employers:</strong> As a screening criterion for jobs,
+            especially for fresh graduates.
           </li>
           <li>
-            <strong>Scholarship Committees:</strong> To determine eligibility
-            for financial aid and awards.
+            <strong>Scholarship Committees:</strong> To decide eligibility for
+            financial aid.
           </li>
         </ul>
         <p>
-          Maintaining a good CGPA is crucial for opening up future academic and
-          career opportunities.
+          A good CGPA is important for future academic and career
+          opportunities.
         </p>
+        <h3>CGPA FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="faq1">
             <AccordionTrigger>
-              What is the difference between CGPA and SGPA?
+              What's the difference between CGPA and SGPA?
             </AccordionTrigger>
             <AccordionContent>
-              <strong>SGPA (Semester Grade Point Average)</strong> measures your
-              academic performance for a single semester.{" "}
+              <strong>SGPA (Semester Grade Point Average)</strong> is your
+              average grade for a single semester.{" "}
               <strong>CGPA (Cumulative Grade Point Average)</strong> is the
-              average of all your SGPAs over all semesters, weighted by the
-              number of credits in each semester.
+              average of all your SGPAs over all semesters, weighted by credits.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq2">
-            <AccordionTrigger>
-              How do I convert CGPA to a percentage?
-            </AccordionTrigger>
+            <AccordionTrigger>How do I convert CGPA to a percentage?</AccordionTrigger>
             <AccordionContent>
-              The conversion formula can vary by university. A common method is
-              to multiply the CGPA by a specific factor. For a 10-point scale, a
-              common formula is: `Percentage = CGPA * 9.5`. However, you should
-              always check with your specific university for their official
-              conversion formula.
+              The formula can vary by university. A common method is:
+              `Percentage = CGPA * 9.5`. However, you should always check with
+              your university for their official formula.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq3">
-            <AccordionTrigger>
-              What is considered a &quot;good&quot; CGPA?
-            </AccordionTrigger>
+            <AccordionTrigger>What is a good CGPA?</AccordionTrigger>
             <AccordionContent>
-              What constitutes a &quot;good&quot; CGPA can be subjective and
-              depends on the field of study and your future goals. Generally, on
-              a 10-point scale, a CGPA of 8.0 or above is considered very good
-              and is often a minimum requirement for many top companies and
-              universities. A CGPA of 9.0 or above is typically considered
-              excellent.
+              This can be subjective. Generally, on a 10-point scale, a CGPA of
+              8.0 or above is very good. A CGPA of 9.0 or above is usually
+              considered excellent.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

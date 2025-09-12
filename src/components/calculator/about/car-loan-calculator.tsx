@@ -44,7 +44,7 @@ export default function AboutCarLoanCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">Car Loan Fundamentals</CardTitle>
+        <CardTitle as="h2">About the Car Loan Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -52,35 +52,30 @@ export default function AboutCarLoanCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our <strong>Car Loan Calculator</strong> is an essential tool for
-          anyone planning to finance a vehicle. It helps you understand the true
-          cost of a car loan by calculating your Equated Monthly Installment
-          (EMI) and showing a full breakdown of the principal versus interest
-          paid. By using this tool, you can budget effectively, compare
-          different loan offers, and make a financially sound decision before
-          stepping into the dealership.
+          Our <strong>Car Loan Calculator</strong> is a vital tool for anyone
+          planning to finance a vehicle. It helps you understand the true cost
+          of a car loan by calculating your monthly payment (EMI). By using this
+          tool, you can budget effectively, compare different loan offers, and
+          make a smart decision before you buy.
         </p>
 
         <h3>How to Use the Car Loan Calculator</h3>
         <ol>
-          <li>
-            Enter the total <strong>Car Price</strong> (the on-road price).
-          </li>
+          <li>Enter the total <strong>Car Price</strong>.</li>
           <li>
             Input your <strong>Down Payment</strong> and the{" "}
-            <strong>Trade-in Value</strong> of your old vehicle, if any. These
-            amounts reduce the total loan you need.
+            <strong>Trade-in Value</strong> of your old vehicle, if you have
+            one.
           </li>
           <li>
             Adjust the <strong>Interest Rate</strong> and{" "}
             <strong>Loan Tenure</strong> (in years) to match the loan offer you
-            have received.
+            have.
           </li>
         </ol>
         <p>
-          The calculator will instantly display your monthly payment and show
-          how the total cost is divided between the loan amount and the interest
-          you'll pay over time.
+          The calculator will instantly show your monthly payment and how the
+          total cost is divided between the loan amount and the interest paid.
         </p>
 
         <h3>Car Loan FAQs</h3>
@@ -88,45 +83,38 @@ export default function AboutCarLoanCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is an EMI?</AccordionTrigger>
             <AccordionContent>
-              An Equated Monthly Installment (EMI) is the fixed payment amount a
-              borrower makes to a lender each month. It includes both the
-              principal amount and the interest on the loan, ensuring the loan
-              is fully paid off over the specified tenure.
+              An Equated Monthly Installment (EMI) is the fixed payment you make
+              to a lender each month. It includes both the principal loan amount
+              and the interest.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              How is the total cost of the car calculated?
+              What is the total cost of the car?
             </AccordionTrigger>
             <AccordionContent>
-              The total cost of the car includes the principal loan amount, all
-              the interest paid over the loan's life, and any initial down
-              payment or trade-in value you provided. It's the complete
+              The total cost includes the loan amount, all the interest paid
+              over the loan's life, and any down payment. It's the complete
               out-of-pocket expense for the vehicle.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>
-              How can I lower my car loan EMI?
-            </AccordionTrigger>
+            <AccordionTrigger>How can I lower my car loan EMI?</AccordionTrigger>
             <AccordionContent>
-              You can lower your EMI by making a larger down payment, which
-              reduces the principal loan amount. Choosing a longer loan tenure
-              will also lower the monthly payment, but be aware that this
-              usually means you will pay more in total interest over the life of
-              the loan. Shopping around for the best interest rate is also
-              crucial.
+              You can lower your EMI by making a larger down payment. Choosing a
+              longer loan term also lowers the monthly payment, but you will
+              usually pay more in total interest.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              What other costs should I consider?
+              What other costs should I think about?
             </AccordionTrigger>
             <AccordionContent>
-              Beyond the loan, remember to budget for ongoing car ownership
-              costs such as insurance, fuel, regular maintenance, and potential
-              repairs. These are not included in the loan calculation but are a
-              significant part of the total cost of owning a car.
+              Besides the loan, remember to budget for ongoing costs like
+              insurance, fuel, and maintenance. These are not included in the
+              loan calculation but are a big part of the total cost of owning a
+              car.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
