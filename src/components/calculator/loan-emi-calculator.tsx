@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -207,7 +208,7 @@ export default function LoanEMICalculator({
               {formatCurrency(emi)}
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-2 text-sm text-left border-t pt-2">
+          <div className="space-y-2 text-sm text-left border-t pt-2">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Principal Amount:</span>
               <span className="font-semibold">{formatCurrency(principal)}</span>

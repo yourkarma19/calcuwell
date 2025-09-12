@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ArrowRight } from "lucide-react";
@@ -214,7 +215,7 @@ export default function PercentageCalculator() {
             </Select>
           </div>
           <div className="space-y-2 pt-4">{renderInputs()}</div>
-          <div id="result-container" className="pt-4 text-center">
+          <div id="result-container" className="pt-4 text-center" aria-live="polite">
             <h3 className="text-lg font-semibold">Result</h3>
             {result !== null ? (
               <>

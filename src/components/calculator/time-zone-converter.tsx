@@ -1,3 +1,4 @@
+
 "use client";
 
 import { formatInTimeZone, fromZonedTime } from "date-fns-tz";
@@ -185,12 +186,14 @@ export default function TimeZoneConverter() {
                   ))}
                 </SelectContent>
               </Select>
-              <Input
-                value={convertedTime}
-                readOnly
-                className="font-bold text-primary bg-primary/10 border-primary/20 h-10 sm:h-20 text-base sm:text-lg"
-                aria-live="polite"
-              />
+              <div aria-live="polite">
+                <Input
+                  value={convertedTime}
+                  readOnly
+                  className="font-bold text-primary bg-primary/10 border-primary/20 h-10 sm:h-20 text-base sm:text-lg"
+                  aria-label="Converted Time"
+                />
+              </div>
             </div>
           </div>
         </CardContent>
