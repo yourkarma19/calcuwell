@@ -91,7 +91,7 @@ export default function AboutCarLoanCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The total cost includes the loan amount, all the interest paid
-              over the loan's life, and any down payment. It's the complete
+              over the loan&apos;s life, and any down payment. It&apos;s the complete
               out-of-pocket expense for the vehicle.
             </AccordionContent>
           </AccordionItem>

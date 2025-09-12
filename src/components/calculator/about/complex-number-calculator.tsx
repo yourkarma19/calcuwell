@@ -69,18 +69,18 @@ export default function AboutComplexNumberCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a complex number?</AccordionTrigger>
             <AccordionContent>
-              A complex number has the form `a + bi`. The 'a' is the "real"
-              part, and the 'b' is the "imaginary" part. They are used in many
+              A complex number has the form `a + bi`. The &apos;a&apos; is the &quot;real&quot;
+              part, and the &apos;b&apos; is the &quot;imaginary&quot; part. They are used in many
               areas of science and engineering.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              What is the imaginary unit 'i'?
+              What is the imaginary unit &apos;i&apos;?
             </AccordionTrigger>
             <AccordionContent>
-              The imaginary unit 'i' is the solution to the equation x² = -1. It
-              is defined as the square root of negative one (√-1). 'i' was
+              The imaginary unit &apos;i&apos; is the solution to the equation x² = -1. It
+              is defined as the square root of negative one (√-1). &apos;i&apos; was
               created to solve problems that have no real number solution.
             </AccordionContent>
           </AccordionItem>
@@ -89,7 +89,7 @@ export default function AboutComplexNumberCalculator() {
               How do you add or subtract them?
             </AccordionTrigger>
             <AccordionContent>
-              It's simple: you add or subtract the real parts and the imaginary
+              It&apos;s simple: you add or subtract the real parts and the imaginary
               parts separately. For example, `(3 + 2i) + (1 + 4i) = (3+1) +
               (2+4)i = 4 + 6i`.
             </AccordionContent>

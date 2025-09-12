@@ -20,22 +20,22 @@ export default function AboutNetCalorieCalculator() {
         </p>
         <ul>
           <li>
-            <strong>Calorie Surplus (Positive):</strong> You've eaten more
-            calories than you've burned. This leads to weight gain.
+            <strong>Calorie Surplus (Positive):</strong> You&apos;ve eaten more
+            calories than you&apos;ve burned. This leads to weight gain.
           </li>
           <li>
-            <strong>Calorie Deficit (Negative):</strong> You've burned more
-            calories than you've eaten. This leads to weight loss.
+            <strong>Calorie Deficit (Negative):</strong> You&apos;ve burned more
+            calories than you&apos;ve eaten. This leads to weight loss.
           </li>
           <li>
-            <strong>Maintenance (Near Zero):</strong> You've eaten about the
-            same number of calories you've burned, which maintains your weight.
+            <strong>Maintenance (Near Zero):</strong> You&apos;ve eaten about the
+            same number of calories you&apos;ve burned, which maintains your weight.
           </li>
         </ul>
 
         <h3>How to Calculate Your Calories Burned</h3>
         <p>
-          Your "calories burned" is your Total Daily Energy Expenditure (TDEE).
+          Your &quot;calories burned&quot; is your Total Daily Energy Expenditure (TDEE).
           This has two main parts:
         </p>
         <ol>

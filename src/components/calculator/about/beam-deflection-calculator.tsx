@@ -61,11 +61,11 @@ export default function AboutBeamDeflectionCalculator() {
           </li>
           <li>
             Enter the <strong>Modulus of Elasticity (E)</strong> in
-            Gigapascals (GPa). This value shows the material's stiffness.
+            Gigapascals (GPa). This value shows the material&apos;s stiffness.
           </li>
           <li>
             Enter the <strong>Area Moment of Inertia (I)</strong>. This value
-            shows the beam's resistance to bending.
+            shows the beam&apos;s resistance to bending.
           </li>
         </ol>
         <p>

@@ -61,7 +61,7 @@ export default function AboutRectangleAreaCalculator() {
         />
         <p>
           The <strong>Rectangle Area & Perimeter Calculator</strong> is a tool
-          for calculating the basic properties of a rectangle. Whether you're a
+          for calculating the basic properties of a rectangle. Whether you&apos;re a
           student, a homeowner, or a contractor, this calculator provides
           instant and accurate measurements.
         </p>
@@ -80,7 +80,7 @@ export default function AboutRectangleAreaCalculator() {
               How is the area of a rectangle calculated?
             </AccordionTrigger>
             <AccordionContent>
-              The area is the amount of space a rectangle covers. It's
+              The area is the amount of space a rectangle covers. It&apos;s
               calculated by multiplying its length by its width. The formula
               is: `Area = Length × Width`.
             </AccordionContent>
@@ -91,7 +91,7 @@ export default function AboutRectangleAreaCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The perimeter is the distance around the outside of the
-              rectangle. It's found by adding the lengths of all four sides.
+              rectangle. It&apos;s found by adding the lengths of all four sides.
               The formula is: `Perimeter = 2 × (Length + Width)`.
             </AccordionContent>
           </AccordionItem>

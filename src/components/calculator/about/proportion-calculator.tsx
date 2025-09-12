@@ -92,7 +92,7 @@ export default function AboutProportionCalculator() {
                   <strong>Cooking:</strong> Scaling a recipe up or down.
                 </li>
                 <li>
-                  <strong>Maps:</strong> Reading a map's scale to find actual
+                  <strong>Maps:</strong> Reading a map&apos;s scale to find actual
                   distances.
                 </li>
                 <li>

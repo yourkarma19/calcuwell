@@ -80,7 +80,7 @@ export default function AboutWaterIntakeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               No, this is a general guideline. Your individual needs can vary
-              based on climate, health, and other factors. It's a great
+              based on climate, health, and other factors. It&apos;s a great
               starting point, but the best indicator is to drink when you feel
               thirsty.
             </AccordionContent>

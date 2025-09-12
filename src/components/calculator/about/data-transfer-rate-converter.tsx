@@ -68,7 +68,7 @@ export default function AboutDataTransferRateConverter() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What's the difference between Mbps and MB/s?
+              What&apos;s the difference between Mbps and MB/s?
             </AccordionTrigger>
             <AccordionContent>
               <strong>ISPs</strong> advertise speeds in{" "}
@@ -84,9 +84,9 @@ export default function AboutDataTransferRateConverter() {
               Why is my download speed slower than advertised?
             </AccordionTrigger>
             <AccordionContent>
-              Advertised speeds are an "up to" maximum. Real-world speeds are
+              Advertised speeds are an &quot;up to&quot; maximum. Real-world speeds are
               affected by many factors, including network traffic, router
-              quality, and the server you're downloading from.
+              quality, and the server you&apos;re downloading from.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

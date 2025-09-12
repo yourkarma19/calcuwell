@@ -70,7 +70,7 @@ export default function AboutBMICalculator() {
           />
           <p>
             The <strong>Body Mass Index (BMI)</strong> is a measure to check
-            if your weight is healthy for your height. It's a simple screening
+            if your weight is healthy for your height. It&apos;s a simple screening
             tool that can spot potential weight-related health issues.
           </p>
 
@@ -122,7 +122,7 @@ export default function AboutBMICalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  BMI is a useful screening tool, but it doesn't separate fat
+                  BMI is a useful screening tool, but it doesn&apos;t separate fat
                   from muscle. Very muscular people (like athletes) might have a
                   high BMI but still be healthy. You should use it as a general
                   guide and talk to a healthcare provider for a full health

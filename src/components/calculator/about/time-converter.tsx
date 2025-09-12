@@ -53,7 +53,7 @@ export default function AboutTimeConverter() {
         />
         <p>
           Our **Time Converter** allows you to quickly convert between various
-          units of time. Whether you're a student, a project manager, or just
+          units of time. Whether you&apos;re a student, a project manager, or just
           curious, this calculator simplifies time-related conversions from
           seconds to years.
         </p>
@@ -94,7 +94,7 @@ export default function AboutTimeConverter() {
             <AccordionContent>
               A leap second is a one-second adjustment occasionally applied to
               Coordinated Universal Time (UTC) to keep it close to solar time.
-              It's an irregularity that this calculator does not account for.
+              It&apos;s an irregularity that this calculator does not account for.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

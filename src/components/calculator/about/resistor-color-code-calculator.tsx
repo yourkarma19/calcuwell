@@ -55,7 +55,7 @@ export default function AboutResistorColorCodeCalculator() {
           The <strong>Resistor Color Code Calculator</strong> helps you figure
           out the value of a resistor by reading its colored bands. This is a
           key tool for anyone working with electronics. It lets you find a
-          resistor's value without needing a multimeter. This calculator is for
+          resistor&apos;s value without needing a multimeter. This calculator is for
           common 4-band resistors.
         </p>
         <h3>How to Use the Resistor Color Code Calculator</h3>
@@ -69,7 +69,7 @@ export default function AboutResistorColorCodeCalculator() {
           </li>
         </ol>
         <p>
-          The calculator will instantly show the resistor's value in Ohms (Ω)
+          The calculator will instantly show the resistor&apos;s value in Ohms (Ω)
           and its tolerance.
         </p>
         <h3>Resistor Color Code FAQs</h3>
@@ -85,7 +85,7 @@ export default function AboutResistorColorCodeCalculator() {
           <AccordionItem value="item-2">
             <AccordionTrigger>What is Tolerance?</AccordionTrigger>
             <AccordionContent>
-              Tolerance tells you how accurate a resistor's value is. For
+              Tolerance tells you how accurate a resistor&apos;s value is. For
               example, a 100 Ω resistor with a 5% tolerance could have a real
               value between 95 Ω and 105 Ω.
             </AccordionContent>

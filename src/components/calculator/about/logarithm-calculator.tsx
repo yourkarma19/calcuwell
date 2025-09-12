@@ -54,8 +54,8 @@ export default function AboutLogarithmCalculator() {
         <p>
           The Logarithm Calculator finds the logarithm of a number to a
           specified base. Logarithms are the inverse of exponents. They answer
-          the question: "To what power must we raise a base to get another
-          number?"
+          the question: &quot;To what power must we raise a base to get another
+          number?&quot;
         </p>
 
         <h3>How to Use the Logarithm Calculator</h3>
@@ -93,7 +93,7 @@ export default function AboutLogarithmCalculator() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>Why can't the base be 1?</AccordionTrigger>
+            <AccordionTrigger>Why can&apos;t the base be 1?</AccordionTrigger>
             <AccordionContent>
               A base of 1 is not allowed because 1 raised to any power is always
               1. This means you could never produce any other number, so the

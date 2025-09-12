@@ -55,7 +55,7 @@ export default function AboutMeanMedianModeCalculator() {
         <p>
           Our <strong>Mean, Median, and Mode Calculator</strong> helps you
           understand the center of a numerical dataset. These three measures
-          are all different ways of describing what's "typical" in a set of
+          are all different ways of describing what&apos;s &quot;typical&quot; in a set of
           numbers. This calculator also gives you the sum and count of your
           data.
         </p>
@@ -71,7 +71,7 @@ export default function AboutMeanMedianModeCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">
-              Mean vs. Median vs. Mode: What's the Difference?
+              Mean vs. Median vs. Mode: What&apos;s the Difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -91,7 +91,7 @@ export default function AboutMeanMedianModeCalculator() {
                 Use the <strong>mean</strong> for data that is evenly
                 distributed without extreme outliers. Use the{" "}
                 <strong>median</strong> for skewed data, like income levels,
-                because it isn't affected by a few very high or low values.
+                because it isn&apos;t affected by a few very high or low values.
               </p>
             </AccordionContent>
           </AccordionItem>

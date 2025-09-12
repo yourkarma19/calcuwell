@@ -53,7 +53,7 @@ export default function AboutWindChillCalculator() {
         />
         <p>
           The Wind Chill Calculator determines how cold the air actually feels
-          on your skin when wind is factored in. It's a crucial tool for
+          on your skin when wind is factored in. It&apos;s a crucial tool for
           understanding the potential danger of frostbite in cold, windy
           conditions.
         </p>
@@ -64,7 +64,7 @@ export default function AboutWindChillCalculator() {
           <li>Enter the current **Wind Speed**.</li>
         </ol>
         <p>
-          The calculator will instantly show the "feels like" temperature, or
+          The calculator will instantly show the &quot;feels like&quot; temperature, or
           wind chill, along with a general risk level for frostbite.
         </p>
         <h2>Wind Chill FAQs</h2>
@@ -88,12 +88,12 @@ export default function AboutWindChillCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              Why Doesn't It Work for Low Wind Speeds?
+              Why Doesn&apos;t It Work for Low Wind Speeds?
             </AccordionTrigger>
             <AccordionContent>
               The wind chill formula is only defined for wind speeds above 3 mph
               (or 5 km/h). At lower speeds, the effect of wind on heat loss is
-              negligible, and the "feels like" temperature is the same as the
+              negligible, and the &quot;feels like&quot; temperature is the same as the
               actual air temperature.
             </AccordionContent>
           </AccordionItem>

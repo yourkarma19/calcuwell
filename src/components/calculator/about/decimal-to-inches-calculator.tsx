@@ -88,7 +88,7 @@ export default function AboutDecimalToInchesCalculator() {
             </li>
             <li>
               Multiply the decimal part by your desired denominator (e.g., 16
-              for 1/16" precision). This gives you the numerator.
+              for 1/16&quot; precision). This gives you the numerator.
             </li>
             <li>Place the numerator over the denominator.</li>
             <li>
@@ -116,8 +116,8 @@ export default function AboutDecimalToInchesCalculator() {
             <TableBody>
               {conversionChart.map((item) => (
                 <TableRow key={item.decimal}>
-                  <TableCell>{item.decimal}"</TableCell>
-                  <TableCell>{item.fraction}"</TableCell>
+                  <TableCell>{item.decimal}&quot;</TableCell>
+                  <TableCell>{item.fraction}&quot;</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -137,8 +137,8 @@ export default function AboutDecimalToInchesCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 Precision determines the smallest fraction you measure to. For
-                woodworking, higher precision like 1/32" is often needed for
-                accurate fits. For general measurements, 1/8" or 1/4" may be
+                woodworking, higher precision like 1/32&quot; is often needed for
+                accurate fits. For general measurements, 1/8&quot; or 1/4&quot; may be
                 enough.
               </AccordionContent>
             </AccordionItem>
@@ -160,8 +160,8 @@ export default function AboutDecimalToInchesCalculator() {
                 First, convert feet to inches (1 foot = 12 inches). Add this to
                 the inch measurement. Then, convert any fraction to a decimal
                 by dividing the top number by the bottom number. Add this to
-                your total inches. For example, 2' 6 1/2" becomes (2 * 12) + 6 +
-                (1/2) = 30.5".
+                your total inches. For example, 2&apos; 6 1/2&quot; becomes (2 * 12) + 6 +
+                (1/2) = 30.5&quot;.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

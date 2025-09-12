@@ -1,23 +1,14 @@
+
 "use client";
 
-import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
-import { Skeleton } from "../ui/skeleton";
 import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
-
-const MortgageBreakdownChart = dynamic(
-  () => import("@/components/charts/mortgage-breakdown-chart"),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="w-full h-[250px]" />,
-  },
-);
 
 export default function MortgageCalculator({
   setAboutProps,

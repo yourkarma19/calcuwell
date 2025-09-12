@@ -91,7 +91,7 @@ export default function AboutTipCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              How does the "split the bill" feature work?
+              How does the &quot;split the bill&quot; feature work?
             </AccordionTrigger>
             <AccordionContent>
               The calculator first adds the tip amount to the total bill. It

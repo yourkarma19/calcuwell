@@ -56,7 +56,7 @@ export default function AboutTriangleAreaCalculator() {
             <strong>Base and Height:</strong> `Area = 0.5 * base * height`
           </li>
           <li>
-            <strong>Three Sides (Heron's Formula):</strong> `Area =
+            <strong>Three Sides (Heron&apos;s Formula):</strong> `Area =
             √[s(s-a)(s-b)(s-c)]`, where `s` is half the perimeter.
           </li>
           <li>
@@ -68,9 +68,9 @@ export default function AboutTriangleAreaCalculator() {
         <h3>Triangle Area FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
-            <AccordionTrigger>What is Heron's formula?</AccordionTrigger>
+            <AccordionTrigger>What is Heron&apos;s formula?</AccordionTrigger>
             <AccordionContent>
-              Heron's formula allows you to calculate the area of a triangle
+              Heron&apos;s formula allows you to calculate the area of a triangle
               when you only know the lengths of the three sides. It is named
               after Hero of Alexandria, a Greek mathematician.
             </AccordionContent>
@@ -82,7 +82,7 @@ export default function AboutTriangleAreaCalculator() {
             <AccordionContent>
               For any triangle, the sum of the lengths of any two sides must be
               greater than the length of the third side. If this condition
-              isn't met, the sides cannot form a closed triangle. Our
+              isn&apos;t met, the sides cannot form a closed triangle. Our
               calculator checks for this.
             </AccordionContent>
           </AccordionItem>

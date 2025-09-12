@@ -62,19 +62,19 @@ export default function AboutPythagoreanTheoremCalculator() {
         </p>
         <ol>
             <li>
-                <strong>Select the Missing Side:</strong> First, determine which side of the triangle you need to calculate. The calculator allows you to solve for Side 'a', Side 'b', or the Hypotenuse 'c'. The hypotenuse is always the side opposite the right angle and is the longest side of the triangle.
+                <strong>Select the Missing Side:</strong> First, determine which side of the triangle you need to calculate. The calculator allows you to solve for Side &apos;a&apos;, Side &apos;b&apos;, or the Hypotenuse &apos;c&apos;. The hypotenuse is always the side opposite the right angle and is the longest side of the triangle.
             </li>
             <li>
                 <strong>Enter the Known Side Lengths:</strong> Input the lengths of the two sides you already know into their respective fields. Ensure you are entering positive numbers.
             </li>
             <li>
-                <strong>View the Result:</strong> The calculator will automatically compute and display the length of the missing side. Our tool also validates the input; for example, it will show an error if you enter a value for side 'a' or 'b' that is longer than the hypotenuse 'c', as this is geometrically impossible.
+                <strong>View the Result:</strong> The calculator will automatically compute and display the length of the missing side. Our tool also validates the input; for example, it will show an error if you enter a value for side &apos;a&apos; or &apos;b&apos; that is longer than the hypotenuse &apos;c&apos;, as this is geometrically impossible.
             </li>
         </ol>
 
         <h2 className="text-2xl font-bold font-headline text-primary mt-8">The Pythagorean Theorem Formula Explained</h2>
         <p>
-            The theorem is elegantly simple yet incredibly powerful. It states that for any right-angled triangle, the square of the length of the hypotenuse (side 'c') is equal to the sum of the squares of the other two sides (sides 'a' and 'b').
+            The theorem is elegantly simple yet incredibly powerful. It states that for any right-angled triangle, the square of the length of the hypotenuse (side &apos;c&apos;) is equal to the sum of the squares of the other two sides (sides &apos;a&apos; and &apos;b&apos;).
         </p>
         <p className="font-mono bg-muted p-4 rounded-md text-center text-xl">
             a² + b² = c²
@@ -103,9 +103,9 @@ export default function AboutPythagoreanTheoremCalculator() {
                   The Pythagorean theorem is a fundamental principle of
                   Euclidean geometry. It states that for any right-angled
                   triangle, the square of the length of the hypotenuse (the side
-                  opposite the right angle, denoted as 'c') is equal
+                  opposite the right angle, denoted as &apos;c&apos;) is equal
                   to the sum of the squares of the other two sides (denoted as
-                  'a' and 'b'). The formula is written as:{" "}
+                  &apos;a&apos; and &apos;b&apos;). The formula is written as:{" "}
                   <strong>a² + b² = c²</strong>.
                 </p>
               </AccordionContent>
@@ -118,7 +118,7 @@ export default function AboutPythagoreanTheoremCalculator() {
                 <p>
                   The hypotenuse is the longest side of a right-angled triangle.
                   It is always the side opposite the 90-degree angle. In the
-                  formula a² + b² = c², 'c' represents the hypotenuse.
+                  formula a² + b² = c², &apos;c&apos; represents the hypotenuse.
                 </p>
               </AccordionContent>
             </AccordionItem>

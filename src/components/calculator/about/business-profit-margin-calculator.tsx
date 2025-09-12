@@ -53,7 +53,7 @@ export default function AboutBusinessProfitMarginCalculator() {
         />
         <p>
           The Profit Margin Calculator is a key financial tool for business
-          owners, managers, and investors. It breaks down a company's profit
+          owners, managers, and investors. It breaks down a company&apos;s profit
           into three important types: Gross, Operating, and Net Profit Margins.
           Understanding these margins helps you check the financial health and
           efficiency of a business.
@@ -81,7 +81,7 @@ export default function AboutBusinessProfitMarginCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What's the difference between Gross, Operating, and Net Margin?
+              What&apos;s the difference between Gross, Operating, and Net Margin?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -93,7 +93,7 @@ export default function AboutBusinessProfitMarginCalculator() {
                 main business operations, after all operating expenses.
               </p>
               <p>
-                <strong>Net Margin</strong> is the "bottom line." It's the
+                <strong>Net Margin</strong> is the &quot;bottom line.&quot; It&apos;s the
                 final profit after all expenses, including interest and taxes.
               </p>
             </AccordionContent>
@@ -112,9 +112,9 @@ export default function AboutBusinessProfitMarginCalculator() {
           <AccordionItem value="item-3">
             <AccordionTrigger>What is a good profit margin?</AccordionTrigger>
             <AccordionContent>
-              A "good" profit margin varies a lot by industry. As a general
+              A &quot;good&quot; profit margin varies a lot by industry. As a general
               rule, a net profit margin of 10% is average, 20% is high, and 5%
-              is low. It's best to compare your margins to others in your
+              is low. It&apos;s best to compare your margins to others in your
               industry.
             </AccordionContent>
           </AccordionItem>

@@ -55,7 +55,7 @@ export default function AboutInvestmentReturnCalculator() {
           The Return on Investment (ROI) Calculator measures the profitability
           of an investment. It helps you understand how much money you have made
           or lost in relation to your initial cost. This is one of the most
-          popular ways to evaluate an investment's performance.
+          popular ways to evaluate an investment&apos;s performance.
         </p>
         <h3>How to Use the ROI Calculator</h3>
         <ol>
@@ -64,7 +64,7 @@ export default function AboutInvestmentReturnCalculator() {
             paid.
           </li>
           <li>
-            Enter the **Final Value** of the investment. This is what it's
+            Enter the **Final Value** of the investment. This is what it&apos;s
             worth now, or what you sold it for.
           </li>
         </ol>
@@ -85,7 +85,7 @@ export default function AboutInvestmentReturnCalculator() {
           <AccordionItem value="item-2">
             <AccordionTrigger>What is a good ROI?</AccordionTrigger>
             <AccordionContent>
-              A "good" ROI depends on the type of investment and its risk. A
+              A &quot;good&quot; ROI depends on the type of investment and its risk. A
               7-10% annual ROI is often considered a good average for the stock
               market. A high-risk investment would need a much higher potential
               ROI to be worthwhile.
@@ -96,10 +96,10 @@ export default function AboutInvestmentReturnCalculator() {
               What are the limitations of ROI?
             </AccordionTrigger>
             <AccordionContent>
-              ROI is simple, but it doesn't account for the holding period of an
+              ROI is simple, but it doesn&apos;t account for the holding period of an
               investment. An ROI of 20% over one year is much better than an ROI
               of 20% over ten years. For comparing investments over different
-              timeframes, it's better to look at the annualized ROI.
+              timeframes, it&apos;s better to look at the annualized ROI.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

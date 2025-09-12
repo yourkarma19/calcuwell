@@ -115,7 +115,7 @@ export default function AboutBodyFatPercentageCalculator() {
               <AccordionContent>
                 Body fat percentage directly measures fat, while BMI is more
                 general. BMI can be misleading for muscular people, who may be
-                called "overweight" even if they are healthy. Body fat gives a
+                called &quot;overweight&quot; even if they are healthy. Body fat gives a
                 clearer picture of your body composition.
               </AccordionContent>
             </AccordionItem>
@@ -125,8 +125,8 @@ export default function AboutBodyFatPercentageCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 This method uses body measurements to estimate body density.
-                It's a convenient way to estimate body fat without special
-                tools. However, it's not as accurate as clinical methods like
+                It&apos;s a convenient way to estimate body fat without special
+                tools. However, it&apos;s not as accurate as clinical methods like
                 DEXA scans.
               </AccordionContent>
             </AccordionItem>
@@ -134,7 +134,7 @@ export default function AboutBodyFatPercentageCalculator() {
               <AccordionTrigger>How do I measure myself?</AccordionTrigger>
               <AccordionContent>
                 Use a flexible tape measure. For the <strong>neck</strong>,
-                measure just below the Adam's apple. For the{" "}
+                measure just below the Adam&apos;s apple. For the{" "}
                 <strong>waist</strong>, measure at the narrowest point, usually
                 just above the navel. For the <strong>hips</strong>, measure at
                 the widest point. Keep the tape snug but not tight.

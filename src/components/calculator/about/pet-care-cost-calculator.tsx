@@ -10,10 +10,10 @@ export default function AboutPetCareCostCalculator() {
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
-          Bringing a pet into your life is a joyful experience, but it's also a
+          Bringing a pet into your life is a joyful experience, but it&apos;s also a
           big financial commitment. Our **Pet Care Cost Calculator** helps you
           estimate the monthly and yearly expenses of owning a pet. By planning
-          ahead, you can be sure you're ready to give your furry friend the best
+          ahead, you can be sure you&apos;re ready to give your furry friend the best
           care.
         </p>
         <h3>How to Use the Calculator</h3>

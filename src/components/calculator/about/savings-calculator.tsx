@@ -76,7 +76,7 @@ export default function AboutSavingsCalculator() {
               How does compound interest work?
             </AccordionTrigger>
             <AccordionContent>
-              Compound interest is "interest on interest." The interest you
+              Compound interest is &quot;interest on interest.&quot; The interest you
               earn is added to your principal, and then you earn interest on
               the new, larger amount. This causes your savings to grow faster
               over time. Our{" "}
@@ -107,7 +107,7 @@ export default function AboutSavingsCalculator() {
               A realistic rate depends on where you are investing. A high-yield
               savings account might offer 1-3%, while a stock market portfolio
               has historically returned an average of 7-10% annually over the
-              long term, though with higher risk. It's often wise to use a
+              long term, though with higher risk. It&apos;s often wise to use a
               conservative estimate.
             </AccordionContent>
           </AccordionItem>

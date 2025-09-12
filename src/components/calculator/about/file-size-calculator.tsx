@@ -33,7 +33,7 @@ export default function AboutFileSizeCalculator() {
             <AccordionContent>
               Bitrate is the amount of data used to represent one second of
               audio or video. A higher bitrate generally results in better
-              quality and a larger file size. It's often measured in
+              quality and a larger file size. It&apos;s often measured in
               kilobits per second (kbit/s).
             </AccordionContent>
           </AccordionItem>

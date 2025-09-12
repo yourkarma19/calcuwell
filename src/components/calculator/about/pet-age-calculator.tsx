@@ -52,15 +52,15 @@ export default function AboutPetAgeCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The **Pet Age Calculator** is a fun way to translate your pet's age
-          into human years. While the old "7 dog years to 1 human year" rule is
+          The **Pet Age Calculator** is a fun way to translate your pet&apos;s age
+          into human years. While the old &quot;7 dog years to 1 human year&quot; rule is
           a myth, this tool uses a more modern method to give you a better
-          understanding of your pet's life stage.
+          understanding of your pet&apos;s life stage.
         </p>
         <h3>How to Use the Pet Age Calculator</h3>
         <ol>
           <li>Select the <strong>Pet Type</strong> (Dog or Cat).</li>
-          <li>Enter your pet's current <strong>Age</strong> in years.</li>
+          <li>Enter your pet&apos;s current <strong>Age</strong> in years.</li>
         </ol>
         <p>
           The calculator will instantly show their estimated age in human
@@ -70,10 +70,10 @@ export default function AboutPetAgeCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              Is the "7 dog years to 1 human year" rule true?
+              Is the &quot;7 dog years to 1 human year&quot; rule true?
             </AccordionTrigger>
             <AccordionContent>
-              No, it's a common myth. Dogs and cats mature much faster in their
+              No, it&apos;s a common myth. Dogs and cats mature much faster in their
               first two years. This calculator uses a method where the first
               year equals about 15 human years, the second adds 9, and every
               year after adds 4-5 years.
@@ -89,7 +89,7 @@ export default function AboutPetAgeCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              How can I tell my pet's age if they were a rescue?
+              How can I tell my pet&apos;s age if they were a rescue?
             </AccordionTrigger>
             <AccordionContent>
               A veterinarian is the best person to help. They look at the

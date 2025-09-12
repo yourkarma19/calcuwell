@@ -59,7 +59,7 @@ export default function AboutCreditCardPayoffCalculator() {
         <h3>How to Use the Credit Card Payoff Calculator</h3>
         <ol>
           <li>Enter your current **Card Balance**.</li>
-          <li>Input your card's annual interest rate (**APR**).</li>
+          <li>Input your card&apos;s annual interest rate (**APR**).</li>
           <li>Enter your planned **Monthly Payment**.</li>
         </ol>
         <p>

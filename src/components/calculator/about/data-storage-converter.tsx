@@ -69,7 +69,7 @@ export default function AboutDataStorageConverter() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What's the difference between a Bit and a Byte?
+              What&apos;s the difference between a Bit and a Byte?
             </AccordionTrigger>
             <AccordionContent>
               A <strong>bit</strong> is the most basic unit of data, a single 0
@@ -97,7 +97,7 @@ export default function AboutDataStorageConverter() {
               To reduce confusion, official standards created binary prefixes.
               A <strong>kilobyte (KB)</strong> is technically 1000 bytes. A{" "}
               <strong>kibibyte (KiB)</strong> is 1024 bytes. But in common use,
-              "kilobyte" still means 1024 bytes. This is why a 1 TB hard drive
+              &quot;kilobyte&quot; still means 1024 bytes. This is why a 1 TB hard drive
               appears as about 931 GB in your operating system.
             </AccordionContent>
           </AccordionItem>

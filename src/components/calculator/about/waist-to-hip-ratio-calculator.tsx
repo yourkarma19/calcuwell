@@ -97,9 +97,9 @@ export default function AboutWaistToHipRatioCalculator() {
               <AccordionTrigger>Why is WHR important?</AccordionTrigger>
               <AccordionContent>
                 WHR is a simple way to see where you store body fat. People who
-                store more fat around their waist ("apple" shape) may have a
+                store more fat around their waist (&quot;apple&quot; shape) may have a
                 higher risk of health issues like heart disease and type 2
-                diabetes than those who store fat in their hips ("pear"
+                diabetes than those who store fat in their hips (&quot;pear&quot;
                 shape).
               </AccordionContent>
             </AccordionItem>

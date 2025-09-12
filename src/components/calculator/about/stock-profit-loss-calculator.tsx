@@ -90,7 +90,7 @@ export default function AboutStockProfitLossCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Return on Investment (ROI) shows your net profit as a percentage
-              of your total cost. It's a standard way to measure the
+              of your total cost. It&apos;s a standard way to measure the
               performance of an investment.
             </AccordionContent>
           </AccordionItem>

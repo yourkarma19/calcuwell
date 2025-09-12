@@ -54,13 +54,13 @@ export default function AboutAgeCalculator() {
         <p>
           The Age Calculator finds your exact age from your date of birth. It
           shows your age in years, months, and days. This tool is useful for
-          filling out forms or if you're just curious about your precise age.
+          filling out forms or if you are just curious about your precise age.
         </p>
 
         <h3>How to Use the Age Calculator</h3>
         <ol>
           <li>Select your date of birth using the calendar.</li>
-          <li>Click the "Calculate Age" button to see the result.</li>
+          <li>Click the &quot;Calculate Age&quot; button to see the result.</li>
           <li>Your age will appear in years, months, and days.</li>
         </ol>
 
@@ -97,8 +97,8 @@ export default function AboutAgeCalculator() {
             <AccordionContent>
               <p>
                 Chronological age is simply how old you are in years, months,
-                and days. It's different from biological age, which measures
-                your body's health compared to its actual age.
+                and days. It is different from biological age, which measures
+                your body&apos;s health compared to its actual age.
               </p>
             </AccordionContent>
           </AccordionItem>

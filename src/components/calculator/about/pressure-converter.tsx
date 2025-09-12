@@ -67,7 +67,7 @@ export default function AboutPressureConverter() {
             </AccordionTrigger>
             <AccordionContent>
               The standard SI unit for pressure is the **Pascal (Pa)**. It is a
-              very small amount of pressure. It's often more convenient to use
+              very small amount of pressure. It&apos;s often more convenient to use
               **kilopascals (kPa)**, where 1 kPa = 1,000 Pa.
             </AccordionContent>
           </AccordionItem>

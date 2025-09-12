@@ -63,7 +63,7 @@ export default function AboutVatGstCalculator() {
           <li>Enter the <strong>Initial Amount</strong>.</li>
           <li>
             Specify if this amount already includes tax by selecting
-            <strong>"Add Tax"</strong> or <strong>"Remove Tax"</strong>.
+            <strong>&quot;Add Tax&quot;</strong> or <strong>&quot;Remove Tax&quot;</strong>.
           </li>
           <li>Adjust the <strong>Tax Rate (%)</strong> slider.</li>
         </ol>
@@ -76,7 +76,7 @@ export default function AboutVatGstCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What's the difference between VAT and GST?
+              What&apos;s the difference between VAT and GST?
             </AccordionTrigger>
             <AccordionContent>
               <p>

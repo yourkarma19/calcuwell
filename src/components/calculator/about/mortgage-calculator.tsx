@@ -135,7 +135,7 @@ export default function AboutMortgageCalculator({
               </AccordionTrigger>
               <AccordionContent>
                 You can make a larger down payment, choose a longer loan term
-                (but you'll pay more interest), or shop around for the best
+                (but you&apos;ll pay more interest), or shop around for the best
                 interest rate. Improving your credit score also helps.
               </AccordionContent>
             </AccordionItem>

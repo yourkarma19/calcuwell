@@ -90,8 +90,8 @@ export default function AboutBreakEvenPointCalculator() {
               What is the contribution margin?
             </AccordionTrigger>
             <AccordionContent>
-              The contribution margin is the money from each sale that's left
-              to cover your fixed costs. It's found by subtracting the Variable
+              The contribution margin is the money from each sale that&apos;s left
+              to cover your fixed costs. It&apos;s found by subtracting the Variable
               Cost Per Unit from the Price Per Unit. A higher margin means you
               break even faster.
             </AccordionContent>
@@ -101,7 +101,7 @@ export default function AboutBreakEvenPointCalculator() {
             <AccordionContent>
               Break-even analysis helps you set sales goals, decide on a
               pricing strategy, and see how cost changes will affect your
-              profit. It's a basic part of a solid business plan.
+              profit. It&apos;s a basic part of a solid business plan.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

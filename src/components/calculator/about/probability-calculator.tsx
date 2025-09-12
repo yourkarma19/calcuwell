@@ -61,8 +61,8 @@ export default function AboutProbabilityCalculator() {
         <h3>How to Use the Probability Calculator</h3>
         <ol>
           <li>
-            Select the **Mode**: choose between "Single Event" or "Two
-            Independent Events".
+            Select the **Mode**: choose between &quot;Single Event&quot; or &quot;Two
+            Independent Events&quot;.
           </li>
           <li>Enter the probability for **Event A** (a number from 0 to 1).</li>
           <li>If needed, enter the probability for **Event B**.</li>
@@ -85,16 +85,16 @@ export default function AboutProbabilityCalculator() {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              What do 'P(A and B)' and 'P(A or B)' mean?
+              What do &apos;P(A and B)&apos; and &apos;P(A or B)&apos; mean?
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                **P(A and B)** is the probability that both events occur. It's
+                **P(A and B)** is the probability that both events occur. It&apos;s
                 calculated by multiplying their probabilities: `P(A) * P(B)`.
               </p>
               <p>
                 **P(A or B)** is the probability that either A or B (or both)
-                occur. It's calculated as: `P(A) + P(B) - P(A and B)`.
+                occur. It&apos;s calculated as: `P(A) + P(B) - P(A and B)`.
               </p>
             </AccordionContent>
           </AccordionItem>

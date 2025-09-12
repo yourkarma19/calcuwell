@@ -54,7 +54,7 @@ export default function AboutCompoundInterestCalculator() {
         <p>
           The <strong>Compound Interest Calculator</strong> shows how your money
           can grow faster over time. By reinvesting the interest you earn, your
-          investment gets larger. This "interest on interest" effect can
+          investment gets larger. This &quot;interest on interest&quot; effect can
           significantly boost your savings.
         </p>
 
@@ -118,7 +118,7 @@ export default function AboutCompoundInterestCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger className="font-semibold">
-              Simple vs. Compound Interest: What's the difference?
+              Simple vs. Compound Interest: What&apos;s the difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>

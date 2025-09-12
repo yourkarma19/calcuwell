@@ -73,7 +73,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The volume is the total space inside the sphere. It is calculated
-              using the formula `V = (4/3) * π * r³`, where 'r' is the radius.
+              using the formula `V = (4/3) * π * r³`, where &apos;r&apos; is the radius.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -82,7 +82,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The surface area is the total area on the outer surface. It is
-              calculated with the formula `A = 4 * π * r²`, where 'r' is the
+              calculated with the formula `A = 4 * π * r²`, where &apos;r&apos; is the
               radius.
             </AccordionContent>
           </AccordionItem>

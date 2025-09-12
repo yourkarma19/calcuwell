@@ -52,7 +52,7 @@ export default function AboutOhmsLawCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About the Ohm's Law Calculator</CardTitle>
+        <CardTitle as="h2">About the Ohm&apos;s Law Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -60,7 +60,7 @@ export default function AboutOhmsLawCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The **Ohm's Law Calculator** is a vital tool for anyone working with
+          The **Ohm&apos;s Law Calculator** is a vital tool for anyone working with
           electronics. It helps you find the relationship between **Voltage
           (V)**, **Current (I)**, **Resistance (R)**, and **Power (P)**. Just
           enter any two values, and the calculator will find the other two.
@@ -71,18 +71,18 @@ export default function AboutOhmsLawCalculator() {
           <li>Enter any two of the other known values.</li>
         </ol>
         <p>The calculator will automatically show the correct result.</p>
-        <h3>Ohm's Law FAQs</h3>
+        <h3>Ohm&apos;s Law FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
-            <AccordionTrigger>What is Ohm's Law?</AccordionTrigger>
+            <AccordionTrigger>What is Ohm&apos;s Law?</AccordionTrigger>
             <AccordionContent>
-              Ohm's Law is a basic rule in electronics. The formula is `V = I ×
+              Ohm&apos;s Law is a basic rule in electronics. The formula is `V = I ×
               R`. It says that the voltage across a component is equal to the
               current flowing through it multiplied by its resistance.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>The Ohm's Law Triangle</AccordionTrigger>
+            <AccordionTrigger>The Ohm&apos;s Law Triangle</AccordionTrigger>
             <AccordionContent>
               An easy way to remember the formulas is to use a triangle. Cover
               the value you want, and the other two show you how to calculate
@@ -98,13 +98,13 @@ export default function AboutOhmsLawCalculator() {
             <AccordionTrigger>What about Power (P)?</AccordionTrigger>
             <AccordionContent>
               Power (in Watts) is the rate of energy use in a circuit. It is
-              related to Ohm's Law by formulas like `P = V × I`. Our
+              related to Ohm&apos;s Law by formulas like `P = V × I`. Our
               calculator can also solve for power.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              Why is Ohm's Law important?
+              Why is Ohm&apos;s Law important?
             </AccordionTrigger>
             <AccordionContent>
               This law is essential for designing and troubleshooting circuits.

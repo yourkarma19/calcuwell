@@ -102,8 +102,8 @@ export default function AboutStandardDeviationCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                It's crucial in many fields. In finance, it measures the
-                volatility of an investment. In manufacturing, it's used for
+                It&apos;s crucial in many fields. In finance, it measures the
+                volatility of an investment. In manufacturing, it&apos;s used for
                 quality control. In science, it helps determine if experimental
                 results are statistically significant.
               </p>

@@ -61,7 +61,7 @@ export default function AboutTangentLineCalculator() {
         <ol>
           <li>Enter the function `f(x)` you want to analyze.</li>
           <li>Enter the specific point `x` for the tangent line.</li>
-          <li>Click "Find Tangent Line".</li>
+          <li>Click &quot;Find Tangent Line&quot;.</li>
         </ol>
         <p>
           The tool will provide the equation of the tangent line and show the
@@ -73,7 +73,7 @@ export default function AboutTangentLineCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a Tangent Line?</AccordionTrigger>
             <AccordionContent>
-              A tangent line is a straight line that "just touches" a curve at a
+              A tangent line is a straight line that &quot;just touches&quot; a curve at a
               single point. It has the same direction (slope) as the curve at
               that point. The slope of the tangent line is equal to the
               derivative of the function at that same point.
@@ -84,7 +84,7 @@ export default function AboutTangentLineCalculator() {
             <AccordionContent>
               The process involves a few key steps:
               <ol>
-                <li>Find the derivative of the function, `f'(x)`.</li>
+                <li>Find the derivative of the function, `f&apos;(x)`.</li>
                 <li>
                   Evaluate the derivative at the given point `x=a` to find the
                   slope `m`.
@@ -104,7 +104,7 @@ export default function AboutTangentLineCalculator() {
             <AccordionContent>
               Finding the tangent line is a fundamental application of
               derivatives. The tangent line provides a linear approximation of a
-              function's behavior near a specific point, which is crucial in
+              function&apos;s behavior near a specific point, which is crucial in
               physics, engineering, and economics.
             </AccordionContent>
           </AccordionItem>

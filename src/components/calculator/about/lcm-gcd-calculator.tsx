@@ -60,7 +60,7 @@ export default function AboutLcmGcdCalculator() {
         <ol>
           <li>Enter at least two positive integers into the input boxes.</li>
           <li>
-            If you need to analyze more numbers, click the **"Add Number"**
+            If you need to analyze more numbers, click the **&quot;Add Number&quot;**
             button.
           </li>
         </ol>
@@ -92,7 +92,7 @@ export default function AboutLcmGcdCalculator() {
           <AccordionItem value="item-3">
             <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
             <AccordionContent>
-              For any two positive integers 'a' and 'b', their product is equal
+              For any two positive integers &apos;a&apos; and &apos;b&apos;, their product is equal
               to the product of their GCD and LCM: `a * b = GCD(a, b) * LCM(a,
               b)`.
             </AccordionContent>

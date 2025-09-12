@@ -52,7 +52,7 @@ export default function AboutCircleCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Circle Calculator finds a circle's properties from a single
+          The Circle Calculator finds a circle&apos;s properties from a single
           measurement. Whether you know the radius, diameter, circumference, or
           area, this calculator can instantly find the other three values.
         </p>
@@ -72,8 +72,8 @@ export default function AboutCircleCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
             <AccordionContent>
-              Pi (π) is a special number in math. It's the ratio of a circle's
-              circumference to its diameter. It's an irrational number, roughly
+              Pi (π) is a special number in math. It&apos;s the ratio of a circle&apos;s
+              circumference to its diameter. It&apos;s an irrational number, roughly
               3.14159, and is used in all calculations for circles and spheres.
             </AccordionContent>
           </AccordionItem>

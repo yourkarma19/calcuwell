@@ -60,7 +60,7 @@ export default function AboutVoltageToWattsCalculator() {
 
         <h3>How to Convert Volts to Watts</h3>
         <p>
-          The conversion is based on Watt's Law. Simply input the voltage (in
+          The conversion is based on Watt&apos;s Law. Simply input the voltage (in
           Volts) and the current (in Amps) of your circuit, and it will
           instantly compute the power in Watts.
         </p>

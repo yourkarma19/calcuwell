@@ -53,7 +53,7 @@ export default function AboutDiscountCalculator() {
         />
         <p>
           The Discount Calculator helps you figure out the final price of an
-          item after a discount. It's perfect for shoppers who want to quickly
+          item after a discount. It&apos;s perfect for shoppers who want to quickly
           see the sale price and how much money they are saving.
         </p>
         <h3>How to Use the Discount Calculator</h3>
@@ -81,7 +81,7 @@ export default function AboutDiscountCalculator() {
               What if there are multiple discounts?
             </AccordionTrigger>
             <AccordionContent>
-              You can't just add multiple discounts together. You must apply them
+              You can&apos;t just add multiple discounts together. You must apply them
               one by one. First, calculate the price after the first discount.
               Then, apply the second discount to that new, lower price.
             </AccordionContent>

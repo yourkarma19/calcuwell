@@ -104,8 +104,8 @@ export default function AboutCurrencyConverter() {
             <AccordionTrigger>What is a currency pair?</AccordionTrigger>
             <AccordionContent>
               A currency pair shows the value of one currency against another.
-              The first currency is the "base" and the second is the
-              "quote." For example, in EUR/USD = 1.08, one Euro is worth 1.08 US
+              The first currency is the &quot;base&quot; and the second is the
+              &quot;quote.&quot; For example, in EUR/USD = 1.08, one Euro is worth 1.08 US
               Dollars.
             </AccordionContent>
           </AccordionItem>

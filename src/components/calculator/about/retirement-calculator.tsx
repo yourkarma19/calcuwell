@@ -113,7 +113,7 @@ export default function AboutRetirementCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              What is a "shortfall"?
+              What is a &quot;shortfall&quot;?
             </AccordionTrigger>
             <AccordionContent>
               A shortfall is the gap between your estimated savings and your
@@ -129,7 +129,7 @@ export default function AboutRetirementCalculator() {
               A realistic rate depends on your investment strategy. A
               conservative portfolio might earn 4-5%, while a stock-heavy
               portfolio has historically returned 7-10% annually, though with
-              higher risk. It's often wise to use a conservative estimate.
+              higher risk. It&apos;s often wise to use a conservative estimate.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

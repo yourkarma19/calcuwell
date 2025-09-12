@@ -53,7 +53,7 @@ export default function AboutPercentageCalculator() {
         />
         <p>
           The Percentage Calculator is a versatile tool to solve a variety of
-          percentage problems. Whether you're calculating a discount, a tip, or
+          percentage problems. Whether you&apos;re calculating a discount, a tip, or
           analyzing a statistical change, this calculator provides instant and
           accurate results.
         </p>

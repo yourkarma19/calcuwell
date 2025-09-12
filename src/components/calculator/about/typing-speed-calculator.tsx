@@ -53,7 +53,7 @@ export default function AboutTypingSpeedCalculator() {
         />
         <p>
           The <strong>Typing Speed Calculator</strong> is a tool to measure your
-          typing proficiency in Words Per Minute (WPM). It's perfect for anyone
+          typing proficiency in Words Per Minute (WPM). It&apos;s perfect for anyone
           looking to improve their typing skills. By practicing regularly, you
           can increase your speed and accuracy.
         </p>
@@ -76,7 +76,7 @@ export default function AboutTypingSpeedCalculator() {
             <AccordionContent>
               Gross WPM is calculated by taking the number of words typed and
               dividing it by the time taken in minutes. For standardization, a
-              "word" is often considered to be five characters long.
+              &quot;word&quot; is often considered to be five characters long.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -103,7 +103,7 @@ export default function AboutTypingSpeedCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Yes, for most practical purposes, accuracy is more important. A
-              high WPM is useless if it's full of errors that you have to go
+              high WPM is useless if it&apos;s full of errors that you have to go
               back and correct.
             </AccordionContent>
           </AccordionItem>

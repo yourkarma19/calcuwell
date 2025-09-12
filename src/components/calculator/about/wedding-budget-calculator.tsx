@@ -65,7 +65,7 @@ export default function AboutWeddingBudgetCalculator() {
             **Catering**, and **Photography**.
           </li>
           <li>
-            Use the "Miscellaneous" field to account for other expenses like
+            Use the &quot;Miscellaneous&quot; field to account for other expenses like
             invitations or entertainment.
           </li>
         </ol>
@@ -102,7 +102,7 @@ export default function AboutWeddingBudgetCalculator() {
               How much should we budget for unexpected costs?
             </AccordionTrigger>
             <AccordionContent>
-              It's wise to set aside 5-10% of your total budget as a contingency
+              It&apos;s wise to set aside 5-10% of your total budget as a contingency
               fund. This will help you cover any unexpected expenses that arise
               without adding stress.
             </AccordionContent>

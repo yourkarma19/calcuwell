@@ -113,10 +113,10 @@ export default function AboutEquationSolver() {
               The discriminant (`b²-4ac`) tells you about the roots (solutions)
               without fully solving the equation.
               <ul className="list-disc pl-5 mt-2">
-                <li>If it's positive, there are two distinct real roots.</li>
-                <li>If it's zero, there is exactly one real root.</li>
+                <li>If it&apos;s positive, there are two distinct real roots.</li>
+                <li>If it&apos;s zero, there is exactly one real root.</li>
                 <li>
-                  If it's negative, there are no real roots (the solutions are
+                  If it&apos;s negative, there are no real roots (the solutions are
                   complex numbers).
                 </li>
               </ul>

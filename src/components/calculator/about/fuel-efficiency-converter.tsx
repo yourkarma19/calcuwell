@@ -45,7 +45,7 @@ export default function AboutFuelEfficiencyConverter() {
         />
         <p>
           The Fuel Efficiency Converter helps you translate between the two most
-          common ways of measuring a vehicle's fuel economy:{" "}
+          common ways of measuring a vehicle&apos;s fuel economy:{" "}
           <strong>Miles per Gallon (MPG)</strong> and <strong>Liters per 100
           kilometers (L/100km)</strong>. This makes it easy to compare vehicles
           from different countries.
@@ -62,7 +62,7 @@ export default function AboutFuelEfficiencyConverter() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              MPG vs. L/100km: What's the Difference?
+              MPG vs. L/100km: What&apos;s the Difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -80,7 +80,7 @@ export default function AboutFuelEfficiencyConverter() {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              Why is my car's real-world MPG different from its rating?
+              Why is my car&apos;s real-world MPG different from its rating?
             </AccordionTrigger>
             <AccordionContent>
               Official ratings are achieved in lab conditions. Real-world fuel

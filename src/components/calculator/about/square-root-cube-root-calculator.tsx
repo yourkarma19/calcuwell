@@ -98,13 +98,13 @@ export default function AboutSquareRootCubeRootCalculator() {
             <AccordionContent>
               You can find the real cube root of a negative number (e.g., the
               cube root of -8 is -2). However, the square root of a negative
-              number is an "imaginary number," which this calculator indicates
-              with the symbol 'i'.
+              number is an &quot;imaginary number,&quot; which this calculator indicates
+              with the symbol &apos;i&apos;.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              What is a "perfect square"?
+              What is a &quot;perfect square&quot;?
             </AccordionTrigger>
             <AccordionContent>
               A perfect square is an integer that is the square of another

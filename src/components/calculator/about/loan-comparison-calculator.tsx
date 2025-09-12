@@ -70,10 +70,10 @@ export default function AboutLoanComparisonCalculator() {
           <ol>
             <li>
               Enter the **Loan Amount**, **Interest Rate**, and **Tenure** for
-              "Loan Option A".
+              &quot;Loan Option A&quot;.
             </li>
-            <li>Do the same for "Loan Option B".</li>
-            <li>Click the **"Compare Loans"** button.</li>
+            <li>Do the same for &quot;Loan Option B&quot;.</li>
+            <li>Click the **&quot;Compare Loans&quot;** button.</li>
           </ol>
           <p>
             The tool will generate a clear verdict, a detailed table, and a
@@ -121,7 +121,7 @@ export default function AboutLoanComparisonCalculator() {
                 <p>
                   Besides the interest rate, consider other costs like
                   processing fees and prepayment penalties. Also, check the
-                  lender's reputation. Sometimes a slightly higher EMI is worth
+                  lender&apos;s reputation. Sometimes a slightly higher EMI is worth
                   it for better terms or service.
                 </p>
               </AccordionContent>

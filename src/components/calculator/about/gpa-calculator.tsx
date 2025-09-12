@@ -53,7 +53,7 @@ export default function AboutGpaCalculator() {
         />
         <p>
           A GPA (Grade Point Average) is a standard way to measure academic
-          success. It's a number that shows your average grade, weighted by
+          success. It&apos;s a number that shows your average grade, weighted by
           the number of credits for each course.
         </p>
         <h3>How to Use This GPA Calculator</h3>
@@ -67,7 +67,7 @@ export default function AboutGpaCalculator() {
             <AccordionTrigger>What is GPA?</AccordionTrigger>
             <AccordionContent>
               Grade Point Average (GPA) is a number that represents the average
-              of your course grades. It's a common way to measure academic
+              of your course grades. It&apos;s a common way to measure academic
               achievement.
             </AccordionContent>
           </AccordionItem>
@@ -75,19 +75,19 @@ export default function AboutGpaCalculator() {
             <AccordionTrigger>How is GPA Calculated?</AccordionTrigger>
             <AccordionContent>
               Each letter grade is given a point value (e.g., A=4.0, B=3.0).
-              This value is multiplied by the course credits to get "quality
-              points." All quality points are added up and then divided by the
+              This value is multiplied by the course credits to get &quot;quality
+              points.&quot; All quality points are added up and then divided by the
               total credits to find the GPA.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              What is a "Weighted" vs. "Unweighted" GPA?
+              What is a &quot;Weighted&quot; vs. &quot;Unweighted&quot; GPA?
             </AccordionTrigger>
             <AccordionContent>
-              An **unweighted GPA** is on a 4.0 scale, where an 'A' is always
+              An **unweighted GPA** is on a 4.0 scale, where an &apos;A&apos; is always
               4.0. A **weighted GPA** gives extra points for harder classes, like
-              Honors or AP courses. An 'A' in an AP class might be worth 5.0.
+              Honors or AP courses. An &apos;A&apos; in an AP class might be worth 5.0.
               This calculator computes an unweighted GPA.
             </AccordionContent>
           </AccordionItem>

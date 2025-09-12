@@ -55,7 +55,7 @@ export default function AboutBacCalculator() {
         <p>
           The Blood Alcohol Content (BAC) calculator gives you an{" "}
           <strong>estimate</strong> of your blood alcohol level. It uses the
-          Widmark formula. It's a helpful tool to understand how alcohol affects
+          Widmark formula. It is a helpful tool to understand how alcohol affects
           you.{" "}
           <strong>
             Never use this tool to decide if it is safe to drive.
@@ -88,7 +88,7 @@ export default function AboutBacCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What is a "standard drink"?
+              What is a &quot;standard drink&quot;?
             </AccordionTrigger>
             <AccordionContent>
               A standard drink usually has about 14 grams of pure alcohol. This
@@ -112,7 +112,7 @@ export default function AboutBacCalculator() {
             <AccordionContent>
               Women often have more body fat and less body water than men of the
               same weight. Alcohol dissolves in water, so it becomes more
-              concentrated in a woman's body. This leads to a higher BAC from
+              concentrated in a woman&apos;s body. This leads to a higher BAC from
               the same amount of alcohol.
             </AccordionContent>
           </AccordionItem>

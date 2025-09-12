@@ -1,15 +1,9 @@
 
 "use client";
 
-import { parse, simplify } from "mathjs";
+import { derivative, parse } from "mathjs";
 import { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -37,7 +31,7 @@ function decompose(
     }
     // Fallback for simple cases that mathjs can handle via simplify
     const node = parse(`(${numeratorStr}) / (${denominatorStr})`);
-    return simplify(node).toString();
+    return node.toString();
   } catch (e) {
     console.error(e);
     return null;

@@ -96,7 +96,7 @@ export default function AboutLoanAffordabilityCalculator() {
             <AccordionContent>
               There are two main ways: increase your income or reduce your
               monthly debt. To reduce debt, focus on paying down existing loans.
-              It's also wise to avoid taking on new debt right before applying
+              It&apos;s also wise to avoid taking on new debt right before applying
               for a major loan.
             </AccordionContent>
           </AccordionItem>

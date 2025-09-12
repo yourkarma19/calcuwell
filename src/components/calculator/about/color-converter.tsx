@@ -77,7 +77,7 @@ export default function AboutColorConverter() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What's the difference between HEX, RGB, and HSL?
+              What&apos;s the difference between HEX, RGB, and HSL?
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
@@ -108,10 +108,10 @@ export default function AboutColorConverter() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              What does the "alpha" value in RGBA mean?
+              What does the &quot;alpha&quot; value in RGBA mean?
             </AccordionTrigger>
             <AccordionContent>
-              The 'A' stands for Alpha, which controls the opacity of the color.
+              The &apos;A&apos; stands for Alpha, which controls the opacity of the color.
               An alpha value of 1 is fully opaque, while 0 is fully
               transparent. This is used in CSS for semi-transparent effects.
             </AccordionContent>

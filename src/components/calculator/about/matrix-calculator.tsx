@@ -89,8 +89,8 @@ export default function AboutMatrixCalculator() {
               What about matrix multiplication?
             </AccordionTrigger>
             <AccordionContent>
-              Matrix multiplication is more complex. It involves a "dot
-              product" of rows and columns. It is a key operation in linear
+              Matrix multiplication is more complex. It involves a &quot;dot
+              product&quot; of rows and columns. It is a key operation in linear
               algebra. This calculator does not currently support
               multiplication.
             </AccordionContent>

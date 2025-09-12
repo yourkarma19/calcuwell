@@ -83,7 +83,7 @@ export default function AboutLeanBodyMassCalculator() {
             <AccordionTrigger>How is LBM different from BMI?</AccordionTrigger>
             <AccordionContent>
               LBM and BMI measure different things. BMI is a simple ratio of
-              weight to height and can't distinguish between fat and muscle.
+              weight to height and can&apos;t distinguish between fat and muscle.
               LBM specifically measures your non-fat mass, giving a clearer
               picture of your body composition.
             </AccordionContent>

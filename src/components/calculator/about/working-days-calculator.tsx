@@ -65,7 +65,7 @@ export default function AboutWorkingDaysCalculator() {
             Select a <strong>Start Date</strong> and an <strong>End Date</strong>.
           </li>
           <li>
-            Click the <strong>"Calculate Working Days"</strong> button.
+            Click the <strong>&quot;Calculate Working Days&quot;</strong> button.
           </li>
         </ol>
         <p>

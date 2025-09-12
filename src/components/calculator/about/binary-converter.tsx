@@ -52,7 +52,7 @@ export default function AboutBinaryConverter() {
         </p>
         <h3>How to Use the Number System Converter</h3>
         <ol>
-          <li>Enter a value in the "From" field.</li>
+          <li>Enter a value in the &quot;From&quot; field.</li>
           <li>Select the number system you are converting from.</li>
           <li>Select the target number system you want to convert to.</li>
         </ol>
@@ -77,7 +77,7 @@ export default function AboutBinaryConverter() {
               </p>
               <p className="mb-2">
                 <strong>Hexadecimal (Base-16):</strong> Uses digits 0-9 and
-                letters A-F. It's a shorter way to write binary data.
+                letters A-F. It&apos;s a shorter way to write binary data.
               </p>
               <p>
                 <strong>Octal (Base-8):</strong> Uses digits 0-7. It was more
@@ -90,9 +90,9 @@ export default function AboutBinaryConverter() {
               Why is hexadecimal used in programming?
             </AccordionTrigger>
             <AccordionContent>
-              Hexadecimal is popular because it's a human-friendly way to show
+              Hexadecimal is popular because it&apos;s a human-friendly way to show
               long binary values. For example, `11111111` is easier to read as
-              `FF`. It's often used for memory addresses and color codes (e.g.,
+              `FF`. It&apos;s often used for memory addresses and color codes (e.g.,
               `#FF0000` for red).
             </AccordionContent>
           </AccordionItem>

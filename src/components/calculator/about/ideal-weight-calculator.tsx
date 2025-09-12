@@ -53,7 +53,7 @@ export default function AboutIdealWeightCalculator() {
         />
         <p>
           The Ideal Weight Calculator estimates a healthy body weight based on
-          your height and gender. It's important to remember that this is a
+          your height and gender. It&apos;s important to remember that this is a
           general guideline, not a strict rule. This tool uses the Robinson
           formula to give you a reference point for your fitness goals.
         </p>
@@ -74,7 +74,7 @@ export default function AboutIdealWeightCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Ideal weight is a guideline for a healthy weight range based on
-              height. It doesn't account for individual differences like muscle
+              height. It doesn&apos;t account for individual differences like muscle
               vs. fat. Use it as a general guide, not a strict goal.
             </AccordionContent>
           </AccordionItem>
@@ -93,7 +93,7 @@ export default function AboutIdealWeightCalculator() {
             <AccordionTrigger>Is this better than BMI?</AccordionTrigger>
             <AccordionContent>
               Ideal weight and BMI are different tools. BMI checks if your
-              weight is healthy for your height but doesn't give a target. The
+              weight is healthy for your height but doesn&apos;t give a target. The
               ideal weight calculation gives a target number but is less
               complete. Both are useful screening tools, but neither tells the
               whole story.

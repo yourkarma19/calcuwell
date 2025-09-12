@@ -60,11 +60,11 @@ export default function AboutBase64Converter() {
         <ol>
           <li>Enter text into the top input box.</li>
           <li>
-            Click <strong>"Encode"</strong> to turn it into a Base64 string.
+            Click <strong>&quot;Encode&quot;</strong> to turn it into a Base64 string.
           </li>
           <li>
             To decode, paste a Base64 string into the input box and click{" "}
-            <strong>"Decode"</strong>.
+            <strong>&quot;Decode&quot;</strong>.
           </li>
         </ol>
         <p>The result will appear in the bottom box instantly.</p>
@@ -81,7 +81,7 @@ export default function AboutBase64Converter() {
           <AccordionItem value="item-2">
             <AccordionTrigger>Is Base64 a form of security?</AccordionTrigger>
             <AccordionContent>
-              No. Base64 is an encoding, not an encryption. It's a way to
+              No. Base64 is an encoding, not an encryption. It&apos;s a way to
               represent data, not to secure it. Anyone can decode a Base64
               string. For security, you need an encryption method like AES.
             </AccordionContent>
@@ -90,7 +90,7 @@ export default function AboutBase64Converter() {
             <AccordionTrigger>What is a Data URI?</AccordionTrigger>
             <AccordionContent>
               A Data URI lets you embed small files, like images, directly into
-              a web page's code. The file's data is encoded using Base64. This
+              a web page&apos;s code. The file&apos;s data is encoded using Base64. This
               can reduce the number of HTTP requests a browser needs to make,
               which can speed up page load times for small files.
             </AccordionContent>

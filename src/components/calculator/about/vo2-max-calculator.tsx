@@ -61,7 +61,7 @@ export default function AboutVo2MaxCalculator() {
         <h3>How to Use the VO₂ Max Estimator</h3>
         <p>
           This calculator uses a non-exercise method to estimate your VO₂ max.
-          It's a convenient way to get a general idea of your fitness level.
+          It&apos;s a convenient way to get a general idea of your fitness level.
           Simply enter your age and your resting heart rate. Your resting heart
           rate is your pulse when you are completely calm and relaxed.
         </p>
@@ -72,7 +72,7 @@ export default function AboutVo2MaxCalculator() {
             <AccordionTrigger>What is VO₂ max?</AccordionTrigger>
             <AccordionContent>
               VO₂ max is the maximum amount of oxygen your body can use during
-              one minute of strenuous exercise. It's measured in mL/kg/min and
+              one minute of strenuous exercise. It&apos;s measured in mL/kg/min and
               is a key indicator of cardiorespiratory fitness.
             </AccordionContent>
           </AccordionItem>
@@ -80,7 +80,7 @@ export default function AboutVo2MaxCalculator() {
             <AccordionTrigger>How accurate is this estimate?</AccordionTrigger>
             <AccordionContent>
               This formula provides a general estimate without needing exercise.
-              However, it's not as accurate as a clinical stress test in a lab.
+              However, it&apos;s not as accurate as a clinical stress test in a lab.
               Think of this result as a useful starting point, not a definitive
               medical value.
             </AccordionContent>

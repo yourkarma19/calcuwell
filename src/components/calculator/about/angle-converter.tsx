@@ -60,7 +60,7 @@ export default function AboutAngleConverter() {
 
         <h3>How to Use the Angle Converter</h3>
         <p>
-          Enter a value in either the "Degrees" or "Radians" field. The other
+          Enter a value in either the &quot;Degrees&quot; or &quot;Radians&quot; field. The other
           field will update automatically. Use the swap button to easily
           reverse the conversion.
         </p>
@@ -78,7 +78,7 @@ export default function AboutAngleConverter() {
               <p>
                 <strong>Radians (rad)</strong> are the standard unit in math and
                 physics. A full circle has 2π radians. One radian is the angle
-                where the arc's length equals the circle's radius.
+                where the arc&apos;s length equals the circle&apos;s radius.
               </p>
             </AccordionContent>
           </AccordionItem>

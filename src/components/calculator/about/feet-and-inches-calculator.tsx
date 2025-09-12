@@ -53,34 +53,34 @@ export default function AboutFeetAndInchesCalculator() {
         />
         <h3>How to Use the Feet and Inches Calculator</h3>
         <ol>
-          <li>Enter your first measurement in the 'Feet' and 'Inches' boxes.</li>
+          <li>Enter your first measurement in the &apos;Feet&apos; and &apos;Inches&apos; boxes.</li>
           <li>Select the operation you want to perform.</li>
           <li>Enter your second measurement.</li>
-          <li>Click the 'Calculate' button to see the result.</li>
+          <li>Click the &apos;Calculate&apos; button to see the result.</li>
         </ol>
 
         <h3>Example: How to Add Feet and Inches</h3>
-        <p>Let's add 5' 7" + 2' 10":</p>
+        <p>Let&apos;s add 5&apos; 7&quot; + 2&apos; 10&quot;:</p>
         <ol>
           <li>
-            <strong>Add inches:</strong> 7" + 10" = 17".
+            <strong>Add inches:</strong> 7&quot; + 10&quot; = 17&quot;.
           </li>
           <li>
             <strong>Convert excess inches:</strong> Since there are 12 inches
-            in a foot, 17" becomes 1 foot and 5 inches.
+            in a foot, 17&quot; becomes 1 foot and 5 inches.
           </li>
           <li>
-            <strong>Add feet:</strong> 5' + 2' + 1' (from inches) = 8'.
+            <strong>Add feet:</strong> 5&apos; + 2&apos; + 1&apos; (from inches) = 8&apos;.
           </li>
           <li>
-            <strong>Combine:</strong> The final answer is 8' 5".
+            <strong>Combine:</strong> The final answer is 8&apos; 5&quot;.
           </li>
         </ol>
 
         <h3>Common Uses</h3>
         <ul>
           <li>
-            <strong>Construction & Carpentry:</strong> Calculating material
+            <strong>Construction &amp; Carpentry:</strong> Calculating material
             lengths and room dimensions.
           </li>
           <li>
@@ -110,7 +110,7 @@ export default function AboutFeetAndInchesCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               You can use a conversion chart or a calculator. For example, 0.5
-              inches is 1/2", 0.25 is 1/4", and 0.75 is 3/4". This is common for
+              inches is 1/2&quot;, 0.25 is 1/4&quot;, and 0.75 is 3/4&quot;. This is common for
               woodworking and other precise crafts.
             </AccordionContent>
           </AccordionItem>

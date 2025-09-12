@@ -60,7 +60,7 @@ export default function AboutCubicEquationCalculator() {
         <h3>How to Use the Cubic Equation Calculator</h3>
         <ol>
           <li>Enter the coefficients `a`, `b`, `c`, and `d`.</li>
-          <li>Click the "Solve" button.</li>
+          <li>Click the &quot;Solve&quot; button.</li>
           <li>
             The calculator will display the three roots of the equation (`x₁`,
             `x₂`, `x₃`).
@@ -70,7 +70,7 @@ export default function AboutCubicEquationCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What are the "roots" of an equation?
+              What are the &quot;roots&quot; of an equation?
             </AccordionTrigger>
             <AccordionContent>
               The roots are the values of `x` that make the equation true. A
