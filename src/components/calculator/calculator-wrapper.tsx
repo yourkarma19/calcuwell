@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ChevronRight } from "lucide-react";
@@ -15,13 +14,11 @@ import { format } from "date-fns";
 
 interface CalculatorWrapperProps {
   children: ReactNode;
-  sidebar: ReactNode;
   calculator: Omit<Calculator, "component">;
 }
 
 export default function CalculatorWrapper({
   children,
-  sidebar,
   calculator,
 }: CalculatorWrapperProps) {
   const category = categories.find((c) => c.name === calculator.category);
@@ -81,7 +78,8 @@ export default function CalculatorWrapper({
         </p>
         {calculator.lastUpdated && (
           <p className="text-xs text-muted-foreground mt-4">
-            Last Updated: {format(new Date(calculator.lastUpdated), "MMMM d, yyyy")}
+            Last Updated:{" "}
+            {format(new Date(calculator.lastUpdated), "MMMM d, yyyy")}
           </p>
         )}
       </div>
@@ -89,17 +87,10 @@ export default function CalculatorWrapper({
       <div className="max-w-4xl mx-auto">
         <main className="space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            <div className={sidebar ? "lg:col-span-2" : "lg:col-span-3"}>
-              {children}
-            </div>
-            {sidebar && (
-              <div className="lg:col-span-1 space-y-6">
-                {sidebar}
-                <div className="mt-8">
-                  <EmbedCalculator slug={calculator.slug} />
-                </div>
-              </div>
-            )}
+            <div className="lg:col-span-3">{children}</div>
+          </div>
+          <div className="mt-8">
+            <EmbedCalculator slug={calculator.slug} />
           </div>
         </main>
       </div>

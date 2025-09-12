@@ -5,7 +5,6 @@ import { useState } from "react";
 import CalculatorWrapper from "@/components/calculator/calculator-wrapper";
 import PlaceholderCalculator from "@/components/calculator/placeholder-calculator";
 import type { Calculator } from "@/lib/types";
-import { Skeleton } from "@/components/ui/skeleton";
 
 interface CalculatorClientPageProps {
   calculator: Omit<Calculator, "component">;
@@ -19,36 +18,29 @@ const CalculatorLoader = dynamic(
   },
 );
 
+const AboutComponentLoader = dynamic(
+  () => import("@/components/calculator/calculator-content"),
+  {
+    loading: () => <PlaceholderCalculator />,
+    ssr: false,
+  },
+);
+
 export default function CalculatorClientPage({
   calculator,
 }: CalculatorClientPageProps) {
   const [aboutProps, setAboutProps] = useState({});
 
-  const AboutComponent = dynamic(
-    () => import(`@/components/calculator/about/${calculator.slug}`),
-    {
-      loading: () => (
-        <div className="space-y-6">
-          <Skeleton className="h-64 w-full" />
-          <Skeleton className="h-48 w-full" />
-        </div>
-      ),
-      ssr: false,
-    },
-  );
-
-  const sidebar =
-    calculator.slug === "sip-calculator" ? null : (
-      <AboutComponent {...aboutProps} />
-    );
-
   return (
-    <CalculatorWrapper calculator={calculator} sidebar={sidebar}>
-      <CalculatorLoader
-        slug={calculator.slug}
-        setAboutProps={setAboutProps}
-        calculatorName={calculator.name}
-      />
+    <CalculatorWrapper calculator={calculator}>
+      <div className="space-y-8">
+        <CalculatorLoader
+          slug={calculator.slug}
+          setAboutProps={setAboutProps}
+          calculatorName={calculator.name}
+        />
+        <AboutComponentLoader slug={calculator.slug} {...aboutProps} />
+      </div>
     </CalculatorWrapper>
   );
 }
