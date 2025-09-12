@@ -41,6 +41,8 @@ const personSchema: WithContext<Person> = {
 };
 
 export default function AboutPage() {
+  const lastUpdated = "July 31, 2024";
+
   return (
     <main className="container mx-auto px-4 py-12 max-w-4xl">
       <script
@@ -55,6 +57,9 @@ export default function AboutPage() {
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           About CalcPro
         </h1>
+        <p className="text-sm text-muted-foreground mt-2">
+          Last updated: {lastUpdated}
+        </p>
       </div>
 
       <div className="prose dark:prose-invert max-w-none text-lg">
