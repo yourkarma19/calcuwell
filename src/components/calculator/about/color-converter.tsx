@@ -6,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between HEX, RGB, and HSL color formats?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "HEX is a six-digit code common in web design. RGB (Red, Green, Blue) is an additive model for digital screens. HSL (Hue, Saturation, Lightness) is an intuitive model for creating color variations.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why are there different color models?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Different models are suited for different tasks. RGB is how screens create color, HEX is a compact way to write RGB, and HSL is often preferred by designers for its intuitive controls.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does the 'alpha' value in RGBA or HSLA mean?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The 'A' stands for Alpha, which represents the opacity of the color. An alpha value of 1 is fully opaque, while 0 is fully transparent. It is used to create semi-transparent effects.",
+      },
+    },
+  ],
+};
 
 export default function AboutColorConverter() {
   return (
@@ -14,6 +46,10 @@ export default function AboutColorConverter() {
         <CardTitle>About the Color Code Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our <strong>Color Code Converter</strong> is an essential utility for
           web designers, developers, and digital artists. It provides a seamless
