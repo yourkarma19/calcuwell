@@ -1,3 +1,4 @@
+
 "use client";
 import * as React from "react";
 
@@ -35,7 +36,7 @@ type CardTitleProps = React.HTMLAttributes<HTMLHeadingElement> & {
 };
 
 const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
-  ({ className, as: Component = "h3", ...props }, ref) => (
+  ({ className, as: Component = "div", ...props }, ref) => (
     <Component
       ref={ref}
       className={cn(
