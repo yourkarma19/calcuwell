@@ -164,6 +164,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find the x and y-intercepts of any linear equation with a step-by-step breakdown.",
     category: "Math",
     iconName: "Sigma",
+    seoTitle: "X and Y Intercept Calculator | CalcPro",
     metaDescription:
       "A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results & see step-by-step calculations.",
     formula: "Set x=0 for y-intercept, set y=0 for x-intercept.",
