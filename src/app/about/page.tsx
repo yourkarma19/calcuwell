@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About CalcPro | Our Mission & Story",
@@ -28,6 +29,28 @@ export default function AboutPage() {
           math, and more. We believe the internet should be open, so our tools
           are always free to use without needing to sign up.
         </p>
+
+        <div className="my-12 p-8 bg-muted rounded-xl text-center">
+          <Image
+            src="https://picsum.photos/seed/founder/150/150"
+            alt="Founder of CalcPro"
+            width={150}
+            height={150}
+            className="rounded-full mx-auto mb-4 shadow-lg"
+            data-ai-hint="professional headshot"
+          />
+          <h3 className="text-2xl font-bold font-headline text-primary mt-0">
+            Meet the Founder
+          </h3>
+          <p className="font-semibold text-xl">Alex Doe</p>
+          <p className="mt-2 text-base max-w-2xl mx-auto">
+            With a background in software development and a passion for making
+            complex financial and health topics accessible, Alex created CalcPro
+            to empower users to make informed decisions. Alex believes that
+            everyone should have access to high-quality, easy-to-use tools to
+            navigate the numbers in their daily lives.
+          </p>
+        </div>
 
         <h2 id="commitment">Our Commitment to Accuracy</h2>
         <p>
