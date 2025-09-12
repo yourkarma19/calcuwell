@@ -1,7 +1,8 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useMemo } from "react";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { Skeleton } from "../ui/skeleton";
 import {
   Card,
   CardContent,
@@ -9,17 +10,19 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
+
+const CostBreakdownChart = dynamic(
+  () => import("@/components/charts/pet-cost-breakdown-chart"),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="w-full h-[25rem]" />,
+  },
+);
 
 export default function PetCareCostCalculator() {
   const [petType, setPetType] = usePersistentState<"dog" | "cat">(
@@ -161,42 +164,14 @@ export default function PetCareCostCalculator() {
         </CardContent>
       </Card>
 
-      {chartData.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Cost Breakdown</CardTitle>
-          </CardHeader>
-          <CardContent className="h-[25rem]">
-            <ChartContainer config={{}} className="w-full h-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Tooltip
-                    cursor={false}
-                    content={
-                      <ChartTooltipContent
-                        formatter={(value) => formatCurrency(Number(value))}
-                      />
-                    }
-                  />
-                  <Pie
-                    data={chartData}
-                    dataKey="value"
-                    nameKey="name"
-                    innerRadius="50%"
-                    outerRadius="80%"
-                    strokeWidth={2}
-                  >
-                    {chartData.map((entry) => (
-                      <Cell key={entry.name} fill={entry.fill} />
-                    ))}
-                  </Pie>
-                  <ChartLegend content={<ChartLegendContent />} />
-                </PieChart>
-              </ResponsiveContainer>
-            </ChartContainer>
-          </CardContent>
-        </Card>
-      )}
+      <Card>
+        <CardHeader>
+          <CardTitle>Cost Breakdown</CardTitle>
+        </CardHeader>
+        <CardContent className="h-[25rem]">
+          <CostBreakdownChart chartData={chartData} />
+        </CardContent>
+      </Card>
     </div>
   );
 }

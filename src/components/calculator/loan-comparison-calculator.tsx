@@ -1,8 +1,7 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import ExportShareControls from "./export-share-controls";
 import { Skeleton } from "../ui/skeleton";
 import { Button } from "@/components/ui/button";
@@ -36,31 +35,10 @@ const LoanComparisonResults = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="space-y-6">
-        <Card>
-          <CardHeader>
-            <Skeleton className="h-8 w-1/2" />
-          </CardHeader>
-          <CardContent>
-            <Skeleton className="h-12 w-full" />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <Skeleton className="h-8 w-1/2" />
-          </CardHeader>
-          <CardContent>
-            <Skeleton className="h-48 w-full" />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <Skeleton className="h-8 w-1/2" />
-          </CardHeader>
-          <CardContent>
-            <Skeleton className="h-64 w-full" />
-          </CardContent>
-        </Card>
+      <div className="space-y-6 mt-6">
+        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-48 w-full" />
+        <Skeleton className="h-96 w-full" />
       </div>
     ),
   },

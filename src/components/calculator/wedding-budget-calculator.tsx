@@ -1,7 +1,8 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useMemo } from "react";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { Skeleton } from "../ui/skeleton";
 import {
   Card,
   CardContent,
@@ -9,17 +10,19 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
+
+const WeddingBudgetChart = dynamic(
+  () => import("@/components/charts/wedding-budget-chart"),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="w-full h-[25rem]" />,
+  },
+);
 
 export default function WeddingBudgetCalculator() {
   const [guests, setGuests] = usePersistentState("wedding-guests", 100);
@@ -156,33 +159,7 @@ export default function WeddingBudgetCalculator() {
           <CardTitle>Cost Breakdown</CardTitle>
         </CardHeader>
         <CardContent className="h-[25rem]">
-          <ChartContainer config={{}} className="w-full h-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Tooltip
-                  cursor={false}
-                  content={
-                    <ChartTooltipContent
-                      formatter={(value) => formatCurrency(Number(value))}
-                    />
-                  }
-                />
-                <Pie
-                  data={chartData}
-                  dataKey="value"
-                  nameKey="name"
-                  innerRadius="50%"
-                  outerRadius="80%"
-                  strokeWidth={2}
-                >
-                  {chartData.map((entry) => (
-                    <Cell key={entry.name} fill={entry.fill} />
-                  ))}
-                </Pie>
-                <ChartLegend content={<ChartLegendContent />} />
-              </PieChart>
-            </ResponsiveContainer>
-          </ChartContainer>
+          <WeddingBudgetChart chartData={chartData} />
         </CardContent>
       </Card>
     </div>
