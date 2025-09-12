@@ -11,7 +11,7 @@ export default function AboutCompoundInterestCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Understanding Compound Interest</CardTitle>
+        <CardTitle as="h2">Understanding Compound Interest</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>

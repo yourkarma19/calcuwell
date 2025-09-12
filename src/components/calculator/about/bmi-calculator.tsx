@@ -29,7 +29,7 @@ export default function AboutBMICalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>About the BMI Calculator</CardTitle>
+          <CardTitle as="h2">About the BMI Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <p>
@@ -131,7 +131,7 @@ export default function AboutBMICalculator() {
 
       <Card>
         <CardHeader>
-          <CardTitle>BMI Categories (WHO)</CardTitle>
+          <CardTitle as="h3">BMI Categories (WHO)</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
