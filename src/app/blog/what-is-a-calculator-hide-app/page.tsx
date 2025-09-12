@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Article, WithContext, FAQPage } from "schema-dts";
