@@ -112,18 +112,18 @@ export default function ScientificCalculator() {
   };
 
   const btnClasses =
-    "h-12 md:h-14 text-sm md:text-base rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
+    "h-14 md:h-16 text-base md:text-lg rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
 
   return (
     <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
       <CardContent className="p-1">
-        <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
+        <div className="h-32 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
           <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
             {expression}
           </div>
           <div className="h-2/3 w-full flex items-end justify-end">
             <div
-              className="w-full text-right font-mono text-4xl sm:text-5xl text-foreground"
+              className="w-full text-right font-mono text-5xl sm:text-6xl text-foreground"
               aria-live="polite"
             >
               {result}
