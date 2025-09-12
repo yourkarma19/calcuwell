@@ -67,7 +67,7 @@ export default async function SitemapPage() {
           Welcome to the sitemap for CalcPro. Here you can find a comprehensive
           list of all our calculators, neatly organized by category. This page
           is designed to help you quickly navigate to the specific tool you
-          need, whether you're solving a complex math problem, managing
+          need, whether you&apos;re solving a complex math problem, managing
           your finances, or exploring health metrics. Browse through the
           sections below to discover the wide range of free tools we offer.
         </p>

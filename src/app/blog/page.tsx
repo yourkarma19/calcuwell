@@ -50,7 +50,7 @@ export default function BlogIndexPage() {
           Welcome to the CalcPro Blog, your resource for deep dives and simple
           explanations for the concepts behind our calculators. Our goal is to
           demystify the formulas and ideas that power our tools, making them
-          accessible to everyone. Whether you're a student, a professional, or
+          accessible to everyone. Whether you&apos;re a student, a professional, or
           just curious, our articles provide valuable context and real-world
           examples.
         </p>

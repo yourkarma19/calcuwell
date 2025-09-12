@@ -1,9 +1,15 @@
 
 "use client";
 
-import { derivative, parse } from "mathjs";
+import { parse } from "mathjs";
 import { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
