@@ -8,7 +8,6 @@ import type { Calculator } from "@/lib/types";
 import Link from "next/link";
 import {
   Card,
-  CardContent,
   CardHeader,
   CardTitle,
   CardDescription,

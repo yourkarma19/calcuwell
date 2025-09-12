@@ -1,6 +1,14 @@
 "use client";
 
+import Link from "next/link";
+import { Info } from "lucide-react";
 import { useMemo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -11,6 +19,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function BmrCalculator() {
@@ -21,16 +35,22 @@ export default function BmrCalculator() {
   );
   const [height, setHeight] = usePersistentState("bmr-height", 175);
   const [weight, setWeight] = usePersistentState("bmr-weight", 70);
+  const [formula, setFormula] = usePersistentState(
+    "bmr-formula",
+    "mifflin-st-jeor",
+  );
 
   const bmr = useMemo(() => {
     if (age > 0 && height > 0 && weight > 0) {
-      // Using Mifflin-St Jeor Equation
-      const bmrValue =
-        10 * weight + 6.25 * height - 5 * age + (gender === "male" ? 5 : -161);
-      return bmrValue > 0 ? bmrValue : 0;
+      if (formula === "mifflin-st-jeor") {
+        const bmrValue =
+          10 * weight + 6.25 * height - 5 * age + (gender === "male" ? 5 : -161);
+        return bmrValue > 0 ? bmrValue : 0;
+      }
+      // Add other formulas here if needed
     }
     return 0;
-  }, [age, gender, height, weight]);
+  }, [age, gender, height, weight, formula]);
 
   return (
     <div className="space-y-6">
@@ -38,12 +58,40 @@ export default function BmrCalculator() {
         <CardHeader>
           <CardTitle>BMR Calculator</CardTitle>
           <CardDescription>
-            Discover your body&apos;s baseline calorie needs with our accurate
-            BMR Calculator. Your Basal Metabolic Rate (BMR) is the number of
+            Discover your body's baseline calorie needs with our accurate BMR
+            Calculator. Your Basal Metabolic Rate (BMR) is the number of
             calories your body needs to function at rest.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label>Formula</Label>
+            <div className="flex items-center gap-2">
+              <RadioGroup
+                value={formula}
+                onValueChange={setFormula}
+                className="flex items-center space-x-4 pt-2"
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="mifflin-st-jeor" id="mifflin" />
+                  <Label htmlFor="mifflin">Mifflin-St Jeor</Label>
+                </div>
+              </RadioGroup>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Info className="w-4 h-4 text-muted-foreground" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>
+                      The Mifflin-St Jeor equation is considered the most
+                      accurate BMR formula by modern research.
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="age">Age (years)</Label>

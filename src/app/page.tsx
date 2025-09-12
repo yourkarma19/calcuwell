@@ -1,9 +1,5 @@
-import {
-  ChevronRight,
-  House,
-  HeartPulse,
-  TrendingUp,
-} from "lucide-react";
+"use client";
+import { ChevronRight, HeartPulse, House, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -42,10 +38,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full text-center py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h1 className="text-primary mb-4">CalcPro</h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+          <h1 className="text-primary mb-4">
             Instant, Accurate Answers for Your Financial, Health, and
             Educational Questions.
+          </h1>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+            Your free hub for fast, accurate online calculators. Solve complex
+            problems in finance, health, math, and more with our easy-to-use
+            tools.
           </p>
         </div>
       </section>
@@ -134,6 +134,7 @@ export default function Home() {
             designed to be fast, accurate, and easy to use. From solving complex
             mathematical problems to managing your personal finances and health,
             our tools provide reliable results to help you make informed
+
             decisions instantly.
           </p>
         </div>
