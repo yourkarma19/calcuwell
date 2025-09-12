@@ -69,7 +69,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
         </ol>
         <p>
           The calculator will automatically compute and display the
-          sphere's volume, surface area, and diameter.
+          sphere&apos;s volume, surface area, and diameter.
         </p>
 
         <h3>Frequently Asked Questions (FAQs)</h3>

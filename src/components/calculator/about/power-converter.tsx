@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a Watt?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Watt (W) is the standard unit of power in the International System of Units (SI). One watt is defined as one joule of energy per second. It is commonly used to measure the output of electrical devices, like light bulbs and appliances. A kilowatt (kW) is simply 1,000 watts.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Horsepower?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Horsepower (hp) is an older unit of power that is still widely used, especially in the automotive industry to describe the power output of engines. Mechanical horsepower is equivalent to approximately 745.7 watts.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Power vs. Energy: What's the difference?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Energy is the capacity to do work (measured in joules or kWh), while Power is the rate at which energy is used (measured in watts or joules per second). For example, a 100-watt light bulb uses 100 joules of energy every second it is on.",
+      },
+    },
+  ],
+};
 
 export default function AboutPowerConverter() {
   return (
@@ -15,6 +47,10 @@ export default function AboutPowerConverter() {
         <CardTitle>About Power Conversion</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Power Converter is an essential tool for engineers, physicists,
           and students who need to work with different units of power. Power is

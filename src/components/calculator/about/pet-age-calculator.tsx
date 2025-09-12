@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is the '7 dog years to 1 human year' rule true?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The 7:1 ratio is a common myth. In reality, dogs and cats mature much faster in their first two years than humans do. This calculator uses a more widely accepted method where the first year equals about 15 human years, the second year adds another 9, and every subsequent year adds 4-5 years.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does breed or size matter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, significantly. Smaller dog breeds tend to live longer and mature slower than large breeds. For example, a 7-year-old Great Dane is much 'older' in human years than a 7-year-old Chihuahua. This calculator provides a general estimate for an average-sized pet.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I tell my pet's age if they were a rescue?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A veterinarian is the best person to help estimate a pet's age. They look at factors like the condition of the teeth, coat, eyes, and overall physical health to make an educated guess.",
+      },
+    },
+  ],
+};
 
 export default function AboutPetAgeCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutPetAgeCalculator() {
         <CardTitle>About the Pet Age Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The **Pet Age Calculator** is a fun and easy way to translate your
           dog&apos;s or cat&apos;s age into equivalent human years. While the

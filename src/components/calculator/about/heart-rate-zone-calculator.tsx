@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -7,6 +8,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are heart rate zones?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Heart rate zones are ranges based on a percentage of your maximum heart rate. Training in different zones stimulates different physiological responses. For example, Zone 2 is ideal for building aerobic base and burning fat, while Zone 4 helps improve your anaerobic threshold and speed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the Karvonen formula?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Karvonen formula is a popular method for calculating target heart rate zones because it takes your resting heart rate into account. This makes it more personalized than simpler formulas that only use age to estimate maximum heart rate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I find my resting heart rate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The best time to measure your resting heart rate is in the morning, shortly after you wake up and before you get out of bed. Place your index and middle fingers on your wrist or neck to find your pulse. Count the number of beats in 60 seconds. Do this for a few consecutive days and take the average for the most accurate result.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is this calculator 100% accurate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This calculator provides a very good estimate for most people. However, the `220 - age` formula for maximum heart rate is a general guideline. Your true maximum heart rate can be influenced by genetics and fitness level. For a precise measurement, a clinical stress test is required.",
+      },
+    },
+  ],
+};
 
 export default function AboutHeartRateZoneCalculator() {
   return (
@@ -15,6 +56,10 @@ export default function AboutHeartRateZoneCalculator() {
         <CardTitle>About Heart Rate Zones</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our **Heart Rate Zone Calculator** is a vital tool for anyone looking
           to optimize their cardiovascular workouts. By calculating your
