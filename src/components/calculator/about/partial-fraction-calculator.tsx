@@ -70,7 +70,7 @@ export default function AboutPartialFractionCalculator() {
             <AccordionContent>
               Yes, absolutely. Our tool is designed to help you verify your work
               and understand the steps involved in reaching the correct
-              solution. It&apos;s a great way to learn and build confidence.
+              solution. It's a great way to learn and build confidence.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

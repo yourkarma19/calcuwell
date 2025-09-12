@@ -31,7 +31,7 @@ export default function AboutWorldClock() {
           time from your device and displays the equivalent local time for a
           predefined list of major international cities. The time for each city
           updates every second, providing a real-time, at-a-glance view of
-          global times. This tool is perfect for quickly checking if it&apos;s a
+          global times. This tool is perfect for quickly checking if it's a
           good time to make an international call or schedule a meeting across
           different regions.
         </p>
