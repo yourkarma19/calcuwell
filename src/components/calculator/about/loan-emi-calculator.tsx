@@ -65,15 +65,15 @@ export default function AboutLoanEMICalculator({
 }: AboutLoanEMICalculatorProps) {
   return (
     <div className="space-y-6">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">About the EMI Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             Our EMI Calculator helps you find your Equated Monthly Installments
             (EMI) in just a few clicks. Knowing your EMI in advance allows you

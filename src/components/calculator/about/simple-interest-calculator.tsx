@@ -57,7 +57,7 @@ export default function AboutSimpleInterestCalculator() {
           straightforward way to determine the interest earned on a principal
           amount over a specific period. Unlike compound interest, simple
           interest is calculated only on the initial amount (the principal) and
-          does not include interest on previously earned interest. It&apos;s
+          does not include interest on previously earned interest. It's
           often used for short-term loans or investments.
         </p>
 
@@ -110,7 +110,7 @@ export default function AboutSimpleInterestCalculator() {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger className="font-semibold">
-              Simple vs. Compound Interest: What&apos;s the main difference?
+              Simple vs. Compound Interest: What's the main difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -132,7 +132,7 @@ export default function AboutSimpleInterestCalculator() {
               <p>
                 Simple interest is most commonly used for short-term loans or
                 financial products. For example, car loans and some personal
-                loans often use simple interest. It&apos;s less common for
+                loans often use simple interest. It's less common for
                 long-term savings or investment accounts, where compound
                 interest is the standard because it provides better returns.
               </p>

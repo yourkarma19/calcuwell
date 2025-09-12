@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import type { FAQPage, WithContext } from "schema-dts";
 
 interface AboutMortgageCalculatorProps {
   principal: number;
@@ -17,6 +18,37 @@ interface AboutMortgageCalculatorProps {
   homeInsurance: number;
   tenure: number;
 }
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is PITI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "PITI stands for Principal, Interest, Taxes, and Insurance. These are the four main components of a monthly mortgage payment. Principal is the amount that goes towards paying down your loan balance, while Interest is the cost of borrowing. Taxes and Insurance are often collected by the lender and paid on your behalf from an escrow account.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is loan amortization?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Amortization is the process of paying off a loan over time with regular payments. In the early years of a mortgage, a larger portion of your payment goes towards interest. As you continue to make payments, more of your money goes towards paying down the principal balance. The amortization chart visualizes how much of your total payment goes to principal versus interest and other costs over the life of the loan.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I lower my mortgage payment?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There are several ways to lower your payment: 1) Make a larger down payment to reduce the principal. 2) Choose a longer loan term (e.g., 30 years instead of 15), but be aware this means paying more interest over time. 3) Shop around for the best possible interest rate, as even a small difference can have a big impact. 4) Improve your credit score before applying.",
+      },
+    },
+  ],
+};
 
 const MortgageBreakdownChart = dynamic(
   () =>
@@ -43,6 +75,10 @@ export default function AboutMortgageCalculator({
           <CardTitle as="h2">About the Mortgage Calculator</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             Our **Mortgage Calculator** is a comprehensive tool designed to help
             prospective homebuyers understand the full cost of their home loan.
