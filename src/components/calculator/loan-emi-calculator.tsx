@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -197,66 +196,74 @@ export default function LoanEMICalculator({
         </CardContent>
       </Card>
 
-      <Card id="loan-emi-results">
-        <CardHeader>
-          <CardTitle>Your Loan EMI</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center space-y-4" aria-live="polite">
-          <div>
-            <p className="text-sm text-muted-foreground">Monthly EMI</p>
-            <p className="text-4xl font-bold font-headline text-primary">
-              {formatCurrency(emi)}
-            </p>
-          </div>
-          <div className="space-y-2 text-sm text-left border-t pt-2">
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">Principal Amount:</span>
-              <span className="font-semibold">{formatCurrency(principal)}</span>
+      <div role="status" aria-live="polite">
+        <Card id="loan-emi-results">
+          <CardHeader>
+            <CardTitle>Your Loan EMI</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <div>
+              <p className="text-sm text-muted-foreground">Monthly EMI</p>
+              <p className="text-4xl font-bold font-headline text-primary">
+                {formatCurrency(emi)}
+              </p>
             </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">Total Interest:</span>
-              <span className="font-semibold">
-                {formatCurrency(totalInterest)}
-              </span>
-            </div>
-            <div className="flex justify-between font-bold">
-              <span className="text-muted-foreground">Total Payable:</span>
-              <span className="font-semibold">
-                {formatCurrency(totalPayable)}
-              </span>
-            </div>
-          </div>
-          {(extraMonthlyPayment > 0 || extraYearlyPayment > 0) &&
-            interestSaved > 0 && (
-              <div
-                className="space-y-2 text-sm text-left border-t pt-4 mt-4"
-                aria-live="polite"
-              >
-                <p className="font-bold text-center text-primary">
-                  With Extra Payments
-                </p>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">New Loan Term:</span>
-                  <span className="font-semibold">
-                    {formatTime(newTotalMonths)}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Time Saved:</span>
-                  <span className="font-semibold">
-                    {timeSaved.years} yr, {timeSaved.months} mo
-                  </span>
-                </div>
-                <div className="flex justify-between font-bold text-green-600 dark:text-green-400">
-                  <span className="text-muted-foreground">Interest Saved:</span>
-                  <span className="font-semibold">
-                    {formatCurrency(interestSaved)}
-                  </span>
-                </div>
+            <div className="space-y-2 text-sm text-left border-t pt-2">
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Principal Amount:</span>
+                <span className="font-semibold">
+                  {formatCurrency(principal)}
+                </span>
               </div>
-            )}
-        </CardContent>
-      </Card>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Total Interest:</span>
+                <span className="font-semibold">
+                  {formatCurrency(totalInterest)}
+                </span>
+              </div>
+              <div className="flex justify-between font-bold">
+                <span className="text-muted-foreground">Total Payable:</span>
+                <span className="font-semibold">
+                  {formatCurrency(totalPayable)}
+                </span>
+              </div>
+            </div>
+            {(extraMonthlyPayment > 0 || extraYearlyPayment > 0) &&
+              interestSaved > 0 && (
+                <div
+                  className="space-y-2 text-sm text-left border-t pt-4 mt-4"
+                  aria-live="polite"
+                >
+                  <p className="font-bold text-center text-primary">
+                    With Extra Payments
+                  </p>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">
+                      New Loan Term:
+                    </span>
+                    <span className="font-semibold">
+                      {formatTime(newTotalMonths)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Time Saved:</span>
+                    <span className="font-semibold">
+                      {timeSaved.years} yr, {timeSaved.months} mo
+                    </span>
+                  </div>
+                  <div className="flex justify-between font-bold text-green-600 dark:text-green-400">
+                    <span className="text-muted-foreground">
+                      Interest Saved:
+                    </span>
+                    <span className="font-semibold">
+                      {formatCurrency(interestSaved)}
+                    </span>
+                  </div>
+                </div>
+              )}
+          </CardContent>
+        </Card>
+      </div>
       <ExportShareControls
         elementIds={["loan-emi-inputs", "loan-emi-results"]}
         shareParams={shareParams}

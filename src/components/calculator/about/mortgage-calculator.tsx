@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -55,7 +54,7 @@ const MortgageBreakdownChart = dynamic(
   () => import("@/components/charts/mortgage-breakdown-chart"),
   {
     ssr: false,
-    loading: () => <Skeleton className="w-full h-[25rem]" />,
+    loading: () => <Skeleton className="w-full h-[250px]" />,
   },
 );
 

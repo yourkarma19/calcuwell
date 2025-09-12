@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -136,102 +135,114 @@ export default function MortgageCalculator({
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
-            <Label>Home Price</Label>
+            <Label htmlFor="home-price">Home Price</Label>
             <Input
+              id="home-price"
               type="number"
               value={principal}
               onChange={(e) => setPrincipal(Number(e.target.value))}
               step="10000"
+              aria-label="Home Price"
             />
           </div>
           <div className="space-y-2">
-            <Label>Interest Rate (% p.a.)</Label>
+            <Label htmlFor="interest-rate">Interest Rate (% p.a.)</Label>
             <Input
+              id="interest-rate"
               type="number"
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
               step="0.05"
+              aria-label="Interest Rate"
             />
           </div>
           <div className="space-y-2">
-            <Label>Loan Term (Years)</Label>
+            <Label htmlFor="loan-term">Loan Term (Years)</Label>
             <Input
+              id="loan-term"
               type="number"
               value={tenure}
               onChange={(e) => setTenure(Number(e.target.value))}
+              aria-label="Loan Term"
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Annual Property Tax</Label>
+              <Label htmlFor="property-tax">Annual Property Tax</Label>
               <Input
+                id="property-tax"
                 type="number"
                 value={propertyTax}
                 onChange={(e) => setPropertyTax(Number(e.target.value))}
                 step="100"
+                aria-label="Annual Property Tax"
               />
             </div>
             <div className="space-y-2">
-              <Label>Annual Home Insurance</Label>
+              <Label htmlFor="home-insurance">Annual Home Insurance</Label>
               <Input
+                id="home-insurance"
                 type="number"
                 value={homeInsurance}
                 onChange={(e) => setHomeInsurance(Number(e.target.value))}
                 step="50"
+                aria-label="Annual Home Insurance"
               />
             </div>
           </div>
         </CardContent>
       </Card>
-      <Card id="mortgage-results">
-        <CardHeader>
-          <CardTitle>Your Mortgage EMI</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center space-y-4" aria-live="polite">
-          <div>
-            <p className="text-sm text-muted-foreground">
-              Total Monthly Payment
-            </p>
-            <p className="text-4xl font-bold font-headline text-primary">
-              {formatCurrency(monthlyPayment)}
-            </p>
-          </div>
-          <div className="space-y-2 text-sm text-left border-t pt-2">
-            <div className="flex justify-between">
-              <p className="text-muted-foreground">Principal & Interest</p>
-              <p className="font-semibold">
-                {formatCurrency(principalAndInterest)}
+      <div role="status" aria-live="polite">
+        <Card id="mortgage-results">
+          <CardHeader>
+            <CardTitle>Your Mortgage EMI</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <div>
+              <p className="text-sm text-muted-foreground">
+                Total Monthly Payment
+              </p>
+              <p className="text-4xl font-bold font-headline text-primary">
+                {formatCurrency(monthlyPayment)}
               </p>
             </div>
-            <div className="flex justify-between">
-              <p className="text-muted-foreground">Property Tax</p>
-              <p className="font-semibold">{formatCurrency(monthlyTaxes)}</p>
+            <div className="space-y-2 text-sm text-left border-t pt-2">
+              <div className="flex justify-between">
+                <p className="text-muted-foreground">Principal & Interest</p>
+                <p className="font-semibold">
+                  {formatCurrency(principalAndInterest)}
+                </p>
+              </div>
+              <div className="flex justify-between">
+                <p className="text-muted-foreground">Property Tax</p>
+                <p className="font-semibold">{formatCurrency(monthlyTaxes)}</p>
+              </div>
+              <div className="flex justify-between">
+                <p className="text-muted-foreground">Home Insurance</p>
+                <p className="font-semibold">
+                  {formatCurrency(monthlyInsurance)}
+                </p>
+              </div>
             </div>
-            <div className="flex justify-between">
-              <p className="text-muted-foreground">Home Insurance</p>
-              <p className="font-semibold">
-                {formatCurrency(monthlyInsurance)}
-              </p>
+            <div className="space-y-2 text-sm text-left border-t pt-2">
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">
+                  Total Interest Paid:
+                </span>
+                <span className="font-semibold">
+                  {formatCurrency(totalInterest)}
+                </span>
+              </div>
+              <div className="flex justify-between font-bold">
+                <span className="text-muted-foreground">Total Payment:</span>
+                <span className="font-semibold">
+                  {formatCurrency(totalPayable)}
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="space-y-2 text-sm text-left border-t pt-2">
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">
-                Total Interest Paid:
-              </span>
-              <span className="font-semibold">
-                {formatCurrency(totalInterest)}
-              </span>
-            </div>
-            <div className="flex justify-between font-bold">
-              <span className="text-muted-foreground">Total Payment:</span>
-              <span className="font-semibold">
-                {formatCurrency(totalPayable)}
-              </span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
       <ExportShareControls
         elementIds={["mortgage-inputs", "mortgage-results"]}
         shareParams={shareParams}

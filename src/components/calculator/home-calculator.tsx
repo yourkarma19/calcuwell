@@ -9,7 +9,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 const ScientificCalculator = dynamic(
   () => import("@/components/calculator/scientific-calculator"),
   {
-    loading: () => <Skeleton className="w-full h-[640px] md:h-[672px] rounded-xl" />,
+    loading: () => <Skeleton className="w-full h-[560px] rounded-xl" />,
     ssr: false,
   },
 );

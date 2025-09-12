@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ArrowRight } from "lucide-react";
@@ -91,6 +90,7 @@ export default function PercentageCalculator() {
                   onChange={(e) => setValA(Number(e.target.value))}
                   placeholder="e.g. 10"
                   className="rounded-r-none"
+                  aria-label="Percentage value"
                 />
                 <span className="bg-muted text-muted-foreground h-10 flex items-center px-3 border border-input border-l-0 rounded-r-md">
                   %
@@ -106,6 +106,7 @@ export default function PercentageCalculator() {
                 value={valB}
                 onChange={(e) => setValB(Number(e.target.value))}
                 placeholder="e.g. 50"
+                aria-label="Base value"
               />
             </div>
           </div>
@@ -122,6 +123,7 @@ export default function PercentageCalculator() {
                 value={valA}
                 onChange={(e) => setValA(Number(e.target.value))}
                 placeholder="e.g. 5"
+                aria-label="Part value"
               />
             </div>
             <div className="space-y-2">
@@ -133,6 +135,7 @@ export default function PercentageCalculator() {
                 value={valB}
                 onChange={(e) => setValB(Number(e.target.value))}
                 placeholder="e.g. 50"
+                aria-label="Total value"
               />
             </div>
           </div>
@@ -149,6 +152,7 @@ export default function PercentageCalculator() {
                 value={valA}
                 onChange={(e) => setValA(Number(e.target.value))}
                 placeholder="e.g. 100"
+                aria-label="Initial value"
               />
             </div>
             <ArrowRight className="text-muted-foreground mt-7" />
@@ -161,6 +165,7 @@ export default function PercentageCalculator() {
                 value={valB}
                 onChange={(e) => setValB(Number(e.target.value))}
                 placeholder="e.g. 120"
+                aria-label="Final value"
               />
             </div>
           </div>
@@ -215,7 +220,11 @@ export default function PercentageCalculator() {
             </Select>
           </div>
           <div className="space-y-2 pt-4">{renderInputs()}</div>
-          <div id="result-container" className="pt-4 text-center" aria-live="polite">
+          <div
+            id="result-container"
+            className="pt-4 text-center"
+            aria-live="polite"
+          >
             <h3 className="text-lg font-semibold">Result</h3>
             {result !== null ? (
               <>
