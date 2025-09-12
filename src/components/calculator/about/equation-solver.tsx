@@ -52,7 +52,7 @@ export default function AboutEquationSolver() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Equation Solver</CardTitle>
+        <CardTitle as="h2">About the Equation Solver</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

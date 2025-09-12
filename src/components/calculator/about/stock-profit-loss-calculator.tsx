@@ -44,7 +44,7 @@ export default function AboutStockProfitLossCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Stock Profit/Loss Calculator</CardTitle>
+        <CardTitle as="h2">About the Stock Profit/Loss Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

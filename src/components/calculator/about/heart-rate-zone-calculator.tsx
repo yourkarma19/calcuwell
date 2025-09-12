@@ -1,6 +1,5 @@
 
 "use client";
-
 import {
   Accordion,
   AccordionContent,
@@ -53,7 +52,7 @@ export default function AboutHeartRateZoneCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Heart Rate Zones</CardTitle>
+        <CardTitle as="h2">About Heart Rate Zones</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

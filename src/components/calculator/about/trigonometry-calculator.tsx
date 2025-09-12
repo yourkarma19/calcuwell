@@ -44,7 +44,7 @@ export default function AboutTrigonometryCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Trigonometry</CardTitle>
+        <CardTitle as="h2">About Trigonometry</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

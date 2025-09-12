@@ -1,3 +1,4 @@
+
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -5,7 +6,7 @@ export default function AboutPetCareCostCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>The True Cost of Owning a Pet</CardTitle>
+        <CardTitle as="h2">The True Cost of Owning a Pet</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>

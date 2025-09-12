@@ -44,7 +44,7 @@ export default function AboutPregnancyDueDateCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Your Due Date</CardTitle>
+        <CardTitle as="h2">About Your Due Date</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

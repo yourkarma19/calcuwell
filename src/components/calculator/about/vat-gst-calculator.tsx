@@ -44,7 +44,7 @@ export default function AboutVatGstCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About VAT &amp; GST</CardTitle>
+        <CardTitle as="h2">About VAT &amp; GST</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

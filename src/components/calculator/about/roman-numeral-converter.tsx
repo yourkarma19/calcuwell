@@ -44,7 +44,7 @@ export default function AboutRomanNumeralConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Roman Numeral Converter</CardTitle>
+        <CardTitle as="h2">About the Roman Numeral Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

@@ -44,7 +44,7 @@ export default function AboutMixedNumberCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Mixed Numbers</CardTitle>
+        <CardTitle as="h2">About Mixed Numbers</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

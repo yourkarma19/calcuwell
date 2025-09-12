@@ -52,7 +52,7 @@ export default function AboutOvulationCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Ovulation &amp; Fertility</CardTitle>
+        <CardTitle as="h2">About Ovulation &amp; Fertility</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

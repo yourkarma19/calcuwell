@@ -1,6 +1,5 @@
 
 "use client";
-
 import Link from "next/link";
 import {
   Accordion,
@@ -46,7 +45,7 @@ export default function AboutWorkingDaysCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Working Days Calculator</CardTitle>
+        <CardTitle as="h2">About the Working Days Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

@@ -44,7 +44,7 @@ export default function AboutResistorColorCodeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Resistor Color Code Calculator</CardTitle>
+        <CardTitle as="h2">About the Resistor Color Code Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

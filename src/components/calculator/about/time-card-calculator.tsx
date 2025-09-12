@@ -44,7 +44,7 @@ export default function AboutTimeCardCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Time Card Calculator</CardTitle>
+        <CardTitle as="h2">About the Time Card Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

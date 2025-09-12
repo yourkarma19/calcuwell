@@ -52,7 +52,7 @@ export default function AboutRetirementCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Retirement Planning</CardTitle>
+        <CardTitle as="h2">About Retirement Planning</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

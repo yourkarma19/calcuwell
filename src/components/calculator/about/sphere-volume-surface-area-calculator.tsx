@@ -44,7 +44,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Sphere Calculator</CardTitle>
+        <CardTitle as="h2">About the Sphere Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

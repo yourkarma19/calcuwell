@@ -44,7 +44,7 @@ export default function AboutFractionCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Fraction Calculations</CardTitle>
+        <CardTitle as="h2">About Fraction Calculations</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

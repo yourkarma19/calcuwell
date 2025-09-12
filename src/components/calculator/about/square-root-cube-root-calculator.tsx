@@ -52,7 +52,7 @@ export default function AboutSquareRootCubeRootCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Root Calculator</CardTitle>
+        <CardTitle as="h2">About the Root Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

@@ -1,6 +1,5 @@
 
 "use client";
-
 import {
   Accordion,
   AccordionContent,
@@ -45,7 +44,7 @@ export default function AboutStandardDeviationCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Standard Deviation</CardTitle>
+        <CardTitle as="h2">About Standard Deviation</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

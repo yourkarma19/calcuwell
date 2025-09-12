@@ -36,7 +36,7 @@ export default function AboutTriangleAngleCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>How to Find Triangle Angles</CardTitle>
+        <CardTitle as="h2">How to Find Triangle Angles</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

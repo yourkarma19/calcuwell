@@ -44,7 +44,7 @@ export default function AboutPowerConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Power Conversion</CardTitle>
+        <CardTitle as="h2">About Power Conversion</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

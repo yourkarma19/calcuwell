@@ -36,7 +36,7 @@ export default function AboutPressureConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Pressure Units</CardTitle>
+        <CardTitle as="h2">About Pressure Units</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

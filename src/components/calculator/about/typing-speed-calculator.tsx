@@ -44,7 +44,7 @@ export default function AboutTypingSpeedCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Typing Speed Test</CardTitle>
+        <CardTitle as="h2">About the Typing Speed Test</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

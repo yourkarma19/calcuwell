@@ -44,7 +44,7 @@ export default function AboutTimeConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Time Converter</CardTitle>
+        <CardTitle as="h2">About the Time Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

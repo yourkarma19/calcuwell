@@ -52,7 +52,7 @@ export default function AboutRectangleAreaCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Rectangle Calculator</CardTitle>
+        <CardTitle as="h2">About the Rectangle Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
