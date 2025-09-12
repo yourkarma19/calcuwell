@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is it important to include commissions in a stock trade calculation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Commissions and other fees can significantly impact your profitability, especially on smaller trades. Forgetting to include them can make a trade look more profitable than it actually was. The total cost of an investment is the share price plus the buy commission.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Return on Investment (ROI)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Return on Investment (ROI) shows your net profit as a percentage of your total cost. It's a standard way to measure the performance of an investment, allowing you to compare the profitability of different trades on a like-for-like basis.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this calculator account for taxes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, this calculator does not account for capital gains taxes, which you may have to pay on your profits. Tax laws vary by country and depend on how long you held the stock. The profit shown here is the pre-tax profit.",
+      },
+    },
+  ],
+};
 
 export default function AboutStockProfitLossCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutStockProfitLossCalculator() {
         <CardTitle>About the Stock Profit/Loss Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Stock Profit/Loss Calculator is an essential tool for investors to
           determine the exact outcome of their stock trades. It goes beyond a
@@ -57,7 +94,7 @@ export default function AboutStockProfitLossCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Return on Investment (ROI) shows your net profit as a percentage
-              of your total cost. It&apos;s a standard way to measure the
+              of your total cost. It's a standard way to measure the
               performance of an investment, allowing you to compare the
               profitability of different trades on a like-for-like basis.
             </AccordionContent>

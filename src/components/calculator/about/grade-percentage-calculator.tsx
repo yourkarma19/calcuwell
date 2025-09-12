@@ -7,10 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is the percentage calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula is: Percentage = (Points Earned / Total Possible Points) * 100. This gives you the proportion of points you received out of the total available.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a standard grading scale?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A standard grading scale converts percentages to letter grades. A common scale is: 90%+=A, 80-89%=B, 70-79%=C, 60-69%=D, <60%=F. This calculator uses this standard scale.",
+      },
+    },
+  ],
+};
 
 export default function AboutGradePercentageCalculator() {
   return (
     <div className="space-y-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">About Grade Calculation</CardTitle>
@@ -21,7 +49,7 @@ export default function AboutGradePercentageCalculator() {
             a test, quiz, or assignment. By entering the points you earned and
             the total points possible, you can instantly see your performance as
             a percentage and its corresponding letter grade based on a standard
-            scale. It&apos;s a great way for students to track their progress
+            scale. It's a great way for students to track their progress
             and understand their grades.
           </p>
           <h3>How to Use This Grade Calculator</h3>

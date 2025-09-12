@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is it important to start saving early for retirement?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Starting early is the most powerful factor in retirement saving because of compound interest. The longer your money is invested, the more time it has to grow, with your earnings generating their own earnings. Even small, regular contributions can grow into a large sum over several decades.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the 4% Rule?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The 4% rule is a guideline suggesting you can safely withdraw 4% of your savings in your first year of retirement and then adjust that amount for inflation annually without running out of money for 30 years. This calculator uses it to estimate your savings goal.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a 'shortfall' in retirement planning?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A shortfall is the gap between your estimated savings at retirement and your required savings goal. If this calculator shows a shortfall, it means you may need to increase your contributions, work longer, or adjust your retirement income goal.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a realistic interest rate to assume for retirement savings?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A realistic long-term interest rate depends on your investment strategy. A conservative portfolio might earn 4-5%, while a more aggressive, stock-heavy portfolio has historically returned 7-10% annually on average, though with higher risk. It's often wise to use a more conservative estimate for planning.",
+      },
+    },
+  ],
+};
 
 export default function AboutRetirementCalculator() {
   return (
@@ -14,6 +55,10 @@ export default function AboutRetirementCalculator() {
         <CardTitle>About Retirement Planning</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Retirement Calculator</strong> is a crucial financial
           planning tool that helps you estimate whether you are on track to meet
@@ -93,7 +138,7 @@ export default function AboutRetirementCalculator() {
               A realistic long-term interest rate depends on your investment
               strategy. A conservative portfolio might earn 4-5%, while a more
               aggressive, stock-heavy portfolio has historically returned 7-10%
-              annually on average, though with higher risk. It&apos;s often wise
+              annually on average, though with higher risk. It's often wise
               to use a more conservative estimate for planning.
             </AccordionContent>
           </AccordionItem>

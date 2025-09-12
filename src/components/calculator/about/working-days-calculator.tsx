@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -7,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is calculating working days important for business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Calculating working days is crucial for accurate project planning, estimating delivery times, managing employee leave, and ensuring that contract deadlines are realistic. It removes the guesswork of manually counting days on a calendar.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this calculator account for public holidays?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, this calculator only excludes weekends (Saturday and Sunday). Public holidays vary significantly by country and region, so you should manually subtract any public holidays that fall within your calculated date range.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is this different from a Business Day Calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Business Day Calculator adds or subtracts a specific number of business days from a start date to find a future date. This Working Days Calculator, on the other hand, counts the total number of business days that fall between two given dates.",
+      },
+    },
+  ],
+};
 
 export default function AboutWorkingDaysCalculator() {
   return (
@@ -15,6 +48,10 @@ export default function AboutWorkingDaysCalculator() {
         <CardTitle>About the Working Days Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Working Days Calculator</strong> is a practical tool for
           professionals who need to plan projects, set deadlines, and manage

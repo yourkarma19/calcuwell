@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between VAT and GST?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Functionally, for the end consumer, there is very little difference. VAT (Value-Added Tax) and GST (Goods and Services Tax) are both forms of consumption tax. The name simply differs by country. This calculator can be used for either.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you calculate the tax amount from a gross price (price including tax)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To find the original price (Net Price) from a price that already includes tax (Gross Price), you use this formula: Net Price = Gross Price / (1 + (Tax Rate / 100)). The tax amount is then simply the Gross Price - Net Price.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is this calculator useful for businesses?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Businesses need to clearly separate the net price and the tax amount for accounting and tax filing purposes. This tool makes it easy to generate accurate invoices and keep financial records straight.",
+      },
+    },
+  ],
+};
 
 export default function AboutVatGstCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutVatGstCalculator() {
         <CardTitle>About VAT &amp; GST</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our VAT / GST Calculator is a key tool for consumers and business
           owners. It lets you quickly add or remove a sales tax from a price.
@@ -46,7 +83,7 @@ export default function AboutVatGstCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What&apos;s the difference between VAT and GST?
+              What's the difference between VAT and GST?
             </AccordionTrigger>
             <AccordionContent>
               <p>

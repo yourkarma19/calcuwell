@@ -80,7 +80,7 @@ export default function AboutCarLoanCalculator() {
         <p>
           The calculator will instantly display your monthly payment and show
           how the total cost is divided between the loan amount and the interest
-          you&apos;ll pay over time.
+          you'll pay over time.
         </p>
 
         <h3>Frequently Asked Questions (FAQs)</h3>
@@ -100,8 +100,8 @@ export default function AboutCarLoanCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The total cost of the car includes the principal loan amount, all
-              the interest paid over the loan&apos;s life, and any initial down
-              payment or trade-in value you provided. It&apos;s the complete
+              the interest paid over the loan's life, and any initial down
+              payment or trade-in value you provided. It's the complete
               out-of-pocket expense for the vehicle.
             </AccordionContent>
           </AccordionItem>

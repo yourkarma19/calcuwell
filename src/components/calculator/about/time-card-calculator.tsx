@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Gross Pay?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Gross pay is the total amount of money you earn before any deductions are subtracted. This calculator computes your gross pay. Your actual take-home pay (net pay) will be lower after taxes, insurance, and other deductions are taken out.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How are decimal hours calculated from minutes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This tool converts minutes into a decimal format for easy calculation. For example, 30 minutes is 0.5 hours (30/60), and 15 minutes is 0.25 hours (15/60). This allows for simple multiplication with your hourly rate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this calculator handle overtime?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, this is a basic time card calculator and does not automatically calculate overtime pay. To calculate overtime, you would need to manually separate your regular hours from your overtime hours and use our Overtime Pay Calculator.",
+      },
+    },
+  ],
+};
 
 export default function AboutTimeCardCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutTimeCardCalculator() {
         <CardTitle>About the Time Card Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Time Card Calculator is an essential tool for employees and
           employers to accurately track work hours and calculate gross pay for a

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the ISO 8601 standard for week numbers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The ISO 8601 standard is the international standard for week dates. In this system, weeks always start on a Monday. Week 1 of any year is the first week that contains a Thursday. This is the most common standard used in business across Europe and Asia.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do other week definitions work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Some regions, particularly in North America, consider Sunday to be the start of the week. In these systems, Week 1 is simply the week that contains January 1st.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why does the ISO week year sometimes differ from the calendar year?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Because the ISO week year is based on which year the majority of the week's days fall in, the first few days of January can sometimes belong to the last week of the previous year, and the last few days of December can belong to the first week of the next year.",
+      },
+    },
+  ],
+};
 
 export default function AboutWeekNumberCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutWeekNumberCalculator() {
         <CardTitle>About Week Number Calculation</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Week Number Calculator helps you find the week of the year for any
           given date. This can be useful for project planning, scheduling, and
@@ -63,7 +100,7 @@ export default function AboutWeekNumberCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Because the ISO week year is based on which year the majority of
-              the week&apos;s days fall in, the first few days of January can
+              the week's days fall in, the first few days of January can
               sometimes belong to the last week of the previous year, and the
               last few days of December can belong to the first week of the next
               year.

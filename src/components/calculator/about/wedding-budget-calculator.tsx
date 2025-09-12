@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the biggest wedding expenses?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Typically, the venue and catering are the largest parts of a wedding budget, often accounting for 50% or more of the total cost. The number of guests you invite has a direct impact on this, as catering is usually priced per person.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can we save money on our wedding?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There are many ways to save! Consider having your wedding on a weekday or during the off-season. Trimming the guest list is the most effective way to cut costs. You can also explore DIY options for decorations or choose a less formal catering style, like a buffet.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much should we budget for unexpected wedding costs?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's wise to set aside about 5-10% of your total budget as a contingency fund. This will help you cover any unexpected expenses that arise without adding stress. The 'Miscellaneous' category in our calculator can be used for this.",
+      },
+    },
+  ],
+};
 
 export default function AboutWeddingBudgetCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutWeddingBudgetCalculator() {
         <CardTitle as="h2">How to Plan Your Wedding Budget</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our **Wedding Budget Calculator** is designed to help you plan and
           manage the financial aspect of your special day. By breaking down the
@@ -71,7 +107,7 @@ export default function AboutWeddingBudgetCalculator() {
               How much should we budget for unexpected costs?
             </AccordionTrigger>
             <AccordionContent>
-              It&apos;s wise to set aside about 5-10% of your total budget as a
+              It's wise to set aside about 5-10% of your total budget as a
               contingency fund. This will help you cover any unexpected expenses
               that arise without adding stress. The &quot;Miscellaneous&quot;
               category in our calculator can be used for this.

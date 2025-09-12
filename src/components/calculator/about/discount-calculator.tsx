@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is the discount calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The amount saved is calculated by multiplying the original price by the discount percentage (in decimal form). The final price is then found by subtracting the saved amount from the original price. For example, for a ₹100 item with a 20% discount, you save ₹20 (100 * 0.20), and the final price is ₹80 (100 - 20).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What if there are multiple discounts?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If you have multiple discounts (e.g., 20% off, plus an additional 10% off), you cannot simply add them together (it's not 30% off). You must apply them sequentially. First, calculate the price after the 20% discount. Then, take that new, lower price and apply the 10% discount to it.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this include sales tax?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, this calculator does not include sales tax. The discount is typically applied to the pre-tax price of an item. Sales tax, if applicable, would be calculated on the final discounted price.",
+      },
+    },
+  ],
+};
 
 export default function AboutDiscountCalculator() {
   return (
@@ -14,10 +47,14 @@ export default function AboutDiscountCalculator() {
         <CardTitle>About the Discount Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Discount Calculator is a simple tool to help you figure out the
           final price of an item after a percentage-based discount is applied.
-          It&apos;s perfect for shoppers who want to quickly see the sale price
+          It's perfect for shoppers who want to quickly see the sale price
           and how much money they are saving during a sale.
         </p>
         <h3>How to Use the Calculator</h3>
@@ -26,7 +63,7 @@ export default function AboutDiscountCalculator() {
           <li>Use the slider to set the **Discount Percentage**.</li>
         </ol>
         <p>
-          The calculator will instantly show you the final price you&apos;ll pay
+          The calculator will instantly show you the final price you'll pay
           and the total amount you save.
         </p>
         <h3>Frequently Asked Questions (FAQs)</h3>
@@ -47,7 +84,7 @@ export default function AboutDiscountCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               If you have multiple discounts (e.g., 20% off, plus an additional
-              10% off), you cannot simply add them together (it&apos;s not 30%
+              10% off), you cannot simply add them together (it's not 30%
               off). You must apply them sequentially. First, calculate the price
               after the 20% discount. Then, take that new, lower price and apply
               the 10% discount to it.

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Debt-to-Income (DTI) Ratio?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Your DTI ratio is the percentage of your gross monthly income that goes toward paying your monthly debt payments. Lenders use it as a key metric to measure your ability to manage payments. A lower DTI ratio indicates a healthy balance between your debt and income.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I improve my DTI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There are two main ways: increase your income or reduce your monthly debt. To reduce debt, focus on paying down existing loans or credit card balances. It's also wise to avoid taking on new debt right before you apply for a major loan.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is this an official loan offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, this is an estimation tool for informational purposes only. The actual loan amount you qualify for may vary based on your credit score, employment history, and the specific policies of the lender. This tool should be used as a starting point for your financial planning.",
+      },
+    },
+  ],
+};
 
 export default function AboutLoanAffordabilityCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutLoanAffordabilityCalculator() {
         <CardTitle>About Loan Affordability</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Loan Affordability Calculator is a crucial first step for any
           prospective borrower. It helps you determine how much you can

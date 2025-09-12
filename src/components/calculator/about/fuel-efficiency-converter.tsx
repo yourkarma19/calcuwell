@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,30 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "MPG vs. L/100km: What's the Difference?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "MPG (Miles Per Gallon) measures distance per unit of fuel (higher is better). L/100km (Liters per 100 kilometers) measures fuel per unit of distance (lower is better). They have an inverse relationship.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is my car's real-world MPG different from the advertised rating?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Official ratings are achieved in controlled lab conditions. Real-world efficiency is affected by driving style, road conditions, tire pressure, vehicle load, and weather.",
+      },
+    },
+  ],
+};
 
 export default function AboutFuelEfficiencyConverter() {
   return (
@@ -14,11 +39,15 @@ export default function AboutFuelEfficiencyConverter() {
         <CardTitle>About Fuel Efficiency</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Fuel Efficiency Converter is a practical tool for car owners,
           travelers, and anyone interested in automotive metrics. It helps you
           translate between the two most common ways of measuring a
-          vehicle&apos;s fuel economy: **Miles per Gallon (MPG)** and **Liters
+          vehicle's fuel economy: **Miles per Gallon (MPG)** and **Liters
           per 100 kilometers (L/100km)**. Since different countries and
           manufacturers use different standards, this tool makes it easy to
           compare vehicles on a level playing field.
@@ -39,7 +68,7 @@ export default function AboutFuelEfficiencyConverter() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              MPG vs. L/100km: What&apos;s the Difference?
+              MPG vs. L/100km: What's the Difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -64,7 +93,7 @@ export default function AboutFuelEfficiencyConverter() {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              Why is my car&apos;s real-world MPG different from the advertised
+              Why is my car's real-world MPG different from the advertised
               rating?
             </AccordionTrigger>
             <AccordionContent>

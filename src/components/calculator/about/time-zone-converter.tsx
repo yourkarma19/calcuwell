@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,30 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is UTC (Coordinated Universal Time)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Coordinated Universal Time (UTC) is the primary time standard that the world uses to regulate clocks and time. It is not a time zone itself but is the basis for civil time and time zones worldwide. Time zones are often shown as an offset from UTC (e.g., UTC-5).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this time zone converter handle Daylight Saving Time (DST)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, this converter automatically handles Daylight Saving Time. It uses the international IANA Time Zone Database, which contains all historical and future DST rules for each timezone, ensuring the conversion is accurate.",
+      },
+    },
+  ],
+};
 
 export default function AboutTimeZoneConverter() {
   return (
@@ -14,6 +39,10 @@ export default function AboutTimeZoneConverter() {
         <CardTitle>About Time Zones</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Time Zone Converter is a key tool for anyone who works, travels,
           or communicates across different parts of the world. It ends the

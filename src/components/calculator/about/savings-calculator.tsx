@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import {
@@ -7,6 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does compound interest work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Compound interest is 'interest on interest.' It means that the interest you earn is added back to your principal, and then you earn interest on the new, larger amount. This causes your savings to grow at an accelerating rate over time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why are regular contributions so important for saving?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Consistent, regular contributions are the engine of your savings plan. Even small monthly deposits add up to a significant amount over many years. This strategy, known as dollar-cost averaging, helps you build wealth steadily.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a realistic interest rate to assume for savings?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A realistic rate depends on where you are saving or investing. A high-yield savings account might offer 1-3%, while a diversified stock market portfolio has historically returned an average of 7-10% annually over the long term, though with higher risk. It's often wise to use a conservative estimate for planning.",
+      },
+    },
+  ],
+};
 
 export default function AboutSavingsCalculator() {
   return (
@@ -15,19 +48,23 @@ export default function AboutSavingsCalculator() {
         <CardTitle>About the Savings Growth Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Savings Growth Calculator is a powerful financial tool that helps
           you visualize how your savings can grow over time. By factoring in
           your initial deposit, regular contributions, and the power of compound
           interest, this calculator provides a clear projection of your
-          financial future. It&apos;s an essential tool for anyone planning for
+          financial future. It's an essential tool for anyone planning for
           long-term goals like retirement, a home down payment, or a
-          child&apos;s education.
+          child's education.
         </p>
         <h3>How to Use the Calculator</h3>
         <ol>
           <li>
-            Enter your **Initial Amount** (what you&apos;re starting with).
+            Enter your **Initial Amount** (what you're starting with).
           </li>
           <li>Set your planned **Monthly Contribution**.</li>
           <li>
@@ -83,7 +120,7 @@ export default function AboutSavingsCalculator() {
               money. A high-yield savings account might offer 1-3%, while a
               diversified stock market portfolio has historically returned an
               average of 7-10% annually over the long term, though with higher
-              risk. It&apos;s often wise to use a conservative estimate for
+              risk. It's often wise to use a conservative estimate for
               planning.
             </AccordionContent>
           </AccordionItem>

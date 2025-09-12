@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a standard tip percentage?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tipping customs vary by country. In the United States, for example, a standard tip for restaurant service is typically between 15% and 20% of the pre-tax bill. 15% is often considered average, while 20% or more is for excellent service.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Should I tip on the pre-tax or post-tax amount?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It is customary to calculate the tip based on the subtotal of the bill, before sales tax is added. However, some people prefer to tip on the total amount for simplicity. This calculator calculates the tip based on the bill amount you enter.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the 'split the bill' feature work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The calculator first adds the tip amount to the total bill. It then divides that new total evenly by the number of people you specify. This gives you the exact amount each person needs to contribute.",
+      },
+    },
+  ],
+};
 
 export default function AboutTipCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutTipCalculator() {
         <CardTitle>About the Tip Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Tip Calculator is a simple and convenient tool for calculating the
           gratuity on a service bill and splitting the total cost among a group
@@ -25,7 +62,7 @@ export default function AboutTipCalculator() {
         <ol>
           <li>Enter the total **Bill Amount**.</li>
           <li>
-            Use the slider to select the **Tip Percentage** you&apos;d like to
+            Use the slider to select the **Tip Percentage** you'd like to
             leave.
           </li>
           <li>

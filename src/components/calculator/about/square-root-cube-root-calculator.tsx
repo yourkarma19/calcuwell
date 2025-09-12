@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a square root?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A square root of a number is a value that, when multiplied by itself, gives the original number. For example, the square root of 9 is 3, because 3 × 3 = 9.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a cube root?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A cube root of a number is a value that, when multiplied by itself three times, gives the original number. For example, the cube root of 27 is 3, because 3 × 3 × 3 = 27.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the root of a negative number?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can find the real cube root of a negative number (e.g., the cube root of -8 is -2). However, the square root of a negative number is an 'imaginary number,' which this calculator indicates with the symbol 'i'.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a 'perfect square'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A perfect square is an integer that is the square of another integer. For example, 4, 9, and 16 are perfect squares because they are 2², 3², and 4², respectively. Their square roots are whole numbers.",
+      },
+    },
+  ],
+};
 
 export default function AboutSquareRootCubeRootCalculator() {
   return (
@@ -14,6 +55,10 @@ export default function AboutSquareRootCubeRootCalculator() {
         <CardTitle>About the Root Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Square & Cube Root Calculator</strong> is a simple tool
           for performing two fundamental mathematical operations. It helps you
@@ -58,7 +103,7 @@ export default function AboutSquareRootCubeRootCalculator() {
               However, you cannot find a real square root for a negative number.
               The square root of a negative number is an &quot;imaginary
               number,&quot; which this calculator indicates with the symbol
-              &apos;i&apos;.
+              'i'.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">

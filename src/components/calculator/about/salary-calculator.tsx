@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between Gross and Net Salary?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Gross Salary is the total amount of money an employee earns before any taxes and other deductions are subtracted. Net Salary (or take-home pay) is the amount of money an employee receives after all deductions have been taken out.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is the tax rate an estimate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Income tax systems are often complex, with different tax brackets and rules. This calculator uses a single average tax rate for simplicity. Your actual tax rate may be different. This tool is intended for estimation purposes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are some common salary deductions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Common deductions from a salary include income tax, retirement plan contributions (like a 401(k) or pension), health insurance premiums, and other social security contributions depending on your country's regulations.",
+      },
+    },
+  ],
+};
 
 export default function AboutSalaryCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutSalaryCalculator() {
         <CardTitle>About the Salary Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Salary Calculator is a simple tool designed to help you understand
           your take-home pay. By entering your gross salary and any applicable
@@ -24,7 +61,7 @@ export default function AboutSalaryCalculator() {
         <h3>How to Use the Calculator</h3>
         <ol>
           <li>
-            Enter your **Gross Salary** and select whether it&apos;s an annual
+            Enter your **Gross Salary** and select whether it's an annual
             or monthly amount.
           </li>
           <li>
@@ -71,7 +108,7 @@ export default function AboutSalaryCalculator() {
               Common deductions from a salary include income tax, retirement
               plan contributions (like a 401(k) or pension), health insurance
               premiums, and other social security contributions depending on
-              your country&apos;s regulations.
+              your country's regulations.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

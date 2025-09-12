@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is the volume of a sphere calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The volume of a sphere is the total amount of space inside it. It is calculated using the formula V = (4/3) * π * r³, where 'r' is the radius of the sphere.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is the surface area of a sphere calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The surface area is the total area on the outer surface of the sphere. It is calculated with the formula A = 4 * π * r², where 'r' is the radius. This is the same area as four circles with the same radius.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between a sphere's radius and its diameter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The radius (r) is the distance from the center of the sphere to any point on its surface. The diameter (d) is the distance straight through the center of the sphere, from one side to the other. The diameter is always twice the length of the radius (d = 2r).",
+      },
+    },
+  ],
+};
 
 export default function AboutSphereVolumeSurfaceAreaCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
         <CardTitle>About the Sphere Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Sphere Calculator</strong> is a straightforward tool for
           computing the essential geometric properties of a sphere from a single
@@ -32,7 +69,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
         </ol>
         <p>
           The calculator will automatically compute and display the
-          sphere&apos;s volume, surface area, and diameter.
+          sphere's volume, surface area, and diameter.
         </p>
 
         <h3>Frequently Asked Questions (FAQs)</h3>
@@ -44,7 +81,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
             <AccordionContent>
               The volume of a sphere is the total amount of space inside it. It
               is calculated using the formula `V = (4/3) * π * r³`, where
-              &apos;r&apos; is the radius of the sphere and π (pi) is
+              'r' is the radius of the sphere and π (pi) is
               approximately 3.14159.
             </AccordionContent>
           </AccordionItem>
@@ -55,7 +92,7 @@ export default function AboutSphereVolumeSurfaceAreaCalculator() {
             <AccordionContent>
               The surface area is the total area on the outer surface of the
               sphere. It is calculated with the formula `A = 4 * π * r²`, where
-              &apos;r&apos; is the radius. An interesting fact is that this is
+              'r' is the radius. An interesting fact is that this is
               the same area as four circles with the same radius, or the area of
               the curved part of a cylinder that would perfectly enclose the
               sphere.

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -14,6 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import type { FAQPage, WithContext } from "schema-dts";
 
 const conversionChart = [
   { decimal: 0.0625, fraction: "1/16" },
@@ -33,9 +35,44 @@ const conversionChart = [
   { decimal: 0.9375, fraction: "15/16" },
 ];
 
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is precision important in these conversions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Precision determines the smallest fraction you are measuring to. For woodworking or machining, higher precision like 1/32\" is often necessary for accurate fits. For general measurements, a lower precision like 1/8\" or 1/4\" may be sufficient.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What fields use decimal to inch conversions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This conversion is crucial in many fields that use the Imperial system, including woodworking, construction, machining, and engineering. It allows for easy translation between digital plans (often in decimals) and physical measurements made with a tape measure.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you convert a number with feet and inches into a decimal?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To convert from feet and inches to a decimal, first convert the feet to inches (1 foot = 12 inches). Add this to the inch measurement. Then, if there is a fraction, convert it to a decimal by dividing the numerator by the denominator. Add this decimal to your total inches. For example, 2' 6 1/2\" becomes (2 * 12) + 6 + (1/2) = 24 + 6 + 0.5 = 30.5\".",
+      },
+    },
+  ],
+};
+
 export default function AboutDecimalToInchesCalculator() {
   return (
     <div className="space-y-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Card>
         <CardHeader>
           <CardTitle as="h2">
@@ -54,7 +91,7 @@ export default function AboutDecimalToInchesCalculator() {
             </li>
             <li>
               Multiply the decimal part by your desired denominator (e.g., 16
-              for a precision of 1/16&quot;). This result will be your
+              for a precision of 1/16"). This result will be your
               numerator.
             </li>
             <li>Place the numerator over the denominator.</li>
@@ -64,7 +101,7 @@ export default function AboutDecimalToInchesCalculator() {
             </li>
           </ol>
           <p>
-            <strong>Example: Convert 2.75 to the nearest 1/16&quot;</strong>
+            <strong>Example: Convert 2.75 to the nearest 1/16"</strong>
           </p>
           <ol>
             <li>
@@ -79,7 +116,7 @@ export default function AboutDecimalToInchesCalculator() {
               The GCD of 12 and 16 is 4. Simplify: `12 ÷ 4 / 16 ÷ 4 = 3/4`.
             </li>
             <li>
-              Combine the parts: <strong>2 3/4&quot;</strong>.
+              Combine the parts: <strong>2 3/4"</strong>.
             </li>
           </ol>
         </CardContent>
@@ -102,8 +139,8 @@ export default function AboutDecimalToInchesCalculator() {
             <TableBody>
               {conversionChart.map((item) => (
                 <TableRow key={item.decimal}>
-                  <TableCell>{item.decimal}&quot;</TableCell>
-                  <TableCell>{item.fraction}&quot;</TableCell>
+                  <TableCell>{item.decimal}"</TableCell>
+                  <TableCell>{item.fraction}"</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -123,9 +160,9 @@ export default function AboutDecimalToInchesCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 Precision determines the smallest fraction you are measuring to.
-                For woodworking or machining, higher precision like 1/32&quot;
+                For woodworking or machining, higher precision like 1/32"
                 is often necessary for accurate fits. For general measurements,
-                a lower precision like 1/8&quot; or 1/4&quot; may be sufficient.
+                a lower precision like 1/8" or 1/4" may be sufficient.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -149,8 +186,8 @@ export default function AboutDecimalToInchesCalculator() {
                 feet to inches (1 foot = 12 inches). Add this to the inch
                 measurement. Then, if there is a fraction, convert it to a
                 decimal by dividing the numerator by the denominator. Add this
-                decimal to your total inches. For example, 2&apos; 6 1/2&quot;
-                becomes (2 * 12) + 6 + (1/2) = 24 + 6 + 0.5 = 30.5&quot;.
+                decimal to your total inches. For example, 2' 6 1/2"
+                becomes (2 * 12) + 6 + (1/2) = 24 + 6 + 0.5 = 30.5".
               </AccordionContent>
             </AccordionItem>
           </Accordion>

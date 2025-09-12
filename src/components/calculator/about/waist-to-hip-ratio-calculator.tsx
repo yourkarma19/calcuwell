@@ -15,6 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import type { FAQPage, WithContext } from "schema-dts";
 
 const whrCategories = {
   male: [
@@ -29,6 +30,37 @@ const whrCategories = {
   ],
 };
 
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is Waist-to-Hip Ratio (WHR) important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "WHR is a simple way to see where you store body fat. People who store more fat around their waist ('apple' shape) may have a higher risk of health issues like heart disease and type 2 diabetes than those who store fat in their hips and thighs ('pear' shape).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is WHR better than BMI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "WHR and BMI measure different things. BMI is a general measure of weight to height, while WHR tells you about body shape and fat distribution. WHR can sometimes give a better idea of cardiovascular risk than BMI alone.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What do the health risk categories mean?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The risk categories (Low, Moderate, High) indicate your general level of risk for developing certain health conditions. If you are in the moderate or high-risk category, it may be a good idea to talk to a doctor about steps to improve your health.",
+      },
+    },
+  ],
+};
+
 export default function AboutWaistToHipRatioCalculator() {
   return (
     <div className="space-y-6">
@@ -37,6 +69,10 @@ export default function AboutWaistToHipRatioCalculator() {
           <CardTitle as="h2">About the Waist-to-Hip Ratio</CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <p>
             The Waist-to-Hip Ratio (WHR) is a simple measurement used to check
             for fat distribution. It can give you a general idea of your risk

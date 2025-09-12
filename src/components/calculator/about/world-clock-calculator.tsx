@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does the World Clock handle Daylight Saving Time (DST)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This tool uses the international IANA Time Zone Database, which is updated with the correct Daylight Saving Time rules for each location. By leveraging this database, the displayed times are accurate year-round, automatically adjusting for regions that observe DST.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a time zone?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A time zone is a region of the globe that observes a uniform standard time. For convenience, time zones tend to follow the boundaries of countries. Most are offset from Coordinated Universal Time (UTC) by a whole number of hours.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is UTC?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Coordinated Universal Time (UTC) is the primary time standard by which the world regulates clocks and time. It is the reference point from which all other time zones are calculated and is the successor to Greenwich Mean Time (GMT).",
+      },
+    },
+  ],
+};
 
 export default function AboutWorldClock() {
   return (
@@ -15,6 +47,10 @@ export default function AboutWorldClock() {
         <CardTitle as="h2">About the World Clock</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The World Clock is a tool that displays the current local time and
           date for a selection of major cities across the globe. It is essential

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a standard overtime rate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The most common overtime rate is 'time and a half,' which means your overtime pay is 1.5 times your regular hourly rate. Some jobs or holidays may offer 'double time,' which is 2 times your regular rate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this calculator include taxes or deductions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, this calculator calculates your gross pay, which is your total earnings before any taxes or other deductions are subtracted. Your actual take-home pay will be lower.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "When does overtime typically start?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This varies by country and company policy, but a common standard is that overtime applies to any hours worked beyond 40 hours in a single week.",
+      },
+    },
+  ],
+};
 
 export default function AboutOvertimePayCalculator() {
   return (
@@ -14,11 +47,15 @@ export default function AboutOvertimePayCalculator() {
         <CardTitle>About the Overtime Pay Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Overtime Pay Calculator helps you determine your total earnings
           for a pay period, including both your regular hours and any overtime
           hours worked. It allows you to adjust the overtime multiplier to match
-          your company&apos;s policy, giving you an accurate estimate of your
+          your company's policy, giving you an accurate estimate of your
           gross pay.
         </p>
         <h3>How to Use the Calculator</h3>

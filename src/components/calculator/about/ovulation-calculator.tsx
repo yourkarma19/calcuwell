@@ -1,5 +1,5 @@
-"use client";
 
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is ovulation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ovulation is the part of the female menstrual cycle when a mature egg is released from an ovary. This typically happens about 12 to 14 days before the start of the next menstrual period.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a fertile window?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The fertile window is the time in your menstrual cycle when pregnancy is possible. It typically includes the five days leading up to ovulation and the day of ovulation itself. Sperm can survive in the female reproductive tract for up to five days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How accurate is this ovulation calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This calculator provides an estimate based on average cycle data. Individual cycles can vary due to factors like stress or diet. For more accuracy, consider tracking basal body temperature or using ovulation predictor kits (OPKs).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "My cycle is irregular. Can I still use this calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If your cycle is irregular, prediction is more challenging. It's best to use your average cycle length over the last several months. However, for irregular cycles, other methods like ovulation predictor kits may be more reliable. Always consult a healthcare provider for personalized advice.",
+      },
+    },
+  ],
+};
 
 export default function AboutOvulationCalculator() {
   return (
@@ -15,6 +55,10 @@ export default function AboutOvulationCalculator() {
         <CardTitle>About Ovulation &amp; Fertility</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our **Ovulation Calculator** is a simple tool designed to help you
           predict your most fertile days based on your menstrual cycle. By
@@ -77,7 +121,7 @@ export default function AboutOvulationCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               If your cycle is irregular, prediction can be more challenging.
-              It&apos;s best to calculate your average cycle length over the
+              It's best to calculate your average cycle length over the
               last several months to use in the calculator. However, for
               irregular cycles, other methods like ovulation predictor kits may
               provide more reliable results. Always consult a healthcare

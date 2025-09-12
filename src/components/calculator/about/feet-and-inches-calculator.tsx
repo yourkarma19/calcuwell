@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you multiply feet and inches?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The easiest way is to convert both measurements entirely into inches, multiply them, and then convert the result back to feet and inches. Note that multiplying two length measurements results in an area (square inches).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you convert decimal inches to fractions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To convert a decimal to a fraction, you can use a conversion chart or a calculator. For example, 0.5 inches is 1/2\", 0.25 inches is 1/4\", and 0.75 inches is 3/4\". This is common for woodworking and other precise crafts.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How many inches are in a foot?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There are exactly 12 inches in one foot.",
+      },
+    },
+  ],
+};
 
 export default function AboutFeetAndInchesCalculator() {
   return (
@@ -15,37 +47,41 @@ export default function AboutFeetAndInchesCalculator() {
         <CardTitle as="h2">Working with Feet and Inches</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <h3>How to Use the Feet and Inches Calculator</h3>
         <ol>
           <li>
-            Enter your first measurement in the &apos;Feet&apos; and
-            &apos;Inches&apos; boxes.
+            Enter your first measurement in the 'Feet' and
+            'Inches' boxes.
           </li>
           <li>
             Select the operation you want to perform (Add, Subtract, Multiply,
             or Divide).
           </li>
           <li>Enter your second measurement.</li>
-          <li>Click the &apos;Calculate&apos; button to see the result.</li>
+          <li>Click the 'Calculate' button to see the result.</li>
         </ol>
 
         <h3>Example: How to Add Feet and Inches Manually</h3>
-        <p>Let&apos;s add 5&apos; 7&quot; + 2&apos; 10&quot;:</p>
+        <p>Let's add 5' 7" + 2' 10":</p>
         <ol>
           <li>
-            <strong>Add the inches:</strong> 7&quot; + 10&quot; = 17&quot;.
+            <strong>Add the inches:</strong> 7" + 10" = 17".
           </li>
           <li>
             <strong>Convert excess inches to feet:</strong> Since there are 12
-            inches in a foot, 17&quot; becomes 1 foot and 5 inches.
+            inches in a foot, 17" becomes 1 foot and 5 inches.
           </li>
           <li>
-            <strong>Add the feet:</strong> 5&apos; + 2&apos; + 1&apos; (from the
-            inches conversion) = 8&apos;.
+            <strong>Add the feet:</strong> 5' + 2' + 1' (from the
+            inches conversion) = 8'.
           </li>
           <li>
-            <strong>Combine the results:</strong> The final answer is 8&apos;
-            5&quot;.
+            <strong>Combine the results:</strong> The final answer is 8'
+            5".
           </li>
         </ol>
 
@@ -89,8 +125,8 @@ export default function AboutFeetAndInchesCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               To convert a decimal to a fraction, you can use a conversion chart
-              or a calculator. For example, 0.5 inches is 1/2&quot;, 0.25 inches
-              is 1/4&quot;, and 0.75 inches is 3/4&quot;. This is common for
+              or a calculator. For example, 0.5 inches is 1/2", 0.25 inches
+              is 1/4", and 0.75 inches is 3/4". This is common for
               woodworking and other precise crafts.
             </AccordionContent>
           </AccordionItem>

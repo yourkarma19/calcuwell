@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why does it take so long to pay off credit card debt?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Credit card interest is compounded, meaning you pay interest on your interest. Because APRs are typically high, making only the minimum payment can result in a very long payoff period and a large amount of total interest paid.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens if my monthly payment is too low?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If your monthly payment is less than or equal to the interest that accrues each month, you will never pay off the debt. The calculator will show an error in this case, indicating you need to increase your payment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I pay off my debt faster?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The most effective way is to pay more than the minimum payment each month. Even small extra payments can significantly reduce the time and total interest. You can also look into balance transfer cards with a 0% introductory APR or debt consolidation loans to lower your interest rate.",
+      },
+    },
+  ],
+};
 
 export default function AboutCreditCardPayoffCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutCreditCardPayoffCalculator() {
         <CardTitle>About the Credit Card Payoff Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Credit Card Payoff Calculator helps you understand how long it
           will take to pay off your credit card balance based on your current
@@ -24,7 +61,7 @@ export default function AboutCreditCardPayoffCalculator() {
         <h3>How to Use the Calculator</h3>
         <ol>
           <li>Enter your current **Card Balance**.</li>
-          <li>Input your card&apos;s annual interest rate (**APR**).</li>
+          <li>Input your card's annual interest rate (**APR**).</li>
           <li>Enter your planned **Monthly Payment**.</li>
         </ol>
         <p>

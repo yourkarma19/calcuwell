@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does an exponent mean?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An exponent indicates how many times to multiply a number (the base) by itself. For example, in 2⁴, the base is 2 and the exponent is 4. This means 2 × 2 × 2 × 2 = 16.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What about negative exponents?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A negative exponent means to take the reciprocal of the base raised to the positive exponent. The formula is x⁻ⁿ = 1 / xⁿ. For example, 2⁻³ is the same as 1 / 2³, which equals 1/8 or 0.125.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What about fractional exponents?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A fractional exponent like x¹/ⁿ is another way of writing a root. For example, 9¹/² is the same as the square root of 9 (√9), which is 3. Similarly, 8¹/³ is the cube root of 8 (∛8), which is 2.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is an exponent of zero?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Any non-zero number raised to the power of zero is equal to 1. For example, 5⁰ = 1. This rule is a fundamental property of exponents.",
+      },
+    },
+  ],
+};
 
 export default function AboutExponentPowerCalculator() {
   return (
@@ -14,6 +55,10 @@ export default function AboutExponentPowerCalculator() {
         <CardTitle>About Exponents &amp; Powers</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Exponent &amp; Power Calculator</strong> is a fundamental
           mathematical tool that helps you compute the result of a number raised
