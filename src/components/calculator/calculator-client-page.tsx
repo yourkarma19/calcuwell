@@ -15,12 +15,9 @@ export default function CalculatorClientPage({
 }: CalculatorClientPageProps) {
   const [aboutProps, setAboutProps] = useState({});
 
-  if (calculator.slug === 'sip-calculator') {
-     return (
-      <CalculatorWrapper
-        calculator={calculator}
-        sidebar={null}
-      >
+  if (calculator.slug === "sip-calculator") {
+    return (
+      <CalculatorWrapper calculator={calculator} sidebar={null}>
         <CalculatorLoader
           slug={calculator.slug}
           setAboutProps={setAboutProps}
@@ -33,7 +30,9 @@ export default function CalculatorClientPage({
   return (
     <CalculatorWrapper
       calculator={calculator}
-      sidebar={<CalculatorContent slug={`about/${calculator.slug}`} {...aboutProps} />}
+      sidebar={
+        <CalculatorContent slug={`about/${calculator.slug}`} {...aboutProps} />
+      }
     >
       <CalculatorLoader
         slug={calculator.slug}
