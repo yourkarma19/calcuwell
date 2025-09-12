@@ -10,11 +10,12 @@ function usePersistentState<T>(
 ): [T, Dispatch<SetStateAction<T>>] {
   const [state, setState] = useState<T>(() => {
     try {
-      const item =
-        typeof window !== "undefined" ? window.localStorage.getItem(key) : null;
-      if (item) {
-        const parsed = JSON.parse(item);
-        return reviver ? reviver(parsed) : parsed;
+      if (typeof window !== "undefined") {
+        const item = window.localStorage.getItem(key);
+        if (item) {
+          const parsed = JSON.parse(item);
+          return reviver ? reviver(parsed) : parsed;
+        }
       }
     } catch (error) {
       console.error(`Error reading localStorage key “${key}”:`, error);
@@ -24,8 +25,10 @@ function usePersistentState<T>(
 
   useEffect(() => {
     try {
-      const serializedState = JSON.stringify(state);
-      window.localStorage.setItem(key, serializedState);
+      if (typeof window !== "undefined") {
+        const serializedState = JSON.stringify(state);
+        window.localStorage.setItem(key, serializedState);
+      }
     } catch (error) {
       console.error(`Error setting localStorage key “${key}”:`, error);
     }
