@@ -47,7 +47,7 @@ export default function AboutPage() {
             With a background in software development and a passion for making
             complex financial and health topics accessible, Alex created CalcPro
             to empower users to make informed decisions. Alex believes that
-            everyone should have access to high-quality, easy-to-use tools to
+            everyone should have access to high-quality, easy-to-use, tools to
             navigate the numbers in their daily lives.
           </p>
         </div>
