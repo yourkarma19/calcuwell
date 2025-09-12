@@ -58,7 +58,7 @@ export default function AboutBase64Converter() {
           sent over systems designed to handle only text. You can also decode
           Base64 strings back to their original form.
         </p>
-        <h2>How to Use the Base64 Converter</h2>
+        <h3>How to Use the Base64 Converter</h3>
         <ol>
           <li>
             Enter the text or data you want to convert into the top input box.
@@ -73,7 +73,7 @@ export default function AboutBase64Converter() {
           </li>
         </ol>
         <p>The result will appear in the bottom box instantly.</p>
-        <h2>Base64 Converter FAQs</h2>
+        <h3>Base64 Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

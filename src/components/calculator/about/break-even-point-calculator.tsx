@@ -44,7 +44,7 @@ export default function AboutBreakEvenPointCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Break-Even Point Calculator</CardTitle>
+        <CardTitle as="h2">About the Break-Even Point Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

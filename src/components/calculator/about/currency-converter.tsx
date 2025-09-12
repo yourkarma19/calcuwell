@@ -44,7 +44,7 @@ export default function AboutCurrencyConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Currency Converter</CardTitle>
+        <CardTitle as="h2">About the Currency Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

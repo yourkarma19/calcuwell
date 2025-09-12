@@ -44,7 +44,7 @@ export default function AboutCountdownTimer() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Countdown Timer</CardTitle>
+        <CardTitle as="h2">About the Countdown Timer</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

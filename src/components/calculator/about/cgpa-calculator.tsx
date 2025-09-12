@@ -44,14 +44,14 @@ export default function AboutCgpaCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the CGPA Calculator</CardTitle>
+        <CardTitle as="h2">About the CGPA Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <h2>What is CGPA?</h2>
+        <h3>What is CGPA?</h3>
         <p>
           CGPA stands for <strong>Cumulative Grade Point Average</strong>. It is
           a weighted average of the grades you have received in all semesters up
@@ -59,7 +59,7 @@ export default function AboutCgpaCalculator() {
           academic performance throughout your entire course.
         </p>
 
-        <h2>How to Use the CGPA Calculator</h2>
+        <h3>How to Use the CGPA Calculator</h3>
         <p>To calculate your CGPA with our tool, follow these simple steps:</p>
         <ol>
           <li>
@@ -77,7 +77,7 @@ export default function AboutCgpaCalculator() {
           </li>
         </ol>
 
-        <h2>The Formula for Calculating CGPA</h2>
+        <h3>The Formula for Calculating CGPA</h3>
         <p>The CGPA is calculated using the following formula:</p>
         <p className="font-mono bg-muted p-2 rounded-md text-center my-2">
           CGPA = Σ (Semester Credits × Semester SGPA) / Σ (Total Credits)
@@ -88,7 +88,7 @@ export default function AboutCgpaCalculator() {
           total number of credits you have taken.
         </p>
 
-        <h3>Example Calculation</h3>
+        <h4>Example Calculation</h4>
         <p>Let&apos;s say a student has the following grades:</p>
         <ul>
           <li>Semester 1: 20 Credits, 8.5 SGPA</li>
@@ -102,7 +102,7 @@ export default function AboutCgpaCalculator() {
           The student&apos;s CGPA after two semesters is <strong>8.76</strong>.
         </p>
 
-        <h2>Why is Your CGPA Important?</h2>
+        <h3>Why is Your CGPA Important?</h3>
         <p>
           Your CGPA is a key indicator of your academic performance and is often
           used by:

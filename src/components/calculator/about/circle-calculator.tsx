@@ -44,7 +44,7 @@ export default function AboutCircleCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Circle Formulas</CardTitle>
+        <CardTitle as="h2">About Circle Formulas</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

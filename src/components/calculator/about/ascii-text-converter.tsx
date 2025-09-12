@@ -59,7 +59,7 @@ export default function AboutAsciiTextConverter() {
           value. This is useful for debugging data, understanding character
           codes, or for school work.
         </p>
-        <h2>How to Use the ASCII Converter</h2>
+        <h3>How to Use the ASCII Converter</h3>
         <p>The converter works in both directions at the same time:</p>
         <ol>
           <li>
@@ -73,7 +73,7 @@ export default function AboutAsciiTextConverter() {
             &quot;Text&quot; box.
           </li>
         </ol>
-        <h2>ASCII Converter FAQs</h2>
+        <h3>ASCII Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is ASCII?</AccordionTrigger>

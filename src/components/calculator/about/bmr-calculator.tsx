@@ -80,14 +80,14 @@ export default function AboutBmrCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Basal Metabolic Rate (BMR)</CardTitle>
+        <CardTitle as="h2">About Basal Metabolic Rate (BMR)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <h2>What is BMR? A Simple Explanation</h2>
+        <h3>What is BMR? A Simple Explanation</h3>
         <p>
           Your <strong>Basal Metabolic Rate (BMR)</strong> is the number of
           calories your body needs to accomplish its most basic, life-sustaining
@@ -96,7 +96,7 @@ export default function AboutBmrCalculator() {
           circulation, cell production, and nutrient processing.
         </p>
 
-        <h2>BMR Formulas Explained</h2>
+        <h3>BMR Formulas Explained</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
@@ -144,7 +144,7 @@ export default function AboutBmrCalculator() {
           </AccordionItem>
         </Accordion>
 
-        <h2 className="mt-6">BMR vs. TDEE - What's the Difference?</h2>
+        <h3 className="mt-6">BMR vs. TDEE - What's the Difference?</h3>
         <p>
           This is a crucial concept. BMR is your baseline, but to understand
           your total daily calorie needs, you need to know your TDEE.
@@ -179,7 +179,7 @@ export default function AboutBmrCalculator() {
           </TableBody>
         </Table>
 
-        <h2 className="mt-6">How to Use Your BMR for Weight Loss or Fitness</h2>
+        <h3 className="mt-6">How to Use Your BMR for Weight Loss or Fitness</h3>
         <p>
           Your TDEE (not just your BMR) is the key number for managing your
           weight. To lose weight, you need to consume fewer calories than your

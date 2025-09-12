@@ -44,7 +44,7 @@ export default function AboutAngleConverter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Angle Converter</CardTitle>
+        <CardTitle as="h2">About the Angle Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

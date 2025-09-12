@@ -44,7 +44,7 @@ export default function AboutCrcHashGenerator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the CRC-32 Hash Generator</CardTitle>
+        <CardTitle as="h2">About the CRC-32 Hash Generator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

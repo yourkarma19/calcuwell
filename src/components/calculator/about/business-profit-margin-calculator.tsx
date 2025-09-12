@@ -44,7 +44,7 @@ export default function AboutBusinessProfitMarginCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Profit Margins</CardTitle>
+        <CardTitle as="h2">About Profit Margins</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

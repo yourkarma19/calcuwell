@@ -45,7 +45,7 @@ export default function AboutConeVolumeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Cone Calculator</CardTitle>
+        <CardTitle as="h2">About the Cone Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

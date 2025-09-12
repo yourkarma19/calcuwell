@@ -36,7 +36,7 @@ export default function AboutBeamDeflectionCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Beam Deflection</CardTitle>
+        <CardTitle as="h2">About Beam Deflection</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

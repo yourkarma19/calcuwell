@@ -45,7 +45,7 @@ export default function AboutCylinderVolumeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Cylinder Calculator</CardTitle>
+        <CardTitle as="h2">About the Cylinder Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

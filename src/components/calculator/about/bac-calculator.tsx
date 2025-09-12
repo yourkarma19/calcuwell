@@ -45,7 +45,7 @@ export default function AboutBacCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Blood Alcohol Content (BAC)</CardTitle>
+        <CardTitle as="h2">About Blood Alcohol Content (BAC)</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

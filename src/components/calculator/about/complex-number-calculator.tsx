@@ -58,14 +58,14 @@ export default function AboutComplexNumberCalculator() {
           subtract, multiply, and divide them.
         </p>
 
-        <h2>How to Use It</h2>
+        <h3>How to Use It</h3>
         <p>
           A complex number has two parts: a real part and an imaginary part.
           Enter the two parts for both numbers you want to use. Then, select the
           operation you want to perform.
         </p>
 
-        <h2>Frequently Asked Questions</h2>
+        <h3>Frequently Asked Questions</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a complex number?</AccordionTrigger>

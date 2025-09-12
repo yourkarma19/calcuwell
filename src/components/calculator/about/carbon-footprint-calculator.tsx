@@ -44,7 +44,7 @@ export default function AboutCarbonFootprintCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Understanding Your Carbon Footprint</CardTitle>
+        <CardTitle as="h2">Understanding Your Carbon Footprint</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script

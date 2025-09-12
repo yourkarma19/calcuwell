@@ -53,7 +53,7 @@ export default function AboutBinaryConverter() {
           (base-8). Understanding these systems is fundamental to working with
           computers at a low level.
         </p>
-        <h2>How to Use the Calculator</h2>
+        <h3>How to Use the Calculator</h3>
         <ol>
           <li>Enter a value in the &quot;From&quot; field.</li>
           <li>
@@ -69,7 +69,7 @@ export default function AboutBinaryConverter() {
           to ensure it is valid for the selected base (e.g., binary only accepts
           0s and 1s).
         </p>
-        <h2>Frequently Asked Questions (FAQs)</h2>
+        <h3>Frequently Asked Questions (FAQs)</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>

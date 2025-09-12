@@ -44,7 +44,7 @@ export default function AboutBusinessDayCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About Business Days</CardTitle>
+        <CardTitle as="h2">About Business Days</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
