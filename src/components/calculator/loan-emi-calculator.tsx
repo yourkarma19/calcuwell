@@ -16,12 +16,13 @@ import {
   calculateEMIWithExtraPayments,
 } from "@/lib/math/loan-emi";
 import { formatCurrency } from "@/lib/utils";
+import PlaceholderCalculator from "./placeholder-calculator";
 
 const LoanBreakdownChart = dynamic(
   () => import("@/components/charts/loan-breakdown-chart"),
   {
     ssr: false,
-    loading: () => <Skeleton className="w-full h-[25rem]" />,
+    loading: () => <Skeleton className="w-full h-[250px]" />,
   },
 );
 

@@ -11,12 +11,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
+import PlaceholderCalculator from "./placeholder-calculator";
 
 const MortgageBreakdownChart = dynamic(
   () => import("@/components/charts/mortgage-breakdown-chart"),
   {
     ssr: false,
-    loading: () => <Skeleton className="w-full h-[25rem]" />,
+    loading: () => <Skeleton className="w-full h-[250px]" />,
   },
 );
 
