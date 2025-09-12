@@ -34,7 +34,7 @@ export default function AboutBMICalculator() {
           <p>
             The <strong>Body Mass Index (BMI)</strong> is a widely used measure
             to gauge whether your weight is healthy in proportion to your
-            height. It&apos;s a simple screening tool that can help identify
+            height. It's a simple screening tool that can help identify
             potential weight-related health issues for adults. Our calculator
             makes it easy to find your BMI using either metric or imperial
             units.
