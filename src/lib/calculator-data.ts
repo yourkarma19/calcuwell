@@ -1,3 +1,4 @@
+
 import type { Calculator } from "@/lib/types";
 
 // This file is separate to avoid bloating the initial bundle of pages
@@ -23,6 +24,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Calculate the future value of your Systematic Investment Plan (SIP).",
     category: "Finance",
     iconName: "TrendingUp",
+    seoTitle: "SIP Calculator for Indian Investors | CalcPro",
     metaDescription:
       "Estimate the future value of your SIP investments. Enter your monthly investment, expected return rate, and tenure to see how your money can grow.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
@@ -35,6 +37,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Calculate your Cumulative Grade Point Average from semester grades.",
     category: "Education",
     iconName: "GraduationCap",
+    seoTitle: "CGPA Calculator (SGPA to CGPA) | CalcPro",
     metaDescription:
       "Accurately calculate your CGPA by entering your semester GPAs and credits. A simple tool for all students to track academic performance.",
     formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Total Creditsᵢ)",
@@ -410,6 +413,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your Equated Monthly Installment.",
     category: "Finance",
     iconName: "Landmark",
+    seoTitle: "Loan EMI Calculator with Prepayments | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans.",
@@ -429,6 +433,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Estimate your monthly mortgage payments.",
     category: "Finance",
     iconName: "House",
+    seoTitle: "Mortgage Calculator with PITI & Amortization | CalcPro",
     formula: "P * r * (1+r)^n / ((1+r)^n - 1)",
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
@@ -579,6 +584,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate your Body Mass Index.",
     category: "Health",
     iconName: "HeartPulse",
+    seoTitle: "BMI Calculator for Adults (Metric & Imperial) | CalcPro",
     formula: "weight (kg) / (height (m) * height (m))",
     tags: ["health", "fitness", "weight", "body mass index"],
     metaDescription:
@@ -590,6 +596,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate Your Basal Metabolic Rate.",
     category: "Health",
     iconName: "Scale",
+    seoTitle: "Accurate BMR Calculator (Mifflin-St Jeor) | CalcPro",
     formula:
       "Mifflin-St Jeor: 10*weight(kg) + 6.25*height(cm) - 5*age + (gender==='male' ? 5 : -161)",
     metaDescription:
@@ -788,6 +795,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Calculate age from date of birth.",
     category: "Date & Time",
     iconName: "CalendarClock",
+    seoTitle: "Age Calculator: Find Your Age in Years, Months, Days | CalcPro",
     formula: "Current Date - Date of Birth",
     metaDescription:
       "Find your exact age in years, months, and days with our online age calculator. Simply enter your date of birth to get your age.",
