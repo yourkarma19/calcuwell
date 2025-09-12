@@ -45,5 +45,3 @@ export async function searchCalculators(
   const results = fuse.search(query);
   return results.map((result) => result.item);
 }
-
-    

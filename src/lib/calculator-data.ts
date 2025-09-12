@@ -1210,7 +1210,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     iconName: "Triangle",
     seoTitle: "Trigonometry Calculator (Sin, Cos, Tan) | CalcPro",
     metaDescription:
-      "A free trig calculator to find sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.",
+      "A free trig calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.",
     lastUpdated: "2024-07-31",
   },
   {
@@ -1342,3 +1342,4 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     
 
     
+
