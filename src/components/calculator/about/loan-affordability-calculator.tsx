@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -23,7 +22,7 @@ const jsonLd: WithContext<FAQPage> = {
     },
     {
       "@type": "Question",
-      name: "How can I improve my DTI?",
+      name: "How can I improve my Debt-to-Income (DTI) ratio?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "There are two main ways: increase your income or reduce your monthly debt. To reduce debt, focus on paying down existing loans or credit card balances. It's also wise to avoid taking on new debt right before you apply for a major loan.",
@@ -31,7 +30,7 @@ const jsonLd: WithContext<FAQPage> = {
     },
     {
       "@type": "Question",
-      name: "Is this an official loan offer?",
+      name: "Is this calculator an official loan offer?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "No, this is an estimation tool for informational purposes only. The actual loan amount you qualify for may vary based on your credit score, employment history, and the specific policies of the lender. This tool should be used as a starting point for your financial planning.",

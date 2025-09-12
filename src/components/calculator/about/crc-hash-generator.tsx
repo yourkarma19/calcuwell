@@ -6,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is CRC (Cyclic Redundancy Check)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "CRC is a method used to detect accidental errors in digital data. It runs a calculation on a block of data and produces a short, fixed-length number called a checksum. If the two checksums match when the data is moved or read, the data is almost certainly error-free.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is CRC a form of security or encryption?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. CRC is great at catching accidental errors (like from network noise), but it is not secure against intentional changes. For security against tampering, you need a cryptographic hash like SHA-256.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is CRC-32 used?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "CRC-32 is common in file formats (ZIP, PNG) to check for corruption, networking (Ethernet, Wi-Fi) to ensure data packets are intact, and storage (hard drives) to detect errors.",
+      },
+    },
+  ],
+};
 
 export default function AboutCrcHashGenerator() {
   return (
@@ -14,6 +46,10 @@ export default function AboutCrcHashGenerator() {
         <CardTitle>About the CRC-32 Hash Generator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           This tool creates a <strong>CRC-32 checksum</strong> for any text you
           enter. Think of a checksum as a unique fingerprint for your data.

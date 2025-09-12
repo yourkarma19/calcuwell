@@ -6,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is an exchange rate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An exchange rate is the value of one currency when converting to another. For example, if the USD to INR exchange rate is 83, it means 1 US Dollar is worth 83 Indian Rupees.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why do currency exchange rates change?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Exchange rates change all the time because of many economic and political factors. These include inflation, interest rates, trade balances, and economic performance.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does 'mock data' mean for this currency converter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The exchange rates in this calculator are for demonstration purposes only. They are not real-time market values and should not be used for actual financial trades. For real trades, always check with a bank or a verified currency exchange service.",
+      },
+    },
+  ],
+};
 
 export default function AboutCurrencyConverter() {
   return (
@@ -14,6 +46,10 @@ export default function AboutCurrencyConverter() {
         <CardTitle>About the Currency Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Currency Converter is a key tool for anyone dealing with
           international money, travel, or online shopping. It makes it easy to

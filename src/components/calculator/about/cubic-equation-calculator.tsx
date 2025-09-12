@@ -6,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the 'roots' of a cubic equation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The roots of an equation are the values of 'x' that make the equation true. A cubic equation always has three roots. These can be all real numbers, or one real number and two complex conjugate numbers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the discriminant of a cubic equation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The discriminant's sign determines the nature of the roots. If positive, there is one real root and two complex roots. If zero, there are three real roots with at least two being equal. If negative, there are three distinct real roots.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why are cubic equations important?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cubic equations are used in science and engineering to model various physical phenomena, such as the volume of materials, thermodynamic properties, and fluid dynamics.",
+      },
+    },
+  ],
+};
 
 export default function AboutCubicEquationCalculator() {
   return (
@@ -14,6 +46,10 @@ export default function AboutCubicEquationCalculator() {
         <CardTitle>About the Cubic Equation Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           This tool is designed to solve any cubic equation, which is a
           third-degree polynomial equation of the form `ax³ + bx² + cx + d = 0`.

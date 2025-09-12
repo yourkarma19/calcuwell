@@ -6,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does the countdown timer work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The timer calculates the total number of seconds between the current time and the future target time you set. It then uses a JavaScript interval that runs every second to recalculate and display the remaining time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens when the countdown timer reaches zero?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Once the target date and time are reached, the timer will stop at zero and will no longer show negative values. You can then set a new countdown for another event.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does the timer account for different time zones?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The timer operates based on your local device's time. When you set a target date and time, it is set in your current time zone. If you share your countdown with someone in a different time zone, they will see the countdown relative to their own local time.",
+      },
+    },
+  ],
+};
 
 export default function AboutCountdownTimer() {
   return (
@@ -14,6 +46,10 @@ export default function AboutCountdownTimer() {
         <CardTitle>About the Countdown Timer</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Countdown Timer is a tool to track the time remaining until a
           specific future event. It continuously updates to show the number of

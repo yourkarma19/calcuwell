@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -7,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a complex number?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A complex number has the form a + bi, where 'a' is the real part and 'b' is the imaginary part. They are used in many areas of science and engineering, like electronics and signal processing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the imaginary unit 'i'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The imaginary unit 'i' is the solution to the equation x² = -1, defined as the square root of negative one (√-1). It was created to solve problems that have no real number solution.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you add or subtract complex numbers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You add or subtract the real parts and the imaginary parts separately. For example, (3 + 2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i.",
+      },
+    },
+  ],
+};
 
 export default function AboutComplexNumberCalculator() {
   return (
@@ -15,6 +46,10 @@ export default function AboutComplexNumberCalculator() {
         <CardTitle as="h2">About Complex Numbers</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           This calculator is a tool for working with complex numbers. Complex
           numbers are a key part of math and engineering. They help solve

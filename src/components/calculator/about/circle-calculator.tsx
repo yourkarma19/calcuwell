@@ -6,6 +6,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Pi (π)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pi (π) is a fundamental mathematical constant representing the ratio of a circle's circumference to its diameter. It's an irrational number, approximately equal to 3.14159, and is crucial for all calculations involving circles and spheres.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the key formulas for a circle?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The key formulas are: Diameter (d) = 2 * r, Circumference (C) = 2 * π * r, and Area (A) = π * r².",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between a circle's radius and its diameter?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The radius (r) is the distance from the center of the circle to any point on its edge. The diameter (d) is the distance across the circle passing through the center. The diameter is always twice the length of the radius.",
+      },
+    },
+  ],
+};
 
 export default function AboutCircleCalculator() {
   return (
@@ -14,6 +46,10 @@ export default function AboutCircleCalculator() {
         <CardTitle>About Circle Formulas</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Circle Calculator is a dynamic tool for finding the properties of
           a circle from any single known measurement. Whether you know the

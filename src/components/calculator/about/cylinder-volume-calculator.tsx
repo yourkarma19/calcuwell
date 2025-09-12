@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is the volume of a cylinder calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The volume of a cylinder is found by multiplying the area of its circular base by its height. The formula is Volume = π * r² * h, where 'r' is the radius of the base and 'h' is the height.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between lateral and total surface area of a cylinder?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The lateral surface area is the area of the curved side of the cylinder (like a can's label). The total surface area is the lateral area plus the area of the two circular bases at the top and bottom.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are some real-world applications of cylinder calculations?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Engineers use them to design pipes and tanks. In manufacturing, they determine the volume of cans. They are also fundamental in physics for problems involving fluid dynamics and pressure.",
+      },
+    },
+  ],
+};
 
 export default function AboutCylinderVolumeCalculator() {
   return (
@@ -15,6 +47,10 @@ export default function AboutCylinderVolumeCalculator() {
         <CardTitle>About the Cylinder Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Cylinder Calculator</strong> is a versatile tool for
           students, engineers, and DIY enthusiasts who need to determine the
@@ -36,8 +72,8 @@ export default function AboutCylinderVolumeCalculator() {
           </li>
         </ol>
         <p>
-          The calculator will automatically display the cylinder&apos;s volume,
-          total surface area, lateral area, and base area.
+          The calculator will automatically display the cylinder&apos;s
+          volume, total surface area, lateral area, and base area.
         </p>
 
         <h3>Frequently Asked Questions (FAQs)</h3>

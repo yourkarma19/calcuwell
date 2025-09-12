@@ -7,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What's the difference between a Bit and a Byte?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A bit is the most basic unit of data, a single binary value of 0 or 1. A byte is a group of 8 bits. Bytes are the standard unit used to measure file sizes as one byte can represent one character of text.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is a Kilobyte (KB) 1024 Bytes, not 1000?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Computers use a binary (base-2) system, and data storage units are based on powers of 2. Since 2^10 is 1024, this became the standard for computer memory and storage. So, 1 Kilobyte = 1024 Bytes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between KB (kilobyte) and KiB (kibibyte)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To reduce confusion, official standards bodies designated 'kilobyte (KB)' as 1000 bytes and 'kibibyte (KiB)' as 1024 bytes. However, in common use, 'kilobyte' is still widely understood to mean 1024 bytes, which is why a 1 TB hard drive shows up as about 931 GB in your OS.",
+      },
+    },
+  ],
+};
 
 export default function AboutDataStorageConverter() {
   return (
@@ -15,6 +47,10 @@ export default function AboutDataStorageConverter() {
         <CardTitle>About the Data Storage Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our Data Storage Converter is a key tool for anyone who works with
           digital files. This includes software developers, IT professionals,
