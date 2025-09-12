@@ -133,9 +133,7 @@ export default function SipCalculator() {
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">
-                Estimated Returns:
-              </span>
+              <span className="text-muted-foreground">Estimated Returns:</span>
               <span className="font-semibold">
                 {formatCurrency(totalReturns)}
               </span>
@@ -158,9 +156,7 @@ export default function SipCalculator() {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, percent }) =>
-                  `${(percent * 100).toFixed(0)}%`
-                }
+                label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
                 outerRadius={80}
                 dataKey="value"
               >

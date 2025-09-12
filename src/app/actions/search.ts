@@ -1,4 +1,3 @@
-
 "use server";
 
 import type Fuse from "fuse.js";

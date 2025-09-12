@@ -127,9 +127,7 @@ export default function RetirementCalculator() {
             <Input
               type="number"
               value={monthlyContribution}
-              onChange={(e) =>
-                setMonthlyContribution(Number(e.target.value))
-              }
+              onChange={(e) => setMonthlyContribution(Number(e.target.value))}
               step="100"
             />
           </div>
@@ -148,9 +146,7 @@ export default function RetirementCalculator() {
               <Input
                 type="number"
                 value={retirementIncome}
-                onChange={(e) =>
-                  setRetirementIncome(Number(e.target.value))
-                }
+                onChange={(e) => setRetirementIncome(Number(e.target.value))}
                 step="1000"
               />
             </div>

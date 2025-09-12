@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -17,28 +16,27 @@ export default function AboutCgpaCalculator() {
       <CardContent className="prose dark:prose-invert max-w-none">
         <h2>What is CGPA?</h2>
         <p>
-          CGPA stands for <strong>Cumulative Grade Point Average</strong>. It is a
-          weighted average of the grades you have received in all semesters up to
-          the current point. It provides a comprehensive measure of your academic
-          performance throughout your entire course.
+          CGPA stands for <strong>Cumulative Grade Point Average</strong>. It is
+          a weighted average of the grades you have received in all semesters up
+          to the current point. It provides a comprehensive measure of your
+          academic performance throughout your entire course.
         </p>
 
         <h2>How to Use the CGPA Calculator</h2>
-        <p>
-          To calculate your CGPA with our tool, follow these simple steps:
-        </p>
+        <p>To calculate your CGPA with our tool, follow these simple steps:</p>
         <ol>
           <li>
             Enter the credits for your first semester and the GPA/SGPA you
             achieved in that semester.
           </li>
           <li>
-            Click the &quot;Add Semester&quot; button for each additional semester you have
-            completed.
+            Click the &quot;Add Semester&quot; button for each additional
+            semester you have completed.
           </li>
           <li>Fill in the credits and GPA/SGPA for each of those semesters.</li>
           <li>
-            The calculator will instantly display your cumulative GPA at the top.
+            The calculator will instantly display your cumulative GPA at the
+            top.
           </li>
         </ol>
 
@@ -48,8 +46,8 @@ export default function AboutCgpaCalculator() {
           CGPA = Σ (Semester Credits × Semester SGPA) / Σ (Total Credits)
         </p>
         <p>
-          In simpler terms, you multiply the credits of each semester by the SGPA
-          of that semester, sum up all these values, and then divide by the
+          In simpler terms, you multiply the credits of each semester by the
+          SGPA of that semester, sum up all these values, and then divide by the
           total number of credits you have taken.
         </p>
 
@@ -82,8 +80,8 @@ export default function AboutCgpaCalculator() {
             applications, especially for fresh graduates.
           </li>
           <li>
-            <strong>Scholarship Committees:</strong> To determine eligibility for
-            financial aid and awards.
+            <strong>Scholarship Committees:</strong> To determine eligibility
+            for financial aid and awards.
           </li>
         </ul>
         <p>
@@ -104,23 +102,28 @@ export default function AboutCgpaCalculator() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq2">
-            <AccordionTrigger>How do I convert CGPA to a percentage?</AccordionTrigger>
+            <AccordionTrigger>
+              How do I convert CGPA to a percentage?
+            </AccordionTrigger>
             <AccordionContent>
               The conversion formula can vary by university. A common method is
-              to multiply the CGPA by a specific factor. For a 10-point scale,
-              a common formula is: `Percentage = CGPA * 9.5`. However, you should
+              to multiply the CGPA by a specific factor. For a 10-point scale, a
+              common formula is: `Percentage = CGPA * 9.5`. However, you should
               always check with your specific university for their official
               conversion formula.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq3">
-            <AccordionTrigger>What is considered a &quot;good&quot; CGPA?</AccordionTrigger>
+            <AccordionTrigger>
+              What is considered a &quot;good&quot; CGPA?
+            </AccordionTrigger>
             <AccordionContent>
-              What constitutes a &quot;good&quot; CGPA can be subjective and depends on the
-              field of study and your future goals. Generally, on a 10-point
-              scale, a CGPA of 8.0 or above is considered very good and is often
-              a minimum requirement for many top companies and universities. A
-              CGPA of 9.0 or above is typically considered excellent.
+              What constitutes a &quot;good&quot; CGPA can be subjective and
+              depends on the field of study and your future goals. Generally, on
+              a 10-point scale, a CGPA of 8.0 or above is considered very good
+              and is often a minimum requirement for many top companies and
+              universities. A CGPA of 9.0 or above is typically considered
+              excellent.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

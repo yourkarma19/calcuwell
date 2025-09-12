@@ -3,12 +3,6 @@
 import { addDays, subDays, format } from "date-fns";
 import { useMemo } from "react";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
-import {
   Card,
   CardContent,
   CardHeader,

@@ -2,12 +2,6 @@
 
 import { useMemo } from "react";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
-import {
   Card,
   CardContent,
   CardHeader,

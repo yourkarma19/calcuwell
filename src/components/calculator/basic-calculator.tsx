@@ -61,7 +61,11 @@ export default function BasicCalculator() {
   };
 
   const calculate = (): string | null => {
-    if (operation == null || currentOperand == null || previousOperand == null) {
+    if (
+      operation == null ||
+      currentOperand == null ||
+      previousOperand == null
+    ) {
       return null;
     }
 

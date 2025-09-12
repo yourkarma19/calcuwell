@@ -1,4 +1,3 @@
-
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
@@ -17,9 +16,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full text-center py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h1 className="text-primary mb-4">
-            CalcPro
-          </h1>
+          <h1 className="text-primary mb-4">CalcPro</h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
             Your one-stop destination for fast, accurate, and easy-to-use online
             calculators.
@@ -29,17 +26,15 @@ export default function Home() {
 
       {/* Main Calculator Section */}
       <section className="w-full max-w-5xl px-4 py-16 md:py-24">
-         <Card className="shadow-xl">
-            <HomeCalculator />
+        <Card className="shadow-xl">
+          <HomeCalculator />
         </Card>
       </section>
 
       {/* Categories Section */}
       <section className="w-full bg-muted/30 py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-center mb-12">
-            Calculator Categories
-          </h2>
+          <h2 className="text-center mb-12">Calculator Categories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {categories.map((category) => (
               <Link
@@ -55,7 +50,10 @@ export default function Home() {
                         className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors"
                       />
                       <div>
-                        <CardTitle as="h3" className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+                        <CardTitle
+                          as="h3"
+                          className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors"
+                        >
                           {category.name}
                         </CardTitle>
                         <CardDescription className="text-sm line-clamp-2">
@@ -71,7 +69,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Why CalcPro Section */}
       <section className="w-full text-center py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -80,8 +78,8 @@ export default function Home() {
             CalcPro offers a comprehensive suite of free online calculators
             designed to be fast, accurate, and easy to use. From solving complex
             mathematical problems to managing your personal finances and health,
-            our tools provide reliable results to help you make informed decisions
-            instantly.
+            our tools provide reliable results to help you make informed
+            decisions instantly.
           </p>
         </div>
       </section>

@@ -56,9 +56,11 @@ export default function ComplexNumberCalculator() {
 
   const formatResult = () => {
     if (isNaN(result.real)) return "Cannot divide by zero";
-    if (result.imag === 0) return result.real.toFixed(4);
-    if (result.real === 0) return `${result.imag.toFixed(4)}i`;
-    return `${result.real.toFixed(4)} ${result.imag > 0 ? "+" : "-"} ${Math.abs(result.imag).toFixed(4)}i`;
+    if (result.imag === 0) return String(result.real);
+    if (result.real === 0) return `${result.imag}i`;
+    return `${result.real} ${result.imag > 0 ? "+" : "-"} ${Math.abs(
+      result.imag,
+    )}i`;
   };
 
   return (

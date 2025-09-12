@@ -1,7 +1,7 @@
-
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { headers } from 'next/headers';
+import { headers } from "next/headers";
+import Script from "next/script";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -61,27 +61,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const nonce = headers().get('x-nonce') || '';
+  const nonce = headers().get("x-nonce") || "";
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17483796549"></script>
-        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-17483796549');
-        `}} />
-        <script
-          nonce={nonce}
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1952235305826490"
-          crossOrigin="anonymous"
-        ></script>
-      </head>
+      <head />
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased flex flex-col",
@@ -100,6 +84,27 @@ export default function RootLayout({
           <Footer />
           <Toaster />
         </ThemeProvider>
+
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17483796549"
+        />
+        <Script id="gtag-init" strategy="afterInteractive" nonce={nonce}>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17483796549');
+          `}
+        </Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1952235305826490"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+          nonce={nonce}
+        />
       </body>
     </html>
   );

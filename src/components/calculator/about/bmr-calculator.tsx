@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import {
@@ -19,10 +18,22 @@ import {
 
 const activityFactors = [
   { level: "Sedentary (little or no exercise)", multiplier: 1.2 },
-  { level: "Lightly active (light exercise/sports 1-3 days/week)", multiplier: 1.375 },
-  { level: "Moderately active (moderate exercise/sports 3-5 days/week)", multiplier: 1.55 },
-  { level: "Very active (hard exercise/sports 6-7 days a week)", multiplier: 1.725 },
-  { level: "Extra active (very hard exercise & physical job)", multiplier: 1.9 },
+  {
+    level: "Lightly active (light exercise/sports 1-3 days/week)",
+    multiplier: 1.375,
+  },
+  {
+    level: "Moderately active (moderate exercise/sports 3-5 days/week)",
+    multiplier: 1.55,
+  },
+  {
+    level: "Very active (hard exercise/sports 6-7 days a week)",
+    multiplier: 1.725,
+  },
+  {
+    level: "Extra active (very hard exercise & physical job)",
+    multiplier: 1.9,
+  },
 ];
 
 export default function AboutBmrCalculator() {
@@ -65,9 +76,9 @@ export default function AboutBmrCalculator() {
             <AccordionContent>
               <p>
                 The original Harris-Benedict equation was one of the earliest
-                formulas used to calculate basal metabolic rate. It was published
-                in 1919 and later revised in 1984. While still used, it is
-                considered slightly less accurate than the Mifflin-St Jeor
+                formulas used to calculate basal metabolic rate. It was
+                published in 1919 and later revised in 1984. While still used,
+                it is considered slightly less accurate than the Mifflin-St Jeor
                 equation.
               </p>
             </AccordionContent>
@@ -89,7 +100,8 @@ export default function AboutBmrCalculator() {
           </li>
         </ul>
         <p>
-          TDEE is calculated by multiplying your BMR by an activity factor, as shown below.
+          TDEE is calculated by multiplying your BMR by an activity factor, as
+          shown below.
         </p>
         <Table>
           <TableHeader>
@@ -112,11 +124,12 @@ export default function AboutBmrCalculator() {
         <p>
           Your TDEE (not just your BMR) is the key number for managing your
           weight. To lose weight, you need to consume fewer calories than your
-          TDEE. To gain weight, you need to consume more. Knowing your BMR is the
-          foundational first step in understanding your personal energy needs.
+          TDEE. To gain weight, you need to consume more. Knowing your BMR is
+          the foundational first step in understanding your personal energy
+          needs.
         </p>
         <p>
-          To calculate your total daily calorie needs and create a plan, use our {" "}
+          To calculate your total daily calorie needs and create a plan, use our{" "}
           <Link
             href="/calculators/net-calorie-calculator"
             className="text-primary hover:underline"

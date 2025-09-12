@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -18,10 +17,10 @@ export default function AboutSipCalculator() {
         <p>
           A <strong>Systematic Investment Plan (SIP)</strong> is a popular
           investment method offered by mutual funds that allows you to invest a
-          fixed amount of money at regular intervals (typically monthly). It&apos;s a
-          disciplined approach to investing that helps you build wealth over the
-          long term by leveraging the power of compounding and rupee cost
-          averaging.
+          fixed amount of money at regular intervals (typically monthly).
+          It&apos;s a disciplined approach to investing that helps you build
+          wealth over the long term by leveraging the power of compounding and
+          rupee cost averaging.
         </p>
 
         <h3>How to Use the SIP Calculator</h3>
@@ -44,18 +43,17 @@ export default function AboutSipCalculator() {
               What are the benefits of a SIP?
             </AccordionTrigger>
             <AccordionContent>
-              <p>
-                SIPs offer several key advantages:
-              </p>
+              <p>SIPs offer several key advantages:</p>
               <ul className="list-disc pl-5">
                 <li>
-                  **Discipline:** It automates your savings, making you a regular
-                  investor.
+                  **Discipline:** It automates your savings, making you a
+                  regular investor.
                 </li>
                 <li>
                   **Rupee Cost Averaging:** Since you invest a fixed amount
-                  regularly, you buy more units when the market is down and fewer
-                  when it&apos;s up. This averages out your purchase cost over time.
+                  regularly, you buy more units when the market is down and
+                  fewer when it&apos;s up. This averages out your purchase cost
+                  over time.
                 </li>
                 <li>
                   **Power of Compounding:** The returns you earn also start
@@ -99,11 +97,11 @@ export default function AboutSipCalculator() {
               <p>
                 No. The return rate is an assumption. Mutual fund investments
                 are subject to market risks, and the actual returns can be
-                higher or lower than what you expect. It&apos;s important to choose
-                a return rate that aligns with the historical performance of the
-                type of fund you are investing in (e.g., equity funds have a
-                different risk-return profile than debt funds). This calculator is
-                for illustrative purposes only.
+                higher or lower than what you expect. It&apos;s important to
+                choose a return rate that aligns with the historical performance
+                of the type of fund you are investing in (e.g., equity funds
+                have a different risk-return profile than debt funds). This
+                calculator is for illustrative purposes only.
               </p>
             </AccordionContent>
           </AccordionItem>

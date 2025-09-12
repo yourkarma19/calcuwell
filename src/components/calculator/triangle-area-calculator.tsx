@@ -214,10 +214,7 @@ export default function TriangleAreaCalculator() {
         <CardHeader>
           <CardTitle>Results</CardTitle>
         </CardHeader>
-        <CardContent
-          className="text-center space-y-4"
-          aria-live="polite"
-        >
+        <CardContent className="text-center space-y-4" aria-live="polite">
           <div>
             <p className="text-sm text-muted-foreground">Area</p>
             <p className="text-4xl font-bold font-headline text-primary">

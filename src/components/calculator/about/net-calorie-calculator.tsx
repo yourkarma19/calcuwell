@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,26 +19,27 @@ export default function AboutNetCalorieCalculator() {
         </p>
         <ul>
           <li>
-            <strong>Calorie Surplus (Positive Net Calories):</strong> You&apos;ve
-            eaten more calories than you&apos;ve burned. This leads to weight gain
-            over time.
+            <strong>Calorie Surplus (Positive Net Calories):</strong>{" "}
+            You&apos;ve eaten more calories than you&apos;ve burned. This leads
+            to weight gain over time.
           </li>
           <li>
-            <strong>Calorie Deficit (Negative Net Calories):</strong> You&apos;ve
-            burned more calories than you&apos;ve eaten. This leads to weight loss
-            over time.
+            <strong>Calorie Deficit (Negative Net Calories):</strong>{" "}
+            You&apos;ve burned more calories than you&apos;ve eaten. This leads
+            to weight loss over time.
           </li>
           <li>
-            <strong>Maintenance (Net Calories near Zero):</strong> You&apos;ve eaten
-            roughly the same number of calories you&apos;ve burned, which leads to
-            weight maintenance.
+            <strong>Maintenance (Net Calories near Zero):</strong> You&apos;ve
+            eaten roughly the same number of calories you&apos;ve burned, which
+            leads to weight maintenance.
           </li>
         </ul>
 
         <h2>How to Calculate Your Calories Burned</h2>
         <p>
-          The &quot;calories burned&quot; part of the equation is your Total Daily Energy
-          Expenditure (TDEE). This is made up of two main components:
+          The &quot;calories burned&quot; part of the equation is your Total
+          Daily Energy Expenditure (TDEE). This is made up of two main
+          components:
         </p>
         <ol>
           <li>

@@ -34,8 +34,8 @@ export default function AboutPythagoreanTheoremCalculator() {
             </li>
           </ol>
           <p>
-            Remember that the hypotenuse &apos;c&apos; must always be the longest
-            side. The calculator will show an error if this is not true.
+            Remember that the hypotenuse &apos;c&apos; must always be the
+            longest side. The calculator will show an error if this is not true.
           </p>
         </CardContent>
       </Card>
@@ -51,12 +51,12 @@ export default function AboutPythagoreanTheoremCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  The Pythagorean theorem is a fundamental principle of Euclidean
-                  geometry. It states that for any right-angled triangle, the
-                  square of the length of the hypotenuse (the side opposite the
-                  right angle, denoted as &apos;c&apos;) is equal to the sum of
-                  the squares of the other two sides (denoted as &apos;a&apos; and
-                  &apos;b&apos;). The formula is written as:{" "}
+                  The Pythagorean theorem is a fundamental principle of
+                  Euclidean geometry. It states that for any right-angled
+                  triangle, the square of the length of the hypotenuse (the side
+                  opposite the right angle, denoted as &apos;c&apos;) is equal
+                  to the sum of the squares of the other two sides (denoted as
+                  &apos;a&apos; and &apos;b&apos;). The formula is written as:{" "}
                   <strong>a² + b² = c²</strong>.
                 </p>
               </AccordionContent>
@@ -80,10 +80,10 @@ export default function AboutPythagoreanTheoremCalculator() {
               <AccordionContent>
                 <p>
                   This theorem is not just for textbooks; it is used in many
-                  real-world applications, such as architecture (ensuring corners
-                  are square), navigation (calculating the shortest distance), and
-                  even in video game design for calculating distances and
-                  movements.
+                  real-world applications, such as architecture (ensuring
+                  corners are square), navigation (calculating the shortest
+                  distance), and even in video game design for calculating
+                  distances and movements.
                 </p>
               </AccordionContent>
             </AccordionItem>

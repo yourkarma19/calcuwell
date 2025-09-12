@@ -1,6 +1,6 @@
 "use client";
 
-import { derivative, parse, simplify } from "mathjs";
+import { parse, simplify } from "mathjs";
 import { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Button } from "@/components/ui/button";
@@ -22,10 +22,7 @@ function decompose(
 ): string | null {
   try {
     // This is a mock decomposition. A real implementation is very complex.
-    if (
-      numeratorStr === "x^2 + 1" &&
-      denominatorStr === "x^3 - x^2 + 2x - 2"
-    ) {
+    if (numeratorStr === "x^2 + 1" && denominatorStr === "x^3 - x^2 + 2x - 2") {
       return "1 / (x - 1) + 2 / (x^2 + 2)";
     }
     if (numeratorStr === "1" && denominatorStr === "x^2 - 1") {

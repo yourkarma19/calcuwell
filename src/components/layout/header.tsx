@@ -1,4 +1,3 @@
-
 "use client";
 import { Calculator } from "lucide-react";
 import Link from "next/link";

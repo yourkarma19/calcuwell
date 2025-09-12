@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -102,7 +101,10 @@ export function SearchBar() {
         onOpenAutoFocus={() => inputRef.current?.focus()}
       >
         <Command shouldFilter={false}>
-          <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+          <div
+            className="flex items-center border-b px-3"
+            cmdk-input-wrapper=""
+          >
             <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
             <CommandInput
               ref={inputRef}
@@ -113,7 +115,9 @@ export function SearchBar() {
             />
           </div>
           <CommandList>
-            {isLoading && <CommandEmpty>Loading search results...</CommandEmpty>}
+            {isLoading && (
+              <CommandEmpty>Loading search results...</CommandEmpty>
+            )}
             {!isLoading && results.length === 0 && search.length > 0 && (
               <CommandEmpty>
                 No results found for &quot;{search}&quot;.

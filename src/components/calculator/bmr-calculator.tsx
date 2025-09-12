@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo } from "react";
@@ -39,8 +38,8 @@ export default function BmrCalculator() {
         <CardHeader>
           <CardTitle>BMR Calculator</CardTitle>
           <CardDescription>
-            Discover your body&apos;s baseline calorie needs with our accurate BMR
-            Calculator. Your Basal Metabolic Rate (BMR) is the number of
+            Discover your body&apos;s baseline calorie needs with our accurate
+            BMR Calculator. Your Basal Metabolic Rate (BMR) is the number of
             calories your body needs to function at rest.
           </CardDescription>
         </CardHeader>

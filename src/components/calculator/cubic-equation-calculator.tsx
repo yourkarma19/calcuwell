@@ -1,6 +1,6 @@
 "use client";
 
-import { complex, type Complex } from "mathjs";
+import { type Complex } from "mathjs";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,7 +29,9 @@ export default function CubicEquationCalculator() {
       return root.re.toFixed(4).replace(/\.?0+$/, "");
     }
     const realPart = root.re.toFixed(4).replace(/\.?0+$/, "");
-    const imagPart = Math.abs(root.im).toFixed(4).replace(/\.?0+$/, "");
+    const imagPart = Math.abs(root.im)
+      .toFixed(4)
+      .replace(/\.?0+$/, "");
     const sign = root.im > 0 ? "+" : "-";
     return `${realPart} ${sign} ${imagPart}i`;
   };

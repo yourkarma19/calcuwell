@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -27,7 +26,9 @@ export default function AboutLoanComparisonCalculator() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle as="h3">How to Use the Loan Comparison Calculator</CardTitle>
+          <CardTitle as="h3">
+            How to Use the Loan Comparison Calculator
+          </CardTitle>
         </CardHeader>
         <CardContent className="prose dark:prose-invert max-w-none">
           <ol>

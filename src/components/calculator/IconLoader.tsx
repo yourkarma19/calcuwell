@@ -1,28 +1,17 @@
 "use client";
 
-import React from "react";
 import dynamic from "next/dynamic";
-import { Calculator, type LucideProps } from "lucide-react";
+import { Calculator, LucideProps } from "lucide-react";
+import dynamicIconImports from "lucide-react/dynamicIconImports";
 
-// This component handles the dynamic loading of icons on the client side.
 const IconLoader = ({
   iconName,
   ...props
 }: { iconName: string } & LucideProps) => {
-  // Use dynamic import to load only the requested icon.
-  const LucideIcon = dynamic(
-    () =>
-      import("lucide-react").then((mod) => {
-        // Fallback to Calculator if the icon doesn't exist
-        const IconComponent =
-          mod[iconName as keyof typeof mod] || mod.Calculator;
-        return IconComponent;
-      }),
-    {
-      // Show a placeholder while the icon is loading.
-      loading: () => <Calculator {...props} />,
-    },
-  );
+  const hasIcon = iconName in dynamicIconImports;
+  const LucideIcon = hasIcon
+    ? dynamic(dynamicIconImports[iconName as keyof typeof dynamicIconImports])
+    : Calculator;
 
   return <LucideIcon {...props} />;
 };

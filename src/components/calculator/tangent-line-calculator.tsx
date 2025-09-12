@@ -50,7 +50,11 @@ export default function TangentLineCalculator() {
       const b = yValue - slope * point;
       const sign = b < 0 ? "-" : "+";
 
-      const equation = `y = ${slope.toFixed(4).replace(/\.?0+$/, "")}x ${sign} ${Math.abs(b).toFixed(4).replace(/\.?0+$/, "")}`;
+      const equation = `y = ${slope.toFixed(4).replace(/\.?0+$/, "")}x ${sign} ${Math.abs(
+        b,
+      )
+        .toFixed(4)
+        .replace(/\.?0+$/, "")}`;
 
       setSolution({
         equation: equation.replace(/\.0000/g, ""),

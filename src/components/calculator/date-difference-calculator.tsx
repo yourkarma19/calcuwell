@@ -90,8 +90,8 @@ export default function DateDifferenceCalculator({
       <CardHeader>
         <CardTitle>Calculate Date Difference</CardTitle>
         <CardDescription>
-          Find the total duration between two dates in various units like
-          years, months, weeks, days, and more.
+          Find the total duration between two dates in various units like years,
+          months, weeks, days, and more.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -17,8 +16,15 @@ export default function CalculatorClientPage({
   const [aboutProps, setAboutProps] = useState({});
 
   return (
-    <CalculatorWrapper calculator={calculator} sidebar={<CalculatorContent slug={calculator.slug} {...aboutProps} />}>
-      <CalculatorLoader slug={calculator.slug} setAboutProps={setAboutProps} calculatorName={calculator.name} />
+    <CalculatorWrapper
+      calculator={calculator}
+      sidebar={<CalculatorContent slug={calculator.slug} {...aboutProps} />}
+    >
+      <CalculatorLoader
+        slug={calculator.slug}
+        setAboutProps={setAboutProps}
+        calculatorName={calculator.name}
+      />
     </CalculatorWrapper>
   );
 }

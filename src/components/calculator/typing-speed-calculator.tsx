@@ -1,4 +1,3 @@
-
 "use client";
 
 import { RefreshCw } from "lucide-react";
@@ -231,12 +230,12 @@ export default function TypingSpeedCalculator() {
                 How can I improve my typing speed?
               </AccordionTrigger>
               <AccordionContent>
-                The key to improving typing speed is consistent practice. Focus on
-                accuracy first, then work on speed. Proper hand positioning on the
-                keyboard (touch typing) is crucial. Avoid looking at the keyboard
-                and practice using all ten fingers. Regular practice sessions,
-                even short ones, will build muscle memory and increase your speed
-                and accuracy over time.
+                The key to improving typing speed is consistent practice. Focus
+                on accuracy first, then work on speed. Proper hand positioning
+                on the keyboard (touch typing) is crucial. Avoid looking at the
+                keyboard and practice using all ten fingers. Regular practice
+                sessions, even short ones, will build muscle memory and increase
+                your speed and accuracy over time.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -120,8 +119,8 @@ export default function GpaCalculator() {
         <CardHeader>
           <CardTitle>GPA Calculator</CardTitle>
           <CardDescription>
-            Enter your courses, grades, and credit hours to calculate your
-            Grade Point Average. The GPA will update automatically.
+            Enter your courses, grades, and credit hours to calculate your Grade
+            Point Average. The GPA will update automatically.
           </CardDescription>
         </CardHeader>
         <CardContent>
