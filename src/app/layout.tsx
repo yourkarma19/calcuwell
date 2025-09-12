@@ -54,6 +54,26 @@ export const metadata: Metadata = {
       "Fast, accurate online calculators for finance, health, and more.",
     images: ["https://calcpro.online/og-image.png"],
   },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon-32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        url: "/favicon-16.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
