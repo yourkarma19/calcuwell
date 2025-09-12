@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -10,7 +9,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 const ScientificCalculator = dynamic(
   () => import("@/components/calculator/scientific-calculator"),
   {
-    loading: () => <Skeleton className="w-full h-[360px] rounded-xl" />,
+    loading: () => <Skeleton className="w-full h-[548px] rounded-xl" />,
     ssr: false,
   },
 );

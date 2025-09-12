@@ -10,6 +10,12 @@ type CategoryPageProps = {
   };
 };
 
+export async function generateStaticParams() {
+  return categories.map((category) => ({
+    slug: category.slug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {

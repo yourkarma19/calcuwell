@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -13,10 +12,7 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
 
 const MortgageBreakdownChart = dynamic(
-  () =>
-    import("@/components/charts/mortgage-breakdown-chart").then(
-      (mod) => mod.MortgageBreakdownChart,
-    ),
+  () => import("@/components/charts/mortgage-breakdown-chart"),
   {
     ssr: false,
     loading: () => <Skeleton className="w-full h-[25rem]" />,

@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -52,10 +51,7 @@ const jsonLd: WithContext<FAQPage> = {
 };
 
 const MortgageBreakdownChart = dynamic(
-  () =>
-    import("@/components/charts/mortgage-breakdown-chart").then(
-      (mod) => mod.MortgageBreakdownChart,
-    ),
+  () => import("@/components/charts/mortgage-breakdown-chart"),
   {
     ssr: false,
     loading: () => <Skeleton className="w-full h-[25rem]" />,

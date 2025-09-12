@@ -1,8 +1,10 @@
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CalculatorClientPage from "@/components/calculator/calculator-client-page";
-import { getCalculatorBySlug } from "@/lib/server/calculator-data";
+import {
+  getCalculatorBySlug,
+  loadFullCalculatorData,
+} from "@/lib/server/calculator-data";
 import type { SoftwareApplication, WithContext } from "schema-dts";
 
 type CalculatorPageProps = {
@@ -10,6 +12,13 @@ type CalculatorPageProps = {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  const calculators = await loadFullCalculatorData();
+  return calculators.map((calculator) => ({
+    slug: calculator.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,
