@@ -1,15 +1,9 @@
 
 "use client";
 
+import dynamic from "next/dynamic";
 import { useMemo } from "react";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  ResponsiveContainer,
-  Legend,
-} from "recharts";
+import { Skeleton } from "../ui/skeleton";
 import {
   Card,
   CardContent,
@@ -21,6 +15,14 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
+
+const SipBreakdownChart = dynamic(
+  () => import("@/components/charts/sip-breakdown-chart"),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="w-full h-[25rem]" />,
+  },
+);
 
 export default function SipCalculator() {
   const [monthlyInvestment, setMonthlyInvestment] = usePersistentState(
@@ -36,7 +38,11 @@ export default function SipCalculator() {
     const M = monthlyInvestment;
 
     if (M <= 0 || returnRate < 0 || timePeriod <= 0) {
-      return { totalInvestment: M * n, totalReturns: 0, futureValue: M * n };
+      return {
+        totalInvestment: M * n,
+        totalReturns: 0,
+        futureValue: M * n,
+      };
     }
 
     const fv = M * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
@@ -54,8 +60,6 @@ export default function SipCalculator() {
     { name: "Total Investment", value: totalInvestment },
     { name: "Estimated Returns", value: totalReturns },
   ];
-
-  const COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-2))"];
 
   return (
     <div className="space-y-6">
@@ -148,28 +152,7 @@ export default function SipCalculator() {
           <CardTitle>Investment Breakdown</CardTitle>
         </CardHeader>
         <CardContent className="h-[25rem]">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Tooltip formatter={(value) => formatCurrency(Number(value))} />
-              <Legend />
-              <Pie
-                data={chartData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
-                outerRadius={80}
-                dataKey="value"
-              >
-                {chartData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
+          <SipBreakdownChart chartData={chartData} />
         </CardContent>
       </Card>
     </div>

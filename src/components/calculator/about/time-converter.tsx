@@ -64,8 +64,8 @@ export default function AboutTimeConverter() {
           <li>Select the target unit you want to convert to (e.g., Seconds).</li>
         </ol>
         <p>
-          The converted time will be displayed automatically. Use the swap
-          button to quickly reverse the conversion.
+          The converted time will be displayed automatically. Use the swap button
+          to quickly reverse the conversion.
         </p>
         <h3>Time Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
