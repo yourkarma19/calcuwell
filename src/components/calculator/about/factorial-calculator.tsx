@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What Does an Exclamation Mark (!) Mean in Math?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The exclamation mark shows a factorial. The factorial of a non-negative integer 'n', written as n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Zero Factorial (0!)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "By definition, 0! is equal to 1. This is a rule that makes many math formulas work correctly. It represents the single way to arrange zero objects, which is to do nothing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where are factorials used in real life?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Factorials are key in probability. They are used to calculate the number of possible ways to arrange a set of items. For example, finding the number of ways a group of people can stand in a line.",
+      },
+    },
+  ],
+};
 
 export default function AboutFactorialCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutFactorialCalculator() {
         <CardTitle>About the Factorial Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The Factorial Calculator is a tool for finding the factorial of any
           non-negative integer. A factorial, shown by an exclamation mark (!),
