@@ -11,25 +11,34 @@ echo "🔹 Node version: $NODE_VERSION"
 echo "🔹 npm version: $NPM_VERSION"
 
 # ------------------------------
-# 2️⃣ Clean previous build
+# 2️⃣ Check for predeploy script
+# ------------------------------
+echo "🔹 Checking for predeploy script in package.json..."
+if ! grep -q '"predeploy":' package.json; then
+  echo "❌ 'predeploy' script not found in package.json."
+  exit 1;
+fi
+
+# ------------------------------
+# 3️⃣ Clean previous build
 # ------------------------------
 echo "🔹 Removing node_modules, package-lock.json, .next"
 rm -rf node_modules package-lock.json .next
 
 # ------------------------------
-# 3️⃣ Install dependencies
+# 4️⃣ Install dependencies
 # ------------------------------
 echo "🔹 Installing dependencies..."
 npm install
 
 # ------------------------------
-# 4️⃣ Run Prettier auto-format
+# 5️⃣ Run Prettier auto-format
 # ------------------------------
 echo "🔹 Running Prettier to fix code style..."
 npx prettier --write .
 
 # ------------------------------
-# 5️⃣ Run ESLint
+# 6️⃣ Run ESLint
 # ------------------------------
 echo "🔹 Running ESLint..."
 eslint . --ext .tsx,.ts,.js,.jsx
@@ -39,7 +48,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # ------------------------------
-# 6️⃣ Run TypeScript check
+# 7️⃣ Run TypeScript check
 # ------------------------------
 echo "🔹 Running TypeScript check..."
 tsc --noEmit
@@ -49,7 +58,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # ------------------------------
-# 7️⃣ Detect & fix 'use client' + metadata issues
+# 8️⃣ Detect & fix 'use client' + metadata issues
 # ------------------------------
 echo "🔹 Checking for 'use client' components exporting metadata..."
 for file in $(grep -rl '"use client"' src/app); do
@@ -71,7 +80,7 @@ for file in $(grep -rl '"use client"' src/app); do
 done
 
 # ------------------------------
-# 8️⃣ Build Next.js project
+# 9️⃣ Build Next.js project
 # ------------------------------
 echo "🔹 Building Next.js project..."
 npm run build
