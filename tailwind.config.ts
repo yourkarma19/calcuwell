@@ -21,6 +21,21 @@ const config: Config = {
         body: ["var(--font-inter)", "sans-serif"],
         headline: ["var(--font-space-grotesk)", "sans-serif"],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              fontFamily: theme("fontFamily.headline").join(", "),
+            },
+            h2: {
+              fontFamily: theme("fontFamily.headline").join(", "),
+            },
+            h3: {
+              fontFamily: theme("fontFamily.headline").join(", "),
+            },
+          },
+        },
+      }),
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -70,20 +85,12 @@ const config: Config = {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -94,24 +101,7 @@ const config: Config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    require("@tailwindcss/typography")({
-      // @ts-expect-error - The theme helper is not typed in the plugin
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            h1: {
-              fontFamily: theme("fontFamily.headline").join(", "),
-            },
-            h2: {
-              fontFamily: theme("fontFamily.headline").join(", "),
-            },
-            h3: {
-              fontFamily: theme("fontFamily.headline").join(", "),
-            },
-          },
-        },
-      }),
-    }),
+    require("@tailwindcss/typography"),
   ],
 };
 
