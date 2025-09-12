@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is WPM (Words Per Minute) Calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Gross WPM is calculated by taking the number of words typed and dividing it by the time taken in minutes. For standardization, a 'word' is often considered to be five characters long, including spaces.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a good typing speed?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An average typing speed is around 40 WPM. A speed of 60 WPM or higher is considered good for most professional roles. Professional typists often achieve speeds well over 100 WPM.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I improve my typing speed?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The key is consistent practice. Focus on accuracy first, then work on speed. Proper hand positioning (touch typing) is crucial. Avoid looking at the keyboard and practice using all ten fingers.",
+      },
+    },
+  ],
+};
 
 export default function AboutTypingSpeedCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutTypingSpeedCalculator() {
         <CardTitle>About the Typing Speed Test</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Typing Speed Calculator</strong> is an interactive tool
           designed to measure your typing proficiency in Words Per Minute (WPM).

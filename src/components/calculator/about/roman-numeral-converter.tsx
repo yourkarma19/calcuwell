@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do Roman numerals work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Roman numerals use letters to represent numbers: I (1), V (5), X (10), L (50), C (100), D (500), M (1000). Numbers are formed by combining these symbols, usually from largest to smallest (e.g., VI = 6).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the subtractive principle in Roman numerals?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To avoid repeating a symbol four times, a smaller value is placed before a larger one to indicate subtraction. For example, 4 is written as IV (5 - 1) instead of IIII, and 9 is IX (10 - 1).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is there a limit of 3,999?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The standard system does not have a symbol for 4,000 or greater, as it would require repeating 'M' four times (MMMM), which violates the standard rules. 3,999 is written as MMMCMXCIX.",
+      },
+    },
+  ],
+};
 
 export default function AboutRomanNumeralConverter() {
   return (
@@ -14,6 +47,10 @@ export default function AboutRomanNumeralConverter() {
         <CardTitle>About the Roman Numeral Converter</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           The <strong>Roman Numeral Converter</strong> is a handy tool for
           anyone who needs to translate between the Arabic numerals we use today

@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are Sine, Cosine, and Tangent?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sine (sin), Cosine (cos), and Tangent (tan) are the three primary trigonometric functions, defined as ratios of the sides of a right-angled triangle: sin(θ) = Opposite / Hypotenuse, cos(θ) = Adjacent / Hypotenuse, and tan(θ) = Opposite / Adjacent.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are Inverse Trigonometric Functions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Inverse trig functions (asin, acos, atan) are used to find an angle when you know the ratio of its sides. For example, if sin(θ) = 0.5, then asin(0.5) will give you the angle θ.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between Degrees and Radians?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Degrees and Radians are two units for measuring angles. A full circle is 360 degrees or 2π radians. Most advanced math and physics formulas use radians for simplicity.",
+      },
+    },
+  ],
+};
 
 export default function AboutTrigonometryCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutTrigonometryCalculator() {
         <CardTitle>About Trigonometry</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our **Trigonometry Calculator** provides a powerful and easy-to-use
           interface for solving complex trigonometric problems. Whether
