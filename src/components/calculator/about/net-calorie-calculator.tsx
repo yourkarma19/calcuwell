@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,10 +7,10 @@ export default function AboutNetCalorieCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>About the Net Calorie Calculator</CardTitle>
+        <CardTitle as="h2">About the Net Calorie Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
-        <h2>What Are Net Calories?</h2>
+        <h3>What Are Net Calories?</h3>
         <p>
           Net calories represent your daily energy balance and are crucial for
           managing your weight. The calculation is simple:
@@ -35,7 +36,7 @@ export default function AboutNetCalorieCalculator() {
           </li>
         </ul>
 
-        <h2>How to Calculate Your Calories Burned</h2>
+        <h3>How to Calculate Your Calories Burned</h3>
         <p>
           The &quot;calories burned&quot; part of the equation is your Total
           Daily Energy Expenditure (TDEE). This is made up of two main
@@ -63,7 +64,7 @@ export default function AboutNetCalorieCalculator() {
           .
         </p>
 
-        <h2>How to Use Net Calories for Your Goals</h2>
+        <h3>How to Use Net Calories for Your Goals</h3>
         <ul>
           <li>
             <strong>For Weight Loss:</strong> Aim for a sustained calorie
@@ -83,7 +84,7 @@ export default function AboutNetCalorieCalculator() {
         </ul>
 
         <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg text-yellow-800 dark:text-yellow-300">
-          <h3 className="font-bold mt-0">Disclaimer</h3>
+          <h4 className="font-bold mt-0">Disclaimer</h4>
           <p>
             This calculator is for informational purposes only. Consult with a
             healthcare professional or registered dietitian before making
