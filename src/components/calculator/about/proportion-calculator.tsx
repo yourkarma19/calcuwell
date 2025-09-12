@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you solve proportions using cross-multiplication?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For the equation A/B = C/D, you multiply the numerator of the first fraction by the denominator of the second (A × D) and set it equal to the product of the other two (B × C). This gives you the equation A × D = B × C. From there, you can use simple algebra to solve for the unknown variable.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are some real-world examples of proportions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Proportions are used everywhere in daily life, such as scaling a recipe, reading a map's scale, and calculating fuel consumption for a trip.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between a ratio and a proportion?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A ratio is a comparison of two numbers (e.g., A:B). A proportion is an equation that states that two ratios are equal (e.g., A/B = C/D).",
+      },
+    },
+  ],
+};
 
 export default function AboutProportionCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutProportionCalculator() {
         <CardTitle>About Proportions</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our **Proportion Calculator** is a powerful tool for solving equations
           involving two equivalent ratios. A proportion is a statement that two

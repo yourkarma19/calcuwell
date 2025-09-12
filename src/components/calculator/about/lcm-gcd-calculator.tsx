@@ -1,3 +1,4 @@
+
 "use client";
 import {
   Accordion,
@@ -6,6 +7,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the Greatest Common Divisor (GCD)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Greatest Common Divisor (also known as the Greatest Common Factor) is the largest positive integer that divides each of the integers in a set without leaving a remainder. For example, the GCD of 12 and 18 is 6.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the Least Common Multiple (LCM)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Least Common Multiple is the smallest positive integer that is a multiple of every integer in a set. For example, the LCM of 12 and 18 is 36.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How are LCM and GCD related?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For any two positive integers 'a' and 'b', their product is equal to the product of their GCD and LCM: a * b = GCD(a, b) * LCM(a, b).",
+      },
+    },
+  ],
+};
 
 export default function AboutLcmGcdCalculator() {
   return (
@@ -14,6 +47,10 @@ export default function AboutLcmGcdCalculator() {
         <CardTitle>About LCM &amp; GCD</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <p>
           Our **LCM &amp; GCD Calculator** is a fundamental tool for number
           theory and mathematics. It allows you to quickly find the Least Common
