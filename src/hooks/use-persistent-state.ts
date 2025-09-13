@@ -7,27 +7,24 @@ function usePersistentState<T>(
   defaultValue: T,
   reviver?: (value: unknown) => T,
 ): [T, Dispatch<SetStateAction<T>>] {
-  const [state, setState] = useState<T>(() => {
+  const [state, setState] = useState<T>(defaultValue);
+
+  useEffect(() => {
     try {
-      if (typeof window !== "undefined") {
-        const item = window.localStorage.getItem(key);
-        if (item) {
-          const parsed = JSON.parse(item);
-          return reviver ? reviver(parsed) : parsed;
-        }
+      const item = window.localStorage.getItem(key);
+      if (item) {
+        const parsed = JSON.parse(item);
+        setState(reviver ? reviver(parsed) : parsed);
       }
     } catch (error) {
       console.error(`Error reading localStorage key “${key}”:`, error);
     }
-    return defaultValue;
-  });
+  }, [key, reviver]);
 
   useEffect(() => {
     try {
-      if (typeof window !== "undefined") {
-        const serializedState = JSON.stringify(state);
-        window.localStorage.setItem(key, serializedState);
-      }
+      const serializedState = JSON.stringify(state);
+      window.localStorage.setItem(key, serializedState);
     } catch (error) {
       console.error(`Error setting localStorage key “${key}”:`, error);
     }
