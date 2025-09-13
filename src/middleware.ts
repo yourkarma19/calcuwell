@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'none';
+    frame-ancestors 'self';
     connect-src 'self' vitals.vercel-insights.com;
     frame-src 'self' https://googleads.g.doubleclick.net;
     upgrade-insecure-requests;
