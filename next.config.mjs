@@ -7,8 +7,33 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; script-src 'self' 'nonce-{{nonce}}' 'strict-dynamic' https: http: 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://picsum.photos; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' *.cloudworkstations.dev; connect-src 'self' vitals.vercel-insights.com; frame-src 'self' https://googleads.g.doubleclick.net; upgrade-insecure-requests;",
+            value: `
+              default-src 'self';
+              script-src 'self' 'nonce-{{nonce}}' 'strict-dynamic' https: http:
+                'unsafe-inline'
+                https://www.googletagmanager.com
+                https://pagead2.googlesyndication.com
+                https://www.google-analytics.com;
+              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+              img-src 'self' blob: data:
+                https://picsum.photos
+                https://www.google-analytics.com
+                https://pagead2.googlesyndication.com
+                https://googleads.g.doubleclick.net;
+              font-src 'self' https://fonts.gstatic.com;
+              object-src 'none';
+              base-uri 'self';
+              form-action 'self';
+              frame-ancestors 'self' *.cloudworkstations.dev;
+              connect-src 'self'
+                vitals.vercel-insights.com
+                https://www.google-analytics.com
+                https://stats.g.doubleclick.net;
+              frame-src 'self'
+                https://googleads.g.doubleclick.net
+                https://www.googletagmanager.com;
+              upgrade-insecure-requests;
+            `.replace(/\s{2,}/g, " "), // cleans up spaces
           },
           {
             key: "Referrer-Policy",
@@ -31,8 +56,10 @@ const nextConfig = {
     ];
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // avoids crashes
   },
+  reactStrictMode: true,
+  poweredByHeader: false, // removes "x-powered-by" header
 };
 
 export default nextConfig;
