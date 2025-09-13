@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,9 +52,9 @@ export default function AboutCgpaCalculator() {
         />
         <h3>What is CGPA?</h3>
         <p>
-          CGPA stands for <strong>Cumulative Grade Point Average</strong>. It&apos;s
-          the weighted average of your grades from all semesters. It gives a full
-          picture of your academic performance.
+          CGPA stands for <strong>Cumulative Grade Point Average</strong>.
+          It&apos;s the weighted average of your grades from all semesters. It
+          gives a full picture of your academic performance.
         </p>
 
         <h3>How to Use the CGPA Calculator</h3>
@@ -80,8 +79,8 @@ export default function AboutCgpaCalculator() {
 
         <h3>Why Your CGPA is Important</h3>
         <p>
-          Your CGPA is a key measure of your academic performance. It&apos;s often
-          used by universities for admissions and by employers for job
+          Your CGPA is a key measure of your academic performance. It&apos;s
+          often used by universities for admissions and by employers for job
           screening. A good CGPA is important for future academic and career
           opportunities.
         </p>
@@ -98,7 +97,9 @@ export default function AboutCgpaCalculator() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="faq2">
-            <AccordionTrigger>How do I convert CGPA to a percentage?</AccordionTrigger>
+            <AccordionTrigger>
+              How do I convert CGPA to a percentage?
+            </AccordionTrigger>
             <AccordionContent>
               The formula can vary by university. A common method is:
               `Percentage = CGPA * 9.5`. However, always check with your

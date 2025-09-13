@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -55,8 +54,8 @@ export default function AboutStockProfitLossCalculator() {
           The Stock Profit/Loss Calculator is an essential tool for investors to
           determine the exact outcome of their stock trades. It allows you to
           factor in the quantity of shares and any commissions or fees. This
-          gives you a true picture of your net profit or loss and your return
-          on investment (ROI).
+          gives you a true picture of your net profit or loss and your return on
+          investment (ROI).
         </p>
         <h3>How to Use the Stock Profit/Loss Calculator</h3>
         <ol>
@@ -64,9 +63,7 @@ export default function AboutStockProfitLossCalculator() {
             Enter the **Buy Price per Share** and the **Sell Price per Share**.
           </li>
           <li>Input the **Quantity** of shares you traded.</li>
-          <li>
-            Add any **Buy Commission** and **Sell Commission** you paid.
-          </li>
+          <li>Add any **Buy Commission** and **Sell Commission** you paid.</li>
         </ol>
         <p>
           The calculator will instantly display the total profit or loss, the

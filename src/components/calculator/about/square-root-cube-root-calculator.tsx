@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -98,8 +97,8 @@ export default function AboutSquareRootCubeRootCalculator() {
             <AccordionContent>
               You can find the real cube root of a negative number (e.g., the
               cube root of -8 is -2). However, the square root of a negative
-              number is an &quot;imaginary number,&quot; which this calculator indicates
-              with the symbol &apos;i&apos;.
+              number is an &quot;imaginary number,&quot; which this calculator
+              indicates with the symbol &apos;i&apos;.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">

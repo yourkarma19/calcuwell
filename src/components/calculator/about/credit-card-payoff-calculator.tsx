@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -80,9 +79,7 @@ export default function AboutCreditCardPayoffCalculator() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>
-              What if my payment is too low?
-            </AccordionTrigger>
+            <AccordionTrigger>What if my payment is too low?</AccordionTrigger>
             <AccordionContent>
               If your monthly payment is less than the monthly interest, you
               will never pay off the debt. The calculator will show an error if

@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import {
@@ -53,8 +52,8 @@ export default function AboutSavingsCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Savings Growth Calculator helps you visualize how your savings
-          can grow over time. By factoring in your initial deposit, regular
+          The Savings Growth Calculator helps you visualize how your savings can
+          grow over time. By factoring in your initial deposit, regular
           contributions, and compound interest, this calculator provides a clear
           projection of your financial future.
         </p>
@@ -76,10 +75,10 @@ export default function AboutSavingsCalculator() {
               How does compound interest work?
             </AccordionTrigger>
             <AccordionContent>
-              Compound interest is &quot;interest on interest.&quot; The interest you
-              earn is added to your principal, and then you earn interest on
-              the new, larger amount. This causes your savings to grow faster
-              over time. Our{" "}
+              Compound interest is &quot;interest on interest.&quot; The
+              interest you earn is added to your principal, and then you earn
+              interest on the new, larger amount. This causes your savings to
+              grow faster over time. Our{" "}
               <Link
                 href="/calculators/compound-interest-calculator"
                 className="text-primary hover:underline"

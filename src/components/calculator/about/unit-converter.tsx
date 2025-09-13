@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -19,14 +18,12 @@ export default function AboutUnitConverter() {
           Our Universal Unit Converter is a powerful tool for a wide range of
           measurement conversions. From length and weight to energy and
           pressure, this calculator is an essential utility for students,
-          professionals, and anyone who needs to work with different
-          measurement systems.
+          professionals, and anyone who needs to work with different measurement
+          systems.
         </p>
         <h3>How to Use the Calculator</h3>
         <ol>
-          <li>
-            First, select the Conversion Type (e.g., Length, Weight).
-          </li>
+          <li>First, select the Conversion Type (e.g., Length, Weight).</li>
           <li>Enter the value you wish to convert.</li>
           <li>Select the starting unit and the target unit.</li>
         </ol>
@@ -51,8 +48,8 @@ export default function AboutUnitConverter() {
             </AccordionTrigger>
             <AccordionContent>
               Temperature conversion uses specific formulas to convert between
-              Celsius, Fahrenheit, and Kelvin. This is because their scales
-              have different starting points and interval sizes.
+              Celsius, Fahrenheit, and Kelvin. This is because their scales have
+              different starting points and interval sizes.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -81,8 +80,8 @@ export default function AboutColorConverter() {
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                <strong>HEX</strong> is a six-digit code (e.g., `#FF5733`) common
-                in web design.
+                <strong>HEX</strong> is a six-digit code (e.g., `#FF5733`)
+                common in web design.
               </p>
               <p className="mb-2">
                 <strong>RGB</strong> is how digital screens create color by
@@ -91,8 +90,8 @@ export default function AboutColorConverter() {
               </p>
               <p>
                 <strong>HSL</strong> is a more human-friendly way to represent
-                color. Hue is the color itself, Saturation is its intensity,
-                and Lightness is its brightness.
+                color. Hue is the color itself, Saturation is its intensity, and
+                Lightness is its brightness.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -111,8 +110,8 @@ export default function AboutColorConverter() {
               What does the &quot;alpha&quot; value in RGBA mean?
             </AccordionTrigger>
             <AccordionContent>
-              The &apos;A&apos; stands for Alpha, which controls the opacity of the color.
-              An alpha value of 1 is fully opaque, while 0 is fully
+              The &apos;A&apos; stands for Alpha, which controls the opacity of
+              the color. An alpha value of 1 is fully opaque, while 0 is fully
               transparent. This is used in CSS for semi-transparent effects.
             </AccordionContent>
           </AccordionItem>

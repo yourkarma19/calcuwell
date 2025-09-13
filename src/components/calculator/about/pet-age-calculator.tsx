@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -52,19 +51,22 @@ export default function AboutPetAgeCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The **Pet Age Calculator** is a fun way to translate your pet&apos;s age
-          into human years. While the old &quot;7 dog years to 1 human year&quot; rule is
-          a myth, this tool uses a more modern method to give you a better
-          understanding of your pet&apos;s life stage.
+          The **Pet Age Calculator** is a fun way to translate your pet&apos;s
+          age into human years. While the old &quot;7 dog years to 1 human
+          year&quot; rule is a myth, this tool uses a more modern method to give
+          you a better understanding of your pet&apos;s life stage.
         </p>
         <h3>How to Use the Pet Age Calculator</h3>
         <ol>
-          <li>Select the <strong>Pet Type</strong> (Dog or Cat).</li>
-          <li>Enter your pet&apos;s current <strong>Age</strong> in years.</li>
+          <li>
+            Select the <strong>Pet Type</strong> (Dog or Cat).
+          </li>
+          <li>
+            Enter your pet&apos;s current <strong>Age</strong> in years.
+          </li>
         </ol>
         <p>
-          The calculator will instantly show their estimated age in human
-          years.
+          The calculator will instantly show their estimated age in human years.
         </p>
         <h3>Pet Age FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -73,10 +75,10 @@ export default function AboutPetAgeCalculator() {
               Is the &quot;7 dog years to 1 human year&quot; rule true?
             </AccordionTrigger>
             <AccordionContent>
-              No, it&apos;s a common myth. Dogs and cats mature much faster in their
-              first two years. This calculator uses a method where the first
-              year equals about 15 human years, the second adds 9, and every
-              year after adds 4-5 years.
+              No, it&apos;s a common myth. Dogs and cats mature much faster in
+              their first two years. This calculator uses a method where the
+              first year equals about 15 human years, the second adds 9, and
+              every year after adds 4-5 years.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

@@ -115,10 +115,7 @@ export default function DataStorageConverter() {
               readOnly
               className="font-bold text-primary bg-primary/10 border-primary/20"
             />
-            <Select
-              value={toUnit}
-              onValueChange={(v) => setToUnit(v as Unit)}
-            >
+            <Select value={toUnit} onValueChange={(v) => setToUnit(v as Unit)}>
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { derivative, parse } from "mathjs";

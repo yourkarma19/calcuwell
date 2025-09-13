@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -62,13 +61,13 @@ export default function AboutAsciiTextConverter() {
         <ol>
           <li>
             To convert <strong>text to ASCII</strong>, type your message in the
-            &quot;Text&quot; box. The matching ASCII codes will appear in the &quot;ASCII
-            Codes&quot; box.
+            &quot;Text&quot; box. The matching ASCII codes will appear in the
+            &quot;ASCII Codes&quot; box.
           </li>
           <li>
             To convert <strong>ASCII to text</strong>, type number codes in the
-            &quot;ASCII Codes&quot; box. The translated text will appear in the &quot;Text&quot;
-            box.
+            &quot;ASCII Codes&quot; box. The translated text will appear in the
+            &quot;Text&quot; box.
           </li>
         </ol>
         <h3>ASCII Converter FAQs</h3>
@@ -77,8 +76,9 @@ export default function AboutAsciiTextConverter() {
             <AccordionTrigger>What is ASCII?</AccordionTrigger>
             <AccordionContent>
               ASCII is a system that gives a unique number to each letter,
-              digit, and symbol. For example, &apos;A&apos; is 65, and &apos;B&apos; is 66. This lets
-              computers store and work with text as numbers.
+              digit, and symbol. For example, &apos;A&apos; is 65, and
+              &apos;B&apos; is 66. This lets computers store and work with text
+              as numbers.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -105,8 +105,8 @@ export default function AboutAsciiTextConverter() {
             <AccordionTrigger>What is an ASCII code?</AccordionTrigger>
             <AccordionContent>
               An ASCII code is simply the number for a character. For example,
-              the text &quot;Hello&quot; is represented by the ASCII codes `72 101 108
-              108 111`. Each number matches a specific character.
+              the text &quot;Hello&quot; is represented by the ASCII codes `72
+              101 108 108 111`. Each number matches a specific character.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import {
@@ -69,8 +68,8 @@ export default function AboutBMICalculator() {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
           <p>
-            The <strong>Body Mass Index (BMI)</strong> is a measure to check
-            if your weight is healthy for your height. It&apos;s a simple screening
+            The <strong>Body Mass Index (BMI)</strong> is a measure to check if
+            your weight is healthy for your height. It&apos;s a simple screening
             tool that can spot potential weight-related health issues.
           </p>
 
@@ -99,8 +98,8 @@ export default function AboutBMICalculator() {
                 <p>
                   According to the WHO, a healthy BMI for most adults is between{" "}
                   <strong>18.5 and 24.9</strong>. A BMI below 18.5 is
-                  underweight, 25.0 to 29.9 is overweight, and 30.0 or higher
-                  is obesity.
+                  underweight, 25.0 to 29.9 is overweight, and 30.0 or higher is
+                  obesity.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -122,11 +121,11 @@ export default function AboutBMICalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 <p>
-                  BMI is a useful screening tool, but it doesn&apos;t separate fat
-                  from muscle. Very muscular people (like athletes) might have a
-                  high BMI but still be healthy. You should use it as a general
-                  guide and talk to a healthcare provider for a full health
-                  check.
+                  BMI is a useful screening tool, but it doesn&apos;t separate
+                  fat from muscle. Very muscular people (like athletes) might
+                  have a high BMI but still be healthy. You should use it as a
+                  general guide and talk to a healthcare provider for a full
+                  health check.
                 </p>
                 <p>
                   For a closer look at your body composition, try our{" "}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -54,8 +53,8 @@ export default function AboutConeVolumeCalculator() {
         />
         <p>
           The Cone Calculator is a useful tool for anyone working with 3D
-          shapes. It helps find a cone&apos;s key properties, like its volume, slant
-          height, and surface area.
+          shapes. It helps find a cone&apos;s key properties, like its volume,
+          slant height, and surface area.
         </p>
 
         <h3>How to Use the Cone Calculator</h3>
@@ -86,10 +85,10 @@ export default function AboutConeVolumeCalculator() {
           <AccordionItem value="item-2">
             <AccordionTrigger>What is the slant height?</AccordionTrigger>
             <AccordionContent>
-              The slant height (&apos;s&apos;) is the distance from the tip of the cone
-              down the side to a point on the edge of the base. It is needed to
-              calculate the surface area. You can find it using the formula: `s
-              = √(r² + h²)`.
+              The slant height (&apos;s&apos;) is the distance from the tip of
+              the cone down the side to a point on the edge of the base. It is
+              needed to calculate the surface area. You can find it using the
+              formula: `s = √(r² + h²)`.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -98,8 +97,8 @@ export default function AboutConeVolumeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The total surface area of a cone is the area of its circular base
-              (`π * r²`) plus its side surface area (`π * r * s`), where &apos;s&apos; is
-              the slant height.
+              (`π * r²`) plus its side surface area (`π * r * s`), where
+              &apos;s&apos; is the slant height.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,9 +52,9 @@ export default function AboutTypingSpeedCalculator() {
         />
         <p>
           The <strong>Typing Speed Calculator</strong> is a tool to measure your
-          typing proficiency in Words Per Minute (WPM). It&apos;s perfect for anyone
-          looking to improve their typing skills. By practicing regularly, you
-          can increase your speed and accuracy.
+          typing proficiency in Words Per Minute (WPM). It&apos;s perfect for
+          anyone looking to improve their typing skills. By practicing
+          regularly, you can increase your speed and accuracy.
         </p>
 
         <h3>How to Use the Typing Speed Calculator</h3>
@@ -64,7 +63,9 @@ export default function AboutTypingSpeedCalculator() {
           <li>As soon as you start typing, the timer will begin.</li>
           <li>Type the text as quickly and accurately as you can.</li>
           <li>When you finish, the test will stop automatically.</li>
-          <li>Click <strong>Restart Test</strong> to try again.</li>
+          <li>
+            Click <strong>Restart Test</strong> to try again.
+          </li>
         </ol>
 
         <h3>Typing Speed FAQs</h3>
@@ -103,8 +104,8 @@ export default function AboutTypingSpeedCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Yes, for most practical purposes, accuracy is more important. A
-              high WPM is useless if it&apos;s full of errors that you have to go
-              back and correct.
+              high WPM is useless if it&apos;s full of errors that you have to
+              go back and correct.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

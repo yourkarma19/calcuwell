@@ -1,4 +1,3 @@
-
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -38,14 +37,14 @@ export default function AboutConcreteSlabCalculator() {
           <li>Select the **Concrete Bag Weight** you plan to buy.</li>
         </ol>
         <p>
-          The calculator will instantly show the total volume of concrete
-          needed and the number of bags to buy.
+          The calculator will instantly show the total volume of concrete needed
+          and the number of bags to buy.
         </p>
 
         <h3>Concrete Bag Yields</h3>
         <p>
-          The amount of concrete a bag gives you depends on its weight. Here
-          are some common estimates:
+          The amount of concrete a bag gives you depends on its weight. Here are
+          some common estimates:
         </p>
         <Table>
           <TableHeader>

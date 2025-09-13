@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,8 +59,8 @@ export default function AboutOhmsLawCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The **Ohm&apos;s Law Calculator** is a vital tool for anyone working with
-          electronics. It helps you find the relationship between **Voltage
+          The **Ohm&apos;s Law Calculator** is a vital tool for anyone working
+          with electronics. It helps you find the relationship between **Voltage
           (V)**, **Current (I)**, **Resistance (R)**, and **Power (P)**. Just
           enter any two values, and the calculator will find the other two.
         </p>
@@ -76,9 +75,9 @@ export default function AboutOhmsLawCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Ohm&apos;s Law?</AccordionTrigger>
             <AccordionContent>
-              Ohm&apos;s Law is a basic rule in electronics. The formula is `V = I ×
-              R`. It says that the voltage across a component is equal to the
-              current flowing through it multiplied by its resistance.
+              Ohm&apos;s Law is a basic rule in electronics. The formula is `V =
+              I × R`. It says that the voltage across a component is equal to
+              the current flowing through it multiplied by its resistance.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

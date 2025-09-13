@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -68,8 +67,8 @@ export default function AboutBinaryConverter() {
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                <strong>Decimal (Base-10):</strong> The system we use every
-                day, with digits 0-9.
+                <strong>Decimal (Base-10):</strong> The system we use every day,
+                with digits 0-9.
               </p>
               <p className="mb-2">
                 <strong>Binary (Base-2):</strong> The main language of
@@ -90,10 +89,10 @@ export default function AboutBinaryConverter() {
               Why is hexadecimal used in programming?
             </AccordionTrigger>
             <AccordionContent>
-              Hexadecimal is popular because it&apos;s a human-friendly way to show
-              long binary values. For example, `11111111` is easier to read as
-              `FF`. It&apos;s often used for memory addresses and color codes (e.g.,
-              `#FF0000` for red).
+              Hexadecimal is popular because it&apos;s a human-friendly way to
+              show long binary values. For example, `11111111` is easier to read
+              as `FF`. It&apos;s often used for memory addresses and color codes
+              (e.g., `#FF0000` for red).
             </AccordionContent>
           </AccordionItem>
         </Accordion>

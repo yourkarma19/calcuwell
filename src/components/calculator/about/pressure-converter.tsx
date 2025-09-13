@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -67,16 +66,16 @@ export default function AboutPressureConverter() {
             </AccordionTrigger>
             <AccordionContent>
               The standard SI unit for pressure is the **Pascal (Pa)**. It is a
-              very small amount of pressure. It&apos;s often more convenient to use
-              **kilopascals (kPa)**, where 1 kPa = 1,000 Pa.
+              very small amount of pressure. It&apos;s often more convenient to
+              use **kilopascals (kPa)**, where 1 kPa = 1,000 Pa.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>Common Pressure Units Explained</AccordionTrigger>
             <AccordionContent>
               <p>
-                **Bar:** One bar is 100,000 Pa and is very close to the
-                average atmospheric pressure on Earth.
+                **Bar:** One bar is 100,000 Pa and is very close to the average
+                atmospheric pressure on Earth.
               </p>
               <p>
                 **Atmosphere (atm):** A standard atmosphere is defined as

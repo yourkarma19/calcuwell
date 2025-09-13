@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,10 +59,10 @@ export default function AboutExponentPowerCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The <strong>Exponent & Power Calculator</strong> helps you compute
-          the result of a number raised to a certain power. This operation,
-          called exponentiation, is essential in many fields, including
-          finance, science, and computer science.
+          The <strong>Exponent & Power Calculator</strong> helps you compute the
+          result of a number raised to a certain power. This operation, called
+          exponentiation, is essential in many fields, including finance,
+          science, and computer science.
         </p>
 
         <h3>How to Use the Exponent & Power Calculator</h3>

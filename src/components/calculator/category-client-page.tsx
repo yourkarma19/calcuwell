@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,12 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import type { Calculator } from "@/lib/types";
 import Link from "next/link";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "../ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 
 type StrippedCalculator = Omit<Calculator, "component">;
 
@@ -95,7 +89,9 @@ export default function CategoryClientPage({
                       <CardTitle className="text-lg font-semibold font-headline group-hover:text-primary transition-colors">
                         {calculator.name}
                       </CardTitle>
-                      <CardDescription>{calculator.description}</CardDescription>
+                      <CardDescription>
+                        {calculator.description}
+                      </CardDescription>
                     </div>
                   </div>
                 </CardHeader>

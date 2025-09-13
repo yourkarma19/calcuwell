@@ -1,4 +1,3 @@
-
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -10,17 +9,20 @@ export default function AboutPetCareCostCalculator() {
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <p>
-          Bringing a pet into your life is a joyful experience, but it&apos;s also a
-          big financial commitment. Our **Pet Care Cost Calculator** helps you
-          estimate the monthly and yearly expenses of owning a pet. By planning
-          ahead, you can be sure you&apos;re ready to give your furry friend the best
-          care.
+          Bringing a pet into your life is a joyful experience, but it&apos;s
+          also a big financial commitment. Our **Pet Care Cost Calculator**
+          helps you estimate the monthly and yearly expenses of owning a pet. By
+          planning ahead, you can be sure you&apos;re ready to give your furry
+          friend the best care.
         </p>
         <h3>How to Use the Calculator</h3>
         <ol>
           <li>Start by selecting your **Pet Type**.</li>
           <li>Enter your estimated **Monthly Food Cost**.</li>
-          <li>Provide your yearly estimates for **Veterinary Care** and **Grooming**.</li>
+          <li>
+            Provide your yearly estimates for **Veterinary Care** and
+            **Grooming**.
+          </li>
           <li>
             Add a monthly amount for **Miscellaneous** costs like toys and
             treats.

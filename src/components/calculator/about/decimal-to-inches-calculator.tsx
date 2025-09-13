@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -44,7 +43,7 @@ const jsonLd: WithContext<FAQPage> = {
       name: "Why is precision important in these conversions?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Precision determines the smallest fraction you are measuring to. For woodworking or machining, higher precision like 1/32\" is often necessary for accurate fits. For general measurements, a lower precision like 1/8\" or 1/4\" may be sufficient.",
+        text: 'Precision determines the smallest fraction you are measuring to. For woodworking or machining, higher precision like 1/32" is often necessary for accurate fits. For general measurements, a lower precision like 1/8" or 1/4" may be sufficient.',
       },
     },
     {
@@ -60,7 +59,7 @@ const jsonLd: WithContext<FAQPage> = {
       name: "How do you convert a number with feet and inches into a decimal?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "To convert from feet and inches to a decimal, first convert the feet to inches (1 foot = 12 inches). Add this to the inch measurement. Then, if there is a fraction, convert it to a decimal by dividing the numerator by the denominator. Add this decimal to your total inches. For example, 2' 6 1/2\" becomes (2 * 12) + 6 + (1/2) = 24 + 6 + 0.5 = 30.5\".",
+        text: 'To convert from feet and inches to a decimal, first convert the feet to inches (1 foot = 12 inches). Add this to the inch measurement. Then, if there is a fraction, convert it to a decimal by dividing the numerator by the denominator. Add this decimal to your total inches. For example, 2\' 6 1/2" becomes (2 * 12) + 6 + (1/2) = 24 + 6 + 0.5 = 30.5".',
       },
     },
   ],
@@ -137,9 +136,9 @@ export default function AboutDecimalToInchesCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 Precision determines the smallest fraction you measure to. For
-                woodworking, higher precision like 1/32&quot; is often needed for
-                accurate fits. For general measurements, 1/8&quot; or 1/4&quot; may be
-                enough.
+                woodworking, higher precision like 1/32&quot; is often needed
+                for accurate fits. For general measurements, 1/8&quot; or
+                1/4&quot; may be enough.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -158,10 +157,10 @@ export default function AboutDecimalToInchesCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 First, convert feet to inches (1 foot = 12 inches). Add this to
-                the inch measurement. Then, convert any fraction to a decimal
-                by dividing the top number by the bottom number. Add this to
-                your total inches. For example, 2&apos; 6 1/2&quot; becomes (2 * 12) + 6 +
-                (1/2) = 30.5&quot;.
+                the inch measurement. Then, convert any fraction to a decimal by
+                dividing the top number by the bottom number. Add this to your
+                total inches. For example, 2&apos; 6 1/2&quot; becomes (2 * 12)
+                + 6 + (1/2) = 30.5&quot;.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import {
@@ -55,17 +54,19 @@ export default function AboutWorkingDaysCalculator() {
         <p>
           The <strong>Working Days Calculator</strong> is a tool for
           professionals who need to plan projects and set deadlines. It
-          calculates the number of business days between two dates, automatically
-          excluding weekends to give you a realistic timeline.
+          calculates the number of business days between two dates,
+          automatically excluding weekends to give you a realistic timeline.
         </p>
 
         <h3>How to Use the Working Days Calculator</h3>
         <ol>
           <li>
-            Select a <strong>Start Date</strong> and an <strong>End Date</strong>.
+            Select a <strong>Start Date</strong> and an{" "}
+            <strong>End Date</strong>.
           </li>
           <li>
-            Click the <strong>&quot;Calculate Working Days&quot;</strong> button.
+            Click the <strong>&quot;Calculate Working Days&quot;</strong>{" "}
+            button.
           </li>
         </ol>
         <p>

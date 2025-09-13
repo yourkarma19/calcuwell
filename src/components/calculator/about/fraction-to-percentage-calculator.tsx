@@ -1,4 +1,3 @@
-
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -30,8 +29,8 @@ export default function AboutFractionToPercentageCalculator() {
           <p>
             This calculator converts any fraction into its equivalent
             percentage. This is a basic math skill useful in many situations,
-            from reading stats to understanding discounts. A percentage is simply a
-            fraction with a denominator of 100.
+            from reading stats to understanding discounts. A percentage is
+            simply a fraction with a denominator of 100.
           </p>
           <h3>How to Use the Calculator</h3>
           <ol>

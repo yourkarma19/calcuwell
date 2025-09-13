@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -54,15 +53,15 @@ export default function AboutAngleConverter() {
         <p>
           The Angle Converter is a simple tool for students, engineers, and
           scientists. It helps you switch between the two most common units for
-          angles: <strong>degrees</strong> and <strong>radians</strong>. This tool
-          gives you instant and accurate conversions.
+          angles: <strong>degrees</strong> and <strong>radians</strong>. This
+          tool gives you instant and accurate conversions.
         </p>
 
         <h3>How to Use the Angle Converter</h3>
         <p>
-          Enter a value in either the &quot;Degrees&quot; or &quot;Radians&quot; field. The other
-          field will update automatically. Use the swap button to easily
-          reverse the conversion.
+          Enter a value in either the &quot;Degrees&quot; or &quot;Radians&quot;
+          field. The other field will update automatically. Use the swap button
+          to easily reverse the conversion.
         </p>
 
         <h3>Angle Converter FAQs</h3>

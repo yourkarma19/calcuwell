@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,8 +59,8 @@ export default function AboutVoltageToWattsCalculator() {
 
         <h3>How to Convert Volts to Watts</h3>
         <p>
-          The conversion is based on Watt&apos;s Law. Simply input the voltage (in
-          Volts) and the current (in Amps) of your circuit, and it will
+          The conversion is based on Watt&apos;s Law. Simply input the voltage
+          (in Volts) and the current (in Amps) of your circuit, and it will
           instantly compute the power in Watts.
         </p>
         <p className="font-mono bg-muted p-2 rounded-md text-center my-2">

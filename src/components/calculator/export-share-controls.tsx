@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Download, Copy, Loader2 } from "lucide-react";

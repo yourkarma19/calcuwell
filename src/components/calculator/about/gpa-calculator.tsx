@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -75,9 +74,9 @@ export default function AboutGpaCalculator() {
             <AccordionTrigger>How is GPA Calculated?</AccordionTrigger>
             <AccordionContent>
               Each letter grade is given a point value (e.g., A=4.0, B=3.0).
-              This value is multiplied by the course credits to get &quot;quality
-              points.&quot; All quality points are added up and then divided by the
-              total credits to find the GPA.
+              This value is multiplied by the course credits to get
+              &quot;quality points.&quot; All quality points are added up and
+              then divided by the total credits to find the GPA.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -85,10 +84,11 @@ export default function AboutGpaCalculator() {
               What is a &quot;Weighted&quot; vs. &quot;Unweighted&quot; GPA?
             </AccordionTrigger>
             <AccordionContent>
-              An **unweighted GPA** is on a 4.0 scale, where an &apos;A&apos; is always
-              4.0. A **weighted GPA** gives extra points for harder classes, like
-              Honors or AP courses. An &apos;A&apos; in an AP class might be worth 5.0.
-              This calculator computes an unweighted GPA.
+              An **unweighted GPA** is on a 4.0 scale, where an &apos;A&apos; is
+              always 4.0. A **weighted GPA** gives extra points for harder
+              classes, like Honors or AP courses. An &apos;A&apos; in an AP
+              class might be worth 5.0. This calculator computes an unweighted
+              GPA.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

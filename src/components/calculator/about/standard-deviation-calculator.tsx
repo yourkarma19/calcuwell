@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -73,10 +72,10 @@ export default function AboutStandardDeviationCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                Standard deviation measures how spread out numbers are from their
-                average. A low standard deviation means the numbers are close to
-                the average. A high standard deviation means the numbers are
-                spread out over a wider range.
+                Standard deviation measures how spread out numbers are from
+                their average. A low standard deviation means the numbers are
+                close to the average. A high standard deviation means the
+                numbers are spread out over a wider range.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -89,9 +88,9 @@ export default function AboutStandardDeviationCalculator() {
               <p>
                 Use <strong>Population standard deviation (σ)</strong> when your
                 data represents the entire group. Use{" "}
-                <strong>Sample standard deviation (s)</strong> when your data
-                is a smaller sample of a larger population. The sample formula
-                uses `n-1` for a better estimate.
+                <strong>Sample standard deviation (s)</strong> when your data is
+                a smaller sample of a larger population. The sample formula uses
+                `n-1` for a better estimate.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -103,9 +102,9 @@ export default function AboutStandardDeviationCalculator() {
             <AccordionContent>
               <p>
                 It&apos;s crucial in many fields. In finance, it measures the
-                volatility of an investment. In manufacturing, it&apos;s used for
-                quality control. In science, it helps determine if experimental
-                results are statistically significant.
+                volatility of an investment. In manufacturing, it&apos;s used
+                for quality control. In science, it helps determine if
+                experimental results are statistically significant.
               </p>
             </AccordionContent>
           </AccordionItem>

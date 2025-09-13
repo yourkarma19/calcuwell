@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -65,8 +64,8 @@ export default function AboutWeddingBudgetCalculator() {
             **Catering**, and **Photography**.
           </li>
           <li>
-            Use the &quot;Miscellaneous&quot; field to account for other expenses like
-            invitations or entertainment.
+            Use the &quot;Miscellaneous&quot; field to account for other
+            expenses like invitations or entertainment.
           </li>
         </ol>
         <p>
@@ -82,8 +81,8 @@ export default function AboutWeddingBudgetCalculator() {
             <AccordionContent>
               Typically, the venue and catering are the largest parts of a
               wedding budget, often 50% or more of the total cost. The number of
-              guests has a direct impact on this, as catering is usually
-              priced per person.
+              guests has a direct impact on this, as catering is usually priced
+              per person.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -102,9 +101,9 @@ export default function AboutWeddingBudgetCalculator() {
               How much should we budget for unexpected costs?
             </AccordionTrigger>
             <AccordionContent>
-              It&apos;s wise to set aside 5-10% of your total budget as a contingency
-              fund. This will help you cover any unexpected expenses that arise
-              without adding stress.
+              It&apos;s wise to set aside 5-10% of your total budget as a
+              contingency fund. This will help you cover any unexpected expenses
+              that arise without adding stress.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

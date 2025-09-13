@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -56,21 +55,23 @@ export default function AboutCylinderVolumeCalculator() {
           The <strong>Cylinder Calculator</strong> is a tool for finding the
           geometric properties of a cylinder. Simply provide the radius and
           height to instantly find the volume and surface area. This is useful
-          for calculating a tank&apos;s capacity or the material needed to build a
-          cylindrical object.
+          for calculating a tank&apos;s capacity or the material needed to build
+          a cylindrical object.
         </p>
 
         <h3>How to Use the Cylinder Calculator</h3>
         <ol>
           <li>
-            Enter the <strong>Radius</strong> of the cylinder&apos;s circular base.
+            Enter the <strong>Radius</strong> of the cylinder&apos;s circular
+            base.
           </li>
           <li>
             Enter the <strong>Height</strong> of the cylinder.
           </li>
         </ol>
         <p>
-          The calculator will automatically display the volume and surface areas.
+          The calculator will automatically display the volume and surface
+          areas.
         </p>
 
         <h3>Cylinder Calculator FAQs</h3>

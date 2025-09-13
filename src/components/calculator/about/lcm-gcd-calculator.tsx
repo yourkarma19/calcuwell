@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -52,16 +51,16 @@ export default function AboutLcmGcdCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our **LCM & GCD Calculator** is a tool for number theory. It
-          lets you quickly find the Least Common Multiple (LCM) and the Greatest
-          Common Divisor (GCD) for a set of two or more positive integers.
+          Our **LCM & GCD Calculator** is a tool for number theory. It lets you
+          quickly find the Least Common Multiple (LCM) and the Greatest Common
+          Divisor (GCD) for a set of two or more positive integers.
         </p>
         <h3>How to Use the LCM & GCD Calculator</h3>
         <ol>
           <li>Enter at least two positive integers into the input boxes.</li>
           <li>
-            If you need to analyze more numbers, click the **&quot;Add Number&quot;**
-            button.
+            If you need to analyze more numbers, click the **&quot;Add
+            Number&quot;** button.
           </li>
         </ol>
         <p>
@@ -92,9 +91,9 @@ export default function AboutLcmGcdCalculator() {
           <AccordionItem value="item-3">
             <AccordionTrigger>How are LCM and GCD related?</AccordionTrigger>
             <AccordionContent>
-              For any two positive integers &apos;a&apos; and &apos;b&apos;, their product is equal
-              to the product of their GCD and LCM: `a * b = GCD(a, b) * LCM(a,
-              b)`.
+              For any two positive integers &apos;a&apos; and &apos;b&apos;,
+              their product is equal to the product of their GCD and LCM: `a * b
+              = GCD(a, b) * LCM(a, b)`.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">

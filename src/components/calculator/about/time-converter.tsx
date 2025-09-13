@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,19 +52,21 @@ export default function AboutTimeConverter() {
         />
         <p>
           Our **Time Converter** allows you to quickly convert between various
-          units of time. Whether you&apos;re a student, a project manager, or just
-          curious, this calculator simplifies time-related conversions from
+          units of time. Whether you&apos;re a student, a project manager, or
+          just curious, this calculator simplifies time-related conversions from
           seconds to years.
         </p>
         <h3>How to Use the Time Converter</h3>
         <ol>
           <li>Enter the value you want to convert.</li>
           <li>Select the starting unit of time (e.g., Hours).</li>
-          <li>Select the target unit you want to convert to (e.g., Seconds).</li>
+          <li>
+            Select the target unit you want to convert to (e.g., Seconds).
+          </li>
         </ol>
         <p>
-          The converted time will be displayed automatically. Use the swap button
-          to quickly reverse the conversion.
+          The converted time will be displayed automatically. Use the swap
+          button to quickly reverse the conversion.
         </p>
         <h3>Time Converter FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -77,8 +78,8 @@ export default function AboutTimeConverter() {
               The number of days in a month varies, and a year can be 365 or 366
               days. To provide a consistent conversion, this calculator uses an
               average month length of 30.417 days and an average year length of
-              365 days. For precise date calculations, use our **Date
-              Difference Calculator**.
+              365 days. For precise date calculations, use our **Date Difference
+              Calculator**.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,7 +95,8 @@ export default function AboutTimeConverter() {
             <AccordionContent>
               A leap second is a one-second adjustment occasionally applied to
               Coordinated Universal Time (UTC) to keep it close to solar time.
-              It&apos;s an irregularity that this calculator does not account for.
+              It&apos;s an irregularity that this calculator does not account
+              for.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

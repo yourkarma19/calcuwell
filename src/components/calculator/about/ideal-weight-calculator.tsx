@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -74,8 +73,8 @@ export default function AboutIdealWeightCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Ideal weight is a guideline for a healthy weight range based on
-              height. It doesn&apos;t account for individual differences like muscle
-              vs. fat. Use it as a general guide, not a strict goal.
+              height. It doesn&apos;t account for individual differences like
+              muscle vs. fat. Use it as a general guide, not a strict goal.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -93,8 +92,8 @@ export default function AboutIdealWeightCalculator() {
             <AccordionTrigger>Is this better than BMI?</AccordionTrigger>
             <AccordionContent>
               Ideal weight and BMI are different tools. BMI checks if your
-              weight is healthy for your height but doesn&apos;t give a target. The
-              ideal weight calculation gives a target number but is less
+              weight is healthy for your height but doesn&apos;t give a target.
+              The ideal weight calculation gives a target number but is less
               complete. Both are useful screening tools, but neither tells the
               whole story.
             </AccordionContent>

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -54,13 +53,15 @@ export default function AboutProportionCalculator() {
         <p>
           Our **Proportion Calculator** solves equations with two equivalent
           ratios. A proportion is a statement that two fractions are equal,
-          written as A/B = C/D. This calculator helps you find the missing
-          value in the equation.
+          written as A/B = C/D. This calculator helps you find the missing value
+          in the equation.
         </p>
 
         <h3>How to Use the Proportion Calculator</h3>
         <ol>
-          <li>Enter any three known values into the boxes for A, B, C, and D.</li>
+          <li>
+            Enter any three known values into the boxes for A, B, C, and D.
+          </li>
           <li>The calculator will automatically solve for the fourth value.</li>
           <li>Click on an input box to solve for that value instead.</li>
         </ol>
@@ -92,8 +93,8 @@ export default function AboutProportionCalculator() {
                   <strong>Cooking:</strong> Scaling a recipe up or down.
                 </li>
                 <li>
-                  <strong>Maps:</strong> Reading a map&apos;s scale to find actual
-                  distances.
+                  <strong>Maps:</strong> Reading a map&apos;s scale to find
+                  actual distances.
                 </li>
                 <li>
                   <strong>Finance:</strong> Calculating fuel consumption for a

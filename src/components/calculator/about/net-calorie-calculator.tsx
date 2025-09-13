@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,8 +11,8 @@ export default function AboutNetCalorieCalculator() {
       <CardContent className="prose dark:prose-invert max-w-none">
         <h3>What Are Net Calories?</h3>
         <p>
-          Net calories represent your daily energy balance. They are crucial
-          for managing your weight. The calculation is simple:
+          Net calories represent your daily energy balance. They are crucial for
+          managing your weight. The calculation is simple:
         </p>
         <p className="font-mono bg-muted p-2 rounded-md text-center my-2">
           Net Calories = Calories Consumed - Calories Burned
@@ -28,15 +27,16 @@ export default function AboutNetCalorieCalculator() {
             calories than you&apos;ve eaten. This leads to weight loss.
           </li>
           <li>
-            <strong>Maintenance (Near Zero):</strong> You&apos;ve eaten about the
-            same number of calories you&apos;ve burned, which maintains your weight.
+            <strong>Maintenance (Near Zero):</strong> You&apos;ve eaten about
+            the same number of calories you&apos;ve burned, which maintains your
+            weight.
           </li>
         </ul>
 
         <h3>How to Calculate Your Calories Burned</h3>
         <p>
-          Your &quot;calories burned&quot; is your Total Daily Energy Expenditure (TDEE).
-          This has two main parts:
+          Your &quot;calories burned&quot; is your Total Daily Energy
+          Expenditure (TDEE). This has two main parts:
         </p>
         <ol>
           <li>
@@ -44,8 +44,8 @@ export default function AboutNetCalorieCalculator() {
             burns at rest.
           </li>
           <li>
-            <strong>Activity Level:</strong> The calories you burn through
-            daily activities.
+            <strong>Activity Level:</strong> The calories you burn through daily
+            activities.
           </li>
         </ol>
         <p>

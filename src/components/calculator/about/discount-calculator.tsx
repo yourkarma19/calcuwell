@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,8 +52,8 @@ export default function AboutDiscountCalculator() {
         />
         <p>
           The Discount Calculator helps you figure out the final price of an
-          item after a discount. It&apos;s perfect for shoppers who want to quickly
-          see the sale price and how much money they are saving.
+          item after a discount. It&apos;s perfect for shoppers who want to
+          quickly see the sale price and how much money they are saving.
         </p>
         <h3>How to Use the Discount Calculator</h3>
         <ol>
@@ -81,17 +80,18 @@ export default function AboutDiscountCalculator() {
               What if there are multiple discounts?
             </AccordionTrigger>
             <AccordionContent>
-              You can&apos;t just add multiple discounts together. You must apply them
-              one by one. First, calculate the price after the first discount.
-              Then, apply the second discount to that new, lower price.
+              You can&apos;t just add multiple discounts together. You must
+              apply them one by one. First, calculate the price after the first
+              discount. Then, apply the second discount to that new, lower
+              price.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Does this include sales tax?</AccordionTrigger>
             <AccordionContent>
               No, this calculator does not include sales tax. The discount is
-              applied to the pre-tax price. Sales tax would be calculated on
-              the final discounted price.
+              applied to the pre-tax price. Sales tax would be calculated on the
+              final discounted price.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

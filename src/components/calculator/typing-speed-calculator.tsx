@@ -1,4 +1,3 @@
-
 "use client";
 
 import { RefreshCw } from "lucide-react";
@@ -146,7 +145,10 @@ export default function TypingSpeedCalculator() {
           <CardHeader>
             <CardTitle>Your Results</CardTitle>
           </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center" aria-live="polite">
+          <CardContent
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center"
+            aria-live="polite"
+          >
             <div>
               <p className="text-sm text-muted-foreground">Speed (WPM)</p>
               <p className="text-4xl font-bold font-headline text-primary">

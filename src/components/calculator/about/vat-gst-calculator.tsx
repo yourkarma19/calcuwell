@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,12 +59,17 @@ export default function AboutVatGstCalculator() {
 
         <h3>How to Use the VAT / GST Calculator</h3>
         <ol>
-          <li>Enter the <strong>Initial Amount</strong>.</li>
+          <li>
+            Enter the <strong>Initial Amount</strong>.
+          </li>
           <li>
             Specify if this amount already includes tax by selecting
-            <strong>&quot;Add Tax&quot;</strong> or <strong>&quot;Remove Tax&quot;</strong>.
+            <strong>&quot;Add Tax&quot;</strong> or{" "}
+            <strong>&quot;Remove Tax&quot;</strong>.
           </li>
-          <li>Adjust the <strong>Tax Rate (%)</strong> slider.</li>
+          <li>
+            Adjust the <strong>Tax Rate (%)</strong> slider.
+          </li>
         </ol>
         <p>
           The results will instantly show the Net Price (pre-tax), the Tax
@@ -94,9 +98,9 @@ export default function AboutVatGstCalculator() {
             <AccordionContent>
               <p>
                 To find the original price (Net Price) from a price that
-                includes tax (Gross Price), use this formula: `Net Price =
-                Gross Price / (1 + (Tax Rate / 100))`. The tax amount is then
-                `Gross Price - Net Price`.
+                includes tax (Gross Price), use this formula: `Net Price = Gross
+                Price / (1 + (Tax Rate / 100))`. The tax amount is then `Gross
+                Price - Net Price`.
               </p>
             </AccordionContent>
           </AccordionItem>

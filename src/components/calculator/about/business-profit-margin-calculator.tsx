@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,18 +52,18 @@ export default function AboutBusinessProfitMarginCalculator() {
         />
         <p>
           The Profit Margin Calculator is a key financial tool for business
-          owners, managers, and investors. It breaks down a company&apos;s profit
-          into three important types: Gross, Operating, and Net Profit Margins.
-          Understanding these margins helps you check the financial health and
-          efficiency of a business.
+          owners, managers, and investors. It breaks down a company&apos;s
+          profit into three important types: Gross, Operating, and Net Profit
+          Margins. Understanding these margins helps you check the financial
+          health and efficiency of a business.
         </p>
 
         <h3>How to Use the Profit Margin Calculator</h3>
         <ol>
           <li>Enter your **Total Revenue**.</li>
           <li>
-            Input your **Cost of Goods Sold (COGS)**. These are the direct
-            costs of making your products.
+            Input your **Cost of Goods Sold (COGS)**. These are the direct costs
+            of making your products.
           </li>
           <li>
             Enter your total **Operating Expenses**. This includes costs not
@@ -81,7 +80,8 @@ export default function AboutBusinessProfitMarginCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What&apos;s the difference between Gross, Operating, and Net Margin?
+              What&apos;s the difference between Gross, Operating, and Net
+              Margin?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -89,19 +89,18 @@ export default function AboutBusinessProfitMarginCalculator() {
                 after accounting for direct costs (COGS).
               </p>
               <p>
-                <strong>Operating Margin</strong> shows the profit from its
-                main business operations, after all operating expenses.
+                <strong>Operating Margin</strong> shows the profit from its main
+                business operations, after all operating expenses.
               </p>
               <p>
-                <strong>Net Margin</strong> is the &quot;bottom line.&quot; It&apos;s the
-                final profit after all expenses, including interest and taxes.
+                <strong>Net Margin</strong> is the &quot;bottom line.&quot;
+                It&apos;s the final profit after all expenses, including
+                interest and taxes.
               </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>
-              Why look at all three margins?
-            </AccordionTrigger>
+            <AccordionTrigger>Why look at all three margins?</AccordionTrigger>
             <AccordionContent>
               Looking at all three margins tells a complete story. A company
               might have a high gross margin but a low net margin (meaning its
@@ -112,10 +111,10 @@ export default function AboutBusinessProfitMarginCalculator() {
           <AccordionItem value="item-3">
             <AccordionTrigger>What is a good profit margin?</AccordionTrigger>
             <AccordionContent>
-              A &quot;good&quot; profit margin varies a lot by industry. As a general
-              rule, a net profit margin of 10% is average, 20% is high, and 5%
-              is low. It&apos;s best to compare your margins to others in your
-              industry.
+              A &quot;good&quot; profit margin varies a lot by industry. As a
+              general rule, a net profit margin of 10% is average, 20% is high,
+              and 5% is low. It&apos;s best to compare your margins to others in
+              your industry.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

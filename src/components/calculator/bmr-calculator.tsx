@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Info } from "lucide-react";
@@ -38,7 +37,10 @@ export default function BmrCalculator() {
     if (age > 0 && height > 0 && weight > 0) {
       if (formula === "mifflin-st-jeor") {
         const bmrValue =
-          10 * weight + 6.25 * height - 5 * age + (gender === "male" ? 5 : -161);
+          10 * weight +
+          6.25 * height -
+          5 * age +
+          (gender === "male" ? 5 : -161);
         return bmrValue > 0 ? bmrValue : 0;
       }
       // Add other formulas here if needed
@@ -52,8 +54,8 @@ export default function BmrCalculator() {
         <CardHeader>
           <CardTitle>BMR Calculator</CardTitle>
           <CardDescription>
-            Discover your body&apos;s baseline calorie needs with our accurate BMR
-            Calculator. Your Basal Metabolic Rate (BMR) is the number of
+            Discover your body&apos;s baseline calorie needs with our accurate
+            BMR Calculator. Your Basal Metabolic Rate (BMR) is the number of
             calories your body needs to function at rest.
           </CardDescription>
         </CardHeader>

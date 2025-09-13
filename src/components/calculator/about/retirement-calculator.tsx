@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -106,9 +105,9 @@ export default function AboutRetirementCalculator() {
             <AccordionTrigger>What is the 4% Rule?</AccordionTrigger>
             <AccordionContent>
               The 4% rule is a guideline that says you can safely withdraw 4% of
-              your savings in your first year of retirement. You can then
-              adjust that amount for inflation each year without running out of
-              money for 30 years.
+              your savings in your first year of retirement. You can then adjust
+              that amount for inflation each year without running out of money
+              for 30 years.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

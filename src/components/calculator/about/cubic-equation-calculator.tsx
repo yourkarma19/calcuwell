@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -82,9 +81,9 @@ export default function AboutCubicEquationCalculator() {
             <AccordionTrigger>What is the discriminant?</AccordionTrigger>
             <AccordionContent>
               The discriminant is a value calculated from the coefficients. Its
-              sign determines the nature of the roots. If positive, there is
-              one real and two complex roots. If zero, there are three real
-              roots with at least two being equal. If negative, there are three
+              sign determines the nature of the roots. If positive, there is one
+              real and two complex roots. If zero, there are three real roots
+              with at least two being equal. If negative, there are three
               distinct real roots.
             </AccordionContent>
           </AccordionItem>
@@ -93,9 +92,9 @@ export default function AboutCubicEquationCalculator() {
               Why are cubic equations important?
             </AccordionTrigger>
             <AccordionContent>
-              Cubic equations are used in many areas of science and
-              engineering. They model physical phenomena, such as the volume of
-              materials, thermodynamic properties, and fluid dynamics.
+              Cubic equations are used in many areas of science and engineering.
+              They model physical phenomena, such as the volume of materials,
+              thermodynamic properties, and fluid dynamics.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -73,8 +72,8 @@ export default function AboutAgeCalculator() {
             <AccordionContent>
               <p>
                 This tool finds the number of full years passed since your
-                birthday. It then finds the leftover months and days. This
-                gives you a precise age.
+                birthday. It then finds the leftover months and days. This gives
+                you a precise age.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -85,8 +84,8 @@ export default function AboutAgeCalculator() {
             <AccordionContent>
               <p>
                 Yes. The age calculation uses the real number of days in each
-                month and year. Leap years are included automatically. This gives
-                you an accurate age, even for people born in a leap year.
+                month and year. Leap years are included automatically. This
+                gives you an accurate age, even for people born in a leap year.
               </p>
             </AccordionContent>
           </AccordionItem>

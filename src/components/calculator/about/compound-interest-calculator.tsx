@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -54,15 +53,21 @@ export default function AboutCompoundInterestCalculator() {
         <p>
           The <strong>Compound Interest Calculator</strong> shows how your money
           can grow faster over time. By reinvesting the interest you earn, your
-          investment gets larger. This &quot;interest on interest&quot; effect can
-          significantly boost your savings.
+          investment gets larger. This &quot;interest on interest&quot; effect
+          can significantly boost your savings.
         </p>
 
         <h3>How to Use the Compound Interest Calculator</h3>
         <ol>
-          <li>Enter the <strong>Principal Amount</strong> you are starting with.</li>
-          <li>Set the estimated annual <strong>Interest Rate</strong>.</li>
-          <li>Choose the <strong>Investment Tenure</strong> in years.</li>
+          <li>
+            Enter the <strong>Principal Amount</strong> you are starting with.
+          </li>
+          <li>
+            Set the estimated annual <strong>Interest Rate</strong>.
+          </li>
+          <li>
+            Choose the <strong>Investment Tenure</strong> in years.
+          </li>
           <li>
             Select the <strong>Compounding Frequency</strong> (how often
             interest is calculated).

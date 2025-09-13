@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -103,8 +102,8 @@ export default function AboutHeartRateZoneCalculator() {
             <AccordionContent>
               The best time to measure your resting heart rate is in the morning
               after you wake up. Find your pulse on your wrist or neck. Count
-              the number of beats in 60 seconds. Do this for a few days and
-              take the average.
+              the number of beats in 60 seconds. Do this for a few days and take
+              the average.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
@@ -112,9 +111,9 @@ export default function AboutHeartRateZoneCalculator() {
               Is this calculator 100% accurate?
             </AccordionTrigger>
             <AccordionContent>
-              This calculator provides a good estimate. However, the `220 -
-              age` formula for max heart rate is a general guideline. Your true
-              max heart rate can be different based on genetics and fitness. A
+              This calculator provides a good estimate. However, the `220 - age`
+              formula for max heart rate is a general guideline. Your true max
+              heart rate can be different based on genetics and fitness. A
               clinical stress test is required for a precise measurement.
             </AccordionContent>
           </AccordionItem>

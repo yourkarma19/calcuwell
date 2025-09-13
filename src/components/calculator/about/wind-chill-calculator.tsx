@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -64,8 +63,9 @@ export default function AboutWindChillCalculator() {
           <li>Enter the current **Wind Speed**.</li>
         </ol>
         <p>
-          The calculator will instantly show the &quot;feels like&quot; temperature, or
-          wind chill, along with a general risk level for frostbite.
+          The calculator will instantly show the &quot;feels like&quot;
+          temperature, or wind chill, along with a general risk level for
+          frostbite.
         </p>
         <h2>Wind Chill FAQs</h2>
         <Accordion type="single" collapsible className="w-full">
@@ -93,8 +93,8 @@ export default function AboutWindChillCalculator() {
             <AccordionContent>
               The wind chill formula is only defined for wind speeds above 3 mph
               (or 5 km/h). At lower speeds, the effect of wind on heat loss is
-              negligible, and the &quot;feels like&quot; temperature is the same as the
-              actual air temperature.
+              negligible, and the &quot;feels like&quot; temperature is the same
+              as the actual air temperature.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

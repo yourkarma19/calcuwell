@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -115,8 +114,8 @@ export default function AboutBodyFatPercentageCalculator() {
               <AccordionContent>
                 Body fat percentage directly measures fat, while BMI is more
                 general. BMI can be misleading for muscular people, who may be
-                called &quot;overweight&quot; even if they are healthy. Body fat gives a
-                clearer picture of your body composition.
+                called &quot;overweight&quot; even if they are healthy. Body fat
+                gives a clearer picture of your body composition.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -126,8 +125,8 @@ export default function AboutBodyFatPercentageCalculator() {
               <AccordionContent>
                 This method uses body measurements to estimate body density.
                 It&apos;s a convenient way to estimate body fat without special
-                tools. However, it&apos;s not as accurate as clinical methods like
-                DEXA scans.
+                tools. However, it&apos;s not as accurate as clinical methods
+                like DEXA scans.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">

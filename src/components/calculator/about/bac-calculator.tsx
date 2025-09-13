@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -55,11 +54,9 @@ export default function AboutBacCalculator() {
         <p>
           The Blood Alcohol Content (BAC) calculator gives you an{" "}
           <strong>estimate</strong> of your blood alcohol level. It uses the
-          Widmark formula. It is a helpful tool to understand how alcohol affects
-          you.{" "}
-          <strong>
-            Never use this tool to decide if it is safe to drive.
-          </strong>
+          Widmark formula. It is a helpful tool to understand how alcohol
+          affects you.{" "}
+          <strong>Never use this tool to decide if it is safe to drive.</strong>
         </p>
 
         <h3>How to Use the BAC Calculator</h3>
@@ -101,10 +98,9 @@ export default function AboutBacCalculator() {
               Why is this calculator only an estimate?
             </AccordionTrigger>
             <AccordionContent>
-              Your actual BAC can be affected by many things. This includes
-              your metabolism, recent meals, body fat percentage, and
-              medications. Only a breathalyzer or blood test can give you a true
-              BAC reading.
+              Your actual BAC can be affected by many things. This includes your
+              metabolism, recent meals, body fat percentage, and medications.
+              Only a breathalyzer or blood test can give you a true BAC reading.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -112,8 +108,8 @@ export default function AboutBacCalculator() {
             <AccordionContent>
               Women often have more body fat and less body water than men of the
               same weight. Alcohol dissolves in water, so it becomes more
-              concentrated in a woman&apos;s body. This leads to a higher BAC from
-              the same amount of alcohol.
+              concentrated in a woman&apos;s body. This leads to a higher BAC
+              from the same amount of alcohol.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

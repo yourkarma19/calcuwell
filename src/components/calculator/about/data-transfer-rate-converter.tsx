@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -73,9 +72,9 @@ export default function AboutDataTransferRateConverter() {
             <AccordionContent>
               <strong>ISPs</strong> advertise speeds in{" "}
               <strong>megabits per second (Mbps)</strong>. But download speeds
-              are usually in <strong>megabytes per second (MB/s)</strong>.
-              Since there are 8 bits in 1 byte, divide the Mbps value by 8 to
-              find your MB/s speed. For example, a 100 Mbps connection has a max
+              are usually in <strong>megabytes per second (MB/s)</strong>. Since
+              there are 8 bits in 1 byte, divide the Mbps value by 8 to find
+              your MB/s speed. For example, a 100 Mbps connection has a max
               download speed of 12.5 MB/s.
             </AccordionContent>
           </AccordionItem>
@@ -84,9 +83,9 @@ export default function AboutDataTransferRateConverter() {
               Why is my download speed slower than advertised?
             </AccordionTrigger>
             <AccordionContent>
-              Advertised speeds are an &quot;up to&quot; maximum. Real-world speeds are
-              affected by many factors, including network traffic, router
-              quality, and the server you&apos;re downloading from.
+              Advertised speeds are an &quot;up to&quot; maximum. Real-world
+              speeds are affected by many factors, including network traffic,
+              router quality, and the server you&apos;re downloading from.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

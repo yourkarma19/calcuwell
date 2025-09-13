@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -54,16 +53,16 @@ export default function AboutVo2MaxCalculator() {
         <p>
           This tool gives you an estimate of your VO₂ max, a key measure of your
           aerobic fitness. It shows how well your body can use oxygen during
-          intense exercise. A higher VO₂ max usually means better
-          cardiovascular health and endurance.
+          intense exercise. A higher VO₂ max usually means better cardiovascular
+          health and endurance.
         </p>
 
         <h3>How to Use the VO₂ Max Estimator</h3>
         <p>
           This calculator uses a non-exercise method to estimate your VO₂ max.
-          It&apos;s a convenient way to get a general idea of your fitness level.
-          Simply enter your age and your resting heart rate. Your resting heart
-          rate is your pulse when you are completely calm and relaxed.
+          It&apos;s a convenient way to get a general idea of your fitness
+          level. Simply enter your age and your resting heart rate. Your resting
+          heart rate is your pulse when you are completely calm and relaxed.
         </p>
 
         <h3>VO₂ Max FAQs</h3>
@@ -72,26 +71,26 @@ export default function AboutVo2MaxCalculator() {
             <AccordionTrigger>What is VO₂ max?</AccordionTrigger>
             <AccordionContent>
               VO₂ max is the maximum amount of oxygen your body can use during
-              one minute of strenuous exercise. It&apos;s measured in mL/kg/min and
-              is a key indicator of cardiorespiratory fitness.
+              one minute of strenuous exercise. It&apos;s measured in mL/kg/min
+              and is a key indicator of cardiorespiratory fitness.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>How accurate is this estimate?</AccordionTrigger>
             <AccordionContent>
               This formula provides a general estimate without needing exercise.
-              However, it&apos;s not as accurate as a clinical stress test in a lab.
-              Think of this result as a useful starting point, not a definitive
-              medical value.
+              However, it&apos;s not as accurate as a clinical stress test in a
+              lab. Think of this result as a useful starting point, not a
+              definitive medical value.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>How can I improve my VO₂ max?</AccordionTrigger>
             <AccordionContent>
               You can improve your VO₂ max with consistent aerobic exercise.
-              High-Intensity Interval Training (HIIT) is particularly
-              effective. This involves short bursts of intense effort followed
-              by brief recovery periods.
+              High-Intensity Interval Training (HIIT) is particularly effective.
+              This involves short bursts of intense effort followed by brief
+              recovery periods.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

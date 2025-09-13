@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -108,8 +107,8 @@ export default function AboutLoanComparisonCalculator() {
               <AccordionContent>
                 <p>
                   A lot. Even a small difference of 0.5% can lead to large
-                  savings over a long term, especially for big loans like a
-                  home loan. Use this tool to see the exact difference.
+                  savings over a long term, especially for big loans like a home
+                  loan. Use this tool to see the exact difference.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -121,8 +120,8 @@ export default function AboutLoanComparisonCalculator() {
                 <p>
                   Besides the interest rate, consider other costs like
                   processing fees and prepayment penalties. Also, check the
-                  lender&apos;s reputation. Sometimes a slightly higher EMI is worth
-                  it for better terms or service.
+                  lender&apos;s reputation. Sometimes a slightly higher EMI is
+                  worth it for better terms or service.
                 </p>
               </AccordionContent>
             </AccordionItem>

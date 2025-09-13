@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -55,8 +54,8 @@ export default function AboutResistorColorCodeCalculator() {
           The <strong>Resistor Color Code Calculator</strong> helps you figure
           out the value of a resistor by reading its colored bands. This is a
           key tool for anyone working with electronics. It lets you find a
-          resistor&apos;s value without needing a multimeter. This calculator is for
-          common 4-band resistors.
+          resistor&apos;s value without needing a multimeter. This calculator is
+          for common 4-band resistors.
         </p>
         <h3>How to Use the Resistor Color Code Calculator</h3>
         <ol>
@@ -69,8 +68,8 @@ export default function AboutResistorColorCodeCalculator() {
           </li>
         </ol>
         <p>
-          The calculator will instantly show the resistor&apos;s value in Ohms (Ω)
-          and its tolerance.
+          The calculator will instantly show the resistor&apos;s value in Ohms
+          (Ω) and its tolerance.
         </p>
         <h3>Resistor Color Code FAQs</h3>
         <Accordion type="single" collapsible className="w-full">

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ChevronRight } from "lucide-react";
@@ -90,7 +89,7 @@ export default function CalculatorWrapper({
         <main className="space-y-8">
           {children}
           <div className="mt-8">
-             <CalculatorContent slug={calculator.slug} />
+            <CalculatorContent slug={calculator.slug} />
           </div>
           <div className="mt-8">
             <EmbedCalculator slug={calculator.slug} />

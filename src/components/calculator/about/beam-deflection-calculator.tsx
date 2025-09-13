@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,8 +59,8 @@ export default function AboutBeamDeflectionCalculator() {
             Enter the total <strong>Length (L)</strong> of the beam in meters.
           </li>
           <li>
-            Enter the <strong>Modulus of Elasticity (E)</strong> in
-            Gigapascals (GPa). This value shows the material&apos;s stiffness.
+            Enter the <strong>Modulus of Elasticity (E)</strong> in Gigapascals
+            (GPa). This value shows the material&apos;s stiffness.
           </li>
           <li>
             Enter the <strong>Area Moment of Inertia (I)</strong>. This value

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -77,10 +76,10 @@ export default function AboutOvertimePayCalculator() {
               What is a standard overtime rate?
             </AccordionTrigger>
             <AccordionContent>
-              The most common overtime rate is &quot;time and a half,&quot; which means
-              your overtime pay is 1.5 times your regular hourly rate. Some
-              jobs or holidays may offer &quot;double time,&quot; which is 2 times your
-              regular rate.
+              The most common overtime rate is &quot;time and a half,&quot;
+              which means your overtime pay is 1.5 times your regular hourly
+              rate. Some jobs or holidays may offer &quot;double time,&quot;
+              which is 2 times your regular rate.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -88,9 +87,9 @@ export default function AboutOvertimePayCalculator() {
               Does this calculator include taxes or deductions?
             </AccordionTrigger>
             <AccordionContent>
-              No, this calculator calculates your gross pay, which is your
-              total earnings before any taxes or deductions are subtracted.
-              Your actual take-home pay will be lower.
+              No, this calculator calculates your gross pay, which is your total
+              earnings before any taxes or deductions are subtracted. Your
+              actual take-home pay will be lower.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -75,8 +74,8 @@ export default function AboutTriangleAngleCalculator() {
             <AccordionContent>
               The Law of Sines relates the sides of a triangle to the sines of
               their opposite angles. The formula is: `a/sin(A) = b/sin(B) =
-              c/sin(C)`. This law is useful when you know two angles and one side
-              (AAS or ASA), or two sides and a non-included angle (SSA).
+              c/sin(C)`. This law is useful when you know two angles and one
+              side (AAS or ASA), or two sides and a non-included angle (SSA).
             </AccordionContent>
           </AccordionItem>
         </Accordion>

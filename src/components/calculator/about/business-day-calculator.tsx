@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -59,7 +58,9 @@ export default function AboutBusinessDayCalculator() {
         </p>
         <h3>How to Use the Business Day Calculator</h3>
         <ol>
-          <li>Select the <strong>Start Date</strong>.</li>
+          <li>
+            Select the <strong>Start Date</strong>.
+          </li>
           <li>
             Enter the number of <strong>Business Days</strong> you want to add
             or subtract.

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -44,7 +43,9 @@ export default function AboutInvestmentReturnCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About the Return on Investment (ROI) Calculator</CardTitle>
+        <CardTitle as="h2">
+          About the Return on Investment (ROI) Calculator
+        </CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -78,17 +79,17 @@ export default function AboutInvestmentReturnCalculator() {
             <AccordionTrigger>What is the formula for ROI?</AccordionTrigger>
             <AccordionContent>
               The formula for Return on Investment is: `ROI = ( (Final Value -
-              Initial Investment) / Initial Investment ) * 100`. The result is
-              a percentage.
+              Initial Investment) / Initial Investment ) * 100`. The result is a
+              percentage.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>What is a good ROI?</AccordionTrigger>
             <AccordionContent>
-              A &quot;good&quot; ROI depends on the type of investment and its risk. A
-              7-10% annual ROI is often considered a good average for the stock
-              market. A high-risk investment would need a much higher potential
-              ROI to be worthwhile.
+              A &quot;good&quot; ROI depends on the type of investment and its
+              risk. A 7-10% annual ROI is often considered a good average for
+              the stock market. A high-risk investment would need a much higher
+              potential ROI to be worthwhile.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -96,10 +97,11 @@ export default function AboutInvestmentReturnCalculator() {
               What are the limitations of ROI?
             </AccordionTrigger>
             <AccordionContent>
-              ROI is simple, but it doesn&apos;t account for the holding period of an
-              investment. An ROI of 20% over one year is much better than an ROI
-              of 20% over ten years. For comparing investments over different
-              timeframes, it&apos;s better to look at the annualized ROI.
+              ROI is simple, but it doesn&apos;t account for the holding period
+              of an investment. An ROI of 20% over one year is much better than
+              an ROI of 20% over ten years. For comparing investments over
+              different timeframes, it&apos;s better to look at the annualized
+              ROI.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

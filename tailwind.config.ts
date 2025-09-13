@@ -21,7 +21,8 @@ const config: Config = {
         body: ["var(--font-inter)", "sans-serif"],
         headline: ["var(--font-space-grotesk)", "sans-serif"],
       },
-      typography: ({ theme }) => ({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      typography: ({ theme }: { theme: any }) => ({
         DEFAULT: {
           css: {
             h1: {
@@ -94,10 +95,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 
 export default config;

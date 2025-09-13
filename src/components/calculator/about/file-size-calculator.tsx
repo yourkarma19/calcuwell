@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -40,8 +39,8 @@ export default function AboutFileSizeCalculator() {
           <AccordionItem value="item-2">
             <AccordionTrigger>How is file size calculated?</AccordionTrigger>
             <AccordionContent>
-              The formula is simple: `File Size = Bitrate × Duration`. The key is
-              to make sure the units are consistent. This calculator handles
+              The formula is simple: `File Size = Bitrate × Duration`. The key
+              is to make sure the units are consistent. This calculator handles
               the unit conversions for you.
             </AccordionContent>
           </AccordionItem>

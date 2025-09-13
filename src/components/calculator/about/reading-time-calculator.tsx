@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -96,8 +95,7 @@ export default function AboutReadingTimeCalculator() {
             <AccordionContent>
               You can test your speed by setting a timer for one minute, reading
               a passage of text, and then counting the number of words you read.
-              Do this a few times with different texts to find your average
-              WPM.
+              Do this a few times with different texts to find your average WPM.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

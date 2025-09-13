@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -9,7 +8,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import type { FAQPage, WithContext } from "schema-dts";
-
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
@@ -47,10 +45,10 @@ export default function AboutGradePercentageCalculator() {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
           <p>
-            This simple tool helps you quickly calculate the percentage score
-            of a test, quiz, or assignment. By entering your points and the
-            total points, you can instantly see your performance as a percentage
-            and its letter grade.
+            This simple tool helps you quickly calculate the percentage score of
+            a test, quiz, or assignment. By entering your points and the total
+            points, you can instantly see your performance as a percentage and
+            its letter grade.
           </p>
           <h3>How to Use This Grade Calculator</h3>
           <ol>

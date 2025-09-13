@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -97,10 +96,10 @@ export default function AboutCountdownTimer() {
               Does the timer account for time zones?
             </AccordionTrigger>
             <AccordionContent>
-              The timer uses your local device&apos;s time. When you set a target
-              date and time, it is set in your current time zone. If you share
-              it, others will see the countdown relative to their own local
-              time.
+              The timer uses your local device&apos;s time. When you set a
+              target date and time, it is set in your current time zone. If you
+              share it, others will see the countdown relative to their own
+              local time.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

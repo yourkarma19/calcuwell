@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,7 +59,9 @@ export default function AboutTorqueCalculator() {
 
         <h3>How to Use the Torque Calculator</h3>
         <ol>
-          <li>Enter the amount of <strong>Force</strong> applied in Newtons (N).</li>
+          <li>
+            Enter the amount of <strong>Force</strong> applied in Newtons (N).
+          </li>
           <li>
             Enter the <strong>Distance</strong> from the pivot point to where
             the force is applied. This is also known as the lever arm, measured
@@ -90,10 +91,10 @@ export default function AboutTorqueCalculator() {
               What if the force is not perpendicular?
             </AccordionTrigger>
             <AccordionContent>
-              If the force is applied at an angle (θ), the formula becomes `τ = F
-              × r × sin(θ)`. The `sin(θ)` term accounts for the part of the force
-              that is perpendicular to the lever arm. This calculator assumes
-              a perpendicular force.
+              If the force is applied at an angle (θ), the formula becomes `τ =
+              F × r × sin(θ)`. The `sin(θ)` term accounts for the part of the
+              force that is perpendicular to the lever arm. This calculator
+              assumes a perpendicular force.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

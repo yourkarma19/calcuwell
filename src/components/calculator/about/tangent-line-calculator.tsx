@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -73,9 +72,9 @@ export default function AboutTangentLineCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a Tangent Line?</AccordionTrigger>
             <AccordionContent>
-              A tangent line is a straight line that &quot;just touches&quot; a curve at a
-              single point. It has the same direction (slope) as the curve at
-              that point. The slope of the tangent line is equal to the
+              A tangent line is a straight line that &quot;just touches&quot; a
+              curve at a single point. It has the same direction (slope) as the
+              curve at that point. The slope of the tangent line is equal to the
               derivative of the function at that same point.
             </AccordionContent>
           </AccordionItem>
@@ -104,8 +103,8 @@ export default function AboutTangentLineCalculator() {
             <AccordionContent>
               Finding the tangent line is a fundamental application of
               derivatives. The tangent line provides a linear approximation of a
-              function&apos;s behavior near a specific point, which is crucial in
-              physics, engineering, and economics.
+              function&apos;s behavior near a specific point, which is crucial
+              in physics, engineering, and economics.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

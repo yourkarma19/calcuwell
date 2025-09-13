@@ -1,4 +1,3 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -52,7 +51,10 @@ const jsonLd: WithContext<FAQPage> = {
 };
 
 const MortgageBreakdownChart = dynamic(
-  () => import("@/components/charts/mortgage-breakdown-chart"),
+  () =>
+    import("@/components/charts/mortgage-breakdown-chart").then(
+      (mod) => mod.MortgageBreakdownChart,
+    ),
   {
     ssr: false,
     loading: () => <Skeleton className="w-full h-[250px]" />,
@@ -125,8 +127,8 @@ export default function AboutMortgageCalculator({
               <AccordionContent>
                 Amortization is paying off a loan over time with regular
                 payments. In the early years of a mortgage, a larger portion of
-                your payment goes towards interest. Later, more goes toward
-                the principal.
+                your payment goes towards interest. Later, more goes toward the
+                principal.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">

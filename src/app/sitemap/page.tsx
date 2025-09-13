@@ -1,4 +1,3 @@
-
 import { Metadata } from "next";
 import { List } from "lucide-react";
 import Link from "next/link";

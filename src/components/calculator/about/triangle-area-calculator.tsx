@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -70,9 +69,9 @@ export default function AboutTriangleAreaCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Heron&apos;s formula?</AccordionTrigger>
             <AccordionContent>
-              Heron&apos;s formula allows you to calculate the area of a triangle
-              when you only know the lengths of the three sides. It is named
-              after Hero of Alexandria, a Greek mathematician.
+              Heron&apos;s formula allows you to calculate the area of a
+              triangle when you only know the lengths of the three sides. It is
+              named after Hero of Alexandria, a Greek mathematician.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

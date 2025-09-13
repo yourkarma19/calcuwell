@@ -11,7 +11,10 @@ export default function Header() {
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <div className="p-1.5 bg-primary/10 rounded-lg">
-              <IconWrapper iconName="Calculator" className="h-6 w-6 text-primary" />
+              <IconWrapper
+                iconName="Calculator"
+                className="h-6 w-6 text-primary"
+              />
             </div>
             <span className="font-bold font-headline text-lg text-primary">
               CalcPro

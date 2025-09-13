@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -61,16 +60,16 @@ export default function AboutRectangleAreaCalculator() {
         />
         <p>
           The <strong>Rectangle Area & Perimeter Calculator</strong> is a tool
-          for calculating the basic properties of a rectangle. Whether you&apos;re a
-          student, a homeowner, or a contractor, this calculator provides
-          instant and accurate measurements.
+          for calculating the basic properties of a rectangle. Whether
+          you&apos;re a student, a homeowner, or a contractor, this calculator
+          provides instant and accurate measurements.
         </p>
 
         <h3>How to Use the Rectangle Calculator</h3>
         <p>
           Simply enter the <strong>length</strong> and <strong>width</strong> of
-          the rectangle. The calculator will automatically compute the area
-          and perimeter.
+          the rectangle. The calculator will automatically compute the area and
+          perimeter.
         </p>
 
         <h3>Rectangle Calculator FAQs</h3>
@@ -81,8 +80,8 @@ export default function AboutRectangleAreaCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The area is the amount of space a rectangle covers. It&apos;s
-              calculated by multiplying its length by its width. The formula
-              is: `Area = Length × Width`.
+              calculated by multiplying its length by its width. The formula is:
+              `Area = Length × Width`.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -90,9 +89,9 @@ export default function AboutRectangleAreaCalculator() {
               How is the perimeter of a rectangle calculated?
             </AccordionTrigger>
             <AccordionContent>
-              The perimeter is the distance around the outside of the
-              rectangle. It&apos;s found by adding the lengths of all four sides.
-              The formula is: `Perimeter = 2 × (Length + Width)`.
+              The perimeter is the distance around the outside of the rectangle.
+              It&apos;s found by adding the lengths of all four sides. The
+              formula is: `Perimeter = 2 × (Length + Width)`.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

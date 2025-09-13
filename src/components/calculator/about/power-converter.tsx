@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -52,14 +51,16 @@ export default function AboutPowerConverter() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The Power Converter is a tool for engineers, physicists, and
-          students who need to work with different units of power. Power is the
-          rate at which work is done or energy is transferred. This calculator
-          allows for quick conversion between units like watts and horsepower.
+          The Power Converter is a tool for engineers, physicists, and students
+          who need to work with different units of power. Power is the rate at
+          which work is done or energy is transferred. This calculator allows
+          for quick conversion between units like watts and horsepower.
         </p>
         <h3>How to Use the Power Converter</h3>
         <ol>
-          <li>Enter the value you want to convert in the &quot;From&quot; field.</li>
+          <li>
+            Enter the value you want to convert in the &quot;From&quot; field.
+          </li>
           <li>Select the unit you are converting from.</li>
           <li>Select the unit you want to convert to.</li>
         </ol>
@@ -91,9 +92,9 @@ export default function AboutPowerConverter() {
             </AccordionTrigger>
             <AccordionContent>
               **Energy** is the capacity to do work (measured in joules or kWh).
-              **Power** is the rate at which energy is used (measured in
-              watts). For example, a 100-watt light bulb uses 100 joules of
-              energy every second.
+              **Power** is the rate at which energy is used (measured in watts).
+              For example, a 100-watt light bulb uses 100 joules of energy every
+              second.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,14 +52,15 @@ export default function AboutBase64Converter() {
         />
         <p>
           The Base64 Converter is a key tool for web developers. It lets you
-          encode data into a safe, text-based format. You can also decode
-          Base64 strings back to their original form.
+          encode data into a safe, text-based format. You can also decode Base64
+          strings back to their original form.
         </p>
         <h3>How to Use the Base64 Converter</h3>
         <ol>
           <li>Enter text into the top input box.</li>
           <li>
-            Click <strong>&quot;Encode&quot;</strong> to turn it into a Base64 string.
+            Click <strong>&quot;Encode&quot;</strong> to turn it into a Base64
+            string.
           </li>
           <li>
             To decode, paste a Base64 string into the input box and click{" "}
@@ -90,9 +90,9 @@ export default function AboutBase64Converter() {
             <AccordionTrigger>What is a Data URI?</AccordionTrigger>
             <AccordionContent>
               A Data URI lets you embed small files, like images, directly into
-              a web page&apos;s code. The file&apos;s data is encoded using Base64. This
-              can reduce the number of HTTP requests a browser needs to make,
-              which can speed up page load times for small files.
+              a web page&apos;s code. The file&apos;s data is encoded using
+              Base64. This can reduce the number of HTTP requests a browser
+              needs to make, which can speed up page load times for small files.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

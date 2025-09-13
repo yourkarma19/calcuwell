@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -45,7 +44,9 @@ export default function AboutMeanMedianModeCalculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as="h2">About the Mean, Median, and Mode Calculator</CardTitle>
+        <CardTitle as="h2">
+          About the Mean, Median, and Mode Calculator
+        </CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
@@ -54,10 +55,10 @@ export default function AboutMeanMedianModeCalculator() {
         />
         <p>
           Our <strong>Mean, Median, and Mode Calculator</strong> helps you
-          understand the center of a numerical dataset. These three measures
-          are all different ways of describing what&apos;s &quot;typical&quot; in a set of
-          numbers. This calculator also gives you the sum and count of your
-          data.
+          understand the center of a numerical dataset. These three measures are
+          all different ways of describing what&apos;s &quot;typical&quot; in a
+          set of numbers. This calculator also gives you the sum and count of
+          your data.
         </p>
 
         <h3>How to Use the Calculator</h3>

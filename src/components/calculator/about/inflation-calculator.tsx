@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -35,10 +34,10 @@ export default function AboutInflationCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is inflation?</AccordionTrigger>
             <AccordionContent>
-              Inflation is the rate at which prices for goods and services
-              rise, and purchasing power falls. For example, if the inflation
-              rate is 2%, a ₹100 item will cost ₹102 next year. Your money buys
-              less than it did before.
+              Inflation is the rate at which prices for goods and services rise,
+              and purchasing power falls. For example, if the inflation rate is
+              2%, a ₹100 item will cost ₹102 next year. Your money buys less
+              than it did before.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -59,7 +58,9 @@ export default function AboutCurrencyConverter() {
         </p>
         <h3>How to Use the Currency Converter</h3>
         <ol>
-          <li>Enter the <strong>Amount</strong> you wish to convert.</li>
+          <li>
+            Enter the <strong>Amount</strong> you wish to convert.
+          </li>
           <li>
             Select the currency you are converting <strong>from</strong>.
           </li>
@@ -105,8 +106,8 @@ export default function AboutCurrencyConverter() {
             <AccordionContent>
               A currency pair shows the value of one currency against another.
               The first currency is the &quot;base&quot; and the second is the
-              &quot;quote.&quot; For example, in EUR/USD = 1.08, one Euro is worth 1.08 US
-              Dollars.
+              &quot;quote.&quot; For example, in EUR/USD = 1.08, one Euro is
+              worth 1.08 US Dollars.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

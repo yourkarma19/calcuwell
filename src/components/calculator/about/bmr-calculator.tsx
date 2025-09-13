@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import { Info } from "lucide-react";
@@ -132,8 +131,8 @@ export default function AboutBmrCalculator() {
             <AccordionTrigger>Harris-Benedict Equation</AccordionTrigger>
             <AccordionContent>
               <p>
-                This is one of the earliest formulas for BMR, published in
-                1919. While still used, it&apos;s considered slightly less accurate
+                This is one of the earliest formulas for BMR, published in 1919.
+                While still used, it&apos;s considered slightly less accurate
                 than the Mifflin-St Jeor equation.
               </p>
             </AccordionContent>

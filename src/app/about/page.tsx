@@ -1,4 +1,3 @@
-
 import { Metadata } from "next";
 import Image from "next/image";
 import type { Organization, Person, WithContext } from "schema-dts";

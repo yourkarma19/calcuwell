@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Card,
@@ -20,9 +19,9 @@ export default function AboutBasicCalculator() {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          Use the tabs to switch between the &quot;Basic&quot; and &quot;Scientific&quot; modes.
-          The scientific mode lets you work with trigonometric functions,
-          logarithms, and more.
+          Use the tabs to switch between the &quot;Basic&quot; and
+          &quot;Scientific&quot; modes. The scientific mode lets you work with
+          trigonometric functions, logarithms, and more.
         </p>
       </CardContent>
     </Card>

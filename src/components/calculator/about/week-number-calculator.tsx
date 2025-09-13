@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -85,8 +84,8 @@ export default function AboutWeekNumberCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Some regions, particularly in North America, consider Sunday to be
-              the start of the week. In these systems, Week 1 is simply the
-              week that contains January 1st.
+              the start of the week. In these systems, Week 1 is simply the week
+              that contains January 1st.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -97,7 +96,8 @@ export default function AboutWeekNumberCalculator() {
             <AccordionContent>
               The ISO week year is based on which year the majority of the
               week&apos;s days fall in. Because of this, the first few days of
-              January can sometimes belong to the last week of the previous year.
+              January can sometimes belong to the last week of the previous
+              year.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

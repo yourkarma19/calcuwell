@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -61,15 +60,13 @@ export default function AboutProbabilityCalculator() {
         <h3>How to Use the Probability Calculator</h3>
         <ol>
           <li>
-            Select the **Mode**: choose between &quot;Single Event&quot; or &quot;Two
-            Independent Events&quot;.
+            Select the **Mode**: choose between &quot;Single Event&quot; or
+            &quot;Two Independent Events&quot;.
           </li>
           <li>Enter the probability for **Event A** (a number from 0 to 1).</li>
           <li>If needed, enter the probability for **Event B**.</li>
         </ol>
-        <p>
-          The calculator will instantly display the relevant probabilities.
-        </p>
+        <p>The calculator will instantly display the relevant probabilities.</p>
 
         <h3>Probability FAQs</h3>
         <Accordion type="single" collapsible className="w-full">
@@ -89,8 +86,9 @@ export default function AboutProbabilityCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-2">
-                **P(A and B)** is the probability that both events occur. It&apos;s
-                calculated by multiplying their probabilities: `P(A) * P(B)`.
+                **P(A and B)** is the probability that both events occur.
+                It&apos;s calculated by multiplying their probabilities: `P(A) *
+                P(B)`.
               </p>
               <p>
                 **P(A or B)** is the probability that either A or B (or both)

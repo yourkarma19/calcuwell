@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,7 +59,9 @@ export default function AboutLoanAffordabilityCalculator() {
 
         <h3>How to Use the Loan Affordability Calculator</h3>
         <ol>
-          <li>Enter your total gross <strong>Annual Income</strong>.</li>
+          <li>
+            Enter your total gross <strong>Annual Income</strong>.
+          </li>
           <li>
             Provide your total <strong>Monthly Debt Payments</strong> (e.g.,
             credit card bills, other loans).
@@ -96,8 +97,8 @@ export default function AboutLoanAffordabilityCalculator() {
             <AccordionContent>
               There are two main ways: increase your income or reduce your
               monthly debt. To reduce debt, focus on paying down existing loans.
-              It&apos;s also wise to avoid taking on new debt right before applying
-              for a major loan.
+              It&apos;s also wise to avoid taking on new debt right before
+              applying for a major loan.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

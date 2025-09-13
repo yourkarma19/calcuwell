@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -61,9 +60,15 @@ export default function AboutSimpleInterestCalculator() {
 
         <h3>How to Use the Simple Interest Calculator</h3>
         <ol>
-          <li>Enter the <strong>Principal Amount</strong>.</li>
-          <li>Set the annual <strong>Interest Rate</strong>.</li>
-          <li>Define the <strong>Tenure</strong> in years.</li>
+          <li>
+            Enter the <strong>Principal Amount</strong>.
+          </li>
+          <li>
+            Set the annual <strong>Interest Rate</strong>.
+          </li>
+          <li>
+            Define the <strong>Tenure</strong> in years.
+          </li>
         </ol>
         <p>
           The results will instantly show the total interest earned and the
@@ -101,10 +106,10 @@ export default function AboutSimpleInterestCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                Simple interest is calculated only on the original principal.
-                In contrast, compound interest is calculated on both the
-                principal and the accumulated interest. This means compound
-                interest leads to much faster growth over time.
+                Simple interest is calculated only on the original principal. In
+                contrast, compound interest is calculated on both the principal
+                and the accumulated interest. This means compound interest leads
+                to much faster growth over time.
               </p>
             </AccordionContent>
           </AccordionItem>

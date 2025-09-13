@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -74,18 +73,18 @@ export default function AboutLeanBodyMassCalculator() {
               Why is LBM an important health metric?
             </AccordionTrigger>
             <AccordionContent>
-              Tracking LBM is more useful than tracking body weight alone because
-              it separates fat loss from muscle loss. Preserving muscle is key
-              for a healthy metabolism and overall strength.
+              Tracking LBM is more useful than tracking body weight alone
+              because it separates fat loss from muscle loss. Preserving muscle
+              is key for a healthy metabolism and overall strength.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>How is LBM different from BMI?</AccordionTrigger>
             <AccordionContent>
               LBM and BMI measure different things. BMI is a simple ratio of
-              weight to height and can&apos;t distinguish between fat and muscle.
-              LBM specifically measures your non-fat mass, giving a clearer
-              picture of your body composition.
+              weight to height and can&apos;t distinguish between fat and
+              muscle. LBM specifically measures your non-fat mass, giving a
+              clearer picture of your body composition.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

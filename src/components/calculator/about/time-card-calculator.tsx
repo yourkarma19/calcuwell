@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -53,14 +52,12 @@ export default function AboutTimeCardCalculator() {
         />
         <p>
           The Time Card Calculator helps employees and employers track work
-          hours and calculate gross pay. It simplifies adding up daily hours
-          and subtracting break times, reducing errors and ensuring fair pay.
+          hours and calculate gross pay. It simplifies adding up daily hours and
+          subtracting break times, reducing errors and ensuring fair pay.
         </p>
         <h3>How to Use the Time Card Calculator</h3>
         <ol>
-          <li>
-            For each day, enter your **Start Time** and **End Time**.
-          </li>
+          <li>For each day, enter your **Start Time** and **End Time**.</li>
           <li>Enter the total duration of your unpaid **Break** in minutes.</li>
           <li>Enter your **Hourly Rate** of pay.</li>
         </ol>

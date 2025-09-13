@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -106,9 +105,9 @@ export default function AboutLogarithmCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Most calculators only have buttons for common log (base 10) and
-              natural log (base e). To find a log with a different base, you
-              can use the change of base formula: `logb(x) = logc(x) /
-              logc(b)`. Our calculator uses this formula for you.
+              natural log (base e). To find a log with a different base, you can
+              use the change of base formula: `logb(x) = logc(x) / logc(b)`. Our
+              calculator uses this formula for you.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

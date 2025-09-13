@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -64,10 +63,10 @@ export default function AboutSalaryCalculator() {
             Enter your **Gross Salary** and select the pay period (annual or
             monthly).
           </li>
-          <li>Use the slider to set your estimated average **Income Tax Rate**.</li>
           <li>
-            Enter any other regular **Deductions** per pay period.
+            Use the slider to set your estimated average **Income Tax Rate**.
           </li>
+          <li>Enter any other regular **Deductions** per pay period.</li>
         </ol>
         <p>
           The calculator will instantly show you your net take-home pay for the
@@ -91,10 +90,10 @@ export default function AboutSalaryCalculator() {
               Why is the tax rate an estimate?
             </AccordionTrigger>
             <AccordionContent>
-              Income tax systems are often complex, with different tax
-              brackets and rules. This calculator uses a single average tax
-              rate for simplicity. Your actual tax rate may be different. This
-              tool is for estimation purposes only.
+              Income tax systems are often complex, with different tax brackets
+              and rules. This calculator uses a single average tax rate for
+              simplicity. Your actual tax rate may be different. This tool is
+              for estimation purposes only.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

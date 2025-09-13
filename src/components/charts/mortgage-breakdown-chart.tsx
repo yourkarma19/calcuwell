@@ -74,11 +74,7 @@ export function MortgageBreakdownChart({
             strokeWidth={2}
           >
             {chartData.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={entry.fill}
-                name={entry.name}
-              />
+              <Cell key={`cell-${index}`} fill={entry.fill} name={entry.name} />
             ))}
           </Pie>
           <ChartLegend content={<ChartLegendContent nameKey="name" />} />

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -60,7 +59,9 @@ export default function AboutMatrixCalculator() {
 
         <h3>How to Use the Calculator</h3>
         <ol>
-          <li>Enter the numbers for each element in **Matrix A** and **Matrix B**.</li>
+          <li>
+            Enter the numbers for each element in **Matrix A** and **Matrix B**.
+          </li>
           <li>Select the operation (Addition or Subtraction).</li>
         </ol>
         <p>The calculator will instantly display the resulting matrix.</p>
@@ -80,8 +81,8 @@ export default function AboutMatrixCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               To add or subtract two matrices, they must have the same size. You
-              perform the operation on the elements in the same position in
-              each matrix.
+              perform the operation on the elements in the same position in each
+              matrix.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -26,8 +25,8 @@ export default function AboutEnergyConverter() {
             <AccordionTrigger>Joule vs. Calorie</AccordionTrigger>
             <AccordionContent>
               The <strong>Joule (J)</strong> is the standard SI unit of energy.
-              A <strong>calorie (cal)</strong> is an older unit. The &quot;calorie&quot;
-              on food labels is actually a{" "}
+              A <strong>calorie (cal)</strong> is an older unit. The
+              &quot;calorie&quot; on food labels is actually a{" "}
               <strong>kilocalorie (kcal)</strong>. One kcal is equal to 1,000
               calories.
             </AccordionContent>

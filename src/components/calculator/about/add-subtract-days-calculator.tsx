@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -44,8 +43,8 @@ export default function AboutAddSubtractDaysCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our Date Calculator is a simple tool to find a future or past date.
-          It helps you set deadlines, schedule follow-ups, or check warranty
+          Our Date Calculator is a simple tool to find a future or past date. It
+          helps you set deadlines, schedule follow-ups, or check warranty
           periods without counting days on a calendar.
         </p>
         <h3>How to Use the Date Calculator</h3>
@@ -76,8 +75,8 @@ export default function AboutAddSubtractDaysCalculator() {
               <ul className="list-disc pl-5 mt-2">
                 <li>Scheduling appointments (e.g., a 60-day follow-up).</li>
                 <li>
-                  Setting project deadlines (e.g., finding the date 90 days
-                  from today).
+                  Setting project deadlines (e.g., finding the date 90 days from
+                  today).
                 </li>
                 <li>Planning events or tracking personal goals.</li>
                 <li>

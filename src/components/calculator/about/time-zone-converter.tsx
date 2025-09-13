@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -54,10 +53,13 @@ export default function AboutTimeZoneConverter() {
         <h3>How to Use the Time Zone Converter</h3>
         <ol>
           <li>
-            In the &quot;From&quot; section, select your starting time zone, date, and
-            time.
+            In the &quot;From&quot; section, select your starting time zone,
+            date, and time.
           </li>
-          <li>In the &quot;To&quot; section, select the time zone you want to convert to.</li>
+          <li>
+            In the &quot;To&quot; section, select the time zone you want to
+            convert to.
+          </li>
           <li>The converted date and time will be displayed instantly.</li>
         </ol>
 

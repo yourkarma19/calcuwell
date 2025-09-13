@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -26,7 +25,7 @@ const jsonLd: WithContext<FAQPage> = {
       name: "How do you convert decimal inches to fractions?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "To convert a decimal to a fraction, you can use a conversion chart or a calculator. For example, 0.5 inches is 1/2\", 0.25 inches is 1/4\", and 0.75 inches is 3/4\". This is common for woodworking and other precise crafts.",
+        text: 'To convert a decimal to a fraction, you can use a conversion chart or a calculator. For example, 0.5 inches is 1/2", 0.25 inches is 1/4", and 0.75 inches is 3/4". This is common for woodworking and other precise crafts.',
       },
     },
     {
@@ -53,7 +52,10 @@ export default function AboutFeetAndInchesCalculator() {
         />
         <h3>How to Use the Feet and Inches Calculator</h3>
         <ol>
-          <li>Enter your first measurement in the &apos;Feet&apos; and &apos;Inches&apos; boxes.</li>
+          <li>
+            Enter your first measurement in the &apos;Feet&apos; and
+            &apos;Inches&apos; boxes.
+          </li>
           <li>Select the operation you want to perform.</li>
           <li>Enter your second measurement.</li>
           <li>Click the &apos;Calculate&apos; button to see the result.</li>
@@ -66,11 +68,12 @@ export default function AboutFeetAndInchesCalculator() {
             <strong>Add inches:</strong> 7&quot; + 10&quot; = 17&quot;.
           </li>
           <li>
-            <strong>Convert excess inches:</strong> Since there are 12 inches
-            in a foot, 17&quot; becomes 1 foot and 5 inches.
+            <strong>Convert excess inches:</strong> Since there are 12 inches in
+            a foot, 17&quot; becomes 1 foot and 5 inches.
           </li>
           <li>
-            <strong>Add feet:</strong> 5&apos; + 2&apos; + 1&apos; (from inches) = 8&apos;.
+            <strong>Add feet:</strong> 5&apos; + 2&apos; + 1&apos; (from inches)
+            = 8&apos;.
           </li>
           <li>
             <strong>Combine:</strong> The final answer is 8&apos; 5&quot;.
@@ -110,8 +113,8 @@ export default function AboutFeetAndInchesCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               You can use a conversion chart or a calculator. For example, 0.5
-              inches is 1/2&quot;, 0.25 is 1/4&quot;, and 0.75 is 3/4&quot;. This is common for
-              woodworking and other precise crafts.
+              inches is 1/2&quot;, 0.25 is 1/4&quot;, and 0.75 is 3/4&quot;.
+              This is common for woodworking and other precise crafts.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

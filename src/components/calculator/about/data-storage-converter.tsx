@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -53,10 +52,10 @@ export default function AboutDataStorageConverter() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our Data Storage Converter helps you quickly convert between
-          different units of digital information. This includes bits, bytes,
-          kilobytes (KB), megabytes (MB), and gigabytes (GB). This makes it easy
-          to understand file sizes and disk space.
+          Our Data Storage Converter helps you quickly convert between different
+          units of digital information. This includes bits, bytes, kilobytes
+          (KB), megabytes (MB), and gigabytes (GB). This makes it easy to
+          understand file sizes and disk space.
         </p>
         <h3>How to Use the Data Storage Converter</h3>
         <ol>
@@ -74,8 +73,8 @@ export default function AboutDataStorageConverter() {
             <AccordionContent>
               A <strong>bit</strong> is the most basic unit of data, a single 0
               or 1. A <strong>byte</strong> is a group of 8 bits. Bytes are the
-              standard unit to measure file sizes because one byte can
-              represent one character of text.
+              standard unit to measure file sizes because one byte can represent
+              one character of text.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,11 +93,11 @@ export default function AboutDataStorageConverter() {
               What is the difference between KB and KiB?
             </AccordionTrigger>
             <AccordionContent>
-              To reduce confusion, official standards created binary prefixes.
-              A <strong>kilobyte (KB)</strong> is technically 1000 bytes. A{" "}
+              To reduce confusion, official standards created binary prefixes. A{" "}
+              <strong>kilobyte (KB)</strong> is technically 1000 bytes. A{" "}
               <strong>kibibyte (KiB)</strong> is 1024 bytes. But in common use,
-              &quot;kilobyte&quot; still means 1024 bytes. This is why a 1 TB hard drive
-              appears as about 931 GB in your operating system.
+              &quot;kilobyte&quot; still means 1024 bytes. This is why a 1 TB
+              hard drive appears as about 931 GB in your operating system.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

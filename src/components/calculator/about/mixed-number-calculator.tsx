@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -52,16 +51,22 @@ export default function AboutMixedNumberCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our Mixed Number Calculator helps you work with mixed numbers. A
-          mixed number is a whole number and a proper fraction combined. This
+          Our Mixed Number Calculator helps you work with mixed numbers. A mixed
+          number is a whole number and a proper fraction combined. This
           calculator helps you convert them and will soon handle operations like
           addition and subtraction.
         </p>
         <h3>How to Use the Mixed Number Calculator</h3>
         <ol>
-          <li>Enter the <strong>whole number</strong> part.</li>
-          <li>Enter the <strong>numerator</strong> (the top part).</li>
-          <li>Enter the <strong>denominator</strong> (the bottom part).</li>
+          <li>
+            Enter the <strong>whole number</strong> part.
+          </li>
+          <li>
+            Enter the <strong>numerator</strong> (the top part).
+          </li>
+          <li>
+            Enter the <strong>denominator</strong> (the bottom part).
+          </li>
         </ol>
         <p>
           The calculator will instantly convert your mixed number into an

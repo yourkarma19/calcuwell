@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -102,8 +101,8 @@ export default function AboutFractionCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               <p>
-                A <strong>proper fraction</strong> has a top number smaller
-                than the bottom number (e.g., 3/4). An{" "}
+                A <strong>proper fraction</strong> has a top number smaller than
+                the bottom number (e.g., 3/4). An{" "}
                 <strong>improper fraction</strong> has a top number larger than
                 or equal to the bottom number (e.g., 5/4).
               </p>

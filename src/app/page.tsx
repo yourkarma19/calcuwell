@@ -12,43 +12,47 @@ import {
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import { ChevronRight } from "lucide-react";
-import type { WebSite, WithContext, SoftwareApplication, WebPage } from "schema-dts";
+import type {
+  WebSite,
+  WithContext,
+  SoftwareApplication,
+  WebPage,
+} from "schema-dts";
 
-const trendingSchema: SoftwareApplication[] = trendingCalculators.map(calc => ({
-  "@type": "SoftwareApplication",
-  name: calc.name,
-  applicationCategory: `${calc.category}Application`,
-  operatingSystem: "Web",
-  url: `https://calcpro.online/calculators/${calc.slug}`,
-  description: calc.description,
-}));
+const trendingSchema: SoftwareApplication[] = trendingCalculators.map(
+  (calc) => ({
+    "@type": "SoftwareApplication",
+    name: calc.name,
+    applicationCategory: `${calc.category}Application`,
+    operatingSystem: "Web",
+    url: `https://calcpro.online/calculators/${calc.slug}`,
+    description: calc.description,
+  }),
+);
 
-const categoriesSchema: WebPage[] = categories.map(cat => ({
+const categoriesSchema: WebPage[] = categories.map((cat) => ({
   "@type": "WebPage",
   name: `${cat.name} Calculators`,
   description: cat.description,
   url: `https://calcpro.online/categories/${cat.slug}`,
 }));
 
-
 const websiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "CalcPro",
   url: "https://calcpro.online",
-  description: "CalcPro is your one-stop destination for fast, accurate, and easy-to-use online calculators. Solve finance, health, and math problems instantly.",
+  description:
+    "CalcPro is your one-stop destination for fast, accurate, and easy-to-use online calculators. Solve finance, health, and math problems instantly.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      "urlTemplate": "https://calcpro.online/search?q={search_term_string}",
+      urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    "query": "required name=search_term_string",
+    query: "required name=search_term_string",
   },
-  hasPart: [
-    ...trendingSchema,
-    ...categoriesSchema,
-  ]
+  hasPart: [...trendingSchema, ...categoriesSchema],
 };
 
 export default function Home() {
@@ -64,7 +68,8 @@ export default function Home() {
       <section className="w-full text-center py-20 bg-muted/30">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="text-3xl md:text-5xl font-bold text-primary mb-6 leading-tight">
-            Instant, Accurate Answers for Your Financial, Health, and Educational Questions.
+            Instant, Accurate Answers for Your Financial, Health, and
+            Educational Questions.
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
             Your free hub for fast, accurate online calculators. Solve complex
@@ -155,7 +160,9 @@ export default function Home() {
       {/* Why CalcPro Section */}
       <section className="w-full text-center py-20">
         <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6">Why CalcPro?</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+            Why CalcPro?
+          </h2>
           <p className="text-lg text-muted-foreground">
             CalcPro offers a comprehensive suite of free online calculators
             designed to be fast, accurate, and easy to use. From solving complex

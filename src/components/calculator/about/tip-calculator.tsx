@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -74,9 +73,9 @@ export default function AboutTipCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Tipping customs vary by country. In the United States, a standard
-              tip for restaurant service is typically between 15% and 20% of
-              the pre-tax bill. 15% is often considered average, while 20% or
-              more is for excellent service.
+              tip for restaurant service is typically between 15% and 20% of the
+              pre-tax bill. 15% is often considered average, while 20% or more
+              is for excellent service.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">

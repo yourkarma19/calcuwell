@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -72,9 +71,10 @@ export default function AboutCircleCalculator() {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
             <AccordionContent>
-              Pi (π) is a special number in math. It&apos;s the ratio of a circle&apos;s
-              circumference to its diameter. It&apos;s an irrational number, roughly
-              3.14159, and is used in all calculations for circles and spheres.
+              Pi (π) is a special number in math. It&apos;s the ratio of a
+              circle&apos;s circumference to its diameter. It&apos;s an
+              irrational number, roughly 3.14159, and is used in all
+              calculations for circles and spheres.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -97,10 +97,11 @@ export default function AboutCircleCalculator() {
           <AccordionItem value="item-3">
             <AccordionTrigger>Radius vs. Diameter</AccordionTrigger>
             <AccordionContent>
-              The <strong>radius (r)</strong> is the distance from the center
-              of the circle to any point on its edge. The{" "}
+              The <strong>radius (r)</strong> is the distance from the center of
+              the circle to any point on its edge. The{" "}
               <strong>diameter (d)</strong> is the distance across the circle,
-              passing through the center. The diameter is always twice the radius.
+              passing through the center. The diameter is always twice the
+              radius.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

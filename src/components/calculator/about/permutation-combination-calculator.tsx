@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import {
@@ -84,8 +83,8 @@ export default function AboutPermutationCombinationCalculator() {
               <p>
                 The key difference is whether **order matters**. Use a
                 **Permutation** when the order is important (e.g., arranging
-                books on a shelf). Use a **Combination** when the order does
-                not matter (e.g., picking a team).
+                books on a shelf). Use a **Combination** when the order does not
+                matter (e.g., picking a team).
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -100,8 +99,8 @@ export default function AboutPermutationCombinationCalculator() {
               </p>
               <p>
                 **Combination Example:** Picking three friends for a committee.
-                Picking Alice, Bob, and Carol is the same as picking Carol,
-                Bob, and Alice.
+                Picking Alice, Bob, and Carol is the same as picking Carol, Bob,
+                and Alice.
               </p>
             </AccordionContent>
           </AccordionItem>
@@ -113,7 +112,8 @@ export default function AboutPermutationCombinationCalculator() {
               <p className="mb-2">**Permutation (nPr):** `n! / (n-r)!`</p>
               <p>**Combination (nCr):** `n! / (r! * (n-r)!)`</p>
               <p className="mt-2">
-                Where &apos;n&apos; is the total items, and &apos;r&apos; is the items to choose.
+                Where &apos;n&apos; is the total items, and &apos;r&apos; is the
+                items to choose.
               </p>
             </AccordionContent>
           </AccordionItem>

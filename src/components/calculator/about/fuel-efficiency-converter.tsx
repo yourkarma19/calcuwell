@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -46,9 +45,9 @@ export default function AboutFuelEfficiencyConverter() {
         <p>
           The Fuel Efficiency Converter helps you translate between the two most
           common ways of measuring a vehicle&apos;s fuel economy:{" "}
-          <strong>Miles per Gallon (MPG)</strong> and <strong>Liters per 100
-          kilometers (L/100km)</strong>. This makes it easy to compare vehicles
-          from different countries.
+          <strong>Miles per Gallon (MPG)</strong> and{" "}
+          <strong>Liters per 100 kilometers (L/100km)</strong>. This makes it
+          easy to compare vehicles from different countries.
         </p>
         <h3>How to Use the Fuel Efficiency Converter</h3>
         <ol>

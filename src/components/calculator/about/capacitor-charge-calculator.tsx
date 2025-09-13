@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -54,8 +53,8 @@ export default function AboutCapacitorChargeCalculator() {
         <p>
           This calculator helps you understand a simple RC circuit, which has a
           resistor (R) and a capacitor (C). When you apply voltage, the
-          capacitor starts to store energy, or &quot;charge.&quot; This tool shows how
-          much charge it has and the current at any given time.
+          capacitor starts to store energy, or &quot;charge.&quot; This tool
+          shows how much charge it has and the current at any given time.
         </p>
         <h3>How to Use the Capacitor Charge Calculator</h3>
         <p>
@@ -81,8 +80,8 @@ export default function AboutCapacitorChargeCalculator() {
               The time constant (tau, or τ) shows how quickly the capacitor
               charges. You find it by multiplying the resistance by the
               capacitance (τ = R × C). After one time constant, the capacitor is
-              about 63.2% charged. It&apos;s considered full after about five time
-              constants.
+              about 63.2% charged. It&apos;s considered full after about five
+              time constants.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -91,8 +90,8 @@ export default function AboutCapacitorChargeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               When you first turn on the circuit, the current is highest because
-              the capacitor is empty. As the capacitor charges, the current
-              gets lower, finally reaching zero when the capacitor is full.
+              the capacitor is empty. As the capacitor charges, the current gets
+              lower, finally reaching zero when the capacitor is full.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

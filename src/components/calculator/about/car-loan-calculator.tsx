@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -52,15 +51,17 @@ export default function AboutCarLoanCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our <strong>Car Loan Calculator</strong> helps you understand the
-          true cost of a car loan by calculating your monthly payment (EMI).
-          This helps you budget effectively, compare different loan offers, and
-          make a smart decision before you buy.
+          Our <strong>Car Loan Calculator</strong> helps you understand the true
+          cost of a car loan by calculating your monthly payment (EMI). This
+          helps you budget effectively, compare different loan offers, and make
+          a smart decision before you buy.
         </p>
 
         <h3>How to Use the Car Loan Calculator</h3>
         <ol>
-          <li>Enter the total <strong>Car Price</strong>.</li>
+          <li>
+            Enter the total <strong>Car Price</strong>.
+          </li>
           <li>
             Input your <strong>Down Payment</strong> and the{" "}
             <strong>Trade-in Value</strong> of your old vehicle.
@@ -91,8 +92,8 @@ export default function AboutCarLoanCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The total cost includes the loan amount, all the interest paid
-              over the loan&apos;s life, and any down payment. It&apos;s the complete
-              out-of-pocket expense for the vehicle.
+              over the loan&apos;s life, and any down payment. It&apos;s the
+              complete out-of-pocket expense for the vehicle.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

@@ -1,4 +1,3 @@
-
 "use client";
 import {
   Accordion,
@@ -52,8 +51,8 @@ export default function AboutRatioCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          Our <strong>Ratio Calculator</strong> simplifies ratios and solves
-          for missing values in a proportion. Ratios are used to compare the
+          Our <strong>Ratio Calculator</strong> simplifies ratios and solves for
+          missing values in a proportion. Ratios are used to compare the
           relative size of two quantities. This tool is perfect for students,
           designers, and engineers.
         </p>
@@ -68,11 +67,13 @@ export default function AboutRatioCalculator() {
             The calculator will automatically solve for the missing value{" "}
             <strong>D</strong>.
           </li>
-          <li>It will also display the simplified version of the ratio `A : B`.</li>
+          <li>
+            It will also display the simplified version of the ratio `A : B`.
+          </li>
         </ol>
         <p>
-          This makes it easy to scale quantities, such as when resizing an
-          image while keeping its aspect ratio.
+          This makes it easy to scale quantities, such as when resizing an image
+          while keeping its aspect ratio.
         </p>
 
         <h3>Ratio Calculator FAQs</h3>
