@@ -60,16 +60,19 @@ export default function AboutTrigonometryCalculator() {
         <h3>How to Use the Trigonometry Calculator</h3>
         <ol>
           <li>Select the trigonometric **Function** you want to use.</li>
-          <li>Enter the **Value**.</li>
-          <li>Choose the **Unit** for your angle (Degrees or Radians).</li>
+          <li>Enter the **Value** (either an angle or a ratio).</li>
+          <li>
+            Choose the **Unit** for your angle if applicable (Degrees or
+            Radians).
+          </li>
         </ol>
         <p>The result is displayed instantly.</p>
 
-        <h3>Trigonometry FAQs</h3>
+        <h3>Frequently Asked Questions</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              What are Sine, Cosine, and Tangent?
+              What are Sine, Cosine, and Tangent? (SOH-CAH-TOA)
             </AccordionTrigger>
             <AccordionContent>
               Sine (sin), Cosine (cos), and Tangent (tan) are the three primary
@@ -77,16 +80,17 @@ export default function AboutTrigonometryCalculator() {
               of a right-angled triangle.
               <ul className="list-disc pl-5 mt-2">
                 <li>
-                  <strong>Sine (sin):</strong> Opposite / Hypotenuse
+                  <strong>Sine (sin θ):</strong> Opposite / Hypotenuse
                 </li>
                 <li>
-                  <strong>Cosine (cos):</strong> Adjacent / Hypotenuse
+                  <strong>Cosine (cos θ):</strong> Adjacent / Hypotenuse
                 </li>
                 <li>
-                  <strong>Tangent (tan):</strong> Opposite / Adjacent
+                  <strong>Tangent (tan θ):</strong> Opposite / Adjacent
                 </li>
               </ul>
-              The acronym **SOH-CAH-TOA** is often used to remember these.
+              The acronym **SOH-CAH-TOA** is a popular mnemonic for remembering
+              these ratios.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -94,10 +98,11 @@ export default function AboutTrigonometryCalculator() {
               What are Inverse Trigonometric Functions?
             </AccordionTrigger>
             <AccordionContent>
-              Inverse trig functions (like asin, acos, atan) are used to find
-              the angle when you know the ratio of the sides. For example, if
-              you know sin(θ) = 0.5, you can use arcsin(0.5) to find that the
-              angle is 30 degrees.
+              Inverse trig functions (like arcsin, arccos, arctan) do the
+              opposite of the standard functions. They are used to find an
+              angle when you know the ratio of the sides. For example, if you
+              know sin(θ) = 0.5, you can use arcsin(0.5) to find that the angle
+              is 30 degrees.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -105,15 +110,19 @@ export default function AboutTrigonometryCalculator() {
             <AccordionContent>
               Degrees and Radians are two different units for measuring angles.
               A full circle is 360 degrees or 2π radians. It&apos;s important to
-              use the correct unit for your calculations. Most advanced math
-              formulas use radians.
+              use the correct unit for your calculations, as it will
+              significantly affect the result. Most advanced math and physics
+              formulas use radians for simplicity.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>Real-World Applications</AccordionTrigger>
             <AccordionContent>
-              Trigonometry is used in astronomy, navigation (GPS), engineering,
-              physics, and video game development.
+              Trigonometry is not just for math class. It is essential in many
+              fields, including astronomy (calculating distances to stars),
+              navigation (GPS systems), engineering (building bridges),
+              physics, and even video game development for calculating angles
+              and trajectories.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
