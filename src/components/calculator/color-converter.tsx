@@ -258,7 +258,7 @@ export default function ColorConverter() {
                 <p className="mb-2">
                   **HEX (Hexadecimal)** is a six-digit code (e.g., `#FF5733`)
                   that represents the intensity of Red, Green, and Blue in a
-                  color. It&apos;s the most common format used in web design.
+                  color. It's the most common format used in web design.
                 </p>
                 <p className="mb-2">
                   **RGB (Red, Green, Blue)** is an additive color model where
@@ -269,7 +269,7 @@ export default function ColorConverter() {
                 <p>
                   **HSL (Hue, Saturation, Lightness)** represents color in a
                   more human-intuitive way. **Hue** is the color itself (0-360
-                  degrees), **Saturation** is the color&apos;s intensity
+                  degrees), **Saturation** is the color's intensity
                   (0-100%), and **Lightness** is its brightness (0-100%). This
                   makes it easier to create variations of a single color (e.g.,
                   `hsl(11, 100%, 60%)`).
@@ -284,17 +284,17 @@ export default function ColorConverter() {
                 Different color models are suited for different tasks. RGB is
                 fundamental to how digital screens create color by mixing light.
                 HEX is a more compact, web-friendly way to write RGB values. HSL
-                is often preferred by designers because it&apos;s more intuitive
+                is often preferred by designers because it's more intuitive
                 to adjust properties like lightness and saturation to create
                 color schemes.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                What does the &quot;alpha&quot; value in RGBA or HSLA mean?
+                What does the "alpha" value in RGBA or HSLA mean?
               </AccordionTrigger>
               <AccordionContent>
-                The &apos;A&apos; stands for Alpha, which represents the opacity
+                The 'A' stands for Alpha, which represents the opacity
                 of the color. An alpha value of 1 is fully opaque, while 0 is
                 fully transparent. This converter focuses on the opaque color
                 values, but RGBA and HSLA formats are commonly used in CSS to

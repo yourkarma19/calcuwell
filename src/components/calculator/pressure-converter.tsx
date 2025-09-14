@@ -2,6 +2,12 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -131,6 +137,49 @@ export default function PressureConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Pressure Converter</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                What is the standard unit of pressure?
+              </AccordionTrigger>
+              <AccordionContent>
+                The standard SI (International System of Units) unit for
+                pressure is the <strong>Pascal (Pa)</strong>. One pascal is a
+                very small amount of pressure, defined as one newton of force
+                per square meter. Because it's so small, it's often more
+                convenient to use <strong>kilopascals (kPa)</strong>, where 1
+                kPa = 1,000 Pa.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Common Pressure Units</AccordionTrigger>
+              <AccordionContent>
+                <p>
+                  <strong>Bar:</strong> One bar is exactly 100,000 Pa and is
+                  very close to the average atmospheric pressure on Earth,
+                  making it a common unit in meteorology.
+                </p>
+                <p>
+                  <strong>Atmosphere (atm):</strong> A standard atmosphere is
+                  defined as exactly 101,325 Pa. It represents the average
+                  atmospheric pressure at sea level.
+                </p>
+                <p>
+                  <strong>PSI (Pounds per square inch):</strong> This is the
+                  standard unit of pressure in the imperial system, widely used
+                  in the United States for applications like measuring tire
+                  pressure.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

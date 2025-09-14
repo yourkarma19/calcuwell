@@ -2,6 +2,12 @@
 
 import { useMemo } from "react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
   Card,
   CardContent,
   CardHeader,
@@ -124,6 +130,59 @@ export default function ProbabilityCalculator() {
               </p>
             )}
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>About Probability</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                The Basic Formula for Probability
+              </AccordionTrigger>
+              <AccordionContent>
+                Probability is calculated by dividing the number of desired
+                outcomes by the total number of possible outcomes. For example,
+                the probability of rolling a 4 on a six-sided die is 1/6
+                because there is only one '4' (desired outcome) and six total
+                possible outcomes.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                What do &apos;P(A and B)&apos; and &apos;P(A or B)&apos; mean for
+                independent events?
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="mb-2">
+                  **P(A and B)** is the probability that both independent events
+                  A and B occur. It's calculated by multiplying their individual
+                  probabilities: `P(A) * P(B)`. For example, the probability of
+                  flipping two heads in a row is 0.5 * 0.5 = 0.25.
+                </p>
+                <p>
+                  **P(A or B)** is the probability that either event A or event
+                  B (or both) occur. It's calculated as: `P(A) + P(B) - P(A and
+                  B)`. You subtract the "and" probability to avoid double-counting
+                  the scenario where both happen.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                What is the difference between independent and dependent events?
+              </AccordionTrigger>
+              <AccordionContent>
+                An **independent event** is one where the outcome is not
+                affected by previous events (e.g., a coin flip). A **dependent
+                event** is one where the outcome is influenced by a previous
+                event (e.g., drawing a card from a deck *without* replacement).
+                This calculator deals with independent events.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

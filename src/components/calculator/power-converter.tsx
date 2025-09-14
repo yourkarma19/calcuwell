@@ -2,6 +2,12 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -130,6 +136,47 @@ export default function PowerConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Power Converter</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is a Watt?</AccordionTrigger>
+              <AccordionContent>
+                The <strong>Watt (W)</strong> is the standard unit of power in
+                the International System of Units (SI). One watt is defined as
+                one joule of energy per second. It is commonly used to measure
+                the output of electrical devices, like light bulbs and
+                appliances. A <strong>kilowatt (kW)</strong> is simply 1,000
+                watts.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is Horsepower?</AccordionTrigger>
+              <AccordionContent>
+                <strong>Horsepower (hp)</strong> is an older unit of power that
+                is still widely used, especially in the automotive industry to
+                describe the power output of engines. Mechanical horsepower is
+                equivalent to approximately 745.7 watts.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                Power vs. Energy: What&apos;s the difference?
+              </AccordionTrigger>
+              <AccordionContent>
+                <strong>Energy</strong> is the capacity to do work (measured in
+                joules or kWh), while <strong>Power</strong> is the rate at which
+                energy is used (measured in watts or joules per second). For
+                example, a 100-watt light bulb uses 100 joules of energy every
+                second it is on.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>
