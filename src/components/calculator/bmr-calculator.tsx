@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
+} from "@/components/ui/accordion";
 import { Info } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -93,7 +93,7 @@ export default function BmrCalculator() {
         <CardHeader>
           <CardTitle>BMR Calculator</CardTitle>
           <CardDescription>
-            Discover your body's baseline calorie needs with our accurate BMR
+            Discover your body&rsquo;s baseline calorie needs with our accurate BMR
             Calculator. Your Basal Metabolic Rate (BMR) is the number of
             calories your body needs to function at rest.
           </CardDescription>
