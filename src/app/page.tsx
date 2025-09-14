@@ -49,7 +49,7 @@ const websiteSchema: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    "query-input": {
+    queryInput: {
       "@type": "PropertyValueSpecification",
       valueRequired: "True",
       valueName: "search_term_string",
