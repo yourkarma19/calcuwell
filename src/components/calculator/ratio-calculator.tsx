@@ -2,6 +2,12 @@
 
 import { useMemo } from "react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
   Card,
   CardContent,
   CardHeader,
@@ -107,6 +113,46 @@ export default function RatioCalculator() {
           <p className="text-4xl font-bold font-headline text-primary">
             {simplifiedA} : {simplifiedB}
           </p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Ratio Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                What is a Ratio? A Simple Explanation
+              </AccordionTrigger>
+              <AccordionContent>
+                A ratio compares two quantities. For example, if there are 8
+                girls and 12 boys, the ratio of girls to boys is 8:12. This can
+                be simplified to 2:3 by dividing both numbers by their greatest
+                common divisor (4).
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>How to Simplify a Ratio</AccordionTrigger>
+              <AccordionContent>
+                To simplify a ratio, you find the largest number that both parts
+                of the ratio can be divided by without a remainder (the Greatest
+                Common Divisor). For the ratio 12:18, the GCD is 6. Dividing
+                both parts by 6 gives the simplified ratio 2:3.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                Understanding Aspect Ratios (e.g., 16:9 vs 4:3)
+              </AccordionTrigger>
+              <AccordionContent>
+                Aspect ratio describes the relationship between the width and
+                height of a screen. A 16:9 ratio, common for modern TVs, means
+                for every 16 units of width, there are 9 units of height. An
+                older, squarish TV used a 4:3 aspect ratio.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

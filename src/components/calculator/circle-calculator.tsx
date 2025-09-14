@@ -138,36 +138,21 @@ export default function CircleCalculator() {
             <AccordionItem value="item-1">
               <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
               <AccordionContent>
-                Pi (π) is a mathematical constant that is the ratio of a
-                circle&apos;s circumference to its diameter. It is an irrational
-                number, approximately equal to 3.14159. It is fundamental to
-                many formulas involving circles and spheres.
+                Pi (π) is a fundamental mathematical constant representing the ratio of a circle's circumference to its diameter. It's an irrational number, approximately equal to 3.14159, and is crucial for all calculations involving circles and spheres.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>Key Circle Formulas</AccordionTrigger>
+              <AccordionTrigger>What are the key formulas for a circle?</AccordionTrigger>
               <AccordionContent>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>
-                    <strong>Diameter:</strong> `d = 2 * r`
-                  </li>
-                  <li>
-                    <strong>Circumference:</strong> `C = 2 * π * r` or `C = π *
-                    d`
-                  </li>
-                  <li>
-                    <strong>Area:</strong> `A = π * r²`
-                  </li>
-                </ul>
+                The key formulas are: Diameter (d) = 2 * r, Circumference (C) = 2 * π * r, and Area (A) = π * r².
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>Radius vs. Diameter</AccordionTrigger>
+              <AccordionTrigger>
+                What is the difference between a circle's radius and its diameter?
+              </AccordionTrigger>
               <AccordionContent>
-                The <strong>radius (r)</strong> is the distance from the center of the circle
-                to any point on its edge. The <strong>diameter (d)</strong> is the distance
-                across the circle passing through the center. The diameter is
-                always twice the length of the radius.
+                The radius (r) is the distance from the center of the circle to any point on its edge. The diameter (d) is the distance across the circle passing through the center. The diameter is always twice the length of the radius.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
