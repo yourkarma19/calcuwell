@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { headers } from "next/headers";
 import Script from "next/script";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -81,8 +80,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const nonce = headers().get("x-nonce") || "";
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -109,7 +106,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=AW-17483796549"
         />
-        <Script id="gtag-init" strategy="afterInteractive" nonce={nonce}>
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -122,7 +119,6 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1952235305826490"
           crossOrigin="anonymous"
           strategy="afterInteractive"
-          nonce={nonce}
         />
       </body>
     </html>
