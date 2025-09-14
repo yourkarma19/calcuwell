@@ -1,7 +1,7 @@
 "use client";
 
 import { differenceInBusinessDays } from "date-fns";
-import CalculatorUIWrapper from "./calculator-ui-wrapper";
+import CalculatorUIWrapper from "../calculator-ui-wrapper";
 import { Button } from "@/components/ui/button";
 import {
   Card,
