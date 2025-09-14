@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -58,9 +58,9 @@ export default function ComplexNumberCalculator() {
     if (isNaN(result.real)) return "Cannot divide by zero";
     if (result.imag === 0) return String(result.real);
     if (result.real === 0) return `${result.imag}i`;
-    return `${result.real} ${result.imag > 0 ? "+" : "-"} ${Math.abs(
+    return `${result.real.toFixed(4)} ${result.imag > 0 ? "+" : "-"} ${Math.abs(
       result.imag,
-    )}i`;
+    ).toFixed(4)}i`;
   };
 
   return (
@@ -146,7 +146,7 @@ export default function ComplexNumberCalculator() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>What are Complex Numbers?</CardTitle>
+          <CardTitle>About Complex Numbers</CardTitle>
         </CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">
@@ -180,6 +180,14 @@ export default function ComplexNumberCalculator() {
                 It&apos;s simple: you add or subtract the real parts and the
                 imaginary parts separately. For example, `(3 + 2i) + (1 + 4i) =
                 (3+1) + (2+4)i = 4 + 6i`.
+              </AccordionContent>
+            </AccordionItem>
+             <AccordionItem value="item-4">
+              <AccordionTrigger>
+                How do you multiply and divide complex numbers?
+              </AccordionTrigger>
+              <AccordionContent>
+                Multiplying is like using FOIL: `(a+bi)(c+di) = ac + adi + bci + bdi² = (ac-bd) + (ad+bc)i`. To divide, you multiply the top and bottom by the conjugate of the denominator. For `(a+bi)/(c+di)`, the conjugate is `(c-di)`.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
