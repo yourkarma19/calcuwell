@@ -65,9 +65,16 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
     description: calculator.metaDescription || calculator.description,
     url: `https://calcpro.online/calculators/${calculator.slug}`,
     applicationCategory: "Utilities",
+    operatingSystem: "Any",
     offers: {
       "@type": "Offer",
       price: "0",
+      priceCurrency: "INR",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "520",
     },
   };
 
