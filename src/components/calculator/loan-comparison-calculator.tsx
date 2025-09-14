@@ -15,6 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { cn } from "@/lib/utils";
 
 const calculateLoanDetails = (
   principal: number,
@@ -187,7 +188,7 @@ export default function LoanComparisonCalculator({
       </div>
 
       <div className="text-center">
-        <Button onClick={handleCompare}>Compare Loans</Button>
+        <Button onClick={handleCompare} className={cn("btn-glossy")}>Compare Loans</Button>
       </div>
 
       {showResults && (

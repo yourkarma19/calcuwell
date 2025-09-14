@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 type Operation = "add" | "subtract" | "multiply" | "divide";
 
@@ -178,7 +179,7 @@ export default function FeetAndInchesCalculator({
             </div>
           </div>
         </div>
-        <Button onClick={handleCalculate} className="w-full mt-4">
+        <Button onClick={handleCalculate} className={cn("w-full mt-4", "btn-glossy")}>
           Calculate
         </Button>
         {error && (

@@ -34,6 +34,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import type { FAQPage, WithContext } from "schema-dts";
+import { cn } from "@/lib/utils";
 
 const conversionChart = [
   { decimal: 0.0625, fraction: "1/16" },
@@ -209,7 +210,7 @@ export default function DecimalToInchesCalculator() {
               </Select>
             </div>
           </div>
-          <Button onClick={handleConvert} className="w-full">
+          <Button onClick={handleConvert} className={cn("w-full", "btn-glossy")}>
             Convert
           </Button>
         </CardContent>

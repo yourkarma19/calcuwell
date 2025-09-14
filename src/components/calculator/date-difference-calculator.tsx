@@ -28,6 +28,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import type { FAQPage, WithContext } from "schema-dts";
+import { cn } from "@/lib/utils";
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
@@ -152,7 +153,7 @@ export default function DateDifferenceCalculator({
             />
           </div>
         </div>
-        <Button onClick={handleCalculate} className="w-full">
+        <Button onClick={handleCalculate} className={cn("w-full", "btn-glossy")}>
           Calculate Difference
         </Button>
       </CardContent>

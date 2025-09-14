@@ -20,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import type { FAQPage, WithContext } from "schema-dts";
+import { cn } from "@/lib/utils";
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
@@ -141,7 +142,7 @@ export default function TangentLineCalculator() {
               />
             </div>
           </div>
-          <Button className="w-full" onClick={handleSolve}>
+          <Button className={cn("w-full", "btn-glossy")} onClick={handleSolve}>
             Find Tangent Line
           </Button>
         </CardContent>

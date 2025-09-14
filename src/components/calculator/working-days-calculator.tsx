@@ -20,6 +20,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { FAQPage, WithContext } from "schema-dts";
+import { cn } from "@/lib/utils";
 
 
 const jsonLd: WithContext<FAQPage> = {
@@ -117,7 +118,7 @@ export default function WorkingDaysCalculator({
             />
           </div>
         </div>
-        <Button onClick={handleCalculate} className="w-full">
+        <Button onClick={handleCalculate} className={cn("w-full", "btn-glossy")}>
           Calculate Working Days
         </Button>
       </CardContent>

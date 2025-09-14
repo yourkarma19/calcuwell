@@ -19,6 +19,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { FAQPage, WithContext } from "schema-dts";
+import { cn } from "@/lib/utils";
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
@@ -114,7 +115,7 @@ export default function CubicEquationCalculator() {
               addon="= 0"
             />
           </div>
-          <Button className="w-full" onClick={handleSolve}>
+          <Button className={cn("w-full", "btn-glossy")} onClick={handleSolve}>
             Solve
           </Button>
         </CardContent>
