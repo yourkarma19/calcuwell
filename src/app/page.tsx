@@ -17,6 +17,8 @@ import type {
   SoftwareApplication,
   WebPage,
 } from "schema-dts";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const trendingSchema: SoftwareApplication[] = trendingCalculators.map(
   (calc) => ({
@@ -74,11 +76,14 @@ export default function Home() {
             Instant, Accurate Answers for Your Financial, Health, and
             Educational Questions.
           </h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
             Your free hub for fast, accurate online calculators. Solve complex
             problems in finance, health, math, and more with our easy-to-use
             tools.
           </p>
+          <Button asChild size="lg" className={cn("btn-glossy")}>
+            <Link href="/sitemap">Browse All Calculators</Link>
+          </Button>
         </div>
       </section>
 
@@ -168,9 +173,28 @@ export default function Home() {
           </h2>
           <p className="text-lg text-muted-foreground">
             CalcPro offers a comprehensive suite of free online calculators
-            designed to be fast, accurate, and easy to use. From solving complex
-            mathematical problems to managing your personal finances and health,
-            our tools provide reliable results to help you make informed
+            designed to be fast, accurate, and easy to use. From solving complex{" "}
+            <Link
+              href="/categories/math"
+              className="text-primary hover:underline"
+            >
+              mathematical problems
+            </Link>{" "}
+            to managing your{" "}
+            <Link
+              href="/categories/finance"
+              className="text-primary hover:underline"
+            >
+              personal finances
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/categories/health"
+              className="text-primary hover:underline"
+            >
+              health
+            </Link>
+            , our tools provide reliable results to help you make informed
             decisions instantly.
           </p>
         </div>
