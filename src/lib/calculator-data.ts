@@ -715,13 +715,13 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   },
   {
     slug: "calorie-needs-calculator",
-    name: "Calorie Needs Calculator",
-    description: "Estimate your daily calorie needs.",
+    name: "Daily Calorie Calculator for Weight Loss (India)",
+    description: "Estimate daily calories for weight loss in an Indian context.",
     category: "Health",
     iconName: "HeartPulse",
-    seoTitle: "Daily Maintenance Calorie Calculator | CalcPro",
+    seoTitle: "Daily Calories Calculator for Weight Loss India | CalcPro",
     metaDescription:
-      "Estimate the calories you need daily to maintain your weight, based on your age, gender, height, weight, and activity level.",
+      "Free Indian calorie calculator for weight loss. Get a personalized daily calorie target & learn how to achieve it with Indian diet plans.",
     lastUpdated: "2024-07-31",
   },
   {

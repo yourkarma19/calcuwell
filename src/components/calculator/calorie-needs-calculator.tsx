@@ -29,6 +29,7 @@ const activityLevels = {
 };
 
 type ActivityLevel = keyof typeof activityLevels;
+type Goal = "maintain" | "lose" | "gain";
 
 export default function CalorieNeedsCalculator() {
   const [age, setAge] = usePersistentState("calorie-age", 25);
@@ -42,29 +43,40 @@ export default function CalorieNeedsCalculator() {
     "calorie-activity",
     "moderate",
   );
+  const [goal, setGoal] = usePersistentState<Goal>("calorie-goal", "lose");
+  const [weightChangeRate, setWeightChangeRate] = usePersistentState(
+    "calorie-rate",
+    0.5,
+  ); // kg per week
 
-  const bmr = useMemo(() => {
+  const maintenanceCalories = useMemo(() => {
     if (age > 0 && height > 0 && weight > 0) {
-      const bmrValue =
+      const bmr =
         10 * weight + 6.25 * height - 5 * age + (gender === "male" ? 5 : -161);
-      return bmrValue > 0 ? bmrValue : 0;
+      const tdee = bmr * activityLevels[activityLevel];
+      return tdee > 0 ? tdee : 0;
     }
     return 0;
-  }, [age, gender, height, weight]);
+  }, [age, gender, height, weight, activityLevel]);
 
-  const dailyCalories = useMemo(
-    () => bmr * activityLevels[activityLevel],
-    [bmr, activityLevel],
-  );
+  const targetCalories = useMemo(() => {
+    const calorieChange = weightChangeRate * 7700 / 7; // 7700 calories in 1kg of fat
+    if (goal === "lose") {
+      return maintenanceCalories - calorieChange;
+    }
+    if (goal === "gain") {
+      return maintenanceCalories + calorieChange;
+    }
+    return maintenanceCalories;
+  }, [goal, weightChangeRate, maintenanceCalories]);
 
   return (
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Daily Calorie Needs</CardTitle>
+          <CardTitle>Daily Calorie Calculator for India</CardTitle>
           <CardDescription>
-            Estimate the number of calories you need to consume daily to
-            maintain your current weight, based on the Mifflin-St Jeor equation.
+            Estimate your daily calorie needs for weight loss, maintenance, or gain, with context for Indian lifestyles.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -127,38 +139,71 @@ export default function CalorieNeedsCalculator() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="sedentary">
-                  Sedentary (little or no exercise)
+                  Sedentary (desk job, e.g. IT professional)
                 </SelectItem>
                 <SelectItem value="light">
-                  Lightly active (light exercise/sports 1-3 days/week)
+                  Lightly active (some walking, e.g. teacher)
                 </SelectItem>
                 <SelectItem value="moderate">
-                  Moderately active (moderate exercise/sports 3-5 days/week)
+                  Moderately active (regular exercise 3-5 days/week)
                 </SelectItem>
                 <SelectItem value="active">
-                  Very active (hard exercise/sports 6-7 days a week)
+                  Very active (daily intense exercise)
                 </SelectItem>
                 <SelectItem value="veryActive">
-                  Extra active (very hard exercise/sports & physical job)
+                  Extra active (physical job, e.g. construction)
                 </SelectItem>
               </SelectContent>
             </Select>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
+             <div className="space-y-2">
+                <Label>Your Goal</Label>
+                <Select value={goal} onValueChange={(v) => setGoal(v as Goal)}>
+                   <SelectTrigger>
+                      <SelectValue />
+                   </SelectTrigger>
+                   <SelectContent>
+                      <SelectItem value="lose">Lose Weight</SelectItem>
+                      <SelectItem value="maintain">Maintain Weight</SelectItem>
+                      <SelectItem value="gain">Gain Weight</SelectItem>
+                   </SelectContent>
+                </Select>
+             </div>
+             {goal !== "maintain" && (
+             <div className="space-y-2">
+                <Label>Weight Change Rate (kg/week)</Label>
+                <Select value={String(weightChangeRate)} onValueChange={(v) => setWeightChangeRate(Number(v))}>
+                   <SelectTrigger>
+                      <SelectValue />
+                   </SelectTrigger>
+                   <SelectContent>
+                      <SelectItem value="0.25">0.25 kg/week (slow)</SelectItem>
+                      <SelectItem value="0.5">0.5 kg/week (recommended)</SelectItem>
+                      <SelectItem value="1">1.0 kg/week (fast)</SelectItem>
+                   </SelectContent>
+                </Select>
+             </div>
+             )}
           </div>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Daily Calorie Needs</CardTitle>
+          <CardTitle>Your Calorie Targets</CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
-          <p className="text-sm text-muted-foreground">
-            To maintain your weight
-          </p>
-          <p className="text-5xl font-bold font-headline text-primary my-2">
-            {dailyCalories.toFixed(0)}
-          </p>
-          <p className="text-lg text-muted-foreground">calories / day</p>
+        <CardContent className="text-center space-y-4">
+            <div>
+                <p className="text-sm text-muted-foreground">Calories for Your Goal ({goal})</p>
+                <p className="text-5xl font-bold font-headline text-primary my-2">
+                    {targetCalories.toFixed(0)}
+                </p>
+                <p className="text-lg text-muted-foreground">calories / day</p>
+            </div>
+             <div className="text-sm text-muted-foreground border-t pt-4">
+                <p>Maintenance Calories: {maintenanceCalories.toFixed(0)}</p>
+             </div>
         </CardContent>
       </Card>
     </div>
