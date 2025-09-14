@@ -48,7 +48,7 @@ const websiteSchema: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    query: "required name=search_term_string",
+    "query-input": "required name=search_term_string",
   },
   hasPart: [...trendingSchema, ...categoriesSchema],
 };
