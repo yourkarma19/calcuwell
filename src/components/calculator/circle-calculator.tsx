@@ -164,8 +164,8 @@ export default function CircleCalculator() {
             <AccordionItem value="item-3">
               <AccordionTrigger>Radius vs. Diameter</AccordionTrigger>
               <AccordionContent>
-                The **radius (r)** is the distance from the center of the circle
-                to any point on its edge. The **diameter (d)** is the distance
+                The <strong>radius (r)</strong> is the distance from the center of the circle
+                to any point on its edge. The <strong>diameter (d)</strong> is the distance
                 across the circle passing through the center. The diameter is
                 always twice the length of the radius.
               </AccordionContent>

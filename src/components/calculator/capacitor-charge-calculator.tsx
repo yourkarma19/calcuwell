@@ -125,27 +125,37 @@ export default function CapacitorChargeCalculator() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Understanding RC Circuits</CardTitle>
+          <CardTitle>About the RC Circuit Calculator</CardTitle>
         </CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is an RC circuit?</AccordionTrigger>
               <AccordionContent>
-                An RC circuit is an electric circuit composed of resistors and
-                capacitors. When connected to a voltage source, the capacitor
-                charges up over time.
+                An RC circuit is a simple electronic circuit made with a Resistor
+                (R) and a Capacitor (C). They are often used as timers or filters
+                because a capacitor takes a set amount of time to charge and
+                discharge through the resistor.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
+              <AccordionTrigger>What is the time constant (τ)?</AccordionTrigger>
+              <AccordionContent>
+                The time constant (tau, or τ) shows how quickly the capacitor
+                charges. You find it by multiplying the resistance by the
+                capacitance (τ = R × C). After one time constant, the capacitor is
+                about 63.2% charged. It&apos;s considered full after about five
+                time constants.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
               <AccordionTrigger>
-                What is the time constant (τ)?
+                How does the current change over time?
               </AccordionTrigger>
               <AccordionContent>
-                The time constant (tau, τ) is a measure of how quickly the
-                capacitor charges. It is calculated as `τ = R × C`. After one
-                time constant, the capacitor charges to about 63.2% of the full
-                voltage.
+                When you first turn on the circuit, the current is highest because
+                the capacitor is empty. As the capacitor charges, the current gets
+                lower, finally reaching zero when the capacitor is full.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

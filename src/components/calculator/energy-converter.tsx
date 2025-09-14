@@ -2,6 +2,12 @@
 
 import { ArrowRightLeft } from "lucide-react";
 import { useMemo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -132,6 +138,35 @@ export default function EnergyConverter() {
               </Select>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>About the Energy Converter</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Joule vs. Calorie</AccordionTrigger>
+              <AccordionContent>
+                The <strong>Joule (J)</strong> is the standard SI unit of energy.
+                A <strong>calorie (cal)</strong> is an older unit, defined as
+                the amount of energy needed to raise the temperature of one gram
+                of water by one degree Celsius. The &quot;calorie&quot; on food
+                labels is actually a <strong>kilocalorie (kcal)</strong>, which
+                is equal to 1,000 calories.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>What is a Kilowatt-hour (kWh)?</AccordionTrigger>
+              <AccordionContent>
+                A Kilowatt-hour is a unit of energy commonly used by utility
+                companies to bill for electricity consumption. It is the amount
+                of energy used by a 1,000-watt appliance running for one hour.
+                1 kWh is equal to 3.6 million joules.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>
