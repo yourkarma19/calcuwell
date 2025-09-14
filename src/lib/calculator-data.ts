@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments for a specific goal (e.g., 1 crore in 15 years). Enter your monthly investment and expected return rate.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
-    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education"],
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore"],
   },
   // New CGPA Calculator
   {
@@ -47,7 +47,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Accurately calculate your CGPA by entering your semester GPAs (SGPA) and credits. Also helps convert CGPA to percentage for college admissions (e.g., for CBSE, GTU).",
     formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Total Creditsᵢ)",
     lastUpdated: "2024-07-31",
-    tags: ["cgpa calculator", "sgpa to cgpa", "gpa to percentage", "education", "how to convert cgpa to percentage", "gtu spi to percentage", "how to convert CGPA to percentage for CBSE board for college admission", "GTU SPI to percentage conversion calculator"],
+    tags: ["cgpa calculator", "sgpa to cgpa", "gpa to percentage", "education", "how to convert cgpa to percentage", "gtu spi to percentage", "how to convert CGPA to percentage for CBSE board for college admission", "GTU SPI to percentage conversion calculator", "convert CGPA to percentage for engineering students in India"],
   },
   // New Net Calorie Calculator
   {
@@ -136,7 +136,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate unknown angles in any triangle. Enter side lengths (SSS) or sides and an angle (SAS) to find missing values using the Law of Sines & Cosines.",
     lastUpdated: "2024-07-31",
-    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator", "find the angles of a triangle given the length of three sides", "solve a triangle with three given sides (SSS)", "calculate the interior angles of a triangle given the side ratios"],
+    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator", "find the angles of a triangle given the length of three sides", "solve a triangle with three given sides (SSS)", "calculate the interior angles of a triangle given the side ratios", "find the missing angle in a quadrilateral", "calculate the sum of the interior angles of a polygon"],
   },
   // New Tangent Line Calculator
   {
@@ -235,7 +235,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your calculus homework.",
     lastUpdated: "2024-07-31",
-    tags: ["partial fractions", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral"],
+    tags: ["partial fractions", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral", "partial fraction decomposition for a an integral"],
   },
 
   // Lifestyle
@@ -337,7 +337,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Also converts mixed numbers to improper fractions with steps.",
     lastUpdated: "2024-07-31",
-    tags: ["mixed number calculator", "improper fraction", "fraction math", "mixed number to improper fraction converter with steps"],
+    tags: ["mixed number calculator", "improper fraction", "fraction math", "mixed number to improper fraction converter with steps", "how to convert a repeating decimal to a fraction calculator"],
   },
   {
     slug: "ratio-calculator",
@@ -349,7 +349,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for scaling recipes or drawings.",
     lastUpdated: "2024-07-31",
-    tags: ["ratio calculator", "simplify ratio", "proportion calculator", "ratio calculator for scaling a recipe or drawing", "solve word problems involving ratios and proportions"],
+    tags: ["ratio calculator", "simplify ratio", "proportion calculator", "ratio calculator for scaling a recipe up or down", "ratio calculator to scale a recipe or drawing"],
   },
   {
     slug: "proportion-calculator",
@@ -361,7 +361,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An easy-to-use proportion calculator to help you solve for the missing value 'x' in a proportion using cross-multiplication. Includes examples.",
     lastUpdated: "2024-07-31",
-    tags: ["proportion calculator", "solve for x", "ratio", "math helper", "how to solve for x in a proportion equation"],
+    tags: ["proportion calculator", "solve for x", "ratio", "math helper", "how to solve for x in a proportion equation", "solve word problems involving ratios and proportions"],
   },
   {
     slug: "mean-median-mode-calculator",
@@ -434,7 +434,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD/GCF) of a set of numbers. A tool for number theory.",
     lastUpdated: "2024-07-31",
-    tags: ["lcm calculator", "gcd calculator", "gcf", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers"],
+    tags: ["lcm calculator", "gcd calculator", "gcf", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator"],
   },
   {
     slug: "square-root-cube-root-calculator",
@@ -494,7 +494,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple matrix calculator for performing addition and subtraction on 2x2 matrices. Enter the matrix values to get an instant result.",
     lastUpdated: "2024-07-31",
-    tags: ["matrix calculator", "linear algebra", "math", "multiply two matrices of 3x3 size", "find the determinant of a 3x3 matrix", "find the inverse of a 2x2 matrix", "what is an identity matrix and its properties"],
+    tags: ["matrix calculator", "linear algebra", "math", "multiply two matrices of 3x3 size", "find the determinant of a 3x3 matrix", "find the inverse of a 2x2 matrix", "what is an identity matrix and its properties", "solve a system of equations using Cramer's rule", "find the transpose of a matrix", "solve a matrix equation using the inverse matrix"],
   },
   {
     slug: "complex-number-calculator",
@@ -533,7 +533,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["emi calculator", "loan calculator", "home loan emi", "car loan emi", "calculate my home loan EMI for SBI for 20 years at 9%"]
+    tags: ["emi calculator", "loan calculator", "home loan emi", "car loan emi", "calculate my home loan EMI for SBI for 20 years at 9%", "home loan prepayment calculator to see how much I can save"]
   },
   {
     slug: "loan-comparison-calculator",
@@ -756,7 +756,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Body Mass Index (BMI) to assess your weight status for Indian adults. Our calculator uses the standard formula and provides WHO categories.",
     lastUpdated: "2024-07-31",
-    tags: ["health", "fitness", "weight", "body mass index", "bmi calculator for indian adults", "BMI vs body fat percentage what is the difference"],
+    tags: ["health", "fitness", "weight", "body mass index", "bmi calculator for indian adults", "BMI vs body fat percentage what is the difference", "body mass index (BMI) calculator for Indian adults"],
   },
   {
     slug: "bmr-calculator",
@@ -1390,7 +1390,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your GPA quickly and easily. Enter your courses, credits, and grades to find your Grade Point Average on a 4.0 scale.",
     lastUpdated: "2024-07-31",
-    tags: ["gpa calculator", "college gpa", "final grade calculator", "what score do I need on my final exam to get an A"]
+    tags: ["gpa calculator", "college gpa", "final grade calculator", "what score do I need on my final exam to get an A", "final grade calculator to see what I need to get an A"]
   },
   {
     slug: "grade-percentage-calculator",
@@ -1402,7 +1402,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.",
     lastUpdated: "2024-07-31",
-    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes"],
+    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects"],
   },
   {
     slug: "reading-time-calculator",
