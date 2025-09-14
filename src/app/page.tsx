@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
@@ -48,7 +49,7 @@ const websiteSchema: WithContext<WebSite> = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    "query-input": "required name=search_term_string",
+    queryInput: "required name=search_term_string",
   },
   hasPart: [...trendingSchema, ...categoriesSchema],
 };
