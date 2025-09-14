@@ -92,7 +92,7 @@ export default function AboutCarbonFootprintCalculator() {
             <AccordionContent>
               Finding a precise carbon footprint is very complex. The actual
               impact depends on many factors. These include your local power
-              grid&apos;s energy sources and your car&apos;s fuel efficiency.
+              grid&rsquo;s energy sources and your car&rsquo;s fuel efficiency.
               This tool uses averages to provide a general estimate.
             </AccordionContent>
           </AccordionItem>

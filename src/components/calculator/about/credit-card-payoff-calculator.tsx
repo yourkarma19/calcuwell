@@ -53,7 +53,7 @@ export default function AboutCreditCardPayoffCalculator() {
         <p>
           The Credit Card Payoff Calculator is a crucial financial tool for
           anyone with credit card debt. It shows you exactly how long
-          it&apos;ll take to become debt-free based on your current payments and
+          it&rsquo;ll take to become debt-free based on your current payments and
           highlights the total amount of interest you will pay.
         </p>
 
@@ -63,7 +63,7 @@ export default function AboutCreditCardPayoffCalculator() {
             Enter your total <strong>Card Balance</strong>.
           </li>
           <li>
-            Input your card&apos;s <strong>Interest Rate (APR)</strong>.
+            Input your card&rsquo;s <strong>Interest Rate (APR)</strong>.
           </li>
           <li>
             Enter the <strong>Monthly Payment</strong> you plan to make.

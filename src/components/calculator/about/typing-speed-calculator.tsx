@@ -52,7 +52,7 @@ export default function AboutTypingSpeedCalculator() {
         />
         <p>
           The <strong>Typing Speed Calculator</strong> is a tool to measure your
-          typing proficiency in Words Per Minute (WPM). It&apos;s perfect for
+          typing proficiency in Words Per Minute (WPM). It&rsquo;s perfect for
           anyone looking to improve their typing skills. By practicing
           regularly, you can increase your speed and accuracy.
         </p>
@@ -104,7 +104,7 @@ export default function AboutTypingSpeedCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               Yes, for most practical purposes, accuracy is more important. A
-              high WPM is useless if it&apos;s full of errors that you have to
+              high WPM is useless if it&rsquo;s full of errors that you have to
               go back and correct.
             </AccordionContent>
           </AccordionItem>

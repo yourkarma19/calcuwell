@@ -1,0 +1,253 @@
+"use client";
+
+import { useMemo } from "react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import usePersistentState from "@/hooks/use-persistent-state";
+import { cn } from "@/lib/utils";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Wind Chill?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Wind chill is not the actual temperature of the air, but rather a measure of the rate of heat loss from the body due to the combined effect of cold and wind. The faster the wind blows, the faster it carries heat away from your body, making it feel colder than it actually is.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which formula is used for this calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This calculator uses the North American and UK standard formula, developed by the US National Weather Service and Environment Canada. This formula is considered the most accurate standard for human exposure.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why doesn't the wind chill calculator work for low wind speeds?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The wind chill formula is only defined for wind speeds above 3 mph (or 5 km/h). At lower speeds, the effect of wind on heat loss is negligible and the 'feels like' temperature is essentially the same as the actual air temperature.",
+      },
+    },
+  ],
+};
+
+type Unit = "fahrenheit" | "celsius";
+
+const getWindChillInfo = (wc: number, unit: Unit) => {
+  const temp = unit === "celsius" ? wc : ((wc - 32) * 5) / 9; // convert to celsius for comparison
+  if (temp > 0)
+    return {
+      risk: "Low",
+      color: "text-green-500",
+      description: "Low risk of frostbite.",
+    };
+  if (temp > -27)
+    return {
+      risk: "Caution",
+      color: "text-yellow-500",
+      description: "Frostbite possible in 10-30 minutes for exposed skin.",
+    };
+  if (temp > -40)
+    return {
+      risk: "Warning",
+      color: "text-orange-500",
+      description: "Frostbite possible in 5-10 minutes.",
+    };
+  return {
+    risk: "Danger",
+    color: "text-red-500",
+    description: "Frostbite in under 5 minutes.",
+  };
+};
+
+export default function WindChillCalculator() {
+  const [unit, setUnit] = usePersistentState<Unit>(
+    "windchill-unit",
+    "fahrenheit",
+  );
+  const [temperature, setTemperature] = usePersistentState(
+    "windchill-temp",
+    20,
+  );
+  const [windSpeed, setWindSpeed] = usePersistentState("windchill-speed", 15);
+
+  const windChill = useMemo(() => {
+    const T = Number(temperature);
+    const V =
+      unit === "fahrenheit" ? Number(windSpeed) : Number(windSpeed) * 0.621371; // convert kmh to mph if needed
+
+    if (V < 3) return T; // Formula is not valid for wind speeds below 3 mph
+
+    if (unit === "fahrenheit") {
+      return (
+        35.74 +
+        0.6215 * T -
+        35.75 * Math.pow(V, 0.16) +
+        0.4275 * T * Math.pow(V, 0.16)
+      );
+    } else {
+      // Celsius
+      const T_c = T;
+      const V_kmh = Number(windSpeed);
+      return (
+        13.12 +
+        0.6215 * T_c -
+        11.37 * Math.pow(V_kmh, 0.16) +
+        0.3965 * T_c * Math.pow(V_kmh, 0.16)
+      );
+    }
+  }, [temperature, windSpeed, unit]);
+
+  const { risk, color, description } = getWindChillInfo(windChill, unit);
+
+  return (
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Wind Chill Calculator</CardTitle>
+          <CardDescription>
+            Calculate the &quot;feels like&quot; temperature based on wind
+            speed.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label>Temperature Unit</Label>
+            <Select value={unit} onValueChange={(v) => setUnit(v as Unit)}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="fahrenheit">
+                  Fahrenheit (°F) / mph
+                </SelectItem>
+                <SelectItem value="celsius">Celsius (°C) / km/h</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>
+                Air Temperature (°{unit === "fahrenheit" ? "F" : "C"})
+              </Label>
+              <Input
+                type="number"
+                value={temperature}
+                onChange={(e) => setTemperature(Number(e.target.value))}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label>
+                Wind Speed ({unit === "fahrenheit" ? "mph" : "km/h"})
+              </Label>
+              <Input
+                type="number"
+                value={windSpeed}
+                onChange={(e) => setWindSpeed(Number(e.target.value))}
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Feels Like</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className={cn("text-6xl font-bold font-headline my-2", color)}>
+            {windChill.toFixed(1)}°
+          </p>
+          <p className={cn("text-xl font-semibold", color)}>{risk}</p>
+          <p className="text-sm text-muted-foreground mt-2">{description}</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle as="h2">About the Wind Chill Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <p>
+            The Wind Chill Calculator determines how cold the air actually feels
+            on your skin when wind is factored in. It&rsquo;s a crucial tool for
+            understanding the potential danger of frostbite in cold, windy
+            conditions.
+          </p>
+          <h2>How to Use the Wind Chill Calculator</h2>
+          <ol>
+            <li>Select your preferred temperature and speed units.</li>
+            <li>Enter the current **Air Temperature**.</li>
+            <li>Enter the current **Wind Speed**.</li>
+          </ol>
+          <p>
+            The calculator will instantly show the &quot;feels like&quot;
+            temperature, or wind chill, along with a general risk level for
+            frostbite.
+          </p>
+          <h2>Wind Chill FAQs</h2>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is Wind Chill?</AccordionTrigger>
+              <AccordionContent>
+                Wind chill is not the actual temperature, but a measure of heat
+                loss from the body due to the combined effect of cold and wind.
+                The faster the wind blows, the faster it carries heat away from
+                your body, making it feel colder.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Which Formula Is Used?</AccordionTrigger>
+              <AccordionContent>
+                This calculator uses the North American and UK standard formula.
+                This formula is considered the most accurate standard for human
+                exposure.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                Why Doesn&rsquo;t It Work for Low Wind Speeds?
+              </AccordionTrigger>
+              <AccordionContent>
+                The wind chill formula is only defined for wind speeds above 3 mph
+                (or 5 km/h). At lower speeds, the effect of wind on heat loss is
+                negligible, and the &quot;feels like&quot; temperature is the same
+                as the actual air temperature.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

@@ -106,7 +106,7 @@ export default function AboutSavingsCalculator() {
               A realistic rate depends on where you are investing. A high-yield
               savings account might offer 1-3%, while a stock market portfolio
               has historically returned an average of 7-10% annually over the
-              long term, though with higher risk. It&apos;s often wise to use a
+              long term, though with higher risk. It&rsquo;s often wise to use a
               conservative estimate.
             </AccordionContent>
           </AccordionItem>

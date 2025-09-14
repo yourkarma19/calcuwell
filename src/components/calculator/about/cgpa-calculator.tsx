@@ -53,7 +53,7 @@ export default function AboutCgpaCalculator() {
         <h3>What is CGPA?</h3>
         <p>
           CGPA stands for <strong>Cumulative Grade Point Average</strong>.
-          It&apos;s the weighted average of your grades from all semesters. It
+          It&rsquo;s the weighted average of your grades from all semesters. It
           gives a full picture of your academic performance.
         </p>
 
@@ -74,12 +74,12 @@ export default function AboutCgpaCalculator() {
         <p>
           In simple terms: for each semester, multiply the credits by the SGPA.
           Add all these results together. Then, divide by the total number of
-          credits you&apos;ve taken.
+          credits you&rsquo;ve taken.
         </p>
 
         <h3>Why Your CGPA is Important</h3>
         <p>
-          Your CGPA is a key measure of your academic performance. It&apos;s
+          Your CGPA is a key measure of your academic performance. It&rsquo;s
           often used by universities for admissions and by employers for job
           screening. A good CGPA is important for future academic and career
           opportunities.
@@ -88,7 +88,7 @@ export default function AboutCgpaCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="faq1">
             <AccordionTrigger>
-              What&apos;s the difference between CGPA and SGPA?
+              What&rsquo;s the difference between CGPA and SGPA?
             </AccordionTrigger>
             <AccordionContent>
               <strong>SGPA</strong> is your average grade for one semester.{" "}

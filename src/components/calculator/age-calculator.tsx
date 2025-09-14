@@ -9,7 +9,6 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
@@ -206,7 +205,7 @@ export default function AgeCalculator({
                   <p>
                     Chronological age is simply how old you are in years, months,
                     and days. It is different from biological age, which measures
-                    your body&apos;s health compared to its actual age.
+                    your body&rsquo;s health compared to its actual age.
                   </p>
                 </AccordionContent>
               </AccordionItem>

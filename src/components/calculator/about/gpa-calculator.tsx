@@ -52,7 +52,7 @@ export default function AboutGpaCalculator() {
         />
         <p>
           A GPA (Grade Point Average) is a standard way to measure academic
-          success. It&apos;s a number that shows your average grade, weighted by
+          success. It&rsquo;s a number that shows your average grade, weighted by
           the number of credits for each course.
         </p>
         <h3>How to Use This GPA Calculator</h3>
@@ -66,7 +66,7 @@ export default function AboutGpaCalculator() {
             <AccordionTrigger>What is GPA?</AccordionTrigger>
             <AccordionContent>
               Grade Point Average (GPA) is a number that represents the average
-              of your course grades. It&apos;s a common way to measure academic
+              of your course grades. It&rsquo;s a common way to measure academic
               achievement.
             </AccordionContent>
           </AccordionItem>

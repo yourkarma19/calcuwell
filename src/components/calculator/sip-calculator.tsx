@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { useMemo } from "react";
 import {
   Accordion,
@@ -231,7 +230,7 @@ export default function SipCalculator() {
           </ul>
 
           <h3>A Worked Example</h3>
-          <p>Let's say you invest ₹5,000 per month for 10 years at an expected return rate of 12% p.a.</p>
+          <p>Let&rsquo;s say you invest ₹5,000 per month for 10 years at an expected return rate of 12% p.a.</p>
           <ul>
             <li>P = 5,000</li>
             <li>i = 12% / 12 = 1% = 0.01</li>

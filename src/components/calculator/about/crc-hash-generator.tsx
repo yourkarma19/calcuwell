@@ -53,7 +53,7 @@ export default function AboutCrcHashGenerator() {
         <p>
           This tool creates a <strong>CRC-32 checksum</strong> for any text you
           enter. A checksum is like a unique fingerprint for your data.
-          It&apos;s a fast way to check if data has been accidentally changed
+          It&rsquo;s a fast way to check if data has been accidentally changed
           during transfer or storage.
         </p>
         <h3>How to Use the CRC-32 Hash Generator</h3>
@@ -85,8 +85,8 @@ export default function AboutCrcHashGenerator() {
           <AccordionItem value="item-3">
             <AccordionTrigger>Where is CRC-32 used?</AccordionTrigger>
             <AccordionContent>
-              CRC-32 is very common because it&apos;s fast and effective.
-              You&apos;ll find it in:
+              CRC-32 is very common because it&rsquo;s fast and effective.
+              You&rsquo;ll find it in:
               <ul className="list-disc pl-5 mt-2">
                 <li>
                   <strong>File formats:</strong> ZIP and PNG files use it to

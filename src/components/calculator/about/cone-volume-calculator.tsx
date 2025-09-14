@@ -53,14 +53,14 @@ export default function AboutConeVolumeCalculator() {
         />
         <p>
           The Cone Calculator is a useful tool for anyone working with 3D
-          shapes. It helps find a cone&apos;s key properties, like its volume,
+          shapes. It helps find a cone&rsquo;s key properties, like its volume,
           slant height, and surface area.
         </p>
 
         <h3>How to Use the Cone Calculator</h3>
         <ol>
           <li>
-            Enter the <strong>Radius</strong> of the cone&apos;s circular base.
+            Enter the <strong>Radius</strong> of the cone&rsquo;s circular base.
           </li>
           <li>
             Enter the perpendicular <strong>Height</strong> of the cone.
@@ -85,7 +85,7 @@ export default function AboutConeVolumeCalculator() {
           <AccordionItem value="item-2">
             <AccordionTrigger>What is the slant height?</AccordionTrigger>
             <AccordionContent>
-              The slant height (&apos;s&apos;) is the distance from the tip of
+              The slant height (&rsquo;s&rsquo;) is the distance from the tip of
               the cone down the side to a point on the edge of the base. It is
               needed to calculate the surface area. You can find it using the
               formula: `s = √(r² + h²)`.
@@ -98,7 +98,7 @@ export default function AboutConeVolumeCalculator() {
             <AccordionContent>
               The total surface area of a cone is the area of its circular base
               (`π * r²`) plus its side surface area (`π * r * s`), where
-              &apos;s&apos; is the slant height.
+              &rsquo;s&rsquo; is the slant height.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">

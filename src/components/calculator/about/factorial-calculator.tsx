@@ -79,7 +79,7 @@ export default function AboutFactorialCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The exclamation mark shows a factorial. The factorial of a
-              non-negative integer &apos;n&apos;, written as n!, is the product
+              non-negative integer &rsquo;n&rsquo;, written as n!, is the product
               of all positive integers less than or equal to n. For example, 5!
               = 5 × 4 × 3 × 2 × 1 = 120.
             </AccordionContent>

@@ -55,7 +55,7 @@ export default function AboutLoanAffordabilityCalculator() {
         <p>
           This calculator helps you estimate the total loan amount you might be
           able to borrow based on your income and existing financial
-          commitments. It&apos;s a crucial first step before applying for a home
+          commitments. It&rsquo;s a crucial first step before applying for a home
           loan, car loan, or any major financing.
         </p>
 
@@ -89,7 +89,7 @@ export default function AboutLoanAffordabilityCalculator() {
             <AccordionContent>
               There are two main ways: increase your income or reduce your
               monthly debt. To reduce debt, focus on paying down existing
-              loans or credit card balances. It&apos;s also wise to avoid taking
+              loans or credit card balances. It&rsquo;s also wise to avoid taking
               on new debt right before you apply for a major loan.
             </AccordionContent>
           </AccordionItem>

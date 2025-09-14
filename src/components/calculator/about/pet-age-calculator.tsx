@@ -51,10 +51,10 @@ export default function AboutPetAgeCalculator() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <p>
-          The **Pet Age Calculator** is a fun way to translate your pet&apos;s
+          The **Pet Age Calculator** is a fun way to translate your pet&rsquo;s
           age into human years. While the old &quot;7 dog years to 1 human
           year&quot; rule is a myth, this tool uses a more modern method to give
-          you a better understanding of your pet&apos;s life stage.
+          you a better understanding of your pet&rsquo;s life stage.
         </p>
         <h3>How to Use the Pet Age Calculator</h3>
         <ol>
@@ -62,7 +62,7 @@ export default function AboutPetAgeCalculator() {
             Select the <strong>Pet Type</strong> (Dog or Cat).
           </li>
           <li>
-            Enter your pet&apos;s current <strong>Age</strong> in years.
+            Enter your pet&rsquo;s current <strong>Age</strong> in years.
           </li>
         </ol>
         <p>
@@ -75,7 +75,7 @@ export default function AboutPetAgeCalculator() {
               Is the &quot;7 dog years to 1 human year&quot; rule true?
             </AccordionTrigger>
             <AccordionContent>
-              No, it&apos;s a common myth. Dogs and cats mature much faster in
+              No, it&rsquo;s a common myth. Dogs and cats mature much faster in
               their first two years. This calculator uses a method where the
               first year equals about 15 human years, the second adds 9, and
               every year after adds 4-5 years.
@@ -91,7 +91,7 @@ export default function AboutPetAgeCalculator() {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              How can I tell my pet&apos;s age if they were a rescue?
+              How can I tell my pet&rsquo;s age if they were a rescue?
             </AccordionTrigger>
             <AccordionContent>
               A veterinarian is the best person to help. They look at the

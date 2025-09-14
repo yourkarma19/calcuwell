@@ -80,7 +80,7 @@ export default function AboutPermutationCombinationCalculator() {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-semibold">
-              Permutation vs. Combination: What&apos;s the Difference?
+              Permutation vs. Combination: What&rsquo;s the Difference?
             </AccordionTrigger>
             <AccordionContent>
               <p>
@@ -117,7 +117,7 @@ export default function AboutPermutationCombinationCalculator() {
               <p className="mb-2">**Permutation (nPr):** `n! / (n-r)!`</p>
               <p>**Combination (nCr):** `n! / (r! * (n-r)!)`</p>
               <p className="mt-2">
-                Where &apos;n&apos; is the total items, and &apos;r&apos; is the
+                Where &rsquo;n&rsquo; is the total items, and &rsquo;r&rsquo; is the
                 items to choose. Notice the combination formula is the
                 permutation formula divided by `r!`, which removes the
                 different orderings.

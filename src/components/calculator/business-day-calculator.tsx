@@ -172,7 +172,7 @@ export default function BusinessDayCalculator() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>
-                What&apos;s the difference between a day and a business day?
+                What&rsquo;s the difference between a day and a business day?
               </AccordionTrigger>
               <AccordionContent>
                 A business day is a typical workday, usually Monday through

@@ -95,7 +95,7 @@ export default function AboutWeekNumberCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The ISO week year is based on which year the majority of the
-              week&apos;s days fall in. Because of this, the first few days of
+              week&rsquo;s days fall in. Because of this, the first few days of
               January can sometimes belong to the last week of the previous
               year.
             </AccordionContent>

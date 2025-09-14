@@ -55,14 +55,14 @@ export default function AboutCylinderVolumeCalculator() {
           The <strong>Cylinder Calculator</strong> is a tool for finding the
           geometric properties of a cylinder. Simply provide the radius and
           height to instantly find the volume and surface area. This is useful
-          for calculating a tank&apos;s capacity or the material needed to build
+          for calculating a tank&rsquo;s capacity or the material needed to build
           a cylindrical object.
         </p>
 
         <h3>How to Use the Cylinder Calculator</h3>
         <ol>
           <li>
-            Enter the <strong>Radius</strong> of the cylinder&apos;s circular
+            Enter the <strong>Radius</strong> of the cylinder&rsquo;s circular
             base.
           </li>
           <li>
@@ -91,7 +91,7 @@ export default function AboutCylinderVolumeCalculator() {
             </AccordionTrigger>
             <AccordionContent>
               The <strong>lateral surface area</strong> is the area of the
-              curved side of the cylinder (like a can&apos;s label). The{" "}
+              curved side of the cylinder (like a can&rsquo;s label). The{" "}
               <strong>total surface area</strong> is the lateral area plus the
               area of the two circular bases at the top and bottom.
             </AccordionContent>

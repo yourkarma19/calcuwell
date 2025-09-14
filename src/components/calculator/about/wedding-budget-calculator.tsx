@@ -101,7 +101,7 @@ export default function AboutWeddingBudgetCalculator() {
               How much should we budget for unexpected costs?
             </AccordionTrigger>
             <AccordionContent>
-              It&apos;s wise to set aside 5-10% of your total budget as a
+              It&rsquo;s wise to set aside 5-10% of your total budget as a
               contingency fund. This will help you cover any unexpected expenses
               that arise without adding stress.
             </AccordionContent>

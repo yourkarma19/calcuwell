@@ -99,7 +99,7 @@ export default function AboutRomanNumeralConverter() {
             <AccordionContent>
               The standard Roman numeral system does not have a native way to
               represent numbers of 4,000 or greater. The largest standard
-              numeral is M (1,000), and the rules don&apos;t allow for four
+              numeral is M (1,000), and the rules don&rsquo;t allow for four
               consecutive identical numerals (MMMM).
             </AccordionContent>
           </AccordionItem>

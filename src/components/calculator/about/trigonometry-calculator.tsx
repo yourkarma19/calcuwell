@@ -109,7 +109,7 @@ export default function AboutTrigonometryCalculator() {
             <AccordionTrigger>Degrees vs. Radians</AccordionTrigger>
             <AccordionContent>
               Degrees and Radians are two different units for measuring angles.
-              A full circle is 360 degrees or 2π radians. It&apos;s important to
+              A full circle is 360 degrees or 2π radians. It&rsquo;s important to
               use the correct unit for your calculations, as it will
               significantly affect the result. Most advanced math and physics
               formulas use radians for simplicity.

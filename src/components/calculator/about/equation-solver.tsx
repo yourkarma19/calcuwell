@@ -114,11 +114,11 @@ export default function AboutEquationSolver() {
               without fully solving the equation.
               <ul className="list-disc pl-5 mt-2">
                 <li>
-                  If it&apos;s positive, there are two distinct real roots.
+                  If it&rsquo;s positive, there are two distinct real roots.
                 </li>
-                <li>If it&apos;s zero, there is exactly one real root.</li>
+                <li>If it&rsquo;s zero, there is exactly one real root.</li>
                 <li>
-                  If it&apos;s negative, there are no real roots (the solutions
+                  If it&rsquo;s negative, there are no real roots (the solutions
                   are complex numbers).
                 </li>
               </ul>

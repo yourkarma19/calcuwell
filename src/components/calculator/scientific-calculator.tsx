@@ -450,8 +450,8 @@ export default function ScientificCalculator() {
             <AccordionItem value="item-3">
               <AccordionTrigger>What are log and ln?</AccordionTrigger>
               <AccordionContent>
-                `log` is the base-10 logarithm. It answers "10 to what power
-                gives you this number?". `ln` is the natural logarithm, which has
+                `log` is the base-10 logarithm. It answers &quot;10 to what power
+                gives you this number?&quot;. `ln` is the natural logarithm, which has
                 a base of `e` (approximately 2.718). It is widely used in
                 science and finance for continuous growth calculations.
               </AccordionContent>

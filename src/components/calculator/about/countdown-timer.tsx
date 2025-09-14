@@ -53,7 +53,7 @@ export default function AboutCountdownTimer() {
         <p>
           The Countdown Timer tracks the time remaining until a specific event.
           It shows the days, hours, minutes, and seconds left in real-time.
-          It&apos;s perfect for building anticipation for personal milestones,
+          It&rsquo;s perfect for building anticipation for personal milestones,
           holidays, or important deadlines.
         </p>
 
@@ -96,7 +96,7 @@ export default function AboutCountdownTimer() {
               Does the timer account for time zones?
             </AccordionTrigger>
             <AccordionContent>
-              The timer uses your local device&apos;s time. When you set a
+              The timer uses your local device&rsquo;s time. When you set a
               target date and time, it is set in your current time zone. If you
               share it, others will see the countdown relative to their own
               local time.

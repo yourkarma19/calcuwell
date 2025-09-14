@@ -134,13 +134,13 @@ export default function AboutCalorieNeedsCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 Fruits are a great source of vitamins and fiber. However, they
-                contain natural sugars and calories. It's important to eat them
+                contain natural sugars and calories. It&rsquo;s important to eat them
                 in moderation as part of your overall calorie goal.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                What's a good pre-workout snack in India?
+                What&rsquo;s a good pre-workout snack in India?
               </AccordionTrigger>
               <AccordionContent>
                 A small banana, a handful of makhana (fox nuts), or a small

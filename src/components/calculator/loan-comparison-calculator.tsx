@@ -252,7 +252,7 @@ export default function LoanComparisonCalculator({
                     <p>
                       Besides the interest rate, consider other costs like
                       processing fees and prepayment penalties. Also, check the
-                      lender&apos;s reputation. Sometimes a slightly higher EMI
+                      lender&rsquo;s reputation. Sometimes a slightly higher EMI
                       is worth it for better terms or service.
                     </p>
                   </AccordionContent>

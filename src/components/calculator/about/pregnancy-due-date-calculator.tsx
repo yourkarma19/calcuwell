@@ -71,7 +71,7 @@ export default function AboutPregnancyDueDateCalculator() {
               How is the due date calculated from the LMP?
             </AccordionTrigger>
             <AccordionContent>
-              The most common method is **Naegele&apos;s rule**. This rule
+              The most common method is **Naegele&rsquo;s rule**. This rule
               calculates the due date by adding 280 days (40 weeks) to the first
               day of your last menstrual period. This assumes a standard 28-day
               cycle.
