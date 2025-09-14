@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
+import AboutWeddingBudgetCalculator from "./about/wedding-budget-calculator";
 
 const WeddingBudgetChart = dynamic(
   () => import("@/components/charts/wedding-budget-chart"),
@@ -162,6 +163,9 @@ export default function WeddingBudgetCalculator() {
           <WeddingBudgetChart chartData={chartData} />
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutWeddingBudgetCalculator />
+      </div>
     </div>
   );
 }

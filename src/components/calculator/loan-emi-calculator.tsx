@@ -9,8 +9,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Input } from "../ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
@@ -18,7 +18,7 @@ import {
   calculateEMI,
   calculateEMIWithExtraPayments,
 } from "@/lib/math/loan-emi";
-import { formatCurrency } from "@/lib/utils";
+
 import type { FAQPage, WithContext } from "schema-dts";
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -65,6 +65,17 @@ const jsonLd: WithContext<FAQPage> = {
   ],
 };
 
+function formatCurrency(
+  value: number,
+  currency: string = "INR",
+  locale: string = "en-IN",
+) {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+    maximumFractionDigits: 0,
+  }).format(value);
+}
 
 export default function LoanEMICalculator({
   calculatorName,

@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/table";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
+import AboutHeartRateZoneCalculator from "./about/heart-rate-zone-calculator";
 
 const zones = [
   { name: "Zone 1: Very Light", percentage: "50-60%", color: "bg-blue-200" },
@@ -107,7 +108,11 @@ export default function HeartRateZoneCalculator() {
                       </span>
                     </TableCell>
                     <TableCell>{zone.percentage}</TableCell>
-                    <TableCell className="text-right font-mono">{`${heartRateZones[index].min.toFixed(0)} - ${heartRateZones[index].max.toFixed(0)}`}</TableCell>
+                    <TableCell className="text-right font-mono">{`${heartRateZones[
+                      index
+                    ].min.toFixed(0)} - ${heartRateZones[index].max.toFixed(
+                      0,
+                    )}`}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -115,6 +120,9 @@ export default function HeartRateZoneCalculator() {
           </CardContent>
         </CardHeader>
       </Card>
+      <div className="mt-8">
+        <AboutHeartRateZoneCalculator />
+      </div>
     </div>
   );
 }

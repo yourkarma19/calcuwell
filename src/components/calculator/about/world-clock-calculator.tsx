@@ -1,11 +1,11 @@
 "use client";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { FAQPage, WithContext } from "schema-dts";
 
 const jsonLd: WithContext<FAQPage> = {
@@ -39,62 +39,57 @@ const jsonLd: WithContext<FAQPage> = {
   ],
 };
 
-export default function AboutWorldClock() {
+export default function AboutWorldClockCalculator() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle as="h2">About the World Clock</CardTitle>
-      </CardHeader>
-      <CardContent className="prose dark:prose-invert max-w-none">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <p>
-          The World Clock displays the current local time and date for major
-          cities across the globe. It is essential for anyone who works with
-          international teams, travels frequently, or needs to stay connected
-          with people in different countries. The clock automatically accounts
-          for time zones and Daylight Saving Time.
-        </p>
+    <div className="prose dark:prose-invert max-w-none">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <p>
+        The World Clock displays the current local time and date for major
+        cities across the globe. It is essential for anyone who works with
+        international teams, travels frequently, or needs to stay connected
+        with people in different countries. The clock automatically accounts
+        for time zones and Daylight Saving Time.
+      </p>
 
-        <h2>How to Use the World Clock</h2>
-        <p>
-          The clock is fully automatic. It fetches the current time from your
-          device and displays the equivalent local time for a list of major
-          international cities. The time for each city updates every second.
-        </p>
+      <h2>How to Use the World Clock</h2>
+      <p>
+        The clock is fully automatic. It fetches the current time from your
+        device and displays the equivalent local time for a list of major
+        international cities. The time for each city updates every second.
+      </p>
 
-        <h2>World Clock FAQs</h2>
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>
-              How does it handle Daylight Saving Time (DST)?
-            </AccordionTrigger>
-            <AccordionContent>
-              This tool uses the international IANA Time Zone Database. This
-              database is updated with the correct DST rules for each location,
-              ensuring the displayed times are accurate year-round.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>What is a time zone?</AccordionTrigger>
-            <AccordionContent>
-              A time zone is a region that observes a uniform standard time.
-              Most time zones are offset from Coordinated Universal Time (UTC)
-              by a whole number of hours.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>What is UTC?</AccordionTrigger>
-            <AccordionContent>
-              Coordinated Universal Time (UTC) is the primary time standard by
-              which the world regulates clocks and time. It is the reference
-              point from which all other time zones are calculated.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </CardContent>
-    </Card>
+      <h2>World Clock FAQs</h2>
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>
+            How does it handle Daylight Saving Time (DST)?
+          </AccordionTrigger>
+          <AccordionContent>
+            This tool uses the international IANA Time Zone Database. This
+            database is updated with the correct DST rules for each location,
+            ensuring the displayed times are accurate year-round.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>What is a time zone?</AccordionTrigger>
+          <AccordionContent>
+            A time zone is a region that observes a uniform standard time.
+            Most time zones are offset from Coordinated Universal Time (UTC)
+            by a whole number of hours.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>What is UTC?</AccordionTrigger>
+          <AccordionContent>
+            Coordinated Universal Time (UTC) is the primary time standard by
+            which the world regulates clocks and time. It is the reference
+            point from which all other time zones are calculated.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
   );
 }

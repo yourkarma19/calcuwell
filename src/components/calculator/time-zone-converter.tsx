@@ -3,9 +3,9 @@
 import { formatInTimeZone, fromZonedTime } from "date-fns-tz";
 import { ArrowRightLeft } from "lucide-react";
 import { useState, useEffect } from "react";
-import { DatePicker } from "../ui/date-picker";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { DatePicker } from "@/components/ui/date-picker";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -22,6 +22,36 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is UTC (Coordinated Universal Time)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Coordinated Universal Time (UTC) is the primary time standard that the world uses to regulate clocks and time. It is not a time zone itself but is the basis for civil time and time zones worldwide. Time zones are often shown as an offset from UTC (e.g., UTC-5).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this time zone converter handle Daylight Saving Time (DST)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, this converter automatically handles Daylight Saving Time. It uses the international IANA Time Zone Database, which contains all historical and future DST rules for each timezone, ensuring the conversion is accurate.",
+      },
+    },
+  ],
+};
 
 const timezones = [
   // Americas
@@ -195,6 +225,61 @@ export default function TimeZoneConverter() {
               </div>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle as="h2">About the Time Zone Converter</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <p>
+            The Time Zone Converter is a tool for anyone who works, travels, or
+            communicates across different parts of the world. It lets you
+            instantly find the local time in another city or country based on your
+            own. This is perfect for scheduling international meetings or just
+            staying in touch with friends and family abroad.
+          </p>
+
+          <h3>How to Use the Time Zone Converter</h3>
+          <ol>
+            <li>
+              In the &quot;From&quot; section, select your starting time zone,
+              date, and time.
+            </li>
+            <li>
+              In the &quot;To&quot; section, select the time zone you want to
+              convert to.
+            </li>
+            <li>The converted date and time will be displayed instantly.</li>
+          </ol>
+
+          <h3>Time Zone FAQs</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is UTC?</AccordionTrigger>
+              <AccordionContent>
+                Coordinated Universal Time (UTC) is the main time standard for the
+                world. It is not a time zone itself, but the basis for all time
+                zones. Time zones are often shown as an offset from UTC (e.g.,
+                UTC-5 for New York).
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                Does this handle Daylight Saving Time (DST)?
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes, this converter automatically handles Daylight Saving Time. It
+                uses the international IANA Time Zone Database, which contains all
+                DST rules for each timezone. This ensures the conversion is
+                accurate.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

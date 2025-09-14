@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import AboutGpaCalculator from "./about/gpa-calculator";
 
 const gradePoints: { [key: string]: number } = {
   A: 4.0,
@@ -237,6 +238,9 @@ export default function GpaCalculator() {
           </p>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutGpaCalculator />
+      </div>
     </div>
   );
 }

@@ -27,6 +27,39 @@ import {
 import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you calculate the number of days between two dates?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The calculator subtracts the start date from the end date to find the total number of milliseconds between them. This value is then converted into days. This method automatically accounts for the varying number of days in each month and for leap years.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does this calculator include the end date in the count?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This calculator determines the total number of full 24-hour periods between the start and end dates. For example, the difference between January 1 and January 3 is two full days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is this tool used for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "This calculator is perfect for planning events (e.g., 'How many days until my birthday?'), tracking project timelines, calculating age, and determining the duration between important historical or personal dates.",
+      },
+    },
+  ],
+};
+
 
 type Difference = {
   years: number;
@@ -178,6 +211,68 @@ export default function DateDifferenceCalculator({
         elementIds={["date-diff-inputs", "date-diff-results"]}
         calculatorName={calculatorName}
       />
+      <div className="mt-8">
+        <Card>
+          <CardHeader>
+            <CardTitle as="h2">About the Date Difference Calculator</CardTitle>
+          </CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+             <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+              />
+            <p>
+              The <strong>Date Difference Calculator</strong> determines the precise
+              duration between two dates. It provides the difference in a
+              comprehensive format, breaking it down into years, months, weeks,
+              days, hours, and minutes.
+            </p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+              <li>Select a **Start Date** from the first calendar.</li>
+              <li>Select an **End Date** from the second calendar.</li>
+            </ol>
+            <p>
+              The tool will automatically calculate and display the total duration
+              between these two points in time.
+            </p>
+            <h3>Date Difference FAQs</h3>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  How do you calculate the number of days between two dates?
+                </AccordionTrigger>
+                <AccordionContent>
+                  The calculator subtracts the start date from the end date to
+                  find the total number of milliseconds between them. This value
+                  is then converted into days. This method automatically
+                  accounts for the varying number of days in each month and for
+                  leap years.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>
+                  Does this calculator include the end date in the count?
+                </AccordionTrigger>
+                <AccordionContent>
+                  This calculator determines the total number of full 24-hour
+                  periods between the start and end dates. For example, the
+                  difference between January 1 and January 3 is two full days.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>What is this tool used for?</AccordionTrigger>
+                <AccordionContent>
+                  This calculator is perfect for planning events (e.g., &quot;How
+                  many days until my birthday?&quot;), tracking project timelines,
+                  calculating age, and determining the duration between
+                  important historical or personal dates.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
+      </div>
     </>
   );
 }

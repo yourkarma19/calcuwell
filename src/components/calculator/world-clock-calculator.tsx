@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import AboutWorldClockCalculator from "./about/world-clock-calculator";
 
 const majorTimezones = [
   { city: "New York", tz: "America/New_York" },
@@ -79,6 +80,9 @@ export default function WorldClock() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutWorldClockCalculator />
+      </div>
     </div>
   );
 }

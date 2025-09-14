@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutRetirementCalculator from "./about/retirement-calculator";
 
 export default function RetirementCalculator() {
   const [currentAge, setCurrentAge] = usePersistentState("ret-current-age", 30);
@@ -183,21 +184,36 @@ export default function RetirementCalculator() {
             </p>
           </div>
           <div
-            className={`p-4 rounded-lg ${isAchievable ? "bg-green-100 dark:bg-green-900" : "bg-red-100 dark:bg-red-900"}`}
+            className={`p-4 rounded-lg ${
+              isAchievable
+                ? "bg-green-100 dark:bg-green-900"
+                : "bg-red-100 dark:bg-red-900"
+            }`}
           >
             <p
-              className={`text-lg font-bold ${isAchievable ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}
+              className={`text-lg font-bold ${
+                isAchievable
+                  ? "text-green-700 dark:text-green-300"
+                  : "text-red-700 dark:text-red-300"
+              }`}
             >
               {isAchievable ? "On Track!" : "Shortfall"}
             </p>
             <p
-              className={`text-2xl font-bold ${isAchievable ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}
+              className={`text-2xl font-bold ${
+                isAchievable
+                  ? "text-green-700 dark:text-green-300"
+                  : "text-red-700 dark:text-red-300"
+              }`}
             >
               {isAchievable ? "Goal Achievable" : formatCurrency(shortfall)}
             </p>
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutRetirementCalculator />
+      </div>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutCountdownTimer from "./about/countdown-timer";
 
 interface TimeLeft {
   days: number;
@@ -120,6 +121,9 @@ export default function CountdownTimer() {
           )}
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutCountdownTimer />
+      </div>
     </div>
   );
 }

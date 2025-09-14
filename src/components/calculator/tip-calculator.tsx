@@ -12,6 +12,44 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a standard tip percentage?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tipping customs vary by country. In the United States, for example, a standard tip for restaurant service is typically between 15% and 20% of the pre-tax bill. 15% is often considered average, while 20% or more is for excellent service.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Should I tip on the pre-tax or post-tax amount?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It is customary to calculate the tip based on the subtotal of the bill, before sales tax is added. However, some people prefer to tip on the total amount for simplicity. This calculator calculates the tip based on the bill amount you enter.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the 'split the bill' feature work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The calculator first adds the tip amount to the total bill. It then divides that new total evenly by the number of people you specify. This gives you the exact amount each person needs to contribute.",
+      },
+    },
+  ],
+};
 
 export default function TipCalculator() {
   const [bill, setBill] = usePersistentState("tip-bill", 50);
@@ -123,6 +161,66 @@ export default function TipCalculator() {
               <p className="font-semibold">{formatCurrency(totalAmount)}</p>
             </div>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle as="h2">About the Tip Calculator</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <p>
+            Our Tip Calculator is a simple tool for calculating the gratuity on a
+            service bill and splitting the total cost among a group of people. It
+            takes the guesswork out of dining out.
+          </p>
+          <h3>How to Use the Tip Calculator</h3>
+          <ol>
+            <li>Enter the total **Bill Amount**.</li>
+            <li>Use the slider to select the **Tip Percentage**.</li>
+            <li>Adjust the slider for the **Number of People**.</li>
+          </ol>
+          <p>
+            The calculator will instantly display the tip amount, the total bill,
+            and the amount each person should pay.
+          </p>
+          <h3>Tip Calculator FAQs</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                What is a standard tip percentage?
+              </AccordionTrigger>
+              <AccordionContent>
+                Tipping customs vary by country. In the United States, a standard
+                tip for restaurant service is typically between 15% and 20% of the
+                pre-tax bill. 15% is often considered average, while 20% or more
+                is for excellent service.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                Should I tip on the pre-tax or post-tax amount?
+              </AccordionTrigger>
+              <AccordionContent>
+                It is customary to calculate the tip based on the subtotal of the
+                bill, before sales tax is added. However, some people prefer to
+                tip on the total amount for simplicity.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                How does the &quot;split the bill&quot; feature work?
+              </AccordionTrigger>
+              <AccordionContent>
+                The calculator first adds the tip amount to the total bill. It
+                then divides that new total evenly by the number of people you
+                specify. This gives you the exact amount each person needs to pay.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

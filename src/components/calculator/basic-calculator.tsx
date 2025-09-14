@@ -4,7 +4,13 @@ import { Delete } from "lucide-react";
 import { evaluate } from "mathjs";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
@@ -135,133 +141,151 @@ export default function BasicCalculator() {
     "h-16 text-xl rounded-xl py-4 font-semibold transition-transform active:scale-95";
 
   return (
-    <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
-      <CardContent className="p-1">
-        <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
-          <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
-            {displayExpression()}
+    <div className="space-y-6">
+      <Card className="w-full mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
+        <CardContent className="p-1">
+          <div className="h-28 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
+            <div className="text-xl text-muted-foreground h-1/3 truncate w-full text-right">
+              {displayExpression()}
+            </div>
+            <div
+              aria-live="polite"
+              className="w-full text-right font-mono text-5xl text-foreground"
+            >
+              {formatOperand(currentOperand)}
+            </div>
           </div>
-          <div
-            aria-live="polite"
-            className="w-full text-right font-mono text-5xl text-foreground"
-          >
-            {formatOperand(currentOperand)}
+
+          <div className="grid grid-cols-4 gap-3 p-1">
+            <Button
+              onClick={clear}
+              variant="ghost"
+              className={cn(
+                basicBtnClasses,
+                "text-destructive hover:bg-destructive/10",
+              )}
+            >
+              AC
+            </Button>
+            <Button
+              onClick={deleteDigit}
+              aria-label="Backspace"
+              variant="ghost"
+              className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            >
+              <Delete />
+            </Button>
+            <Button
+              onClick={handlePercent}
+              variant="ghost"
+              className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            >
+              %
+            </Button>
+            <Button
+              onClick={() => chooseOperation("/")}
+              variant="ghost"
+              className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            >
+              ÷
+            </Button>
+
+            {["7", "8", "9"].map((num) => (
+              <Button
+                key={num}
+                onClick={() => addDigit(num)}
+                variant="ghost"
+                className={cn(basicBtnClasses)}
+              >
+                {num}
+              </Button>
+            ))}
+            <Button
+              onClick={() => chooseOperation("*")}
+              variant="ghost"
+              className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            >
+              ×
+            </Button>
+
+            {["4", "5", "6"].map((num) => (
+              <Button
+                key={num}
+                onClick={() => addDigit(num)}
+                variant="ghost"
+                className={cn(basicBtnClasses)}
+              >
+                {num}
+              </Button>
+            ))}
+            <Button
+              onClick={() => chooseOperation("-")}
+              variant="ghost"
+              className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            >
+              -
+            </Button>
+
+            {["1", "2", "3"].map((num) => (
+              <Button
+                key={num}
+                onClick={() => addDigit(num)}
+                variant="ghost"
+                className={cn(basicBtnClasses)}
+              >
+                {num}
+              </Button>
+            ))}
+            <Button
+              onClick={() => chooseOperation("+")}
+              variant="ghost"
+              className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
+            >
+              +
+            </Button>
+
+            <Button
+              onClick={() => addDigit("0")}
+              variant="ghost"
+              className={cn(basicBtnClasses, "col-span-2")}
+            >
+              0
+            </Button>
+            <Button
+              onClick={() => addDigit(".")}
+              variant="ghost"
+              className={cn(basicBtnClasses)}
+            >
+              .
+            </Button>
+            <Button
+              onClick={handleEvaluate}
+              className={cn(
+                basicBtnClasses,
+                "bg-primary text-primary-foreground hover:bg-primary/90",
+              )}
+            >
+              =
+            </Button>
           </div>
-        </div>
-
-        <div className="grid grid-cols-4 gap-3 p-1">
-          <Button
-            onClick={clear}
-            variant="ghost"
-            className={cn(
-              basicBtnClasses,
-              "text-destructive hover:bg-destructive/10",
-            )}
-          >
-            AC
-          </Button>
-          <Button
-            onClick={deleteDigit}
-            aria-label="Backspace"
-            variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
-          >
-            <Delete />
-          </Button>
-          <Button
-            onClick={handlePercent}
-            variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
-          >
-            %
-          </Button>
-          <Button
-            onClick={() => chooseOperation("/")}
-            variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
-          >
-            ÷
-          </Button>
-
-          {["7", "8", "9"].map((num) => (
-            <Button
-              key={num}
-              onClick={() => addDigit(num)}
-              variant="ghost"
-              className={cn(basicBtnClasses)}
-            >
-              {num}
-            </Button>
-          ))}
-          <Button
-            onClick={() => chooseOperation("*")}
-            variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
-          >
-            ×
-          </Button>
-
-          {["4", "5", "6"].map((num) => (
-            <Button
-              key={num}
-              onClick={() => addDigit(num)}
-              variant="ghost"
-              className={cn(basicBtnClasses)}
-            >
-              {num}
-            </Button>
-          ))}
-          <Button
-            onClick={() => chooseOperation("-")}
-            variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
-          >
-            -
-          </Button>
-
-          {["1", "2", "3"].map((num) => (
-            <Button
-              key={num}
-              onClick={() => addDigit(num)}
-              variant="ghost"
-              className={cn(basicBtnClasses)}
-            >
-              {num}
-            </Button>
-          ))}
-          <Button
-            onClick={() => chooseOperation("+")}
-            variant="ghost"
-            className={cn(basicBtnClasses, "text-primary hover:bg-primary/10")}
-          >
-            +
-          </Button>
-
-          <Button
-            onClick={() => addDigit("0")}
-            variant="ghost"
-            className={cn(basicBtnClasses, "col-span-2")}
-          >
-            0
-          </Button>
-          <Button
-            onClick={() => addDigit(".")}
-            variant="ghost"
-            className={cn(basicBtnClasses)}
-          >
-            .
-          </Button>
-          <Button
-            onClick={handleEvaluate}
-            className={cn(
-              basicBtnClasses,
-              "bg-primary text-primary-foreground hover:bg-primary/90",
-            )}
-          >
-            =
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle as="h2">About the Calculator</CardTitle>
+          <CardDescription>
+            This calculator includes both basic math and advanced scientific
+            functions to suit all your needs.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">
+            Use the tabs to switch between the &quot;Basic&quot; and
+            &quot;Scientific&quot; modes. The scientific mode lets you work with
+            trigonometric functions, logarithms, and more.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

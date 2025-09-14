@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutConcreteSlabCalculator from "./about/concrete-slab-calculator";
 
 type Shape = "slab" | "footer" | "post";
 type Unit = "feet" | "inches" | "meters" | "centimeters";
@@ -206,6 +207,9 @@ export default function ConcreteSlabCalculator() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutConcreteSlabCalculator />
+      </div>
     </div>
   );
 }

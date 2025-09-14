@@ -18,6 +18,47 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
+import type { FAQPage, WithContext } from "schema-dts";
+
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a complex number?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A complex number is a number that can be expressed in the form `a + bi`, where `a` and `b` are real numbers, and `i` is the imaginary unit, which satisfies the equation `i² = -1`. In this expression, 'a' is the real part and 'b' is the imaginary part. Complex numbers are used in many areas of science and engineering, including electronics and signal processing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the imaginary unit 'i'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The imaginary unit 'i' is the solution to the equation x² = -1. It is defined as the square root of negative one (√-1). Mathematicians created 'i' to solve problems that have no real number solution.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you add or subtract complex numbers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's simple: you add or subtract the real parts and the imaginary parts separately. For example, `(3 + 2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i`.",
+      },
+    },
+     {
+      "@type": "Question",
+      name: "How do you multiply and divide complex numbers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Multiplying is like using FOIL: `(a+bi)(c+di) = ac + adi + bci + bdi² = (ac-bd) + (ad+bc)i`. To divide, you multiply the top and bottom by the conjugate of the denominator. For `(a+bi)/(c+di)`, the conjugate is `(c-di)`.",
+      },
+    },
+  ],
+};
 
 export default function ComplexNumberCalculator() {
   const [real1, setReal1] = usePersistentState("complex-real1", 3);
@@ -146,9 +187,34 @@ export default function ComplexNumberCalculator() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>About Complex Numbers</CardTitle>
+          <CardTitle as="h2">About Complex Numbers</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+           <p>
+            Our <strong>Complex Number Calculator</strong> is a powerful tool for
+            anyone working with complex numbers, which are fundamental in fields
+            like engineering, physics, and advanced mathematics. This calculator
+            allows you to easily add, subtract, multiply, and divide two complex
+            numbers in the standard `a + bi` format.
+          </p>
+
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              For **Number 1** and **Number 2**, enter their real and imaginary
+              parts into the respective input boxes.
+            </li>
+            <li>Select the arithmetic operation you wish to perform.</li>
+          </ol>
+          <p>
+            The calculator will instantly display the result of the operation in
+            the standard complex number format.
+          </p>
+          <h3>Complex Number FAQs</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is a complex number?</AccordionTrigger>

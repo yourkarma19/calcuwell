@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutUnitConverter from "./about/unit-converter";
 
 const units = {
   length: {
@@ -206,6 +207,9 @@ export default function UnitConverter() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutUnitConverter />
+      </div>
     </div>
   );
 }

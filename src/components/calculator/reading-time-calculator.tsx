@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutReadingTimeCalculator from "./about/reading-time-calculator";
 
 const formatTime = (minutes: number) => {
   if (minutes < 1) {
@@ -106,6 +107,9 @@ export default function ReadingTimeCalculator() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutReadingTimeCalculator />
+      </div>
     </div>
   );
 }

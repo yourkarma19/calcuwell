@@ -22,6 +22,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import AboutCgpaCalculator from "./about/cgpa-calculator";
 
 const semesterSchema = z.object({
   credits: z.coerce
@@ -168,6 +169,9 @@ export default function CgpaCalculator() {
           </p>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutCgpaCalculator />
+      </div>
     </div>
   );
 }

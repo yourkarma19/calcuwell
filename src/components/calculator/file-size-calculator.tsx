@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutFileSizeCalculator from "./about/file-size-calculator";
 
 const units = {
   bit: 1,
@@ -133,7 +134,7 @@ export default function FileSizeCalculator() {
           </CardContent>
         </Card>
       </div>
-      <div className="lg:col-span-1">
+      <div className="lg:col-span-1 space-y-6">
         <Card className="sticky top-24">
           <CardHeader>
             <CardTitle>Estimated File Size</CardTitle>
@@ -144,6 +145,9 @@ export default function FileSizeCalculator() {
             </p>
           </CardContent>
         </Card>
+        <div className="mt-8">
+          <AboutFileSizeCalculator />
+        </div>
       </div>
     </>
   );

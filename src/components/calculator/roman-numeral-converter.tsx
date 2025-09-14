@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutRomanNumeralConverter from "./about/roman-numeral-converter";
 
 // Conversion logic
 const toRoman = (num: number): string => {
@@ -142,6 +143,9 @@ export default function RomanNumeralConverter() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutRomanNumeralConverter />
+      </div>
     </div>
   );
 }

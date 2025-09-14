@@ -1,6 +1,12 @@
 "use client";
 
 import React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Label } from "../ui/label";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +18,38 @@ import {
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import usePersistentState from "@/hooks/use-persistent-state";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Base64 and why is it used?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Base64 is an encoding system that turns binary data into a set of 64 ASCII characters. This makes it safe for use in text-based systems like email (MIME) or for embedding data directly into HTML or CSS files. It prevents data from being changed or corrupted during transfer.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Base64 a form of encryption?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, Base64 is an encoding, not an encryption. It's a way to represent data, not secure it. Anyone can decode a Base64 string back to its original form, so it offers no privacy. For security, you should use an encryption algorithm like AES.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a Data URI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Data URI lets you embed small files, like images, directly into a web page's HTML or CSS code using Base64 encoded data. This can reduce the number of HTTP requests a browser needs to make and speed up page load times for very small files.",
+      },
+    },
+  ],
+};
 
 export default function Base64Converter() {
   const [input, setInput] = usePersistentState("b64-input", "Hello World!");
@@ -37,47 +75,107 @@ export default function Base64Converter() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Base64 Encoder / Decoder</CardTitle>
-        <CardDescription>
-          Easily encode text into Base64 format or decode a Base64 string back
-          to its original text. This tool is useful for developers working with
-          web data.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="input-textarea">Enter text or Base64...</Label>
-          <Textarea
-            id="input-textarea"
-            placeholder="Enter text or Base64..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            rows={6}
-            className="font-mono"
-          />
-        </div>
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Base64 Encoder / Decoder</CardTitle>
+          <CardDescription>
+            Easily encode text into Base64 format or decode a Base64 string back
+            to its original text. This tool is useful for developers working with
+            web data.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="input-textarea">Enter text or Base64...</Label>
+            <Textarea
+              id="input-textarea"
+              placeholder="Enter text or Base64..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              rows={6}
+              className="font-mono"
+            />
+          </div>
 
-        <div className="flex gap-3">
-          <Button onClick={encode}>Encode</Button>
-          <Button onClick={decode} variant="secondary">
-            Decode
-          </Button>
-        </div>
+          <div className="flex gap-3">
+            <Button onClick={encode}>Encode</Button>
+            <Button onClick={decode} variant="secondary">
+              Decode
+            </Button>
+          </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="output-textarea">Result</Label>
-          <Textarea
-            id="output-textarea"
-            placeholder="Result..."
-            value={output}
-            readOnly
-            rows={6}
-            className="font-mono bg-muted"
+          <div className="space-y-2">
+            <Label htmlFor="output-textarea">Result</Label>
+            <Textarea
+              id="output-textarea"
+              placeholder="Result..."
+              value={output}
+              readOnly
+              rows={6}
+              className="font-mono bg-muted"
+            />
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle as="h2">About the Base64 Converter</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
-        </div>
-      </CardContent>
-    </Card>
+          <p>
+            The Base64 Converter is a key tool for web developers. It lets you
+            encode data into a safe, text-based format. You can also decode
+            Base64 strings back to their original form.
+          </p>
+          <h3>How to Use the Base64 Converter</h3>
+          <ol>
+            <li>Enter text into the top input box.</li>
+            <li>
+              Click <strong>&quot;Encode&quot;</strong> to turn it into a Base64
+              string.
+            </li>
+            <li>
+              To decode, paste a Base64 string into the input box and click{" "}
+              <strong>&quot;Decode&quot;</strong>.
+            </li>
+          </ol>
+          <p>The result will appear in the bottom box instantly.</p>
+          <h3>Base64 Converter FAQs</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is Base64 used for?</AccordionTrigger>
+              <AccordionContent>
+                Base64 is a system that turns binary data into simple text. This
+                is useful for sending data over systems that only handle text,
+                like email attachments. It prevents data from getting corrupted.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is Base64 a form of security?</AccordionTrigger>
+              <AccordionContent>
+                No. Base64 is an encoding, not an encryption. It&apos;s a way to
+                represent data, not to secure it. Anyone can decode a Base64
+                string. For security, you need an encryption method like AES.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>What is a Data URI?</AccordionTrigger>
+              <AccordionContent>
+                A Data URI lets you embed small files, like images, directly into
+                a web page&apos;s code. The file&apos;s data is encoded using
+                Base64. This can reduce the number of HTTP requests a browser
+                needs to make, which can speed up page load times for small
+                files.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

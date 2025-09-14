@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutInterceptCalculator from "./about/intercept-calculator";
 
 type EquationForm = "slope-intercept" | "standard" | "point-slope";
 
@@ -54,7 +55,9 @@ export default function InterceptCalculator() {
         }
         calcSteps = {
           yIntercept: `Set x = 0: y = ${m}(0) + ${b}  => y = ${b}`,
-          xIntercept: `Set y = 0: 0 = ${m}x + ${b} => ${m}x = ${-b} => x = ${-b / m}`,
+          xIntercept: `Set y = 0: 0 = ${m}x + ${b} => ${m}x = ${-b} => x = ${
+            -b / m
+          }`,
         };
         break;
 
@@ -63,8 +66,12 @@ export default function InterceptCalculator() {
         yInt = valB !== 0 ? { x: 0, y: valC / valB } : { x: 0, y: NaN }; // No y-intercept if B=0 (vertical line)
         xInt = valA !== 0 ? { x: valC / valA, y: 0 } : { x: NaN, y: 0 }; // No x-intercept if A=0 (horizontal line)
         calcSteps = {
-          yIntercept: `Set x = 0: A(0) + By = C => ${valB}y = ${valC} => y = ${valC / valB}`,
-          xIntercept: `Set y = 0: Ax + B(0) = C => ${valA}x = ${valC} => x = ${valC / valA}`,
+          yIntercept: `Set x = 0: A(0) + By = C => ${valB}y = ${valC} => y = ${
+            valC / valB
+          }`,
+          xIntercept: `Set y = 0: Ax + B(0) = C => ${valA}x = ${valC} => x = ${
+            valC / valA
+          }`,
         };
         break;
       default:
@@ -83,7 +90,9 @@ export default function InterceptCalculator() {
   const formatPoint = (point: { x: number; y: number }) => {
     if (isNaN(point.x) || isNaN(point.y)) return "None";
     if (!isFinite(point.x) || !isFinite(point.y)) return "Infinite";
-    return `(${point.x.toFixed(2).replace(".00", "")}, ${point.y.toFixed(2).replace(".00", "")})`;
+    return `(${point.x.toFixed(2).replace(".00", "")}, ${point.y
+      .toFixed(2)
+      .replace(".00", "")})`;
   };
 
   return (
@@ -214,6 +223,9 @@ export default function InterceptCalculator() {
           </CardContent>
         </Card>
       )}
+      <div className="mt-8">
+        <AboutInterceptCalculator />
+      </div>
     </div>
   );
 }

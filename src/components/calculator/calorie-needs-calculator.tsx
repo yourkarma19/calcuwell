@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutCalorieNeedsCalculator from "./about/calorie-needs-calculator";
 
 const activityLevels = {
   sedentary: 1.2,
@@ -60,7 +61,7 @@ export default function CalorieNeedsCalculator() {
   }, [age, gender, height, weight, activityLevel]);
 
   const targetCalories = useMemo(() => {
-    const calorieChange = weightChangeRate * 7700 / 7; // 7700 calories in 1kg of fat
+    const calorieChange = (weightChangeRate * 7700) / 7; // 7700 calories in 1kg of fat
     if (goal === "lose") {
       return maintenanceCalories - calorieChange;
     }
@@ -76,7 +77,8 @@ export default function CalorieNeedsCalculator() {
         <CardHeader>
           <CardTitle>Daily Calorie Calculator for India</CardTitle>
           <CardDescription>
-            Estimate your daily calorie needs for weight loss, maintenance, or gain, with context for Indian lifestyles.
+            Estimate your daily calorie needs for weight loss, maintenance, or
+            gain, with context for Indian lifestyles.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -157,34 +159,39 @@ export default function CalorieNeedsCalculator() {
             </Select>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
-             <div className="space-y-2">
-                <Label>Your Goal</Label>
-                <Select value={goal} onValueChange={(v) => setGoal(v as Goal)}>
-                   <SelectTrigger>
-                      <SelectValue />
-                   </SelectTrigger>
-                   <SelectContent>
-                      <SelectItem value="lose">Lose Weight</SelectItem>
-                      <SelectItem value="maintain">Maintain Weight</SelectItem>
-                      <SelectItem value="gain">Gain Weight</SelectItem>
-                   </SelectContent>
-                </Select>
-             </div>
-             {goal !== "maintain" && (
-             <div className="space-y-2">
+            <div className="space-y-2">
+              <Label>Your Goal</Label>
+              <Select value={goal} onValueChange={(v) => setGoal(v as Goal)}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="lose">Lose Weight</SelectItem>
+                  <SelectItem value="maintain">Maintain Weight</SelectItem>
+                  <SelectItem value="gain">Gain Weight</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            {goal !== "maintain" && (
+              <div className="space-y-2">
                 <Label>Weight Change Rate (kg/week)</Label>
-                <Select value={String(weightChangeRate)} onValueChange={(v) => setWeightChangeRate(Number(v))}>
-                   <SelectTrigger>
-                      <SelectValue />
-                   </SelectTrigger>
-                   <SelectContent>
-                      <SelectItem value="0.25">0.25 kg/week (slow)</SelectItem>
-                      <SelectItem value="0.5">0.5 kg/week (recommended)</SelectItem>
-                      <SelectItem value="1">1.0 kg/week (fast)</SelectItem>
-                   </SelectContent>
+                <Select
+                  value={String(weightChangeRate)}
+                  onValueChange={(v) => setWeightChangeRate(Number(v))}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0.25">0.25 kg/week (slow)</SelectItem>
+                    <SelectItem value="0.5">
+                      0.5 kg/week (recommended)
+                    </SelectItem>
+                    <SelectItem value="1">1.0 kg/week (fast)</SelectItem>
+                  </SelectContent>
                 </Select>
-             </div>
-             )}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
@@ -194,18 +201,23 @@ export default function CalorieNeedsCalculator() {
           <CardTitle>Your Calorie Targets</CardTitle>
         </CardHeader>
         <CardContent className="text-center space-y-4">
-            <div>
-                <p className="text-sm text-muted-foreground">Calories for Your Goal ({goal})</p>
-                <p className="text-5xl font-bold font-headline text-primary my-2">
-                    {targetCalories.toFixed(0)}
-                </p>
-                <p className="text-lg text-muted-foreground">calories / day</p>
-            </div>
-             <div className="text-sm text-muted-foreground border-t pt-4">
-                <p>Maintenance Calories: {maintenanceCalories.toFixed(0)}</p>
-             </div>
+          <div>
+            <p className="text-sm text-muted-foreground">
+              Calories for Your Goal ({goal})
+            </p>
+            <p className="text-5xl font-bold font-headline text-primary my-2">
+              {targetCalories.toFixed(0)}
+            </p>
+            <p className="text-lg text-muted-foreground">calories / day</p>
+          </div>
+          <div className="text-sm text-muted-foreground border-t pt-4">
+            <p>Maintenance Calories: {maintenanceCalories.toFixed(0)}</p>
+          </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutCalorieNeedsCalculator />
+      </div>
     </div>
   );
 }

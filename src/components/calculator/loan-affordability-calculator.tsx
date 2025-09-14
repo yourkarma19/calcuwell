@@ -231,7 +231,7 @@ export default function LoanAffordabilityCalculator({
       <div className="mt-8">
         <Card>
       <CardHeader>
-        <CardTitle>About the Loan Affordability Calculator</CardTitle>
+        <CardTitle as="h2">About the Loan Affordability Calculator</CardTitle>
       </CardHeader>
       <CardContent className="prose dark:prose-invert max-w-none">
         <script
