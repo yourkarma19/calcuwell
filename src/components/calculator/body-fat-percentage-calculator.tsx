@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import AboutBodyFatPercentageCalculator from "./about/body-fat-percentage-calculator";
 import {
   Card,
   CardContent,
@@ -159,7 +158,7 @@ export default function BodyFatPercentageCalculator() {
             </p>
           </CardContent>
         </Card>
-        <AboutBodyFatPercentageCalculator />
+        
       </div>
       <div className="lg:col-span-1">
         <Card className="sticky top-24">

@@ -3,7 +3,6 @@
 import { useSearchParams } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
-import AboutBMICalculator from "./about/bmi-calculator";
 import {
   Card,
   CardContent,
@@ -22,6 +21,59 @@ import {
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const bmiCategories = [
+  { range: "Below 18.5", classification: "Underweight" },
+  { range: "18.5 – 24.9", classification: "Normal weight" },
+  { range: "25.0 – 29.9", classification: "Overweight" },
+  { range: "30.0 and above", classification: "Obesity" },
+];
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a healthy BMI for an Indian adult?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For Indian adults, the standard BMI ranges are slightly different due to genetic factors. A BMI between 18.5 and 22.9 is considered healthy. A BMI between 23.0 and 24.9 is considered overweight, and a BMI of 25.0 or greater is considered obese.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is BMI not always the best measure of health?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "BMI is a simple screening tool and does not account for body composition. It can't distinguish between fat and muscle. A muscular athlete might have a high BMI but be very healthy. For a more complete picture, consider metrics like body fat percentage or waist-to-hip ratio.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is BMI calculated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula is weight in kilograms divided by the square of height in meters (kg/m²). This calculator does the math for you in either metric or imperial units.",
+      },
+    },
+  ],
+};
 
 type UnitSystem = "metric" | "imperial";
 
@@ -185,7 +237,81 @@ export default function BMICalculator({
       </Card>
       
       <div className="mt-8">
-        <AboutBMICalculator />
+        <Card>
+          <CardHeader>
+            <CardTitle as="h2">About the BMI Calculator</CardTitle>
+          </CardHeader>
+          <CardContent className="prose dark:prose-invert max-w-none">
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <p>
+              The <strong>Body Mass Index (BMI)</strong> is a simple screening tool
+              to assess whether your weight is healthy for your height. It provides
+              a general indicator of body fatness and is widely used for population
+              studies.
+            </p>
+            <h3>How is BMI Calculated?</h3>
+            <p>
+              The formula is your weight in kilograms divided by the square of your
+              height in meters (kg/m²). This calculator handles both metric and
+              imperial units for your convenience.
+            </p>
+
+            <h3>WHO BMI Categories</h3>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>BMI</TableHead>
+                  <TableHead>Weight Status</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {bmiCategories.map((item) => (
+                  <TableRow key={item.range}>
+                    <TableCell>{item.range}</TableCell>
+                    <TableCell>{item.classification}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <p className="text-sm text-muted-foreground mt-2">
+              Note: For people of South Asian descent, some studies suggest a lower
+              threshold for overweight (23.0) and obesity (25.0).
+            </p>
+
+            <h3>Frequently Asked Questions (FAQs)</h3>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="font-semibold">
+                  What is a healthy BMI for an Indian adult?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p>
+                    For Indian adults, the standard BMI ranges are slightly different.
+                    A BMI between 18.5 and 22.9 is considered healthy. 23.0-24.9 is
+                    overweight, and 25.0 or greater is obese.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="font-semibold">
+                  Why is BMI not always the best measure of health?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p>
+                    BMI is a simple tool and does not account for body composition.
+                    It can't tell the difference between fat and muscle. A muscular
+                    athlete might have a high BMI but be very healthy. For a better
+                    picture, consider metrics like body fat percentage or
+                    waist-to-hip ratio.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
       </div>
 
       <ExportShareControls
