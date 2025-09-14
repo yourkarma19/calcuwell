@@ -2,13 +2,8 @@
 
 import { useSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
+import AboutLoanAffordabilityCalculator from "./about/loan-affordability-calculator";
 import ExportShareControls from "./export-share-controls";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
 import {
   Card,
   CardContent,
@@ -195,50 +190,9 @@ export default function LoanAffordabilityCalculator({
           </div>
         </CardContent>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About the Loan Affordability Calculator</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                What is Debt-to-Income (DTI) Ratio?
-              </AccordionTrigger>
-              <AccordionContent>
-                Your DTI ratio is the percentage of your gross monthly income
-                that goes toward paying your monthly debt payments. Lenders use
-                it as a key metric to measure your ability to manage payments. A
-                lower DTI ratio indicates a healthy balance between your debt
-                and income.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                How can I improve my Debt-to-Income (DTI) ratio?
-              </AccordionTrigger>
-              <AccordionContent>
-                There are two main ways: increase your income or reduce your
-                monthly debt. To reduce debt, focus on paying down existing
-                loans or credit card balances. It's also wise to avoid taking
-                on new debt right before you apply for a major loan.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                Is this calculator an official loan offer?
-              </AccordionTrigger>
-              <AccordionContent>
-                No, this is an estimation tool for informational purposes only.
-                The actual loan amount you qualify for may vary based on your
-                credit score, employment history, and the specific policies of
-                the lender. This tool should be used as a starting point for your
-                financial planning.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </CardContent>
-      </Card>
+      <div className="mt-8">
+        <AboutLoanAffordabilityCalculator />
+      </div>
       <ExportShareControls
         elementIds={["loan-affordability-inputs", "loan-affordability-results"]}
         shareParams={shareParams}
