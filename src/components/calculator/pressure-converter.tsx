@@ -153,7 +153,7 @@ export default function PressureConverter() {
                 The standard SI (International System of Units) unit for
                 pressure is the <strong>Pascal (Pa)</strong>. One pascal is a
                 very small amount of pressure, defined as one newton of force
-                per square meter. Because it's so small, it's often more
+                per square meter. Because it&rsquo;s so small, it&rsquo;s often more
                 convenient to use <strong>kilopascals (kPa)</strong>, where 1
                 kPa = 1,000 Pa.
               </AccordionContent>

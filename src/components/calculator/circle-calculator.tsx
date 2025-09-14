@@ -162,7 +162,7 @@ export default function CircleCalculator() {
               <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
               <AccordionContent>
                 Pi (π) is a fundamental mathematical constant representing the
-                ratio of a circle's circumference to its diameter. It's an
+                ratio of a circle&rsquo;s circumference to its diameter. It&rsquo;s an
                 irrational number, approximately equal to 3.14159, and is
                 crucial for all calculations involving circles and spheres.
               </AccordionContent>
@@ -178,7 +178,7 @@ export default function CircleCalculator() {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                What is the difference between a circle's radius and its
+                What is the difference between a circle&rsquo;s radius and its
                 diameter?
               </AccordionTrigger>
               <AccordionContent>

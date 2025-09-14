@@ -1,24 +1,12 @@
 "use client";
 
-import { addDays, subDays, format } from "date-fns";
-import { useMemo } from "react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import { DatePicker } from "@/components/ui/date-picker";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import usePersistentState from "@/hooks/use-persistent-state";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { FAQPage, WithContext } from "schema-dts";
 
 const jsonLd: WithContext<FAQPage> = {
@@ -61,39 +49,6 @@ const jsonLd: WithContext<FAQPage> = {
 };
 
 export default function AboutOvulationCalculator() {
-  const [lastPeriodDate, setLastPeriodDate] = usePersistentState<
-    Date | undefined
-  >("ovulation-last-period", new Date(), (value) =>
-    typeof value === "string" ||
-    typeof value === "number" ||
-    value instanceof Date
-      ? new Date(value)
-      : undefined,
-  );
-  const [cycleLength, setCycleLength] = usePersistentState(
-    "ovulation-cycle-length",
-    28,
-  );
-
-  const { ovulationDate, fertileWindowStart, fertileWindowEnd } =
-    useMemo(() => {
-      if (!lastPeriodDate || cycleLength <= 0) {
-        return {
-          ovulationDate: null,
-          fertileWindowStart: null,
-          fertileWindowEnd: null,
-        };
-      }
-
-      const estimatedOvulation = addDays(lastPeriodDate, cycleLength - 14);
-
-      return {
-        ovulationDate: estimatedOvulation,
-        fertileWindowStart: subDays(estimatedOvulation, 5),
-        fertileWindowEnd: addDays(estimatedOvulation, 1),
-      };
-    }, [lastPeriodDate, cycleLength]);
-
   return (
     <Card>
       <CardHeader>
