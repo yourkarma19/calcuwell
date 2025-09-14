@@ -350,18 +350,21 @@ export default function ScientificCalculator() {
               6
             </Button>
             <Button
-              onClick={() => handleInput("*")}
-              variant="ghost"
-              className={cn(btnClasses, "text-primary hover:bg-primary/10")}
-            >
-              ×
-            </Button>
-            <Button
               onClick={() => handleInput("-")}
               variant="ghost"
               className={cn(btnClasses, "text-primary hover:bg-primary/10")}
             >
               -
+            </Button>
+            <Button
+              onClick={() => handleInput("+")}
+              variant="ghost"
+              className={cn(
+                btnClasses,
+                "text-primary hover:bg-primary/10 row-span-2 h-auto",
+              )}
+            >
+              +
             </Button>
 
             {/* Row 7 */}
@@ -385,16 +388,6 @@ export default function ScientificCalculator() {
               className={cn(btnClasses)}
             >
               3
-            </Button>
-            <Button
-              onClick={() => handleInput("+")}
-              variant="ghost"
-              className={cn(
-                btnClasses,
-                "text-primary hover:bg-primary/10 row-span-2 h-auto",
-              )}
-            >
-              +
             </Button>
             <Button
               onClick={calculateResult}
@@ -422,41 +415,6 @@ export default function ScientificCalculator() {
               .
             </Button>
           </div>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>About the Scientific Calculator</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What are sin, cos, and tan?</AccordionTrigger>
-              <AccordionContent>
-                These are the three main trigonometric functions. They are
-                ratios of the sides of a right-angled triangle. `sin` is
-                Opposite/Hypotenuse, `cos` is Adjacent/Hypotenuse, and `tan` is
-                Opposite/Adjacent.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Radians vs. Degrees</AccordionTrigger>
-              <AccordionContent>
-                Radians and Degrees are two ways to measure angles. A full
-                circle is 360° or 2π radians. You can toggle between Radian (Rad)
-                and Degree (Deg) mode for trigonometric calculations.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>What are log and ln?</AccordionTrigger>
-              <AccordionContent>
-                `log` is the base-10 logarithm. It answers &quot;10 to what power
-                gives you this number?&quot;. `ln` is the natural logarithm, which has
-                a base of `e` (approximately 2.718). It is widely used in
-                science and finance for continuous growth calculations.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </CardContent>
       </Card>
     </>
