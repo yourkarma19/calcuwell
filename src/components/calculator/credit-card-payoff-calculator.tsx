@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function CreditCardPayoffCalculator() {
   const [balance, setBalance] = usePersistentState("cc-balance", 5000);
@@ -138,6 +139,46 @@ export default function CreditCardPayoffCalculator() {
               the monthly interest.
             </p>
           )}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle as="h3">Credit Card Payoff FAQs</CardTitle>
+        </CardHeader>
+        <CardContent>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>
+              Why does it take so long to pay off credit card debt?
+            </AccordionTrigger>
+            <AccordionContent>
+              Credit card interest is compounded, meaning you pay interest on
+              your interest. Because APRs are typically high, making only the
+              minimum payment can lead to a very long payoff time and a large
+              amount of total interest paid.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>What if my payment is too low?</AccordionTrigger>
+            <AccordionContent>
+              If your monthly payment is less than the monthly interest, you
+              will never pay off the debt. The calculator will show an error if
+              this happens, telling you to increase your payment.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              How can I pay off my debt faster?
+            </AccordionTrigger>
+            <AccordionContent>
+              The best way is to pay more than the minimum payment each month.
+              Even small extra payments can greatly reduce the time and total
+              interest. You can also look into balance transfer cards or debt
+              consolidation loans to lower your interest rate.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
         </CardContent>
       </Card>
     </div>

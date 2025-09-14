@@ -195,7 +195,7 @@ export default function LoanAffordabilityCalculator({
           </div>
         </CardContent>
       </Card>
-      <Card>
+       <Card>
         <CardHeader>
           <CardTitle>About the Loan Affordability Calculator</CardTitle>
         </CardHeader>

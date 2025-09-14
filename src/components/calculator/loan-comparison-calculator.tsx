@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const calculateLoanDetails = (
   principal: number,
@@ -187,6 +188,53 @@ export default function LoanComparisonCalculator({
       {showResults && (
         <>
           <LoanComparisonResults resultsA={resultsA} resultsB={resultsB} />
+           <Card>
+            <CardHeader>
+              <CardTitle as="h3">Loan Comparison FAQs</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="font-semibold">
+                    Should I always choose the loan with the lower EMI?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p>
+                      Not always. A lower EMI is easier on your monthly budget, but
+                      it often comes with a longer loan term. This means you could
+                      pay much more in total interest. This tool helps you see that
+                      trade-off.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="font-semibold">
+                    How much does the interest rate really matter?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p>
+                      A lot. Even a small difference of 0.5% can lead to large
+                      savings over a long term, especially for big loans like a home
+                      loan. Use this tool to see the exact difference.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="font-semibold">
+                    What other factors should I consider?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p>
+                      Besides the interest rate, consider other costs like
+                      processing fees and prepayment penalties. Also, check the
+                      lender&apos;s reputation. Sometimes a slightly higher EMI is
+                      worth it for better terms or service.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
           <ExportShareControls
             elementIds={["loan-inputs", "results-container"]}
             shareParams={shareParams}
