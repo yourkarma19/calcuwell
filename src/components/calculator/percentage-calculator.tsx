@@ -2,7 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 import { useMemo } from "react";
-import AboutPercentageCalculator from "./about/percentage-calculator";
 import {
   Card,
   CardContent,
@@ -25,6 +24,110 @@ import {
   isWhatPercentageOf,
   percentageChange,
 } from "@/lib/math/percentage";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import type { FAQPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you calculate a percentage of a number?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To find a percentage of a number, you convert the percentage to a decimal by dividing it by 100, and then multiply the result by the number. For example, 20% of 50 is calculated as (20 / 100) * 50 = 10.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you calculate percentage change?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The formula is ((Final Value - Initial Value) / |Initial Value|) * 100. This shows the percent increase or decrease from the first number to the second.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you calculate what percentage one number is of another?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To find what percentage number A is of number B, you divide A by B and multiply the result by 100. For example, to find what percentage 5 is of 20, you would calculate (5 / 20) * 100 = 25%.",
+      },
+    },
+  ],
+};
+
+function AboutPercentageCalculator() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle as="h2">About the Percentage Calculator</CardTitle>
+      </CardHeader>
+      <CardContent className="prose dark:prose-invert max-w-none">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <p>
+          Our Percentage Calculator is a versatile tool designed to handle a
+          variety of common percentage problems. Whether you need to find a
+          percentage of a number, calculate a percentage increase or decrease,
+          or determine what percentage one number is of another, this calculator
+          provides instant and accurate results. It&apos;s an essential tool for
+          students, shoppers, and professionals alike.
+        </p>
+        <h3>How to Use the Percentage Calculator</h3>
+        <ol>
+          <li>
+            Select the **Calculation Mode** that matches the problem you are
+            trying to solve.
+          </li>
+          <li>Enter your numbers into the appropriate fields.</li>
+        </ol>
+        <p>The result is calculated and displayed automatically.</p>
+        <h3>Frequently Asked Questions (FAQs)</h3>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>
+              How do you calculate a percentage of a number?
+            </AccordionTrigger>
+            <AccordionContent>
+              To find a percentage of a number, you convert the percentage to a
+              decimal (by dividing by 100) and then multiply it by the number.
+              For example, 20% of 50 is `(20 / 100) * 50 = 10`.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>
+              How do you calculate percentage change?
+            </AccordionTrigger>
+            <AccordionContent>
+              The formula for percentage change is `((Final Value - Initial
+              Value) / |Initial Value|) * 100`. This shows the percent increase
+              or decrease from the first number to the second.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              How do you calculate what percentage one number is of another?
+            </AccordionTrigger>
+            <AccordionContent>
+              To find what percentage number A is of number B, you divide A by B
+              and multiply by 100. For example, to find what percentage 5 is of
+              20, you would calculate `(5 / 20) * 100 = 25%`.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </CardContent>
+    </Card>
+  );
+}
 
 type CalculationMode = "percentOf" | "isWhatPercent" | "percentageChange";
 

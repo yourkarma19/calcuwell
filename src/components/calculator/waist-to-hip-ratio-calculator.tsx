@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import AboutWaistToHipRatioCalculator from "./about/waist-to-hip-ratio-calculator";
 import {
   Card,
   CardContent,
@@ -110,10 +109,6 @@ export default function WaistToHipRatioCalculator() {
           <p className={cn("text-lg font-semibold", color)}>{category}</p>
         </CardContent>
       </Card>
-
-      <div className="mt-8">
-        <AboutWaistToHipRatioCalculator />
-      </div>
     </div>
   );
 }
