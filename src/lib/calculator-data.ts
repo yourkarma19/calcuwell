@@ -8,7 +8,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "vat-gst-calculator",
     name: "VAT / GST Calculator",
-    description: "Calculate Value-Added Tax or Goods and Services Tax.",
+    description: "Easily add or remove sales tax from a price to see the net or gross amount.",
     category: "Finance",
     iconName: "Tag",
     seoTitle: "VAT/GST Calculator (Add & Remove Tax) | CalcPro",
@@ -22,7 +22,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "sip-calculator",
     name: "SIP Calculator",
     description:
-      "Calculate the future value of your Systematic Investment Plan (SIP).",
+      "Project the future value of your Systematic Investment Plan to visualize wealth growth.",
     category: "Finance",
     iconName: "TrendingUp",
     seoTitle: "SIP Calculator for Indian Investors | CalcPro",
@@ -36,7 +36,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "cgpa-calculator",
     name: "CGPA Calculator",
     description:
-      "Calculate your Cumulative Grade Point Average from semester grades.",
+      "Calculate your Cumulative Grade Point Average based on your semester-wise SGPA and credits.",
     category: "Education",
     iconName: "GraduationCap",
     seoTitle: "CGPA Calculator (SGPA to CGPA) | CalcPro",
@@ -49,7 +49,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "net-calorie-calculator",
     name: "Net Calorie Calculator",
-    description: "Find your daily calorie balance (surplus or deficit).",
+    description: "Track your daily energy balance by finding if you are in a calorie surplus or deficit.",
     category: "Health",
     iconName: "Flame",
     seoTitle: "Net Calorie Calculator for Weight Loss | CalcPro",
@@ -63,7 +63,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "time-card-calculator",
     name: "Time Card Calculator",
     description:
-      "Calculate total work hours and pay for a week, including breaks.",
+      "A simple tool to calculate total work hours and gross pay for a week, including unpaid breaks.",
     category: "Finance",
     iconName: "Clock",
     seoTitle: "Weekly Time Card Calculator with Breaks | CalcPro",
@@ -77,7 +77,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "concrete-slab-calculator",
     name: "Concrete Slab Calculator",
     description:
-      "Estimate the bags of concrete needed for a slab, footer, or posts.",
+      "Estimate the volume and number of pre-mixed concrete bags for slabs, footers, or round posts.",
     category: "Geometry & Engineering",
     iconName: "Calculator",
     seoTitle: "Concrete Volume & Bag Calculator | CalcPro",
@@ -90,7 +90,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "wind-chill-calculator",
     name: "Wind Chill Calculator",
-    description: "Calculate the perceived temperature based on wind speed.",
+    description: "Quickly determine the 'feels like' temperature based on air temperature and wind speed.",
     category: "Miscellaneous",
     iconName: "Wind",
     seoTitle: "Wind Chill 'Feels Like' Temperature Calculator | CalcPro",
@@ -105,7 +105,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "cubic-equation-calculator",
     name: "Cubic Equation Calculator",
     description:
-      "Solve cubic equations of the form ax³+bx²+cx+d=0 for their real and complex roots.",
+      "Solve any cubic equation of the form ax³+bx²+cx+d=0 for all real and complex roots.",
     category: "Math",
     iconName: "Sigma",
     formula: "ax³ + bx² + cx + d = 0",
@@ -119,7 +119,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "triangle-angle-calculator",
     name: "Triangle Angle Calculator",
     description:
-      "Find unknown angles in a triangle given three sides (SSS) or two sides and an angle (SAS).",
+      "Find the missing angles of a triangle when you know three sides (SSS) or two sides and an included angle (SAS).",
     category: "Geometry & Engineering",
     iconName: "Triangle",
     formula: "Law of Cosines & Law of Sines",
@@ -133,7 +133,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "tangent-line-calculator",
     name: "Tangent Line Calculator",
     description:
-      "Find the equation of a line tangent to a function at a specific point.",
+      "A calculus tool to find the equation of a line tangent to a function at a given point.",
     category: "Math",
     iconName: "Sigma",
     formula: "y - f(a) = f'(a)(x - a)",
@@ -146,7 +146,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "fraction-to-percentage-calculator",
     name: "Fraction to Percentage Calculator",
-    description: "Convert any fraction into its percentage value.",
+    description: "Quickly convert any fraction into its equivalent percentage value with one click.",
     category: "Conversions",
     iconName: "Percent",
     formula: "(Numerator / Denominator) * 100",
@@ -160,7 +160,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "intercept-calculator",
     name: "X and Y Intercept Calculator",
     description:
-      "Find the x and y-intercepts of any linear equation with a step-by-step breakdown.",
+      "Find the x-intercept and y-intercept of a linear equation with step-by-step explanations.",
     category: "Math",
     iconName: "Sigma",
     seoTitle: "X and Y Intercept Finder with Steps | CalcPro",
@@ -174,7 +174,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "decimal-to-inches-calculator",
     name: "Decimal to Inches Fraction Calculator",
     description:
-      "Convert any decimal number into inches and a usable fraction.",
+      "Convert a decimal value into inches and a simplified fraction for precise measurements.",
     category: "Conversions",
     iconName: "Ruler",
     seoTitle: "Decimal to Inches Fraction Converter | CalcPro",
@@ -186,7 +186,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "feet-and-inches-calculator",
     name: "Feet and Inches Calculator",
-    description: "Add, subtract, multiply, and divide feet and inches.",
+    description: "Perform arithmetic on imperial length measurements (add, subtract, multiply, or divide).",
     category: "Conversions",
     iconName: "Ruler",
     seoTitle: "Feet and Inches Arithmetic Calculator | CalcPro",
@@ -198,7 +198,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "voltage-to-watts-calculator",
     name: "Voltage to Watts Calculator",
-    description: "Convert voltage (V) and current (A) to power in watts (W).",
+    description: "Easily convert voltage (V) and current (Amps) to electrical power in watts (W).",
     category: "Geometry & Engineering",
     iconName: "Atom",
     formula: "Power (P) = Voltage (V) × Current (I)",
@@ -211,7 +211,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "partial-fraction-calculator",
     name: "Partial Fraction Calculator",
-    description: "Decompose rational functions into simpler fractions.",
+    description: "Break down complex rational functions into a sum of simpler, more manageable fractions.",
     category: "Math",
     iconName: "Sigma",
     formula: "f(x) = P(x) / Q(x)",
@@ -225,7 +225,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "wedding-budget-calculator",
     name: "Wedding Budget Calculator",
-    description: "Estimate the total cost of your wedding.",
+    description: "Plan your wedding finances by estimating costs for the venue, catering, decor, and more.",
     category: "Lifestyle",
     iconName: "Heart",
     seoTitle: "Wedding Budget Planner & Cost Estimator | CalcPro",
@@ -237,7 +237,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "pet-age-calculator",
     name: "Pet Age Calculator",
-    description: "Calculate your pet's age in human years.",
+    description: "Translate your dog or cat's age into the equivalent human years to understand their life stage.",
     category: "Lifestyle",
     iconName: "Dog",
     seoTitle: "Pet Age to Human Years Calculator (Dog & Cat) | CalcPro",
@@ -248,7 +248,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "pet-care-cost-calculator",
     name: "Pet Care Cost Calculator",
-    description: "Estimate the monthly and yearly costs of owning a pet.",
+    description: "Estimate the monthly and yearly costs of owning a pet, including food, vet visits, and grooming.",
     category: "Lifestyle",
     iconName: "Dog",
     seoTitle: "Annual Pet Care Cost Estimator | CalcPro",
@@ -259,7 +259,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "credit-card-payoff-calculator",
     name: "Credit Card Payoff Calculator",
-    description: "Plan how to pay off your credit card debt.",
+    description: "Find out how long it will take to pay off your credit card balance and the total interest cost.",
     category: "Finance",
     iconName: "CreditCard",
     seoTitle: "Credit Card Payoff & Debt Calculator | CalcPro",
@@ -273,7 +273,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "basic-calculator",
     name: "Basic Calculator",
-    description: "Perform basic arithmetic operations.",
+    description: "A simple and fast online calculator for all your basic arithmetic needs.",
     category: "Math",
     iconName: "Calculator",
     seoTitle: "Free Online Basic & Scientific Calculator | CalcPro",
@@ -284,7 +284,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "percentage-calculator",
     name: "Percentage Calculator",
-    description: "Calculate percentages, increases, and decreases.",
+    description: "Our easy-to-use Percentage Calculator helps you solve all your percentage problems.",
     category: "Math",
     iconName: "Percent",
     seoTitle: "Online Percentage Calculator (Increase/Decrease) | CalcPro",
@@ -295,7 +295,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "fraction-calculator",
     name: "Fraction Calculator",
-    description: "Add, subtract, multiply, and divide fractions.",
+    description: "A simple tool to add, subtract, multiply, and divide proper and improper fractions.",
     category: "Math",
     iconName: "Pi",
     seoTitle: "Fraction Calculator (+, -, ×, ÷) with Steps | CalcPro",
@@ -306,7 +306,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "mixed-number-calculator",
     name: "Mixed Number Calculator",
-    description: "Work with mixed numbers and fractions.",
+    description: "A simple calculator to handle arithmetic with mixed numbers (whole numbers and fractions).",
     category: "Math",
     iconName: "Pi",
     seoTitle: "Mixed Number Calculator & Converter | CalcPro",
@@ -317,7 +317,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "ratio-calculator",
     name: "Ratio Calculator",
-    description: "Simplify and work with ratios.",
+    description: "Simplify ratios and find the missing value in a proportion with this easy-to-use tool.",
     category: "Math",
     iconName: "Scale",
     seoTitle: "Ratio Simplifier & Proportion Calculator | CalcPro",
@@ -328,7 +328,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "proportion-calculator",
     name: "Proportion Calculator",
-    description: "Solve proportions and find missing values.",
+    description: "Quickly solve for the missing value in a proportion (A/B = C/D) using cross-multiplication.",
     category: "Math",
     iconName: "Variable",
     seoTitle: "Online Proportion Calculator (Solve for X) | CalcPro",
@@ -339,7 +339,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "mean-median-mode-calculator",
     name: "Mean/Median/Mode Calculator",
-    description: "Find the average, middle, and most frequent values.",
+    description: "Quickly find the mean, median, mode, and range of any numerical data set.",
     category: "Math",
     iconName: "Sigma",
     seoTitle: "Mean, Median & Mode Calculator for Datasets | CalcPro",
@@ -350,7 +350,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "standard-deviation-calculator",
     name: "Standard Deviation Calculator",
-    description: "Calculate the standard deviation of a data set.",
+    description: "Measure the spread and consistency of your data by calculating the standard deviation.",
     category: "Math",
     iconName: "Sigma",
     seoTitle: "Standard Deviation Calculator (Sample & Pop) | CalcPro",
@@ -361,7 +361,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "probability-calculator",
     name: "Probability Calculator",
-    description: "Calculate the probability of events.",
+    description: "Calculate the probability of single and multiple independent events with our easy tool.",
     category: "Math",
     iconName: "Beaker",
     seoTitle: "Probability Calculator for Independent Events | CalcPro",
@@ -372,7 +372,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "permutation-combination-calculator",
     name: "Permutation & Combination",
-    description: "Calculate permutations and combinations.",
+    description: "Determine the number of permutations (nPr) and combinations (nCr) from a set.",
     category: "Math",
     iconName: "Sigma",
     seoTitle: "Permutation & Combination Calculator (nPr, nCr) | CalcPro",
@@ -383,7 +383,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "factorial-calculator",
     name: "Factorial Calculator",
-    description: "Calculate the factorial of a number.",
+    description: "Find the factorial (n!) of any non-negative integer, essential for probability and combinatorics.",
     category: "Math",
     iconName: "Variable",
     formula: "n!",
@@ -395,7 +395,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "lcm-gcd-calculator",
     name: "LCM & GCD Calculator",
-    description: "Find the Least Common Multiple and Greatest Common Divisor.",
+    description: "Find the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers.",
     category: "Math",
     iconName: "Variable",
     seoTitle: "LCM & GCD Finder for Multiple Numbers | CalcPro",
@@ -406,7 +406,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "square-root-cube-root-calculator",
     name: "Square/Cube Root Calculator",
-    description: "Calculate square roots and cube roots.",
+    description: "A simple calculator to find the square root and cube root of any positive or negative number.",
     category: "Math",
     iconName: "Variable",
     seoTitle: "Square Root & Cube Root Finder | CalcPro",
@@ -417,7 +417,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "exponent-power-calculator",
     name: "Exponent & Power Calculator",
-    description: "Calculate powers and exponents.",
+    description: "Quickly calculate the result of a base raised to any power, including negative and fractional exponents.",
     category: "Math",
     iconName: "Variable",
     seoTitle: "Exponent & Power Calculator (x^y) | CalcPro",
@@ -428,7 +428,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "logarithm-calculator",
     name: "Logarithm Calculator",
-    description: "Calculate logarithms with different bases.",
+    description: "Solve for the logarithm of any number with any base, including natural logs (ln).",
     category: "Math",
     iconName: "Variable",
     seoTitle: "Logarithm (Log & ln) Calculator with Base | CalcPro",
@@ -439,7 +439,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "equation-solver",
     name: "Equation Solver",
-    description: "Solve linear and quadratic equations.",
+    description: "Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly.",
     category: "Math",
     iconName: "Variable",
     seoTitle: "Equation Solver (Linear & Quadratic) | CalcPro",
@@ -450,7 +450,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "matrix-calculator",
     name: "Matrix Calculator",
-    description: "Perform matrix operations.",
+    description: "A simple matrix calculator for performing addition and subtraction on 2x2 matrices.",
     category: "Math",
     iconName: "Pi",
     seoTitle: "2x2 Matrix Addition & Subtraction Calculator | CalcPro",
@@ -461,7 +461,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "complex-number-calculator",
     name: "Complex Number Calculator",
-    description: "Perform calculations with complex numbers.",
+    description: "Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.",
     category: "Math",
     iconName: "Variable",
     seoTitle: "Complex Number Arithmetic Calculator | CalcPro",
@@ -472,7 +472,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "roman-numeral-converter",
     name: "Roman Numeral Converter",
-    description: "Convert between Roman numerals and numbers.",
+    description: "Translate numbers to Roman numerals and back for values between 1 and 3,999.",
     category: "Math",
     iconName: "ArrowRightLeft",
     seoTitle: "Roman Numeral Date & Number Converter | CalcPro",
@@ -485,7 +485,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "loan-emi-calculator",
     name: "Loan EMI Calculator",
-    description: "Calculate your Equated Monthly Installment.",
+    description: "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money.",
     category: "Finance",
     iconName: "Landmark",
     seoTitle: "Loan EMI Calculator with Prepayment Options | CalcPro",
@@ -497,7 +497,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "loan-comparison-calculator",
     name: "Loan Comparison Calculator",
-    description: "Compare two loans side-by-side.",
+    description: "Compare two loan offers side-by-side to find the most cost-effective option for you.",
     category: "Finance",
     iconName: "Scale",
     seoTitle: "Side-by-Side Loan Comparison Calculator | CalcPro",
@@ -508,7 +508,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "mortgage-calculator",
     name: "Mortgage Calculator",
-    description: "Estimate your monthly mortgage payments.",
+    description: "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI).",
     category: "Finance",
     iconName: "House",
     seoTitle: "Mortgage Calculator with Amortization | CalcPro",
@@ -520,7 +520,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "car-loan-calculator",
     name: "Car Loan Calculator",
-    description: "Calculate your car loan payments.",
+    description: "Calculate your monthly car loan payment (EMI) and understand the total cost of your auto loan.",
     category: "Finance",
     iconName: "Car",
     seoTitle: "Car Loan EMI & Payment Calculator | CalcPro",
@@ -532,7 +532,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "simple-interest-calculator",
     name: "Simple Interest Calculator",
-    description: "Calculate simple interest on a principal amount.",
+    description: "Quickly calculate simple interest on your loans or investments using the standard SI formula.",
     category: "Finance",
     iconName: "PiggyBank",
     formula: "P * R * T / 100",
@@ -544,7 +544,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "compound-interest-calculator",
     name: "Compound Interest Calculator",
-    description: "Calculate compound interest over time.",
+    description: "See how your savings can grow with our calculator that projects your investment growth over time.",
     category: "Finance",
     iconName: "PiggyBank",
     formula: "A = P(1 + r/n)^(nt)",
@@ -556,7 +556,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "savings-calculator",
     name: "Savings Calculator",
-    description: "Plan your savings goals and growth.",
+    description: "Project the future value of your savings based on deposits, contributions, and interest rates.",
     category: "Finance",
     iconName: "PiggyBank",
     seoTitle: "Savings Goal & Growth Projection Calculator | CalcPro",
@@ -567,7 +567,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "retirement-calculator",
     name: "Retirement Calculator",
-    description: "Estimate your retirement savings needs.",
+    description: "Estimate how much you need to save to meet your long-term retirement goals.",
     category: "Finance",
     iconName: "PiggyBank",
     seoTitle: "Retirement Savings & Pension Calculator | CalcPro",
@@ -578,7 +578,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "investment-return-calculator",
     name: "Investment Return (ROI) Calculator",
-    description: "Calculate the return on your investments.",
+    description: "Calculate the net profit and Return on Investment (ROI) percentage for any investment.",
     category: "Finance",
     iconName: "AreaChart",
     seoTitle: "Return on Investment (ROI) Profit Calculator | CalcPro",
@@ -589,7 +589,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "stock-profit-loss-calculator",
     name: "Stock Profit/Loss Calculator",
-    description: "Calculate profits or losses from stock trades.",
+    description: "Determine the profit or loss from stock trades, including commissions, to find your true ROI.",
     category: "Finance",
     iconName: "AreaChart",
     seoTitle: "Stock Profit & Loss ROI Calculator | CalcPro",
@@ -600,7 +600,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "currency-converter",
     name: "Currency Converter",
-    description: "Convert between different currencies with mock rates.",
+    description: "A simple currency converter for mock exchange rates between major world currencies.",
     category: "Finance",
     iconName: "Globe",
     seoTitle: "Currency & Foreign Exchange Rate Converter | CalcPro",
@@ -611,7 +611,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "inflation-calculator",
     name: "Inflation Calculator",
-    description: "See how inflation affects purchasing power.",
+    description: "Use our inflation calculator to see how the purchasing power of money has changed over time.",
     category: "Finance",
     iconName: "Banknote",
     seoTitle: "Historical Inflation & Purchasing Power Calculator | CalcPro",
@@ -622,7 +622,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "tip-calculator",
     name: "Tip Calculator",
-    description: "Calculate tips for services.",
+    description: "A quick and easy tool to calculate tips and split the bill between any number of people.",
     category: "Finance",
     iconName: "Wallet",
     seoTitle: "Tip Calculator & Bill Splitter App | CalcPro",
@@ -633,7 +633,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "discount-calculator",
     name: "Discount Calculator",
-    description: "Calculate the final price after a discount.",
+    description: "Easily calculate the final price after a percentage discount to see how much you will save.",
     category: "Finance",
     iconName: "Tag",
     seoTitle: "Discount & Sale Price Off Calculator | CalcPro",
@@ -644,7 +644,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "salary-calculator",
     name: "Salary Calculator",
-    description: "Calculate your take-home salary.",
+    description: "Estimate your take-home pay by entering your gross salary and tax/deduction rates.",
     category: "Finance",
     iconName: "Briefcase",
     seoTitle: "Take-Home Pay & Net Salary Calculator | CalcPro",
@@ -655,7 +655,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "overtime-pay-calculator",
     name: "Overtime Pay Calculator",
-    description: "Calculate your overtime pay.",
+    description: "Calculate your total weekly earnings including regular hours and overtime at any multiplier.",
     category: "Finance",
     iconName: "Clock",
     seoTitle: "Overtime Pay Rate Calculator | CalcPro",
@@ -666,7 +666,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "break-even-point-calculator",
     name: "Break-even Point Calculator",
-    description: "Find the point where revenue equals costs.",
+    description: "Find the number of units you need to sell to cover your costs and start making a profit.",
     category: "Finance",
     iconName: "Briefcase",
     seoTitle: "Business Break-Even Point Analysis Calculator | CalcPro",
@@ -677,7 +677,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "business-profit-margin-calculator",
     name: "Profit Margin Calculator",
-    description: "Calculate the profit margin for your business.",
+    description: "Calculate gross, operating, and net profit margins to understand your business's profitability.",
     category: "Finance",
     iconName: "Briefcase",
     seoTitle: "Business Gross & Net Profit Margin Calculator | CalcPro",
@@ -690,7 +690,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "bmi-calculator",
     name: "BMI Calculator",
-    description: "Calculate your Body Mass Index.",
+    description: "Calculate your Body Mass Index to assess if your weight is healthy for your height.",
     category: "Health",
     iconName: "HeartPulse",
     seoTitle: "BMI Calculator for Adults (Metric & Imperial) | CalcPro",
@@ -703,7 +703,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "bmr-calculator",
     name: "BMR Calculator",
-    description: "Calculate Your Basal Metabolic Rate.",
+    description: "Find out the number of calories your body needs to function at complete rest.",
     category: "Health",
     iconName: "Scale",
     seoTitle: "Accurate BMR Calculator (Mifflin-St Jeor) | CalcPro",
@@ -716,7 +716,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "calorie-needs-calculator",
     name: "Daily Calorie Calculator for Weight Loss (India)",
-    description: "Estimate daily calories for weight loss in an Indian context.",
+    description: "Get a personalized daily calorie target based on your lifestyle for weight management.",
     category: "Health",
     iconName: "HeartPulse",
     seoTitle: "Daily Calories Calculator for Weight Loss India | CalcPro",
@@ -727,7 +727,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "ideal-weight-calculator",
     name: "Ideal Weight Calculator",
-    description: "Calculate your ideal body weight.",
+    description: "Determine a healthy weight range for your height and gender using the Robinson formula.",
     category: "Health",
     iconName: "Scale",
     formula: "Robinson Formula (1983)",
@@ -739,7 +739,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "body-fat-percentage-calculator",
     name: "Body Fat Percentage Calculator",
-    description: "Estimate body fat with a tape measure.",
+    description: "Estimate your body fat percentage using the U.S. Navy tape measure method.",
     category: "Health",
     iconName: "Percent",
     formula: "U.S. Navy Method",
@@ -751,7 +751,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "lean-body-mass-calculator",
     name: "Lean Body Mass Calculator",
-    description: "Calculate your lean body mass.",
+    description: "Estimate your lean body mass (fat-free mass) using the Boer formula.",
     category: "Health",
     iconName: "Bone",
     seoTitle: "Lean Body Mass (LBM) & Fat-Free Mass Calc | CalcPro",
@@ -762,7 +762,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "waist-to-hip-ratio-calculator",
     name: "Waist-to-Hip Ratio Calculator",
-    description: "Calculate your waist-to-hip ratio.",
+    description: "Calculate your Waist-to-Hip Ratio to assess body fat distribution and potential health risks.",
     category: "Health",
     iconName: "Ruler",
     seoTitle: "Waist-to-Hip Ratio (WHR) Health Risk Calc | CalcPro",
@@ -773,7 +773,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "pregnancy-due-date-calculator",
     name: "Pregnancy Due Date Calculator",
-    description: "Estimate your pregnancy due date.",
+    description: "Estimate your baby's due date based on your last menstrual period (LMP) or conception date.",
     category: "Health",
     iconName: "Baby",
     formula: "Naegele's rule",
@@ -785,7 +785,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "ovulation-calculator",
     name: "Ovulation Calculator",
-    description: "Estimate your most fertile days.",
+    description: "Estimate your most fertile days and ovulation date based on your menstrual cycle.",
     category: "Health",
     iconName: "CalendarClock",
     seoTitle: "Ovulation & Fertile Window Prediction | CalcPro",
@@ -796,7 +796,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "water-intake-calculator",
     name: "Water Intake Calculator",
-    description: "Calculate your daily water intake needs.",
+    description: "Get a personalized recommendation for your daily water intake based on age, weight, and activity.",
     category: "Health",
     iconName: "Droplets",
     seoTitle: "Daily Water Intake Needs Calculator | CalcPro",
@@ -807,7 +807,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "heart-rate-zone-calculator",
     name: "Heart Rate Zone Calculator",
-    description: "Calculate your target heart rate zones.",
+    description: "Determine your target heart rate zones for fat burning, cardio, and peak performance exercise.",
     category: "Health",
     iconName: "HeartPulse",
     seoTitle: "Training & Target Heart Rate Zone Calculator | CalcPro",
@@ -818,7 +818,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "vo2-max-calculator",
     name: "VO₂ Max Calculator",
-    description: "Estimate your maximum oxygen uptake.",
+    description: "Get a non-exercise based estimate of your VO₂ max, a key indicator of cardiovascular fitness.",
     category: "Health",
     iconName: "Wind",
     seoTitle: "VO₂ Max Fitness Level Estimator | CalcPro",
@@ -829,7 +829,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "bac-calculator",
     name: "Blood Alcohol (BAC) Calculator",
-    description: "Estimate your blood alcohol content.",
+    description: "Estimate your Blood Alcohol Content (BAC) using the Widmark formula for educational purposes.",
     category: "Health",
     iconName: "TestTube",
     seoTitle: "Blood Alcohol Content (BAC) Estimator | CalcPro",
@@ -842,7 +842,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "unit-converter",
     name: "Unit Converter",
-    description: "Convert length, weight, temperature, etc.",
+    description: "A versatile tool for converting length, weight, temperature, area, volume, and speed.",
     category: "Conversions",
     iconName: "Ruler",
     seoTitle: "Online Universal Unit Converter Tool | CalcPro",
@@ -853,7 +853,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "data-storage-converter",
     name: "Data Storage Converter",
-    description: "Convert between KB, MB, GB, TB, and more.",
+    description: "Convert between various digital data storage units, from bits and bytes to petabytes.",
     category: "Conversions",
     iconName: "Database",
     seoTitle: "Data Storage Size Converter (KB, MB, GB) | CalcPro",
@@ -864,7 +864,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "data-transfer-rate-converter",
     name: "Data Transfer Rate Converter",
-    description: "Convert between bps, Kbps, Mbps, and more.",
+    description: "Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s).",
     category: "Conversions",
     iconName: "Shuffle",
     seoTitle: "Data Transfer & Internet Speed Converter | CalcPro",
@@ -875,7 +875,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "time-converter",
     name: "Time Converter",
-    description: "Convert between seconds, minutes, hours, and days.",
+    description: "A simple and fast converter for various units of time, from seconds to years (approximate).",
     category: "Conversions",
     iconName: "Clock",
     seoTitle: "Time Measurement Unit Converter | CalcPro",
@@ -886,7 +886,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "energy-converter",
     name: "Energy Converter",
-    description: "Convert between joules, calories, kWh, and more.",
+    description: "Convert between different units of energy, such as Joules, Kilojoules, calories, and kWh.",
     category: "Conversions",
     iconName: "Atom",
     seoTitle: "Energy Unit Conversion Calculator | CalcPro",
@@ -897,7 +897,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "pressure-converter",
     name: "Pressure Converter",
-    description: "Convert between Pa, bar, psi, and more.",
+    description: "Convert between various units of pressure, including Pascal (Pa), bar, atmosphere (atm), and psi.",
     category: "Conversions",
     iconName: "Cloud",
     seoTitle: "Pressure Unit Converter (Pa, Bar, PSI) | CalcPro",
@@ -908,7 +908,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "power-converter",
     name: "Power Converter",
-    description: "Convert between watts, hp, kW, and more.",
+    description: "A tool for converting between different units of power, such as watts (W), kilowatts (kW), and horsepower (hp).",
     category: "Conversions",
     iconName: "Wind",
     seoTitle: "Power Unit Converter (Watts, HP, kW) | CalcPro",
@@ -919,7 +919,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "angle-converter",
     name: "Angle Converter",
-    description: "Convert between degrees and radians.",
+    description: "Quickly convert angles between degrees and radians for math, physics, and engineering.",
     category: "Conversions",
     iconName: "Ruler",
     seoTitle: "Angle Unit Converter (Degrees to Radians) | CalcPro",
@@ -930,7 +930,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "fuel-efficiency-converter",
     name: "Fuel Efficiency Converter",
-    description: "Convert between mpg and L/100km.",
+    description: "Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km).",
     category: "Conversions",
     iconName: "Car",
     seoTitle: "Fuel Efficiency Converter (MPG to L/100km) | CalcPro",
@@ -943,7 +943,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "age-calculator",
     name: "Age Calculator",
-    description: "Calculate age from date of birth.",
+    description: "Find your exact age in years, months, and days with our easy-to-use online age calculator.",
     category: "Date & Time",
     iconName: "CalendarClock",
     seoTitle: "Age Calculator: Find Age in Years, Months, Days | CalcPro",
@@ -955,7 +955,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "date-difference-calculator",
     name: "Date Difference Calculator",
-    description: "Calculate days between two dates.",
+    description: "Calculate the exact number of years, months, weeks, & days between any two dates.",
     category: "Date & Time",
     iconName: "CalendarDays",
     formula: "endDate - startDate",
@@ -967,7 +967,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "countdown-timer",
     name: "Countdown Timer",
-    description: "Count down to a specific date and time.",
+    description: "Set a countdown to any date & time and track the days, hours, minutes, and seconds remaining.",
     category: "Date & Time",
     iconName: "Timer",
     seoTitle: "Online Countdown Clock & Timer | CalcPro",
@@ -978,7 +978,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "time-zone-converter",
     name: "Time Zone Converter",
-    description: "Convert time between different time zones.",
+    description: "Easily convert the time between different time zones around the world.",
     category: "Date & Time",
     iconName: "Globe",
     seoTitle: "World Time Zone Converter | CalcPro",
@@ -989,7 +989,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "world-clock-calculator",
     name: "World Clock",
-    description: "Calculate time differences between cities.",
+    description: "View the current local time in major cities across the globe to check time differences.",
     category: "Date & Time",
     iconName: "Globe",
     seoTitle: "World Clock for Major Cities | CalcPro",
@@ -1000,7 +1000,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "working-days-calculator",
     name: "Working Days Calculator",
-    description: "Calculate business days between two dates.",
+    description: "Calculate the number of working days (business days) between two dates, excluding weekends.",
     category: "Date & Time",
     iconName: "Briefcase",
     seoTitle: "Working & Business Days Counter | CalcPro",
@@ -1011,7 +1011,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "week-number-calculator",
     name: "Week Number Calculator",
-    description: "Find the week number for a given date.",
+    description: "Quickly find the week number for any date using different standards, including ISO 8601.",
     category: "Date & Time",
     iconName: "CalendarDays",
     seoTitle: "Week of the Year Calculator (ISO 8601) | CalcPro",
@@ -1022,7 +1022,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "add-subtract-days-calculator",
     name: "Add/Subtract Days Calculator",
-    description: "Add or subtract days from a date.",
+    description: "Find a future or past date by adding or subtracting a specific number of days from a start date.",
     category: "Date & Time",
     iconName: "CalendarClock",
     seoTitle: "Add or Subtract Days from Date Calculator | CalcPro",
@@ -1033,7 +1033,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "business-day-calculator",
     name: "Business Day Calculator",
-    description: "Find the next business day.",
+    description: "Calculate a future date by adding or subtracting business days, automatically skipping weekends.",
     category: "Date & Time",
     iconName: "Briefcase",
     seoTitle: "Next Business Day & Date Calculator | CalcPro",
@@ -1046,7 +1046,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "binary-converter",
     name: "Binary & Number System Converter",
-    description: "Convert between binary, decimal, hex, and octal.",
+    description: "A versatile number system converter for binary, decimal, hexadecimal, and octal values.",
     category: "Programming",
     iconName: "Binary",
     formula: "parseInt(num, fromBase).toString(toBase)",
@@ -1058,7 +1058,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "ascii-text-converter",
     name: "ASCII ↔ Text Converter",
-    description: "Convert between ASCII codes and text.",
+    description: "A simple and instant tool to convert ASCII codes to text and text back to ASCII values.",
     category: "Programming",
     iconName: "ArrowRightLeft",
     seoTitle: "ASCII to Text / Text to ASCII Converter | CalcPro",
@@ -1069,7 +1069,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "base64-converter",
     name: "Base64 Encoder/Decoder",
-    description: "Encode and decode Base64 strings.",
+    description: "A free online tool to encode data to Base64 or decode a Base64 string back to its original format.",
     category: "Programming",
     iconName: "Binary",
     seoTitle: "Online Base64 Encoder & Decoder Tool | CalcPro",
@@ -1080,7 +1080,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "ip-subnet-calculator",
     name: "IP Subnet Calculator",
-    description: "Calculate IP subnets and networks.",
+    description: "Calculate IP subnet details from an IP and CIDR mask to find network info and usable hosts.",
     category: "Programming",
     iconName: "Network",
     metaDescription:
@@ -1092,7 +1092,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "crc-hash-generator",
     name: "CRC-32 Hash Generator",
-    description: "Generate a CRC-32 checksum for your text input.",
+    description: "Generate a CRC-32 hash (checksum) for any string or text input to verify data integrity.",
     category: "Programming",
     iconName: "Hash",
     seoTitle: "CRC-32 Checksum Hash Generator | CalcPro",
@@ -1103,7 +1103,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "file-size-calculator",
     name: "File Size Calculator",
-    description: "Calculate file size from bitrate and duration.",
+    description: "Estimate the size of a media file based on its duration and bitrate for storage and bandwidth planning.",
     category: "Programming",
     iconName: "FileBox",
     seoTitle: "File Size & Bitrate Calculator | CalcPro",
@@ -1114,7 +1114,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "color-converter",
     name: "Color Code Converter",
-    description: "Convert between HEX, RGB, and HSL color codes.",
+    description: "A tool for web designers & developers to convert between HEX, RGB, and HSL color formats.",
     category: "Programming",
     iconName: "Palette",
     seoTitle: "HEX, RGB & HSL Color Code Converter | CalcPro",
@@ -1127,7 +1127,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "circle-calculator",
     name: "Circle Calculator",
-    description: "Calculate the area and circumference of a circle.",
+    description: "A versatile circle calculator to find area, circumference, diameter, and radius from any known value.",
     category: "Geometry & Engineering",
     iconName: "Circle",
     seoTitle: "Circle Area & Circumference Calculator | CalcPro",
@@ -1138,7 +1138,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "triangle-area-calculator",
     name: "Triangle Area & Perimeter",
-    description: "Calculate the area and perimeter of a triangle.",
+    description: "Calculate a triangle's area and perimeter using Base & Height, 3 sides (Heron's), or Side-Angle-Side.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
     seoTitle: "Triangle Area & Perimeter Calculator Tool | CalcPro",
@@ -1149,7 +1149,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "rectangle-area-calculator",
     name: "Rectangle Area & Perimeter",
-    description: "Calculate the area of a rectangle or square.",
+    description: "A free online calculator to find the area and perimeter of a rectangle. Just enter length and width.",
     category: "Geometry & Engineering",
     iconName: "Ruler",
     formula: "Area = Length * Width",
@@ -1161,7 +1161,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "cylinder-volume-calculator",
     name: "Cylinder Volume Calculator",
-    description: "Calculate the volume of a cylinder.",
+    description: "Calculate the volume, lateral area, base area, and total surface area of a cylinder.",
     category: "Geometry & Engineering",
     iconName: "Beaker",
     seoTitle: "Cylinder Volume & Surface Area Calculator | CalcPro",
@@ -1172,7 +1172,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "sphere-volume-surface-area-calculator",
     name: "Sphere Volume & Surface Area",
-    description: "Calculate the volume and surface area of a sphere.",
+    description: "Quickly calculate the volume and surface area of a sphere by providing its radius.",
     category: "Geometry & Engineering",
     iconName: "Globe",
     seoTitle: "Sphere Volume & Surface Area Calculator | CalcPro",
@@ -1183,7 +1183,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "cone-volume-calculator",
     name: "Cone Volume Calculator",
-    description: "Calculate the volume of a cone.",
+    description: "Easily calculate the volume, slant height, and total surface area of a cone from its radius and height.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
     seoTitle: "Cone Volume, Slant Height & Surface Area Calc | CalcPro",
@@ -1194,7 +1194,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "pythagorean-theorem-calculator",
     name: "Pythagorean Theorem Calculator",
-    description: "Solve for sides of a right triangle.",
+    description: "Easily solve for the missing side of a right-angled triangle using the a² + b² = c² formula.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
     formula: "a² + b² = c²",
@@ -1206,7 +1206,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "trigonometry-calculator",
     name: "Trigonometry Calculator",
-    description: "Calculate sin, cos, tan, and more.",
+    description: "A free trig calculator to find the sine, cosine, tangent, and their inverses for any angle.",
     category: "Geometry & Engineering",
     iconName: "Triangle",
     seoTitle: "Trigonometry Function Calculator (Sin, Cos, Tan) | CalcPro",
@@ -1217,7 +1217,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "beam-deflection-calculator",
     name: "Beam Deflection Calculator",
-    description: "Calculate the deflection of beams.",
+    description: "A simple tool to find the maximum deflection of a cantilever beam with a point load at the end.",
     category: "Geometry & Engineering",
     iconName: "Ruler",
     seoTitle: "Cantilever Beam Deflection Calculator | CalcPro",
@@ -1228,7 +1228,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "torque-calculator",
     name: "Torque Calculator",
-    description: "Calculate torque from force and distance.",
+    description: "Calculate the resulting torque by entering the force and distance (lever arm length).",
     category: "Geometry & Engineering",
     iconName: "Wind",
     seoTitle: "Torque Calculator (Force x Distance) | CalcPro",
@@ -1239,7 +1239,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "ohms-law-calculator",
     name: "Ohm’s Law Calculator",
-    description: "Calculate voltage, current, and resistance.",
+    description: "An easy-to-use Ohm's law calculator for voltage (V), current (I), resistance (R), and power (P).",
     category: "Geometry & Engineering",
     iconName: "Atom",
     seoTitle: "Ohm's Law Calculator (V, I, R, P) | CalcPro",
@@ -1250,7 +1250,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "resistor-color-code-calculator",
     name: "Resistor Color Code Calculator",
-    description: "Decode 4-band resistor color codes.",
+    description: "Decode 4-band resistor color codes to instantly find the resistance value and tolerance.",
     category: "Geometry & Engineering",
     iconName: "Palette",
     seoTitle: "4-Band Resistor Color Code Decoder | CalcPro",
@@ -1261,7 +1261,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "capacitor-charge-calculator",
     name: "Capacitor Charge Calculator",
-    description: "Calculate capacitor charge and discharge times.",
+    description: "Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific time.",
     category: "Geometry & Engineering",
     iconName: "Atom",
     seoTitle: "Capacitor Charge & RC Circuit Calculator | CalcPro",
@@ -1274,7 +1274,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "gpa-calculator",
     name: "GPA Calculator",
-    description: "Calculate your Grade Point Average.",
+    description: "Calculate your GPA quickly and easily by entering your courses, credits, and grades.",
     category: "Education",
     iconName: "GraduationCap",
     formula: "Σ(Grade Points * Credits) / Σ(Credits)",
@@ -1286,7 +1286,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "grade-percentage-calculator",
     name: "Grade Percentage Calculator",
-    description: "Calculate your grade percentage.",
+    description: "Find your grade percentage and letter grade by entering the points you earned and the total points.",
     category: "Miscellaneous",
     iconName: "Percent",
     seoTitle: "Test & Assignment Grade Percentage Calculator | CalcPro",
@@ -1297,7 +1297,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "reading-time-calculator",
     name: "Reading Time Calculator",
-    description: "Estimate the time it takes to read a text.",
+    description: "Estimate how long it will take to read any text by pasting it and adjusting the Words Per Minute (WPM).",
     category: "Miscellaneous",
     iconName: "Book",
     seoTitle: "Reading Time & Word Count Calculator | CalcPro",
@@ -1308,7 +1308,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "typing-speed-calculator",
     name: "Typing Speed (WPM) Calculator",
-    description: "Measure your words per minute typing speed.",
+    description: "Test your typing speed and accuracy in Words Per Minute (WPM) with sample texts.",
     category: "Miscellaneous",
     iconName: "Keyboard",
     seoTitle: "Typing Speed Test (WPM) & Accuracy Check | CalcPro",
@@ -1319,7 +1319,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "loan-affordability-calculator",
     name: "Loan Affordability Calculator",
-    description: "Estimate how much loan you can afford.",
+    description: "Estimate how much you can afford to borrow based on your income, debts, and desired loan terms.",
     category: "Miscellaneous",
     iconName: "Landmark",
     seoTitle: "How Much Loan Can I Afford Calculator | CalcPro",
@@ -1330,7 +1330,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "carbon-footprint-calculator",
     name: "Carbon Footprint Calculator",
-    description: "Estimate your environmental impact.",
+    description: "Get a rough estimate of your carbon footprint based on your commute, energy use, and diet.",
     category: "Miscellaneous",
     iconName: "Footprints",
     seoTitle: "Personal Carbon Footprint Calculator | CalcPro",
