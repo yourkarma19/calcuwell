@@ -61,14 +61,14 @@ export default async function SitemapPage() {
       />
       <div className="text-center mb-12">
         <List className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h1>Sitemap</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
+          Sitemap
+        </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
           Welcome to the sitemap for CalcPro. Here you can find a comprehensive
           list of all our calculators, neatly organized by category. This page
           is designed to help you quickly navigate to the specific tool you
-          need, whether you&apos;re solving a complex math problem, managing
-          your finances, or exploring health metrics. Browse through the
-          sections below to discover the wide range of free tools we offer.
+          need.
         </p>
       </div>
 
@@ -82,19 +82,21 @@ export default async function SitemapPage() {
               />
               {category.name} Calculators
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-4">
               {category.calculators.map((calc) => {
                 return (
                   <li key={calc.slug}>
                     <Link
                       href={`/calculators/${calc.slug}`}
-                      className="text-sm hover:text-primary hover:underline flex items-center gap-2 rounded-md p-2 hover:bg-muted transition-colors"
+                      className="group flex items-center gap-2 rounded-md p-2 -ml-2 transition-colors hover:bg-muted"
                     >
                       <IconWrapper
                         iconName={calc.iconName as IconName}
-                        className="w-4 h-4 text-muted-foreground"
+                        className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors"
                       />
-                      {calc.name}
+                      <span className="text-sm group-hover:text-primary transition-colors">
+                        {calc.name}
+                      </span>
                     </Link>
                   </li>
                 );
