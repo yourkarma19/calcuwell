@@ -11,11 +11,12 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     description: "Easily add or remove sales tax from a price to see the net or gross amount.",
     category: "Finance",
     iconName: "Tag",
-    seoTitle: "VAT/GST Calculator (Add & Remove Tax) | CalcPro",
+    seoTitle: "VAT/GST Calculator India | Add & Remove Tax | CalcPro",
     metaDescription:
-      "A fast and free VAT/GST calculator. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate.",
+      "A fast and free VAT/GST calculator for India. Easily add tax to a net price or find the pre-tax amount from a gross price. Supports any tax rate.",
     formula: "Gross Price = Net Price * (1 + Tax Rate/100)",
     lastUpdated: "2024-07-31",
+    tags: ["gst calculator", "vat calculator", "sales tax", "add gst", "remove gst"],
   },
   // New SIP Calculator
   {
@@ -30,6 +31,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments. Enter your monthly investment, expected return rate, and tenure to see how your money can grow.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan"],
   },
   // New CGPA Calculator
   {
@@ -44,6 +46,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Accurately calculate your CGPA by entering your semester GPAs and credits. A simple tool for all students to track academic performance.",
     formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Total Creditsᵢ)",
     lastUpdated: "2024-07-31",
+    tags: ["cgpa calculator", "sgpa to cgpa", "gpa calculator", "education"],
   },
   // New Net Calorie Calculator
   {
@@ -57,6 +60,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
     formula: "Net Calories = Calories Consumed - Calories Burned",
     lastUpdated: "2024-07-31",
+    tags: ["calorie calculator", "net calories", "weight loss", "tdee"],
   },
   // New Time Card Calculator
   {
@@ -71,6 +75,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Calculate weekly work hours & gross pay. Enter start/end times & breaks to get an accurate time card summary. Free & easy to use.",
     formula: "Total Hours = Sum(End Time - Start Time - Break Time)",
     lastUpdated: "2024-07-31",
+    tags: ["time card calculator", "work hours", "payroll", "gross pay"],
   },
   // New Concrete Slab Calculator
   {
@@ -85,6 +90,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the volume & number of concrete bags for your project. Works for slabs, footers, & round post holes. Get an instant, free estimate.",
     formula: "Volume = Length × Width × Thickness",
     lastUpdated: "2024-07-31",
+    tags: ["concrete calculator", "volume calculator", "construction", "diy"],
   },
   // New Wind Chill Calculator
   {
@@ -99,6 +105,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     formula:
       "Wind Chill (F) = 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)",
     lastUpdated: "2024-07-31",
+    tags: ["wind chill", "feels like temperature", "weather", "safety"],
   },
   // New Cubic Equation Calculator
   {
@@ -113,6 +120,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve any cubic equation instantly. Our calculator finds all real & complex roots & shows the steps using the cubic formula. Free & accurate.",
     lastUpdated: "2024-07-31",
+    tags: ["cubic equation", "algebra calculator", "polynomial solver", "math problem solver"],
   },
   // New Triangle Angle Calculator
   {
@@ -127,6 +135,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate unknown angles in any triangle. Enter side lengths and/or angles to find missing values using the Law of Sines & Cosines.",
     lastUpdated: "2024-07-31",
+    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator"],
   },
   // New Tangent Line Calculator
   {
@@ -141,6 +150,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.",
     lastUpdated: "2024-07-31",
+    tags: ["tangent line", "calculus calculator", "derivative calculator", "math with steps"],
   },
   // New Fraction to Percentage Calculator
   {
@@ -154,6 +164,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly convert any fraction to a percentage with our free online tool. Shows you the calculation steps and the final answer instantly.",
     lastUpdated: "2024-07-31",
+    tags: ["fraction to percentage", "math converter", "percentage calculator"],
   },
   // New Intercept Calculator
   {
@@ -168,6 +179,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results & see step-by-step calculations.",
     formula: "Set x=0 for y-intercept, set y=0 for x-intercept.",
     lastUpdated: "2024-07-31",
+    tags: ["intercept calculator", "linear equation", "algebra", "slope intercept form"],
   },
   // New Decimal to Inches Calculator
   {
@@ -181,6 +193,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       'Convert any decimal value into inches and a usable fraction (e.g., 1/8", 1/16"). Perfect for woodworking, machining, and engineering.',
     lastUpdated: "2024-07-31",
+    tags: ["decimal to inches", "measurement converter", "fraction calculator", "cm to inches"],
   },
   // New Feet and Inches Calculator
   {
@@ -193,6 +206,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An online calculator to add, subtract, multiply, & divide feet and inches. Perfect for construction & DIY projects. Get instant results.",
     lastUpdated: "2024-07-31",
+    tags: ["feet and inches", "imperial calculator", "length converter", "construction math"],
   },
   // New Voltage to Watts Calculator
   {
@@ -206,6 +220,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Instantly convert Volts & Amps to Watts using our free online calculator. Understand the power formula (P=VI) with examples and explanations.",
     lastUpdated: "2024-07-31",
+    tags: ["volts to watts", "ohms law", "power calculator", "electrical engineering"],
   },
   // New Partial Fraction Calculator
   {
@@ -219,6 +234,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your math homework.",
     lastUpdated: "2024-07-31",
+    tags: ["partial fractions", "calculus calculator", "algebra", "math problem solver"],
   },
 
   // Lifestyle
@@ -280,6 +296,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple and fast online calculator for everyday arithmetic. Perform addition, subtraction, multiplication, and division with ease.",
     lastUpdated: "2024-07-31",
+    tags: ["basic calculator", "online calculator", "arithmetic"],
   },
   {
     slug: "percentage-calculator",
@@ -291,6 +308,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate percentages with our free tool. Find the percentage of a number, percent increase/decrease, & other common problems.",
     lastUpdated: "2024-07-31",
+    tags: ["percentage calculator", "percent change", "what is x percent of y"],
   },
   {
     slug: "fraction-calculator",
@@ -302,6 +320,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Our free fraction calculator makes math easy. Add, subtract, multiply, and divide proper and improper fractions with step-by-step results.",
     lastUpdated: "2024-07-31",
+    tags: ["fraction calculator", "simplify fractions", "math problem solver"],
   },
   {
     slug: "mixed-number-calculator",
@@ -313,6 +332,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Get accurate answers for complex fraction problems.",
     lastUpdated: "2024-07-31",
+    tags: ["mixed number calculator", "improper fraction", "fraction math"],
   },
   {
     slug: "ratio-calculator",
@@ -324,6 +344,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for students.",
     lastUpdated: "2024-07-31",
+    tags: ["ratio calculator", "simplify ratio", "proportion calculator"],
   },
   {
     slug: "proportion-calculator",
@@ -335,6 +356,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An easy-to-use proportion calculator to help you solve for the missing value in a proportion using cross-multiplication. Includes examples.",
     lastUpdated: "2024-07-31",
+    tags: ["proportion calculator", "solve for x", "ratio", "math helper"],
   },
   {
     slug: "mean-median-mode-calculator",
@@ -346,6 +368,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly find the mean, median, mode, and range of any data set. Our calculator helps you understand the central tendency of your data.",
     lastUpdated: "2024-07-31",
+    tags: ["mean median mode", "statistics calculator", "average calculator"],
   },
   {
     slug: "standard-deviation-calculator",
@@ -357,6 +380,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the standard deviation for a sample or population data set. Understand the spread and consistency of your data with our tool.",
     lastUpdated: "2024-07-31",
+    tags: ["standard deviation", "variance calculator", "statistics"],
   },
   {
     slug: "probability-calculator",
@@ -368,6 +392,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the probability of single and multiple events with our easy-to-use tool. Perfect for solving problems and understanding chance.",
     lastUpdated: "2024-07-31",
+    tags: ["probability calculator", "statistics", "chance"],
   },
   {
     slug: "permutation-combination-calculator",
@@ -379,6 +404,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability with this essential tool.",
     lastUpdated: "2024-07-31",
+    tags: ["permutation calculator", "combination calculator", "ncr", "npr"],
   },
   {
     slug: "factorial-calculator",
@@ -391,6 +417,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Our online factorial calculator finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.",
     lastUpdated: "2024-07-31",
+    tags: ["factorial calculator", "n!", "combinatorics", "math"],
   },
   {
     slug: "lcm-gcd-calculator",
@@ -402,6 +429,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD) of a set of numbers. A tool for number theory.",
     lastUpdated: "2024-07-31",
+    tags: ["lcm calculator", "gcd calculator", "gcf", "least common multiple"],
   },
   {
     slug: "square-root-cube-root-calculator",
@@ -413,6 +441,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs. Fast and easy to use.",
     lastUpdated: "2024-07-31",
+    tags: ["square root calculator", "cube root", "math", "algebra"],
   },
   {
     slug: "exponent-power-calculator",
@@ -424,6 +453,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly calculate the result of a base raised to a power. Handles positive, negative, integer, and fractional exponents with ease.",
     lastUpdated: "2024-07-31",
+    tags: ["exponent calculator", "power calculator", "math", "algebra"],
   },
   {
     slug: "logarithm-calculator",
@@ -435,6 +465,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs and natural logs (ln).",
     lastUpdated: "2024-07-31",
+    tags: ["log calculator", "logarithm", "natural log", "ln calculator"],
   },
   {
     slug: "equation-solver",
@@ -446,6 +477,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and the formulas used.",
     lastUpdated: "2024-07-31",
+    tags: ["equation solver", "quadratic formula", "linear equation", "algebra"],
   },
   {
     slug: "matrix-calculator",
@@ -457,6 +489,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple matrix calculator for performing addition and subtraction on 2x2 matrices. Enter the matrix values to get an instant result.",
     lastUpdated: "2024-07-31",
+    tags: ["matrix calculator", "linear algebra", "math"],
   },
   {
     slug: "complex-number-calculator",
@@ -468,6 +501,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Perform arithmetic on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.",
     lastUpdated: "2024-07-31",
+    tags: ["complex numbers", "algebra", "math", "engineering math"],
   },
   {
     slug: "roman-numeral-converter",
@@ -479,6 +513,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A fast and accurate Roman numeral converter. Translate numbers to Roman numerals and back for values between 1 and 3,999.",
     lastUpdated: "2024-07-31",
+    tags: ["roman numerals", "converter", "history"],
   },
 
   // Finance & Money
@@ -519,7 +554,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   },
   {
     slug: "car-loan-calculator",
-    name: "Car Loan Calculator",
+    name: "Car Loan EMI Calculator",
     description: "Calculate your monthly car loan payment (EMI) and understand the total cost of your auto loan.",
     category: "Finance",
     iconName: "Car",
@@ -1134,6 +1169,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.",
     lastUpdated: "2024-07-31",
+    tags: ["circle calculator", "area calculator", "circumference", "geometry"],
   },
   {
     slug: "triangle-area-calculator",
@@ -1145,6 +1181,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
     lastUpdated: "2024-07-31",
+    tags: ["triangle calculator", "area calculator", "herons formula", "geometry"],
   },
   {
     slug: "rectangle-area-calculator",
@@ -1157,6 +1194,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results.",
     lastUpdated: "2024-07-31",
+    tags: ["rectangle calculator", "area calculator", "perimeter", "geometry"],
   },
   {
     slug: "cylinder-volume-calculator",
@@ -1168,6 +1206,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height.",
     lastUpdated: "2024-07-31",
+    tags: ["cylinder volume", "surface area calculator", "geometry", "3d shapes"],
   },
   {
     slug: "sphere-volume-surface-area-calculator",
@@ -1179,6 +1218,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas.",
     lastUpdated: "2024-07-31",
+    tags: ["sphere volume", "surface area", "geometry calculator", "3d shapes"],
   },
   {
     slug: "cone-volume-calculator",
@@ -1190,6 +1230,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results.",
     lastUpdated: "2024-07-31",
+    tags: ["cone volume", "surface area", "geometry", "3d shapes"],
   },
   {
     slug: "pythagorean-theorem-calculator",
@@ -1202,6 +1243,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Finds the hypotenuse or other sides.",
     seoTitle: "Pythagorean Theorem Side Calculator (a² + b² = c²) | CalcPro",
     lastUpdated: "2024-07-31",
+    tags: ["pythagorean theorem", "right triangle calculator", "hypotenuse", "geometry"],
   },
   {
     slug: "trigonometry-calculator",
@@ -1213,6 +1255,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A free trig calculator to find the sine, cosine, tangent, and their inverses (asin, acos, atan) for any angle in degrees or radians.",
     lastUpdated: "2024-07-31",
+    tags: ["trigonometry calculator", "sin cos tan", "unit circle", "inverse trig"],
   },
   {
     slug: "beam-deflection-calculator",
@@ -1224,6 +1267,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator to find the maximum deflection of a cantilever beam with a point load at the end. For structural engineers.",
     lastUpdated: "2024-07-31",
+    tags: ["beam deflection", "structural engineering", "cantilever beam", "engineering calculator"],
   },
   {
     slug: "torque-calculator",
@@ -1235,6 +1279,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering.",
     lastUpdated: "2024-07-31",
+    tags: ["torque calculator", "physics", "engineering", "moment of force"],
   },
   {
     slug: "ohms-law-calculator",
@@ -1246,6 +1291,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An easy-to-use Ohm's law calculator for voltage (V), current (I), resistance (R), and power (P). Enter any two values to find the others.",
     lastUpdated: "2024-07-31",
+    tags: ["ohms law", "electrical calculator", "voltage", "current", "resistance"],
   },
   {
     slug: "resistor-color-code-calculator",
@@ -1257,6 +1303,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Decode 4-band resistor color codes with our tool. Select the colors for each band to instantly find the resistance value and tolerance.",
     lastUpdated: "2024-07-31",
+    tags: ["resistor color code", "electronics", "ohms", "resistance"],
   },
   {
     slug: "capacitor-charge-calculator",
@@ -1268,6 +1315,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the charge and current in a charging RC (resistor-capacitor) circuit at a specific point in time. For electronics.",
     lastUpdated: "2024-07-31",
+    tags: ["capacitor", "rc circuit", "electronics", "time constant"],
   },
 
   // Education & Miscellaneous
