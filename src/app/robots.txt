@@ -3,4 +3,8 @@
 User-agent: *
 Allow: /
 
+# Disallow crawling of Next.js build artifacts and specific file types that are causing 404s
+Disallow: /_next/static/
+Disallow: /*.php$
+
 Sitemap: https://calcpro.online/sitemap.xml
