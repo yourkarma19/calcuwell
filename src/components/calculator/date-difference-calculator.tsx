@@ -15,7 +15,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
