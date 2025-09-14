@@ -19,7 +19,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { type Calculator } from "@/lib/types";
-import { Search } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
 
 type SearchResult = Omit<Calculator, "component">;
 
@@ -39,26 +39,17 @@ export function SearchBar() {
 
   // Debounce search input
   React.useEffect(() => {
-    if (search.length === 0) {
-      setResults([]);
-      if (isOpen) {
-        setIsLoading(true);
-        searchCalculators("").then((initialResults) => {
-          setResults(initialResults || []);
-          setIsLoading(false);
-        });
-      }
-      return;
-    }
-
-    setIsLoading(true);
-    const debounceTimeout = setTimeout(async () => {
+    const performSearch = async () => {
+      setIsLoading(true);
       const searchResults = await searchCalculators(search);
       setResults(searchResults || []);
       setIsLoading(false);
-    }, 200);
+    };
 
-    return () => clearTimeout(debounceTimeout);
+    if (isOpen) {
+      const debounceTimeout = setTimeout(performSearch, 200);
+      return () => clearTimeout(debounceTimeout);
+    }
   }, [search, isOpen]);
 
   // Keyboard shortcut to open search
@@ -113,12 +104,12 @@ export function SearchBar() {
               placeholder="Type to search..."
               className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
             />
+            {isLoading && (
+              <Loader2 className="mr-2 h-4 w-4 shrink-0 animate-spin" />
+            )}
           </div>
           <CommandList>
-            {isLoading && (
-              <CommandEmpty>Loading search results...</CommandEmpty>
-            )}
-            {!isLoading && results.length === 0 && search.length > 0 && (
+            {results.length === 0 && !isLoading && (
               <CommandEmpty>
                 No results found for &quot;{search}&quot;.
               </CommandEmpty>
