@@ -6,7 +6,7 @@ import type { Calculator } from "@/lib/types";
 
 type SearchResult = Omit<Calculator, "component">;
 
-let fuse: Fuse.Fuse<SearchResult> | null = null;
+let fuse: Fuse<SearchResult> | null = null;
 let calculators: SearchResult[] = [];
 
 async function initializeSearch() {
