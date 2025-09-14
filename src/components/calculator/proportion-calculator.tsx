@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import AboutProportionCalculator from "./about/proportion-calculator";
 import {
   Card,
   CardContent,
@@ -88,57 +89,62 @@ export default function ProportionCalculator() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Proportion Calculator</CardTitle>
-        <CardDescription>
-          Solve for the missing value in the proportion A/B = C/D. Click on an
-          input to solve for it.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-2xl">
-          <div className="flex flex-col items-center gap-1">
-            <Label htmlFor="valA">A</Label>
-            <Input
-              type="number"
-              {...getInputProps("a")}
-              id="valA"
-              className="w-24 text-center"
-            />
-            <div className="h-[2px] w-full bg-foreground" />
-            <Label htmlFor="valB" className="sr-only">
-              B
-            </Label>
-            <Input
-              type="number"
-              {...getInputProps("b")}
-              id="valB"
-              className="w-24 text-center"
-            />
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Proportion Calculator</CardTitle>
+          <CardDescription>
+            Solve for the missing value in the proportion A/B = C/D. Click on an
+            input to solve for it.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-2xl">
+            <div className="flex flex-col items-center gap-1">
+              <Label htmlFor="valA">A</Label>
+              <Input
+                type="number"
+                {...getInputProps("a")}
+                id="valA"
+                className="w-24 text-center"
+              />
+              <div className="h-[2px] w-full bg-foreground" />
+              <Label htmlFor="valB" className="sr-only">
+                B
+              </Label>
+              <Input
+                type="number"
+                {...getInputProps("b")}
+                id="valB"
+                className="w-24 text-center"
+              />
+            </div>
+            <span className="font-bold text-primary">=</span>
+            <div className="flex flex-col items-center gap-1">
+              <Label htmlFor="valC">C</Label>
+              <Input
+                type="number"
+                {...getInputProps("c")}
+                id="valC"
+                className="w-24 text-center"
+              />
+              <div className="h-[2px] w-full bg-foreground" />
+              <Label htmlFor="valD" className="sr-only">
+                D
+              </Label>
+              <Input
+                type="number"
+                {...getInputProps("d")}
+                id="valD"
+                className="w-24 text-center"
+              />
+            </div>
           </div>
-          <span className="font-bold text-primary">=</span>
-          <div className="flex flex-col items-center gap-1">
-            <Label htmlFor="valC">C</Label>
-            <Input
-              type="number"
-              {...getInputProps("c")}
-              id="valC"
-              className="w-24 text-center"
-            />
-            <div className="h-[2px] w-full bg-foreground" />
-            <Label htmlFor="valD" className="sr-only">
-              D
-            </Label>
-            <Input
-              type="number"
-              {...getInputProps("d")}
-              id="valD"
-              className="w-24 text-center"
-            />
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+      <div className="mt-8">
+        <AboutProportionCalculator />
+      </div>
+    </div>
   );
 }

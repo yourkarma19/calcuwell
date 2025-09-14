@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
+import AboutBMICalculator from "./about/bmi-calculator";
 import {
   Card,
   CardContent,
@@ -182,6 +183,10 @@ export default function BMICalculator({
           <p className={cn("text-xl font-semibold", color)}>{category}</p>
         </CardContent>
       </Card>
+      
+      <div className="mt-8">
+        <AboutBMICalculator />
+      </div>
 
       <ExportShareControls
         elementIds={["bmi-calculator-inputs", "bmi-calculator-results"]}

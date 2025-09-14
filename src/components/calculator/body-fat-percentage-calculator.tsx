@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import AboutBodyFatPercentageCalculator from "./about/body-fat-percentage-calculator";
 import {
   Card,
   CardContent,
@@ -11,33 +12,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
-
-const bodyFatCategories = {
-  women: [
-    { range: "10-13%", category: "Essential fat" },
-    { range: "14-20%", category: "Athletes" },
-    { range: "21-24%", category: "Fitness" },
-    { range: "25-31%", category: "Average" },
-    { range: "32%+", category: "Obese" },
-  ],
-  men: [
-    { range: "2-5%", category: "Essential fat" },
-    { range: "6-13%", category: "Athletes" },
-    { range: "14-17%", category: "Fitness" },
-    { range: "18-24%", category: "Average" },
-    { range: "25%+", category: "Obese" },
-  ],
-};
 
 const getBfpCategory = (bfp: number, gender: "male" | "female") => {
   if (gender === "female") {
@@ -183,52 +159,7 @@ export default function BodyFatPercentageCalculator() {
             </p>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Body Fat Percentage Categories</CardTitle>
-          </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-semibold mb-2">Women</h3>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Category</TableHead>
-                    <TableHead>Percentage</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {bodyFatCategories.women.map((item) => (
-                    <TableRow key={item.category}>
-                      <TableCell>{item.category}</TableCell>
-                      <TableCell>{item.range}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Men</h3>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Category</TableHead>
-                    <TableHead>Percentage</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {bodyFatCategories.men.map((item) => (
-                    <TableRow key={item.category}>
-                      <TableCell>{item.category}</TableCell>
-                      <TableCell>{item.range}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </CardContent>
-        </Card>
+        <AboutBodyFatPercentageCalculator />
       </div>
       <div className="lg:col-span-1">
         <Card className="sticky top-24">

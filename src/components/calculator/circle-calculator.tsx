@@ -131,28 +131,61 @@ export default function CircleCalculator() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>About Circle Formulas</CardTitle>
+          <CardTitle>About the Circle Calculator</CardTitle>
         </CardHeader>
         <CardContent>
-          <Accordion type="single" collapsible className="w-full">
+          <div className="prose dark:prose-invert max-w-none">
+            <p>
+              The <strong>Circle Calculator</strong> is a versatile tool for
+              instantly finding the properties of a circle from any single known
+              measurement. Whether you have the radius, diameter, circumference,
+              or area, this calculator will derive the other three values for
+              you.
+            </p>
+            <h3>How to Use the Calculator</h3>
+            <ol>
+              <li>
+                Select the <strong>Input Type</strong> that you know (e.g.,
+                Radius).
+              </li>
+              <li>
+                Enter the known value into the input field.
+              </li>
+              <li>
+                The calculator will automatically display all properties of the
+                circle in the results card.
+              </li>
+            </ol>
+          </div>
+          <Accordion type="single" collapsible className="w-full mt-4">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is Pi (π)?</AccordionTrigger>
               <AccordionContent>
-                Pi (π) is a fundamental mathematical constant representing the ratio of a circle's circumference to its diameter. It's an irrational number, approximately equal to 3.14159, and is crucial for all calculations involving circles and spheres.
+                Pi (π) is a fundamental mathematical constant representing the
+                ratio of a circle's circumference to its diameter. It's an
+                irrational number, approximately equal to 3.14159, and is
+                crucial for all calculations involving circles and spheres.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>What are the key formulas for a circle?</AccordionTrigger>
+              <AccordionTrigger>
+                What are the key formulas for a circle?
+              </AccordionTrigger>
               <AccordionContent>
-                The key formulas are: Diameter (d) = 2 * r, Circumference (C) = 2 * π * r, and Area (A) = π * r².
+                The key formulas are: Diameter (d) = 2 * r, Circumference (C) =
+                2 * π * r, and Area (A) = π * r².
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                What is the difference between a circle's radius and its diameter?
+                What is the difference between a circle's radius and its
+                diameter?
               </AccordionTrigger>
               <AccordionContent>
-                The radius (r) is the distance from the center of the circle to any point on its edge. The diameter (d) is the distance across the circle passing through the center. The diameter is always twice the length of the radius.
+                The radius (r) is the distance from the center of the circle to
+                any point on its edge. The diameter (d) is the distance across
+                the circle passing through the center. The diameter is always
+                twice the length of the radius.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

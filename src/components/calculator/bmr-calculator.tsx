@@ -2,6 +2,7 @@
 
 import { Info } from "lucide-react";
 import { useMemo } from "react";
+import AboutBmrCalculator from "./about/bmr-calculator";
 import {
   Card,
   CardContent,
@@ -54,7 +55,7 @@ export default function BmrCalculator() {
         <CardHeader>
           <CardTitle>BMR Calculator</CardTitle>
           <CardDescription>
-            Discover your body&apos;s baseline calorie needs with our accurate
+            Discover your body's baseline calorie needs with our accurate
             BMR Calculator. Your Basal Metabolic Rate (BMR) is the number of
             calories your body needs to function at rest.
           </CardDescription>
@@ -156,6 +157,10 @@ export default function BmrCalculator() {
           <p className="text-lg text-muted-foreground">calories / day</p>
         </CardContent>
       </Card>
+
+      <div className="mt-8">
+        <AboutBmrCalculator />
+      </div>
     </div>
   );
 }

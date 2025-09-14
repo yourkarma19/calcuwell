@@ -6,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { IconWrapper } from "../IconWrapper";
 import { Toaster } from "../ui/toaster";
-import CalculatorContent from "./calculator-content";
 import EmbedCalculator from "./embed-calculator";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { categories } from "@/lib/calculators";
@@ -88,9 +87,6 @@ export default function CalculatorWrapper({
       <div className="max-w-4xl mx-auto">
         <main className="space-y-8">
           {children}
-          <div className="mt-8">
-            <CalculatorContent slug={calculator.slug} />
-          </div>
           <div className="mt-8">
             <EmbedCalculator slug={calculator.slug} />
           </div>

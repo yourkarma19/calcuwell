@@ -121,7 +121,7 @@ export default function ScientificCalculator() {
     "h-14 md:h-16 text-base md:text-lg rounded-xl py-2 font-semibold transition-transform duration-100 active:scale-95";
 
   return (
-    <div className="space-y-6">
+    <>
       <Card className="w-full max-w-lg mx-auto overflow-hidden rounded-2xl border-none bg-transparent shadow-none">
         <CardContent className="p-1">
           <div className="h-32 p-4 bg-muted dark:bg-black/20 rounded-xl flex flex-col justify-end items-end overflow-hidden mb-4">
@@ -448,9 +448,7 @@ export default function ScientificCalculator() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>
-                What are log and ln?
-              </AccordionTrigger>
+              <AccordionTrigger>What are log and ln?</AccordionTrigger>
               <AccordionContent>
                 `log` is the base-10 logarithm. It answers "10 to what power
                 gives you this number?". `ln` is the natural logarithm, which has
@@ -461,6 +459,6 @@ export default function ScientificCalculator() {
           </Accordion>
         </CardContent>
       </Card>
-    </div>
+    </>
   );
 }

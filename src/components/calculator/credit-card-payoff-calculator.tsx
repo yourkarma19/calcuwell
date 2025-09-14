@@ -2,6 +2,12 @@
 
 import { useMemo } from "react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import {
   Card,
   CardContent,
   CardHeader,
@@ -11,7 +17,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 export default function CreditCardPayoffCalculator() {
   const [balance, setBalance] = usePersistentState("cc-balance", 5000);
@@ -144,41 +149,68 @@ export default function CreditCardPayoffCalculator() {
 
       <Card>
         <CardHeader>
-          <CardTitle as="h3">Credit Card Payoff FAQs</CardTitle>
+          <CardTitle as="h3">About the Credit Card Payoff Calculator</CardTitle>
         </CardHeader>
         <CardContent>
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>
-              Why does it take so long to pay off credit card debt?
-            </AccordionTrigger>
-            <AccordionContent>
-              Credit card interest is compounded, meaning you pay interest on
-              your interest. Because APRs are typically high, making only the
-              minimum payment can lead to a very long payoff time and a large
-              amount of total interest paid.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>What if my payment is too low?</AccordionTrigger>
-            <AccordionContent>
-              If your monthly payment is less than the monthly interest, you
-              will never pay off the debt. The calculator will show an error if
-              this happens, telling you to increase your payment.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>
-              How can I pay off my debt faster?
-            </AccordionTrigger>
-            <AccordionContent>
-              The best way is to pay more than the minimum payment each month.
-              Even small extra payments can greatly reduce the time and total
-              interest. You can also look into balance transfer cards or debt
-              consolidation loans to lower your interest rate.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+          <div className="prose dark:prose-invert max-w-none">
+            <p>
+              The Credit Card Payoff Calculator is a crucial financial tool for
+              anyone with credit card debt. It shows you exactly how long
+              it&apos;ll take to become debt-free based on your current payments
+              and highlights the total amount of interest you will pay.
+            </p>
+
+            <h3>How to Use the Calculator</h3>
+            <ol>
+              <li>
+                Enter your total <strong>Card Balance</strong>.
+              </li>
+              <li>
+                Input your card&apos;s <strong>Interest Rate (APR)</strong>.
+              </li>
+              <li>
+                Enter the <strong>Monthly Payment</strong> you plan to make.
+              </li>
+            </ol>
+            <p>
+              The calculator will instantly show your payoff timeline and a
+              summary of your total payments and interest costs.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full mt-4">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                Why does it take so long to pay off credit card debt?
+              </AccordionTrigger>
+              <AccordionContent>
+                Credit card interest is compounded, meaning you pay interest on
+                your interest. Because APRs are typically high, making only the
+                minimum payment can lead to a very long payoff time and a large
+                amount of total interest paid.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                What if my payment is too low?
+              </AccordionTrigger>
+              <AccordionContent>
+                If your monthly payment is less than the monthly interest, you
+                will never pay off the debt. The calculator will show an error if
+                this happens, telling you to increase your payment.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                How can I pay off my debt faster?
+              </AccordionTrigger>
+              <AccordionContent>
+                The best way is to pay more than the minimum payment each month.
+                Even small extra payments can greatly reduce the time and total
+                interest. You can also look into balance transfer cards or debt
+                consolidation loans to lower your interest rate.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
     </div>

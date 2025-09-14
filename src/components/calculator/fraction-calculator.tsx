@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Label } from "../ui/label";
+import AboutFractionCalculator from "./about/fraction-calculator";
 import {
   Card,
   CardContent,
@@ -193,6 +194,9 @@ export default function FractionCalculator() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutFractionCalculator />
+      </div>
     </div>
   );
 }

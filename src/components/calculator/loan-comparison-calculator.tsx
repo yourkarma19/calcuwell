@@ -3,13 +3,18 @@
 import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import ExportShareControls from "./export-share-controls";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Skeleton } from "../ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
 const calculateLoanDetails = (
   principal: number,
@@ -188,11 +193,31 @@ export default function LoanComparisonCalculator({
       {showResults && (
         <>
           <LoanComparisonResults resultsA={resultsA} resultsB={resultsB} />
-           <Card>
+          <Card>
             <CardHeader>
-              <CardTitle as="h3">Loan Comparison FAQs</CardTitle>
+              <CardTitle as="h3">About the Loan Comparison Calculator</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="prose dark:prose-invert max-w-none">
+              <p>
+                Choosing the right loan can save you thousands. Our Loan
+                Comparison Calculator helps you make an informed decision by
+                putting two loan offers side-by-side. It shows the differences
+                in monthly payments, total interest, and overall cost.
+              </p>
+              <h3>How to Use the Loan Comparison Calculator</h3>
+              <ol>
+                <li>
+                  Enter the **Loan Amount**, **Interest Rate**, and **Tenure**
+                  for &quot;Loan Option A&quot;.
+                </li>
+                <li>Do the same for &quot;Loan Option B&quot;.</li>
+                <li>Click the **&quot;Compare Loans&quot;** button.</li>
+              </ol>
+              <p>
+                The tool will generate a clear verdict, a detailed table, and a
+                chart to help you understand which loan is better for you.
+              </p>
+              <h3>Loan Comparison FAQs</h3>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="font-semibold">
@@ -200,10 +225,10 @@ export default function LoanComparisonCalculator({
                   </AccordionTrigger>
                   <AccordionContent>
                     <p>
-                      Not always. A lower EMI is easier on your monthly budget, but
-                      it often comes with a longer loan term. This means you could
-                      pay much more in total interest. This tool helps you see that
-                      trade-off.
+                      Not always. A lower EMI is easier on your monthly budget,
+                      but it often comes with a longer loan term. This means you
+                      could pay much more in total interest. This tool helps you
+                      see that trade-off.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -214,8 +239,8 @@ export default function LoanComparisonCalculator({
                   <AccordionContent>
                     <p>
                       A lot. Even a small difference of 0.5% can lead to large
-                      savings over a long term, especially for big loans like a home
-                      loan. Use this tool to see the exact difference.
+                      savings over a long term, especially for big loans like a
+                      home loan. Use this tool to see the exact difference.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -227,8 +252,8 @@ export default function LoanComparisonCalculator({
                     <p>
                       Besides the interest rate, consider other costs like
                       processing fees and prepayment penalties. Also, check the
-                      lender&apos;s reputation. Sometimes a slightly higher EMI is
-                      worth it for better terms or service.
+                      lender&apos;s reputation. Sometimes a slightly higher EMI
+                      is worth it for better terms or service.
                     </p>
                   </AccordionContent>
                 </AccordionItem>

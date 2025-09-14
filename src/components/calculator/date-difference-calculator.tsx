@@ -10,6 +10,12 @@ import {
 } from "date-fns";
 import { useEffect } from "react";
 import CalculatorUIWrapper from "./calculator-ui-wrapper";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -164,12 +170,14 @@ export default function DateDifferenceCalculator({
   ) : null;
 
   return (
-    <CalculatorUIWrapper
-      inputCard={inputCard}
-      resultsCard={resultsCard}
-      shareParams={shareParams}
-      elementIds={["date-diff-inputs", "date-diff-results"]}
-      calculatorName={calculatorName}
-    />
+    <>
+      <CalculatorUIWrapper
+        inputCard={inputCard}
+        resultsCard={resultsCard}
+        shareParams={shareParams}
+        elementIds={["date-diff-inputs", "date-diff-results"]}
+        calculatorName={calculatorName}
+      />
+    </>
   );
 }

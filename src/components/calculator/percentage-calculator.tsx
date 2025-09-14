@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { useMemo } from "react";
+import AboutPercentageCalculator from "./about/percentage-calculator";
 import {
   Card,
   CardContent,
@@ -255,6 +256,9 @@ export default function PercentageCalculator() {
           </div>
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutPercentageCalculator />
+      </div>
     </div>
   );
 }
