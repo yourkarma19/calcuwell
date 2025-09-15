@@ -17,7 +17,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "A fast and free GST calculator for India. Easily add tax to a net price or find the pre-tax amount from a gross price. Useful for calculating GST on restaurant bills.",
     formula: "Gross Price = Net Price * (1 + Tax Rate/100)",
     lastUpdated: "2024-07-31",
-    tags: ["gst calculator india", "vat calculator", "sales tax", "add gst", "remove gst", "how is gst calculated on a restaurant bill", "how to calculate the final price after GST is added", "find the original price of an item before the discount"],
+    tags: ["gst calculator india", "vat calculator", "sales tax", "add gst", "remove gst", "how is gst calculated on a restaurant bill", "how to calculate the final price after GST is added", "find the original price of an item before the discount", "sales tax calculator"],
   },
   // New SIP Calculator
   {
@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments for a specific goal (e.g., 1 crore in 15 years). Enter your monthly investment and expected return rate.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
-    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore"],
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator"],
   },
   // New CGPA Calculator
   {
@@ -76,7 +76,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Calculate weekly work hours & gross pay. Enter start/end times & breaks to get an accurate time card summary. Also calculates time duration for work.",
     formula: "Total Hours = Sum(End Time - Start Time - Break Time)",
     lastUpdated: "2024-07-31",
-    tags: ["time card calculator", "work hours calculator", "payroll", "gross pay", "time duration calculator", "take home salary calculator after pf and income tax", "time duration calculator for work hours with a lunch break"],
+    tags: ["time card calculator", "work hours calculator", "payroll", "gross pay", "time duration calculator", "take home salary calculator after pf and income tax", "time duration calculator for work hours with a lunch break", "paycheck calculator"],
   },
   // New Concrete Slab Calculator
   {
@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how long to pay off credit card calculator"]
+    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how long to pay off credit card calculator", "debt consolidation loan calculator", "payday loan calculator"],
   },
 
   // Math & Logic
@@ -553,7 +553,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["emi calculator", "loan calculator", "home loan emi", "car loan emi", "personal loan", "amortization schedule", "loan prepayment", "calculate my home loan EMI for SBI for 20 years at 9%", "home loan prepayment calculator to see how much I can save", "car loan emi calculator with down payment"],
+    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "loan principal and interest calculator", "what if I pay an extra 100 on my mortgage"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -565,7 +565,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Compare two loans instantly. Our calculator shows the EMI and total cost side-by-side to help you choose the cheapest option.",
     lastUpdated: "2024-07-31",
-    tags: ["loan comparison", "emi comparison", "which loan is better", "home loan comparison", "car loan comparison", "personal loan rates", "loan balance transfer calculator for a home loan"],
+    tags: ["loan comparison calculator", "emi comparison", "which loan is better", "home loan comparison", "car loan comparison", "personal loan rates", "loan balance transfer calculator for a home loan", "refinance calculator"],
   },
   {
     slug: "mortgage-calculator",
@@ -578,7 +578,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["mortgage calculator", "home loan", "piti calculator", "amortization", "mortgage payment calculator with taxes and insurance", "how much house can i afford calculator", "mortgage vs rent calculator"],
+    tags: ["mortgage calculator", "home loan calculator", "mortgage payment calculator", "piti calculator", "mortgage calculator with taxes and insurance", "calculate monthly mortgage payment", "what is my mortgage payment with taxes and insurance", "india home loan emi calculator", "home loan eligibility calculator", "mortgage payoff calculator", "early mortgage payoff calculator", "mortgage refinance calculator", "30-year fixed mortgage calculator", "15-year fixed mortgage calculator", "adjustable-rate mortgage calculator", "arm calculator", "bi-weekly mortgage payment calculator", "mortgage renewal calculator", "california mortgage calculator", "texas mortgage calculator", "florida mortgage calculator", "new york mortgage calculator", "canada mortgage calculator", "uk mortgage calculator", "australia home loan calculator"],
   },
   {
     slug: "car-loan-calculator",
@@ -591,7 +591,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. For new and used cars.",
     lastUpdated: "2024-07-31",
-    tags: ["car loan calculator", "emi calculator", "auto loan", "used car loan emi calculator with down payment", "car loan EMI calculator with a down payment for a new car", "calculate the total cost of owning a car including insurance and fuel"],
+    tags: ["car loan calculator", "auto loan calculator", "car loan payment calculator", "car finance calculator", "used car loan calculator", "new car loan calculator", "bad credit car loan calculator", "motorcycle loan calculator", "boat loan calculator", "rv loan calculator", "emi calculator", "car loan emi calculator with down payment for a new car"],
   },
   {
     slug: "simple-interest-calculator",
@@ -641,7 +641,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.",
     lastUpdated: "2024-07-31",
-    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses"],
+    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster"],
   },
   {
     slug: "investment-return-calculator",
@@ -653,7 +653,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
-    tags: ["roi calculator", "investment return", "profit calculator", "mutual fund returns calculator", "annualized roi calculator", "stock market roi"],
+    tags: ["roi calculator", "investment return", "profit calculator", "mutual fund returns calculator", "annualized roi calculator", "stock market roi", "investment property calculator", "real estate investment calculator", "rental property calculator"],
   },
   {
     slug: "stock-profit-loss-calculator",
@@ -725,7 +725,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city"],
+    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -762,6 +762,18 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.",
     lastUpdated: "2024-07-31",
     tags: ["profit margin", "business finance", "profitability ratios", "gross margin", "net profit margin"],
+  },
+  {
+    slug: "loan-affordability-calculator",
+    name: "Loan Affordability Calculator",
+    description: "Estimate how much you can afford to borrow based on your income, debts, and desired loan terms.",
+    category: "Finance",
+    iconName: "Landmark",
+    seoTitle: "How Much Loan Can I Afford Calculator (Based on Salary) | CalcPro",
+    metaDescription:
+      "Estimate how much you can afford to borrow based on your salary, monthly debts, and desired loan terms. For home or car loan planning.",
+    lastUpdated: "2024-07-31",
+    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income"],
   },
 
   // Health & Fitness
@@ -1447,29 +1459,5 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts & get instant results.",
     lastUpdated: "2024-07-31",
     tags: ["typing speed test", "wpm calculator", "keyboarding skills", "typing speed calculator in words per minute"],
-  },
-  {
-    slug: "loan-affordability-calculator",
-    name: "Loan Affordability Calculator",
-    description: "Estimate how much you can afford to borrow based on your income, debts, and desired loan terms.",
-    category: "Miscellaneous",
-    iconName: "Landmark",
-    seoTitle: "How Much Loan Can I Afford Calculator (Based on Salary) | CalcPro",
-    metaDescription:
-      "Estimate how much you can afford to borrow based on your salary, monthly debts, and desired loan terms. For home or car loan planning.",
-    lastUpdated: "2024-07-31",
-    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio"]
-  },
-  {
-    slug: "carbon-footprint-calculator",
-    name: "Carbon Footprint Calculator",
-    description: "Get a rough estimate of your carbon footprint based on your commute, energy use, and diet.",
-    category: "Miscellaneous",
-    iconName: "Footprints",
-    seoTitle: "Personal Carbon Footprint Calculator | CalcPro",
-    metaDescription:
-      "Get a rough estimate of your carbon footprint based on your daily commute, energy use, and diet. Understand your environmental impact.",
-    lastUpdated: "2024-07-31",
-    tags: ["carbon footprint", "environmental impact", "co2 emissions", "calculate the carbon footprint of my daily commute"]
   },
 ];
