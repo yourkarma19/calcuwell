@@ -17,7 +17,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "A fast and free GST calculator for India. Easily add tax to a net price or find the pre-tax amount from a gross price. Useful for calculating GST on restaurant bills.",
     formula: "Gross Price = Net Price * (1 + Tax Rate/100)",
     lastUpdated: "2024-07-31",
-    tags: ["gst calculator india", "vat calculator", "sales tax", "add gst", "remove gst", "how is gst calculated on a restaurant bill", "how to calculate the final price after GST is added", "find the original price of an item before the discount", "sales tax calculator"],
+    tags: ["gst calculator", "vat calculator", "sales tax calculator", "add gst", "remove gst", "how is gst calculated on a restaurant bill", "how to calculate the final price after GST is added", "find the original price of an item before the discount"],
   },
   // New SIP Calculator
   {
@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments for a specific goal (e.g., 1 crore in 15 years). Enter your monthly investment and expected return rate.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
-    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator", "investment calculator with monthly contributions"],
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator with monthly contributions"],
   },
   // New CGPA Calculator
   {
@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how long to pay off credit card calculator", "debt consolidation loan calculator", "payday loan calculator"],
+    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator"],
   },
 
   // Math & Logic
@@ -553,7 +553,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "loan principal and interest calculator", "what if I pay an extra 100 on my mortgage"],
+    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -665,7 +665,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI). Also calculates capital gains.",
     lastUpdated: "2024-07-31",
-    tags: ["stock calculator", "roi calculator", "profit loss", "stock profit calculator", "stock market calculator", "capital gains tax", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator", "capital gains tax calculator"],
+    tags: ["stock calculator", "roi calculator", "profit loss", "stock profit calculator", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator"],
   },
   {
     slug: "currency-converter",
@@ -725,7 +725,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator"],
+    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
