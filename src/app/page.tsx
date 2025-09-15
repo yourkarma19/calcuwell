@@ -17,8 +17,6 @@ import type {
   SoftwareApplication,
   WebPage,
 } from "schema-dts";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const trendingSchema: SoftwareApplication[] = trendingCalculators.map(
   (calc) => ({
@@ -81,9 +79,6 @@ export default function Home() {
             problems in finance, health, math, and more with our easy-to-use
             tools.
           </p>
-          <Button asChild size="lg" className={cn("btn-glossy")}>
-            <Link href="/sitemap">Browse All Calculators</Link>
-          </Button>
         </div>
       </section>
 
