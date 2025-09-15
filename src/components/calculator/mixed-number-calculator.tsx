@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -100,7 +100,7 @@ export default function MixedNumberCalculator() {
               <AccordionTrigger>What Are Mixed Numbers?</AccordionTrigger>
               <AccordionContent>
                 A mixed number is a whole number combined with a proper
-                fraction. It&rsquo;s a way of representing a value greater than
+                fraction. It&apos;s a way of representing a value greater than
                 one. For example, if you have 2 full pizzas and a half pizza,
                 you would write it as 2 ½. This is often more intuitive to
                 understand in daily life than its improper fraction equivalent,
@@ -147,7 +147,7 @@ export default function MixedNumberCalculator() {
               <AccordionContent>
                 Yes, a mixed number can be negative. A negative mixed number
                 like -3 ½ represents the sum of a negative whole number (-3) and
-                a negative fraction (-½), which equals -3.5. It&rsquo;s important
+                a negative fraction (-½), which equals -3.5. It&apos;s important
                 to treat the entire value as negative, not just the whole number
                 part. When converting, -3 ½ would become -(3*2 + 1)/2 = -7/2.
               </AccordionContent>

@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -146,25 +146,25 @@ export default function ProbabilityCalculator() {
                 Probability is calculated by dividing the number of desired
                 outcomes by the total number of possible outcomes. For example,
                 the probability of rolling a 4 on a six-sided die is 1/6
-                because there is only one &rsquo;4&rsquo; (desired outcome) and six total
+                because there is only one &apos;4&apos; (desired outcome) and six total
                 possible outcomes.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>
-                What do &rsquo;P(A and B)&rsquo; and &rsquo;P(A or B)&rsquo; mean for
+                What do &apos;P(A and B)&apos; and &apos;P(A or B)&apos; mean for
                 independent events?
               </AccordionTrigger>
               <AccordionContent>
                 <p className="mb-2">
                   **P(A and B)** is the probability that both independent events
-                  A and B occur. It&rsquo;s calculated by multiplying their individual
+                  A and B occur. It&apos;s calculated by multiplying their individual
                   probabilities: `P(A) * P(B)`. For example, the probability of
                   flipping two heads in a row is 0.5 * 0.5 = 0.25.
                 </p>
                 <p>
                   **P(A or B)** is the probability that either event A or event
-                  B (or both) occur. It&rsquo;s calculated as: `P(A) + P(B) - P(A and
+                  B (or both) occur. It&apos;s calculated as: `P(A) + P(B) - P(A and
                   B)`. You subtract the &ldquo;and&rdquo; probability to avoid double-counting
                   the scenario where both happen.
                 </p>
