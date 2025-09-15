@@ -1,5 +1,6 @@
-
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import type { WebPage, WebSite, WithContext } from "schema-dts";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
 import {
@@ -10,25 +11,16 @@ import {
 } from "@/components/ui/card";
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
-import { ChevronRight } from "lucide-react";
-import type {
-  WebSite,
-  WithContext,
-  SoftwareApplication,
-  WebPage,
-} from "schema-dts";
 import { cn } from "@/lib/utils";
 
-const trendingSchema: SoftwareApplication[] = trendingCalculators.map(
-  (calc) => ({
-    "@type": "SoftwareApplication",
-    name: calc.name,
-    applicationCategory: `${calc.category}Application`,
-    operatingSystem: "Web",
-    url: `https://calcpro.online/calculators/${calc.slug}`,
-    description: calc.description,
-  }),
-);
+const trendingSchema = trendingCalculators.map((calc) => ({
+  "@type": "SoftwareApplication",
+  name: calc.name,
+  applicationCategory: `${calc.category}Application`,
+  operatingSystem: "Web",
+  url: `https://calcpro.online/calculators/${calc.slug}`,
+  description: calc.description,
+}));
 
 const categoriesSchema: WebPage[] = categories.map((cat) => ({
   "@type": "WebPage",
