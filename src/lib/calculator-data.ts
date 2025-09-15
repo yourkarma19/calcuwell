@@ -121,7 +121,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve any cubic equation instantly. Our calculator finds all real & complex roots & shows the steps using the cubic formula. Free & accurate.",
     lastUpdated: "2024-07-31",
-    tags: ["cubic equation calculator", "biquadratic equation calculator", "quartic equation calculator", "algebra calculator", "polynomial solver", "math problem solver"],
+    tags: ["cubic equation calculator", "biquadratic equation calculator", "quartic equation calculator", "algebra calculator", "polynomial solver", "math problem solver", "roots calculator", "zeros of a function calculator"],
   },
   // New Triangle Angle Calculator
   {
@@ -136,7 +136,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate unknown angles in any triangle. Enter side lengths (SSS) or sides and an angle (SAS) to find missing values using the Law of Sines & Cosines.",
     lastUpdated: "2024-07-31",
-    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator", "find the angles of a triangle given the length of three sides", "solve a triangle with three given sides (SSS)", "calculate the interior angles of a triangle given the side ratios", "find the missing angle in a quadrilateral", "calculate the sum of the interior angles of a polygon"],
+    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator", "find the angles of a triangle given the length of three sides", "solve a triangle with three given sides (SSS)", "calculate the interior angles of a triangle given the side ratios", "find the missing angle in a quadrilateral", "calculate the sum of the interior angles of a polygon", "trig calculator", "triangle calculator", "triangle side calculator", "special right triangles calculator", "30 60 90 triangle calculator", "45 45 90 triangle calculator"],
   },
   // New Tangent Line Calculator
   {
@@ -151,7 +151,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.",
     lastUpdated: "2024-07-31",
-    tags: ["tangent line", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "math with steps", "find the equation of the tangent line at a specific point", "find the equation of the normal line to a curve", "how to find the tangent plane to a surface"],
+    tags: ["tangent line", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "math with steps", "find the equation of the tangent line at a specific point", "find the equation of the normal line to a curve", "how to find the tangent plane to a surface", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "newton raphson calculator"],
   },
   // New Fraction to Percentage Calculator
   {
@@ -180,7 +180,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results & see step-by-step calculations.",
     formula: "Set x=0 for y-intercept, set y=0 for x-intercept",
     lastUpdated: "2024-07-31",
-    tags: ["intercept calculator", "linear equation", "algebra", "slope intercept form", "find the x and y intercepts of a linear equation", "slope calculator", "distance formula calculator", "midpoint formula calculator"],
+    tags: ["intercept calculator", "linear equation", "algebra", "slope intercept form", "find the x and y intercepts of a linear equation", "slope calculator", "distance formula calculator", "midpoint formula calculator", "coordinate geometry calculator"],
   },
   // New Decimal to Inches Calculator
   {
@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card calculator", "credit card payoff", "credit card payoff calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator", "credit card interest calculator", "credit card minimum payment calculator"],
+    tags: ["credit card calculator", "credit card payoff", "credit card payoff calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator", "credit card interest calculator", "credit card minimum payment calculator", "budget calculator", "payment calculator"],
   },
 
   // Math & Logic
@@ -313,8 +313,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "order of operations (BODMAS/PEMDAS) calculator", "scientific calculator", "online scientific calculator", 
       "graphing calculator", "online graphing calculator", "scientific calculator with fractions", 
       "scientific calculator with degrees", "scientific calculator with graph", "adding machine calculator", 
-      "online calculator with tape", "calculator with memory functions", "pi button on calculator", 
-      "big number calculator",
+      "online calculator with tape", "calculator with memory functions", "pi button on calculator", "big number calculator",
       "calculator for website", "embeddable calculator", "free calculator widget", "html calculator code",
       "add calculator to my website", "interactive calculator builder", "website calculator plugin",
       "javascript calculator for website", "custom calculator for website", "online calculator for blog",
@@ -506,7 +505,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and the formulas used.",
     lastUpdated: "2024-07-31",
-    tags: ["equation solver", "linear equation calculator", "quadratic equation calculator", "quadratic formula calculator", "solve for x calculator", "algebra calculator", "algebra solver", "math problem solver", "equation solver with steps", "math solver with steps", "pre algebra calculator", "solve an equation with variables on both sides", "how to solve a quadratic equation that cannot be factored", "solve linear equations with variables on both sides"],
+    tags: ["equation solver", "linear equation calculator", "quadratic equation calculator", "quadratic formula calculator", "solve for x calculator", "algebra calculator", "algebra solver", "math problem solver", "equation solver with steps", "math solver with steps", "pre algebra calculator", "solve an equation with variables on both sides", "how to solve a quadratic equation that cannot be factored", "solve linear equations with variables on both sides", "completing the square calculator", "polynomial calculator", "factoring calculator", "factoring polynomials calculator", "foil method calculator", "system of equations calculator", "inequality calculator", "absolute value calculator", "radical equation calculator", "rational equation calculator", "function calculator", "domain and range calculator"],
   },
   {
     slug: "matrix-calculator",
@@ -595,7 +594,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. For new and used cars.",
     lastUpdated: "2024-07-31",
-    tags: ["car loan calculator", "auto loan calculator", "car loan payment calculator", "car finance calculator", "used car loan calculator", "new car loan calculator", "bad credit car loan calculator", "motorcycle loan calculator", "boat loan calculator", "rv loan calculator", "emi calculator", "car loan emi calculator with down payment for a new car"],
+    tags: ["car loan calculator", "auto loan calculator", "car loan payment calculator", "car finance calculator", "used car loan calculator", "new car loan calculator", "bad credit car loan calculator", "motorcycle loan calculator", "boat loan calculator", "rv loan calculator", "emi calculator", "car loan emi calculator with down payment for a new car", "student loan calculator"],
   },
   {
     slug: "simple-interest-calculator",
@@ -729,7 +728,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -826,7 +825,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "macros for muscle gain calculator", "keto calculator", "ketogenic diet calculator", "net carbs calculator", "low carb macro calculator", "paleo macro calculator", 
       "iifym calculator", "if it fits your macros calculator", "protein intake calculator", "protein calculator for bodybuilding", "daily protein requirement calculator", 
       "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
-      "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator", "calories burned calculator",
+      "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator",
       "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
       "sodium calculator", "points calculator for diet", "food points calculator", 
       "bmr and tdee calculator", "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
@@ -942,7 +941,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate.",
     lastUpdated: "2024-07-31",
-    tags: ["vo2 max calculator", "fitness level", "cardio fitness", "age grade calculator running", "Cooper test calculator", "METs calculator", "metabolic equivalent of task calculator", "activity calorie burner", "how many calories did I burn", "calories burned walking calculator", "calories burned running calculator", "calories burned cycling calculator", "calories burned swimming calculator", "calories burned lifting weights calculator", "exercise calorie calculator", "workout calorie calculator"],
+    tags: ["vo2 max calculator", "fitness level", "cardio fitness", "age grade calculator running", "Cooper test calculator", "METs calculator", "metabolic equivalent of task calculator", "activity calorie burner", "how many calories did I burn", "calories burned calculator", "calories burned walking calculator", "calories burned running calculator", "calories burned cycling calculator", "calories burned swimming calculator", "calories burned lifting weights calculator", "exercise calorie calculator", "workout calorie calculator"],
   },
   {
     slug: "bac-calculator",
@@ -1278,7 +1277,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["circle calculator", "area calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle"],
+    tags: ["circle calculator", "area calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator"],
   },
   {
     slug: "triangle-area-calculator",
@@ -1290,7 +1289,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
     lastUpdated: "2024-07-31",
-    tags: ["triangle calculator", "area calculator", "herons formula", "geometry", "area of a triangle given 3 sides (Heron's formula)", "area of an equilateral triangle with a given side length", "what are the conditions for two triangles to be congruent"],
+    tags: ["triangle calculator", "area calculator", "herons formula", "geometry", "area of a triangle given 3 sides (Heron's formula)", "area of an equilateral triangle with a given side length", "what are the conditions for two triangles to be congruent", "equilateral triangle calculator", "isosceles triangle calculator", "scalene triangle calculator", "area of a triangle calculator"],
   },
   {
     slug: "rectangle-area-calculator",
@@ -1303,7 +1302,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A free online calculator to find the area and perimeter of a rectangle. Just enter the length and width to get instant results. Also find the diagonal.",
     lastUpdated: "2024-07-31",
-    tags: ["rectangle calculator", "area calculator", "perimeter", "geometry", "find the diagonal of a rectangle with given length and width", "how to calculate the surface area of a rectangular prism"],
+    tags: ["rectangle calculator", "area calculator", "perimeter", "geometry", "find the diagonal of a rectangle with given length and width", "how to calculate the surface area of a rectangular prism", "square area calculator", "parallelogram area calculator", "trapezoid area calculator", "rhombus area calculator", "polygon calculator", "regular polygon area calculator", "plane geometry calculator", "surface area calculator"],
   },
   {
     slug: "cylinder-volume-calculator",
@@ -1315,7 +1314,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Also calculates volume in liters for tanks.",
     lastUpdated: "2024-07-31",
-    tags: ["cylinder volume", "surface area calculator", "geometry", "3d shapes", "calculate the volume of a cylindrical tank in liters or gallons", "surface area of a cylinder including the top and bottom", "how to calculate the height of a cylinder given its volume and radius", "find the volume of an oblique cylinder"],
+    tags: ["cylinder volume", "surface area calculator", "geometry", "3d shapes", "calculate the volume of a cylindrical tank in liters or gallons", "surface area of a cylinder including the top and bottom", "how to calculate the height of a cylinder given its volume and radius", "find the volume of an oblique cylinder", "volume calculator", "solid geometry calculator", "rectangular prism volume calculator"],
   },
   {
     slug: "sphere-volume-surface-area-calculator",
@@ -1327,7 +1326,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly calculate the volume and surface area of a sphere by providing its radius. Our calculator uses standard geometric formulas.",
     lastUpdated: "2024-07-31",
-    tags: ["sphere volume", "surface area", "geometry calculator", "3d shapes", "find the radius of a sphere given its volume", "calculate the volume of a sphere in cubic meters", "find the surface area of a torus"],
+    tags: ["sphere volume", "surface area", "geometry calculator", "3d shapes", "find the radius of a sphere given its volume", "calculate the volume of a sphere in cubic meters", "find the surface area of a torus", "volume of a sphere calculator", "surface area of a sphere calculator"],
   },
   {
     slug: "cone-volume-calculator",
@@ -1339,7 +1338,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the volume, slant height, and total surface area of a cone. Just enter the radius and height to get instant results.",
     lastUpdated: "2024-07-31",
-    tags: ["cone volume", "surface area", "geometry", "3d shapes", "surface area of a cone formula and step-by-step calculation", "volume of a cone vs volume of a cylinder", "how to find the slant height of a cone with its volume"],
+    tags: ["cone volume", "surface area", "geometry", "3d shapes", "surface area of a cone formula and step-by-step calculation", "volume of a cone vs volume of a cylinder", "how to find the slant height of a cone with its volume", "cone volume calculator", "cube volume calculator", "pyramid volume calculator"],
   },
   {
     slug: "pythagorean-theorem-calculator",
@@ -1352,7 +1351,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Finds the hypotenuse or a missing leg.",
     seoTitle: "Pythagorean Theorem Calculator (Find Hypotenuse or Side) | CalcPro",
     lastUpdated: "2024-07-31",
-    tags: ["pythagorean theorem", "right triangle calculator", "hypotenuse", "geometry", "pythagorean theorem calculator for a missing hypotenuse", "check if three sides form a right-angled triangle", "pythagorean triples generator", "pythagorean theorem calculator for 3D shapes"],
+    tags: ["pythagorean theorem", "right triangle calculator", "hypotenuse", "geometry", "pythagorean theorem calculator for a missing hypotenuse", "check if three sides form a right-angled triangle", "pythagorean triples generator", "pythagorean theorem calculator for 3D shapes", "pythagorean theorem calculator with steps", "hypotenuse calculator"],
   },
   {
     slug: "trigonometry-calculator",
@@ -1364,7 +1363,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A free trig calculator to find the sine, cosine, tangent, and their inverses (arcsin, acos, atan) for any angle in degrees or radians.",
     lastUpdated: "2024-07-31",
-    tags: ["trigonometry calculator", "sin cos tan", "unit circle", "inverse trig", "find sin cos tan values for any angle in degrees", "find the missing side of a right triangle using trigonometry", "find the missing angle of a right triangle using inverse trig functions"],
+    tags: ["trigonometry calculator", "sin cos tan", "unit circle", "inverse trig", "find sin cos tan values for any angle in degrees", "find the missing side of a right triangle using trigonometry", "find the missing angle of a right triangle using inverse trig functions", "trig calculator", "sine calculator", "cosine calculator", "tangent calculator", "inverse trig functions calculator", "unit circle calculator"],
   },
   {
     slug: "beam-deflection-calculator",
