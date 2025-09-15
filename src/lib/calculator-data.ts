@@ -47,7 +47,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Accurately calculate your CGPA by entering your semester GPAs (SGPA) and credits. Also helps convert CGPA to percentage for college admissions (e.g., for CBSE, GTU).",
     formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Total Creditsᵢ)",
     lastUpdated: "2024-07-31",
-    tags: ["cgpa calculator", "sgpa to cgpa", "gpa to percentage", "education", "how to convert cgpa to percentage", "gtu spi to percentage", "how to convert CGPA to percentage for CBSE board for college admission", "GTU SPI to percentage conversion calculator", "convert CGPA to percentage for engineering students in India"],
+    tags: ["cgpa calculator", "sgpa to cgpa", "gpa to percentage", "education", "how to convert cgpa to percentage", "gtu spi to percentage", "how to convert CGPA to percentage for CBSE board for college admission", "GTU SPI to percentage conversion calculator", "convert CGPA to percentage for engineering students in India", "grade percentage to gpa converter"],
   },
   // New Net Calorie Calculator
   {
@@ -262,7 +262,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
     lastUpdated: "2024-07-31",
-    tags: ["pet age", "dog years", "cat years", "human years"]
+    tags: ["pet age", "dog years", "cat years", "human years", "dog age calculator", "cat age calculator"]
   },
   {
     slug: "pet-care-cost-calculator",
@@ -360,7 +360,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Also converts mixed numbers to improper fractions with steps.",
     lastUpdated: "2024-07-31",
-    tags: ["mixed number calculator", "improper fraction", "fraction math", "mixed number to improper fraction converter with steps", "how to convert a repeating decimal to a fraction calculator", "mixed fraction to improper fraction calculator", "improper fraction to mixed fraction calculator"],
+    tags: ["mixed number calculator", "improper fraction", "fraction math", "mixed number to improper fraction calculator with steps", "how to convert a repeating decimal to a fraction calculator", "mixed fraction to improper fraction calculator", "improper fraction to mixed fraction calculator"],
   },
   {
     slug: "ratio-calculator",
@@ -656,7 +656,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
-    tags: ["roi calculator", "investment return calculator", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "certificate of deposit calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "cryptocurrency investment calculator", "bitcoin profit calculator", "house flipping calculator", "brrrr method calculator", "cap rate calculator", "net worth calculator", "investment fee calculator", "robo-advisor fee calculator", "financial advisor value calculator", "investment risk tolerance calculator", "compound annual growth rate calculator", "cagr calculator"],
+    tags: ["roi calculator", "investment return calculator", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "certificate of deposit calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "house flipping calculator", "brrrr method calculator", "cap rate calculator", "net worth calculator", "investment fee calculator", "robo-advisor fee calculator", "financial advisor value calculator", "investment risk tolerance calculator", "compound annual growth rate calculator", "cagr calculator"],
   },
   {
     slug: "stock-profit-loss-calculator",
@@ -728,7 +728,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "gst calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -893,7 +893,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Includes a week-by-week pregnancy calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["due date calculator", "pregnancy calculator", "conception calculator", "pregnancy week calculator", "estimated due date calculator", "edd calculator", "due date calculator by last period", "lmp calculator", "due date calculator by conception date", "due date calculator ivf", "ivf transfer date calculator", "pregnancy weight gain calculator", "pregnancy test calculator", "when to take a pregnancy test calculator", "hcg calculator", "beta hcg doubling calculator", "reverse due date calculator", "when did I conceive calculator", "how many weeks pregnant am I calculator", "trimester calculator", "fetal age calculator", "chinese gender predictor", "baby due date calculator", "pregnancy wheel online", "due date calculator for twins", "first trimester due date calculator", "ultrasound due date calculator", "what is my due date", "calculate my baby's due date", "implantation calculator", "breastfeeding calculator", "milk intake calculator for baby"]
+    tags: ["due date calculator", "pregnancy calculator", "conception calculator", "pregnancy week calculator", "estimated due date calculator", "edd calculator", "due date calculator by last period", "lmp calculator", "due date calculator by conception date", "due date calculator ivf", "ivf transfer date calculator", "pregnancy weight gain calculator", "pregnancy test calculator", "when to take a pregnancy test calculator", "hcg calculator", "beta hcg doubling calculator", "reverse due date calculator", "when did I conceive calculator", "how many weeks pregnant am I calculator", "trimester calculator", "fetal age calculator", "chinese gender predictor", "baby due date calculator", "pregnancy wheel online", "due date calculator for twins", "first trimester due date calculator", "ultrasound due date calculator", "what is my due date", "calculate my baby's due date", "implantation calculator", "breastfeeding calculator", "milk intake calculator for baby"],
   },
   {
     slug: "ovulation-calculator",
@@ -967,7 +967,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.",
     lastUpdated: "2024-07-31",
-    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking measurement converter", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter"],
+    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking measurement converter", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter", "baking converter", "recipe converter"],
   },
   {
     slug: "data-storage-converter",
@@ -979,7 +979,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert between digital data storage units, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).",
     lastUpdated: "2024-07-31",
-    tags: ["data storage", "kb to mb", "gb to mb", "file size converter", "data storage converter", "mb to gb converter", "gb to tb converter", "kb to mb converter", "bits to bytes converter", "computer storage units conversion"],
+    tags: ["data storage converter", "kb to mb", "gb to mb", "file size converter", "mb to gb converter", "gb to tb converter", "kb to mb converter", "bits to bytes converter", "computer storage units conversion"],
   },
   {
     slug: "data-transfer-rate-converter",
@@ -991,7 +991,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed & file downloads.",
     lastUpdated: "2024-07-31",
-    tags: ["data transfer rate", "mbps to mbs", "internet speed converter", "bandwidth converter", "mbps to MB/s converter", "data transfer rate converter"]
+    tags: ["data transfer rate converter", "mbps to mbs", "internet speed converter", "bandwidth converter", "mbps to MB/s converter"]
   },
   {
     slug: "time-converter",
@@ -1063,7 +1063,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicles.",
     lastUpdated: "2024-07-31",
-    tags: ["fuel efficiency", "mpg to l/100km", "mileage calculator", "car mileage calculator kmpl india", "fuel cost calculator for a road trip from Ahmedabad to Mumbai", "fuel consumption converter"]
+    tags: ["fuel efficiency converter", "mpg to l/100km", "mileage calculator", "car mileage calculator kmpl india", "fuel cost calculator for a road trip from Ahmedabad to Mumbai", "fuel consumption converter", "fuel economy converter", "gas mileage calculator"]
   },
 
   // Date & Time
@@ -1115,7 +1115,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily convert the time between different time zones around the world. Find the time difference between any two cities instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["time zone converter", "world clock", "time difference"]
+    tags: ["time zone converter", "world clock", "time difference", "world clock converter", "gmt converter", "pst to est converter"]
   },
   {
     slug: "world-clock-calculator",
@@ -1190,7 +1190,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.",
     lastUpdated: "2024-07-31",
-    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter"],
+    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter", "hexadecimal converter"],
   },
   {
     slug: "ascii-text-converter",
@@ -1277,7 +1277,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["circle calculator", "area calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator"],
+    tags: ["circle calculator", "area of a circle calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator"],
   },
   {
     slug: "triangle-area-calculator",
@@ -1462,7 +1462,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how long it will take to read any text. Paste your content & adjust the Words Per Minute (WPM) for a personalized reading time.",
     lastUpdated: "2024-07-31",
-    tags: ["reading time", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute"],
+    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter"],
   },
   {
     slug: "typing-speed-calculator",
@@ -1474,6 +1474,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Test your typing speed and accuracy with our free Words Per Minute (WPM) calculator. Practice with sample texts & get instant results.",
     lastUpdated: "2024-07-31",
-    tags: ["typing speed test", "wpm calculator", "keyboarding skills", "typing speed calculator in words per minute"],
+    tags: ["typing speed test", "wpm calculator", "keyboarding skills", "typing speed calculator in words per minute", "typing speed converter"],
   },
 ];
