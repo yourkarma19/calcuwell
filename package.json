@@ -1,6 +1,7 @@
 {
   "name": "calcpro",
   "version": "0.1.0",
+  "description": "Triggering a rebuild to fix chunk loading issues.",
   "private": true,
   "scripts": {
     "dev": "next dev",
