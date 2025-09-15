@@ -165,7 +165,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly convert any fraction to a percentage with our free online tool. Shows you the calculation steps and the final answer instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["fraction to percentage", "math converter", "percentage calculator", "fraction to decimal to percentage conversion chart and calculator"],
+    tags: ["fraction to percentage", "math converter", "percentage calculator", "fraction to decimal to percentage conversion chart and calculator", "fraction to percent calculator"],
   },
   // New Intercept Calculator
   {
@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card payoff", "credit card calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator"],
+    tags: ["credit card calculator", "credit card payoff", "credit card payoff calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator"],
   },
 
   // Math & Logic
@@ -310,7 +310,11 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "calculator app online", "virtual calculator", "computer calculator online", "standard calculator online", 
       "everyday calculator", "quick calculator online", "online problem solver", "calculation website", 
       "online converter", "free online conversion tools", "arithmetic", "free scientific calculator online", 
-      "order of operations (BODMAS/PEMDAS) calculator",
+      "order of operations (BODMAS/PEMDAS) calculator", "scientific calculator", "online scientific calculator", 
+      "graphing calculator", "online graphing calculator", "scientific calculator with fractions", 
+      "scientific calculator with degrees", "scientific calculator with graph", "adding machine calculator", 
+      "online calculator with tape", "calculator with memory functions", "pi button on calculator", 
+      "big number calculator",
       "calculator for website", "embeddable calculator", "free calculator widget", "html calculator code",
       "add calculator to my website", "interactive calculator builder", "website calculator plugin",
       "javascript calculator for website", "custom calculator for website", "online calculator for blog",
@@ -333,7 +337,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate percentages. Find the percentage of a number, percent increase/decrease, or calculate percentage of marks for exams.",
     lastUpdated: "2024-07-31",
-    tags: ["percentage calculator", "percent change", "what is x percent of y", "how to calculate percentage of marks", "how to calculate percentage of marks obtained in all subjects", "what is the formula to calculate percentage increase between two numbers", "percentage difference calculator for comparing two values", "online percentage calculator with steps for homework", "how to calculate reverse percentage to find the original price", "percentage of a number calculator for word problems", "percentage difference vs percentage error calculator"],
+    tags: ["percentage calculator", "percent calculator", "percent change", "what is x percent of y", "how to calculate percentage of marks", "how to calculate percentage of marks obtained in all subjects", "what is the formula to calculate percentage increase between two numbers", "percentage difference calculator for comparing two values", "online percentage calculator with steps for homework", "how to calculate reverse percentage to find the original price", "percentage of a number calculator for word problems", "percentage difference vs percentage error calculator", "percentage increase calculator", "percentage decrease calculator", "percentage change calculator", "what is x percent of y calculator", "x is what percent of y calculator"],
   },
   {
     slug: "fraction-calculator",
@@ -345,7 +349,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Our free fraction calculator makes math easy. Add, subtract, multiply, and divide proper and improper fractions with step-by-step results.",
     lastUpdated: "2024-07-31",
-    tags: ["fraction calculator", "simplify fractions", "math problem solver", "add and subtract fractions with different denominators calculator", "simplify fractions with large numbers step-by-step", "how to divide fractions by a whole number calculator", "compare fractions with unlike denominators calculator"],
+    tags: ["fraction calculator", "simplify fractions", "math problem solver", "add and subtract fractions with different denominators calculator", "simplify fractions with large numbers step-by-step", "how to divide fractions by a whole number calculator", "compare fractions with unlike denominators calculator", "fraction to decimal calculator", "decimal to fraction calculator", "add fractions calculator", "subtract fractions calculator", "multiply fractions calculator", "divide fractions calculator", "simplify fractions calculator"],
   },
   {
     slug: "mixed-number-calculator",
@@ -357,7 +361,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator for adding, subtracting, multiplying, and dividing mixed numbers. Also converts mixed numbers to improper fractions with steps.",
     lastUpdated: "2024-07-31",
-    tags: ["mixed number calculator", "improper fraction", "fraction math", "mixed number to improper fraction converter with steps", "how to convert a repeating decimal to a fraction calculator"],
+    tags: ["mixed number calculator", "improper fraction", "fraction math", "mixed number to improper fraction converter with steps", "how to convert a repeating decimal to a fraction calculator", "mixed fraction to improper fraction calculator", "improper fraction to mixed fraction calculator"],
   },
   {
     slug: "ratio-calculator",
@@ -369,7 +373,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our online ratio calculator to simplify ratios and find missing values in a proportion. Fast, easy, and perfect for scaling recipes or drawings.",
     lastUpdated: "2024-07-31",
-    tags: ["ratio calculator", "simplify ratio", "proportion calculator", "ratio calculator for scaling a recipe up or down", "ratio calculator to scale a recipe or drawing"],
+    tags: ["ratio calculator", "simplify ratio", "proportion calculator", "ratio calculator for scaling a recipe or down", "ratio calculator to scale a recipe or drawing", "simplify ratio calculator"],
   },
   {
     slug: "proportion-calculator",
@@ -393,7 +397,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly find the mean, median, mode, and range of any data set. Our calculator helps you understand the central tendency of your data.",
     lastUpdated: "2024-07-31",
-    tags: ["mean median mode", "statistics calculator", "average calculator", "what is the difference between mean and median", "find the mean of a set of numbers", "calculate the range of a set of data points", "mean, median, and mode calculator for grouped data", "how to find the five-number summary (min, Q1, median, Q3, max)"],
+    tags: ["mean median mode", "statistics calculator", "average calculator", "what is the difference between mean and median", "find the mean of a set of numbers", "calculate the range of a set of data points", "mean, median, and mode calculator for grouped data", "how to find the five-number summary (min, Q1, median, Q3, max)", "rounding calculator", "round to the nearest tenth calculator"],
   },
   {
     slug: "standard-deviation-calculator",
@@ -442,7 +446,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Our online factorial calculator finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.",
     lastUpdated: "2024-07-31",
-    tags: ["factorial calculator", "n!", "combinatorics", "math", "factorial of a number calculator for n!"],
+    tags: ["factorial calculator", "n!", "combinatorics", "math", "factorial of a number calculator for n!", "long division calculator", "long multiplication calculator", "modulo calculator", "remainder calculator", "significant figures calculator", "sig fig calculator", "order of operations calculator", "pemdas calculator"],
   },
   {
     slug: "lcm-gcd-calculator",
@@ -454,7 +458,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD/GCF) of a set of numbers. A tool for number theory.",
     lastUpdated: "2024-07-31",
-    tags: ["lcm calculator", "gcd calculator", "gcf", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator"],
+    tags: ["lcm calculator", "gcd calculator", "gcf", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator", "least common denominator calculator", "lcd calculator", "prime factorization calculator", "is it a prime number calculator"],
   },
   {
     slug: "square-root-cube-root-calculator",
@@ -578,7 +582,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["mortgage calculator", "home loan calculator", "mortgage payment calculator", "piti calculator", "mortgage calculator with taxes and insurance", "calculate monthly mortgage payment", "what is my mortgage payment with taxes and insurance", "india home loan emi calculator", "home loan eligibility calculator", "mortgage payoff calculator", "early mortgage payoff calculator", "mortgage refinance calculator", "30-year fixed mortgage calculator", "15-year fixed mortgage calculator", "adjustable-rate mortgage calculator", "arm calculator", "bi-weekly mortgage payment calculator", "mortgage renewal calculator", "california mortgage calculator", "texas mortgage calculator", "florida mortgage calculator", "new york mortgage calculator", "canada mortgage calculator", "uk mortgage calculator", "australia home loan calculator"],
+    tags: ["mortgage calculator", "home loan calculator", "mortgage payment calculator", "piti calculator", "mortgage calculator with taxes and insurance", "calculate monthly mortgage payment", "what is my mortgage payment with taxes and insurance", "india home loan emi calculator", "home loan eligibility calculator", "mortgage payoff calculator", "early mortgage payoff calculator", "mortgage refinance calculator", "30-year fixed mortgage calculator", "15-year fixed mortgage calculator", "adjustable-rate mortgage calculator", "arm calculator", "bi-weekly mortgage payment calculator", "mortgage renewal calculator", "california mortgage calculator", "texas mortgage calculator", "florida mortgage calculator", "new york mortgage calculator", "canada mortgage calculator", "uk mortgage calculator", "australia home loan calculator", "home equity loan calculator", "heloc calculator", "construction loan calculator", "land loan calculator", "commercial real estate loan calculator", "fha loan calculator", "va mortgage calculator", "usda loan calculator", "jumbo loan calculator", "interest only loan calculator", "bridge loan calculator", "hard money loan calculator", "vacation home mortgage calculator"],
   },
   {
     slug: "car-loan-calculator",
@@ -629,7 +633,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Project the future value of your savings with our easy calculator. See how deposits, contributions, and interest rates impact your growth.",
     lastUpdated: "2024-07-31",
-    tags: ["savings calculator", "investment calculator", "future value calculator", "fv calculator", "what will my investment be worth calculator", "investment goal calculator", "savings goal calculator", "college savings calculator", "529 plan calculator", "financial planning"],
+    tags: ["savings calculator", "investment calculator", "future value calculator", "fv calculator", "what will my investment be worth calculator", "investment goal calculator", "savings goal calculator", "college savings calculator", "529 plan calculator", "financial planning", "annuity calculator", "annuity payout calculator"],
   },
   {
     slug: "retirement-calculator",
@@ -641,7 +645,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.",
     lastUpdated: "2024-07-31",
-    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "ira calculator", "roth ira calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster", "retirement savings calculator", "how much do I need to retire calculator", "early retirement calculator", "4 percent rule calculator", "retirement withdrawal calculator"],
+    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "ira calculator", "roth ira calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster", "retirement savings calculator", "how much do I need to retire calculator", "early retirement calculator", "4 percent rule calculator", "retirement withdrawal calculator", "401k contribution calculator", "ira contribution calculator", "roth ira conversion calculator", "retirement income calculator", "millionaire calculator", "financial independence calculator", "fire calculator", "taxable vs tax-deferred investment calculator", "social security calculator", "rmd calculator", "required minimum distribution calculator", "401k loan calculator", "ira withdrawal calculator", "roth ira income limits calculator", "sep ira calculator", "simple ira calculator", "tsp calculator", "403b calculator", "defined benefit plan calculator", "retirement calculator by age", "retirement calculator for couples", "social security benefit estimator", "how long will my money last in retirement calculator", "best retirement planning tools", "free retirement planning tools"],
   },
   {
     slug: "investment-return-calculator",
@@ -653,7 +657,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
-    tags: ["roi calculator", "investment return calculator", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "cryptocurrency investment calculator", "bitcoin profit calculator"],
+    tags: ["roi calculator", "investment return calculator", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "certificate of deposit calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "cryptocurrency investment calculator", "bitcoin profit calculator", "house flipping calculator", "brrrr method calculator", "cap rate calculator", "net worth calculator", "investment fee calculator", "robo-advisor fee calculator", "financial advisor value calculator", "investment risk tolerance calculator", "compound annual growth rate calculator", "cagr calculator"],
   },
   {
     slug: "stock-profit-loss-calculator",
@@ -665,7 +669,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI). Also calculates capital gains.",
     lastUpdated: "2024-07-31",
-    tags: ["stock calculator", "stock profit calculator", "roi calculator", "profit loss", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator"],
+    tags: ["stock calculator", "stock profit calculator", "roi calculator", "profit loss", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator", "dividend reinvestment calculator", "drip calculator", "stock average down calculator"],
   },
   {
     slug: "currency-converter",
@@ -677,7 +681,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.",
     lastUpdated: "2024-07-31",
-    tags: ["currency converter", "exchange rate calculator", "inflation calculator", "currency exchange", "live currency converter", "usd to eur converter", "eur to usd converter", "gbp to usd converter", "usd to gbp converter", "usd to jpy converter", "usd to cad converter", "cad to usd converter", "usd to aud converter", "usd to inr converter", "inr to usd converter", "forex calculator", "money converter", "dollar to euro converter", "pound to dollar converter", "historical exchange rates", "currency converter with bank fee", "mastercard currency converter", "visa exchange rate calculator", "paypal currency converter"],
+    tags: ["currency converter", "exchange rate calculator", "currency exchange", "live currency converter", "usd to eur converter", "eur to usd converter", "gbp to usd converter", "usd to gbp converter", "usd to jpy converter", "usd to cad converter", "cad to usd converter", "usd to aud converter", "usd to inr converter", "inr to usd converter", "forex calculator", "money converter", "dollar to euro converter", "pound to dollar converter", "historical exchange rates", "currency converter with bank fee", "mastercard currency converter", "visa exchange rate calculator", "paypal currency converter"],
   },
   {
     slug: "inflation-calculator",
@@ -725,7 +729,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "gst calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -749,7 +753,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.",
     lastUpdated: "2024-07-31",
-    tags: ["break even point", "business calculator", "cost analysis", "for small business owners", "contribution margin", "break even point calculator", "margin calculator"],
+    tags: ["break even point", "business calculator", "cost analysis", "for small business owners", "contribution margin", "break even point calculator", "margin calculator", "financial ratio calculator", "working capital calculator", "business loan calculator", "sba loan calculator", "equipment financing calculator"],
   },
   {
     slug: "business-profit-margin-calculator",
@@ -824,7 +828,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
       "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator", 
       "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
-      "sodium calculator", "points calculator for diet", "food points calculator", "bmr and tdee calculator", 
+      "sodium calculator", "points calculator for diet", "food points calculator", 
       "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
       "very active calorie calculator", "extra active calorie calculator", "calorie tracker online", "free macro tracker", "keto diet food list calculator"
     ],
@@ -926,7 +930,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine your target heart rate zones for exercise. Use our calculator to find your optimal zones for fat burning, cardio, and performance.",
     lastUpdated: "2024-07-31",
-    tags: ["heart rate zone calculator", "target heart rate calculator", "fat burning zone", "cardio", "training pace calculator", "karvonen formula calculator"]
+    tags: ["heart rate zone calculator", "target heart rate calculator", "fat burning zone", "cardio", "training pace calculator", "karvonen formula calculator", "pace calculator", "running pace calculator", "race pace calculator", "5k pace calculator", "10k pace calculator", "half marathon pace calculator", "marathon pace calculator", "cycling pace calculator", "swimming pace calculator", "triathlon pace calculator", "run pace calculator"],
   },
   {
     slug: "vo2-max-calculator",
