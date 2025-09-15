@@ -209,9 +209,9 @@ export default function WaistToHipRatioCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 WHR provides information about body fat distribution. Storing
-                more fat around your waist (an &rsquo;apple&rsquo; shape) is linked to a higher
+                more fat around your waist (an &apos;apple&apos; shape) is linked to a higher
                 risk of heart disease and type 2 diabetes than storing fat on
-                your hips (a &rsquo;pear&rsquo; shape). BMI does not account for this.
+                your hips (a &apos;pear&apos; shape). BMI does not account for this.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

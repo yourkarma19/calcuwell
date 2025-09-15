@@ -237,6 +237,58 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     lastUpdated: "2024-07-31",
     tags: ["partial fractions", "partial fraction decomposition calculator", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "newton raphson calculator"],
   },
+  // New Working Days Calculator
+  {
+    slug: "working-days-calculator",
+    name: "Working Days Calculator",
+    description: "Calculate the number of working days (business days) between two dates, excluding weekends.",
+    category: "Date & Time",
+    iconName: "Briefcase",
+    seoTitle: "Working & Business Days Counter (Excluding Weekends) | CalcPro",
+    metaDescription:
+      "Calculate the number of working days (business days) between two dates. This tool excludes Saturdays and Sundays to give you an accurate count.",
+    lastUpdated: "2024-07-31",
+    tags: ["working days calculator", "business days", "date calculator", "calculate working days between two dates excluding weekends and holidays", "business day calculator", "workday counter"],
+  },
+  // New Torque Calculator
+  {
+    slug: "torque-calculator",
+    name: "Torque Calculator",
+    description: "Calculate the resulting torque by entering the force and distance (lever arm length).",
+    category: "Geometry & Engineering",
+    iconName: "Wind",
+    seoTitle: "Torque Calculator (Force x Distance) | CalcPro",
+    metaDescription:
+      "Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering.",
+    lastUpdated: "2024-07-31",
+    tags: ["torque calculator", "physics", "engineering", "moment of force"],
+  },
+  // New Lean Body Mass Calculator
+  {
+    slug: "lean-body-mass-calculator",
+    name: "Lean Body Mass Calculator",
+    description: "Estimate your lean body mass (fat-free mass) using the Boer formula.",
+    category: "Health",
+    iconName: "Bone",
+    seoTitle: "Lean Body Mass (LBM) & Fat-Free Mass Calc | CalcPro",
+    metaDescription:
+      "Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle and bone.",
+    lastUpdated: "2024-07-31",
+    tags: ["lean body mass calculator", "lbm calculator", "body composition", "lean body mass formula", "fat free mass index calculator ffmi"]
+  },
+  // New Waist-to-Hip Ratio Calculator
+  {
+    slug: "waist-to-hip-ratio-calculator",
+    name: "Waist-to-Hip Ratio Calculator",
+    description: "Calculate your Waist-to-Hip Ratio to assess body fat distribution and potential health risks.",
+    category: "Health",
+    iconName: "Ruler",
+    seoTitle: "Waist-to-Hip Ratio (WHR) Health Risk Calc | CalcPro",
+    metaDescription:
+      "Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.",
+    lastUpdated: "2024-07-31",
+    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk", "how to measure waist for calculator", "weight category calculator"]
+  },
 
   // Lifestyle
   {
@@ -860,30 +912,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     tags: ["body fat percentage calculator", "body fat calculator", "fitness assessment", "body composition calculator", "army body fat calculator", "navy body fat calculator", "body fat calculator with tape measure", "skinfold caliper body fat calculator", "3-site skinfold calculator", "7-site skinfold calculator", "jackson pollock body fat formula", "durnin womersley body fat calculator", "body fat calculator with pictures", "estimate body fat percentage", "accurate body fat calculator"]
   },
   {
-    slug: "lean-body-mass-calculator",
-    name: "Lean Body Mass Calculator",
-    description: "Estimate your lean body mass (fat-free mass) using the Boer formula.",
-    category: "Health",
-    iconName: "Bone",
-    seoTitle: "Lean Body Mass (LBM) & Fat-Free Mass Calc | CalcPro",
-    metaDescription:
-      "Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle and bone.",
-    lastUpdated: "2024-07-31",
-    tags: ["lean body mass calculator", "lbm calculator", "body composition", "lean body mass formula", "fat free mass index calculator ffmi"]
-  },
-  {
-    slug: "waist-to-hip-ratio-calculator",
-    name: "Waist-to-Hip Ratio Calculator",
-    description: "Calculate your Waist-to-Hip Ratio to assess body fat distribution and potential health risks.",
-    category: "Health",
-    iconName: "Ruler",
-    seoTitle: "Waist-to-Hip Ratio (WHR) Health Risk Calc | CalcPro",
-    metaDescription:
-      "Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.",
-    lastUpdated: "2024-07-31",
-    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk", "how to measure waist for calculator", "weight category calculator"]
-  },
-  {
     slug: "pregnancy-due-date-calculator",
     name: "Pregnancy Due Date Calculator",
     description: "Estimate your baby's due date based on your last menstrual period (LMP) or conception date.",
@@ -1131,18 +1159,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     tags: ["world clock", "time zones", "local time", "online stopwatch", "online timer", "alarm clock online"]
   },
   {
-    slug: "working-days-calculator",
-    name: "Working Days Calculator",
-    description: "Calculate the number of working days (business days) between two dates, excluding weekends.",
-    category: "Date & Time",
-    iconName: "Briefcase",
-    seoTitle: "Working & Business Days Counter (Excluding Weekends) | CalcPro",
-    metaDescription:
-      "Calculate the number of working days (business days) between two dates. This tool excludes Saturdays and Sundays to give you an accurate count.",
-    lastUpdated: "2024-07-31",
-    tags: ["working days calculator", "business days", "date calculator", "calculate working days between two dates excluding weekends and holidays", "business day calculator", "workday counter"]
-  },
-  {
     slug: "week-number-calculator",
     name: "Week Number Calculator",
     description: "Quickly find the week number for any date using different standards, including ISO 8601.",
@@ -1377,18 +1393,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "A simple calculator to find the maximum deflection of a cantilever beam with a point load at the end. For structural engineers.",
     lastUpdated: "2024-07-31",
     tags: ["beam deflection", "structural engineering", "cantilever beam", "engineering calculator"],
-  },
-  {
-    slug: "torque-calculator",
-    name: "Torque Calculator",
-    description: "Calculate the resulting torque by entering the force and distance (lever arm length).",
-    category: "Geometry & Engineering",
-    iconName: "Wind",
-    seoTitle: "Torque Calculator (Force x Distance) | CalcPro",
-    metaDescription:
-      "Calculate the resulting torque by entering the force and distance (lever arm length). An easy tool for physics and engineering.",
-    lastUpdated: "2024-07-31",
-    tags: ["torque calculator", "physics", "engineering", "moment of force"],
   },
   {
     slug: "ohms-law-calculator",
