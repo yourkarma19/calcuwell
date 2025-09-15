@@ -302,7 +302,7 @@ export default function BMICalculator({
                 <AccordionContent>
                   <p>
                     BMI is a simple tool and does not account for body composition.
-                    It can’t tell the difference between fat and muscle. A muscular
+                    It can&apos;t tell the difference between fat and muscle. A muscular
                     athlete might have a high BMI but be very healthy. For a better
                     picture, consider metrics like body fat percentage or
                     waist-to-hip ratio.

@@ -64,9 +64,9 @@ export default function LoanEMICalculator({
   );
 
   useEffect(() => {
-    const p = searchParams.get("principal");
-    const r = searchParams.get("rate");
-    const t = searchParams.get("tenure");
+    const p = searchParams?.get("principal");
+    const r = searchParams?.get("rate");
+    const t = searchParams?.get("tenure");
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));
     if (t) setTenure(parseFloat(t));

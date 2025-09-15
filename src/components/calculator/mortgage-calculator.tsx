@@ -84,11 +84,11 @@ export default function MortgageCalculator({
   );
 
   useEffect(() => {
-    const p = searchParams.get("principal");
-    const r = searchParams.get("rate");
-    const t = searchParams.get("tenure");
-    const tax = searchParams.get("propertyTax");
-    const ins = searchParams.get("homeInsurance");
+    const p = searchParams?.get("principal");
+    const r = searchParams?.get("rate");
+    const t = searchParams?.get("tenure");
+    const tax = searchParams?.get("propertyTax");
+    const ins = searchParams?.get("homeInsurance");
 
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));
@@ -354,7 +354,7 @@ export default function MortgageCalculator({
                 </AccordionTrigger>
                 <AccordionContent>
                   You can make a larger down payment, choose a longer loan term
-                  (but you&rsquo;ll pay more interest), or shop around for the best
+                  (but you&apos;ll pay more interest), or shop around for the best
                   interest rate. Improving your credit score also helps.
                 </AccordionContent>
               </AccordionItem>

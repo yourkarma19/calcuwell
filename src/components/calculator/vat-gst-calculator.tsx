@@ -29,9 +29,9 @@ export default function VatGstCalculator({
   >("vat-includes", "no");
 
   useEffect(() => {
-    const a = searchParams.get("amount");
-    const r = searchParams.get("rate");
-    const i = searchParams.get("includes");
+    const a = searchParams?.get("amount");
+    const r = searchParams?.get("rate");
+    const i = searchParams?.get("includes");
     if (a) setAmount(parseFloat(a));
     if (r) setTaxRate(parseFloat(r));
     if (i === "yes" || i === "no") setPriceIncludesTax(i);

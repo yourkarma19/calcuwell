@@ -1,6 +1,6 @@
+
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import type { WebPage } from "schema-dts";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
 import {
@@ -12,6 +12,7 @@ import {
 import { categories } from "@/lib/calculators";
 import { trendingCalculators } from "@/lib/trending-calculators";
 import { cn } from "@/lib/utils";
+import type { WebPage } from "schema-dts";
 
 const trendingSchema = trendingCalculators.map((calc) => ({
   "@type": "SoftwareApplication",
@@ -42,14 +43,14 @@ const websiteSchema = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    "query-input": "required name=search_term_string",
+    "query-input": "required name=search_term_string" as any,
   },
   hasPart: [...trendingSchema, ...categoriesSchema],
 };
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center">
+    <div>
       {/* SEO Schema */}
       <script
         type="application/ld+json"

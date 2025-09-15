@@ -70,11 +70,11 @@ export default function LoanAffordabilityCalculator({
   const [dtiRatio, setDtiRatio] = usePersistentState("la-dti", 43); // Debt-to-income ratio
 
   useEffect(() => {
-    const income = searchParams.get("income");
-    const debt = searchParams.get("debt");
-    const rate = searchParams.get("rate");
-    const term = searchParams.get("term");
-    const dti = searchParams.get("dti");
+    const income = searchParams?.get("income");
+    const debt = searchParams?.get("debt");
+    const rate = searchParams?.get("rate");
+    const term = searchParams?.get("term");
+    const dti = searchParams?.get("dti");
 
     if (income) setAnnualIncome(parseFloat(income));
     if (debt) setMonthlyDebt(parseFloat(debt));
