@@ -17,7 +17,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "A fast and free GST calculator for India. Easily add tax to a net price or find the pre-tax amount from a gross price. Useful for calculating GST on restaurant bills.",
     formula: "Gross Price = Net Price * (1 + Tax Rate/100)",
     lastUpdated: "2024-07-31",
-    tags: ["gst calculator", "vat calculator", "sales tax calculator", "add gst", "remove gst", "how is gst calculated on a restaurant bill", "how to calculate the final price after GST is added", "find the original price of an item before the discount"],
+    tags: ["vat calculator", "gst calculator", "sales tax calculator", "add gst", "remove gst", "how is gst calculated on a restaurant bill", "how to calculate the final price after GST is added", "find the original price of an item before the discount"],
   },
   // New SIP Calculator
   {
@@ -121,7 +121,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve any cubic equation instantly. Our calculator finds all real & complex roots & shows the steps using the cubic formula. Free & accurate.",
     lastUpdated: "2024-07-31",
-    tags: ["cubic equation", "algebra calculator", "polynomial solver", "math problem solver"],
+    tags: ["cubic equation calculator", "biquadratic equation calculator", "quartic equation calculator", "algebra calculator", "polynomial solver", "math problem solver"],
   },
   // New Triangle Angle Calculator
   {
@@ -151,7 +151,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.",
     lastUpdated: "2024-07-31",
-    tags: ["tangent line", "calculus calculator", "derivative calculator", "math with steps", "find the equation of the tangent line at a specific point", "find the equation of the normal line to a curve", "how to find the tangent plane to a surface"],
+    tags: ["tangent line", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "math with steps", "find the equation of the tangent line at a specific point", "find the equation of the normal line to a curve", "how to find the tangent plane to a surface"],
   },
   // New Fraction to Percentage Calculator
   {
@@ -178,9 +178,9 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     seoTitle: "X and Y Intercept Finder with Steps | CalcPro",
     metaDescription:
       "A free calculator to find the x and y-intercepts of a line from any equation form. Get instant results & see step-by-step calculations.",
-    formula: "Set x=0 for y-intercept, set y=0 for x-intercept.",
+    formula: "Set x=0 for y-intercept, set y=0 for x-intercept",
     lastUpdated: "2024-07-31",
-    tags: ["intercept calculator", "linear equation", "algebra", "slope intercept form", "find the x and y intercepts of a linear equation"],
+    tags: ["intercept calculator", "linear equation", "algebra", "slope intercept form", "find the x and y intercepts of a linear equation", "slope calculator", "distance formula calculator", "midpoint formula calculator"],
   },
   // New Decimal to Inches Calculator
   {
@@ -235,7 +235,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your calculus homework.",
     lastUpdated: "2024-07-31",
-    tags: ["partial fractions", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral", "partial fraction decomposition for a an integral"],
+    tags: ["partial fractions", "partial fraction decomposition calculator", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral", "partial fraction decomposition for a an integral"],
   },
 
   // Lifestyle
@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card calculator", "credit card payoff", "credit card payoff calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator"],
+    tags: ["credit card calculator", "credit card payoff", "credit card payoff calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator", "credit card interest calculator", "credit card minimum payment calculator"],
   },
 
   // Math & Logic
@@ -458,7 +458,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD/GCF) of a set of numbers. A tool for number theory.",
     lastUpdated: "2024-07-31",
-    tags: ["lcm calculator", "gcd calculator", "gcf", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator", "least common denominator calculator", "lcd calculator", "prime factorization calculator", "is it a prime number calculator"],
+    tags: ["lcm calculator", "gcd calculator", "gcf calculator", "greatest common factor calculator", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator", "least common denominator calculator", "lcd calculator", "prime factorization calculator", "is it a prime number calculator"],
   },
   {
     slug: "square-root-cube-root-calculator",
@@ -470,7 +470,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple calculator to find the square root and cube root of any number. Handles both positive and negative inputs, including non-perfect squares.",
     lastUpdated: "2024-07-31",
-    tags: ["square root calculator", "cube root", "math", "algebra", "find the square root of a non-perfect square", "cube root calculator for negative numbers"],
+    tags: ["square root calculator", "cube root", "math", "algebra", "find the square root of a non-perfect square", "cube root calculator for negative numbers", "roots calculator"],
   },
   {
     slug: "exponent-power-calculator",
@@ -494,7 +494,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs (base 10) and natural logs (ln).",
     lastUpdated: "2024-07-31",
-    tags: ["log calculator", "logarithm", "natural log", "ln calculator", "difference between log (base 10) and ln (natural log)", "logarithm calculator for a base other than 10 or e", "change of base formula for logarithms with examples", "expand a logarithmic expression using log properties", "condense a logarithmic expression into a single logarithm"],
+    tags: ["logarithm calculator", "log calculator", "natural log calculator", "antilog calculator", "exponential equation calculator", "difference between log (base 10) and ln (natural log)", "logarithm calculator for a base other than 10 or e", "change of base formula for logarithms with examples", "expand a logarithmic expression using log properties", "condense a logarithmic expression into a single logarithm"],
   },
   {
     slug: "equation-solver",
@@ -506,7 +506,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve linear (ax+b=c) and quadratic (ax²+bx+c=0) equations instantly. Our online tool provides the solution(s) and the formulas used.",
     lastUpdated: "2024-07-31",
-    tags: ["equation solver", "quadratic formula", "linear equation", "algebra", "solve an equation with variables on both sides", "how to solve a quadratic equation that cannot be factored", "solve linear equations with variables on both sides"],
+    tags: ["equation solver", "linear equation calculator", "quadratic equation calculator", "quadratic formula calculator", "solve for x calculator", "algebra calculator", "algebra solver", "math problem solver", "equation solver with steps", "math solver with steps", "pre algebra calculator", "solve an equation with variables on both sides", "how to solve a quadratic equation that cannot be factored", "solve linear equations with variables on both sides"],
   },
   {
     slug: "matrix-calculator",
@@ -518,7 +518,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple matrix calculator for performing addition and subtraction on 2x2 matrices. Enter the matrix values to get an instant result.",
     lastUpdated: "2024-07-31",
-    tags: ["matrix calculator", "linear algebra", "math", "multiply two matrices of 3x3 size", "find the determinant of a 3x3 matrix", "find the inverse of a 2x2 matrix", "what is an identity matrix and its properties", "solve a system of equations using Cramer's rule", "find the transpose of a matrix", "solve a matrix equation using the inverse matrix"],
+    tags: ["matrix calculator", "linear algebra", "math", "multiply two matrices of 3x3 size", "find the determinant of a 3x3 matrix", "matrix determinant calculator", "matrix inverse calculator", "find the inverse of a 2x2 matrix", "what is an identity matrix and its properties", "solve a system of equations using Cramer's rule", "find the transpose of a matrix", "solve a matrix equation using the inverse matrix", "eigenvalue calculator", "eigenvector calculator", "cross product calculator", "dot product calculator"],
   },
   {
     slug: "complex-number-calculator",
@@ -530,7 +530,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Perform arithmetic on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.",
     lastUpdated: "2024-07-31",
-    tags: ["complex numbers", "algebra", "math", "engineering math", "add, subtract, multiply, and divide complex numbers", "simplifying complex numbers calculator", "find the modulus and argument of a complex number", "convert a complex number to polar form"],
+    tags: ["complex numbers", "imaginary number calculator", "algebra", "math", "engineering math", "add, subtract, multiply, and divide complex numbers", "simplifying complex numbers calculator", "find the modulus and argument of a complex number", "convert a complex number to polar form"],
   },
   {
     slug: "roman-numeral-converter",
@@ -557,7 +557,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator"],
+    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -608,7 +608,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula and explains how it works.",
     lastUpdated: "2024-07-31",
-    tags: ["simple interest", "interest calculator", "investment calculator", "loan interest", "simple interest vs compound interest for a 5-year investment", "daily simple interest calculator"],
+    tags: ["simple interest", "interest calculator", "simple interest calculator", "investment calculator", "loan interest", "simple interest vs compound interest for a 5-year investment", "daily simple interest calculator"],
   },
   {
     slug: "compound-interest-calculator",
@@ -693,7 +693,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our inflation calculator for India to see how the purchasing power of money has changed over time. Calculate inflation-adjusted returns on your investments.",
     lastUpdated: "2024-07-31",
-    tags: ["inflation calculator india", "purchasing power calculator", "cpi calculator", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator", "inflation rate calculator"],
+    tags: ["inflation calculator", "inflation calculator india", "purchasing power calculator", "cpi calculator", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator", "inflation rate calculator"],
   },
   {
     slug: "tip-calculator",
@@ -705,7 +705,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A quick and easy tip calculator. Determine the tip amount for any bill and split the total cost among any number of people.",
     lastUpdated: "2024-07-31",
-    tags: ["tip calculator", "split the bill", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends", "checkbook balance calculator"],
+    tags: ["tip calculator", "split the bill", "split the bill calculator", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends", "checkbook balance calculator"],
   },
   {
     slug: "discount-calculator",
@@ -753,7 +753,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.",
     lastUpdated: "2024-07-31",
-    tags: ["break even point", "business calculator", "cost analysis", "for small business owners", "contribution margin", "break even point calculator", "margin calculator", "financial ratio calculator", "working capital calculator", "business loan calculator", "sba loan calculator", "equipment financing calculator"],
+    tags: ["break even point", "break even point calculator", "business calculator", "cost analysis", "for small business owners", "contribution margin", "margin calculator", "financial ratio calculator", "working capital calculator", "business loan calculator", "sba loan calculator", "equipment financing calculator"],
   },
   {
     slug: "business-profit-margin-calculator",
@@ -777,7 +777,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how much you can afford to borrow based on your salary, monthly debts, and desired loan terms. For home or car loan planning.",
     lastUpdated: "2024-07-31",
-    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income"],
+    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "debt to income ratio calculator", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income"],
   },
 
   // Health & Fitness
@@ -792,7 +792,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Body Mass Index (BMI) to assess your weight status for Indian adults. Our calculator uses the standard formula and provides WHO categories.",
     lastUpdated: "2024-07-31",
-    tags: ["bmi calculator", "body mass index", "bmi calculator for men", "bmi calculator for women", "bmi calculator for child", "teen bmi calculator", "adult bmi calculator", "bmi chart", "what is my bmi", "is my bmi healthy", "bmi calculator kg cm", "bmi calculator lbs inches", "who bmi classification", "cdc bmi calculator for child and teen", "underweight bmi calculator", "overweight bmi calculator", "obesity class calculator", "body fat vs bmi", "body mass index calculator for Indian adults"],
+    tags: ["bmi calculator", "body mass index", "body mass index calculator", "bmi calculator for men", "bmi calculator for women", "bmi calculator for child", "teen bmi calculator", "adult bmi calculator", "bmi chart", "what is my bmi", "is my bmi healthy", "bmi calculator kg cm", "bmi calculator lbs inches", "who bmi classification", "cdc bmi calculator for child and teen", "underweight bmi calculator", "overweight bmi calculator", "obesity class calculator", "body fat vs bmi", "body mass index calculator for Indian adults"],
   },
   {
     slug: "bmr-calculator",
@@ -806,7 +806,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the Mifflin-St Jeor equation.",
     lastUpdated: "2024-07-31",
-    tags: ["bmr calculator", "metabolism", "calorie needs", "tdee", "basal metabolic rate", "bmr calculator harris-benedict", "bmr calculator mifflin st jeor", "total daily energy expenditure calculator", "tdee calculator", "maintenance calorie calculator"]
+    tags: ["bmr calculator", "metabolism", "calorie needs", "tdee", "basal metabolic rate", "basal metabolic rate calculator", "bmr calculator harris-benedict", "bmr calculator mifflin st jeor", "total daily energy expenditure calculator", "tdee calculator", "maintenance calorie calculator"]
   },
   {
     slug: "calorie-needs-calculator",
@@ -820,16 +820,16 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     lastUpdated: "2024-07-31",
     tags: [
       "calorie calculator india", "weight loss diet", "indian diet plan", "macro nutrient calculator for a vegetarian indian diet", "daily calorie intake calculator for weight loss for an Indian diet",
-      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "weight loss calculator", "keto macro calculator", 
+      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "weight loss calculator", "keto macro calculator", "weight loss percentage calculator",
       "protein calculator", "carbohydrate calculator", "fat calculator", "daily calorie needs calculator", "calorie calculator for weight loss", "calorie calculator for weight gain", 
       "calorie calculator to maintain weight", "how many calories should I eat", "weight loss target date calculator", "macros for weight loss calculator", 
       "macros for muscle gain calculator", "keto calculator", "ketogenic diet calculator", "net carbs calculator", "low carb macro calculator", "paleo macro calculator", 
       "iifym calculator", "if it fits your macros calculator", "protein intake calculator", "protein calculator for bodybuilding", "daily protein requirement calculator", 
       "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
-      "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator", 
+      "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator", "calories burned calculator",
       "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
       "sodium calculator", "points calculator for diet", "food points calculator", 
-      "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
+      "bmr and tdee calculator", "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
       "very active calorie calculator", "extra active calorie calculator", "calorie tracker online", "free macro tracker", "keto diet food list calculator"
     ],
   },
@@ -881,7 +881,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.",
     lastUpdated: "2024-07-31",
-    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk", "how to measure waist for calculator"]
+    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk", "how to measure waist for calculator", "weight category calculator"]
   },
   {
     slug: "pregnancy-due-date-calculator",
@@ -942,7 +942,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate.",
     lastUpdated: "2024-07-31",
-    tags: ["vo2 max calculator", "fitness level", "cardio fitness", "age grade calculator running", "Cooper test calculator", "METs calculator", "metabolic equivalent of task calculator"]
+    tags: ["vo2 max calculator", "fitness level", "cardio fitness", "age grade calculator running", "Cooper test calculator", "METs calculator", "metabolic equivalent of task calculator", "activity calorie burner", "how many calories did I burn", "calories burned walking calculator", "calories burned running calculator", "calories burned cycling calculator", "calories burned swimming calculator", "calories burned lifting weights calculator", "exercise calorie calculator", "workout calorie calculator"],
   },
   {
     slug: "bac-calculator",
@@ -1009,7 +1009,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   {
     slug: "energy-converter",
     name: "Energy Converter",
-    description: "Convert between different units of energy, such as Joules, Kilojoules, calories, and kWh.",
+    description: "Convert between different units of energy, such as Joules, calories, and kWh.",
     category: "Conversions",
     iconName: "Atom",
     seoTitle: "Energy Unit Conversion Calculator (J, cal, kWh) | CalcPro",
