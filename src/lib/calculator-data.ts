@@ -826,7 +826,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "iifym calculator", "if it fits your macros calculator", "protein intake calculator", "protein calculator for bodybuilding", "daily protein requirement calculator", 
       "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
       "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator",
-      "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
+      "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
       "sodium calculator", "points calculator for diet", "food points calculator", "safe calorie deficit for weight loss", "what is my calorie deficit",
       "how to calculate calorie deficit", "weight loss percentage calculator", "bmr and tdee calculator", "activity level for tdee calculator", "sedentary calorie calculator",
       "lightly active calorie calculator", "moderately active calorie calculator", "very active calorie calculator", "extra active calorie calculator", "calorie tracker online",
