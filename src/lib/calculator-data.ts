@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator"],
+    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator"],
   },
 
   // Math & Logic
@@ -677,7 +677,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.",
     lastUpdated: "2024-07-31",
-    tags: ["currency converter", "exchange rates", "forex", "usd to inr", "eur to usd", "live currency rates"],
+    tags: ["currency converter", "exchange rate calculator", "inflation calculator", "currency exchange", "live currency converter", "usd to eur converter", "eur to usd converter", "gbp to usd converter", "usd to gbp converter", "usd to jpy converter", "usd to cad converter", "cad to usd converter", "usd to aud converter", "usd to inr converter", "inr to usd converter", "forex calculator", "money converter", "dollar to euro converter", "pound to dollar converter", "historical exchange rates", "currency converter with bank fee", "mastercard currency converter", "visa exchange rate calculator", "paypal currency converter"],
   },
   {
     slug: "inflation-calculator",
@@ -689,7 +689,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our inflation calculator for India to see how the purchasing power of money has changed over time. Calculate inflation-adjusted returns on your investments.",
     lastUpdated: "2024-07-31",
-    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator"],
+    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator", "inflation rate calculator", "purchasing power calculator"],
   },
   {
     slug: "tip-calculator",
@@ -701,7 +701,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A quick and easy tip calculator. Determine the tip amount for any bill and split the total cost among any number of people.",
     lastUpdated: "2024-07-31",
-    tags: ["tip calculator", "split the bill", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends"],
+    tags: ["tip calculator", "split the bill", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends", "checkbook balance calculator"],
   },
   {
     slug: "discount-calculator",
@@ -713,7 +713,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the final price after a discount. Enter the original price & discount percentage to find out how much you will pay and save.",
     lastUpdated: "2024-07-31",
-    tags: ["discount calculator", "sale price", "percentage off", "final price calculator", "find the original price of an item before the discount", "calculate the discount percentage on a product during a sale"],
+    tags: ["discount calculator", "sale price", "percentage off", "final price calculator", "find the original price of an item before the discount", "calculate the discount percentage on a product during a sale", "markup calculator"],
   },
   {
     slug: "salary-calculator",
@@ -749,7 +749,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.",
     lastUpdated: "2024-07-31",
-    tags: ["break even point", "business calculator", "cost analysis", "for small business owners", "contribution margin"],
+    tags: ["break even point", "business calculator", "cost analysis", "for small business owners", "contribution margin", "break even point calculator", "margin calculator"],
   },
   {
     slug: "business-profit-margin-calculator",
@@ -773,7 +773,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how much you can afford to borrow based on your salary, monthly debts, and desired loan terms. For home or car loan planning.",
     lastUpdated: "2024-07-31",
-    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income"],
+    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income", "debt to income ratio calculator"],
   },
 
   // Health & Fitness
@@ -1461,3 +1461,5 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     tags: ["typing speed test", "wpm calculator", "keyboarding skills", "typing speed calculator in words per minute"],
   },
 ];
+
+    
