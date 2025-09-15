@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments for a specific goal (e.g., 1 crore in 15 years). Enter your monthly investment and expected return rate.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
-    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator with monthly contributions", "investment goal calculator", "savings goal calculator"],
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator with monthly contributions", "investment goal calculator", "savings goal calculator", "compound annual growth rate calculator", "cagr calculator"],
   },
   // New CGPA Calculator
   {
@@ -47,7 +47,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Accurately calculate your CGPA by entering your semester GPAs (SGPA) and credits. Also helps convert CGPA to percentage for college admissions (e.g., for CBSE, GTU).",
     formula: "CGPA = Σ(Creditsᵢ * SGPAᵢ) / Σ(Total Creditsᵢ)",
     lastUpdated: "2024-07-31",
-    tags: ["cgpa calculator", "sgpa to cgpa", "gpa to percentage", "education", "how to convert cgpa to percentage", "gtu spi to percentage", "how to convert CGPA to percentage for CBSE board for college admission", "GTU SPI to percentage conversion calculator", "convert CGPA to percentage for engineering students in India", "grade percentage to gpa converter"],
+    tags: ["cgpa calculator", "sgpa to cgpa", "gpa to percentage", "education", "how to convert cgpa to percentage", "gtu spi to percentage", "how to convert CGPA to percentage for CBSE board for college admission", "GTU SPI to percentage conversion calculator", "convert CGPA to percentage for engineering students in India", "grade percentage to gpa converter", "cumulative gpa calculator", "semester gpa calculator"],
   },
   // New Net Calorie Calculator
   {
@@ -728,7 +728,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "gst calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -1078,7 +1078,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find your exact age in years, months, weeks, and days with our online age calculator. Simply enter your date of birth to get your age.",
     lastUpdated: "2024-07-31",
-    tags: ["age calculator", "date of birth calculator", "exact age calculator", "how old am I calculator", "chronological age calculator", "age calculator in years months days", "age calculator in days", "age calculator in hours", "age calculator in seconds", "birthday calculator", "how many days until my birthday", "next birthday calculator", "age calculator by date of birth", "korean age calculator", "how old will I be in 2050", "what year was I born if I am 30", "age finder", "calculate age from dob", "online age calculator", "free age calculator", "age calculator for job application", "retirement age calculator", "zodiac sign calculator", "chinese zodiac calculator", "generation calculator (boomer, gen x, millennial, gen z)", "how old was someone on a certain date", "historical age calculator", "celebrity age calculator", "age calculator app", "age calculator with time", "age as of today calculator", "leap year birthday age calculator", "age problems word problem solver"],
+    tags: ["age calculator", "how old am I calculator", "date of birth calculator", "chronological age calculator", "age calculator in years months days", "age calculator in days", "age calculator in hours", "age calculator in seconds", "birthday calculator", "how many days until my birthday", "next birthday calculator", "age difference calculator", "relationship duration calculator", "how long have we been together calculator", "anniversary calculator", "age calculator by date of birth", "exact age calculator", "korean age calculator", "age calculator from date to date", "how old will I be in 2050", "what year was I born if I am 30", "age finder", "calculate age from dob", "online age calculator", "free age calculator", "age calculator for job application", "retirement age calculator", "zodiac sign calculator", "chinese zodiac calculator", "generation calculator (boomer, gen x, millennial, gen z)", "how old was someone on a certain date", "historical age calculator", "celebrity age calculator", "age calculator app", "age calculator with time", "age as of today calculator", "leap year birthday age calculator", "age problems word problem solver"],
   },
   {
     slug: "date-difference-calculator",
@@ -1190,7 +1190,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.",
     lastUpdated: "2024-07-31",
-    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter", "hexadecimal converter", "scientific notation converter", "scientific notation to decimal converter", "decimal to scientific notation converter"],
+    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter"],
   },
   {
     slug: "ascii-text-converter",
@@ -1438,19 +1438,19 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your GPA quickly and easily. Enter your courses, credits, and grades to find your Grade Point Average on a 4.0 scale.",
     lastUpdated: "2024-07-31",
-    tags: ["gpa calculator", "college gpa", "final grade calculator", "what score do I need on my final exam to get an A", "final grade calculator to see what I need to get an A"]
+    tags: ["gpa calculator", "college gpa", "high school gpa calculator", "gpa scale calculator", "4.0 scale gpa calculator", "gpa calculator for different grading systems", "cumulative gpa calculator", "semester gpa calculator", "how to calculate gpa", "target gpa calculator", "gpa improvement calculator", "unweighted gpa calculator", "weighted gpa calculator", "honors/ap class gpa calculator", "pass/fail grade calculator", "university gpa calculator", "gpa calculator with plus and minus grades", "credit hours calculator"]
   },
   {
     slug: "grade-percentage-calculator",
     name: "Grade Percentage Calculator",
     description: "Find your grade percentage and letter grade by entering the points you earned and the total points.",
-    category: "Miscellaneous",
+    category: "Education",
     iconName: "Percent",
     seoTitle: "Test & Assignment Grade Percentage Calculator | CalcPro",
     metaDescription:
       "Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.",
     lastUpdated: "2024-07-31",
-    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects", "grade percentage to gpa converter"],
+    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects", "grade percentage to gpa converter", "final grade calculator", "what score do I need on my final exam to get an A", "final grade calculator to see what I need to get an A", "easy grader", "test score calculator", "quiz grade calculator", "letter grade calculator", "class grade calculator", "assignment grade calculator", "course grade calculator", "gpa needed for dean's list"],
   },
   {
     slug: "reading-time-calculator",
