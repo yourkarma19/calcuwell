@@ -98,9 +98,9 @@ export default function BMICalculator({
   const [bmi, setBmi] = useState<number | null>(null);
 
   useEffect(() => {
-    const w = searchParams.get("weight");
-    const h = searchParams.get("height");
-    const u = searchParams.get("units");
+    const w = searchParams?.get("weight");
+    const h = searchParams?.get("height");
+    const u = searchParams?.get("units");
 
     if (u === "metric" || u === "imperial") setUnitSystem(u);
     if (w) setWeight(parseFloat(w));
@@ -302,7 +302,7 @@ export default function BMICalculator({
                 <AccordionContent>
                   <p>
                     BMI is a simple tool and does not account for body composition.
-                    It can&rsquo;t tell the difference between fat and muscle. A muscular
+                    It can’t tell the difference between fat and muscle. A muscular
                     athlete might have a high BMI but be very healthy. For a better
                     picture, consider metrics like body fat percentage or
                     waist-to-hip ratio.
