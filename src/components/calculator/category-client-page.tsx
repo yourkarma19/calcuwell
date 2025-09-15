@@ -48,7 +48,7 @@ export default function CategoryClientPage({
         <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
           <IconWrapper iconName={iconName} className="w-16 h-16 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold font-headline text-primary">
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
           {name} Calculators
         </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">

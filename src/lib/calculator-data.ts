@@ -1,4 +1,3 @@
-
 import type { Calculator } from "@/lib/types";
 
 // This file is separate to avoid bloating the initial bundle of pages
@@ -1453,5 +1452,3 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     tags: ["carbon footprint", "environmental impact", "co2 emissions", "calculate the carbon footprint of my daily commute"]
   },
 ];
-
-  

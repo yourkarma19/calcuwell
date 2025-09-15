@@ -26,6 +26,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { FAQPage, WithContext } from "schema-dts";
+import Link from 'next/link';
+
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
@@ -291,12 +293,12 @@ export default function TimeCardCalculator() {
                 No, this is a basic time card calculator and does not
                 automatically calculate overtime pay. To calculate overtime, you
                 would need to separate your regular and overtime hours and use our{" "}
-                <a
+                <Link
                   href="/calculators/overtime-pay-calculator"
                   className="text-primary hover:underline"
                 >
                   Overtime Pay Calculator
-                </a>
+                </Link>
                 .
               </AccordionContent>
             </AccordionItem>

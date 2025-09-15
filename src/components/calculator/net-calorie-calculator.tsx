@@ -114,16 +114,16 @@ export default function NetCalorieCalculator() {
           </p>
           <ul>
             <li>
-              <strong>Calorie Surplus (Positive):</strong> You&apos;ve eaten more
-              calories than you&apos;ve burned. This leads to weight gain.
+              <strong>Calorie Surplus (Positive):</strong> You&rsquo;ve eaten more
+              calories than you&rsquo;ve burned. This leads to weight gain.
             </li>
             <li>
-              <strong>Calorie Deficit (Negative):</strong> You&apos;ve burned more
-              calories than you&apos;ve eaten. This leads to weight loss.
+              <strong>Calorie Deficit (Negative):</strong> You&rsquo;ve burned more
+              calories than you&rsquo;ve eaten. This leads to weight loss.
             </li>
             <li>
-              <strong>Maintenance (Near Zero):</strong> You&apos;ve eaten about
-              the same number of calories you&apos;ve burned, which maintains your
+              <strong>Maintenance (Near Zero):</strong> You&rsquo;ve eaten about
+              the same number of calories you&rsquo;ve burned, which maintains your
               weight.
             </li>
           </ul>
