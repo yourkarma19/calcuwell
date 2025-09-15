@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
 import {
@@ -18,10 +18,11 @@ import usePersistentState from "@/hooks/use-persistent-state";
 
 export default function VatGstCalculator({
   calculatorName,
+  searchParams
 }: {
   calculatorName: string;
+  searchParams: ReadonlyURLSearchParams | null;
 }) {
-  const searchParams = useSearchParams();
   const [amount, setAmount] = usePersistentState("vat-amount", 100);
   const [taxRate, setTaxRate] = usePersistentState("vat-rate", 18);
   const [priceIncludesTax, setPriceIncludesTax] = usePersistentState<
@@ -29,9 +30,9 @@ export default function VatGstCalculator({
   >("vat-includes", "no");
 
   useEffect(() => {
-    const a = searchParams?.get("amount");
-    const r = searchParams?.get("rate");
-    const i = searchParams?.get("includes");
+    const a = searchParams?.get("amount") ?? null;
+    const r = searchParams?.get("rate") ?? null;
+    const i = searchParams?.get("includes") ?? null;
     if (a) setAmount(parseFloat(a));
     if (r) setTaxRate(parseFloat(r));
     if (i === "yes" || i === "no") setPriceIncludesTax(i);

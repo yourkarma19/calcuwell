@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
 import {
@@ -64,10 +64,11 @@ const jsonLd: WithContext<FAQPage> = {
 
 export default function MortgageCalculator({
   calculatorName,
+  searchParams,
 }: {
   calculatorName: string;
+  searchParams: ReadonlyURLSearchParams | null;
 }) {
-  const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState(
     "mortgage-principal",
     250000,
@@ -84,11 +85,11 @@ export default function MortgageCalculator({
   );
 
   useEffect(() => {
-    const p = searchParams?.get("principal");
-    const r = searchParams?.get("rate");
-    const t = searchParams?.get("tenure");
-    const tax = searchParams?.get("propertyTax");
-    const ins = searchParams?.get("homeInsurance");
+    const p = searchParams?.get("principal") ?? null;
+    const r = searchParams?.get("rate") ?? null;
+    const t = searchParams?.get("tenure") ?? null;
+    const tax = searchParams?.get("propertyTax") ?? null;
+    const ins = searchParams?.get("homeInsurance") ?? null;
 
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));

@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
 import {
@@ -56,10 +56,11 @@ const jsonLd: WithContext<FAQPage> = {
 
 export default function LoanAffordabilityCalculator({
   calculatorName,
+  searchParams
 }: {
   calculatorName: string;
+  searchParams: ReadonlyURLSearchParams | null;
 }) {
-  const searchParams = useSearchParams();
   const [annualIncome, setAnnualIncome] = usePersistentState(
     "la-income",
     60000,
@@ -70,11 +71,11 @@ export default function LoanAffordabilityCalculator({
   const [dtiRatio, setDtiRatio] = usePersistentState("la-dti", 43); // Debt-to-income ratio
 
   useEffect(() => {
-    const income = searchParams?.get("income");
-    const debt = searchParams?.get("debt");
-    const rate = searchParams?.get("rate");
-    const term = searchParams?.get("term");
-    const dti = searchParams?.get("dti");
+    const income = searchParams?.get("income") ?? null;
+    const debt = searchParams?.get("debt") ?? null;
+    const rate = searchParams?.get("rate") ?? null;
+    const term = searchParams?.get("term") ?? null;
+    const dti = searchParams?.get("dti") ?? null;
 
     if (income) setAnnualIncome(parseFloat(income));
     if (debt) setMonthlyDebt(parseFloat(debt));

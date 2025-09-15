@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from 'react';
 import CalculatorClientPage from "@/components/calculator/calculator-client-page";
 import {
   getCalculatorBySlug,
@@ -79,7 +80,7 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
   };
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -87,6 +88,6 @@ export default async function CalculatorPage({ params }: CalculatorPageProps) {
         }}
       />
       <CalculatorClientPage calculator={calculator} />
-    </>
+    </Suspense>
   );
 }

@@ -23,7 +23,7 @@ export default function CalculatorWrapper({
 }: CalculatorWrapperProps) {
   const category = categories.find((c) => c.name === calculator.category);
   const searchParams = useSearchParams();
-  const isEmbed = searchParams?.get("embed") === "true";
+  const isEmbed = (searchParams?.get("embed") ?? "false") === "true";
 
   if (isEmbed) {
     return (

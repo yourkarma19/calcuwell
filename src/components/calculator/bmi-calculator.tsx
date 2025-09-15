@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
 import {
@@ -79,10 +79,11 @@ type UnitSystem = "metric" | "imperial";
 
 export default function BMICalculator({
   calculatorName,
+  searchParams
 }: {
   calculatorName: string;
+  searchParams: ReadonlyURLSearchParams | null;
 }) {
-  const searchParams = useSearchParams();
   const [unitSystem, setUnitSystem] = usePersistentState<UnitSystem>(
     "bmi-unit-system",
     "metric",
@@ -98,9 +99,9 @@ export default function BMICalculator({
   const [bmi, setBmi] = useState<number | null>(null);
 
   useEffect(() => {
-    const w = searchParams?.get("weight");
-    const h = searchParams?.get("height");
-    const u = searchParams?.get("units");
+    const w = searchParams?.get("weight") ?? null;
+    const h = searchParams?.get("height") ?? null;
+    const u = searchParams?.get("units") ?? null;
 
     if (u === "metric" || u === "imperial") setUnitSystem(u);
     if (w) setWeight(parseFloat(w));

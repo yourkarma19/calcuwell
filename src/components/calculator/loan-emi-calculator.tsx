@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams } from "next/navigation";
 import { useMemo, useEffect } from "react";
 import ExportShareControls from "./export-share-controls";
 
@@ -44,10 +44,11 @@ function formatCurrency(
 
 export default function LoanEMICalculator({
   calculatorName,
+  searchParams
 }: {
   calculatorName: string;
+  searchParams: ReadonlyURLSearchParams | null;
 }) {
-  const searchParams = useSearchParams();
   const [principal, setPrincipal] = usePersistentState(
     "loan-principal",
     500000,
@@ -64,9 +65,9 @@ export default function LoanEMICalculator({
   );
 
   useEffect(() => {
-    const p = searchParams?.get("principal");
-    const r = searchParams?.get("rate");
-    const t = searchParams?.get("tenure");
+    const p = searchParams?.get("principal") ?? null;
+    const r = searchParams?.get("rate") ?? null;
+    const t = searchParams?.get("tenure") ?? null;
     if (p) setPrincipal(parseFloat(p));
     if (r) setRate(parseFloat(r));
     if (t) setTenure(parseFloat(t));
