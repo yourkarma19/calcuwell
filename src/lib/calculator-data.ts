@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance"]
+    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how long to pay off credit card calculator"]
   },
 
   // Math & Logic
@@ -553,7 +553,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["emi calculator", "loan calculator", "home loan emi", "car loan emi", "calculate my home loan EMI for SBI for 20 years at 9%", "home loan prepayment calculator to see how much I can save"]
+    tags: ["emi calculator", "loan calculator", "home loan emi", "car loan emi", "personal loan", "amortization schedule", "loan prepayment", "calculate my home loan EMI for SBI for 20 years at 9%", "home loan prepayment calculator to see how much I can save", "car loan emi calculator with down payment"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -565,7 +565,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Compare two loans instantly. Our calculator shows the EMI and total cost side-by-side to help you choose the cheapest option.",
     lastUpdated: "2024-07-31",
-    tags: ["loan comparison", "emi comparison", "which loan is better", "loan balance transfer calculator for a home loan"]
+    tags: ["loan comparison", "emi comparison", "which loan is better", "home loan comparison", "car loan comparison", "personal loan rates", "loan balance transfer calculator for a home loan"],
   },
   {
     slug: "mortgage-calculator",
@@ -578,7 +578,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["mortgage calculator", "home loan", "piti calculator", "amortization"]
+    tags: ["mortgage calculator", "home loan", "piti calculator", "amortization", "mortgage payment calculator with taxes and insurance", "how much house can i afford calculator", "mortgage vs rent calculator"],
   },
   {
     slug: "car-loan-calculator",
@@ -591,7 +591,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your monthly car loan payment (EMI) and total cost. Our calculator helps you understand your auto loan before you buy. For new and used cars.",
     lastUpdated: "2024-07-31",
-    tags: ["car loan calculator", "emi calculator", "auto loan", "used car loan emi calculator with down payment", "car loan EMI calculator with a down payment for a new car", "calculate the total cost of owning a car including insurance and fuel"]
+    tags: ["car loan calculator", "emi calculator", "auto loan", "used car loan emi calculator with down payment", "car loan EMI calculator with a down payment for a new car", "calculate the total cost of owning a car including insurance and fuel"],
   },
   {
     slug: "simple-interest-calculator",
@@ -604,7 +604,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula and explains how it works.",
     lastUpdated: "2024-07-31",
-    tags: ["simple interest", "investment calculator", "loan interest", "simple interest vs compound interest for a 5-year investment"]
+    tags: ["simple interest", "investment calculator", "loan interest", "simple interest vs compound interest for a 5-year investment", "daily simple interest calculator"],
   },
   {
     slug: "compound-interest-calculator",
@@ -617,7 +617,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "See how your savings can grow with compound interest. Our calculator projects your investment growth over time with monthly or yearly additions.",
     lastUpdated: "2024-07-31",
-    tags: ["compound interest", "investment growth", "savings calculator", "compound interest calculator with yearly or monthly additions"]
+    tags: ["compound interest", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator"],
   },
   {
     slug: "savings-calculator",
@@ -629,7 +629,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Project the future value of your savings with our easy calculator. See how deposits, contributions, and interest rates impact your growth.",
     lastUpdated: "2024-07-31",
-    tags: ["savings calculator", "investment calculator", "future value", "financial planning"]
+    tags: ["savings calculator", "investment calculator", "future value", "financial planning", "savings goal calculator", "college savings calculator"],
   },
   {
     slug: "retirement-calculator",
@@ -641,7 +641,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.",
     lastUpdated: "2024-07-31",
-    tags: ["retirement calculator", "pension calculator", "nps calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses"]
+    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses"],
   },
   {
     slug: "investment-return-calculator",
@@ -653,7 +653,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
-    tags: ["roi calculator", "investment return", "profit calculator", "mutual fund returns calculator"]
+    tags: ["roi calculator", "investment return", "profit calculator", "mutual fund returns calculator", "annualized roi calculator", "stock market roi"],
   },
   {
     slug: "stock-profit-loss-calculator",
@@ -665,7 +665,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI). Also calculates capital gains.",
     lastUpdated: "2024-07-31",
-    tags: ["stock calculator", "roi calculator", "profit loss", "capital gains tax", "calculate the capital gains tax on my stock market investments"]
+    tags: ["stock calculator", "roi calculator", "profit loss", "capital gains tax", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator"],
   },
   {
     slug: "currency-converter",
@@ -677,7 +677,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple currency converter for mock exchange rates. Convert between major world currencies like USD, EUR, JPY, GBP, INR, and more.",
     lastUpdated: "2024-07-31",
-    tags: ["currency converter", "exchange rates", "forex"]
+    tags: ["currency converter", "exchange rates", "forex", "usd to inr", "eur to usd", "live currency rates"],
   },
   {
     slug: "inflation-calculator",
@@ -689,7 +689,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our inflation calculator for India to see how the purchasing power of money has changed over time. Calculate inflation-adjusted returns on your investments.",
     lastUpdated: "2024-07-31",
-    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit"]
+    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator"],
   },
   {
     slug: "tip-calculator",
@@ -701,7 +701,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A quick and easy tip calculator. Determine the tip amount for any bill and split the total cost among any number of people.",
     lastUpdated: "2024-07-31",
-    tags: ["tip calculator", "split the bill", "restaurant bill", "split a bill with a tip calculator for a group of friends"]
+    tags: ["tip calculator", "split the bill", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends"],
   },
   {
     slug: "discount-calculator",
@@ -713,7 +713,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the final price after a discount. Enter the original price & discount percentage to find out how much you will pay and save.",
     lastUpdated: "2024-07-31",
-    tags: ["discount calculator", "sale price", "percentage off", "find the original price of an item before the discount", "calculate the discount percentage on a product during a sale"]
+    tags: ["discount calculator", "sale price", "percentage off", "final price calculator", "find the original price of an item before the discount", "calculate the discount percentage on a product during a sale"],
   },
   {
     slug: "salary-calculator",
@@ -737,7 +737,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your total pay including overtime. Enter your hourly rate, regular hours, and OT multiplier to see your complete weekly earnings.",
     lastUpdated: "2024-07-31",
-    tags: ["overtime calculator", "hourly pay", "payroll"]
+    tags: ["overtime calculator", "hourly pay", "payroll", "time and a half", "double time pay"],
   },
   {
     slug: "break-even-point-calculator",
@@ -749,7 +749,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the break-even point for your business. Enter fixed costs, variable costs, & price per unit to find how many units you need to sell.",
     lastUpdated: "2024-07-31",
-    tags: ["break even point", "business calculator", "cost analysis", "for small business owners"]
+    tags: ["break even point", "business calculator", "cost analysis", "for small business owners", "contribution margin"],
   },
   {
     slug: "business-profit-margin-calculator",
@@ -761,7 +761,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the gross, operating, and net profit margins for your business. Understand your profitability with this easy financial tool.",
     lastUpdated: "2024-07-31",
-    tags: ["profit margin", "business finance", "profitability ratios"]
+    tags: ["profit margin", "business finance", "profitability ratios", "gross margin", "net profit margin"],
   },
 
   // Health & Fitness
@@ -1458,7 +1458,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how much you can afford to borrow based on your salary, monthly debts, and desired loan terms. For home or car loan planning.",
     lastUpdated: "2024-07-31",
-    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary"]
+    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio"]
   },
   {
     slug: "carbon-footprint-calculator",
