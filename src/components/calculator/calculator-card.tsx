@@ -8,6 +8,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import type { Calculator } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 interface CalculatorCardProps {
   calculator: Omit<Calculator, "component">;
@@ -15,7 +16,13 @@ interface CalculatorCardProps {
 
 export default function CalculatorCard({ calculator }: CalculatorCardProps) {
   return (
-    <Link href={`/calculators/${calculator.slug}`} className="block h-full">
+    <Link
+      href={`/calculators/${calculator.slug}`}
+      className={cn(
+        "block h-full rounded-lg",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+      )}
+    >
       <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
         <CardHeader>
           <div className="flex items-center gap-4">

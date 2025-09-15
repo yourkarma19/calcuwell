@@ -17,6 +17,7 @@ import type {
   SoftwareApplication,
   WebPage,
 } from "schema-dts";
+import { cn } from "@/lib/utils";
 
 const trendingSchema: SoftwareApplication[] = trendingCalculators.map(
   (calc) => ({
@@ -100,7 +101,10 @@ export default function Home() {
               <Link
                 href={`/calculators/${tool.slug}`}
                 key={tool.slug}
-                className="block"
+                className={cn(
+                  "block rounded-2xl",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                )}
               >
                 <Card className="h-full text-center hover:shadow-lg hover:border-primary/50 transition-all duration-300 group p-6 rounded-2xl">
                   <div className="flex justify-center mb-4">
@@ -133,7 +137,10 @@ export default function Home() {
               <Link
                 href={`/categories/${category.slug}`}
                 key={category.slug}
-                className="block"
+                className={cn(
+                  "block rounded-2xl",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                )}
               >
                 <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group rounded-2xl">
                   <CardHeader className="flex flex-row items-center justify-between p-6">
