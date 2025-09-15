@@ -235,7 +235,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your calculus homework.",
     lastUpdated: "2024-07-31",
-    tags: ["partial fractions", "partial fraction decomposition calculator", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral", "partial fraction decomposition for a an integral"],
+    tags: ["partial fractions", "partial fraction decomposition calculator", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral"],
   },
 
   // Lifestyle
@@ -309,7 +309,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "mobile friendly calculator", "online calculator for chromebook", "online calculator for tablet", 
       "calculator app online", "virtual calculator", "computer calculator online", "standard calculator online", 
       "everyday calculator", "quick calculator online", "online problem solver", "calculation website", 
-      "online converter", "free online conversion tools", "arithmetic", "free scientific calculator online", 
+      "free scientific calculator online", 
       "order of operations (BODMAS/PEMDAS) calculator", "scientific calculator", "online scientific calculator", 
       "graphing calculator", "online graphing calculator", "scientific calculator with fractions", 
       "scientific calculator with degrees", "scientific calculator with graph", "adding machine calculator", 
@@ -535,13 +535,13 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     slug: "roman-numeral-converter",
     name: "Roman Numeral Converter",
     description: "Translate numbers to Roman numerals and back for values between 1 and 3,999.",
-    category: "Math",
+    category: "Conversions",
     iconName: "ArrowRightLeft",
     seoTitle: "Roman Numeral Date & Number Converter | CalcPro",
     metaDescription:
       "A fast and accurate Roman numeral converter. Translate numbers to Roman numerals and back for values between 1 and 3,999.",
     lastUpdated: "2024-07-31",
-    tags: ["roman numerals", "converter", "history", "convert Roman numerals to numbers for a history project"],
+    tags: ["roman numerals", "converter", "history", "convert Roman numerals to numbers for a history project", "roman numeral converter", "numbers to words converter"],
   },
 
   // Finance & Money
@@ -967,7 +967,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.",
     lastUpdated: "2024-07-31",
-    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter"],
+    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking measurement converter", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter"],
   },
   {
     slug: "data-storage-converter",
@@ -979,7 +979,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert between digital data storage units, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).",
     lastUpdated: "2024-07-31",
-    tags: ["data storage", "kb to mb", "gb to mb", "file size converter"],
+    tags: ["data storage", "kb to mb", "gb to mb", "file size converter", "data storage converter", "mb to gb converter", "gb to tb converter", "kb to mb converter", "bits to bytes converter", "computer storage units conversion"],
   },
   {
     slug: "data-transfer-rate-converter",
@@ -991,7 +991,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed & file downloads.",
     lastUpdated: "2024-07-31",
-    tags: ["data transfer rate", "mbps to mbs", "internet speed converter"]
+    tags: ["data transfer rate", "mbps to mbs", "internet speed converter", "bandwidth converter", "mbps to MB/s converter", "data transfer rate converter"]
   },
   {
     slug: "time-converter",
@@ -1039,7 +1039,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A tool for converting between different units of power, such as watts (W), kilowatts (kW), and horsepower (hp).",
     lastUpdated: "2024-07-31",
-    tags: ["power converter", "watts to hp", "kw to watts", "watts to horsepower converter", "horsepower to watts converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter"]
+    tags: ["power converter", "watts to hp", "kw to watts", "watts to horsepower converter", "horsepower to watts converter"]
   },
   {
     slug: "angle-converter",
@@ -1190,7 +1190,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.",
     lastUpdated: "2024-07-31",
-    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal"],
+    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter"],
   },
   {
     slug: "ascii-text-converter",
@@ -1202,7 +1202,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with encoding.",
     lastUpdated: "2024-07-31",
-    tags: ["ascii converter", "text to ascii", "character code"]
+    tags: ["ascii converter", "text to ascii", "character code", "text to binary converter", "ascii to binary converter"]
   },
   {
     slug: "base64-converter",
@@ -1214,7 +1214,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 text.",
     lastUpdated: "2024-07-31",
-    tags: ["base64 encode", "base64 decode", "data uri", "programming tools"]
+    tags: ["base64 encode", "base64 decode", "data uri", "programming tools", "url encoder", "url decoder", "html entity converter"]
   },
   {
     slug: "ip-subnet-calculator",
@@ -1263,7 +1263,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple tool for web designers & developers to convert between HEX, RGB, and HSL color formats in real-time.",
     lastUpdated: "2024-07-31",
-    tags: ["color converter", "hex to rgb", "hsl to hex", "web design tools"]
+    tags: ["color converter", "hex to rgb", "hsl to hex", "web design tools", "rgb to hex converter", "hex to rgb converter", "color code converter", "cmyk to rgb converter"]
   },
 
   // Geometry & Engineering
@@ -1477,5 +1477,3 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     tags: ["typing speed test", "wpm calculator", "keyboarding skills", "typing speed calculator in words per minute"],
   },
 ];
-
-    
