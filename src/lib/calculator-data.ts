@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments for a specific goal (e.g., 1 crore in 15 years). Enter your monthly investment and expected return rate.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
-    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator with monthly contributions"],
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator with monthly contributions", "investment goal calculator", "savings goal calculator"],
   },
   // New CGPA Calculator
   {
@@ -61,7 +61,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
     formula: "Net Calories = Calories Consumed - Calories Burned",
     lastUpdated: "2024-07-31",
-    tags: ["calorie calculator", "net calories", "weight loss", "tdee", "daily calorie intake calculator for weight loss for an indian diet", "calorie deficit / surplus"],
+    tags: ["calorie calculator", "net calories", "weight loss", "tdee", "daily calorie intake calculator for weight loss for an indian diet", "calorie deficit / surplus", "maintenance calorie calculator"],
   },
   // New Time Card Calculator
   {
@@ -725,7 +725,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "capital gains tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -788,7 +788,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Body Mass Index (BMI) to assess your weight status for Indian adults. Our calculator uses the standard formula and provides WHO categories.",
     lastUpdated: "2024-07-31",
-    tags: ["health", "fitness", "weight", "body mass index", "bmi calculator for indian adults", "BMI vs body fat percentage what is the difference", "body mass index (BMI) calculator for Indian adults"],
+    tags: ["bmi calculator", "body mass index", "bmi calculator for men", "bmi calculator for women", "bmi calculator for child", "teen bmi calculator", "adult bmi calculator", "bmi chart", "what is my bmi", "is my bmi healthy", "bmi calculator kg cm", "bmi calculator lbs inches", "who bmi classification", "cdc bmi calculator for child and teen", "underweight bmi calculator", "overweight bmi calculator", "obesity class calculator", "body fat vs bmi", "body mass index calculator for Indian adults"],
   },
   {
     slug: "bmr-calculator",
@@ -802,7 +802,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Basal Metabolic Rate (BMR) to find out the number of calories your body needs at rest. Uses the Mifflin-St Jeor equation.",
     lastUpdated: "2024-07-31",
-    tags: ["bmr calculator", "metabolism", "calorie needs", "tdee"]
+    tags: ["bmr calculator", "metabolism", "calorie needs", "tdee", "basal metabolic rate", "bmr calculator harris-benedict", "bmr calculator mifflin st jeor", "total daily energy expenditure calculator", "tdee calculator", "maintenance calorie calculator"]
   },
   {
     slug: "calorie-needs-calculator",
@@ -827,7 +827,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine your ideal body weight based on height and gender using the Robinson formula. A useful tool for setting fitness goals.",
     lastUpdated: "2024-07-31",
-    tags: ["ideal weight", "healthy weight", "fitness goals"]
+    tags: ["ideal weight", "healthy weight", "fitness goals", "ideal weight calculator for women", "ideal weight calculator for men", "hamwi formula ideal body weight", "devine formula ideal body weight", "robinson formula ideal body weight", "miller formula ideal body weight", "what should I weigh calculator", "body surface area calculator", "bsa calculator"]
   },
   {
     slug: "body-fat-percentage-calculator",
@@ -840,7 +840,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment of health than BMI alone.",
     lastUpdated: "2024-07-31",
-    tags: ["body fat calculator", "fitness assessment", "body composition"]
+    tags: ["body fat calculator", "fitness assessment", "body composition", "body fat percentage calculator", "army body fat calculator", "navy body fat calculator", "body fat calculator with tape measure", "skinfold caliper body fat calculator", "3-site skinfold calculator", "7-site skinfold calculator", "jackson pollock body fat formula", "durnin womersley body fat calculator", "body fat calculator with pictures", "estimate body fat percentage", "accurate body fat calculator"]
   },
   {
     slug: "lean-body-mass-calculator",
@@ -852,7 +852,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle and bone.",
     lastUpdated: "2024-07-31",
-    tags: ["lean body mass", "lbm calculator", "body composition"]
+    tags: ["lean body mass", "lbm calculator", "body composition", "lean body mass formula", "fat free mass index calculator ffmi"]
   },
   {
     slug: "waist-to-hip-ratio-calculator",
@@ -864,7 +864,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.",
     lastUpdated: "2024-07-31",
-    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk"]
+    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk", "how to measure waist for calculator"]
   },
   {
     slug: "pregnancy-due-date-calculator",
