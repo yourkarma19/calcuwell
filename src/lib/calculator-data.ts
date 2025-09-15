@@ -61,7 +61,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
     formula: "Net Calories = Calories Consumed - Calories Burned",
     lastUpdated: "2024-07-31",
-    tags: ["calorie calculator", "net calories", "weight loss", "tdee", "daily calorie intake calculator for weight loss for an indian diet", "calorie deficit / surplus", "maintenance calorie calculator", "calorie deficit calculator", "safe calorie deficit for weight loss", "what is my calorie deficit", "how to calculate calorie deficit"],
+    tags: ["net calorie calculator", "calorie deficit calculator", "safe calorie deficit for weight loss", "what is my calorie deficit", "how to calculate calorie deficit", "calorie surplus", "weight loss", "tdee", "daily calorie intake calculator for weight loss for an indian diet", "maintenance calorie calculator"],
   },
   // New Time Card Calculator
   {
@@ -287,7 +287,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find out how long it will take to pay off your credit card balance. See your payoff schedule & total interest paid based on your payments.",
     formula: "N = -log(1 - (B*r)/P) / log(1+r)",
     lastUpdated: "2024-07-31",
-    tags: ["credit card payoff", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator"],
+    tags: ["credit card payoff", "credit card calculator", "debt calculator", "interest calculator", "finance", "credit card balance transfer calculator", "credit card debt snowball vs avalanche calculator", "how to pay off debt faster", "debt consolidation loan calculator", "payday loan calculator", "debt payoff calculator", "debt snowball calculator", "debt avalanche calculator", "line of credit payoff calculator"],
   },
 
   // Math & Logic
@@ -617,7 +617,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "See how your savings can grow with compound interest. Our calculator projects your investment growth over time with monthly or yearly additions.",
     lastUpdated: "2024-07-31",
-    tags: ["compound interest", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator", "compound interest calculator monthly", "compound interest formula calculator"],
+    tags: ["compound interest", "compound interest calculator", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator", "compound interest calculator monthly", "compound interest formula calculator"],
   },
   {
     slug: "savings-calculator",
@@ -653,7 +653,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
-    tags: ["roi calculator", "investment return", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "cryptocurrency investment calculator", "bitcoin profit calculator"],
+    tags: ["roi calculator", "investment return calculator", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "cryptocurrency investment calculator", "bitcoin profit calculator"],
   },
   {
     slug: "stock-profit-loss-calculator",
@@ -665,7 +665,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI). Also calculates capital gains.",
     lastUpdated: "2024-07-31",
-    tags: ["stock calculator", "roi calculator", "profit loss", "stock profit calculator", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator"],
+    tags: ["stock calculator", "stock profit calculator", "roi calculator", "profit loss", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator"],
   },
   {
     slug: "currency-converter",
@@ -689,7 +689,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our inflation calculator for India to see how the purchasing power of money has changed over time. Calculate inflation-adjusted returns on your investments.",
     lastUpdated: "2024-07-31",
-    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator", "inflation rate calculator", "purchasing power calculator"],
+    tags: ["inflation calculator india", "purchasing power calculator", "cpi calculator", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator", "inflation rate calculator"],
   },
   {
     slug: "tip-calculator",
@@ -725,7 +725,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "capital gains tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "gst calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary calculator", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "gst calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -816,7 +816,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     lastUpdated: "2024-07-31",
     tags: [
       "calorie calculator india", "weight loss diet", "indian diet plan", "macro nutrient calculator for a vegetarian indian diet", "daily calorie intake calculator for weight loss for an Indian diet",
-      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "calorie deficit calculator", "weight loss calculator", "keto macro calculator", 
+      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "weight loss calculator", "keto macro calculator", 
       "protein calculator", "carbohydrate calculator", "fat calculator", "daily calorie needs calculator", "calorie calculator for weight loss", "calorie calculator for weight gain", 
       "calorie calculator to maintain weight", "how many calories should I eat", "weight loss target date calculator", "macros for weight loss calculator", 
       "macros for muscle gain calculator", "keto calculator", "ketogenic diet calculator", "net carbs calculator", "low carb macro calculator", "paleo macro calculator", 
@@ -840,7 +840,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine your ideal body weight based on height and gender using the Robinson formula. A useful tool for setting fitness goals.",
     lastUpdated: "2024-07-31",
-    tags: ["ideal weight", "healthy weight", "fitness goals", "ideal weight calculator for women", "ideal weight calculator for men", "hamwi formula ideal body weight", "devine formula ideal body weight", "robinson formula ideal body weight", "miller formula ideal body weight", "what should I weigh calculator", "body surface area calculator", "bsa calculator"]
+    tags: ["ideal weight calculator", "healthy weight calculator", "fitness goals", "ideal weight calculator for women", "ideal weight calculator for men", "hamwi formula ideal body weight", "devine formula ideal body weight", "robinson formula ideal body weight", "miller formula ideal body weight", "what should I weigh calculator", "body surface area calculator", "bsa calculator"]
   },
   {
     slug: "body-fat-percentage-calculator",
@@ -853,7 +853,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your body fat percentage using the U.S. Navy method with a tape measure. A more accurate assessment of health than BMI alone.",
     lastUpdated: "2024-07-31",
-    tags: ["body fat calculator", "fitness assessment", "body composition", "body fat percentage calculator", "army body fat calculator", "navy body fat calculator", "body fat calculator with tape measure", "skinfold caliper body fat calculator", "3-site skinfold calculator", "7-site skinfold calculator", "jackson pollock body fat formula", "durnin womersley body fat calculator", "body fat calculator with pictures", "estimate body fat percentage", "accurate body fat calculator"]
+    tags: ["body fat percentage calculator", "body fat calculator", "fitness assessment", "body composition calculator", "army body fat calculator", "navy body fat calculator", "body fat calculator with tape measure", "skinfold caliper body fat calculator", "3-site skinfold calculator", "7-site skinfold calculator", "jackson pollock body fat formula", "durnin womersley body fat calculator", "body fat calculator with pictures", "estimate body fat percentage", "accurate body fat calculator"]
   },
   {
     slug: "lean-body-mass-calculator",
@@ -865,7 +865,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your lean body mass (LBM) using the Boer formula. LBM represents the weight of your body minus fat, including muscle and bone.",
     lastUpdated: "2024-07-31",
-    tags: ["lean body mass", "lbm calculator", "body composition", "lean body mass formula", "fat free mass index calculator ffmi"]
+    tags: ["lean body mass calculator", "lbm calculator", "body composition", "lean body mass formula", "fat free mass index calculator ffmi"]
   },
   {
     slug: "waist-to-hip-ratio-calculator",
@@ -914,7 +914,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated with our personalized calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["water intake", "hydration calculator", "daily water needs", "water usage calculator for my household", "how much water should I drink calculator"]
+    tags: ["water intake calculator", "hydration calculator", "daily water needs", "water usage calculator for my household", "how much water should I drink calculator"]
   },
   {
     slug: "heart-rate-zone-calculator",
@@ -926,7 +926,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine your target heart rate zones for exercise. Use our calculator to find your optimal zones for fat burning, cardio, and performance.",
     lastUpdated: "2024-07-31",
-    tags: ["heart rate zones", "target heart rate", "fat burning zone", "cardio"]
+    tags: ["heart rate zone calculator", "target heart rate calculator", "fat burning zone", "cardio", "training pace calculator", "karvonen formula calculator"]
   },
   {
     slug: "vo2-max-calculator",
@@ -938,7 +938,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your VO₂ max, a key indicator of your cardiovascular fitness. This non-exercise estimation is based on your resting heart rate.",
     lastUpdated: "2024-07-31",
-    tags: ["vo2 max", "fitness level", "cardio fitness"]
+    tags: ["vo2 max calculator", "fitness level", "cardio fitness", "age grade calculator running", "Cooper test calculator", "METs calculator", "metabolic equivalent of task calculator"]
   },
   {
     slug: "bac-calculator",
