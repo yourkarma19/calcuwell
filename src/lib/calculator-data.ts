@@ -207,7 +207,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An online calculator to add, subtract, multiply, & divide feet and inches. Perfect for construction & DIY projects. Get instant results.",
     lastUpdated: "2024-07-31",
-    tags: ["feet and inches", "imperial calculator", "length converter", "construction math"],
+    tags: ["feet and inches", "imperial calculator", "length converter", "construction math", "height converter cm to feet and inches"],
   },
   // New Voltage to Watts Calculator
   {
@@ -408,7 +408,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the standard deviation for a sample or population data set. Understand the difference and the spread of your data with our tool.",
     lastUpdated: "2024-07-31",
-    tags: ["standard deviation", "variance calculator", "statistics", "how to calculate standard deviation for sample vs population", "what is the difference between sample and population standard deviation", "standard deviation calculator for grouped data or a frequency table", "standard deviation calculator", "variance calculator", "coefficient of variation calculator", "r-squared calculator", "standard error calculator"],
+    tags: ["standard deviation calculator", "variance calculator", "statistics calculator", "how to calculate standard deviation for sample vs population", "what is the difference between sample and population standard deviation", "standard deviation calculator for grouped data or a frequency table", "variance calculator", "coefficient of variation calculator", "r-squared calculator", "standard error calculator", "grouped data standard deviation calculator"],
   },
   {
     slug: "probability-calculator",
@@ -420,7 +420,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the probability of single and multiple independent events with our easy-to-use tool. Finds P(A and B) and P(A or B).",
     lastUpdated: "2024-07-31",
-    tags: ["probability calculator", "statistics", "chance", "probability of A or B happening calculator", "calculate the probability of two independent events both happening", "find the probability of a single event happening", "calculate the probability of mutually exclusive events", "coin flip probability calculator", "dice roll probability calculator", "lottery odds calculator", "poker odds calculator", "bayes theorem calculator"],
+    tags: ["probability calculator", "statistics calculator", "chance", "probability of A or B happening calculator", "calculate the probability of two independent events both happening", "find the probability of a single event happening", "calculate the probability of mutually exclusive events", "coin flip probability calculator", "dice roll probability calculator", "lottery odds calculator", "poker odds calculator", "bayes theorem calculator"],
   },
   {
     slug: "permutation-combination-calculator",
@@ -809,7 +809,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
   },
   {
     slug: "calorie-needs-calculator",
-    name: "Daily Calorie Calculator for Weight Loss (India)",
+    name: "Daily Calorie Calculator",
     description: "Get a personalized daily calorie target based on your lifestyle for weight management.",
     category: "Health",
     iconName: "HeartPulse",
@@ -905,7 +905,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days for family planning.",
     lastUpdated: "2024-07-31",
-    tags: ["ovulation calculator", "fertility calculator", "fertile window calculator", "ovulation predictor", "when am I most fertile calculator", "menstrual cycle calculator", "period calculator", "ovulation calendar", "safe period calculator", "cycle length calculator", "pms calculator", "menopause calculator"]
+    tags: ["ovulation calculator", "fertility calculator", "fertile window calculator", "ovulation predictor", "when am I most fertile calculator", "menstrual cycle calculator", "period calculator", "ovulation calendar", "safe period calculator", "pms calculator", "menopause calculator", "cycle length calculator"]
   },
   {
     slug: "water-intake-calculator",
@@ -967,7 +967,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.",
     lastUpdated: "2024-07-31",
-    tags: ["unit converter", "measurement converter", "metric to imperial", "kg to pounds converter", "celsius to fahrenheit calculator", "acre to bigha converter", "lakhs to crores converter"],
+    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter"],
   },
   {
     slug: "data-storage-converter",
@@ -1015,7 +1015,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert between different units of energy, such as Joules, Kilojoules, calories, Kilocalories (kcal), and Kilowatt-hours (kWh).",
     lastUpdated: "2024-07-31",
-    tags: ["energy converter", "joule to calorie", "kwh converter"]
+    tags: ["energy converter", "joule to calorie", "kwh converter", "calories to joules converter"]
   },
   {
     slug: "pressure-converter",
@@ -1027,7 +1027,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert between various units of pressure, including Pascal (Pa), Kilopascal (kPa), bar, atmosphere (atm), and psi.",
     lastUpdated: "2024-07-31",
-    tags: ["pressure converter", "psi to bar", "pascal to atm"]
+    tags: ["pressure converter", "psi to bar", "pascal to atm", "pascals to psi converter", "psi to pascals converter", "bar to psi converter"]
   },
   {
     slug: "power-converter",
@@ -1039,7 +1039,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A tool for converting between different units of power, such as watts (W), kilowatts (kW), and horsepower (hp).",
     lastUpdated: "2024-07-31",
-    tags: ["power converter", "watts to hp", "kw to watts"]
+    tags: ["power converter", "watts to hp", "kw to watts", "watts to horsepower converter", "horsepower to watts converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter"]
   },
   {
     slug: "angle-converter",
@@ -1051,7 +1051,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly convert angles between degrees and radians. An essential tool for students and professionals in math, physics, and engineering.",
     lastUpdated: "2024-07-31",
-    tags: ["angle converter", "degrees to radians", "radians to degrees", "trigonometry", "convert an angle from radians to degrees and minutes", "convert degrees, minutes, and seconds to decimal degrees"],
+    tags: ["angle converter", "degrees to radians", "radians to degrees", "trigonometry", "convert an angle from radians to degrees and minutes", "convert degrees, minutes, and seconds to decimal degrees", "angle conversion calculator"],
   },
   {
     slug: "fuel-efficiency-converter",
@@ -1063,7 +1063,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert fuel efficiency units between Miles Per Gallon (MPG) and Liters per 100 kilometers (L/100km). Useful for comparing vehicles.",
     lastUpdated: "2024-07-31",
-    tags: ["fuel efficiency", "mpg to l/100km", "mileage calculator", "car mileage calculator kmpl india", "fuel cost calculator for a road trip from Ahmedabad to Mumbai"]
+    tags: ["fuel efficiency", "mpg to l/100km", "mileage calculator", "car mileage calculator kmpl india", "fuel cost calculator for a road trip from Ahmedabad to Mumbai", "fuel consumption converter"]
   },
 
   // Date & Time
