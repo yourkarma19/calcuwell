@@ -2,7 +2,6 @@
 
 import { useMemo } from "react";
 import { getWeek, format, getISOWeek, getISOWeekYear } from "date-fns";
-import { ReadonlyURLSearchParams } from "next/navigation";
 import CalculatorUIWrapper from "./calculator-ui-wrapper";
 import {
   Card,
@@ -57,11 +56,9 @@ const jsonLd: WithContext<FAQPage> = {
 
 
 export default function WeekNumberCalculator({
-  calculatorName,
-  searchParams
+  calculatorName
 }: {
   calculatorName: string;
-  searchParams: ReadonlyURLSearchParams | null;
 }) {
   const [selectedDate, setSelectedDate] = usePersistentState<Date | undefined>(
     "weeknum-date",
