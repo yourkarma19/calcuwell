@@ -32,7 +32,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the future value of your SIP investments for a specific goal (e.g., 1 crore in 15 years). Enter your monthly investment and expected return rate.",
     formula: "FV = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     lastUpdated: "2024-07-31",
-    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator"],
+    tags: ["sip calculator", "investment calculator", "mutual fund", "systematic investment plan", "lumpsum vs sip", "will i become a crorepati", "sip calculator for a 1 crore goal", "sip vs lumpsum investment calculator", "sip calculator with inflation adjustment in India", "sip calculator for a child's education", "how to calculate SIP returns with examples", "SIP calculator for a 15-year goal of 1 crore", "investment calculator", "investment calculator with monthly contributions"],
   },
   // New CGPA Calculator
   {
@@ -604,7 +604,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly calculate simple interest on your loans or investments. Our free calculator uses the standard SI formula and explains how it works.",
     lastUpdated: "2024-07-31",
-    tags: ["simple interest", "investment calculator", "loan interest", "simple interest vs compound interest for a 5-year investment", "daily simple interest calculator"],
+    tags: ["simple interest", "interest calculator", "investment calculator", "loan interest", "simple interest vs compound interest for a 5-year investment", "daily simple interest calculator"],
   },
   {
     slug: "compound-interest-calculator",
@@ -617,7 +617,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "See how your savings can grow with compound interest. Our calculator projects your investment growth over time with monthly or yearly additions.",
     lastUpdated: "2024-07-31",
-    tags: ["compound interest", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator"],
+    tags: ["compound interest", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator", "compound interest calculator monthly", "compound interest formula calculator"],
   },
   {
     slug: "savings-calculator",
@@ -629,7 +629,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Project the future value of your savings with our easy calculator. See how deposits, contributions, and interest rates impact your growth.",
     lastUpdated: "2024-07-31",
-    tags: ["savings calculator", "investment calculator", "future value", "financial planning", "savings goal calculator", "college savings calculator"],
+    tags: ["savings calculator", "investment calculator", "future value calculator", "fv calculator", "what will my investment be worth calculator", "investment goal calculator", "savings goal calculator", "college savings calculator", "529 plan calculator", "financial planning"],
   },
   {
     slug: "retirement-calculator",
@@ -641,7 +641,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.",
     lastUpdated: "2024-07-31",
-    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster"],
+    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "ira calculator", "roth ira calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster", "retirement savings calculator", "how much do I need to retire calculator", "early retirement calculator", "4 percent rule calculator", "retirement withdrawal calculator"],
   },
   {
     slug: "investment-return-calculator",
@@ -653,7 +653,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the Return on Investment (ROI) for any investment. Enter your initial and final values to find the net profit and ROI percentage.",
     lastUpdated: "2024-07-31",
-    tags: ["roi calculator", "investment return", "profit calculator", "mutual fund returns calculator", "annualized roi calculator", "stock market roi", "investment property calculator", "real estate investment calculator", "rental property calculator"],
+    tags: ["roi calculator", "investment return", "return on investment calculator", "profit calculator", "investment calculator", "mutual fund calculator", "etf calculator", "cd calculator", "bond calculator", "real estate investment calculator", "rental property roi calculator", "investment property cash flow calculator", "cap rate calculator", "cryptocurrency investment calculator", "bitcoin profit calculator"],
   },
   {
     slug: "stock-profit-loss-calculator",
@@ -665,7 +665,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI). Also calculates capital gains.",
     lastUpdated: "2024-07-31",
-    tags: ["stock calculator", "roi calculator", "profit loss", "capital gains tax", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator"],
+    tags: ["stock calculator", "roi calculator", "profit loss", "stock profit calculator", "stock market calculator", "capital gains tax", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator", "capital gains tax calculator"],
   },
   {
     slug: "currency-converter",
@@ -689,7 +689,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Use our inflation calculator for India to see how the purchasing power of money has changed over time. Calculate inflation-adjusted returns on your investments.",
     lastUpdated: "2024-07-31",
-    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator"],
+    tags: ["inflation calculator india", "purchasing power", "cpi", "inflation-adjusted return on my fixed deposit", "real vs nominal value", "cost of living calculator", "inflation calculator for investments", "real rate of return calculator"],
   },
   {
     slug: "tip-calculator",
