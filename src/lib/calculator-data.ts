@@ -262,7 +262,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
     lastUpdated: "2024-07-31",
-    tags: ["pet age", "dog years", "cat years", "human years", "dog age calculator", "cat age calculator"]
+    tags: ["pet age", "dog years", "cat years", "human years", "dog age calculator", "cat age calculator", "pet age calculator", "horse age calculator", "cat age in human years"]
   },
   {
     slug: "pet-care-cost-calculator",
@@ -556,7 +556,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv"],
+    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv", "loan amortization calculator with extra payments", "loan amortization table generator"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -581,7 +581,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your monthly mortgage payment, including principal, interest, taxes, and insurance (PITI). Plan your home budget with our calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["mortgage calculator", "home loan calculator", "mortgage payment calculator", "piti calculator", "mortgage calculator with taxes and insurance", "calculate monthly mortgage payment", "what is my mortgage payment with taxes and insurance", "india home loan emi calculator", "home loan eligibility calculator", "mortgage payoff calculator", "early mortgage payoff calculator", "mortgage refinance calculator", "30-year fixed mortgage calculator", "15-year fixed mortgage calculator", "adjustable-rate mortgage calculator", "arm calculator", "bi-weekly mortgage payment calculator", "mortgage renewal calculator", "california mortgage calculator", "texas mortgage calculator", "florida mortgage calculator", "new york mortgage calculator", "canada mortgage calculator", "uk mortgage calculator", "australia home loan calculator", "home equity loan calculator", "heloc calculator", "construction loan calculator", "land loan calculator", "commercial real estate loan calculator", "fha loan calculator", "va mortgage calculator", "usda loan calculator", "jumbo loan calculator", "interest only loan calculator", "bridge loan calculator", "hard money loan calculator", "vacation home mortgage calculator"],
+    tags: ["mortgage calculator", "home loan calculator", "mortgage payment calculator", "piti calculator", "mortgage calculator with taxes and insurance", "calculate monthly mortgage payment", "what is my mortgage payment with taxes and insurance", "india home loan emi calculator", "home loan eligibility calculator", "mortgage payoff calculator", "early mortgage payoff calculator", "mortgage refinance calculator", "30-year fixed mortgage calculator", "15-year fixed mortgage calculator", "adjustable-rate mortgage calculator", "arm calculator", "bi-weekly mortgage payment calculator", "mortgage renewal calculator", "california mortgage calculator", "texas mortgage calculator", "florida mortgage calculator", "new york mortgage calculator", "canada mortgage calculator", "uk mortgage calculator", "australia home loan calculator", "home equity loan calculator", "heloc calculator", "construction loan calculator", "land loan calculator", "commercial real estate loan calculator", "fha loan calculator", "va mortgage calculator", "usda loan calculator", "jumbo loan calculator", "interest only loan calculator", "bridge loan calculator", "hard money loan calculator", "vacation home mortgage calculator", "cash out refinance calculator", "mortgage points calculator", "down payment calculator", "how much down payment for a house", "reverse mortgage calculator"],
   },
   {
     slug: "car-loan-calculator",
@@ -668,7 +668,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Determine the profit or loss from your stock trades. Factor in buy/sell prices and commissions to find your true Return on Investment (ROI). Also calculates capital gains.",
     lastUpdated: "2024-07-31",
-    tags: ["stock calculator", "stock profit calculator", "roi calculator", "profit loss", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator", "dividend reinvestment calculator", "drip calculator", "stock average down calculator"],
+    tags: ["stock calculator", "stock profit calculator", "roi calculator", "profit loss", "stock market calculator", "capital gains tax calculator", "calculate the capital gains tax on my stock market investments", "stock average calculator", "day trading profit calculator", "dividend reinvestment calculator", "drip calculator", "stock average down calculator", "cryptocurrency investment calculator", "bitcoin profit calculator"],
   },
   {
     slug: "currency-converter",
@@ -967,7 +967,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.",
     lastUpdated: "2024-07-31",
-    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking measurement converter", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter", "baking converter", "recipe converter"],
+    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking measurement converter", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter", "cooking conversion calculator", "baking converter", "recipe converter", "ingredient substitution calculator", "cups to grams flour converter", "cups to grams sugar converter", "ounces to cups converter", "pace converter running"],
   },
   {
     slug: "data-storage-converter",
@@ -1078,7 +1078,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find your exact age in years, months, weeks, and days with our online age calculator. Simply enter your date of birth to get your age.",
     lastUpdated: "2024-07-31",
-    tags: ["age calculator", "date of birth calculator", "exact age calculator in years, months, weeks, and days", "find the day of the week for any given date", "age problems word problem solver"],
+    tags: ["age calculator", "date of birth calculator", "exact age calculator", "how old am I calculator", "chronological age calculator", "age calculator in years months days", "age calculator in days", "age calculator in hours", "age calculator in seconds", "birthday calculator", "how many days until my birthday", "next birthday calculator", "age calculator by date of birth", "korean age calculator", "how old will I be in 2050", "what year was I born if I am 30", "age finder", "calculate age from dob", "online age calculator", "free age calculator", "age calculator for job application", "retirement age calculator", "zodiac sign calculator", "chinese zodiac calculator", "generation calculator (boomer, gen x, millennial, gen z)", "how old was someone on a certain date", "historical age calculator", "celebrity age calculator", "age calculator app", "age calculator with time", "age as of today calculator", "leap year birthday age calculator", "age problems word problem solver"],
   },
   {
     slug: "date-difference-calculator",
@@ -1091,7 +1091,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the exact number of years, months, weeks, & days between any two dates. Perfect for finding the duration of projects and events.",
     lastUpdated: "2024-07-31",
-    tags: ["date difference", "days between dates", "date calculator", "calculate the number of years, months, and days between two dates"],
+    tags: ["date difference", "days between dates", "date calculator", "calculate the number of years, months, and days between two dates", "age difference calculator", "relationship duration calculator", "how long have we been together calculator", "anniversary calculator", "age calculator from date to date"],
   },
   {
     slug: "countdown-timer",
@@ -1190,7 +1190,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.",
     lastUpdated: "2024-07-31",
-    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter", "hexadecimal converter"],
+    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter", "hexadecimal converter", "scientific notation converter", "scientific notation to decimal converter", "decimal to scientific notation converter"],
   },
   {
     slug: "ascii-text-converter",
@@ -1277,7 +1277,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["circle calculator", "area of a circle calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator"],
+    tags: ["circle calculator", "area of a circle calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator", "arc length calculator", "sector area calculator"],
   },
   {
     slug: "triangle-area-calculator",
@@ -1450,7 +1450,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.",
     lastUpdated: "2024-07-31",
-    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects"],
+    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects", "grade percentage to gpa converter"],
   },
   {
     slug: "reading-time-calculator",
@@ -1462,7 +1462,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how long it will take to read any text. Paste your content & adjust the Words Per Minute (WPM) for a personalized reading time.",
     lastUpdated: "2024-07-31",
-    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter"],
+    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter", "word counter", "text to speech converter", "speech to text converter"],
   },
   {
     slug: "typing-speed-calculator",
