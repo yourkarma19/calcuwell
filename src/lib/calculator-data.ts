@@ -91,7 +91,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the volume & number of concrete bags for your project. Works for slabs, footers, & round post holes. Also useful for construction cost estimation.",
     formula: "Volume = Length × Width × Thickness",
     lastUpdated: "2024-07-31",
-    tags: ["concrete calculator", "volume calculator", "construction", "diy", "calculate the construction cost for a 1000 sq ft house in india", "for a construction project", "calculate the water capacity of an overhead tank in liters"],
+    tags: ["concrete calculator", "volume calculator", "construction", "diy", "calculate the construction cost for a 1000 sq ft house in india", "for a construction project", "calculate the water capacity of an overhead tank in liters", "paint calculator", "wallpaper calculator", "flooring calculator"],
   },
   // New Wind Chill Calculator
   {
@@ -250,7 +250,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Plan your dream wedding with our free budget calculator. Estimate costs for the venue, catering, and photography to stay on budget.",
     formula: "Total = Venue + (Catering × Guests) + Photography + Dress + ...",
     lastUpdated: "2024-07-31",
-    tags: ["wedding budget", "cost estimator", "wedding planning", "child's marriage planning calculator india"]
+    tags: ["wedding budget", "cost estimator", "wedding planning", "child's marriage planning calculator india", "event planning calculator", "vacation budget calculator"]
   },
   {
     slug: "pet-age-calculator",
@@ -556,7 +556,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv", "loan amortization calculator with extra payments", "loan amortization table generator"],
+    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv", "loan amortization calculator with extra payments", "loan amortization table generator", "car payment calculator"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -704,7 +704,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A quick and easy tip calculator. Determine the tip amount for any bill and split the total cost among any number of people.",
     lastUpdated: "2024-07-31",
-    tags: ["tip calculator", "split the bill", "split the bill calculator", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends", "checkbook balance calculator"],
+    tags: ["tip calculator", "split the bill", "split the bill calculator", "restaurant bill", "gratuity calculator", "split a bill with a tip calculator for a group of friends", "checkbook balance calculator", "tip calculator split bill", "tip calculator for different countries", "sales tax and tip calculator", "splitwise calculator"],
   },
   {
     slug: "discount-calculator",
@@ -791,7 +791,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your Body Mass Index (BMI) to assess your weight status for Indian adults. Our calculator uses the standard formula and provides WHO categories.",
     lastUpdated: "2024-07-31",
-    tags: ["bmi calculator", "body mass index", "body mass index calculator", "bmi calculator for men", "bmi calculator for women", "bmi calculator for child", "teen bmi calculator", "adult bmi calculator", "bmi chart", "what is my bmi", "is my bmi healthy", "bmi calculator kg cm", "bmi calculator lbs inches", "who bmi classification", "cdc bmi calculator for child and teen", "underweight bmi calculator", "overweight bmi calculator", "obesity class calculator", "body fat vs bmi", "body mass index calculator for Indian adults"],
+    tags: ["bmi calculator", "body mass index", "body mass index calculator", "bmi calculator for men", "bmi calculator for women", "bmi calculator for child", "teen bmi calculator", "adult bmi calculator", "bmi chart", "what is my bmi", "is my bmi healthy", "bmi calculator kg cm", "bmi calculator lbs inches", "who bmi classification", "cdc bmi calculator for child and teen", "underweight bmi calculator", "overweight bmi calculator", "obesity class calculator", "body fat vs bmi", "body mass index calculator for Indian adults", "bmi calculator for kids"],
   },
   {
     slug: "bmr-calculator",
@@ -827,9 +827,10 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
       "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator",
       "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
-      "sodium calculator", "points calculator for diet", "food points calculator", "weight loss percentage calculator",
-      "bmr and tdee calculator", "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
-      "very active calorie calculator", "extra active calorie calculator", "calorie tracker online", "free macro tracker", "keto diet food list calculator"
+      "sodium calculator", "points calculator for diet", "food points calculator", "safe calorie deficit for weight loss", "what is my calorie deficit",
+      "how to calculate calorie deficit", "weight loss percentage calculator", "bmr and tdee calculator", "activity level for tdee calculator", "sedentary calorie calculator",
+      "lightly active calorie calculator", "moderately active calorie calculator", "very active calorie calculator", "extra active calorie calculator", "calorie tracker online",
+      "free macro tracker", "keto diet food list calculator", "calorie deficit for women"
     ],
   },
   {
@@ -893,7 +894,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Includes a week-by-week pregnancy calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["due date calculator", "pregnancy calculator", "conception calculator", "pregnancy week calculator", "estimated due date calculator", "edd calculator", "due date calculator by last period", "lmp calculator", "due date calculator by conception date", "due date calculator ivf", "ivf transfer date calculator", "pregnancy weight gain calculator", "pregnancy test calculator", "when to take a pregnancy test calculator", "hcg calculator", "beta hcg doubling calculator", "reverse due date calculator", "when did I conceive calculator", "how many weeks pregnant am I calculator", "trimester calculator", "fetal age calculator", "chinese gender predictor", "baby due date calculator", "pregnancy wheel online", "due date calculator for twins", "first trimester due date calculator", "ultrasound due date calculator", "what is my due date", "calculate my baby's due date", "implantation calculator", "breastfeeding calculator", "milk intake calculator for baby"],
+    tags: ["due date calculator", "pregnancy calculator", "ovulation calculator", "conception calculator", "pregnancy week calculator", "estimated due date calculator", "edd calculator", "due date calculator by last period", "lmp calculator", "due date calculator by conception date", "due date calculator ivf", "ivf transfer date calculator", "fertility calculator", "fertile window calculator", "ovulation predictor", "when am I most fertile calculator", "menstrual cycle calculator", "period calculator", "pregnancy weight gain calculator", "pregnancy test calculator", "when to take a pregnancy test calculator", "hcg calculator", "beta hcg doubling calculator", "reverse due date calculator", "when did I conceive calculator", "how many weeks pregnant am I calculator", "trimester calculator", "fetal age calculator", "chinese gender predictor", "baby due date calculator", "pregnancy wheel online", "due date calculator for twins", "first trimester due date calculator", "ultrasound due date calculator", "what is my due date", "calculate my baby's due date", "implantation calculator", "breastfeeding calculator", "milk intake calculator for baby"],
   },
   {
     slug: "ovulation-calculator",
@@ -905,7 +906,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days for family planning.",
     lastUpdated: "2024-07-31",
-    tags: ["ovulation calculator", "fertility calculator", "fertile window calculator", "ovulation predictor", "when am I most fertile calculator", "menstrual cycle calculator", "period calculator", "ovulation calendar", "safe period calculator", "pms calculator", "menopause calculator", "cycle length calculator"]
+    tags: ["ovulation calculator", "fertility calculator", "fertile window calculator", "ovulation predictor", "when am I most fertile calculator", "menstrual cycle calculator", "period calculator", "ovulation calendar", "safe period calculator", "pms calculator", "menopause calculator", "cycle length calculator"],
   },
   {
     slug: "water-intake-calculator",
@@ -953,7 +954,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your Blood Alcohol Content (BAC) using the Widmark formula. This calculator provides an educational estimate & is not for legal use.",
     lastUpdated: "2024-07-31",
-    tags: ["bac calculator", "blood alcohol content", "widmark formula"]
+    tags: ["bac calculator", "blood alcohol content", "widmark formula", "smoking cost calculator", "caffeine calculator"]
   },
 
   // Conversions
@@ -1078,7 +1079,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find your exact age in years, months, weeks, and days with our online age calculator. Simply enter your date of birth to get your age.",
     lastUpdated: "2024-07-31",
-    tags: ["age calculator", "how old am I calculator", "date of birth calculator", "chronological age calculator", "age calculator in years months days", "age calculator in days", "age calculator in hours", "age calculator in seconds", "birthday calculator", "how many days until my birthday", "next birthday calculator", "age difference calculator", "relationship duration calculator", "how long have we been together calculator", "anniversary calculator", "age calculator by date of birth", "exact age calculator", "korean age calculator", "age calculator from date to date", "how old will I be in 2050", "what year was I born if I am 30", "age finder", "calculate age from dob", "online age calculator", "free age calculator", "age calculator for job application", "retirement age calculator", "zodiac sign calculator", "chinese zodiac calculator", "generation calculator (boomer, gen x, millennial, gen z)", "how old was someone on a certain date", "historical age calculator", "celebrity age calculator", "age calculator app", "age calculator with time", "age as of today calculator", "leap year birthday age calculator", "age problems word problem solver"],
+    tags: ["age calculator", "how old am I calculator", "date of birth calculator", "chronological age calculator", "age calculator in years months days", "age calculator in days", "age calculator in hours", "age calculator in seconds", "birthday calculator", "how many days until my birthday", "next birthday calculator", "age difference calculator", "dog age calculator", "cat age in human years", "age calculator by date of birth", "exact age calculator", "korean age calculator", "age calculator from date to date", "how old will I be in 2050", "what year was I born if I am 30", "age finder", "calculate age from dob", "online age calculator", "free age calculator", "age calculator for job application", "retirement age calculator", "zodiac sign calculator", "chinese zodiac calculator", "generation calculator (boomer, gen x, millennial, gen z)", "how old was someone on a certain date", "historical age calculator", "celebrity age calculator", "relationship duration calculator", "how long have we been together calculator", "anniversary calculator", "pet age calculator", "horse age calculator", "age calculator app", "age calculator with time", "age as of today calculator", "leap year birthday age calculator"],
   },
   {
     slug: "date-difference-calculator",
@@ -1127,7 +1128,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "View the current local time in major cities across the globe. Our world clock is an easy way to check time differences and plan calls.",
     lastUpdated: "2024-07-31",
-    tags: ["world clock", "time zones", "local time"]
+    tags: ["world clock", "time zones", "local time", "online stopwatch", "online timer", "alarm clock online"]
   },
   {
     slug: "working-days-calculator",
@@ -1462,7 +1463,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how long it will take to read any text. Paste your content & adjust the Words Per Minute (WPM) for a personalized reading time.",
     lastUpdated: "2024-07-31",
-    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter", "word counter", "text to speech converter", "speech to text converter"],
+    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter", "text to speech converter", "speech to text converter", "reading level calculator", "flesch-kincaid calculator"],
   },
   {
     slug: "typing-speed-calculator",
