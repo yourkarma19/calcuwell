@@ -60,32 +60,29 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="w-full text-center py-20 bg-muted/30">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h1 className="text-3xl md:text-5xl font-bold text-primary mb-6 leading-tight">
+      {/* Hero Section with Integrated Calculator */}
+      <section className="w-full text-center py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 leading-tight">
             Instant, Accurate Answers for Your Financial, Health, and
             Educational Questions.
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
             Your free hub for fast, accurate online calculators. Solve complex
-            problems in finance, health, math, and more with our easy-to-use
-            tools.
+            problems with our easy-to-use tools.
           </p>
+          <div className="mt-8 max-w-2xl mx-auto">
+            <Card className="shadow-xl rounded-2xl p-4 md:p-6 text-left">
+              <HomeCalculator />
+            </Card>
+          </div>
         </div>
-      </section>
-
-      {/* Main Calculator Section */}
-      <section className="w-full max-w-5xl px-6 py-20">
-        <Card className="shadow-xl rounded-2xl p-6">
-          <HomeCalculator />
-        </Card>
       </section>
 
       {/* Trending Calculators Section */}
       <section className="w-full py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-center text-2xl md:text-3xl font-semibold mb-12">
+          <h2 className="text-center text-3xl md:text-4xl font-semibold mb-12">
             🔥 Trending Calculators
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -121,7 +118,7 @@ export default function Home() {
       {/* Categories Section */}
       <section className="w-full bg-muted/30 py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-center text-2xl md:text-3xl font-semibold mb-12">
+          <h2 className="text-center text-3xl md:text-4xl font-semibold mb-12">
             📂 Calculator Categories
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -162,7 +159,7 @@ export default function Home() {
       {/* Why CalcPro Section */}
       <section className="w-full text-center py-20">
         <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
             Why CalcPro?
           </h2>
           <p className="text-lg text-muted-foreground">
