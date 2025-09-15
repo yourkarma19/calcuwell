@@ -89,7 +89,7 @@ const jsonLd: WithContext<FAQPage> = {
 const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
 
 export default function DecimalToInchesCalculator() {
-  const [decimalValue, setDecimalValue] = usePersistentState(
+  const [decimalValue, setDecimalValue] = usePersistentState<number|string>(
     "decimal-to-inch-value",
     5.25,
   );
@@ -108,15 +108,18 @@ export default function DecimalToInchesCalculator() {
 
   const handleConvert = () => {
     const totalInches = parseFloat(decimalValue.toString());
-    if (isNaN(totalInches)) return;
+    if (isNaN(totalInches) || totalInches < 0) {
+      setResult(null);
+      return;
+    };
 
     const feet = Math.floor(totalInches / 12);
-    const remainingInches = totalInches % 12;
-    const inchesPart = Math.floor(remainingInches);
-    const decimalPart = remainingInches - inchesPart;
+    let remainingInches = totalInches % 12;
+    let inchesPart = Math.floor(remainingInches);
+    let decimalPart = remainingInches - inchesPart;
 
     const denominator = Number(precision);
-    const numerator = Math.round(decimalPart * denominator);
+    let numerator = Math.round(decimalPart * denominator);
 
     if (numerator === 0) {
       setResult({
@@ -131,14 +134,26 @@ export default function DecimalToInchesCalculator() {
     }
 
     if (numerator === denominator) {
-      setResult({
-        feet,
-        inches: inchesPart + 1,
-        numerator: 0,
-        denominator,
-        simpleNumerator: 0,
-        simpleDenominator: 0,
-      });
+      inchesPart += 1;
+      if (inchesPart === 12) {
+          setResult({
+          feet: feet + 1,
+          inches: 0,
+          numerator: 0,
+          denominator,
+          simpleNumerator: 0,
+          simpleDenominator: 0,
+        });
+      } else {
+        setResult({
+          feet,
+          inches: inchesPart,
+          numerator: 0,
+          denominator,
+          simpleNumerator: 0,
+          simpleDenominator: 0,
+        });
+      }
       return;
     }
 
@@ -187,8 +202,10 @@ export default function DecimalToInchesCalculator() {
                 id="decimal-input"
                 type="number"
                 value={decimalValue}
-                onChange={(e) => setDecimalValue(parseFloat(e.target.value))}
+                onChange={(e) => setDecimalValue(e.target.value === '' ? '' : parseFloat(e.target.value))}
                 placeholder="e.g., 5.25"
+                min="0"
+                step="any"
               />
             </div>
             <div className="space-y-2">

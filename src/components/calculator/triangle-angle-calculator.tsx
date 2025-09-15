@@ -46,7 +46,9 @@ export default function TriangleAngleCalculator() {
     const radToDeg = (rad: number) => (rad * 180) / Math.PI;
 
     if (formula === "sss") {
-      if (
+      if (sideA <=0 || sideB <= 0 || sideC <=0) {
+        err = "Side lengths must be positive numbers.";
+      } else if (
         sideA + sideB <= sideC ||
         sideA + sideC <= sideB ||
         sideB + sideC <= sideA
@@ -69,17 +71,23 @@ export default function TriangleAngleCalculator() {
         C = 180 - A - B;
       }
     } else if (formula === "sas") {
-      // Given A, B, and angle C
-      const angleCRad = (sasAngle * Math.PI) / 180;
-      const calcSideC = Math.sqrt(
-        sideA * sideA + sideB * sideB - 2 * sideA * sideB * Math.cos(angleCRad),
-      );
+       if (sideA <=0 || sideB <= 0 || sasAngle <= 0) {
+        err = "Side lengths and angle must be positive numbers.";
+      } else if (sasAngle >= 180) {
+        err = "The angle must be less than 180 degrees.";
+      } else {
+        // Given A, B, and angle C
+        const angleCRad = (sasAngle * Math.PI) / 180;
+        const calcSideC = Math.sqrt(
+          sideA * sideA + sideB * sideB - 2 * sideA * sideB * Math.cos(angleCRad),
+        );
 
-      // Law of Sines to find angle A
-      const angleARad = Math.asin((sideA * Math.sin(angleCRad)) / calcSideC);
-      A = radToDeg(angleARad);
-      C = sasAngle;
-      B = 180 - A - C;
+        // Law of Sines to find angle A
+        const angleARad = Math.asin((sideA * Math.sin(angleCRad)) / calcSideC);
+        A = radToDeg(angleARad);
+        C = sasAngle;
+        B = 180 - A - C;
+      }
     }
 
     return { angleA: A, angleB: B, angleC: C, error: err };
@@ -120,6 +128,7 @@ export default function TriangleAngleCalculator() {
                 <Label>Side A</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideA}
                   onChange={(e) => setSideA(Number(e.target.value))}
                 />
@@ -128,6 +137,7 @@ export default function TriangleAngleCalculator() {
                 <Label>Side B</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideB}
                   onChange={(e) => setSideB(Number(e.target.value))}
                 />
@@ -136,6 +146,7 @@ export default function TriangleAngleCalculator() {
                 <Label>Side C</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideC}
                   onChange={(e) => setSideC(Number(e.target.value))}
                 />
@@ -149,6 +160,7 @@ export default function TriangleAngleCalculator() {
                 <Label>Side A</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideA}
                   onChange={(e) => setSideA(Number(e.target.value))}
                 />
@@ -157,6 +169,7 @@ export default function TriangleAngleCalculator() {
                 <Label>Side B</Label>
                 <Input
                   type="number"
+                  min="0"
                   value={sideB}
                   onChange={(e) => setSideB(Number(e.target.value))}
                 />
@@ -165,6 +178,9 @@ export default function TriangleAngleCalculator() {
                 <Label>Angle C (deg)</Label>
                 <Input
                   type="number"
+                  min="0"
+                  max="179.99"
+                  step="any"
                   value={sasAngle}
                   onChange={(e) => setSasAngle(Number(e.target.value))}
                 />
@@ -182,32 +198,34 @@ export default function TriangleAngleCalculator() {
           )}
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Calculated Angles</CardTitle>
-        </CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-          <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Angle A</p>
-            <p className="text-3xl font-bold font-headline text-primary">
-              {isNaN(angleA) ? "N/A" : angleA.toFixed(2)}°
-            </p>
-          </div>
-          <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Angle B</p>
-            <p className="text-3xl font-bold font-headline text-primary">
-              {isNaN(angleB) ? "N/A" : angleB.toFixed(2)}°
-            </p>
-          </div>
-          <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm text-muted-foreground">Angle C</p>
-            <p className="text-3xl font-bold font-headline text-primary">
-              {isNaN(angleC) ? "N/A" : angleC.toFixed(2)}°
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      
+      {!error && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Calculated Angles</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div className="bg-muted p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">Angle A</p>
+              <p className="text-3xl font-bold font-headline text-primary">
+                {isNaN(angleA) ? "..." : angleA.toFixed(2)}°
+              </p>
+            </div>
+            <div className="bg-muted p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">Angle B</p>
+              <p className="text-3xl font-bold font-headline text-primary">
+                {isNaN(angleB) ? "..." : angleB.toFixed(2)}°
+              </p>
+            </div>
+            <div className="bg-muted p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">Angle C</p>
+              <p className="text-3xl font-bold font-headline text-primary">
+                {isNaN(angleC) ? "..." : angleC.toFixed(2)}°
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

@@ -72,8 +72,9 @@ export default function AgeCalculator({
 
   const handleCalculateAge = useCallback(() => {
     if (dateOfBirth) {
-      const now = new Date();
-      setAge(calculateAge(now, dateOfBirth));
+      setAge(calculateAge(new Date(), dateOfBirth));
+    } else {
+      setAge(null);
     }
   }, [dateOfBirth]);
 

@@ -52,6 +52,12 @@ export default function FeetAndInchesCalculator({
   const handleCalculate = () => {
     setError(null);
     setResult(null); // Clear previous result on new calculation
+    
+    if (!feet1 || !inches1 || !feet2 || !inches2) {
+      setError("All input fields must have a value.");
+      return;
+    }
+    
     const f1 = Number(feet1);
     const i1 = Number(inches1);
     const f2 = Number(feet2);
@@ -73,11 +79,19 @@ export default function FeetAndInchesCalculator({
       }
       case "subtract": {
         const totalInches2 = toTotalInches(f2, i2);
+        if (totalInches1 < totalInches2) {
+          setError("Result cannot be negative. The first measurement must be larger.");
+          return;
+        }
         resultInches = totalInches1 - totalInches2;
         break;
       }
       case "multiply": {
         const scalar = f2 + i2 / 12;
+        if(scalar <= 0){
+          setError("Multiplier must be a positive number.");
+          return;
+        }
         resultInches = totalInches1 * scalar;
         break;
       }

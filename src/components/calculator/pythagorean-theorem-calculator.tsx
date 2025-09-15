@@ -65,7 +65,7 @@ export default function PythagoreanTheoremCalculator() {
         return { result: Math.sqrt(c * c - a * a), error: null };
       }
     }
-    return { result: null, error: null };
+    return { result: null, error: "Please enter valid side lengths." };
   }, [solveFor, sideA, sideB, sideC]);
 
   const handleInputChange = (
@@ -175,23 +175,23 @@ export default function PythagoreanTheoremCalculator() {
           )}
         </CardContent>
       </Card>
-      <div role="status" aria-live="polite">
-        <Card>
-          <CardHeader>
-            <CardTitle>Result</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="text-sm text-muted-foreground">
-              The length of side &apos;{solveFor}&apos; is:
-            </p>
-            <p className="text-5xl font-bold font-headline text-primary my-2">
-              {result !== null && isFinite(result)
-                ? result.toFixed(4)
-                : "Enter values"}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
+      {result !== null && !error && (
+        <div role="status" aria-live="polite">
+          <Card>
+            <CardHeader>
+              <CardTitle>Result</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-sm text-muted-foreground">
+                The length of side &apos;{solveFor}&apos; is:
+              </p>
+              <p className="text-5xl font-bold font-headline text-primary my-2">
+                {result.toFixed(4)}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }

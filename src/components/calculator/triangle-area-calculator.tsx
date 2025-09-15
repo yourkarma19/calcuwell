@@ -38,8 +38,8 @@ export default function TriangleAreaCalculator() {
   const [angleC, setAngleC] = usePersistentState("triangle-angleC", 60);
 
   const { area, perimeter, error } = useMemo(() => {
-    let a = 0,
-      p = 0,
+    let a = NaN,
+      p = NaN,
       err = null;
 
     if (
@@ -47,7 +47,7 @@ export default function TriangleAreaCalculator() {
       (formula === "sss" && (sideA <= 0 || sideB <= 0 || sideC <= 0)) ||
       (formula === "sas" && (sideA <= 0 || sideB <= 0 || angleC <= 0))
     ) {
-      return { area: 0, perimeter: 0, error: "All inputs must be positive." };
+      return { area: NaN, perimeter: NaN, error: "All inputs must be positive numbers." };
     }
 
     if (formula === "base-height") {
@@ -61,21 +61,23 @@ export default function TriangleAreaCalculator() {
         sideB + sideC <= sideA
       ) {
         err = "The given sides do not form a valid triangle.";
-        a = NaN;
-        p = NaN;
       } else {
         const s = (sideA + sideB + sideC) / 2; // semi-perimeter
         a = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)); // Heron's formula
         p = sideA + sideB + sideC;
       }
     } else if (formula === "sas") {
-      const angleRad = (angleC * Math.PI) / 180;
-      a = 0.5 * sideA * sideB * Math.sin(angleRad);
-      // Law of Cosines to find side c for perimeter
-      const c = Math.sqrt(
-        sideA * sideA + sideB * sideB - 2 * sideA * sideB * Math.cos(angleRad),
-      );
-      p = sideA + sideB + c;
+       if (angleC >= 180) {
+        err = "The angle must be less than 180 degrees.";
+      } else {
+        const angleRad = (angleC * Math.PI) / 180;
+        a = 0.5 * sideA * sideB * Math.sin(angleRad);
+        // Law of Cosines to find side c for perimeter
+        const c = Math.sqrt(
+          sideA * sideA + sideB * sideB - 2 * sideA * sideB * Math.cos(angleRad),
+        );
+        p = sideA + sideB + c;
+      }
     }
 
     return { area: a, perimeter: p, error: err };
@@ -195,6 +197,7 @@ export default function TriangleAreaCalculator() {
                 <Input
                   type="number"
                   min="0"
+                  max="179.99"
                   value={angleC}
                   onChange={(e) => setAngleC(Number(e.target.value))}
                 />
@@ -218,7 +221,7 @@ export default function TriangleAreaCalculator() {
           <div>
             <p className="text-sm text-muted-foreground">Area</p>
             <p className="text-4xl font-bold font-headline text-primary">
-              {isNaN(area) ? "Invalid" : area.toFixed(2)}
+              {isNaN(area) ? "Invalid Input" : area.toFixed(2)}
             </p>
           </div>
           <div>

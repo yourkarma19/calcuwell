@@ -94,14 +94,7 @@ export default function DateDifferenceCalculator({
   const handleCalculate = () => {
     if (startDate && endDate) {
       if (endDate < startDate) {
-        setDifference({
-          years: 0,
-          months: 0,
-          weeks: 0,
-          days: 0,
-          hours: 0,
-          minutes: 0,
-        });
+        setDifference(null);
         return;
       }
       setDifference({
@@ -149,7 +142,7 @@ export default function DateDifferenceCalculator({
             <DatePicker
               date={endDate}
               setDate={setEndDate}
-              disabled={() => false}
+              disabled={(date) => !!startDate && date < startDate}
             />
           </div>
         </div>
@@ -201,7 +194,16 @@ export default function DateDifferenceCalculator({
         </CardContent>
       </Card>
     </div>
-  ) : null;
+  ) : (
+    <Card>
+      <CardHeader>
+        <CardTitle>Result</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground">The end date must be after the start date.</p>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <>
