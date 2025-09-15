@@ -1,3 +1,4 @@
+
 import type { Calculator } from "@/lib/types";
 
 // This file is separate to avoid bloating the initial bundle of pages
@@ -300,7 +301,27 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple and fast online calculator for everyday arithmetic. Perform addition, subtraction, multiplication, and division with ease.",
     lastUpdated: "2024-07-31",
-    tags: ["online calculator", "free calculator", "web calculator", "internet calculator", "digital calculator", "online calculation tool", "free online calculators", "simple calculator online", "basic calculator online", "easy calculator online", "all in one calculator", "online math calculator", "website with calculators", "best online calculator", "calculator website", "free web based calculator", "online calculator with memory", "mobile friendly calculator", "online calculator for chromebook", "online calculator for tablet", "calculator app online", "virtual calculator", "computer calculator online", "standard calculator online", "everyday calculator", "quick calculator online", "online problem solver", "calculation website", "online converter", "free online conversion tools", "arithmetic", "free scientific calculator online", "order of operations (BODMAS/PEMDAS) calculator"],
+    tags: [
+      "online calculator", "free calculator", "web calculator", "internet calculator", "digital calculator", 
+      "online calculation tool", "free online calculators", "simple calculator online", "basic calculator online", 
+      "easy calculator online", "all in one calculator", "online math calculator", "website with calculators", 
+      "best online calculator", "calculator website", "free web based calculator", "online calculator with memory", 
+      "mobile friendly calculator", "online calculator for chromebook", "online calculator for tablet", 
+      "calculator app online", "virtual calculator", "computer calculator online", "standard calculator online", 
+      "everyday calculator", "quick calculator online", "online problem solver", "calculation website", 
+      "online converter", "free online conversion tools", "arithmetic", "free scientific calculator online", 
+      "order of operations (BODMAS/PEMDAS) calculator",
+      "calculator for website", "embeddable calculator", "free calculator widget", "html calculator code",
+      "add calculator to my website", "interactive calculator builder", "website calculator plugin",
+      "javascript calculator for website", "custom calculator for website", "online calculator for blog",
+      "embed calculator wordpress", "embed calculator shopify", "free calculator widget for website",
+      "how to create a calculator for my website", "interactive calculator for lead generation",
+      "quote calculator for website", "price calculator for website", "savings calculator widget",
+      "mortgage calculator widget free", "bmi calculator for website", "loan calculator html code",
+      "online calculator builder", "no code calculator builder", "customizable calculator widget",
+      "free interactive calculator", "calculator API", "math calculator widget", "financial calculator widget",
+      "health calculator for website", "create a custom online calculator"
+    ],
   },
   {
     slug: "percentage-calculator",
