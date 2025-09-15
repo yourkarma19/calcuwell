@@ -29,7 +29,7 @@ const categoriesSchema: WebPage[] = categories.map((cat) => ({
   url: `https://calcpro.online/categories/${cat.slug}`,
 }));
 
-const websiteSchema: any = {
+const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "CalcPro",

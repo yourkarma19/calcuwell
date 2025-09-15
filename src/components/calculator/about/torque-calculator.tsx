@@ -168,7 +168,7 @@ export default function TorqueCalculator() {
                 <ul className="list-disc pl-5 mt-2">
                   <li>Using a wrench to tighten a bolt.</li>
                   <li>Opening a door by pushing on the handle.</li>
-                  <li>A car engine's crankshaft rotating.</li>
+                  <li>A car engine&apos;s crankshaft rotating.</li>
                   <li>Pedaling a bicycle.</li>
                 </ul>
               </AccordionContent>
