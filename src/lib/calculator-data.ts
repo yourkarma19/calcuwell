@@ -773,7 +773,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how much you can afford to borrow based on your salary, monthly debts, and desired loan terms. For home or car loan planning.",
     lastUpdated: "2024-07-31",
-    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income", "debt to income ratio calculator"],
+    tags: ["loan affordability", "how much can i borrow", "dti ratio", "loan affordability calculator based on my salary", "debt-to-income ratio", "house affordability calculator", "how much house can I afford calculator", "mortgage qualification calculator", "maximum loan amount calculator", "home affordability calculator based on income"],
   },
 
   // Health & Fitness
@@ -890,7 +890,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Get an estimated due date for your baby using your last menstrual period (LMP) or date of conception. Includes a week-by-week pregnancy calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["due date calculator", "pregnancy calculator", "conception date", "pregnancy week by week calculator from the due date"]
+    tags: ["due date calculator", "pregnancy calculator", "conception calculator", "pregnancy week calculator", "estimated due date calculator", "edd calculator", "due date calculator by last period", "lmp calculator", "due date calculator by conception date", "due date calculator ivf", "ivf transfer date calculator", "pregnancy weight gain calculator", "pregnancy test calculator", "when to take a pregnancy test calculator", "hcg calculator", "beta hcg doubling calculator", "reverse due date calculator", "when did I conceive calculator", "how many weeks pregnant am I calculator", "trimester calculator", "fetal age calculator", "chinese gender predictor", "baby due date calculator", "pregnancy wheel online", "due date calculator for twins", "first trimester due date calculator", "ultrasound due date calculator", "what is my due date", "calculate my baby's due date", "implantation calculator", "breastfeeding calculator", "milk intake calculator for baby"]
   },
   {
     slug: "ovulation-calculator",
@@ -902,7 +902,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your fertile window and ovulation date based on your menstrual cycle. Our tool helps you predict your most fertile days for family planning.",
     lastUpdated: "2024-07-31",
-    tags: ["ovulation calculator", "fertile window", "family planning", "fertility calendar", "ovulation and fertile window calculator for family planning"]
+    tags: ["ovulation calculator", "fertility calculator", "fertile window calculator", "ovulation predictor", "when am I most fertile calculator", "menstrual cycle calculator", "period calculator", "ovulation calendar", "safe period calculator", "cycle length calculator", "pms calculator", "menopause calculator"]
   },
   {
     slug: "water-intake-calculator",
