@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import * as React from "react";
-import { searchCalculators } from "@/app/actions/search";
 import { IconWrapper } from "@/components/IconWrapper";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,18 +17,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { type Calculator } from "@/lib/types";
-import { Search, Loader2 } from "lucide-react";
-
-type SearchResult = Omit<Calculator, "component">;
+import { useSearch } from "@/components/providers/search-provider";
+import { Loader2, Search } from "lucide-react";
 
 export function SearchBar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [search, setSearch] = React.useState("");
-  const [results, setResults] = React.useState<SearchResult[]>([]);
-  const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const { results, isLoading, searchCalculators } = useSearch();
 
   React.useEffect(() => {
     if (!isOpen) {
@@ -39,18 +35,13 @@ export function SearchBar() {
 
   // Debounce search input
   React.useEffect(() => {
-    const performSearch = async () => {
-      setIsLoading(true);
-      const searchResults = await searchCalculators(search);
-      setResults(searchResults || []);
-      setIsLoading(false);
-    };
-
     if (isOpen) {
-      const debounceTimeout = setTimeout(performSearch, 200);
+      const debounceTimeout = setTimeout(() => {
+        searchCalculators(search);
+      }, 100); // Shorter debounce
       return () => clearTimeout(debounceTimeout);
     }
-  }, [search, isOpen]);
+  }, [search, isOpen, searchCalculators]);
 
   // Keyboard shortcut to open search
   React.useEffect(() => {
