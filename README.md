@@ -1,4 +1,4 @@
-# CalcPro - Calculator Suite
+ run # CalcPro - Calculator Suite
 
 A comprehensive calculator application built with Next.js, TypeScript, and Tailwind CSS.
 
