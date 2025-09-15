@@ -91,7 +91,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Estimate the volume & number of concrete bags for your project. Works for slabs, footers, & round post holes. Also useful for construction cost estimation.",
     formula: "Volume = Length × Width × Thickness",
     lastUpdated: "2024-07-31",
-    tags: ["concrete calculator", "volume calculator", "construction", "diy", "calculate the construction cost for a 1000 sq ft house in india", "for a construction project", "calculate the water capacity of an overhead tank in liters", "paint calculator", "wallpaper calculator", "flooring calculator"],
+    tags: ["concrete calculator", "volume calculator", "construction", "diy", "calculate the construction cost for a 1000 sq ft house in india", "for a construction project", "calculate the water capacity of an overhead tank in liters", "paint calculator", "wallpaper calculator", "flooring calculator", "concrete calculator", "paint calculator", "wallpaper calculator", "flooring calculator"],
   },
   // New Wind Chill Calculator
   {
@@ -106,7 +106,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     formula:
       "Wind Chill (F) = 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)",
     lastUpdated: "2024-07-31",
-    tags: ["wind chill", "feels like temperature", "weather", "safety"],
+    tags: ["wind chill", "feels like temperature", "weather", "safety", "tv size calculator", "viewing distance calculator"],
   },
   // New Cubic Equation Calculator
   {
@@ -121,7 +121,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve any cubic equation instantly. Our calculator finds all real & complex roots & shows the steps using the cubic formula. Free & accurate.",
     lastUpdated: "2024-07-31",
-    tags: ["cubic equation calculator", "biquadratic equation calculator", "quartic equation calculator", "algebra calculator", "polynomial solver", "math problem solver", "roots calculator", "zeros of a function calculator"],
+    tags: ["cubic equation calculator", "biquadratic equation calculator", "quartic equation calculator", "algebra calculator", "polynomial solver", "math problem solver", "roots calculator", "zeros of a function calculator", "equation solver", "solve for x calculator", "algebra calculator with steps", "equation solver with steps", "math solver with steps", "pre algebra calculator", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "partial fraction decomposition calculator", "simplify expression calculator", "expand expression calculator", "evaluate expression calculator", "newton raphson calculator", "synthetic division calculator", "polynomial long division calculator", "rational roots theorem calculator"],
   },
   // New Triangle Angle Calculator
   {
@@ -136,7 +136,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate unknown angles in any triangle. Enter side lengths (SSS) or sides and an angle (SAS) to find missing values using the Law of Sines & Cosines.",
     lastUpdated: "2024-07-31",
-    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator", "find the angles of a triangle given the length of three sides", "solve a triangle with three given sides (SSS)", "calculate the interior angles of a triangle given the side ratios", "find the missing angle in a quadrilateral", "calculate the sum of the interior angles of a polygon", "trig calculator", "triangle calculator", "triangle side calculator", "special right triangles calculator", "30 60 90 triangle calculator", "45 45 90 triangle calculator"],
+    tags: ["triangle angle calculator", "law of sines", "law of cosines", "geometry calculator", "find the angles of a triangle given the length of three sides", "solve a triangle with three given sides (SSS)", "calculate the interior angles of a triangle given the side ratios", "find the missing angle in a quadrilateral", "calculate the sum of the interior angles of a polygon", "trig calculator", "triangle calculator", "triangle side calculator", "special right triangles calculator", "30 60 90 triangle calculator", "45 45 90 triangle calculator", "geometry calculator", "trigonometry calculator", "law of sines calculator", "law of cosines calculator"],
   },
   // New Tangent Line Calculator
   {
@@ -151,7 +151,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find the tangent line equation for any function at a given point. Our free calculus calculator provides the full, step-by-step solution.",
     lastUpdated: "2024-07-31",
-    tags: ["tangent line", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "math with steps", "find the equation of the tangent line at a specific point", "find the equation of the normal line to a curve", "how to find the tangent plane to a surface", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "newton raphson calculator"],
+    tags: ["tangent line", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "math with steps", "find the equation of the tangent line at a specific point", "find the equation of the normal line to a curve", "how to find the tangent plane to a surface", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "newton raphson calculator", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "partial fraction decomposition calculator", "simplify expression calculator", "expand expression calculator", "evaluate expression calculator", "newton raphson calculator", "synthetic division calculator", "polynomial long division calculator"],
   },
   // New Fraction to Percentage Calculator
   {
@@ -165,7 +165,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly convert any fraction to a percentage with our free online tool. Shows you the calculation steps and the final answer instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["fraction to percentage", "math converter", "percentage calculator", "fraction to decimal to percentage conversion chart and calculator", "fraction to percent calculator"],
+    tags: ["fraction to percentage", "math converter", "percentage calculator", "fraction to decimal to percentage conversion chart and calculator", "fraction to percent calculator", "fraction to decimal calculator", "decimal to fraction calculator", "percent to fraction calculator"],
   },
   // New Intercept Calculator
   {
@@ -235,7 +235,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Solve partial fraction decomposition problems instantly. Our free online calculator provides a detailed solution for your calculus homework.",
     lastUpdated: "2024-07-31",
-    tags: ["partial fractions", "partial fraction decomposition calculator", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral"],
+    tags: ["partial fractions", "partial fraction decomposition calculator", "calculus calculator", "algebra", "math problem solver", "integral calculator using partial fraction decomposition", "partial fraction decomposition for an integral", "calculus calculator", "derivative calculator", "differentiation calculator", "integral calculator", "integration calculator", "definite integral calculator", "indefinite integral calculator", "limit calculator", "series calculator", "taylor series calculator", "laplace transform calculator", "inverse laplace transform calculator", "fourier series calculator", "newton raphson calculator"],
   },
 
   // Lifestyle
@@ -250,7 +250,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Plan your dream wedding with our free budget calculator. Estimate costs for the venue, catering, and photography to stay on budget.",
     formula: "Total = Venue + (Catering × Guests) + Photography + Dress + ...",
     lastUpdated: "2024-07-31",
-    tags: ["wedding budget", "cost estimator", "wedding planning", "child's marriage planning calculator india", "event planning calculator", "vacation budget calculator"]
+    tags: ["wedding budget", "cost estimator", "wedding planning", "child's marriage planning calculator india", "event planning calculator", "vacation budget calculator", "event planning calculator"]
   },
   {
     slug: "pet-age-calculator",
@@ -262,7 +262,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "How old is your pet in human years? Use our pet age calculator to convert your dog or cat's age into an equivalent human age.",
     lastUpdated: "2024-07-31",
-    tags: ["pet age", "dog years", "cat years", "human years", "dog age calculator", "cat age calculator", "pet age calculator", "horse age calculator", "cat age in human years"]
+    tags: ["pet age", "dog years", "cat years", "human years", "dog age calculator", "cat age calculator", "pet age calculator", "horse age calculator", "cat age in human years", "dog age calculator", "cat age calculator"]
   },
   {
     slug: "pet-care-cost-calculator",
@@ -396,7 +396,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly find the mean, median, mode, and range of any data set. Our calculator helps you understand the central tendency of your data.",
     lastUpdated: "2024-07-31",
-    tags: ["mean median mode", "statistics calculator", "average calculator", "what is the difference between mean and median", "find the mean of a set of numbers", "calculate the range of a set of data points", "mean, median, and mode calculator for grouped data", "how to find the five-number summary (min, Q1, median, Q3, max)", "rounding calculator", "round to the nearest tenth calculator", "quartile calculator", "interquartile range calculator", "iqr calculator", "range calculator statistics", "data set statistics calculator", "frequency distribution calculator"],
+    tags: ["mean median mode", "statistics calculator", "average calculator", "what is the difference between mean and median", "find the mean of a set of numbers", "calculate the range of a set of data points", "mean, median, and mode calculator for grouped data", "how to find the five-number summary (min, Q1, median, Q3, max)", "rounding calculator", "round to the nearest tenth calculator", "quartile calculator", "interquartile range calculator", "iqr calculator", "range calculator statistics", "data set statistics calculator", "frequency distribution calculator", "statistics calculator", "average calculator", "quartile calculator", "interquartile range calculator", "iqr calculator", "range calculator statistics", "data set statistics calculator", "frequency distribution calculator"],
   },
   {
     slug: "standard-deviation-calculator",
@@ -408,7 +408,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the standard deviation for a sample or population data set. Understand the difference and the spread of your data with our tool.",
     lastUpdated: "2024-07-31",
-    tags: ["standard deviation calculator", "variance calculator", "statistics calculator", "how to calculate standard deviation for sample vs population", "what is the difference between sample and population standard deviation", "standard deviation calculator for grouped data or a frequency table", "variance calculator", "coefficient of variation calculator", "r-squared calculator", "standard error calculator", "grouped data standard deviation calculator"],
+    tags: ["standard deviation calculator", "variance calculator", "statistics calculator", "how to calculate standard deviation for sample vs population", "what is the difference between sample and population standard deviation", "standard deviation calculator for grouped data or a frequency table", "variance calculator", "coefficient of variation calculator", "r-squared calculator", "standard error calculator", "grouped data standard deviation calculator", "variance calculator", "coefficient of variation calculator", "r-squared calculator", "standard error calculator", "grouped data standard deviation calculator", "anova calculator", "mann-whitney u test calculator", "wilcoxon signed-rank test calculator", "spearman's rank correlation calculator"],
   },
   {
     slug: "probability-calculator",
@@ -420,7 +420,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the probability of single and multiple independent events with our easy-to-use tool. Finds P(A and B) and P(A or B).",
     lastUpdated: "2024-07-31",
-    tags: ["probability calculator", "statistics calculator", "chance", "probability of A or B happening calculator", "calculate the probability of two independent events both happening", "find the probability of a single event happening", "calculate the probability of mutually exclusive events", "coin flip probability calculator", "dice roll probability calculator", "lottery odds calculator", "poker odds calculator", "bayes theorem calculator"],
+    tags: ["probability calculator", "statistics calculator", "chance", "probability of A or B happening calculator", "calculate the probability of two independent events both happening", "find the probability of a single event happening", "calculate the probability of mutually exclusive events", "coin flip probability calculator", "dice roll probability calculator", "lottery odds calculator", "poker odds calculator", "bayes theorem calculator", "coin flip probability calculator", "dice roll probability calculator", "lottery odds calculator", "poker odds calculator"],
   },
   {
     slug: "permutation-combination-calculator",
@@ -432,7 +432,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability with examples and formulas.",
     lastUpdated: "2024-07-31",
-    tags: ["permutation calculator", "combination calculator", "ncr", "npr", "difference between combinations and permutations with examples", "find the number of permutations for a word", "how many combinations are possible from a group", "calculate the number of combinations for a lottery ticket", "ncr calculator", "npr calculator"],
+    tags: ["permutation calculator", "combination calculator", "ncr", "npr", "difference between combinations and permutations with examples", "find the number of permutations for a word", "how many combinations are possible from a group", "calculate the number of combinations for a lottery ticket", "ncr calculator", "npr calculator", "permutation calculator", "combination calculator", "ncr calculator", "npr calculator"],
   },
   {
     slug: "factorial-calculator",
@@ -445,7 +445,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Our online factorial calculator finds the factorial (n!) of any non-negative integer. Includes the formula and an explanation of 0!.",
     lastUpdated: "2024-07-31",
-    tags: ["factorial calculator", "n!", "combinatorics", "math", "factorial of a number calculator for n!", "long division calculator", "long multiplication calculator", "modulo calculator", "remainder calculator", "significant figures calculator", "sig fig calculator", "order of operations calculator", "pemdas calculator"],
+    tags: ["factorial calculator", "n!", "combinatorics", "math", "factorial of a number calculator for n!", "long division calculator", "long multiplication calculator", "modulo calculator", "remainder calculator", "significant figures calculator", "sig fig calculator", "order of operations calculator", "pemdas calculator", "factorial calculator"],
   },
   {
     slug: "lcm-gcd-calculator",
@@ -457,7 +457,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily calculate the Least Common Multiple (LCM) and Greatest Common Divisor (GCD/GCF) of a set of numbers. A tool for number theory.",
     lastUpdated: "2024-07-31",
-    tags: ["lcm calculator", "gcd calculator", "gcf calculator", "greatest common factor calculator", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator", "least common denominator calculator", "lcd calculator", "prime factorization calculator", "is it a prime number calculator"],
+    tags: ["lcm calculator", "gcd calculator", "gcf calculator", "greatest common factor calculator", "least common multiple", "greatest common factor of 3 or more numbers", "least common multiple for a set of numbers", "greatest common factor of 3 numbers calculator", "least common denominator calculator", "lcd calculator", "prime factorization calculator", "is it a prime number calculator", "gcf calculator", "least common multiple calculator", "least common denominator calculator", "lcd calculator", "prime factorization calculator", "is it a prime number calculator"],
   },
   {
     slug: "square-root-cube-root-calculator",
@@ -493,7 +493,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "An easy-to-use log calculator. Solve for the logarithm of any number with any base, including common logs (base 10) and natural logs (ln).",
     lastUpdated: "2024-07-31",
-    tags: ["logarithm calculator", "log calculator", "natural log calculator", "antilog calculator", "exponential equation calculator", "difference between log (base 10) and ln (natural log)", "logarithm calculator for a base other than 10 or e", "change of base formula for logarithms with examples", "expand a logarithmic expression using log properties", "condense a logarithmic expression into a single logarithm"],
+    tags: ["logarithm calculator", "log calculator", "natural log calculator", "antilog calculator", "exponential equation calculator", "difference between log (base 10) and ln (natural log)", "logarithm calculator for a base other than 10 or e", "change of base formula for logarithms with examples", "expand a logarithmic expression using log properties", "condense a logarithmic expression into a single logarithm", "logarithm calculator", "log calculator", "natural log calculator", "antilog calculator", "exponential equation calculator"],
   },
   {
     slug: "equation-solver",
@@ -517,7 +517,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple matrix calculator for performing addition and subtraction on 2x2 matrices. Enter the matrix values to get an instant result.",
     lastUpdated: "2024-07-31",
-    tags: ["matrix calculator", "linear algebra", "math", "multiply two matrices of 3x3 size", "find the determinant of a 3x3 matrix", "matrix determinant calculator", "matrix inverse calculator", "find the inverse of a 2x2 matrix", "what is an identity matrix and its properties", "solve a system of equations using Cramer's rule", "find the transpose of a matrix", "solve a matrix equation using the inverse matrix", "eigenvalue calculator", "eigenvector calculator", "cross product calculator", "dot product calculator"],
+    tags: ["matrix calculator", "linear algebra", "math", "multiply two matrices of 3x3 size", "find the determinant of a 3x3 matrix", "matrix determinant calculator", "matrix inverse calculator", "find the inverse of a 2x2 matrix", "what is an identity matrix and its properties", "solve a system of equations using Cramer's rule", "find the transpose of a matrix", "solve a matrix equation using the inverse matrix", "eigenvalue calculator", "eigenvector calculator", "cross product calculator", "dot product calculator", "matrix determinant calculator", "matrix inverse calculator", "eigenvalue calculator", "eigenvector calculator", "cross product calculator", "dot product calculator"],
   },
   {
     slug: "complex-number-calculator",
@@ -529,7 +529,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Perform arithmetic on complex numbers. Add, subtract, multiply, and divide complex numbers in the form a + bi and get instant results.",
     lastUpdated: "2024-07-31",
-    tags: ["complex numbers", "imaginary number calculator", "algebra", "math", "engineering math", "add, subtract, multiply, and divide complex numbers", "simplifying complex numbers calculator", "find the modulus and argument of a complex number", "convert a complex number to polar form"],
+    tags: ["complex numbers", "imaginary number calculator", "algebra", "math", "engineering math", "add, subtract, multiply, and divide complex numbers", "simplifying complex numbers calculator", "find the modulus and argument of a complex number", "convert a complex number to polar form", "imaginary number calculator"],
   },
   {
     slug: "roman-numeral-converter",
@@ -556,7 +556,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate your loan EMI and see how extra payments can reduce your loan tenure and save you money. For home, car, or personal loans in India.",
     lastUpdated: "2024-07-31",
-    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv", "loan amortization calculator with extra payments", "loan amortization table generator", "car payment calculator"],
+    tags: ["loan calculator", "emi calculator", "loan emi calculator", "personal loan calculator", "loan amortization schedule", "amortization calculator", "loan payment calculator", "monthly loan payment calculator", "simple loan calculator", "free loan calculator online", "loan interest calculator", "loan calculator with extra payments", "what will my loan payment be", "how to calculate emi for home loan", "loan repayment calculator", "loan term calculator", "how long to pay off loan calculator", "loan balance calculator", "personal loan calculator for good credit", "what if I pay an extra 100 on my mortgage", "loan principal and interest calculator", "loan to value calculator ltv", "loan amortization calculator with extra payments", "loan amortization table generator", "car payment calculator", "mortgage amortization schedule", "car payment calculator"],
   },
   {
     slug: "loan-comparison-calculator",
@@ -620,7 +620,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "See how your savings can grow with compound interest. Our calculator projects your investment growth over time with monthly or yearly additions.",
     lastUpdated: "2024-07-31",
-    tags: ["compound interest", "compound interest calculator", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator", "compound interest calculator monthly", "compound interest formula calculator"],
+    tags: ["compound interest", "compound interest calculator", "investment growth", "savings calculator", "future value", "compound interest calculator with yearly or monthly additions", "daily compound interest calculator", "compound interest calculator monthly", "compound interest formula calculator", "compound interest daily calculator"],
   },
   {
     slug: "savings-calculator",
@@ -644,7 +644,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Plan for your future with our retirement calculator. Estimate how much you need to save to meet your retirement goals and see if you are on track.",
     lastUpdated: "2024-07-31",
-    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "ira calculator", "roth ira calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster", "retirement savings calculator", "how much do I need to retire calculator", "early retirement calculator", "4 percent rule calculator", "retirement withdrawal calculator", "401k contribution calculator", "ira contribution calculator", "roth ira conversion calculator", "retirement income calculator", "millionaire calculator", "financial independence calculator", "fire calculator", "taxable vs tax-deferred investment calculator", "social security calculator", "rmd calculator", "required minimum distribution calculator", "401k loan calculator", "ira withdrawal calculator", "roth ira income limits calculator", "sep ira calculator", "simple ira calculator", "tsp calculator", "403b calculator", "defined benefit plan calculator", "retirement calculator by age", "retirement calculator for couples", "social security benefit estimator", "how long will my money last in retirement calculator", "best retirement planning tools", "free retirement planning tools"],
+    tags: ["retirement calculator", "pension calculator", "nps calculator", "401k calculator", "ira calculator", "roth ira calculator", "retirement planning calculator for a 30-year-old in india", "National Pension System (NPS) final corpus calculator", "emergency fund calculator for 6 months of expenses", "when can I retire", "retirement forecaster", "retirement savings calculator", "how much do I need to retire calculator", "early retirement calculator", "4 percent rule calculator", "retirement withdrawal calculator", "401k contribution calculator", "ira contribution calculator", "roth ira conversion calculator", "retirement income calculator", "millionaire calculator", "financial independence calculator", "fire calculator", "taxable vs tax-deferred investment calculator", "social security calculator", "rmd calculator", "required minimum distribution calculator", "401k loan calculator", "ira withdrawal calculator", "roth ira income limits calculator", "sep ira calculator", "simple ira calculator", "tsp calculator", "403b calculator", "defined benefit plan calculator", "retirement calculator by age", "retirement calculator for couples", "social security benefit estimator", "how long will my money last in retirement calculator", "best retirement planning tools", "free retirement planning tools", "retirement savings by age"],
   },
   {
     slug: "investment-return-calculator",
@@ -954,7 +954,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your Blood Alcohol Content (BAC) using the Widmark formula. This calculator provides an educational estimate & is not for legal use.",
     lastUpdated: "2024-07-31",
-    tags: ["bac calculator", "blood alcohol content", "widmark formula", "smoking cost calculator", "caffeine calculator"]
+    tags: ["bac calculator", "blood alcohol content", "widmark formula", "smoking cost calculator", "caffeine calculator", "blood alcohol content calculator", "bac calculator"]
   },
 
   // Conversions
@@ -968,7 +968,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile unit converter for length, weight, temperature, area, volume, and speed. Fast and easy to use for various measurements.",
     lastUpdated: "2024-07-31",
-    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking conversion calculator", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter", "cooking conversion calculator", "baking converter", "recipe converter", "ingredient substitution calculator", "cups to grams flour converter", "cups to grams sugar converter", "ounces to cups converter", "pace converter running"],
+    tags: ["unit converter", "measurement converter", "metric to imperial converter", "imperial to metric converter", "length converter", "weight converter", "mass converter", "temperature converter", "volume converter", "area converter", "speed converter", "pressure converter", "energy converter", "power converter", "force converter", "time converter", "angle converter", "fuel consumption converter", "distance converter", "cooking measurement converter", "clothing size converter", "shoe size converter", "ring size converter", "inches to cm converter", "cm to inches converter", "feet to meters converter", "meters to feet converter", "km to miles converter", "miles to km converter", "yards to meters converter", "kg to lbs converter", "lbs to kg converter", "grams to ounces converter", "ounces to grams converter", "stone to kg converter", "celsius to fahrenheit converter", "fahrenheit to celsius converter", "kelvin to celsius converter", "liters to gallons converter", "gallons to liters converter", "ml to oz converter", "oz to ml converter", "square feet to square meters converter", "acres to hectares converter", "mph to kph converter", "kph to mph converter", "knots to mph converter", "pascals to psi converter", "psi to pascals converter", "bar to psi converter", "joules to calories converter", "calories to joules converter", "watts to horsepower converter", "horsepower to watts converter", "newtons to pounds force converter", "mpg to l/100km converter", "metric conversion calculator", "height converter cm to feet and inches", "weight conversion chart", "temperature conversion formula", "cooking conversion calculator", "cups to grams converter", "tablespoons to ml converter", "teaspoons to grams converter", "fluid ounce converter", "torque converter", "density converter", "flow rate converter", "acceleration converter", "frequency converter"],
   },
   {
     slug: "data-storage-converter",
@@ -980,7 +980,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert between digital data storage units, from bits and bytes to kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB).",
     lastUpdated: "2024-07-31",
-    tags: ["data storage converter", "kb to mb", "gb to mb", "file size converter", "mb to gb converter", "gb to tb converter", "kb to mb converter", "bits to bytes converter", "computer storage units conversion"],
+    tags: ["data storage converter", "kb to mb", "gb to mb", "file size converter", "mb to gb converter", "gb to tb converter", "kb to mb converter", "bits to bytes converter", "computer storage units conversion", "mb to gb converter", "gb to tb converter", "kb to mb converter", "bits to bytes converter"],
   },
   {
     slug: "data-transfer-rate-converter",
@@ -992,7 +992,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Convert data transfer speeds, like megabits per second (Mbps) to megabytes per second (MB/s). For internet speed & file downloads.",
     lastUpdated: "2024-07-31",
-    tags: ["data transfer rate converter", "mbps to mbs", "internet speed converter", "bandwidth converter", "mbps to MB/s converter"]
+    tags: ["data transfer rate converter", "mbps to mbs", "internet speed converter", "bandwidth converter", "mbps to MB/s converter", "bandwidth converter"]
   },
   {
     slug: "time-converter",
@@ -1104,7 +1104,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Set a countdown to any date & time. Our online timer will track the days, hours, minutes, and seconds remaining until your event.",
     lastUpdated: "2024-07-31",
-    tags: ["countdown timer", "online clock", "event timer"]
+    tags: ["countdown timer", "online clock", "event timer", "online stopwatch", "online timer", "alarm clock online"]
   },
   {
     slug: "time-zone-converter",
@@ -1191,7 +1191,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile number system converter for binary, decimal, hexadecimal, and octal values. For programmers and computer science students.",
     lastUpdated: "2024-07-31",
-    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter"],
+    tags: ["binary converter", "hex converter", "number system", "hexadecimal to decimal converter for programming", "convert a number from binary to decimal", "binary calculator", "hex calculator", "decimal converter", "octal converter", "number base converter", "binary to decimal converter", "decimal to binary converter", "hex to decimal converter", "decimal to hex converter", "binary to hex converter", "hex to binary converter", "binary calculator", "hex calculator"],
   },
   {
     slug: "ascii-text-converter",
@@ -1203,7 +1203,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Easily convert ASCII codes to text characters and text to ASCII values. A simple and instant tool for developers working with encoding.",
     lastUpdated: "2024-07-31",
-    tags: ["ascii converter", "text to ascii", "character code", "text to binary converter", "ascii to binary converter", "ascii to hex converter", "hex to ascii converter"]
+    tags: ["ascii converter", "text to ascii", "character code", "text to binary converter", "ascii to binary converter", "ascii to hex converter", "hex to ascii converter", "text to binary converter", "binary to text converter", "ascii to binary converter", "ip address to binary converter"]
   },
   {
     slug: "base64-converter",
@@ -1215,7 +1215,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A free online tool to encode your data to Base64 or decode a Base64 string back to its original format. Supports UTF-8 text.",
     lastUpdated: "2024-07-31",
-    tags: ["base64 encode", "base64 decode", "data uri", "programming tools", "url encoder", "url decoder", "html entity converter"]
+    tags: ["base64 encode", "base64 decode", "data uri", "programming tools", "url encoder", "url decoder", "html entity converter", "base64 encode", "base64 decode", "url encoder", "url decoder", "html entity converter"]
   },
   {
     slug: "ip-subnet-calculator",
@@ -1228,7 +1228,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     formula: "Network Address = IP Address & Subnet Mask",
     lastUpdated: "2024-07-31",
     seoTitle: "IPv4 Subnet Calculator with CIDR | CalcPro",
-    tags: ["subnet calculator", "ip address calculator", "cidr calculator", "ip address", "cidr", "networking"]
+    tags: ["subnet calculator", "ip address calculator", "cidr calculator", "ip address", "cidr", "networking", "ip address calculator", "cidr calculator"]
   },
   {
     slug: "crc-hash-generator",
@@ -1240,7 +1240,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Generate a CRC-32 hash (checksum) for any string or text input. Our free online tool helps you verify data integrity quickly.",
     lastUpdated: "2024-07-31",
-    tags: ["crc32", "hash generator", "checksum", "data integrity", "md5 generator", "sha1 generator", "sha256 generator"]
+    tags: ["crc32", "hash generator", "checksum", "data integrity", "md5 generator", "sha1 generator", "sha256 generator", "hash generator", "md5 generator", "sha1 generator", "sha256 generator"]
   },
   {
     slug: "file-size-calculator",
@@ -1264,7 +1264,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple tool for web designers & developers to convert between HEX, RGB, and HSL color formats in real-time.",
     lastUpdated: "2024-07-31",
-    tags: ["color converter", "hex to rgb", "hsl to hex", "web design tools", "rgb to hex converter", "hex to rgb converter", "color code converter", "cmyk to rgb converter", "color picker"]
+    tags: ["color converter", "hex to rgb", "hsl to hex", "web design tools", "rgb to hex converter", "hex to rgb converter", "color code converter", "cmyk to rgb converter", "color picker", "rgb to hex", "hex to rgb", "cmyk to rgb converter", "color picker"]
   },
 
   // Geometry & Engineering
@@ -1278,7 +1278,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A versatile circle calculator. Enter radius, diameter, circumference, or area to find the other three properties instantly.",
     lastUpdated: "2024-07-31",
-    tags: ["circle calculator", "area of a circle calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator", "arc length calculator", "sector area calculator"],
+    tags: ["circle calculator", "area of a circle calculator", "circumference", "geometry", "how to find the circumference of a circle if you know the area", "how to calculate the arc length of a part of a circle", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator", "arc length calculator", "sector area calculator", "area of a circle calculator", "radius of a circle calculator", "diameter of a circle calculator", "equation of a circle calculator", "arc length calculator", "sector area calculator"],
   },
   {
     slug: "triangle-area-calculator",
@@ -1290,7 +1290,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate a triangle's area and perimeter using Base & Height, Heron's formula (3 sides), or Side-Angle-Side (SAS).",
     lastUpdated: "2024-07-31",
-    tags: ["triangle calculator", "area calculator", "herons formula", "geometry", "area of a triangle given 3 sides (Heron's formula)", "area of an equilateral triangle with a given side length", "what are the conditions for two triangles to be congruent", "equilateral triangle calculator", "isosceles triangle calculator", "scalene triangle calculator", "area of a triangle calculator"],
+    tags: ["triangle calculator", "area calculator", "herons formula", "geometry", "area of a triangle given 3 sides (Heron's formula)", "area of an equilateral triangle with a given side length", "what are the conditions for two triangles to be congruent", "equilateral triangle calculator", "isosceles triangle calculator", "scalene triangle calculator", "area of a triangle calculator", "heron's formula calculator"],
   },
   {
     slug: "rectangle-area-calculator",
@@ -1315,7 +1315,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the volume, lateral area, base area, and total surface area of a cylinder. Simply enter the radius and height. Also calculates volume in liters for tanks.",
     lastUpdated: "2024-07-31",
-    tags: ["cylinder volume", "surface area calculator", "geometry", "3d shapes", "calculate the volume of a cylindrical tank in liters or gallons", "surface area of a cylinder including the top and bottom", "how to calculate the height of a cylinder given its volume and radius", "find the volume of an oblique cylinder", "volume calculator", "solid geometry calculator", "rectangular prism volume calculator"],
+    tags: ["cylinder volume", "surface area calculator", "geometry", "3d shapes", "calculate the volume of a cylindrical tank in liters or gallons", "surface area of a cylinder including the top and bottom", "how to calculate the height of a cylinder given its volume and radius", "find the volume of an oblique cylinder", "volume calculator", "solid geometry calculator", "rectangular prism volume calculator", "cube volume calculator", "rectangular prism volume calculator"],
   },
   {
     slug: "sphere-volume-surface-area-calculator",
@@ -1352,7 +1352,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Easily solve for the missing side of a right-angled triangle using the Pythagorean theorem (a² + b² = c²). Finds the hypotenuse or a missing leg.",
     seoTitle: "Pythagorean Theorem Calculator (Find Hypotenuse or Side) | CalcPro",
     lastUpdated: "2024-07-31",
-    tags: ["pythagorean theorem", "right triangle calculator", "hypotenuse", "geometry", "pythagorean theorem calculator for a missing hypotenuse", "check if three sides form a right-angled triangle", "pythagorean triples generator", "pythagorean theorem calculator for 3D shapes", "pythagorean theorem calculator with steps", "hypotenuse calculator"],
+    tags: ["pythagorean theorem", "right triangle calculator", "hypotenuse", "geometry", "pythagorean theorem calculator for a missing hypotenuse", "check if three sides form a right-angled triangle", "pythagorean triples generator", "pythagorean theorem calculator for 3D shapes", "pythagorean theorem calculator with steps", "hypotenuse calculator", "pythagorean theorem calculator with steps"],
   },
   {
     slug: "trigonometry-calculator",
@@ -1451,7 +1451,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Find your grade percentage and letter grade by entering the points you earned and the total possible points. A simple tool for students.",
     lastUpdated: "2024-07-31",
-    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects", "grade percentage to gpa converter", "final grade calculator", "what score do I need on my final exam to get an A", "final grade calculator to see what I need to get an A", "easy grader", "test score calculator", "quiz grade calculator", "letter grade calculator", "class grade calculator", "assignment grade calculator", "course grade calculator", "gpa needed for dean's list"],
+    tags: ["grade calculator", "percentage calculator", "exam marks", "how to calculate percentage of marks for 5 subjects", "best of 5 percentage calculator for ICSE board", "attendance percentage calculator for missing college classes", "how to calculate percentage of marks obtained in all subjects", "grade percentage to gpa converter", "final grade calculator", "what score do I need on my final exam to get an A", "final grade calculator to see what I need to get an A", "easy grader", "test score calculator", "quiz grade calculator", "letter grade calculator", "class grade calculator", "assignment grade calculator", "course grade calculator", "gpa needed for dean's list", "final grade calculator", "weighted grade calculator", "what do I need on my final exam calculator", "easy grader", "test score calculator", "quiz grade calculator", "letter grade calculator", "class grade calculator", "assignment grade calculator", "course grade calculator", "gpa needed for dean's list"],
   },
   {
     slug: "reading-time-calculator",
@@ -1463,7 +1463,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate how long it will take to read any text. Paste your content & adjust the Words Per Minute (WPM) for a personalized reading time.",
     lastUpdated: "2024-07-31",
-    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter", "text to speech converter", "speech to text converter", "reading level calculator", "flesch-kincaid calculator"],
+    tags: ["reading time calculator", "wpm calculator", "word count", "how long will it take to read a book with a certain number of pages", "reading speed calculator in words per minute", "character counter", "text to speech converter", "speech to text converter", "reading level calculator", "flesch-kincaid calculator", "character counter", "word counter", "reading time calculator", "wpm calculator"],
   },
   {
     slug: "typing-speed-calculator",
