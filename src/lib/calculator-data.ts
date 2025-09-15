@@ -396,7 +396,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Quickly find the mean, median, mode, and range of any data set. Our calculator helps you understand the central tendency of your data.",
     lastUpdated: "2024-07-31",
-    tags: ["mean median mode", "statistics calculator", "average calculator", "what is the difference between mean and median", "find the mean of a set of numbers", "calculate the range of a set of data points", "mean, median, and mode calculator for grouped data", "how to find the five-number summary (min, Q1, median, Q3, max)", "rounding calculator", "round to the nearest tenth calculator"],
+    tags: ["mean median mode", "statistics calculator", "average calculator", "what is the difference between mean and median", "find the mean of a set of numbers", "calculate the range of a set of data points", "mean, median, and mode calculator for grouped data", "how to find the five-number summary (min, Q1, median, Q3, max)", "rounding calculator", "round to the nearest tenth calculator", "quartile calculator", "interquartile range calculator", "iqr calculator", "range calculator statistics", "data set statistics calculator", "frequency distribution calculator"],
   },
   {
     slug: "standard-deviation-calculator",
@@ -408,7 +408,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the standard deviation for a sample or population data set. Understand the difference and the spread of your data with our tool.",
     lastUpdated: "2024-07-31",
-    tags: ["standard deviation", "variance calculator", "statistics", "how to calculate standard deviation for sample vs population", "what is the difference between sample and population standard deviation", "standard deviation calculator for grouped data or a frequency table"],
+    tags: ["standard deviation", "variance calculator", "statistics", "how to calculate standard deviation for sample vs population", "what is the difference between sample and population standard deviation", "standard deviation calculator for grouped data or a frequency table", "standard deviation calculator", "variance calculator", "coefficient of variation calculator", "r-squared calculator", "standard error calculator"],
   },
   {
     slug: "probability-calculator",
@@ -420,7 +420,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate the probability of single and multiple independent events with our easy-to-use tool. Finds P(A and B) and P(A or B).",
     lastUpdated: "2024-07-31",
-    tags: ["probability calculator", "statistics", "chance", "probability of A or B happening calculator", "calculate the probability of two independent events both happening", "find the probability of a single event happening", "calculate the probability of mutually exclusive events"],
+    tags: ["probability calculator", "statistics", "chance", "probability of A or B happening calculator", "calculate the probability of two independent events both happening", "find the probability of a single event happening", "calculate the probability of mutually exclusive events", "coin flip probability calculator", "dice roll probability calculator", "lottery odds calculator", "poker odds calculator", "bayes theorem calculator"],
   },
   {
     slug: "permutation-combination-calculator",
@@ -432,7 +432,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Calculate permutations (nPr) and combinations (nCr) quickly. Understand when order matters in probability with examples and formulas.",
     lastUpdated: "2024-07-31",
-    tags: ["permutation calculator", "combination calculator", "ncr", "npr", "difference between combinations and permutations with examples", "find the number of permutations for a word", "how many combinations are possible from a group", "calculate the number of combinations for a lottery ticket"],
+    tags: ["permutation calculator", "combination calculator", "ncr", "npr", "difference between combinations and permutations with examples", "find the number of permutations for a word", "how many combinations are possible from a group", "calculate the number of combinations for a lottery ticket", "ncr calculator", "npr calculator"],
   },
   {
     slug: "factorial-calculator",
@@ -819,7 +819,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     lastUpdated: "2024-07-31",
     tags: [
       "calorie calculator india", "weight loss diet", "indian diet plan", "macro nutrient calculator for a vegetarian indian diet", "daily calorie intake calculator for weight loss for an Indian diet",
-      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "weight loss calculator", "keto macro calculator", "weight loss percentage calculator",
+      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "calorie deficit calculator", "weight loss calculator", "keto macro calculator",
       "protein calculator", "carbohydrate calculator", "fat calculator", "daily calorie needs calculator", "calorie calculator for weight loss", "calorie calculator for weight gain", 
       "calorie calculator to maintain weight", "how many calories should I eat", "weight loss target date calculator", "macros for weight loss calculator", 
       "macros for muscle gain calculator", "keto calculator", "ketogenic diet calculator", "net carbs calculator", "low carb macro calculator", "paleo macro calculator", 
@@ -827,7 +827,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
       "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator",
       "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
-      "sodium calculator", "points calculator for diet", "food points calculator", 
+      "sodium calculator", "points calculator for diet", "food points calculator", "weight loss percentage calculator",
       "bmr and tdee calculator", "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
       "very active calorie calculator", "extra active calorie calculator", "calorie tracker online", "free macro tracker", "keto diet food list calculator"
     ],
