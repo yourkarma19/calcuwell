@@ -1,7 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import type { WebPage, WebSite, WithContext } from "schema-dts";
-import { Button } from "@/components/ui/button";
+import type { WebPage } from "schema-dts";
 import { IconWrapper } from "@/components/IconWrapper";
 import HomeCalculator from "@/components/calculator/home-calculator";
 import {
@@ -43,11 +42,7 @@ const websiteSchema: any = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    queryInput: {
-      "@type": "PropertyValueSpecification",
-      valueRequired: "True",
-      valueName: "search_term_string",
-    },
+    "query-input": "required name=search_term_string",
   },
   hasPart: [...trendingSchema, ...categoriesSchema],
 };

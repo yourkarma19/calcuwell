@@ -114,12 +114,12 @@ export default function DecimalToInchesCalculator() {
     };
 
     const feet = Math.floor(totalInches / 12);
-    let remainingInches = totalInches % 12;
+    const remainingInches = totalInches % 12;
     let inchesPart = Math.floor(remainingInches);
-    let decimalPart = remainingInches - inchesPart;
+    const decimalPart = remainingInches - inchesPart;
 
     const denominator = Number(precision);
-    let numerator = Math.round(decimalPart * denominator);
+    const numerator = Math.round(decimalPart * denominator);
 
     if (numerator === 0) {
       setResult({

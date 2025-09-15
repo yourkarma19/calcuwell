@@ -1,0 +1,264 @@
+"use client";
+
+import { useMemo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import usePersistentState from "@/hooks/use-persistent-state";
+import type { FAQPage, WithContext } from "schema-dts";
+
+
+const jsonLd: WithContext<FAQPage> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a complex number?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A complex number is a number that can be expressed in the form `a + bi`, where `a` and `b` are real numbers, and `i` is the imaginary unit, which satisfies the equation `i² = -1`. In this expression, 'a' is the real part and 'b' is the imaginary part. Complex numbers are used in many areas of science and engineering, including electronics and signal processing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the imaginary unit 'i'?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The imaginary unit 'i' is the solution to the equation x² = -1. It is defined as the square root of negative one (√-1). Mathematicians created 'i' to solve problems that have no real number solution.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you add or subtract complex numbers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It's simple: you add or subtract the real parts and the imaginary parts separately. For example, `(3 + 2i) + (1 + 4i) = (3+1) + (2+4)i = 4 + 6i`.",
+      },
+    },
+     {
+      "@type": "Question",
+      name: "How do you multiply and divide complex numbers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Multiplying is like using FOIL: `(a+bi)(c+di) = ac + adi + bci + bdi² = (ac-bd) + (ad+bc)i`. To divide, you multiply the top and bottom by the conjugate of the denominator. For `(a+bi)/(c+di)`, the conjugate is `(c-di)`.",
+      },
+    },
+  ],
+};
+
+export default function ComplexNumberCalculator() {
+  const [real1, setReal1] = usePersistentState("complex-real1", 3);
+  const [imag1, setImag1] = usePersistentState("complex-imag1", 2);
+  const [real2, setReal2] = usePersistentState("complex-real2", 1);
+  const [imag2, setImag2] = usePersistentState("complex-imag2", 7);
+  const [operation, setOperation] = usePersistentState<
+    "add" | "subtract" | "multiply" | "divide"
+  >("complex-op", "add");
+
+  const result = useMemo(() => {
+    let resReal, resImag;
+    switch (operation) {
+      case "add":
+        resReal = real1 + real2;
+        resImag = imag1 + imag2;
+        break;
+      case "subtract":
+        resReal = real1 - real2;
+        resImag = imag1 - imag2;
+        break;
+      case "multiply":
+        resReal = real1 * real2 - imag1 * imag2;
+        resImag = real1 * imag2 + imag1 * real2;
+        break;
+      case "divide": {
+        const denominator = real2 * real2 + imag2 * imag2;
+        if (denominator === 0) return { real: NaN, imag: NaN };
+        resReal = (real1 * real2 + imag1 * imag2) / denominator;
+        resImag = (imag1 * real2 - real1 * imag2) / denominator;
+        break;
+      }
+    }
+    return { real: resReal, imag: resImag };
+  }, [real1, imag1, real2, imag2, operation]);
+
+  const formatResult = () => {
+    if (isNaN(result.real)) return "Cannot divide by zero";
+    if (result.imag === 0) return String(result.real);
+    if (result.real === 0) return `${result.imag}i`;
+    return `${result.real.toFixed(4)} ${result.imag > 0 ? "+" : "-"} ${Math.abs(
+      result.imag,
+    ).toFixed(4)}i`;
+  };
+
+  return (
+    <div className="lg:col-span-3 space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Complex Number Calculator</CardTitle>
+          <CardDescription>
+            Perform arithmetic with complex numbers.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label>Number 1 (a + bi)</Label>
+              <div className="flex gap-2">
+                <Input
+                  type="number"
+                  value={real1}
+                  onChange={(e) => setReal1(Number(e.target.value))}
+                  placeholder="Real"
+                />
+                <Input
+                  type="number"
+                  value={imag1}
+                  onChange={(e) => setImag1(Number(e.target.value))}
+                  placeholder="Imaginary"
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label>Number 2 (c + di)</Label>
+              <div className="flex gap-2">
+                <Input
+                  type="number"
+                  value={real2}
+                  onChange={(e) => setReal2(Number(e.target.value))}
+                  placeholder="Real"
+                />
+                <Input
+                  type="number"
+                  value={imag2}
+                  onChange={(e) => setImag2(Number(e.target.value))}
+                  placeholder="Imaginary"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label>Operation</Label>
+            <RadioGroup
+              value={operation}
+              onValueChange={(v) =>
+                setOperation(v as "add" | "subtract" | "multiply" | "divide")
+              }
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="add" id="add" />
+                <Label htmlFor="add">Add</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="subtract" id="sub" />
+                <Label htmlFor="sub">Subtract</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="multiply" id="mult" />
+                <Label htmlFor="mult">Multiply</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="divide" id="div" />
+                <Label htmlFor="div">Divide</Label>
+              </div>
+            </RadioGroup>
+          </div>
+          <div className="pt-4 text-center">
+            <h3 className="text-lg font-semibold">Result</h3>
+            <p className="text-3xl font-bold font-mono text-primary">
+              {formatResult()}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle as="h2">About Complex Numbers</CardTitle>
+        </CardHeader>
+        <CardContent className="prose dark:prose-invert max-w-none">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+           <p>
+            Our <strong>Complex Number Calculator</strong> is a powerful tool for
+            anyone working with complex numbers, which are fundamental in fields
+            like engineering, physics, and advanced mathematics. This calculator
+            allows you to easily add, subtract, multiply, and divide two complex
+            numbers in the standard `a + bi` format.
+          </p>
+
+          <h3>How to Use the Calculator</h3>
+          <ol>
+            <li>
+              For **Number 1** and **Number 2**, enter their real and imaginary
+              parts into the respective input boxes.
+            </li>
+            <li>Select the arithmetic operation you wish to perform.</li>
+          </ol>
+          <p>
+            The calculator will instantly display the result of the operation in
+            the standard complex number format.
+          </p>
+          <h3>Complex Number FAQs</h3>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>What is a complex number?</AccordionTrigger>
+              <AccordionContent>
+                A complex number is a number that can be expressed in the form
+                `a + bi`, where `a` and `b` are real numbers, and `i` is the
+                imaginary unit, which satisfies the equation `i² = -1`. In this
+                expression, &apos;a&apos; is the real part and &apos;b&apos; is the imaginary part.
+                Complex numbers are used in many areas of science and
+                engineering, including electronics and signal processing.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                What is the imaginary unit &apos;i&apos;?
+              </AccordionTrigger>
+              <AccordionContent>
+                The imaginary unit &apos;i&apos; is the solution to the equation x² = -1.
+                It is defined as the square root of negative one (√-1).
+                Mathematicians created &apos;i&apos; to solve problems that have no real
+                number solution.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                How do you add or subtract complex numbers?
+              </AccordionTrigger>
+              <AccordionContent>
+                It&apos;s simple: you add or subtract the real parts and the
+                imaginary parts separately. For example, `(3 + 2i) + (1 + 4i) =
+                (3+1) + (2+4)i = 4 + 6i`.
+              </AccordionContent>
+            </AccordionItem>
+             <AccordionItem value="item-4">
+              <AccordionTrigger>
+                How do you multiply and divide complex numbers?
+              </AccordionTrigger>
+              <AccordionContent>
+                Multiplying is like using FOIL: `(a+bi)(c+di) = ac + adi + bci + bdi² = (ac-bd) + (ad+bc)i`. To divide, you multiply the top and bottom by the conjugate of the denominator. For `(a+bi)/(c+di)`, the conjugate is `(c-di)`.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

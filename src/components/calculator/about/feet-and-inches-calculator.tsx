@@ -62,7 +62,7 @@ export default function AboutFeetAndInchesCalculator() {
         </ol>
 
         <h3>Example: How to Add Feet and Inches</h3>
-        <p>Let&rsquo;s add 5&apos; 7&quot; + 2&apos; 10&quot;:</p>
+        <p>Let&apos;s add 5&apos; 7&quot; + 2&apos; 10&quot;:</p>
         <ol>
           <li>
             <strong>Add inches:</strong> 7&quot; + 10&quot; = 17&quot;.
