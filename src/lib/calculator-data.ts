@@ -300,7 +300,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "A simple and fast online calculator for everyday arithmetic. Perform addition, subtraction, multiplication, and division with ease.",
     lastUpdated: "2024-07-31",
-    tags: ["basic calculator", "online calculator", "arithmetic", "free scientific calculator online", "order of operations (BODMAS/PEMDAS) calculator"],
+    tags: ["online calculator", "free calculator", "web calculator", "internet calculator", "digital calculator", "online calculation tool", "free online calculators", "simple calculator online", "basic calculator online", "easy calculator online", "all in one calculator", "online math calculator", "website with calculators", "best online calculator", "calculator website", "free web based calculator", "online calculator with memory", "mobile friendly calculator", "online calculator for chromebook", "online calculator for tablet", "calculator app online", "virtual calculator", "computer calculator online", "standard calculator online", "everyday calculator", "quick calculator online", "online problem solver", "calculation website", "online converter", "free online conversion tools", "arithmetic", "free scientific calculator online", "order of operations (BODMAS/PEMDAS) calculator"],
   },
   {
     slug: "percentage-calculator",
