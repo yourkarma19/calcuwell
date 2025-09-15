@@ -61,7 +61,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
       "Find your daily energy balance. Our Net Calorie Calculator shows if you're in a calorie deficit, surplus, or at maintenance for your weight goals.",
     formula: "Net Calories = Calories Consumed - Calories Burned",
     lastUpdated: "2024-07-31",
-    tags: ["calorie calculator", "net calories", "weight loss", "tdee", "daily calorie intake calculator for weight loss for an indian diet", "calorie deficit / surplus", "maintenance calorie calculator"],
+    tags: ["calorie calculator", "net calories", "weight loss", "tdee", "daily calorie intake calculator for weight loss for an indian diet", "calorie deficit / surplus", "maintenance calorie calculator", "calorie deficit calculator", "safe calorie deficit for weight loss", "what is my calorie deficit", "how to calculate calorie deficit"],
   },
   // New Time Card Calculator
   {
@@ -725,7 +725,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your take-home pay in India. Enter your gross salary and see the breakdown after PF, ESI, and income tax deductions.",
     lastUpdated: "2024-07-31",
-    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "capital gains tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
+    tags: ["salary calculator india", "take home salary", "income tax calculator", "salary slip breakdown calculator India", "take home salary calculator after PF and income tax", "income tax calculation for the new vs old regime for my salary", "HRA exemption calculation for an employee living in a metro city", "paycheck calculator", "hourly to salary calculator", "salary to hourly calculator", "tax bracket calculator", "payroll calculator", "gross to net salary calculator", "after tax salary calculator", "paycheck tax calculator", "w4 withholding calculator", "tax refund calculator", "self-employment tax calculator", "capital gains tax calculator", "property tax calculator", "bonus tax calculator", "marginal tax rate calculator", "effective tax rate calculator", "california income tax calculator", "new york tax calculator", "texas salary calculator", "uk tax calculator", "canada income tax calculator", "australia tax calculator", "gst calculator", "paycheck calculator hourly", "bi-weekly paycheck calculator", "salary calculator with overtime", "commission calculator", "freelance rate calculator", "consultant rate calculator", "side hustle tax calculator", "1099 tax calculator", "itemized deduction vs standard deduction calculator", "child tax credit calculator", "earned income tax credit calculator", "social security tax calculator", "medicare tax calculator", "fica tax calculator", "unemployment benefits calculator", "salary comparison calculator", "cost of living calculator", "salary increase calculator", "pay raise calculator", "401k contribution calculator paycheck", "hsa contribution calculator"],
   },
   {
     slug: "overtime-pay-calculator",
@@ -814,7 +814,20 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Free Indian calorie calculator for weight loss. Get a personalized daily calorie target & learn how to achieve it with an Indian diet.",
     lastUpdated: "2024-07-31",
-    tags: ["calorie calculator india", "weight loss diet", "indian diet plan", "macro nutrient calculator for a vegetarian indian diet", "daily calorie intake calculator for weight loss for an Indian diet"],
+    tags: [
+      "calorie calculator india", "weight loss diet", "indian diet plan", "macro nutrient calculator for a vegetarian indian diet", "daily calorie intake calculator for weight loss for an Indian diet",
+      "calorie calculator", "calorie counter", "macro calculator", "macronutrient calculator", "calorie deficit calculator", "weight loss calculator", "keto macro calculator", 
+      "protein calculator", "carbohydrate calculator", "fat calculator", "daily calorie needs calculator", "calorie calculator for weight loss", "calorie calculator for weight gain", 
+      "calorie calculator to maintain weight", "how many calories should I eat", "weight loss target date calculator", "macros for weight loss calculator", 
+      "macros for muscle gain calculator", "keto calculator", "ketogenic diet calculator", "net carbs calculator", "low carb macro calculator", "paleo macro calculator", 
+      "iifym calculator", "if it fits your macros calculator", "protein intake calculator", "protein calculator for bodybuilding", "daily protein requirement calculator", 
+      "body weight planner", "diet calculator", "nutrition calculator", "food macro calculator", "recipe nutrition calculator", "intermittent fasting calculator", 
+      "fasting window calculator", "omad calculator", "one meal a day calculator", "carb cycling calculator", "refeed day calculator", "bulking calculator", 
+      "cutting calculator", "e-liquid calculator", "diy e-juice calculator", "caffeine calculator", "alcohol calorie calculator", "sugar intake calculator", "fiber calculator", 
+      "sodium calculator", "points calculator for diet", "food points calculator", "bmr and tdee calculator", 
+      "activity level for tdee calculator", "sedentary calorie calculator", "lightly active calorie calculator", "moderately active calorie calculator", 
+      "very active calorie calculator", "extra active calorie calculator", "calorie tracker online", "free macro tracker", "keto diet food list calculator"
+    ],
   },
   {
     slug: "ideal-weight-calculator",
@@ -901,7 +914,7 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     metaDescription:
       "Estimate your recommended daily water intake based on your age, weight, and activity level. Stay hydrated with our personalized calculator.",
     lastUpdated: "2024-07-31",
-    tags: ["water intake", "hydration calculator", "daily water needs", "water usage calculator for my household"]
+    tags: ["water intake", "hydration calculator", "daily water needs", "water usage calculator for my household", "how much water should I drink calculator"]
   },
   {
     slug: "heart-rate-zone-calculator",
