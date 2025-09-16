@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'self' *.cloudworkstations.dev;
-    connect-src 'self' vitals.vercel-insights.com;
+    connect-src 'self' vitals.vercel-insights.com *.cloudworkstations.dev;
     frame-src 'self' https://googleads.g.doubleclick.net;
     upgrade-insecure-requests;
 `;
