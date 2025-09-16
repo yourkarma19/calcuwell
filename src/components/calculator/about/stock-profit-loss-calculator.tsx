@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -228,7 +229,7 @@ export default function StockProfitLossCalculator() {
               </AccordionTrigger>
               <AccordionContent>
                 Return on Investment (ROI) shows your net profit as a percentage
-                of your total cost. It&rsquo;s a standard way to measure the
+                of your total cost. It&apos;s a standard way to measure the
                 performance of an investment.
               </AccordionContent>
             </AccordionItem>

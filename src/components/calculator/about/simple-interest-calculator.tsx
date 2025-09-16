@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -219,7 +220,7 @@ export default function SimpleInterestCalculator() {
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger className="font-semibold">
-                Simple vs. Compound Interest: What&rsquo;s the main difference?
+                Simple vs. Compound Interest: What&apos;s the main difference?
               </AccordionTrigger>
               <AccordionContent>
                 <p>

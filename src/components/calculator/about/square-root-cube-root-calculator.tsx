@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -165,7 +166,7 @@ export default function SquareRootCubeRootCalculator() {
                 You can find the real cube root of a negative number (e.g., the
                 cube root of -8 is -2). However, the square root of a negative
                 number is an &quot;imaginary number,&quot; which this calculator
-                indicates with the symbol &rsquo;i&rsquo;.
+                indicates with the symbol &apos;i&apos;.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">

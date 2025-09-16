@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo } from "react";
@@ -200,7 +201,7 @@ export default function WindChillCalculator() {
           />
           <p>
             The Wind Chill Calculator determines how cold the air actually feels
-            on your skin when wind is factored in. It&rsquo;s a crucial tool for
+            on your skin when wind is factored in. It&apos;s a crucial tool for
             understanding the potential danger of frostbite in cold, windy
             conditions.
           </p>
@@ -236,7 +237,7 @@ export default function WindChillCalculator() {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                Why Doesn&rsquo;t It Work for Low Wind Speeds?
+                Why Doesn&apos;t It Work for Low Wind Speeds?
               </AccordionTrigger>
               <AccordionContent>
                 The wind chill formula is only defined for wind speeds above 3 mph
