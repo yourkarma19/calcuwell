@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import * as React from "react";
-import { IconWrapper } from "@/components/IconWrapper";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -19,6 +18,7 @@ import {
 } from "@/components/ui/popover";
 import { useSearch } from "@/components/providers/search-provider";
 import { Loader2, Search } from "lucide-react";
+import IconLoader from "@/components/calculator/IconLoader";
 
 export function SearchBar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -112,7 +112,7 @@ export function SearchBar() {
                   onSelect={() => runCommand(calc.slug)}
                   className="flex items-center gap-3 cursor-pointer"
                 >
-                  <IconWrapper
+                  <IconLoader
                     iconName={calc.iconName}
                     className="w-4 h-4 text-muted-foreground"
                   />

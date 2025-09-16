@@ -22,7 +22,7 @@ const IconWrapper = ({ iconName, ...props }: IconWrapperProps) => {
         return Icon;
       }),
     {
-      loading: () => <Skeleton className="h-6 w-6" {...props} />,
+      loading: () => <Skeleton className="h-6 w-6" />,
     },
   );
 
