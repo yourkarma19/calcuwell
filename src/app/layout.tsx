@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
@@ -105,7 +106,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1952235305826490"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy={process.env.NODE_ENV === 'production' ? 'afterInteractive' : undefined}
         />
       </body>
     </html>
