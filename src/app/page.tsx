@@ -93,7 +93,7 @@ export default function Home() {
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 )}
               >
-                <Card className="h-full text-center hover:shadow-lg hover:border-primary/50 transition-all duration-300 group p-6 rounded-2xl">
+                <Card className="h-full text-center transition-all duration-300 ease-in-out group hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 p-6 rounded-2xl">
                   <div className="flex justify-center mb-4">
                     <IconWrapper
                       iconName={tool.iconName}

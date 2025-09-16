@@ -70,7 +70,7 @@ export default function BlogIndexPage() {
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
               )}
             >
-              <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
+              <Card className="h-full transition-all duration-300 ease-in-out group hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 hover:scale-105">
                 <CardHeader>
                   <CardTitle
                     as="h2"

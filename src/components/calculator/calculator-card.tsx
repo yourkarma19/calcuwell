@@ -23,7 +23,7 @@ export default function CalculatorCard({ calculator }: CalculatorCardProps) {
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
       )}
     >
-      <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1">
+      <Card className="h-full transition-all duration-300 ease-in-out group hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 hover:scale-105">
         <CardHeader>
           <div className="flex items-center gap-4">
             <div className="bg-primary/10 p-3 rounded-lg">
