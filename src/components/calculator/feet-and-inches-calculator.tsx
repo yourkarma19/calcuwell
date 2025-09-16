@@ -1,4 +1,3 @@
-
 "use client";
 
 import { AlertCircle } from "lucide-react";
@@ -52,17 +51,17 @@ export default function FeetAndInchesCalculator({
 
   const handleCalculate = () => {
     setError(null);
-    setResult(null); // Clear previous result on new calculation
-    
-    if (!feet1 || !inches1 || !feet2 || !inches2) {
-      setError("All input fields must have a value.");
-      return;
-    }
-    
+    setResult(null);
+
     const f1 = Number(feet1);
     const i1 = Number(inches1);
     const f2 = Number(feet2);
     const i2 = Number(inches2);
+
+    if (isNaN(f1) || isNaN(i1) || isNaN(f2) || isNaN(i2)) {
+      setError("All input fields must have a valid number.");
+      return;
+    }
 
     if (f1 < 0 || i1 < 0 || f2 < 0 || i2 < 0) {
       setError("Measurements cannot be negative.");
@@ -81,28 +80,30 @@ export default function FeetAndInchesCalculator({
       case "subtract": {
         const totalInches2 = toTotalInches(f2, i2);
         if (totalInches1 < totalInches2) {
-          setError("Result cannot be negative. The first measurement must be larger.");
+          setError(
+            "Result cannot be negative. The first measurement must be larger.",
+          );
           return;
         }
         resultInches = totalInches1 - totalInches2;
         break;
       }
       case "multiply": {
-        const scalar = f2 + i2 / 12;
-        if(scalar <= 0){
+        const scalar = toTotalInches(f2, i2);
+        if (scalar <= 0) {
           setError("Multiplier must be a positive number.");
           return;
         }
-        resultInches = totalInches1 * scalar;
+        resultInches = totalInches1 * (scalar / 12); // Assuming second input is also in ft/in for consistency
         break;
       }
       case "divide": {
-        const divisor = f2 + i2 / 12;
+        const divisor = toTotalInches(f2, i2);
         if (divisor === 0) {
           setError("Cannot divide by zero.");
           return;
         }
-        resultInches = totalInches1 / divisor;
+        resultInches = totalInches1 / (divisor / 12);
         break;
       }
     }
@@ -194,7 +195,10 @@ export default function FeetAndInchesCalculator({
             </div>
           </div>
         </div>
-        <Button onClick={handleCalculate} className={cn("w-full mt-4", "btn-glossy")}>
+        <Button
+          onClick={handleCalculate}
+          className={cn("w-full mt-4", "btn-glossy")}
+        >
           Calculate
         </Button>
         {error && (

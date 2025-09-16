@@ -65,7 +65,7 @@ export default function PythagoreanTheoremCalculator() {
         return { result: Math.sqrt(c * c - a * a), error: null };
       }
     }
-    return { result: null, error: "Please enter valid side lengths." };
+    return { result: null, error: null };
   }, [solveFor, sideA, sideB, sideC]);
 
   const handleInputChange = (

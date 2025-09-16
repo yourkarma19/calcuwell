@@ -47,7 +47,11 @@ export default function TriangleAreaCalculator() {
       (formula === "sss" && (sideA <= 0 || sideB <= 0 || sideC <= 0)) ||
       (formula === "sas" && (sideA <= 0 || sideB <= 0 || angleC <= 0))
     ) {
-      return { area: NaN, perimeter: NaN, error: "All inputs must be positive numbers." };
+      return {
+        area: NaN,
+        perimeter: NaN,
+        error: "All inputs must be positive numbers.",
+      };
     }
 
     if (formula === "base-height") {
@@ -67,7 +71,7 @@ export default function TriangleAreaCalculator() {
         p = sideA + sideB + sideC;
       }
     } else if (formula === "sas") {
-       if (angleC >= 180) {
+      if (angleC >= 180) {
         err = "The angle must be less than 180 degrees.";
       } else {
         const angleRad = (angleC * Math.PI) / 180;
@@ -87,7 +91,7 @@ export default function TriangleAreaCalculator() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Triangle Area & Perimeter Calculator</CardTitle>
+          <CardTitle>Triangle Area &amp; Perimeter Calculator</CardTitle>
           <CardDescription>
             Calculate triangle properties using different formulas. Choose the
             method based on the values you know.
@@ -105,13 +109,13 @@ export default function TriangleAreaCalculator() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="base-height">
-                  Base & Height (Area = 0.5 * b * h)
+                  Base &amp; Height (Area = 0.5 * b * h)
                 </SelectItem>
                 <SelectItem value="sss">
                   3 Sides (Heron&apos;s Formula)
                 </SelectItem>
                 <SelectItem value="sas">
-                  2 Sides & Included Angle (Area = 0.5 * a * b * sin(C))
+                  2 Sides &amp; Included Angle (Area = 0.5 * a * b * sin(C))
                 </SelectItem>
               </SelectContent>
             </Select>

@@ -61,7 +61,6 @@ const jsonLd: WithContext<FAQPage> = {
   ],
 };
 
-
 type Difference = {
   years: number;
   months: number;
@@ -105,6 +104,8 @@ export default function DateDifferenceCalculator({
         hours: differenceInHours(endDate, startDate),
         minutes: differenceInMinutes(endDate, startDate),
       });
+    } else {
+      setDifference(null);
     }
   };
 
@@ -146,64 +147,70 @@ export default function DateDifferenceCalculator({
             />
           </div>
         </div>
-        <Button onClick={handleCalculate} className={cn("w-full", "btn-glossy")}>
+        <Button
+          onClick={handleCalculate}
+          className={cn("w-full", "btn-glossy")}
+        >
           Calculate Difference
         </Button>
       </CardContent>
     </Card>
   );
 
-  const resultsCard = difference ? (
-    <div role="status" aria-live="polite">
-      <Card id="date-diff-results">
+  const resultsCard =
+    difference !== null ? (
+      <div role="status" aria-live="polite">
+        <Card id="date-diff-results">
+          <CardHeader>
+            <CardTitle>Result</CardTitle>
+            <CardDescription>
+              The total difference between the selected dates is:
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              <ul className="list-disc list-inside space-y-2 text-lg">
+                <li>
+                  <span className="font-bold">{difference.years}</span> years
+                </li>
+                <li>
+                  <span className="font-bold">{difference.months}</span> months
+                </li>
+                <li>
+                  <span className="font-bold">{difference.weeks}</span> weeks
+                </li>
+                <li>
+                  <span className="font-bold">{difference.days}</span> days
+                </li>
+                <li>
+                  <span className="font-bold">
+                    {difference.hours.toLocaleString()}
+                  </span>{" "}
+                  hours
+                </li>
+                <li>
+                  <span className="font-bold">
+                    {difference.minutes.toLocaleString()}
+                  </span>{" "}
+                  minutes
+                </li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    ) : (
+      <Card>
         <CardHeader>
           <CardTitle>Result</CardTitle>
-          <CardDescription>
-            The total difference between the selected dates is:
-          </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-2">
-            <ul className="list-disc list-inside space-y-2 text-lg">
-              <li>
-                <span className="font-bold">{difference.years}</span> years
-              </li>
-              <li>
-                <span className="font-bold">{difference.months}</span> months
-              </li>
-              <li>
-                <span className="font-bold">{difference.weeks}</span> weeks
-              </li>
-              <li>
-                <span className="font-bold">{difference.days}</span> days
-              </li>
-              <li>
-                <span className="font-bold">
-                  {difference.hours.toLocaleString()}
-                </span>{" "}
-                hours
-              </li>
-              <li>
-                <span className="font-bold">
-                  {difference.minutes.toLocaleString()}
-                </span>{" "}
-                minutes
-              </li>
-            </ul>
-          </div>
+          <p className="text-muted-foreground">
+            The end date must be after the start date.
+          </p>
         </CardContent>
       </Card>
-    </div>
-  ) : (
-    <Card>
-      <CardHeader>
-        <CardTitle>Result</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground">The end date must be after the start date.</p>
-      </CardContent>
-    </Card>
-  );
+    );
 
   return (
     <>
@@ -220,13 +227,13 @@ export default function DateDifferenceCalculator({
             <CardTitle as="h2">About the Date Difference Calculator</CardTitle>
           </CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
-             <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-              />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <p>
-              The <strong>Date Difference Calculator</strong> determines the precise
-              duration between two dates. It provides the difference in a
+              The <strong>Date Difference Calculator</strong> determines the
+              precise duration between two dates. It provides the difference in a
               comprehensive format, breaking it down into years, months, weeks,
               days, hours, and minutes.
             </p>

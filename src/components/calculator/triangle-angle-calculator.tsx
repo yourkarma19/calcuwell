@@ -46,7 +46,7 @@ export default function TriangleAngleCalculator() {
     const radToDeg = (rad: number) => (rad * 180) / Math.PI;
 
     if (formula === "sss") {
-      if (sideA <=0 || sideB <= 0 || sideC <=0) {
+      if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
         err = "Side lengths must be positive numbers.";
       } else if (
         sideA + sideB <= sideC ||
@@ -71,7 +71,7 @@ export default function TriangleAngleCalculator() {
         C = 180 - A - B;
       }
     } else if (formula === "sas") {
-       if (sideA <=0 || sideB <= 0 || sasAngle <= 0) {
+      if (sideA <= 0 || sideB <= 0 || sasAngle <= 0) {
         err = "Side lengths and angle must be positive numbers.";
       } else if (sasAngle >= 180) {
         err = "The angle must be less than 180 degrees.";
@@ -198,7 +198,7 @@ export default function TriangleAngleCalculator() {
           )}
         </CardContent>
       </Card>
-      
+
       {!error && (
         <Card>
           <CardHeader>

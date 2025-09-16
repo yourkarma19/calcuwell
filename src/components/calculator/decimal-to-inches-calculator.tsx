@@ -89,7 +89,7 @@ const jsonLd: WithContext<FAQPage> = {
 const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
 
 export default function DecimalToInchesCalculator() {
-  const [decimalValue, setDecimalValue] = usePersistentState<number|string>(
+  const [decimalValue, setDecimalValue] = usePersistentState<number | string>(
     "decimal-to-inch-value",
     5.25,
   );
@@ -111,12 +111,11 @@ export default function DecimalToInchesCalculator() {
     if (isNaN(totalInches) || totalInches < 0) {
       setResult(null);
       return;
-    };
+    }
 
     const feet = Math.floor(totalInches / 12);
-    const remainingInches = totalInches % 12;
-    let inchesPart = Math.floor(remainingInches);
-    const decimalPart = remainingInches - inchesPart;
+    let inchesPart = Math.floor(totalInches) % 12;
+    const decimalPart = totalInches - Math.floor(totalInches);
 
     const denominator = Number(precision);
     const numerator = Math.round(decimalPart * denominator);
@@ -135,25 +134,19 @@ export default function DecimalToInchesCalculator() {
 
     if (numerator === denominator) {
       inchesPart += 1;
+      let newFeet = feet;
       if (inchesPart === 12) {
-          setResult({
-          feet: feet + 1,
-          inches: 0,
-          numerator: 0,
-          denominator,
-          simpleNumerator: 0,
-          simpleDenominator: 0,
-        });
-      } else {
-        setResult({
-          feet,
-          inches: inchesPart,
-          numerator: 0,
-          denominator,
-          simpleNumerator: 0,
-          simpleDenominator: 0,
-        });
+        newFeet += 1;
+        inchesPart = 0;
       }
+      setResult({
+        feet: newFeet,
+        inches: inchesPart,
+        numerator: 0,
+        denominator,
+        simpleNumerator: 0,
+        simpleDenominator: 0,
+      });
       return;
     }
 
@@ -202,7 +195,11 @@ export default function DecimalToInchesCalculator() {
                 id="decimal-input"
                 type="number"
                 value={decimalValue}
-                onChange={(e) => setDecimalValue(e.target.value === '' ? '' : parseFloat(e.target.value))}
+                onChange={(e) =>
+                  setDecimalValue(
+                    e.target.value === "" ? "" : parseFloat(e.target.value),
+                  )
+                }
                 placeholder="e.g., 5.25"
                 min="0"
                 step="any"
@@ -227,7 +224,10 @@ export default function DecimalToInchesCalculator() {
               </Select>
             </div>
           </div>
-          <Button onClick={handleConvert} className={cn("w-full", "btn-glossy")}>
+          <Button
+            onClick={handleConvert}
+            className={cn("w-full", "btn-glossy")}
+          >
             Convert
           </Button>
         </CardContent>
@@ -259,7 +259,8 @@ export default function DecimalToInchesCalculator() {
                   As Feet, Inches, and Fraction
                 </p>
                 <p>
-                  {result.feet}&apos; {result.inches}
+                  {result.feet > 0 && `${result.feet}' `}
+                  {result.inches}
                   {result.simpleNumerator > 0
                     ? ` ${result.simpleNumerator}/${result.simpleDenominator}`
                     : ""}
@@ -304,8 +305,8 @@ export default function DecimalToInchesCalculator() {
               </li>
               <li>Place the numerator over the denominator.</li>
               <li>
-                Simplify the fraction by finding the greatest common divisor (GCD)
-                and dividing both parts by it.
+                Simplify the fraction by finding the greatest common divisor
+                (GCD) and dividing both parts by it.
               </li>
             </ol>
           </CardContent>
