@@ -129,7 +129,7 @@ export default function Home() {
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 )}
               >
-                <Card className="h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 group rounded-2xl">
+                <Card className="h-full transition-all duration-300 ease-in-out group hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 hover:scale-105 rounded-2xl">
                   <CardHeader className="flex flex-row items-center justify-between p-6">
                     <div className="flex items-center gap-4">
                       <IconWrapper
