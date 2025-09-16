@@ -1,6 +1,7 @@
 {
   "name": "calcpro",
   "version": "0.1.0",
+  "description": "A comprehensive calculator suite.",
   "private": true,
   "scripts": {
     "dev": "next dev",
