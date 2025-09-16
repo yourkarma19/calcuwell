@@ -1,20 +1,19 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { type LucideProps } from "lucide-react";
-import React from "react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { Skeleton } from "@/components/ui/skeleton";
+import dynamic from "next/dynamic";
 
-// Directly use the loader logic in the wrapper
-const IconWrapper = ({
-  iconName,
-  ...props
-}: { iconName: string } & LucideProps) => {
+interface IconWrapperProps extends LucideProps {
+  iconName: string;
+}
+
+const IconWrapper = ({ iconName, ...props }: IconWrapperProps) => {
   const LucideIcon = dynamic(
     dynamicIconImports[iconName as keyof typeof dynamicIconImports],
     {
-      loading: () => <Skeleton className="w-6 h-6" />,
+      loading: () => <Skeleton className="h-6 w-6" {...props} />,
     },
   );
 
@@ -22,5 +21,3 @@ const IconWrapper = ({
 };
 
 export { IconWrapper };
-
-    
