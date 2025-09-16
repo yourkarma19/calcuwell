@@ -277,18 +277,6 @@ export const calculatorsData: Omit<Calculator, "component">[] = [
     tags: ["lean body mass calculator", "lbm calculator", "body composition", "lean body mass formula", "fat free mass index calculator ffmi"]
   },
   // New Waist-to-Hip Ratio Calculator
-  {
-    slug: "waist-to-hip-ratio-calculator",
-    name: "Waist-to-Hip Ratio Calculator",
-    description: "Calculate your Waist-to-Hip Ratio to assess body fat distribution and potential health risks.",
-    category: "Health",
-    iconName: "Ruler",
-    seoTitle: "Waist-to-Hip Ratio (WHR) Health Risk Calc | CalcPro",
-    metaDescription:
-      "Calculate your Waist-to-Hip Ratio (WHR) to assess your body fat distribution and potential health risks. Learn what your WHR means.",
-    lastUpdated: "2024-07-31",
-    tags: ["waist to hip ratio", "whr calculator", "body shape", "health risk", "how to measure waist for calculator", "weight category calculator"]
-  },
 
   // Lifestyle
   {
