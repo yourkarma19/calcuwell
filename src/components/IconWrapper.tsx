@@ -1,9 +1,8 @@
 "use client";
 
 import { type LucideProps } from "lucide-react";
-import dynamicIconImports from "lucide-react/dynamicIconImports";
-import { Skeleton } from "@/components/ui/skeleton";
 import dynamic from "next/dynamic";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface IconWrapperProps extends LucideProps {
   iconName: string;
@@ -11,7 +10,17 @@ interface IconWrapperProps extends LucideProps {
 
 const IconWrapper = ({ iconName, ...props }: IconWrapperProps) => {
   const LucideIcon = dynamic(
-    dynamicIconImports[iconName as keyof typeof dynamicIconImports],
+    () =>
+      import("lucide-react").then((mod) => {
+        const Icon = mod[iconName as keyof typeof mod] as React.FC<
+          LucideProps
+        >;
+        if (!Icon) {
+          // Fallback to a default icon if the requested icon is not found
+          return mod.HelpCircle;
+        }
+        return Icon;
+      }),
     {
       loading: () => <Skeleton className="h-6 w-6" {...props} />,
     },
