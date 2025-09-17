@@ -8,7 +8,10 @@ interface IconLoaderProps extends LucideProps {
 }
 
 const IconLoader = ({ iconName, ...props }: IconLoaderProps) => {
-  const LucideIcon = (allIcons as any)[iconName] ?? Calculator;
+  const LucideIcon =
+    (allIcons as { [key: string]: React.ComponentType<LucideProps> })[
+      iconName
+    ] ?? Calculator;
 
   return <LucideIcon {...props} />;
 };

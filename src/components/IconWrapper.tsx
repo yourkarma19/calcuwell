@@ -1,8 +1,6 @@
 "use client";
 
 import { type LucideProps } from "lucide-react";
-import dynamic from "next/dynamic";
-import { Skeleton } from "@/components/ui/skeleton";
 import * as allIcons from "lucide-react";
 
 interface IconWrapperProps extends LucideProps {
@@ -10,7 +8,10 @@ interface IconWrapperProps extends LucideProps {
 }
 
 const IconWrapper = ({ iconName, ...props }: IconWrapperProps) => {
-  const LucideIcon = (allIcons as any)[iconName] ?? allIcons.HelpCircle;
+  const LucideIcon =
+    (allIcons as { [key: string]: React.ComponentType<LucideProps> })[
+      iconName
+    ] ?? allIcons.HelpCircle;
 
   return <LucideIcon {...props} />;
 };
