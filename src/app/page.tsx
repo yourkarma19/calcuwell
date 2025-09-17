@@ -43,8 +43,7 @@ const websiteSchema = {
       "@type": "EntryPoint",
       urlTemplate: "https://calcpro.online/search?q={search_term_string}",
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    "query-input": "required name=search_term_string" as any,
+    "query-input": "required name=search_term_string",
   },
   hasPart: [...trendingSchema, ...categoriesSchema],
 };
