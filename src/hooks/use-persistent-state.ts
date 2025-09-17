@@ -22,13 +22,16 @@ function usePersistentState<T>(
   }, [key, reviver]);
 
   useEffect(() => {
-    try {
-      const serializedState = JSON.stringify(state);
-      window.localStorage.setItem(key, serializedState);
-    } catch (error) {
-      console.error(`Error setting localStorage key “${key}”:`, error);
+    // Only write to localStorage if state is not the defaultValue, to avoid writing on initial render before hydration is complete.
+    if (state !== defaultValue) {
+      try {
+        const serializedState = JSON.stringify(state);
+        window.localStorage.setItem(key, serializedState);
+      } catch (error) {
+        console.error(`Error setting localStorage key “${key}”:`, error);
+      }
     }
-  }, [key, state]);
+  }, [key, state, defaultValue]);
 
   return [state, setState];
 }
