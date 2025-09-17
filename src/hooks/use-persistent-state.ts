@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect, Dispatch, SetStateAction, useCallback } from "react";
 
 function usePersistentState<T>(
   key: string,
@@ -8,32 +8,41 @@ function usePersistentState<T>(
   reviver?: (value: unknown) => T,
 ): [T, Dispatch<SetStateAction<T>>] {
   const [state, setState] = useState<T>(defaultValue);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      if (item) {
-        const parsed = JSON.parse(item);
-        setState(reviver ? reviver(parsed) : parsed);
-      }
-    } catch (error) {
-      console.error(`Error reading localStorage key “${key}”:`, error);
-    }
-  }, [key, reviver]);
+    setIsHydrated(true);
+  }, []);
 
   useEffect(() => {
-    // Only write to localStorage if state is not the defaultValue, to avoid writing on initial render before hydration is complete.
-    if (state !== defaultValue) {
+    if (isHydrated) {
       try {
-        const serializedState = JSON.stringify(state);
+        const item = window.localStorage.getItem(key);
+        if (item) {
+          const parsed = JSON.parse(item);
+          setState(reviver ? reviver(parsed) : parsed);
+        }
+      } catch (error) {
+        console.error(`Error reading localStorage key “${key}”:`, error);
+        setState(defaultValue);
+      }
+    }
+  }, [key, reviver, isHydrated, defaultValue]);
+
+  const setPersistentState = useCallback<Dispatch<SetStateAction<T>>>((newState) => {
+    setState(prevState => {
+      const valueToStore = newState instanceof Function ? newState(prevState) : newState;
+      try {
+        const serializedState = JSON.stringify(valueToStore);
         window.localStorage.setItem(key, serializedState);
       } catch (error) {
         console.error(`Error setting localStorage key “${key}”:`, error);
       }
-    }
-  }, [key, state, defaultValue]);
+      return valueToStore;
+    });
+  }, [key]);
 
-  return [state, setState];
+  return [state, setPersistentState];
 }
 
 export default usePersistentState;

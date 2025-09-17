@@ -22,17 +22,24 @@ interface TimeLeft {
 }
 
 export default function CountdownTimer() {
-  const defaultTarget = new Date(new Date().getFullYear() + 1, 0, 1);
   const [targetDate, setTargetDate] = usePersistentState<Date | undefined>(
     "countdown-target-date",
-    defaultTarget,
-    (v) => (v ? new Date(v as string) : defaultTarget),
+    undefined,
+    (v) => (v ? new Date(v as string) : undefined),
   );
   const [targetTime, setTargetTime] = usePersistentState(
     "countdown-target-time",
     "00:00",
   );
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
+
+  // Initialize date on the client to avoid hydration mismatch
+  useEffect(() => {
+    if (!targetDate) {
+      const defaultTarget = new Date(new Date().getFullYear() + 1, 0, 1);
+      setTargetDate(defaultTarget);
+    }
+  }, [targetDate, setTargetDate]);
 
   useEffect(() => {
     if (!targetDate) return;
