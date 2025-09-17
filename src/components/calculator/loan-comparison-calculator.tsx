@@ -1,6 +1,6 @@
+
 "use client";
 
-import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import ExportShareControls from "./export-share-controls";
 import {
@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { cn } from "@/lib/utils";
+import LoanComparisonResults from "./loan-comparison-results";
 
 const calculateLoanDetails = (
   principal: number,
@@ -36,20 +37,6 @@ const calculateLoanDetails = (
 
   return { emi, totalInterest, totalAmount };
 };
-
-const LoanComparisonResults = dynamic(
-  () => import("./loan-comparison-results"),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="space-y-6 mt-6">
-        <Skeleton className="h-24 w-full" />
-        <Skeleton className="h-48 w-full" />
-        <Skeleton className="h-96 w-full" />
-      </div>
-    ),
-  },
-);
 
 export default function LoanComparisonCalculator({
   calculatorName,

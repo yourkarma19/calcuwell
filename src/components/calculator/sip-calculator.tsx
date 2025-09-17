@@ -1,6 +1,6 @@
+
 "use client";
 
-import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import {
   Accordion,
@@ -21,14 +21,7 @@ import { Slider } from "@/components/ui/slider";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
 import type { FAQPage, WithContext } from "schema-dts";
-
-const SipBreakdownChart = dynamic(
-  () => import("@/components/charts/sip-breakdown-chart"),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="w-full h-[25rem]" />,
-  },
-);
+import SipBreakdownChart from "@/components/charts/sip-breakdown-chart";
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",

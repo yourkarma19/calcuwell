@@ -15,20 +15,9 @@ import {
   calculateEMIWithExtraPayments,
 } from "@/lib/math/loan-emi";
 
-import dynamic from "next/dynamic";
+import { LoanBreakdownChart } from "@/components/charts/loan-breakdown-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import AboutLoanEMICalculator from "./about/loan-emi-calculator";
-
-const LoanBreakdownChart = dynamic(
-  () =>
-    import("@/components/charts/loan-breakdown-chart").then(
-      (mod) => mod.LoanBreakdownChart,
-    ),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="w-full h-[250px]" />,
-  },
-);
 
 function formatCurrency(
   value: number,

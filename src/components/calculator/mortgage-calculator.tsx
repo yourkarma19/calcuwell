@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ReadonlyURLSearchParams } from "next/navigation";
@@ -15,20 +16,9 @@ import { Label } from "@/components/ui/label";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
 import type { FAQPage, WithContext } from "schema-dts";
-import dynamic from "next/dynamic";
+import { MortgageBreakdownChart } from "@/components/charts/mortgage-breakdown-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 
-
-const MortgageBreakdownChart = dynamic(
-  () =>
-    import("@/components/charts/mortgage-breakdown-chart").then(
-      (mod) => mod.MortgageBreakdownChart,
-    ),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="w-full h-[250px]" />,
-  },
-);
 
 const jsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",

@@ -1,6 +1,6 @@
+
 "use client";
 
-import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { Skeleton } from "../ui/skeleton";
 import {
@@ -15,14 +15,8 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
-
-const CostBreakdownChart = dynamic(
-  () => import("@/components/charts/pet-cost-breakdown-chart"),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="w-full h-[25rem]" />,
-  },
-);
+import AboutPetCareCostCalculator from "./about/pet-care-cost-calculator";
+import PetCostBreakdownChart from "@/components/charts/pet-cost-breakdown-chart";
 
 export default function PetCareCostCalculator() {
   const [petType, setPetType] = usePersistentState<"dog" | "cat">(
@@ -169,9 +163,12 @@ export default function PetCareCostCalculator() {
           <CardTitle>Cost Breakdown</CardTitle>
         </CardHeader>
         <CardContent className="h-[25rem]">
-          <CostBreakdownChart chartData={chartData} />
+          <PetCostBreakdownChart chartData={chartData} />
         </CardContent>
       </Card>
+      <div className="mt-8">
+        <AboutPetCareCostCalculator />
+      </div>
     </div>
   );
 }
