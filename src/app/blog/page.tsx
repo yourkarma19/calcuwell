@@ -72,9 +72,7 @@ export default function BlogIndexPage() {
             >
               <Card className="h-full transition-all duration-300 ease-in-out group hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 hover:scale-105">
                 <CardHeader>
-                  <CardTitle
-                    className="text-2xl font-semibold font-headline group-hover:text-primary transition-colors"
-                  >
+                  <CardTitle className="text-2xl font-semibold font-headline group-hover:text-primary transition-colors">
                     {post.title}
                   </CardTitle>
                   <CardDescription>{post.description}</CardDescription>
@@ -84,6 +82,23 @@ export default function BlogIndexPage() {
           ))}
         </div>
       </section>
+
+      {/* Example Ad Unit - Replace with your own AdSense unit details */}
+      <div className="my-8 text-center">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-1952235305826490"
+          data-ad-slot="YOUR_AD_SLOT_ID" // IMPORTANT: Replace with a real Ad Slot ID from your AdSense account
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "(adsbygoogle = window.adsbygoogle || []).push({});",
+          }}
+        />
+      </div>
     </main>
   );
 }
