@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { headers } from "next/headers";
 import Script from "next/script";
+import Adsense from "@/components/analytics/Adsense";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { SearchProvider } from "@/components/providers/search-provider";
@@ -70,6 +71,9 @@ export default function RootLayout({
   const nonce = headers().get("x-nonce") || "";
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <Adsense />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased flex flex-col",
@@ -106,13 +110,6 @@ export default function RootLayout({
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
           `}
         </Script>
-        <Script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-          nonce={nonce}
-        />
       </body>
     </html>
   );

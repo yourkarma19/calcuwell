@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
 
-  // Adjust the Content Security Policy to include Google's domains
   const cspHeader = `
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.google-analytics.com;
@@ -15,7 +14,7 @@ export function middleware(request: NextRequest) {
     base-uri 'self';
     form-action 'self';
     frame-src 'self' https://googleads.g.doubleclick.net https://*.googlesyndication.com;
-    connect-src 'self' vitals.vercel-insights.com *.cloudworkstations.dev https://*.google-analytics.com;
+    connect-src 'self' vitals.vercel-insights.com *.cloudworkstations.dev https://*.google-analytics.com https://pagead2.googlesyndication.com;
     upgrade-insecure-requests;
 `;
 
@@ -23,7 +22,6 @@ export function middleware(request: NextRequest) {
   requestHeaders.set("x-nonce", nonce);
   requestHeaders.set(
     "Content-Security-Policy",
-    // Replace newline characters and spaces
     cspHeader.replace(/\s{2,}/g, " ").trim(),
   );
 
