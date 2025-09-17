@@ -1,7 +1,6 @@
 "use client";
 
 import { type ReadonlyURLSearchParams } from "next/navigation";
-import { lazy } from "react";
 
 // Statically import all calculator components
 import AgeCalculator from "./age-calculator";

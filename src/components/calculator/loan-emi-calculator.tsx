@@ -16,7 +16,6 @@ import {
 } from "@/lib/math/loan-emi";
 
 import { LoanBreakdownChart } from "@/components/charts/loan-breakdown-chart";
-import { Skeleton } from "@/components/ui/skeleton";
 import AboutLoanEMICalculator from "./about/loan-emi-calculator";
 
 function formatCurrency(

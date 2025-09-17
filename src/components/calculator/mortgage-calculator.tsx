@@ -17,7 +17,6 @@ import usePersistentState from "@/hooks/use-persistent-state";
 import { formatCurrency } from "@/lib/utils";
 import type { FAQPage, WithContext } from "schema-dts";
 import { MortgageBreakdownChart } from "@/components/charts/mortgage-breakdown-chart";
-import { Skeleton } from "@/components/ui/skeleton";
 
 
 const jsonLd: WithContext<FAQPage> = {

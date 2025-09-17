@@ -41,7 +41,7 @@ npx prettier --write .
 # 6️⃣ Run ESLint
 # ------------------------------
 echo "🔹 Running ESLint..."
-eslint . --ext .tsx,.ts,.js,.jsx
+eslint . --ext .tsx,.ts,.js,.jsx --fix
 if [ $? -ne 0 ]; then
   echo "❌ ESLint errors found. Fix them before deploying."
   exit 1;
