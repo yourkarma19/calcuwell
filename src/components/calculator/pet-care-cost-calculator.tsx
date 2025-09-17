@@ -2,7 +2,6 @@
 "use client";
 
 import { useMemo } from "react";
-import { Skeleton } from "../ui/skeleton";
 import {
   Card,
   CardContent,

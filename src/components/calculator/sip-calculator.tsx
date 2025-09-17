@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import { Skeleton } from "../ui/skeleton";
 import {
   Card,
   CardContent,
