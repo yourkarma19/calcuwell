@@ -73,7 +73,6 @@ export default function BlogIndexPage() {
               <Card className="h-full transition-all duration-300 ease-in-out group hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 hover:scale-105">
                 <CardHeader>
                   <CardTitle
-                    as="h2"
                     className="text-2xl font-semibold font-headline group-hover:text-primary transition-colors"
                   >
                     {post.title}
