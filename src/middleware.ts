@@ -1,19 +1,21 @@
+import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+
+  // Adjust the Content Security Policy to include Google's domains
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com;
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.google-analytics.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://picsum.photos;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'self' *.cloudworkstations.dev;
-    connect-src 'self' vitals.vercel-insights.com *.cloudworkstations.dev;
-    frame-src 'self' https://googleads.g.doubleclick.net;
+    frame-src 'self' https://googleads.g.doubleclick.net https://*.googlesyndication.com;
+    connect-src 'self' vitals.vercel-insights.com *.cloudworkstations.dev https://*.google-analytics.com;
     upgrade-insecure-requests;
 `;
 

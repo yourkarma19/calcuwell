@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { headers } from "next/headers";
 import Script from "next/script";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -66,6 +67,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = headers().get("x-nonce") || "";
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
@@ -93,8 +95,9 @@ export default function RootLayout({
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}`}
+          nonce={nonce}
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive" nonce={nonce}>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -108,6 +111,7 @@ export default function RootLayout({
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
           crossOrigin="anonymous"
           strategy="beforeInteractive"
+          nonce={nonce}
         />
       </body>
     </html>
