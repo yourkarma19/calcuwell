@@ -9,9 +9,7 @@ interface IconWrapperProps extends LucideProps {
 
 const IconWrapper = ({ iconName, ...props }: IconWrapperProps) => {
   const LucideIcon =
-    (allIcons as { [key: string]: React.ComponentType<LucideProps> })[
-      iconName
-    ] ?? allIcons.HelpCircle;
+    allIcons[iconName as keyof typeof allIcons] ?? allIcons.HelpCircle;
 
   return <LucideIcon {...props} />;
 };
