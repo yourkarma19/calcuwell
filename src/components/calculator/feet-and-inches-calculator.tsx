@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AlertCircle } from "lucide-react";
@@ -69,16 +70,15 @@ export default function FeetAndInchesCalculator({
     }
 
     const totalInches1 = toTotalInches(f1, i1);
+    const totalInches2 = toTotalInches(f2, i2);
     let resultInches = 0;
 
     switch (operation) {
       case "add": {
-        const totalInches2 = toTotalInches(f2, i2);
         resultInches = totalInches1 + totalInches2;
         break;
       }
       case "subtract": {
-        const totalInches2 = toTotalInches(f2, i2);
         if (totalInches1 < totalInches2) {
           setError(
             "Result cannot be negative. The first measurement must be larger.",
@@ -89,21 +89,19 @@ export default function FeetAndInchesCalculator({
         break;
       }
       case "multiply": {
-        const scalar = toTotalInches(f2, i2);
-        if (scalar <= 0) {
+        if (totalInches2 <= 0) {
           setError("Multiplier must be a positive number.");
           return;
         }
-        resultInches = totalInches1 * (scalar / 12); // Assuming second input is also in ft/in for consistency
+        resultInches = totalInches1 * totalInches2;
         break;
       }
       case "divide": {
-        const divisor = toTotalInches(f2, i2);
-        if (divisor === 0) {
+        if (totalInches2 === 0) {
           setError("Cannot divide by zero.");
           return;
         }
-        resultInches = totalInches1 / (divisor / 12);
+        resultInches = totalInches1 / totalInches2;
         break;
       }
     }

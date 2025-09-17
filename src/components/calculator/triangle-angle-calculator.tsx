@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AlertCircle } from "lucide-react";
@@ -20,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePersistentState from "@/hooks/use-persistent-state";
+import AboutTriangleAngleCalculator from "./about/triangle-angle-calculator";
 
 type FormulaType = "sss" | "sas";
 
@@ -99,7 +101,7 @@ export default function TriangleAngleCalculator() {
         <CardHeader>
           <CardTitle>Triangle Angle Calculator</CardTitle>
           <CardDescription>
-            Find the unknown angles of a triangle based on the information you
+            Find the missing angles of a triangle based on the information you
             have.
           </CardDescription>
         </CardHeader>
@@ -226,6 +228,9 @@ export default function TriangleAngleCalculator() {
           </CardContent>
         </Card>
       )}
+      <div className="mt-8">
+        <AboutTriangleAngleCalculator />
+      </div>
     </div>
   );
 }
